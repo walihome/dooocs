@@ -1,0 +1,1 @@
+import{_ as l,c as i,o as t,O as a}from"./chunks/framework.0d343703.js";const I=JSON.parse('{"title":"AI学习专栏：重点关注ChatGPT与AIGC中的Prompt","description":"","frontmatter":{},"headers":[],"relativePath":"ai/README.md"}'),e={name:"ai/README.md"},p=a("",5),o=[p];function r(c,A,_,s,h,n){return t(),i("div",null,o)}const P=l(e,[["render",r]]);export{I as __pageData,P as default};
