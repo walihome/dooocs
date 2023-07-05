@@ -1,5 +1,7 @@
 {
   "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^2.0.0-beta.61",
+    "sitemap": "^7.1.1",
     "vitepress": "^1.0.0-alpha.74"
   },
   "scripts": {
