@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Example Step
+        run: |
+          echo "The value of MY_SECRET is: ${{ secrets.DEMO }}"
+          
       - name: Checkout repository
         uses: actions/checkout@v2
         
