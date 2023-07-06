@@ -20,6 +20,8 @@ Java 中有 8 种基本数据类型，分别为：
 - 1 种字符类型：`char`
 - 1 种布尔型：`boolean`。
 
+![java 4种整数类型](https://www.guru99.com/images/uploads/2012/07/java-varaibles.jpg "San Juan Mountains")
+
 这 8 种基本数据类型的默认值以及所占空间的大小如下：
 
 | 基本类型  | 位数 | 字节 | 默认值  | 取值范围                                   |
