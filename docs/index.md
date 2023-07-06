@@ -7,7 +7,7 @@ hero:
   # text: "为了爱和自由~"
   tagline: 让进步发生...
   image:
-    src: https://vitepress-template.vercel.app/brand.svg
+    src: https://developer.mozilla.org/en-US/blog/introducing-the-mdn-playground/play.png
   actions:
     - theme: brand
       text: 交流社区
