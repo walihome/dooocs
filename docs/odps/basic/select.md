@@ -1,4 +1,14 @@
-# 基础查询语法
+---
+title: odps 基础语法说明
+head:
+  - - meta
+    - name: description
+      content: 基础语法说明，查询所有列、排除某列、排除某些列、前缀匹配某些列等
+  - - meta
+    - name: keywords
+      content: odps maxCompute select update insert 排除 排除列 匹配
+---
+# 基础语法说明
 
 查询表table_name 中所有的列
 ``` sql
