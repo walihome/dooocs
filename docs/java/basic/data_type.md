@@ -278,3 +278,12 @@ System.out.println(l + 1 == Long.MIN_VALUE); // true
 `BigInteger` 内部使用 `int[]` 数组来存储任意大小的整形数据。
 
 相对于常规整数类型的运算来说，`BigInteger` 运算的效率会相对较低。
+
+
+## 专有名词中英对照
+
+
+
+
+## 参考
+关于Long类型的坑：
