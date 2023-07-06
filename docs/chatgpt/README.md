@@ -1,3 +1,13 @@
+---
+title: Chatgt使用说明
+head:
+  - - meta
+    - name: description
+      content: 免费使用chatgpt的说明文档
+  - - meta
+    - name: keywords
+      content: 免费 使用 chatgpt 说明 教程
+---
 # 访问说明
 仅用于大家了解试用、卡内余额有限，不保证一直能用，感谢大家！
 
