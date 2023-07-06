@@ -1,3 +1,13 @@
+---
+title: Java基础语法
+head:
+  - - meta
+    - name: description
+      content: 介绍Java基础的语法内容，对Java有一个基础的了解
+  - - meta
+    - name: keywords
+      content: Java 基础语法 basic grammer 注释 变量
+---
 # 基础语法
 ## 注释
 
