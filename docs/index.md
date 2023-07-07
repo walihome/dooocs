@@ -55,6 +55,9 @@ features:
   - title: markdown
     link: /markdown/README.html
     details: 基础语法、快捷访问
+  - title: nginx操作指南
+    link: /nginx/README.html
+    details: nginx快速开始、参考手册、基本原理
   - title: 工作指南
     link: /work/README.html
     details: 软实力、时间规划
