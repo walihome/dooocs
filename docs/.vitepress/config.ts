@@ -129,8 +129,8 @@ export default defineConfig({
           items: [
             { text: '阅读须知', link: '/nginx/README.html' },
             { text: '日志',  collapsed: false, items: [
-              { text: 'nginx基础日志', link: '/nginx/log/nginx.html' },
-              { text: 'https日志', link: '/nginx/log/https.html' },
+              { text: 'nginx基础日志', link: '/nginx/logs/nginx.html' },
+              { text: 'https日志', link: '/nginx/logs/https.html' },
             ]},
           ]
         }
