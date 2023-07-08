@@ -29,12 +29,15 @@ hero:
     #   link: /work/README.html
 
 features:
-  - title: JAVA手册
+  - title: JAVA学习手册
     link: /java/README.html
     details: 新手友好、教程、手册
-  - title: SWIFT手册
+  - title: SWIFT学习手册
     link: /swift/README.html
     details: swift基础语法，进阶内容
+  - title: PYTHON学习手册
+    link: /python/README.html
+    details: python基础语法，进阶内容
   - title: ODPS参考手册
     link: /odps/README.html
     details: 基础语法、进阶

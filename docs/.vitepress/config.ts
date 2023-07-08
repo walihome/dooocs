@@ -73,6 +73,7 @@ export default defineConfig({
           items: [
             { text: '阅读须知', link: '/java/README.html' },
             { text: '概览', link: '/java/overview.html' },
+            { text: '快速开始', link: '/java/quick_start.html' },
             { text: '基础知识', collapsed: true, items: [
               { text: '基础语法', link: '/java/basic/basic_grammer.html' },
               { text: '基本数据类型', link: '/java/basic/data_type.html' },
@@ -186,6 +187,19 @@ export default defineConfig({
             { text: '基础知识',  collapsed: true, items: [
               { text: '基础语法', link: '/swift/basic/basic_grammar.html' },
               { text: '基础运算符', link: '/swift/basic/basic_operators.html' },
+            ]},
+          ]
+        }
+      ],
+      '/python/': [
+        {
+          text: 'PYTHON学习手册',
+          items: [
+            { text: '阅读须知', link: '/python/README.html' },
+            { text: '快速开始', link: '/python/quick_start.html' },
+            { text: '基础知识',  collapsed: true, items: [
+              { text: '基础语法', link: '/python/basic/basic.html' },
+              
             ]},
           ]
         }
