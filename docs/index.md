@@ -7,7 +7,7 @@ hero:
   # text: "为了爱和自由~"
   tagline: 让进步发生...
   image:
-    src: https://developer.mozilla.org/en-US/blog/introducing-the-mdn-playground/play.png
+    src: https://vitepress-template.vercel.app/brand.svg
   actions:
     - theme: brand
       text: 交流社区
@@ -38,26 +38,37 @@ features:
   - title: PYTHON学习手册
     link: /python/README.html
     details: python基础语法，进阶内容
-  - title: ODPS参考手册
-    link: /odps/README.html
-    details: 基础语法、进阶
 
   - title: IOS开发手册
     link: /ios/README.html
     details: 教程、参考文档、案例
+  - title: AI试用指导
+    link: /chatgpt/README.html
+    details: 提供访问地址、密码、手把手教程
+  - title: ODPS参考手册
+    link: /odps/README.html
+    details: 基础语法、进阶
+  
   - title: mongoDB使用手册
     link: /mongodb/README.html
     details: 快速开始、api、运维
   - title: nodeBB使用手册
     link: /nodebb/README.html
     details: 快速开始、api、运维
-
-  - title: AI试用指导
-    link: /chatgpt/README.html
-    details: 提供访问地址、密码、手把手教程
   - title: markdown
     link: /markdown/README.html
     details: 基础语法、快捷访问
+
+  - title: Git使用手册
+    link: /git/README.html
+    details: 快速开始、高阶语法
+  - title: Maven使用手册
+    link: /maven/README.html
+    details: 快速开始、高阶语法
+  - title: SEO手册
+    link: /seo/README.html
+    details: 个人站、内容站SEO操作手册
+
   - title: nginx操作指南
     link: /nginx/README.html
     details: nginx快速开始、参考手册、基本原理
