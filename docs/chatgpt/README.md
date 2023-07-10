@@ -17,5 +17,5 @@ https://chat-gpt-next-web-q3e3.vercel.app/
 
 ### 访问密码
 ```
-code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZTIQ4w
+code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZTIQ4w44w4
 ```
