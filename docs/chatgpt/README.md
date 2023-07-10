@@ -15,7 +15,7 @@ head:
 
 ## 地址&密码
 ### 访问地址
-https://chat-gpt-next-web-q3e3.vercel.app/
+https://ai.dooocs.com
 
 ### 访问密码
 ```
