@@ -42,7 +42,7 @@ features:
   - title: IOS开发手册
     link: /ios/README.html
     details: 教程、参考文档、案例
-  - title: AI试用指导
+  - title: 免费使用Chatgpt
     link: /chatgpt/README.html
     details: 提供访问地址、密码、手把手教程
   - title: ODPS参考手册
