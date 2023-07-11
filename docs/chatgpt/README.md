@@ -19,5 +19,5 @@ https://ai.dooocs.com
 
 ### 访问密码
 ```
-code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZTIQ4w44w5
+code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZTIQ4w44w
 ```
