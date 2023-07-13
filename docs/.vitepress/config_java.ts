@@ -6,7 +6,7 @@ export const java = [
         { text: '阅读须知', link: '/java/README.html' },
         { text: '概览', link: '/java/overview.html' },
         { text: '快速开始', link: '/java/quick_start.html' },
-        { text: '基础知识', collapsed: true, items: [
+        { text: '新手教程', collapsed: true, items: [
           { text: '基础语法', link: '/java/basic/basic_grammer.html' },
           { text: '基本数据类型', link: '/java/basic/data_type.html' },
           { text: '基本运算', link: '/java/basic/operate.html' },
