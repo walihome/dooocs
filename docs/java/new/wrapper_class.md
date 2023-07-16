@@ -24,7 +24,7 @@ Java中的包装类用于将基本类型（`int`、`char`、`float`等）转换�
 ### 示例1：基本类型到包装对象的转换
 
 
-```
+```java 
 class Main {
   public static void main(String[] args) {
 
@@ -49,7 +49,7 @@ class Main {
 
 
 **输出**
-```
+```java
 创建了一个Integer对象。
 创建了一个Double对象。
 ```
@@ -59,7 +59,7 @@ class Main {
 这里，我们使用了`instanceof`运算符来检查生成的对象是否是`Integer`或`Double`类型。
 
 然而，Java编译器可以直接将基本类型转换为相应的对象。例如，
-```
+```java
 int a = 5;
 // 转换为对象
 Integer aObj = a;
@@ -82,7 +82,7 @@ Double bObj = b;
 ### 示例2：包装对象到基本类型
 
 
-```
+``` java
 class Main {
   public static void main(String[] args) {
 
@@ -102,7 +102,7 @@ class Main {
 
 
 **输出**
-```
+``` java
 a的值：23
 b的值：5.55
 ```
@@ -110,7 +110,7 @@ b的值：5.55
 在上面的示例中，我们使用了`intValue()`和`doubleValue()`方法将`Integer`和`Double`对象转换为相应的基本类型。
 
 然而，Java编译器可以自动将对象转换为相应的基本类型。例如，
-```
+``` java
 Integer aObj = Integer.valueOf(2);
 // 转换为int类型
 int a = aObj;
@@ -127,12 +127,15 @@ double b = bObj;
 ## 包装类的优点
 
   * 在Java中，有时我们可能需要使用对象而不是基本数据类型。例如，在使用集合时。
-    
-        // 错误
-    ArrayList<int> list = new ArrayList<>();
-    
-    // 正确运行
-    ArrayList<Integer> list = new ArrayList<>();
+
+```java 
+// 错误
+ArrayList<int> list = new ArrayList<>();
+
+// 正确运行
+ArrayList<Integer> list = new ArrayList<>();
+```
+
 
 在这种情况下，包装类帮助我们使用基本数据类型作为对象。
   * 我们可以在包装对象中存储`null`值。例如，
