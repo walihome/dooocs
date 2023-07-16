@@ -4,7 +4,6 @@
 
 它实现了集合框架的`List`接口。
 
-![List接口扩展了Collection接口，而ArrayList类则实现了List接口。](https:/sites/tutorial2program/files/java-arraylist-implements-list.png)  
 Java ArrayList 实现
 
 * * *

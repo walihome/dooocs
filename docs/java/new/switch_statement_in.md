@@ -98,7 +98,7 @@ break;
 
 ## switch语句的流程图
 
-![Java switch语句的流程图](https:/sites/tutorial2program/files/java-switch-case-implementation.png)  
+![Java switch语句的流程图](https://cdn.programiz.com/sites/tutorial2program/files/java-switch-case-implementation.png)  
 Java switch语句的流程图
 
 ---

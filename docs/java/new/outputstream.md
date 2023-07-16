@@ -14,7 +14,7 @@
   * [ByteArrayOutputStream](/java-programming/bytearrayoutputstream "Java ByteArrayOutputStream类")
   * [ObjectOutputStream](/java-programming/objectoutputstream "Java ObjectOutputStream类")
 
-![OutputStreamWriter ](https:/sites/tutorial2program/files/java-%20outputstreamwriter.png)  
+![OutputStreamWriter ](https://cdn.programiz.com/sites/tutorial2program/files/java-%20outputstreamwriter.png)  
 OutputStreamWriter
 
 在下一个教程中，我们将学习所有这些子类。

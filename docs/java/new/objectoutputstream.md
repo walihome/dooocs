@@ -4,7 +4,7 @@
 
 它扩展了 `OutputStream` 抽象类。
 
-![ObjectOutputStream 类继承了 OutputStream 类](https:/sites/tutorial2program/files/java-objectoutputstream-class.png)  
+![ObjectOutputStream 类继承了 OutputStream 类](https://cdn.programiz.com/sites/tutorial2program/files/java-objectoutputstream-class.png)  
 Java ObjectOutputStream 类
 
 * * *

@@ -4,7 +4,7 @@
 
 它继承了抽象类`Reader`。
 
-![Java中BufferedReader类继承自Reader类](https:/sites/tutorial2program/files/java-bufferedreader.png)  
+![Java中BufferedReader类继承自Reader类]
 Java BufferedReader
 
 ---

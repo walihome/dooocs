@@ -4,7 +4,7 @@
 
 它扩展了 `InputStream` 抽象类。
 
-![ObjectInputStream 类扩展了 InputStream 类。](https:/sites/tutorial2program/files/java-objectinputstream-class.png) 
+![ObjectInputStream 类扩展了 InputStream 类。](https://cdn.programiz.com/sites/tutorial2program/files/java-objectinputstream-class.png) 
 
 在学习 `ObjectInputStream` 类之前，请确保你了解 [ObjectOutputStream 类](/java-programming/objectoutputstream "Java ObjectOutputStream Class")。
 

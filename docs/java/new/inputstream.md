@@ -16,7 +16,7 @@
 
 
 
-![FileInputStream 类继承自 InputStream 类](https:/sites/tutorial2program/files/java-fileinputstream.png)  
+![FileInputStream 类继承自 InputStream 类](https://cdn.programiz.com/sites/tutorial2program/files/java-fileinputstream.png)  
 Java FileInputStream 类
 
 我们将在下一个教程中学习所有这些子类。

@@ -15,7 +15,7 @@
   * [FileReader](https://www.programiz.com/java-programming/filereader "Java FileReader")
   * [StringReader](https://www.programiz.com/java-programming/stringreader "Java StringReader")
 
-![BufferedReader、InputStreamReader 和 StringReader 是 Reader 的子类](https:/sites/tutorial2program/files/java-reader-subclasses.png)  
+![BufferedReader、InputStreamReader 和 StringReader 是 Reader 的子类](https://cdn.programiz.com/sites/tutorial2program/files/java-reader-subclasses.png)  
 Reader 的子类
 
 在下一个教程中，我们将学习所有这些子类。

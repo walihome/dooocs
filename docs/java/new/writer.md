@@ -15,7 +15,7 @@
   * [FileWriter](https://www.programiz.com/java-programming/filewriter)
   * [StringWriter](https://www.programiz.com/java-programming/stringwriter)
 
-![BufferedWriter、InputStreamWriter 和 StringWriter 都是 Writer 的子类。](https:/sites/tutorial2program/files/java-writer-subclasses.png)  
+![BufferedWriter、InputStreamWriter 和 StringWriter 都是 Writer 的子类。](https://cdn.programiz.com/sites/tutorial2program/files/java-writer-subclasses.png)  
 Writer 的子类
 
 我们将在下一个教程中学习所有这些子类。

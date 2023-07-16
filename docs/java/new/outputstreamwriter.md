@@ -4,7 +4,7 @@
 
 它继承了抽象类 `Writer`。
 
-![OutputStreamWriter](https:/sites/tutorial2program/files/java-%20outputstreamwriter.png)
+![OutputStreamWriter](https://cdn.programiz.com/sites/tutorial2program/files/java-%20outputstreamwriter.png)
 OutputStreamWriter
 
 `OutputStreamWriter` 类与其他输出流协同工作。它也被称为字节流和字符流之间的桥梁。这是因为 `OutputStreamWriter` 将其字符转换为字节。

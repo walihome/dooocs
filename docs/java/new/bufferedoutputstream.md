@@ -4,7 +4,7 @@
 
 它扩展了 `OutputStream` 抽象类。
 
-![Java BufferedOutputStream 类继承了 OutputStream 类](https:/sites/tutorial2program/files/java-bufferedoutputstream.png)  
+![Java BufferedOutputStream 类继承了 OutputStream 类]()  
 Java BufferedOutputStream
 
 * * *

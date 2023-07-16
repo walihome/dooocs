@@ -4,7 +4,7 @@
 
 它继承了 `InputStream` 抽象类。
 
-![ByteArrayInputStream 类继承了 InputStream 类。](https:/sites/tutorial2program/files/java-bytearrayonputstream.png)  
+![ByteArrayInputStream 类继承了 InputStream 类。]
 Java ByteArrayInputStream
 
 > **注意**：在 `ByteArrayInputStream` 中，使用字节数组来创建输入流。它包含一个内部数组来存储特定字节数组的数据。

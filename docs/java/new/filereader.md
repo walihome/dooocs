@@ -4,7 +4,7 @@
 
 它继承自 `InputStreamReader` 类。
 
-![FileReader 扩展了 InputStreamReader 和 Reader 类](https:/sites/tutorial2program/files/java-filereader.png)  
+![FileReader 扩展了 InputStreamReader 和 Reader 类]()  
 FileReader 扩展了 InputStreamReader 类
 
 在学习有关 `FileReader` 的内容之前，请确保您了解 [Java 文件](/java-programming/file "Java 文件")。
