@@ -1,6 +1,6 @@
 # Java枚举的构造函数
 
-在学习枚举构造函数之前，请确保了解[Java枚举](/java-programming/enums)。
+在学习枚举构造函数之前，请确保了解[Java枚举](https://www.dooocs.com/img/java-programming/enums)。
 
 在Java中，枚举类可以像普通类一样包含构造函数。这些枚举构造函数可以是：
 

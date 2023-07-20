@@ -2,7 +2,7 @@
 
 在计算机编程中，循环用于重复执行一段代码。例如，如果您想要显示一个消息100次，可以使用循环。这只是一个简单的例子，您可以利用循环做更多的事情。
 
-在之前的教程中，您已经学习了[Java for循环](/java-programming/for-loop "Java for Loop")。在这里，您将学习关于`while`和`do...while`循环。
+在之前的教程中，您已经学习了[Java for循环](https://www.dooocs.com/img/java-programming/for-loop "Java for Loop")。在这里，您将学习关于`while`和`do...while`循环。
 
 * * *
 

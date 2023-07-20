@@ -1,6 +1,6 @@
 # Java for-each 循环
 
-在Java中，**for-each**循环用于遍历[数组](/java-programming/arrays "Java Arrays")和集合（如[ArrayList](/java-programming/arraylist)）的元素。它也被称为增强型for循环。
+在Java中，**for-each**循环用于遍历[数组](https://www.dooocs.com/img/java-programming/arrays "Java Arrays")和集合（如[ArrayList](https://www.dooocs.com/img/java-programming/arraylist)）的元素。它也被称为增强型for循环。
 
 * * *
 
@@ -110,7 +110,7 @@ sum = 7 + 12 = 19
 
 ## for循环 vs for-each 循环
 
-让我们看看 `for-each` 循环与普通[Java for循环](/java-programming/for-loop)之间的区别。
+让我们看看 `for-each` 循环与普通[Java for循环](https://www.dooocs.com/img/java-programming/for-loop)之间的区别。
 
 ### 1\. 使用for循环
     

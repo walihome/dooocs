@@ -2,7 +2,7 @@
 
 Java中的`WeakHashMap`类是Java集合框架提供的一种散列表数据结构。
 
-它实现了[Map接口](/java-programming/map "Java Map Interface")。
+它实现了[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map Interface")。
 
 ![Java WeakHashMap实现了Map接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-weakhashmap.png)  
 

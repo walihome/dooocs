@@ -12,8 +12,8 @@ Java的`Collections`框架中的`BlockingQueue`接口扩展了`Queue`接口。�
 
 为了使用`BlockingQueue`的功能，我们需要使用实现它的类。
 
-  * [ArrayBlockingQueue](/java-programming/arrayblockingqueue "Java ArrayBlockingQueue Class")
-  * [LinkedBlockingQueue](/java-programming/linkedblockingqueue "Java LinkedBlockingQueue Class")
+  * [ArrayBlockingQueue](https://www.dooocs.com/img/java-programming/arrayblockingqueue "Java ArrayBlockingQueue Class")
+  * [LinkedBlockingQueue](https://www.dooocs.com/img/java-programming/linkedblockingqueue "Java LinkedBlockingQueue Class")
 
 
 

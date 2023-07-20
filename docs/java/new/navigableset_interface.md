@@ -2,7 +2,7 @@
 
 Java Collections 框架中的 `NavigableSet` 接口提供了在集合元素之间进行导航的功能。
 
-它被认为是 [SortedSet](/java-programming/sortedset "Java SortedSet 接口") 的一种类型。
+它被认为是 [SortedSet](https://www.dooocs.com/img/java-programming/sortedset "Java SortedSet 接口") 的一种类型。
 
 * * *
 

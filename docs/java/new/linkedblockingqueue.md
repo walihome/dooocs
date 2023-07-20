@@ -2,7 +2,7 @@
 
 Java的`Collections`框架中的`LinkedBlockingQueue`类提供了使用链表实现的阻塞队列。
 
-它实现了[Java BlockingQueue接口](/java-programming/blockingqueue "Java BlockingQueue接口")。
+它实现了[Java BlockingQueue接口](https://www.dooocs.com/img/java-programming/blockingqueue "Java BlockingQueue接口")。
 
 ![ArrayBlockingQueue实现了Java中的BlockingQueue接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-blockingqueue.png)  
 
@@ -52,7 +52,7 @@ Java的`Collections`框架中的`LinkedBlockingQueue`类提供了使用链表实
 
 ## LinkedBlockingQueue的方法
 
-`LinkedBlockingQueue`类提供了[BlockingQueue接口](/java-programming/blockingqueue "Java BlockingQueue接口")中所有方法的实现。
+`LinkedBlockingQueue`类提供了[BlockingQueue接口](https://www.dooocs.com/img/java-programming/blockingqueue "Java BlockingQueue接口")中所有方法的实现。
 
 这些方法用于在链式阻塞队列中插入、访问和删除元素。
 

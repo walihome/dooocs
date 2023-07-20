@@ -1,6 +1,6 @@
 # Java 类型转换
 
-在学习**Java类型转换**之前，请确保你了解[Java数据类型](/java-programming/variables-primitive-data-types "Java数据类型")。
+在学习**Java类型转换**之前，请确保你了解[Java数据类型](https://www.dooocs.com/img/java-programming/variables-primitive-data-types "Java数据类型")。
 
 * * *
 
@@ -125,4 +125,4 @@
 
     String data = String.valueOf(num);
 
-在这里，我们使用了[Java String类](/java-programming/string "Java String")的`
+在这里，我们使用了[Java String类](https://www.dooocs.com/img/java-programming/string "Java String")的`

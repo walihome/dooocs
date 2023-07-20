@@ -150,7 +150,7 @@ str是String类的实例吗？true
 
 在上面的示例中，我们使用`instanceof`运算符检查了`str`是否是`String`类的实例。由于`str`确实是`String`类的实例，所以`instanceof`运算符返回`true`。
 
-想要了解更多，请访问 [Java instanceof](/java-programming/instanceof)。
+想要了解更多，请访问 [Java instanceof](https://www.dooocs.com/img/java-programming/instanceof)。
 
 ---
 
@@ -190,8 +190,8 @@ public class Java {
 
 在上面的示例中，我们使用三元运算符检查了年份是否为闰年。如果`februaryDays`等于28，那么结果为"不是闰年"，否则结果为"闰年"。
 
-想要了解更多，请访问 [Java三元运算符](/java-programming/ternary-operator)。
+想要了解更多，请访问 [Java三元运算符](https://www.dooocs.com/img/java-programming/ternary-operator)。
 
 ---
 
-现在你已经了解了Java运算符，是时候了解运算符的优先级顺序了。想要了解更多，请访问 [Java运算符优先级](/java-programming/operator-precedence)。
+现在你已经了解了Java运算符，是时候了解运算符的优先级顺序了。想要了解更多，请访问 [Java运算符优先级](https://www.dooocs.com/img/java-programming/operator-precedence)。

@@ -6,7 +6,7 @@
 
   * for循环
   * [while循环](https://www.programiz.com/java-programming/do-while-loop#syntax-while "Java while循环")
-  * [do...while循环](/java-programming/do-while-loop#do-while-loop "Java do...while循环")
+  * [do...while循环](https://www.dooocs.com/img/java-programming/do-while-loop#do-while-loop "Java do...while循环")
 
 本教程重点介绍for循环。你将在接下来的教程中学习其他类型的循环。
 
@@ -27,7 +27,7 @@ Java `for`循环用于多次执行一段代码。`for`循环的语法如下：
   3. **updateExpression**更新**initialExpression**的值。
   4. 再次评估**condition**。此过程持续进行，直到**condition**为`false`。
 
-要了解更多关于条件的内容，请访问[Java关系运算符](/java-programming/operators#equality-relational "Java关系运算符")和[逻辑运算符](/java-programming/operators#logical "Java逻辑运算符")。
+要了解更多关于条件的内容，请访问[Java关系运算符](https://www.dooocs.com/img/java-programming/operators#equality-relational "Java关系运算符")和[逻辑运算符](https://www.dooocs.com/img/java-programming/operators#logical "Java逻辑运算符")。
 
 * * *
 

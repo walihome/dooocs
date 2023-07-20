@@ -36,7 +36,7 @@ Java ArrayList 实现
 
 在上面的程序中，我们使用的是 `Integer` 而不是 `int`。这是因为在创建数组列表时无法使用原始类型。相反，我们必须使用相应的包装类。
 
-在这里，`Integer` 是 `int` 的对应包装类。要了解更多信息，请访问[Java包装类](/java-programming/wrapper)。
+在这里，`Integer` 是 `int` 的对应包装类。要了解更多信息，请访问[Java包装类](https://www.dooocs.com/img/java-programming/wrapper)。
 
 * * *
 
@@ -112,7 +112,7 @@ class Main {
 
 在上面的示例中，我们创建了一个名为 `languages` 的 `ArrayList`。这里，我们使用 `add()` 方法向 `languages` 添加元素。
 
-要了解更多信息，请访问[Java ArrayList add()](/java-programming/library/arraylist/add)。
+要了解更多信息，请访问[Java ArrayList add()](https://www.dooocs.com/img/java-programming/library/arraylist/add)。
 
 ## 在ArrayList中添加元素的其他方法
 
@@ -217,7 +217,7 @@ ArrayList: [Java, Python, C++]
 Array: Java, Python, C++,
 ```
 
-在上面的示例中，`toArray()`方法将`languages` ArrayList转换为数组，并将其存储在`arr`中。要了解更多，请访问[Java ArrayList toArray()](/java-programming/library/arraylist/toarray)。
+在上面的示例中，`toArray()`方法将`languages` ArrayList转换为数组，并将其存储在`arr`中。要了解更多，请访问[Java ArrayList toArray()](https://www.dooocs.com/img/java-programming/library/arraylist/toarray)。
 
 如何将数组转换为ArrayList？
 

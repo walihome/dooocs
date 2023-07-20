@@ -58,7 +58,7 @@ Java是一种面向对象的编程语言。面向对象的核心概念是将复�
 
 在这里，Bicycle是一个原型。现在，我们可以使用该原型创建任意数量的自行车。而且，所有自行车都将共享原型的字段和方法。
 
-> **注意**：我们使用了关键字`private`和`public`。这些被称为访问修饰符。要了解更多信息，请访问[Java访问修饰符](/java-programming/access-modifiers)。
+> **注意**：我们使用了关键字`private`和`public`。这些被称为访问修饰符。要了解更多信息，请访问[Java访问修饰符](https://www.dooocs.com/img/java-programming/access-modifiers)。
 
 * * *
 
@@ -78,7 +78,7 @@ Java是一种面向对象的编程语言。面向对象的核心概念是将复�
     
     Bicycle touringBicycle = new Bicycle();
 
-我们使用`new`关键字与类的构造函数一起创建对象。构造函数类似于方法，并与类具有相同的名称。例如，`Bicycle()`是Bicycle类的构造函数。要了解更多信息，请访问[Java构造函数](/java-programming/constructors)。
+我们使用`new`关键字与类的构造函数一起创建对象。构造函数类似于方法，并与类具有相同的名称。例如，`Bicycle()`是Bicycle类的构造函数。要了解更多信息，请访问[Java构造函数](https://www.dooocs.com/img/java-programming/constructors)。
 
 在这里，sportsBicycle和touringBicycle是对象的名称。我们可以使用它们来访问类的字段和方法。
 

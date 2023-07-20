@@ -2,9 +2,9 @@
 
 Java集合框架中的`EnumSet`类提供了对单个枚举元素的集合实现。
 
-在学习`EnumSet`之前，请确保了解[Java Enums](/java-programming/enums "Java枚举")。
+在学习`EnumSet`之前，请确保了解[Java Enums](https://www.dooocs.com/img/java-programming/enums "Java枚举")。
 
-它实现了[Set接口](/java-programming/set "Java集合接口")。
+它实现了[Set接口](https://www.dooocs.com/img/java-programming/set "Java集合接口")。
 
 ![Java EnumSet类实现了Java Set接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-enumset.png)  
 

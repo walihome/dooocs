@@ -2,7 +2,7 @@
 
 `super` 关键字在 Java 中用于子类访问父类的成员（属性、构造函数和方法）。
 
-在学习 `super` 关键字之前，请确保了解 [Java 继承](/java-programming/inheritance "Java inheritance") 的相关知识。
+在学习 `super` 关键字之前，请确保了解 [Java 继承](https://www.dooocs.com/img/java-programming/inheritance "Java inheritance") 的相关知识。
 
 * * *
 
@@ -18,7 +18,7 @@
 
 ## 1\. 访问被重写的父类方法
 
-如果父类和子类中都定义了同名的方法，则子类中的方法会覆盖父类中的方法。这被称为 [方法重写](/java-programming/method-overriding "Java Method Overriding")。
+如果父类和子类中都定义了同名的方法，则子类中的方法会覆盖父类中的方法。这被称为 [方法重写](https://www.dooocs.com/img/java-programming/method-overriding "Java Method Overriding")。
 
 ### 示例 1: 方法重写
     

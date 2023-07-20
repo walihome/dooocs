@@ -4,7 +4,7 @@
 
 变量是内存中的一个位置（存储区域），用于保存数据。
 
-为了表示存储区域，每个变量都应该被赋予一个唯一的名字（标识符）。查看更多关于[Java标识符](/java-programming/keywords-identifiers)的信息。
+为了表示存储区域，每个变量都应该被赋予一个唯一的名字（标识符）。查看更多关于[Java标识符](https://www.dooocs.com/img/java-programming/keywords-identifiers)的信息。
 
 * * *
 
@@ -17,7 +17,7 @@
 
 这里，speedLimit是int数据类型的变量，我们将值80赋给它。
 
-int数据类型表示该变量只能保存整数。要了解更多，请访问[Java数据类型](/java-programming/variables-primitive-data-types)。
+int数据类型表示该变量只能保存整数。要了解更多，请访问[Java数据类型](https://www.dooocs.com/img/java-programming/variables-primitive-data-types)。
 
 在示例中，我们在声明时给变量赋了值。但这不是强制性的。
 

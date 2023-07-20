@@ -94,7 +94,7 @@ Java封装是面向对象编程的一个关键特性之一。封装指的是将�
 
 数据隐藏是通过隐藏实现细节来限制数据成员访问的一种方式。封装也为数据隐藏提供了一种方法。
 
-我们可以使用[访问修饰符](/java-programming/access-modifiers)来实现数据隐藏。例如，
+我们可以使用[访问修饰符](https://www.dooocs.com/img/java-programming/access-modifiers)来实现数据隐藏。例如，
 
 ### 示例2：使用private关键字进行数据隐藏
     

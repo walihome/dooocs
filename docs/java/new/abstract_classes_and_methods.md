@@ -32,7 +32,7 @@ abstract class Language {
 }
 ```
 
-要了解非抽象方法，请访问[Java方法](/java-programming/methods)。在这里，我们将学习抽象方法。
+要了解非抽象方法，请访问[Java方法](https://www.dooocs.com/img/java-programming/methods)。在这里，我们将学习抽象方法。
 
 ---
 

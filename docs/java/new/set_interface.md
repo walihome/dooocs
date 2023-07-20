@@ -12,10 +12,10 @@ Java `Collections` 框架的 `Set` 接口提供了 Java 中数学集合的功能
 
 为了使用 `Set` 接口的功能，我们可以使用以下类：
 
-  * [HashSet](/java-programming/hashset "Java HashSet 类")
-  * [LinkedHashSet](/java-programming/linkedhashset "Java LinkedHashSet 类")
-  * [EnumSet](/java-programming/enumset "Java EnumSet 类")
-  * [TreeSet](/java-programming/treeset "Java TreeSet 类")
+  * [HashSet](https://www.dooocs.com/img/java-programming/hashset "Java HashSet 类")
+  * [LinkedHashSet](https://www.dooocs.com/img/java-programming/linkedhashset "Java LinkedHashSet 类")
+  * [EnumSet](https://www.dooocs.com/img/java-programming/enumset "Java EnumSet 类")
+  * [TreeSet](https://www.dooocs.com/img/java-programming/treeset "Java TreeSet 类")
 
 这些类在 `Collections` 框架中定义，并实现了 `Set` 接口。
 
@@ -28,8 +28,8 @@ Java `Collections` 框架的 `Set` 接口提供了 Java 中数学集合的功能
 
 `Set` 接口还被以下子接口扩展：
 
-  * [SortedSet](/java-programming/sortedset "Java SortedSet 接口")
-  * [NavigableSet](/java-programming/navigableset "Java NavigableSet 接口")
+  * [SortedSet](https://www.dooocs.com/img/java-programming/sortedset "Java SortedSet 接口")
+  * [NavigableSet](https://www.dooocs.com/img/java-programming/navigableset "Java NavigableSet 接口")
 
 ![类 EnumSet、HashSet、LinkedHastSet 和 TreeSet 实现了 Set 接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-set.png)  
 

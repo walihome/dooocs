@@ -76,7 +76,7 @@ String: Hello! World
 Length: 12
 ```
 
-在上面的示例中，`length()`方法计算字符串中的字符总数并返回其长度。要了解更多信息，请访问[Java String length()](/java-programming/library/string/length)。
+在上面的示例中，`length()`方法计算字符串中的字符总数并返回其长度。要了解更多信息，请访问[Java String length()](https://www.dooocs.com/img/java-programming/library/string/length)。
 
 * * *
 
@@ -123,7 +123,7 @@ String joinedString = first.concat(second);
 
 这里，`concat()`方法将第二个字符串连接到第一个字符串，并将结果赋值给joinedString变量。
 
-我们还可以使用Java中的`+`运算符连接两个字符串。要了解更多信息，请访问[Java String concat()](/java-programming/library/string/concat)。
+我们还可以使用Java中的`+`运算符连接两个字符串。要了解更多信息，请访问[Java String concat()](https://www.dooocs.com/img/java-programming/library/string/concat)。
 
 * * *
 
@@ -179,41 +179,41 @@ Strings first and second are equal:```
 思路一步步来，我们来翻译待翻译内容： 
 
 ```compareto) | compares two strings in the dictionary order  
-[compareToIgnoreCase()](/java-programming/library/string/comparetoignorecase) | compares two strings ignoring case differences  
-[trim()](/java-programming/library/string/trim) | removes any leading and trailing whitespaces  
-[format()](/java-programming/library/string/format) | returns a formatted string  
-[split()](/java-programming/library/string/split) | breaks the string into an array of strings  
-[toLowerCase()](/java-programming/library/string/tolowercase) | converts the string to lowercase  
-[toUpperCase()](/java-programming/library/string/touppercase) | converts the string to uppercase  
-[valueOf()](/java-programming/library/string/valueof) | returns the string representation of the specified argument  
-[toCharArray()](/java-programming/library/string/tochararray) | converts the string to a `char` array  
-[matches()](/java-programming/library/string/matches) | checks whether the string matches the given regex  
-[startsWith()](/java-programming/library/string/startswith) | checks if the string begins with the given string  
-[endsWith()](/java-programming/library/string/endswith) | checks if the string ends with the given string  
-[isEmpty()](/java-programming/library/string/isempty) | checks whether a string is empty of not  
-[intern()](/java-programming/library/string/intern) | returns the canonical representation of the string  
-[contentEquals()](/java-programming/library/string/contentequals) | checks whether the string is equal to charSequence  
-[hashCode()](/java-programming/library/string/hashcode) | returns a hash code for the string  
-[subSequence()](/java-programming/library/string/subsequence) | returns a subsequence from the string
+[compareToIgnoreCase()](https://www.dooocs.com/img/java-programming/library/string/comparetoignorecase) | compares two strings ignoring case differences  
+[trim()](https://www.dooocs.com/img/java-programming/library/string/trim) | removes any leading and trailing whitespaces  
+[format()](https://www.dooocs.com/img/java-programming/library/string/format) | returns a formatted string  
+[split()](https://www.dooocs.com/img/java-programming/library/string/split) | breaks the string into an array of strings  
+[toLowerCase()](https://www.dooocs.com/img/java-programming/library/string/tolowercase) | converts the string to lowercase  
+[toUpperCase()](https://www.dooocs.com/img/java-programming/library/string/touppercase) | converts the string to uppercase  
+[valueOf()](https://www.dooocs.com/img/java-programming/library/string/valueof) | returns the string representation of the specified argument  
+[toCharArray()](https://www.dooocs.com/img/java-programming/library/string/tochararray) | converts the string to a `char` array  
+[matches()](https://www.dooocs.com/img/java-programming/library/string/matches) | checks whether the string matches the given regex  
+[startsWith()](https://www.dooocs.com/img/java-programming/library/string/startswith) | checks if the string begins with the given string  
+[endsWith()](https://www.dooocs.com/img/java-programming/library/string/endswith) | checks if the string ends with the given string  
+[isEmpty()](https://www.dooocs.com/img/java-programming/library/string/isempty) | checks whether a string is empty of not  
+[intern()](https://www.dooocs.com/img/java-programming/library/string/intern) | returns the canonical representation of the string  
+[contentEquals()](https://www.dooocs.com/img/java-programming/library/string/contentequals) | checks whether the string is equal to charSequence  
+[hashCode()](https://www.dooocs.com/img/java-programming/library/string/hashcode) | returns a hash code for the string  
+[subSequence()](https://www.dooocs.com/img/java-programming/library/string/subsequence) | returns a subsequence from the string
 ```
 
 翻译结果为：
 
 ```compareto) | 将两个字符串按照字典顺序进行比较  
-[compareToIgnoreCase()](/java-programming/library/string/comparetoignorecase) | 忽略大小写，比较两个字符串  
-[trim()](/java-programming/library/string/trim) | 移除字符串前后的空白字符  
-[format()](/java-programming/library/string/format) | 返回格式化后的字符串  
-[split()](/java-programming/library/string/split) | 将字符串分割成字符串数组  
-[toLowerCase()](/java-programming/library/string/tolowercase) | 将字符串转换为小写  
-[toUpperCase()](/java-programming/library/string/touppercase) | 将字符串转换为大写  
-[valueOf()](/java-programming/library/string/valueof) | 返回指定参数的字符串表示形式  
-[toCharArray()](/java-programming/library/string/tochararray) | 将字符串转换为字符数组  
-[matches()](/java-programming/library/string/matches) | 检查字符串是否与给定的正则表达式匹配  
-[startsWith()](/java-programming/library/string/startswith) | 检查字符串是否以给定的字符串开头  
-[endsWith()](/java-programming/library/string/endswith) | 检查字符串是否以给定的字符串结尾  
-[isEmpty()](/java-programming/library/string/isempty) | 检查字符串是否为空  
-[intern()](/java-programming/library/string/intern) | 返回字符串的规范表示形式  
-[contentEquals()](/java-programming/library/string/contentequals) | 检查字符串是否等于charSequence  
-[hashCode()](/java-programming/library/string/hashcode) | 返回字符串的哈希码  
-[subSequence()](/java-programming/library/string/subsequence) | 从字符串中返回一个子序列
+[compareToIgnoreCase()](https://www.dooocs.com/img/java-programming/library/string/comparetoignorecase) | 忽略大小写，比较两个字符串  
+[trim()](https://www.dooocs.com/img/java-programming/library/string/trim) | 移除字符串前后的空白字符  
+[format()](https://www.dooocs.com/img/java-programming/library/string/format) | 返回格式化后的字符串  
+[split()](https://www.dooocs.com/img/java-programming/library/string/split) | 将字符串分割成字符串数组  
+[toLowerCase()](https://www.dooocs.com/img/java-programming/library/string/tolowercase) | 将字符串转换为小写  
+[toUpperCase()](https://www.dooocs.com/img/java-programming/library/string/touppercase) | 将字符串转换为大写  
+[valueOf()](https://www.dooocs.com/img/java-programming/library/string/valueof) | 返回指定参数的字符串表示形式  
+[toCharArray()](https://www.dooocs.com/img/java-programming/library/string/tochararray) | 将字符串转换为字符数组  
+[matches()](https://www.dooocs.com/img/java-programming/library/string/matches) | 检查字符串是否与给定的正则表达式匹配  
+[startsWith()](https://www.dooocs.com/img/java-programming/library/string/startswith) | 检查字符串是否以给定的字符串开头  
+[endsWith()](https://www.dooocs.com/img/java-programming/library/string/endswith) | 检查字符串是否以给定的字符串结尾  
+[isEmpty()](https://www.dooocs.com/img/java-programming/library/string/isempty) | 检查字符串是否为空  
+[intern()](https://www.dooocs.com/img/java-programming/library/string/intern) | 返回字符串的规范表示形式  
+[contentEquals()](https://www.dooocs.com/img/java-programming/library/string/contentequals) | 检查字符串是否等于charSequence  
+[hashCode()](https://www.dooocs.com/img/java-programming/library/string/hashcode) | 返回字符串的哈希码  
+[subSequence()](https://www.dooocs.com/img/java-programming/library/string/subsequence) | 从字符串中返回一个子序列
 ```

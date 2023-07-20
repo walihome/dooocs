@@ -25,7 +25,7 @@ class Animal {
 
 ## 访问修饰符的类型
 
-在了解访问修饰符的类型之前，请确保您了解[Java Packages](/java-programming/packages-import "Java Packages")。
+在了解访问修饰符的类型之前，请确保您了解[Java Packages](https://www.dooocs.com/img/java-programming/packages-import "Java Packages")。
 
 Java有四个访问修饰符关键字，它们是：
 

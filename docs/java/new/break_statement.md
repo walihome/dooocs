@@ -2,13 +2,13 @@
 
 在使用循环时，有时候希望跳过循环内的某些语句或者立即终止循环而不检查测试表达式。
 
-这种情况下，使用`break`和`continue`语句。你将在下一个教程中了解到关于[Java continue语句](/java-programming/continue-statement "Java continue Statement")。
+这种情况下，使用`break`和`continue`语句。你将在下一个教程中了解到关于[Java continue语句](https://www.dooocs.com/img/java-programming/continue-statement "Java continue Statement")。
 
 * * *
 
 在Java中，`break`语句立即终止循环，并且程序控制转移到循环后面的下一条语句。
 
-它几乎总是与决策语句([Java if...else语句](/java-programming/if-else-statement))一起使用。
+它几乎总是与决策语句([Java if...else语句](https://www.dooocs.com/img/java-programming/if-else-statement))一起使用。
 
 以下是Java中`break`语句的语法：
 
@@ -50,7 +50,7 @@ class Test {
 4
 ```
 
-在上面的程序中，我们使用`for`循环来打印每次迭代中的i的值。要了解`for`循环的工作原理，请访问[Java for循环](/java-programming/for-loop "Java for Loop")。注意这行代码：
+在上面的程序中，我们使用`for`循环来打印每次迭代中的i的值。要了解`for`循环的工作原理，请访问[Java for循环](https://www.dooocs.com/img/java-programming/for-loop "Java for Loop")。注意这行代码：
 
 ```java
 if (i == 5) {
@@ -66,7 +66,7 @@ if (i == 5) {
 
 以下程序计算用户输入的数字的总和，直到用户输入负数为止。
 
-我们使用`Scanner`对象获取用户输入。要了解更多关于`Scanner`的信息，请访问[Java Scanner](/java-programming/scanner "Java Scanner")。
+我们使用`Scanner`对象获取用户输入。要了解更多关于`Scanner`的信息，请访问[Java Scanner](https://www.dooocs.com/img/java-programming/scanner "Java Scanner")。
 
 ```java
 import java.util.Scanner;
@@ -121,7 +121,7 @@ if (number < 0.0) {
 
 ## Java break和嵌套循环
 
-对于[嵌套循环](/java-programming/nested-loop "Java nested Loop")，`break`语句会终止内部循环。
+对于[嵌套循环](https://www.dooocs.com/img/java-programming/nested-loop "Java nested Loop")，`break`语句会终止内部循环。
 
 ![在嵌套循环中，break语句终止最内层while循环。](https://cdn.programiz.com/sites/tutorial2program/files/nested-while-loop-break.jpg)  
 带有嵌套循环的break语句的工作原理

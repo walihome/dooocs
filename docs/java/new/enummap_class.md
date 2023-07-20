@@ -2,11 +2,11 @@
 
 Java集合框架的`EnumMap`类为枚举元素提供了映射实现。
 
-在`EnumMap`中，枚举元素被用作**键**。它实现了[Map接口](/java-programming/map "Java Map Interface")。
+在`EnumMap`中，枚举元素被用作**键**。它实现了[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map Interface")。
 
 ![Java EnumMap实现了Map接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-enummap.png)  
 
-在学习`EnumMap`之前，请确保了解[Java Enums](/java-programming/enums "Java Enums")。
+在学习`EnumMap`之前，请确保了解[Java Enums](https://www.dooocs.com/img/java-programming/enums "Java Enums")。
 
 ## 创建EnumMap
 

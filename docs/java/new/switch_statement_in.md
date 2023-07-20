@@ -30,7 +30,7 @@ switch (表达式) {
   * 如果表达式与值1匹配，则执行`case 值1`的代码。类似地，如果表达式与值2匹配，则执行`case 值2`的代码。
   * 如果没有匹配项，则执行**default case**的代码。
 
-> **注意**：switch-case语句的工作原理与[Java if...else...if梯形结构](/java-programming/if-else-statement#if-else-ladder)类似。然而，switch语句的语法更清晰，更易读和编写。
+> **注意**：switch-case语句的工作原理与[Java if...else...if梯形结构](https://www.dooocs.com/img/java-programming/if-else-statement#if-else-ladder)类似。然而，switch语句的语法更清晰，更易读和编写。
 
 ---
 
@@ -92,7 +92,7 @@ break;
 
 在这里，尺寸变量被赋值为`"大号"`。
 
-**推荐阅读**：[使用Java switch语句创建一个简单的计算器](/java-programming/examples/calculator-switch-case)
+**推荐阅读**：[使用Java switch语句创建一个简单的计算器](https://www.dooocs.com/img/java-programming/examples/calculator-switch-case)
 
 ---
 
@@ -154,7 +154,7 @@ Default case
 
 因此，`case 2`之后的所有case也会被执行。
 
-这就是为什么需要使用`break`语句以终止匹配的case之后的**switch-case**语句。要了解更多信息，请访问[Java break语句](/java-programming/break-statement)。
+这就是为什么需要使用`break`语句以终止匹配的case之后的**switch-case**语句。要了解更多信息，请访问[Java break语句](https://www.dooocs.com/img/java-programming/break-statement)。
 
 ---
 

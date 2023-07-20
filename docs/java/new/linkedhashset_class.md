@@ -2,11 +2,11 @@
 
 Java的集合框架中，`LinkedHashSet`类提供了哈希表和链表数据结构的功能。
 
-它实现了[Set接口](/java-programming/set "Java Set Interface")。
+它实现了[Set接口](https://www.dooocs.com/img/java-programming/set "Java Set Interface")。
 
 ![Java LinkedHashSet类实现了Set接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-linkedhashset.png)
 
-`LinkedHashSet`中的元素存储在哈希表中，类似于[HashSet](/java-programming/hashset "Java HashSet Class")。
+`LinkedHashSet`中的元素存储在哈希表中，类似于[HashSet](https://www.dooocs.com/img/java-programming/hashset "Java HashSet Class")。
 
 然而，链式哈希集在内部为所有元素维护了一个双向链表。链表定义了元素在哈希表中插入的顺序。
 

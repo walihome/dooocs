@@ -6,7 +6,7 @@
 
 ![Java FileInputStream 是 InputStream 类的子类。](https://cdn.programiz.com/sites/tutorial2program/files/java-fileinputstream.png)
 
-在我们学习 `FileInputStream` 之前，请确保了解 [Java Files](/java-programming/file "Java Files")。
+在我们学习 `FileInputStream` 之前，请确保了解 [Java Files](https://www.dooocs.com/img/java-programming/file "Java Files")。
 
 ---
 

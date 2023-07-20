@@ -2,7 +2,7 @@
 
 Java Collections 框架的 `HashSet` 类提供了散列表数据结构的功能。
 
-它实现了 [Set 接口](/java-programming/set "Java Set Interface")。
+它实现了 [Set 接口](https://www.dooocs.com/img/java-programming/set "Java Set Interface")。
 
 ![Java HashSet 类实现了 Set 接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-hashset.png)  
 

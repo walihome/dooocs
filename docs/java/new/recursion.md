@@ -15,7 +15,7 @@ Java 递归的工作原理
 
 为了停止递归调用，我们需要在方法内部提供一些条件。否则，该方法将被无限调用。
 
-因此，我们使用[if...else语句](/java-programming/if-else-statement "Java if...else")（或类似的方法）来终止方法内部的递归调用。
+因此，我们使用[if...else语句](https://www.dooocs.com/img/java-programming/if-else-statement "Java if...else")（或类似的方法）来终止方法内部的递归调用。
 
 * * *
 

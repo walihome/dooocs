@@ -46,7 +46,7 @@ Java programming is interesting.
 
 - `print()` - 它打印引号内的字符串。
 - `println()` - 它像`print()`方法一样打印引号内的字符串，然后光标移到下一行的开头。
-- `printf()` - 它提供字符串格式化（类似于[C/C++编程中的printf](/cpp-programming/library-function/cstdio/printf "C/C++编程中的printf")）。
+- `printf()` - 它提供字符串格式化（类似于[C/C++编程中的printf](https://www.dooocs.com/cpp-programming/library-function/cstdio/printf "C/C++编程中的printf")）。
 
 ---
 
@@ -151,7 +151,7 @@ Java提供了不同的方式来从用户获取输入。但是，在本教程中�
 import java.util.Scanner;
 ```
 
-要了解更多关于在Java中导入包的信息，请访问[Java导入包](/java-programming/packages-import "Java导入包")。
+要了解更多关于在Java中导入包的信息，请访问[Java导入包](https://www.dooocs.com/img/java-programming/packages-import "Java导入包")。
 
 然后，我们需要创建`Scanner`类的对象。我们可以使用该对象从用户获取输入。
 

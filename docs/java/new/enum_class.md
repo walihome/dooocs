@@ -110,7 +110,7 @@ Test t1 = new Test(Size.MEDIUM);
 
 它将调用Test类内的`Test()`构造函数。现在，变量pizzaSize被赋予了MEDIUM常量。
 
-根据这个值，执行了其中一个[switch语句](/java-programming/switch-statement)的case。
+根据这个值，执行了其中一个[switch语句](https://www.dooocs.com/img/java-programming/switch-statement)的case。
 
 ---
 

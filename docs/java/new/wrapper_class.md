@@ -69,7 +69,7 @@ double b = 5.6;
 Double bObj = b;
 ```
 
-这个过程称为**自动装箱**。要了解更多信息，请访问[Java自动装箱和拆箱](/java-programming/autoboxing-unboxing "Java自动装箱和拆箱")。
+这个过程称为**自动装箱**。要了解更多信息，。
 
 > **注意**：我们也可以使用`Wrapper`类的构造函数将基本类型转换为包装对象。但是在Java 9之后，构造函数的使用被废弃。
 
@@ -120,7 +120,7 @@ Double bObj = Double.valueOf(5.55);
 double b = bObj;
 ```
 
-这个过程称为**拆箱**。要了解更多信息，请访问[Java自动装箱和拆箱](/java-programming/autoboxing-unboxing "Java自动装箱和拆箱")。
+这个过程称为**拆箱**。要了解更多信息
 
 * * *
 

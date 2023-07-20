@@ -2,7 +2,7 @@
 
 Java的`TreeSet`类是Java集合框架中提供树数据结构功能的类。
 
-它扩展了[导航集接口](/java-programming/navigableset "Java NavigableSet Interface")。
+它扩展了[导航集接口](https://www.dooocs.com/img/java-programming/navigableset "Java NavigableSet Interface")。
 
 ![Java TreeSet类实现了NavigableSet接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-treeset.png)
 

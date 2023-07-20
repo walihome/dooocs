@@ -4,7 +4,7 @@
 
 Java中的构造函数类似于在创建类的对象时调用的方法。
 
-与[Java方法](/java-programming/methods)不同，构造函数的名称与类名相同，并且没有返回类型。例如，
+与[Java方法](https://www.dooocs.com/img/java-programming/methods)不同，构造函数的名称与类名相同，并且没有返回类型。例如，
 
 ```java
 class Test {
@@ -115,7 +115,7 @@ Value of i: 5
 
 一旦构造函数被声明为`private`，就不能从类外部访问它。因此，使用私有构造函数禁止从类外部创建对象。
 
-在这里，我们在同一个类内部创建了对象。因此，程序能够访问构造函数。要了解更多信息，请访问[Java实现私有构造函数](/java-programming/examples/private-constructor-implementation)。
+在这里，我们在同一个类内部创建了对象。因此，程序能够访问构造函数。要了解更多信息，请访问[Java实现私有构造函数](https://www.dooocs.com/img/java-programming/examples/private-constructor-implementation)。
 
 但是，如果我们想在类外部创建对象，则需要将构造函数声明为`public`。
 
@@ -144,7 +144,7 @@ class Main {
 ```
 Company name = Programiz
 
-**推荐阅读：** [Java访问修饰符](/java-programming/access-modifiers)
+**推荐阅读：** [Java访问修饰符](https://www.dooocs.com/img/java-programming/access-modifiers)
 
 * * *
 

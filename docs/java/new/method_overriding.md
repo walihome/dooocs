@@ -101,7 +101,7 @@ class Main {
 
 需要注意的是，Java中的构造函数是不会被继承的。因此，在Java中没有构造函数的覆盖概念。
 
-然而，我们可以从子类中调用超类的构造函数。为此，我们使用`super()`。要了解更多信息，请访问[Java超类关键字](/java-programming/super-keyword "Java super keyword")。
+然而，我们可以从子类中调用超类的构造函数。为此，我们使用`super()`。要了解更多信息，请访问[Java超类关键字](https://www.dooocs.com/img/java-programming/super-keyword "Java super keyword")。
 
 * * *
 

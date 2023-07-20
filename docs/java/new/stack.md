@@ -40,7 +40,7 @@ Stack<String> stacks = new Stack<>();
 
 ## 堆栈方法
 
-由于`Stack`类扩展了`Vector`类，它继承了所有的`Vector`方法。要了解不同的`Vector`方法，请访问[Java Vector Class](/java-programming/vector "Java Vector Class")。
+由于`Stack`类扩展了`Vector`类，它继承了所有的`Vector`方法。要了解不同的`Vector`方法，请访问[Java Vector Class](https://www.dooocs.com/img/java-programming/vector "Java Vector Class")。
 
 除了这些方法之外，`Stack`类还包括5个与`Vector`不同的方法。
 

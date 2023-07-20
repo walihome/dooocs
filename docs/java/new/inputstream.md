@@ -10,8 +10,8 @@
 
 为了使用 `InputStream` 的功能，我们可以使用它的子类。其中一些包括：
 
-  * [FileInputStream](/java-programming/fileinputstream "Java FileInputStream 类")
-  * [ByteArrayInputStream](/java-programming/bytearrayinputstream "Java ByteArrayInputStream 类")
+  * [FileInputStream](https://www.dooocs.com/img/java-programming/fileinputstream "Java FileInputStream 类")
+  * [ByteArrayInputStream](https://www.dooocs.com/img/java-programming/bytearrayinputstream "Java ByteArrayInputStream 类")
   * [ObjectInputStream](https://www.programiz.com/java-programming/objectinputstream)
 
 

@@ -46,7 +46,7 @@
 
 ## 2\. Java final 方法
 
-在学习最终方法和最终类之前，请确保您了解[Java继承](/java-programming/inheritance "Java Inheritance")。
+在学习最终方法和最终类之前，请确保您了解[Java继承](https://www.dooocs.com/img/java-programming/inheritance "Java Inheritance")。
 
 在Java中，子类无法覆盖最终方法。例如，
     

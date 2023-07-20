@@ -76,8 +76,8 @@ class Main {
 
 在Java中，我们可以通过以下几种方式实现多态性：
 
-  1. [方法重写](/java-programming/method-overriding)
-  2. [方法重载](/java-programming/method-overloading)
+  1. [方法重写](https://www.dooocs.com/img/java-programming/method-overriding)
+  2. [方法重载](https://www.dooocs.com/img/java-programming/method-overloading)
   3. 运算符重载
 
 

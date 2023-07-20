@@ -10,10 +10,10 @@
 
 为了使用`List`接口的功能，我们可以使用以下这些类：
 
-- [ArrayList](/java-programming/arraylist "Java ArrayList类")
-- [LinkedList](/java-programming/linkedlist "Java LinkedList类")
-- [Vector](/java-programming/vector "Java Vector类")
-- [Stack](/java-programming/stack "Java Stack类")
+- [ArrayList](https://www.dooocs.com/img/java-programming/arraylist "Java ArrayList类")
+- [LinkedList](https://www.dooocs.com/img/java-programming/linkedlist "Java LinkedList类")
+- [Vector](https://www.dooocs.com/img/java-programming/vector "Java Vector类")
+- [Stack](https://www.dooocs.com/img/java-programming/stack "Java Stack类")
 
 ![在Java中实现List接口的类](https://cdn.programiz.com/sites/tutorial2program/files/Java-list-interface.png)
 

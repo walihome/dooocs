@@ -86,4 +86,4 @@
 
 
 
-现在我们了解了异常，接下来我们将在下一个教程中学习[处理异常](/java-programming/exception-handling "Java exception handling")。
+现在我们了解了异常，接下来我们将在下一个教程中学习[处理异常](https://www.dooocs.com/img/java-programming/exception-handling "Java exception handling")。

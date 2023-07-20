@@ -10,9 +10,9 @@ Java集合框架的`Queue`接口提供了队列数据结构的功能，它是`Co
 
 为了使用`Queue`的功能，我们需要使用实现它的类:
 
-  * [ArrayDeque](/java-programming/arraydeque "Java ArrayDeque类")
-  * [LinkedList](/java-programming/linkedlist "Java LinkedList类")
-  * [PriorityQueue](/java-programming/priorityqueue "Java PriorityQueue类")
+  * [ArrayDeque](https://www.dooocs.com/img/java-programming/arraydeque "Java ArrayDeque类")
+  * [LinkedList](https://www.dooocs.com/img/java-programming/linkedlist "Java LinkedList类")
+  * [PriorityQueue](https://www.dooocs.com/img/java-programming/priorityqueue "Java PriorityQueue类")
 
 
 
@@ -121,7 +121,7 @@ Removed Element: 1
 Updated Queue: [2, 3]
 ```
 
-要了解更多，请访问[Java LinkedList](/java-programming/linkedlist "Java LinkedList")。
+要了解更多，请访问[Java LinkedList](https://www.dooocs.com/img/java-programming/linkedlist "Java LinkedList")。
 
 **2. 实现PriorityQueue类**
     

@@ -39,8 +39,8 @@ class HelloWorld {
 
 要了解更多信息，请访问以下链接：
 
-  * [Java InputStream 类](/java-programming/inputstream "Java InputStream 类")
-  * [Java OutputStream 类](/java-programming/outputstream "Java OutputStream 类")
+  * [Java InputStream 类](https://www.dooocs.com/img/java-programming/inputstream "Java InputStream 类")
+  * [Java OutputStream 类](https://www.dooocs.com/img/java-programming/outputstream "Java OutputStream 类")
 
 ---
 
@@ -52,5 +52,5 @@ class HelloWorld {
 
 要了解更多信息，请访问以下链接：
 
-  * [Java Reader 类](/java-programming/reader "Java Reader 类")
-  * [Java Writer 类](/java-programming/writer "Java Writer 类")
+  * [Java Reader 类](https://www.dooocs.com/img/java-programming/reader "Java Reader 类")
+  * [Java Writer 类](https://www.dooocs.com/img/java-programming/writer "Java Writer 类")

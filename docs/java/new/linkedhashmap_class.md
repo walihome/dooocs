@@ -1,6 +1,6 @@
 # Java LinkedHashMap
 
-Java的`LinkedHashMap`类提供了哈希表和链表实现的[Map接口](/java-programming/map "Java Map interface")。它继承自`HashMap`类，将其条目存储在哈希表中，并在所有条目之间维护一个双向链表以排序条目。
+Java的`LinkedHashMap`类提供了哈希表和链表实现的[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map interface")。它继承自`HashMap`类，将其条目存储在哈希表中，并在所有条目之间维护一个双向链表以排序条目。
 
 ![Java LinkedHashMap类继承了HashMap类](https://cdn.programiz.com/sites/tutorial2program/files/java-linkedhashmap.png)
 

@@ -1,6 +1,6 @@
 # Java多维数组
 
-在学习多维数组之前，请确保你了解[Java数组](/java-programming/arrays "Java Arrays")。
+在学习多维数组之前，请确保你了解[Java数组](https://www.dooocs.com/img/java-programming/arrays "Java Arrays")。
 
 多维数组是一个数组的数组。每个多维数组的元素本身也是一个数组。例如，
 
@@ -109,7 +109,7 @@ class MultidimensionalArray {
 7
 ```
 
-我们还可以使用[for...each循环](/java-programming/enhanced-for-loop "Java for..each Loop")来访问多维数组的元素。例如，
+我们还可以使用[for...each循环](https://www.dooocs.com/img/java-programming/enhanced-for-loop "Java for..each Loop")来访问多维数组的元素。例如，
 
 ```java
 class MultidimensionalArray {

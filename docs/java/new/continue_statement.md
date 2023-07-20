@@ -2,7 +2,7 @@
 
 在使用循环时，有时您可能希望跳过某些语句或终止循环。在这种情况下，会使用 `break` 和 `continue` 语句。
 
-要了解有关 `break` 语句的信息，请访问 [Java break](/java-programming/break-statement)。在本文中，我们将学习有关 `continue` 语句的内容。
+要了解有关 `break` 语句的信息，请访问 [Java break](https://www.dooocs.com/img/java-programming/break-statement)。在本文中，我们将学习有关 `continue` 语句的内容。
 
 * * *
 
@@ -17,7 +17,7 @@
     
     continue;
 
-> **注意**：`continue` 语句几乎总是在决策语句（[if...else 语句](/java-programming/if-else-statement)）中使用。
+> **注意**：`continue` 语句几乎总是在决策语句（[if...else 语句](https://www.dooocs.com/img/java-programming/if-else-statement)）中使用。
 
 * * *
 
@@ -57,7 +57,7 @@ Java continue 语句的工作原理
     9
     10
 
-在上面的程序中，我们使用 `for` 循环来打印每次迭代中 i 的值。要了解 `for` 循环的工作原理，请访问 [Java for 循环](/java-programming/for-loop)。请注意以下语句，
+在上面的程序中，我们使用 `for` 循环来打印每次迭代中 i 的值。要了解 `for` 循环的工作原理，请访问 [Java for 循环](https://www.dooocs.com/img/java-programming/for-loop)。请注意以下语句，
     
     
     if (i > 4 && i < 9) {

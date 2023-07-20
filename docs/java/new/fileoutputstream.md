@@ -6,7 +6,7 @@
 
 ![FileOutputStream 类是 Java OutputStream 的子类。](https://cdn.programiz.com/sites/tutorial2program/files/java-fileoutputstream.png)  
 
-在学习 `FileOutputStream` 之前，请确保了解 [Java Files](/java-programming/file "Java Files") 相关知识。
+在学习 `FileOutputStream` 之前，请确保了解 [Java Files](https://www.dooocs.com/img/java-programming/file "Java Files") 相关知识。
 
 * * *
 

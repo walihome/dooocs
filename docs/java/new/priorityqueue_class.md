@@ -1,8 +1,8 @@
 # Java PriorityQueue
 
-`PriorityQueue`类提供了[堆数据结构](/dsa/heap-data-structure "堆数据结构")的功能。
+`PriorityQueue`类提供了[堆数据结构](https://wwww.dooocs.com/img/dsa/heap-data-structure "堆数据结构")的功能。
 
-它实现了[Queue接口](/java-programming/queue "Java Queue Interface")。
+它实现了[Queue接口](https://www.dooocs.com/img/java-programming/queue "Java Queue Interface")。
 
 ![Java PriorityQueue类实现了Queue接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-priorityqueue-implementation.png)  
 

@@ -54,9 +54,9 @@ Statement outside if block
 
 在程序中，`number < 0`的值为`false`。因此，if语句体内的代码被**跳过**执行。
 
-> **注意：**如果想了解更多关于测试条件的内容，请访问[Java关系运算符](/java-programming/operators#relational)和[Java逻辑运算符](/java-programming/operators#logical)。
+> **注意：**如果想了解更多关于测试条件的内容，请访问[Java关系运算符](https://www.dooocs.com/img/java-programming/operators#relational)和[Java逻辑运算符](https://www.dooocs.com/img/java-programming/operators#logical)。
 
-我们还可以使用[Java字符串](/java-programming/string)作为测试条件。
+我们还可以使用[Java字符串](https://www.dooocs.com/img/java-programming/string)作为测试条件。
 
 ### 示例2：Java if与字符串
 

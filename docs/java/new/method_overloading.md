@@ -1,6 +1,6 @@
 # Java 方法重载
 
-在Java中，如果两个或多个[方法](/java-programming/methods "Java Methods")在参数上有所不同（参数数量不同、参数类型不同或两者都不同），则它们可以拥有相同的名称。这些方法被称为重载方法，这个特性被称为方法重载。例如：
+在Java中，如果两个或多个[方法](https://www.dooocs.com/img/java-programming/methods "Java Methods")在参数上有所不同（参数数量不同、参数类型不同或两者都不同），则它们可以拥有相同的名称。这些方法被称为重载方法，这个特性被称为方法重载。例如：
 
 ```java
 void func() { ... }
@@ -124,7 +124,7 @@ class HelperService {
 
 > **注意**：在Java中，你也可以像方法一样重载构造函数。
 
-**推荐阅读：**[Java 构造函数重载](/java-programming/constructors#overloading "Java Constructor Overloading")
+**推荐阅读：**[Java 构造函数重载](https://www.dooocs.com/img/java-programming/constructors#overloading "Java Constructor Overloading")
 
 * * *
 

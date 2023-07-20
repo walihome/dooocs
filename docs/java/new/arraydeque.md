@@ -216,7 +216,7 @@
 
 ## ArrayDeque作为堆栈使用
 
-在Java中实现一个**LIFO（后进先出）**堆栈时，推荐使用deque来代替[Stack类](/java-programming/stack "Java Stack Class")。`ArrayDeque`类比`Stack`类更快。
+在Java中实现一个**LIFO（后进先出）**堆栈时，推荐使用deque来代替[Stack类](https://www.dooocs.com/img/java-programming/stack "Java Stack Class")。`ArrayDeque`类比`Stack`类更快。
 
 `ArrayDeque`提供了以下方法，可用于实现堆栈。
 
@@ -256,7 +256,7 @@
 
 ## ArrayDeque与LinkedList类的区别
 
-`ArrayDeque`和[Java LinkedList](/java-programming/linkedlist "Java LinkedList")都实现了`Deque`接口。然而，它们之间存在一些差异。
+`ArrayDeque`和[Java LinkedList](https://www.dooocs.com/img/java-programming/linkedlist "Java LinkedList")都实现了`Deque`接口。然而，它们之间存在一些差异。
 
   * `LinkedList`支持`null`元素，而`ArrayDeque`不支持。
   * 链表中的每个节点都包括指向其他节点的链接。这就是为什么`LinkedList`需要比`ArrayDeque`更多的存储空间。

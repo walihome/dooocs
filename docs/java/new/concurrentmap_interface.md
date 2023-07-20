@@ -4,7 +4,7 @@ Java集合框架的`ConcurrentMap`接口提供了一个线程安全的映射。�
 
 `ConcurrentMap`被称为同步映射。
 
-它扩展了[Map接口](/java-programming/map "Java Map接口")。
+它扩展了[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map接口")。
 
 ---
 
@@ -90,4 +90,4 @@ Accessed Value: 1
 Removed Value: 2
 ```
 
-要了解更多关于`ConcurrentHashMap`的信息，请访问[Java ConcurrentHashMap](/java-programming/concurrenthashmap "Java ConcurrentHashMap类")。
+要了解更多关于`ConcurrentHashMap`的信息，请访问[Java ConcurrentHashMap](https://www.dooocs.com/img/java-programming/concurrenthashmap "Java ConcurrentHashMap类")。

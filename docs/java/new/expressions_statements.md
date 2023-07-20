@@ -6,7 +6,7 @@
 
 ## Java 表达式
 
-Java 表达式由[变量](/java-programming/variables-primitive-data-types#variables "Java Variables")、[运算符](/java-programming/operators "Java Operators")、[字面值](/java-programming/variables-primitive-data-types#literals "Java Literals")和方法调用组成。要了解有关方法调用的更多信息，请访问[Java 方法](/java-programming/methods "Java Methods")。例如，
+Java 表达式由[变量](https://www.dooocs.com/img/java-programming/variables-primitive-data-types#variables "Java Variables")、[运算符](https://www.dooocs.com/img/java-programming/operators "Java Operators")、[字面值](https://www.dooocs.com/img/java-programming/variables-primitive-data-types#literals "Java Literals")和方法调用组成。要了解有关方法调用的更多信息，请访问[Java 方法](https://www.dooocs.com/img/java-programming/methods "Java Methods")。例如，
     
     
     int score; 

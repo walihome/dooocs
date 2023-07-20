@@ -18,8 +18,8 @@ class OuterClass {
 
 **推荐阅读：**
 
-* [Java访问修饰符](/java-programming/access-modifiers "Java访问修饰符")
-* [Java静态关键字](/java-programming/static-keyword "Java静态关键字")
+* [Java访问修饰符](https://www.dooocs.com/img/java-programming/access-modifiers "Java访问修饰符")
+* [Java静态关键字](https://www.dooocs.com/img/java-programming/static-keyword "Java静态关键字")
 
 首先我们来看一下非静态嵌套类。
 

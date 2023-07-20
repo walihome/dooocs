@@ -2,7 +2,7 @@
 
 ## Java 数据类型
 
-顾名思义，数据类型指定了可以存储在[Java变量](/java-programming/variables-literals)中的数据类型。
+顾名思义，数据类型指定了可以存储在[Java变量](https://www.dooocs.com/img/java-programming/variables-literals)中的数据类型。
 
 Java是一种静态类型语言。这意味着所有变量在使用之前必须声明。
     

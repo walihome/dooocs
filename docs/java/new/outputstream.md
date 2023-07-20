@@ -10,9 +10,9 @@
 
 为了使用`OutputStream`的功能，我们可以使用它的子类。其中一些子类如下：
 
-  * [FileOutputStream](/java-programming/fileoutputstream "Java FileOutputStream类")
-  * [ByteArrayOutputStream](/java-programming/bytearrayoutputstream "Java ByteArrayOutputStream类")
-  * [ObjectOutputStream](/java-programming/objectoutputstream "Java ObjectOutputStream类")
+  * [FileOutputStream](https://www.dooocs.com/img/java-programming/fileoutputstream "Java FileOutputStream类")
+  * [ByteArrayOutputStream](https://www.dooocs.com/img/java-programming/bytearrayoutputstream "Java ByteArrayOutputStream类")
+  * [ObjectOutputStream](https://www.dooocs.com/img/java-programming/objectoutputstream "Java ObjectOutputStream类")
 
 ![OutputStreamWriter ](https://cdn.programiz.com/sites/tutorial2program/files/java-%20outputstreamwriter.png)  
 OutputStreamWriter

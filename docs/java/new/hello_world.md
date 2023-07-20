@@ -15,7 +15,7 @@ head:
 
 让我们来探索一下Java "Hello, World!"程序的工作原理。
 
-> **注意：** 您可以使用我们的[在线Java编译器](/java-programming/online-compiler/)来运行Java程序。
+> **注意：** 您可以使用我们的[在线Java编译器](https://www.dooocs.com/img/java-programming/online-compiler/)来运行Java程序。
 
 ---
 
@@ -43,7 +43,7 @@ Hello, World!
 
   1. `// Your First Program`  
   
-在Java中，以`//`开头的任何行都是注释。注释是为了帮助阅读代码的用户理解程序的意图和功能而存在的。Java编译器（将Java程序翻译成计算机可以执行的Java字节码的应用程序）完全忽略它。要了解更多信息，请访问[Java注释](/java-programming/comments)。
+在Java中，以`//`开头的任何行都是注释。注释是为了帮助阅读代码的用户理解程序的意图和功能而存在的。Java编译器（将Java程序翻译成计算机可以执行的Java字节码的应用程序）完全忽略它。要了解更多信息，请访问[Java注释](https://www.dooocs.com/img/java-programming/comments)。
   2. `class HelloWorld { ... }`  
   
 在Java中，每个应用程序都以类定义开始。在程序中，HelloWorld是类的名称，类定义如下： 
@@ -58,7 +58,7 @@ Hello, World!
   
 这是主方法。在Java中，每个应用程序都必须包含main方法。Java编译器从main方法开始执行代码。  
   
-**它是如何工作的？** 这是个好问题。然而，在本文中我们不会讨论这个问题。毕竟，这是一个向新手介绍Java编程语言的基础程序。我们将在后面的章节中学习`public`、`static`、`void`以及[方法如何工作](/java-programming/methods)的含义。  
+**它是如何工作的？** 这是个好问题。然而，在本文中我们不会讨论这个问题。毕竟，这是一个向新手介绍Java编程语言的基础程序。我们将在后面的章节中学习`public`、`static`、`void`以及[方法如何工作](https://www.dooocs.com/img/java-programming/methods)的含义。  
   
 暂时只需记住主函数是Java应用程序的入口点，并且在Java程序中是强制性的。Java中main方法的签名如下： 
 ```java
@@ -70,7 +70,7 @@ public static void main(String[] args) {
   4. `System.out.println("Hello, World!");`  
 
 
-上述代码是一个打印语句。它将文本`Hello, World!`打印到标准输出（您的屏幕）。引号内的文本被称为[Java中的字符串](/java-programming/string "Java String")。
+上述代码是一个打印语句。它将文本`Hello, World!`打印到标准输出（您的屏幕）。引号内的文本被称为[Java中的字符串](https://www.dooocs.com/img/java-programming/string "Java String")。
 
 请注意，打印语句位于主函数内部，而主函数位于类定义内部。
 

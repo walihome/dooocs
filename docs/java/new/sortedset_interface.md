@@ -2,7 +2,7 @@
 
 Java集合框架的`SortedSet`接口用于在一个集合中按照一定顺序存储元素。
 
-它继承了[Set接口](/java-programming/set "Java Set Interface")。
+它继承了[Set接口](https://www.dooocs.com/img/java-programming/set "Java Set Interface")。
 
 ![Java SortedSet接口继承了Set接口](https://cdn.programiz.com/sites/tutorial2program/files/java-sortedset.png)
 
@@ -33,7 +33,7 @@ SortedSet<String> animals = new TreeSet<>();
 
 ## SortedSet的方法
 
-`SortedSet`接口包含了[Set接口](/java-programming/set "Java Set Interface")的所有方法。这是因为`Set`是`SortedSet`的超级接口。
+`SortedSet`接口包含了[Set接口](https://www.dooocs.com/img/java-programming/set "Java Set Interface")的所有方法。这是因为`Set`是`SortedSet`的超级接口。
 
 除了`Set`接口中包含的方法外，`SortedSet`接口还包括以下方法：
 
@@ -88,7 +88,7 @@ Last Number: 4
 是否移除了数字2？ true
 ```
 
-要了解更多关于`TreeSet`的信息，请访问[Java TreeSet](/java-programming/treeset "Java TreeSet Class")。
+要了解更多关于`TreeSet`的信息，请访问[Java TreeSet](https://www.dooocs.com/img/java-programming/treeset "Java TreeSet Class")。
 
 * * *
 

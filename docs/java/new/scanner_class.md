@@ -60,7 +60,7 @@ Scanner input = new Scanner(System.in);
 import java.util.Scanner;
 ```
 
-要了解有关导入包的更多信息，请访问[Java 包](/java-programming/packages-import)。
+要了解有关导入包的更多信息，请访问[Java 包](https://www.dooocs.com/img/java-programming/packages-import)。
 
 * * *
 
@@ -79,7 +79,7 @@ Scanner sc2 = new Scanner(File file);
 Scanner sc3 = new Scanner(String str);
 ```
 
-在这里，我们创建了 `Scanner` 类的对象，分别从 [InputStream](/java-programming/inputstream)、[File](/java-programming/file) 和 [String](/java-programming/string) 中读取输入。
+在这里，我们创建了 `Scanner` 类的对象，分别从 [InputStream](https://www.dooocs.com/img/java-programming/inputstream)、[File](https://www.dooocs.com/img/java-programming/file) 和 [String](https://www.dooocs.com/img/java-programming/string) 中读取输入。
 
 * * *
 

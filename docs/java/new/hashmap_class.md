@@ -2,7 +2,7 @@
 
 Java集合框架的`HashMap`类提供了哈希表数据结构的功能。它以**键/值**对的形式存储元素。这里，**键**是用于在映射中关联每个**值**的唯一标识符。
 
-`HashMap`类实现了[Map](/java-programming/map)接口。
+`HashMap`类实现了[Map](https://www.dooocs.com/img/java-programming/map)接口。
 
 ![Java HashMap implements Map interface](https://cdn.programiz.com/sites/tutorial2program/files/java-hashmap-implementation.png)
 Java HashMap 实现
@@ -108,9 +108,9 @@ Java HashMap 实现
 
 **推荐阅读**
 
-  * [Java HashMap put()](/java-programming/library/hashmap/put)
-  * [Java HashMap putAll()](/java-programming/library/hashmap/putall)
-  * [Java HashMap putIfAbsent()](/java-programming/library/hashmap/putifabsent)
+  * [Java HashMap put()](https://www.dooocs.com/img/java-programming/library/hashmap/put)
+  * [Java HashMap putAll()](https://www.dooocs.com/img/java-programming/library/hashmap/putall)
+  * [Java HashMap putIfAbsent()](https://www.dooocs.com/img/java-programming/library/hashmap/putifabsent)
 
 ---
 
@@ -165,7 +165,7 @@ HashMap: {Two=2, Three=3, Four=4}
 numbers = new HashMap<>(evenNumbers)
 ```
 
-在这里，我们使用`TreeMap`创建了一个名为`numbers`的`HashMap`。要了解更多关于treemap的内容，请访问[Java TreeMap](/java-programming/treemap)。
+在这里，我们使用`TreeMap`创建了一个名为`numbers`的`HashMap`。要了解更多关于treemap的内容，请访问[Java TreeMap](https://www.dooocs.com/img/java-programming/treemap)。
 
 **注意**：在创建hashmap时，我们可以包含可选参数：**capacity**和**load factor**。例如，
 

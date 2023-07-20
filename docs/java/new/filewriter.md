@@ -6,7 +6,7 @@
 
 ![FileWriter 是 OutputStreamWriter 类的子类，而 OutputStreamWriter 是 Java Writer 的子类。](https://cdn.programiz.com/sites/tutorial2program/files/java-filewriter.png)
 
-在学习更多关于 `FileWriter` 之前，请确保了解 [Java File](/java-programming/file "Java File")。
+在学习更多关于 `FileWriter` 之前，请确保了解 [Java File](https://www.dooocs.com/img/java-programming/file "Java File")。
 
 * * *
 

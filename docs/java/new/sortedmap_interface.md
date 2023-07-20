@@ -2,7 +2,7 @@
 
 Java集合框架的`SortedMap`接口提供了对存储在映射中的键进行排序的功能。
 
-它扩展了[Map接口](/java-programming/map "Java Map interface")。
+它扩展了[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map interface")。
 
 ![Java SortedMap接口扩展了Map接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-sortedmap-interface.png)  
 
@@ -101,4 +101,4 @@ Java集合框架的`SortedMap`接口提供了对存储在映射中的键进行�
     Removed Value: 1
     
 
-在这里，我们展示了`SortedMap`接口的工作原理。如果你想了解更多关于它的实现，请访问[Java TreeMap](/java-programming/treemap "Java TreeMap Class")。
+在这里，我们展示了`SortedMap`接口的工作原理。如果你想了解更多关于它的实现，请访问[Java TreeMap](https://www.dooocs.com/img/java-programming/treemap "Java TreeMap Class")。

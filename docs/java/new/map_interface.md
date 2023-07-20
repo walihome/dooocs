@@ -34,11 +34,11 @@ Java 的 `Map` 接口提供了 map 数据结构的功能。
 
 为了使用 `Map` 接口的功能，我们可以使用以下这些类：
 
-  * [HashMap](/java-programming/hashmap "Java HashMap 类")
-  * [EnumMap](/java-programming/enummap "Java EnumMap 类")
-  * [LinkedHashMap](/java-programming/linkedhashmap "Java LinkedHashMap 类")
-  * [WeakHashMap](/java-programming/weakhashmap "Java WeakHashMap 类")
-  * [TreeMap](/java-programming/treemap "Java TreeMap 类")
+  * [HashMap](https://www.dooocs.com/img/java-programming/hashmap "Java HashMap 类")
+  * [EnumMap](https://www.dooocs.com/img/java-programming/enummap "Java EnumMap 类")
+  * [LinkedHashMap](https://www.dooocs.com/img/java-programming/linkedhashmap "Java LinkedHashMap 类")
+  * [WeakHashMap](https://www.dooocs.com/img/java-programming/weakhashmap "Java WeakHashMap 类")
+  * [TreeMap](https://www.dooocs.com/img/java-programming/treemap "Java TreeMap 类")
 
 这些类定义在集合框架中，并实现了 `Map` 接口。
 
@@ -51,9 +51,9 @@ Java Map 子类
 
 `Map` 接口还被以下子接口扩展：
 
-  * [SortedMap](/java-programming/sortedmap "Java SortedMap 接口")
-  * [NavigableMap](/java-programming/navigablemap "Java NavigableMap 接口")
-  * [ConcurrentMap](/java-programming/concurrentmap "Java ConcurrentMap 接口")
+  * [SortedMap](https://www.dooocs.com/img/java-programming/sortedmap "Java SortedMap 接口")
+  * [NavigableMap](https://www.dooocs.com/img/java-programming/navigablemap "Java NavigableMap 接口")
+  * [ConcurrentMap](https://www.dooocs.com/img/java-programming/concurrentmap "Java ConcurrentMap 接口")
 
 ![SortedMap、NavigableMap 和 ConcurrentMap 扩展了 Java 的 Map 接口](https://cdn.programiz.com/sites/tutorial2program/files/java-map-subinterfaces.png)  
 Java Map 子接口

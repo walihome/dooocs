@@ -2,7 +2,7 @@
 
 Java 集合框架中的 `NavigableMap` 接口提供了在地图条目之间导航的功能。
 
-它被视为 [SortedMap](/java-programming/sortedmap "Java SortedMap Interface") 的一种类型。
+它被视为 [SortedMap](https://www.dooocs.com/img/java-programming/sortedmap "Java SortedMap Interface") 的一种类型。
 
 * * *
 
@@ -41,7 +41,7 @@ Java 集合框架中的 `NavigableMap` 接口提供了在地图条目之间导�
 
 `NavigableMap` 被认为是 `SortedMap` 的一种类型。这是因为 `NavigableMap` 扩展了 `SortedMap` 接口。
 
-因此，所有的 `SortedMap` 方法在 `NavigableMap` 中也可用。要了解这些方法在 `SortedMap` 中如何定义，请访问 [Java SortedMap](/java-programming/sortedmap)。
+因此，所有的 `SortedMap` 方法在 `NavigableMap` 中也可用。要了解这些方法在 `SortedMap` 中如何定义，请访问 [Java SortedMap](https://www.dooocs.com/img/java-programming/sortedmap)。
 
 然而，`SortedMap` 的一些方法（`headMap()`、`tailMap()` 和 `subMap()`）在 `NavigableMap` 中的定义不同。
 

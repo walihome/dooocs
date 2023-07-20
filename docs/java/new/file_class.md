@@ -103,7 +103,7 @@ File file = new File("newFile.txt");
 
 ### Java读取文件
 
-要从文件中读取数据，我们可以使用[InputStream](/java-programming/inputstream "Java InputStream Class")或[Reader](/java-programming/reader "Java Reader Class")的子类。
+要从文件中读取数据，我们可以使用[InputStream](https://www.dooocs.com/img/java-programming/inputstream "Java InputStream Class")或[Reader](https://www.dooocs.com/img/java-programming/reader "Java Reader Class")的子类。
 
 ### 示例：使用FileReader读取文件
 

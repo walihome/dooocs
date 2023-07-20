@@ -55,7 +55,7 @@ int addNumbers() {
 
 其中，
 
-- **修饰符** - 定义访问类型，例如方法是public、private等。要了解更多信息，请访问[Java 访问修饰符](/java-programming/access-modifiers)。
+- **修饰符** - 定义访问类型，例如方法是public、private等。要了解更多信息，请访问[Java 访问修饰符](https://www.dooocs.com/img/java-programming/access-modifiers)。
 - **static** - 如果使用`static`关键字，可以在没有创建对象的情况下访问它。  
 例如，标准 [Math 类](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html) 的`sqrt()`方法是静态的。因此，我们可以直接调用`Math.sqrt()`，而不需要创建`Math`类的实例。
 - **参数1/参数2** - 这些是传递给方法的值。我们可以向方法传递任意数量的参数。

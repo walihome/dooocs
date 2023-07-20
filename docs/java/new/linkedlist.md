@@ -76,7 +76,7 @@ LinkedList：[Dog，Cat，Cow]
 * Cat-它是保持Dog作为前一个地址和Cow作为下一个地址的第二个元素
 * Cow-它是保持Cat作为前一个地址和null作为下一个元素的最后一个元素
 
-要了解更多信息，请访问[LinkedList数据结构]（/dsa/linked-list“LinkedList数据结构"）。
+要了解更多信息，请访问[LinkedList数据结构]（https://wwww.dooocs.com/img/dsa/linked-list“LinkedList数据结构"）。
 
 * * *
 
@@ -178,7 +178,7 @@ LinkedList after removeLast(): [Cow]
 
 ## 遍历LinkedList
 
-我们可以使用[Java增强for循环](/java-programming/enhanced-for-loop)来遍历LinkedList。例如，
+我们可以使用[Java增强for循环](https://www.dooocs.com/img/java-programming/enhanced-for-loop)来遍历LinkedList。例如，
 
 ```java
 import java.util.LinkedList;

@@ -2,7 +2,7 @@
 
 Java集合框架中的`TreeMap`类提供了树数据结构的实现。
 
-它实现了[NavigableMap接口](/java-programming/navigablemap "Java NavigableMap Interface")。
+它实现了[NavigableMap接口](https://www.dooocs.com/img/java-programming/navigablemap "Java NavigableMap Interface")。
 
 ![Java TreeMap class implements the Map interface.](https://cdn.programiz.com/sites/tutorial2program/files/java-treemap.png)  
 

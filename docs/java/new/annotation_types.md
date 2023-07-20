@@ -2,7 +2,7 @@
 
 Java注解是我们程序源代码的元数据（关于数据的数据）。Java SE提供了几个预定义的注解。此外，我们还可以根据需要创建自定义注解。
 
-如果不知道什么是注解，请访问[Java注解](/java-programming/annotations "Java Annotations")教程。
+如果不知道什么是注解，请访问[Java注解](https://www.dooocs.com/img/java-programming/annotations "Java Annotations")教程。
 
 这些注解可以分为以下几类：
 
@@ -290,6 +290,6 @@ class Main {
 
 * * *
 
-如果我们需要检索注解数据，可以使用[反射API](/java-programming/reflection "Java Reflection")。
+如果我们需要检索注解数据，可以使用[反射API](https://www.dooocs.com/img/java-programming/reflection "Java Reflection")。
 
 要检索注解值，我们使用Reflection API中定义的`getAnnotationsByType()`或`getAnnotations()`方法。```

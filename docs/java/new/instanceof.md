@@ -44,7 +44,7 @@
 
 在这里，我们使用了 `instanceof` 运算符来检查 `name` 和 `obj` 是否分别是 `String` 和 `Main` 类的实例。在两种情况下，运算符都返回 `true`。
 
-> **注意** ：在Java中，`String` 是一个类，而不是原始数据类型。要了解更多信息，请访问 [Java String](/java-programming/string "Java String")。
+> **注意** ：在Java中，`String` 是一个类，而不是原始数据类型。要了解更多信息，请访问 [Java String](https://www.dooocs.com/img/java-programming/string "Java String")。
 
 * * *
 

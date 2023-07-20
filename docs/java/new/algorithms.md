@@ -47,7 +47,7 @@ Java中的算法是可以用于执行集合上各种操作的静态方法。
 
 这里的排序是按自然顺序（升序）进行的。但是，我们可以使用_比较器接口_来自定义`sort()`方法的排序顺序。
 
-了解更多信息，请访问[Java排序](/java-programming/collections-sort "Java Collections sort\(\)")。
+了解更多信息，请访问[Java排序](https://www.dooocs.com/img/java-programming/collections-sort "Java Collections sort\(\)")。
 
 * * *
 

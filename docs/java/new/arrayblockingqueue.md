@@ -2,7 +2,7 @@
 
 Java集合框架中的`ArrayBlockingQueue`类使用数组提供了阻塞队列的实现。
 
-它实现了[Java BlockingQueue接口](/java-programming/blockingqueue "Java BlockingQueue接口")。
+它实现了[Java BlockingQueue接口](https://www.dooocs.com/img/java-programming/blockingqueue "Java BlockingQueue接口")。
 
 ![ArrayBlockingQueue在Java中实现了BlockingQueue接口。](https://cdn.programiz.com/sites/tutorial2program/files/java-blockingqueue.png)
 

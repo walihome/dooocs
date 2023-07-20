@@ -17,8 +17,8 @@ Java 集合框架中的 `Deque` 接口提供了双向队列的功能。它继承
 
 为了使用 `Deque` 接口的功能，我们需要使用实现它的类：
 
-  * [ArrayDeque](/java-programming/arraydeque "Java ArrayDeque")
-  * [LinkedList](/java-programming/linkedlist "Java LinkedList")
+  * [ArrayDeque](https://www.dooocs.com/img/java-programming/arraydeque "Java ArrayDeque")
+  * [LinkedList](https://www.dooocs.com/img/java-programming/linkedlist "Java LinkedList")
 
 
 
@@ -45,7 +45,7 @@ Java 集合框架中的 `Deque` 接口提供了双向队列的功能。它继承
 
 ## Deque 的方法
 
-由于 `Deque` 继承了 `Queue` 接口，它继承了 [the Queue interface](/java-programming/queue "Java Queue interface") 的所有方法。
+由于 `Deque` 继承了 `Queue` 接口，它继承了 [the Queue interface](https://www.dooocs.com/img/java-programming/queue "Java Queue interface") 的所有方法。
 
 除了 `Queue` 接口中的方法外，`Deque` 接口还包括以下方法：
 
@@ -70,7 +70,7 @@ Java 集合框架中的 `Deque` 接口提供了双向队列的功能。它继承
 
 Java `Collections` 框架的 `Stack` 类提供了栈的实现。
 
-然而，建议使用 `Deque` 作为栈，而不是使用 [Stack 类](/java-programming/stack "Java Stack class")。这是因为 `Stack` 的方法是同步的。
+然而，建议使用 `Deque` 作为栈，而不是使用 [Stack 类](https://www.dooocs.com/img/java-programming/stack "Java Stack class")。这是因为 `Stack` 的方法是同步的。
 
 以下是 `Deque` 接口提供的实现栈所需的方法：
 

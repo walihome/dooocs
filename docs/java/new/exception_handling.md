@@ -1,6 +1,6 @@
 # Java 异常处理
 
-在上一个教程中，我们学习了关于 [Java 异常](/java-programming/exceptions) 的知识。我们知道异常会异常终止程序的执行。
+在上一个教程中，我们学习了关于 [Java 异常](https://www.dooocs.com/img/java-programming/exceptions) 的知识。我们知道异常会异常终止程序的执行。
 
 因此，处理异常非常重要。下面是处理 Java 异常的不同方法：
 
@@ -14,7 +14,7 @@
 
 ## 1\. Java try...catch 块
 
-[try-catch](/java-programming/try-catch) 块用于处理 Java 异常。`try...catch` 块的语法如下：
+[try-catch](https://www.dooocs.com/img/java-programming/try-catch) 块用于处理 Java 异常。`try...catch` 块的语法如下：
     
     
     try {
