@@ -47,11 +47,11 @@ Hello, World!
   2. `class HelloWorld { ... }`  
   
 在Java中，每个应用程序都以类定义开始。在程序中，HelloWorld是类的名称，类定义如下： 
-    
-        class HelloWorld {
+```java 
+    class HelloWorld {
     ... .. ...
     }
-
+```
   
 暂时只需要记住每个Java应用程序都有一个类定义，而且类的名称应该与Java文件名匹配。
   3. `public static void main(String[] args) { ... }`  
