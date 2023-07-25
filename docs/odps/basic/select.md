@@ -29,3 +29,33 @@ SELECT `(dt|name)?+.+` FROM table_name;
 ``` sql
 SELECT `abc.*` FROM table_name;
 ``` 
+
+## 表基础操作
+
+### 增加行记录
+
+```sql
+insert overwrite table  adm_ap_table partition (dt = '20230203')
+values (18828422, 1545, 17489828, 1542,  18, 0, 0, 0, 0)
+;
+```
+
+### 增加表字段
+```sql
+
+alter table tabl3_name add columns 
+( risk_type bigint comment "风险类型"
+,detail bigint comment "详情"
+,max_time datetime  comment "最近时间" 
+);
+```
+
+### 删除列
+```sql
+alter table  drop columns risk , risk_and_unsign , risk_and_peer_pay;
+```
+
+### 修改列
+```sql
+alter table  change unsign_in_1d_cnt unsign_in_1d_cnt bigint;
+```
