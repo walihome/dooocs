@@ -21,3 +21,6 @@ https://ai.dooocs.com
 ```
 code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZ
 ```
+
+
+[在编辑器上编辑此页](https://github.com/walihome/dooocs/edit/main/docs/chatgpt/README.md)
