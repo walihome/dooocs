@@ -38,7 +38,7 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/.html' },
-      // { text: 'Examples', link: '/markdown-examples' }
+      { text: '解惑机器人', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E6%B5%8B%E8%AF%95' }
     ],
 
     
