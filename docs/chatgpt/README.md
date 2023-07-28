@@ -19,8 +19,8 @@ https://ai.dooocs.com
 
 ### 访问密码
 ```
-code-S6XYMmOZTIQ4w45j6qT3BliDS6XYMmOZ
+code-S6XYMmOZTIQ4w45
 ```
 
-
+---
 [在github上编辑此页内容](https://github.com/walihome/dooocs/edit/main/docs/chatgpt/README.md)
