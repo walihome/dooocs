@@ -35,6 +35,7 @@ export default defineConfig({
   
   themeConfig: {
     logo: '/logo.png',
+    lastUpdated: true,
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/.html' },
