@@ -214,6 +214,7 @@ export const ios = [
       items: [
         { text: '阅读须知', link: '/ios/README.html' },
         { text: '快速开始', link: '/ios/quick_start.html' },
+        { text: '问题记录', link: '/ios/develop_record.html' },
       ]
     }
   ];
