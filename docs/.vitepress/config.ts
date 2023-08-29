@@ -119,6 +119,7 @@ export default defineConfig({
             { text: '基础知识',  collapsed: true, items: [
               { text: 'SELECT语法', link: '/odps/basic/select.html' },
               { text: '性能优化', link: '/odps/basic/optimize.html' },
+              { text: 'DML语句', link: '/odps/basic/dml.html' },
               
             ]},
           ]
