@@ -29,7 +29,7 @@ jobs:
         run: npm run docs:build
     
       - name: upload files to OSS
-        uses: fangbinwei/aliyun-oss-website-action@v1
+        uses: walihome/logan_upload_aliyun_oss@v1.0.1
         with:
             accessKeyId: ${{ secrets.ACCESS_KEY_ID }}
             accessKeySecret: ${{ secrets.ACCESS_KEY_SECRET }}
@@ -37,3 +37,4 @@ jobs:
             # use your own endpoint
             endpoint: oss-cn-hangzhou.aliyuncs.com
             folder: docs/.vitepress/dist/
+            OSS_PATH: tutorial/
