@@ -37,4 +37,4 @@ jobs:
             # use your own endpoint
             endpoint: oss-cn-hangzhou.aliyuncs.com
             folder: docs/.vitepress/dist/
-            OSS_PATH: tutorial/
+            ossDir: tutorial/
