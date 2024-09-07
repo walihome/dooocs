@@ -25,4 +25,4 @@ https://ai.dooocs.com
 ```
 
 ---
-[在github上编辑此页内容](https://github.com/walihome/dooocs/edit/main/docs/chatgpt/README.md)
+[在github上编辑此页内容](https://github.com/walihome/dooocs/edit/main/docs/chatgpt/index.md)

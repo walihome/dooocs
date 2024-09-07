@@ -7,6 +7,8 @@ head:
   - - meta
     - name: keywords
       content: Java 基础语法 basic grammer 注释 变量
+sidebar:
+  title: Java基础语法
 ---
 # 基础语法
 ## 注释
