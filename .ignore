@@ -1,2 +1,40 @@
 docs/.vitepress/dist/
 docs/.vitepress/dist
+node_modules
+dist
+.temp
+.cache
+
+
+# 依赖目录
+node_modules/
+
+# 构建输出
+dist/
+build/
+
+# 日志文件
+*.log
+
+# 操作系统生成的文件
+.DS_Store
+Thumbs.db
+
+# 编辑器配置文件
+.vscode/
+.idea/
+
+# 环境变量文件
+.env
+.env.local
+.env.*.local
+
+# npm 包锁定文件（如果您使用 yarn，可以保留这个文件）
+# package-lock.json
+
+# yarn 错误日志文件
+yarn-error.log
+
+# VitePress 生成的文件
+docs/.vitepress/cache
+docs/.vitepress/dist
