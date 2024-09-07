@@ -37,4 +37,4 @@ yarn-error.log
 
 # VitePress 生成的文件
 docs/.vitepress/cache
-docs/.vitepress/dist
+docs/.vitepress/dist/
