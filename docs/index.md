@@ -6,7 +6,7 @@
         <h2>roadmap</h2>
     </div>
   <div class="horizontal-layout">
-    <h2><a href="/tutorial/index.html">热门教程</a></h2>
+    <h2><a href="/tutorial/index.html">教程</a></h2>
   </div>
   <div class="horizontal-layout">
     <h2><a href="/resource/index.html">资源下载</a></h2>
