@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Static类
 colla: true
 order: 50
 head:

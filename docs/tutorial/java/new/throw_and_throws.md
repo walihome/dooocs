@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: throw和throws
 colla: true
 order: 50
 head:

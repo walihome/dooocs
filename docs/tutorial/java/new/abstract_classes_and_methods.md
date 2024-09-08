@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 抽象类和抽象方法
 colla: true
 order: 50
 head:

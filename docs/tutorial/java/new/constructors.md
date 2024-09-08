@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 构造函数
 colla: true
 order: 50
 head:

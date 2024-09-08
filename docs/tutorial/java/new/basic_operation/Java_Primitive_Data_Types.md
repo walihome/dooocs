@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 数据类型（基本类型）
 colla: true
 order: 50
 head:

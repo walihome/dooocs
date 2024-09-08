@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 多态
 colla: true
 order: 50
 head:

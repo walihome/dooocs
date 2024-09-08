@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 捕获多个异常
 colla: true
 order: 50
 head:

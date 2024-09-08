@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: java 枚举
 colla: true
 order: 50
 head:

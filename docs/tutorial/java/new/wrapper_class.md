@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 包装类
 colla: true
 order: 50
 head:

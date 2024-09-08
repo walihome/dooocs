@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 方法覆盖
 colla: true
 order: 50
 head:

@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: JDK, JRE 和 JVM
 colla: true
 order: 50
 head:

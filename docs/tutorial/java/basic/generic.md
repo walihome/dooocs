@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: java泛型
 colla: true
 order: 50
 head:

@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: java 异常
 colla: true
 order: 50
 head:

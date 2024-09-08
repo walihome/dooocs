@@ -87,13 +87,19 @@ function getTitleFromMd(filePath: string): string {
   const fullPath = path.join(isNode ? path.dirname(__dirname) : '', filePath)
   if (fs.existsSync(fullPath)) {
     const content = fs.readFileSync(fullPath, 'utf-8')
-    const titleMatch = content.match(/^#\s+(.*)$/m)
-    if (titleMatch) {
-      return titleMatch[1]
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
+    if (frontmatterMatch) {
+      const frontmatter = frontmatterMatch[1]
+      const titleMatch = frontmatter.match(/title:\s*(.*)/)
+      console.log('titleMatch:', titleMatch);
+      if (titleMatch) {
+        return titleMatch[1].trim()
+      }
     }
   }
   return path.basename(path.dirname(filePath))
 }
+
 
 const docsPath = path.dirname(__dirname)
 const directories = getDirectories(docsPath).filter(dir => dir !== '.vitepress')

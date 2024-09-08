@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 封装
 colla: true
 order: 50
 head:

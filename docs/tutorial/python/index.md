@@ -1,13 +1,11 @@
 ---
-title: 文档
-colla: true
-order: 50
+title: python 基础
+colla: false
+description: python基础教程
+order: 1
 head:
   - - meta
-    - name: dooocs
-      content: 最详细的文档库
+    - name: python基础教程
+      content: python基础教程
 ---
-# index.md
-
-
-
+# python 基础教程

@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: super关键字
 colla: true
 order: 50
 head:
@@ -7,7 +7,7 @@ head:
     - name: dooocs
       content: 最详细的文档库
 ---
-# Java super
+# Java super关键字
 
 `super` 关键字在 Java 中用于子类访问父类的成员（属性、构造函数和方法）。
 

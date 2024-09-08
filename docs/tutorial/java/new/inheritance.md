@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 继承
 colla: true
 order: 50
 head:

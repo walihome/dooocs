@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java HashSet 类
 colla: true
 order: 50
 head:

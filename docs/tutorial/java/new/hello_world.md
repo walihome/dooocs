@@ -1,5 +1,5 @@
 ---
-title: Java Hello world
+title: Hello world
 head:
   - - meta
     - name: description

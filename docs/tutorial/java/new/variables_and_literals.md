@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 变量和字面量
 colla: true
 order: 50
 head:

@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: java 面向对象基础
 colla: true
 order: 50
 head:

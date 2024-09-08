@@ -1,5 +1,6 @@
 ---
 title: Java基础数据类型
+order: 1
 head:
   - - meta
     - name: description

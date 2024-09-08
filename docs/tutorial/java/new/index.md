@@ -1,5 +1,5 @@
 ---
-title: 基础教程
+title: 新手教程
 category: Java
 colla: true
 tag:

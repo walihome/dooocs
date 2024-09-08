@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 嵌套类和内部类
 colla: true
 order: 50
 head:

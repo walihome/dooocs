@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 基本输入输出
 colla: true
 order: 50
 head:

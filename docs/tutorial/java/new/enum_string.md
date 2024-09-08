@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 枚举字符串
 colla: true
 order: 50
 head:

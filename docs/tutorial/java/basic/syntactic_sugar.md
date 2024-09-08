@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: java 语法糖
 colla: true
 order: 50
 head:

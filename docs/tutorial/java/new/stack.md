@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Stack
 colla: true
 order: 50
 head:

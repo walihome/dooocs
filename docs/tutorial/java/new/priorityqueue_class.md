@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: PriorityQueue
 colla: true
 order: 50
 head:

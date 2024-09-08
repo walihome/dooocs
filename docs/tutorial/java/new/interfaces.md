@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java接口
 colla: true
 order: 50
 head:

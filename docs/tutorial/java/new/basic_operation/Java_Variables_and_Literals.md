@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 变量和字面值
 colla: true
 order: 50
 head:

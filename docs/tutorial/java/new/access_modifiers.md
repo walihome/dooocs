@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: Java 访问修饰符
 colla: true
 order: 50
 head:
