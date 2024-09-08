@@ -9,7 +9,7 @@
     <h2>roadmap</h2>
   </div>
   <div class="horizontal-layout">
-    <h2>资源下载</h2>
+    <h2><a href="/resource/index.html">资源下载</a></h2>
   </div>
 </div>
 
