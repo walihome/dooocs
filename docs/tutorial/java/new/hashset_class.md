@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java HashSet 类
 
 Java Collections 框架的 `HashSet` 类提供了散列表数据结构的功能。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 新员工软件安装指南
 
 欢迎加入我们的团队！以下是你可能需要安装的一些软件。

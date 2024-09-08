@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java for循环
 
 在计算机编程中，循环用于重复执行一段代码。例如，如果你想要显示一条消息100次，而不是重复输入相同的代码100次，你可以使用循环。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 快速开始
 
 当涉及到网站的SEO（搜索引擎优化）时，以下是一个快速入门指南，适用于新手：

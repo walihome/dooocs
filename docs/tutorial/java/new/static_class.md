@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Nested Static Class
 
 在之前的教程中，我们学到了在Java中可以在另一个类中创建一个类。这种类被称为嵌套类。在Java中，嵌套类有两种类型：

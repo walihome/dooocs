@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java队列接口
 
 Java集合框架的`Queue`接口提供了队列数据结构的功能，它是`Collection`接口的扩展。

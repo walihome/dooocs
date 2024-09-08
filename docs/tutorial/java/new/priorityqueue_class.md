@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java PriorityQueue
 
 `PriorityQueue`类提供了[堆数据结构](https://wwww.dooocs.com/img/dsa/heap-data-structure "堆数据结构")的功能。

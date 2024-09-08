@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 ## Java try...catch
 
 Java中的`try...catch`块用于处理异常并防止程序异常终止。

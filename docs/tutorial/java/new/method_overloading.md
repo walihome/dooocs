@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 方法重载
 
 在Java中，如果两个或多个[方法](https://www.dooocs.com/img/java-programming/methods "Java Methods")在参数上有所不同（参数数量不同、参数类型不同或两者都不同），则它们可以拥有相同的名称。这些方法被称为重载方法，这个特性被称为方法重载。例如：

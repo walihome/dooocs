@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java SortedMap 接口
 
 Java集合框架的`SortedMap`接口提供了对存储在映射中的键进行排序的功能。

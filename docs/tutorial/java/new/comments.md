@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java注释
 
 在计算机编程中，Java编译器会完全忽略注释部分的代码。它们主要用于帮助程序员理解代码。例如，

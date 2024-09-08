@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java LinkedHashMap
 
 Java的`LinkedHashMap`类提供了哈希表和链表实现的[Map接口](https://www.dooocs.com/img/java-programming/map "Java Map interface")。它继承自`HashMap`类，将其条目存储在哈希表中，并在所有条目之间维护一个双向链表以排序条目。

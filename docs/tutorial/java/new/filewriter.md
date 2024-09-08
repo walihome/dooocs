@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java FileWriter 类
 
 `java.io` 包中的 `FileWriter` 类可用于向文件中写入数据（字符）。

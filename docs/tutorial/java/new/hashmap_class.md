@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java HashMap
 
 Java集合框架的`HashMap`类提供了哈希表数据结构的功能。它以**键/值**对的形式存储元素。这里，**键**是用于在映射中关联每个**值**的唯一标识符。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java try-with-resources
 
 `try-with-resources`语句在语句结束时自动关闭所有资源。 资源是在程序结束时要关闭的对象。

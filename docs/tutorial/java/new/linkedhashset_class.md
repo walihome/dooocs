@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java LinkedHashSet
 
 Java的集合框架中，`LinkedHashSet`类提供了哈希表和链表数据结构的功能。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 基本运算符
 
 运算符是你用来检查、更改或组合值的特殊符号或短语。例如，加法运算符（+）将两个数字相加，如 `let i = 1 + 2`，逻辑与运算符（&&）则结合两个布尔值，如 `if enteredDoorCode && passedRetinaScan`。

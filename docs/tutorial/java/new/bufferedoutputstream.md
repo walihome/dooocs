@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java BufferedOutputStream 类
 
 `java.io` 包中的 `BufferedOutputStream` 类用于与其他输出流一起更高效地写入数据（以字节为单位）。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 快速开始
 
 下面是在 macOS 上配置 Maven 的快速入门指南：

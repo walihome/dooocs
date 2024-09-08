@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ByteArrayInputStream 类
 
 `java.io` 包中的 `ByteArrayInputStream` 类可以用于读取一组输入数据（以字节为单位）。

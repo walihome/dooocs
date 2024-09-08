@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java NavigableMap 接口
 
 Java 集合框架中的 `NavigableMap` 接口提供了在地图条目之间导航的功能。

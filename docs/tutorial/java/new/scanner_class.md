@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Scanner 类
 
 `java.util` 包中的 `Scanner` 类用于从不同来源（如输入流、用户、文件等）读取输入数据。让我们来看一个例子。

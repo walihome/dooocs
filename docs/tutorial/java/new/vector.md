@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java向量
 
 `Vector`类是`List`接口的一种实现，允许我们创建类似于[ArrayList](https://www.dooocs.com/img/java-programming/arraylist "Java ArrayList")类的可调整大小的数组。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ArrayDeque
 
 在Java中，我们可以使用`ArrayDeque`类来使用数组实现队列和双端队列数据结构。

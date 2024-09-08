@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java接口
 
 接口是一个完全抽象的类。它包括一组没有实现体的抽象方法。

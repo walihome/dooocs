@@ -1,5 +1,6 @@
 ---
 title: Java基础语法
+order: 0
 head:
   - - meta
     - name: description

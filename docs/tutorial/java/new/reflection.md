@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java反射
 
 在Java中，反射允许我们在运行时检查和操作类、接口、构造函数、方法和字段。

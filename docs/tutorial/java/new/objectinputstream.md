@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ObjectInputStream 类
 
 `java.io` 包中的 `ObjectInputStream` 类可用于读取先前由 `ObjectOutputStream` 写入的对象。

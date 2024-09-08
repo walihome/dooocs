@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java类和对象
 
 Java是一种面向对象的编程语言。面向对象的核心概念是将复杂的问题分解为较小的对象。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ArrayBlockingQueue
 
 Java集合框架中的`ArrayBlockingQueue`类使用数组提供了阻塞队列的实现。

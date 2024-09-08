@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java NavigableSet 接口
 
 Java Collections 框架中的 `NavigableSet` 接口提供了在集合元素之间进行导航的功能。

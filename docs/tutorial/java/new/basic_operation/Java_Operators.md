@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java运算符
 
 运算符是用于对变量和值执行操作的符号。例如，`+`是用于加法的运算符，而`*`也是用于乘法的运算符。

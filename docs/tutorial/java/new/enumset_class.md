@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java EnumSet
 
 Java集合框架中的`EnumSet`类提供了对单个枚举元素的集合实现。

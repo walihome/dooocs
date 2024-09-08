@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java StringWriter 类
 
 `java.io` 包中的 `StringWriter` 类可以用于将数据（以字符形式）写入字符串缓冲区。

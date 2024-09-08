@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java for-each 循环
 
 在Java中，**for-each**循环用于遍历[数组](https://www.dooocs.com/img/java-programming/arrays "Java Arrays")和集合（如[ArrayList](https://www.dooocs.com/img/java-programming/arraylist)）的元素。它也被称为增强型for循环。

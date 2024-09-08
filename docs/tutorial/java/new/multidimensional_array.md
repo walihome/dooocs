@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java多维数组
 
 在学习多维数组之前，请确保你了解[Java数组](https://www.dooocs.com/img/java-programming/arrays "Java Arrays")。

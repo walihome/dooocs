@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Reader 类
 
 `java.io` 包中的 `Reader` 类是一个表示字符流的抽象超类。

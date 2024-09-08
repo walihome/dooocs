@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java命令行参数
 
 在Java中，**命令行参数**允许我们在程序执行时传递参数。

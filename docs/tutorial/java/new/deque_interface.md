@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Deque 接口
 
 Java 集合框架中的 `Deque` 接口提供了双向队列的功能。它继承自 `Queue` 接口。

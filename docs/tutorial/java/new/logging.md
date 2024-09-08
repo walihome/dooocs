@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 日志记录
 
 Java允许我们通过日志记录来创建和捕获日志消息和文件。

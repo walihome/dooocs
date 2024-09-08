@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java堆栈类
 
 Java集合框架有一个名为`Stack`的类，提供了堆栈数据结构的功能。

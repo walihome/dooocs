@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java EnumMap
 
 Java集合框架的`EnumMap`类为枚举元素提供了映射实现。

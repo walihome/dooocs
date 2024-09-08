@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 异常处理
 
 在上一个教程中，我们学习了关于 [Java 异常](https://www.dooocs.com/img/java-programming/exceptions) 的知识。我们知道异常会异常终止程序的执行。

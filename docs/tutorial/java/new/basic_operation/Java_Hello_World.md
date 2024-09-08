@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Hello World 程序
 
 一个 "Hello, World!" 程序是一个简单的程序，在屏幕上输出 `Hello, World!`。由于它是一个非常简单的程序，通常用来向初学者介绍一门新的编程语言。

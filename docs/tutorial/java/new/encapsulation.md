@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java封装
 
 Java封装是面向对象编程的一个关键特性之一。封装指的是将字段和方法封装在一个类中。

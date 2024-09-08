@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java OutputStream类
 
 `java.io`包中的`OutputStream`类是表示字节输出流的抽象超类。

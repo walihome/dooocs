@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java final 关键字
 
 在Java中，`final`关键字用于表示常量。它可以用于变量、方法和类。

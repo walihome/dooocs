@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java包装类
 
 Java中的包装类用于将基本类型（`int`、`char`、`float`等）转换为相应的对象。

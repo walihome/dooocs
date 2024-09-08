@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java List
 
 在Java中，`List`接口是一个有序的集合，允许我们按顺序存储和访问元素。它扩展了`Collection`接口。

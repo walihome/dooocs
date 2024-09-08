@@ -6,12 +6,9 @@ import { sidebar } from './sidebar'
 import fs from 'fs'
 
 export default defineConfig({
-  srcDir: '.', // 设置源目录为根目录
-  base: '/', // 设置基础路径
-  outDir: '../dist', // 设置输出目录
 
-  title: "Your Site Title",
-  description: "Your site description",
+  title: "dooocs",
+  description: "build your dream, duild your life",
   
   ignoreDeadLinks: true, // 忽略死链接警告
 
@@ -61,19 +58,23 @@ export default defineConfig({
   },
 
   buildEnd: async ({ pages, outDir }) => {
+    if (pages.length === 0) {
+      console.warn('No pages found for sitemap generation');
+      return;
+    }
     const sitemap = new SitemapStream({ hostname: 'https://www.dooocs.com' })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
-
+  
     pages.forEach((page) => {
       sitemap.write({
         url: page.replace(/^\//, ''),
         changefreq: 'weekly'
       })
     })
-
+  
     sitemap.end()
-
+  
     await new Promise((r) => writeStream.on('finish', r))
     console.log('Sitemap generated successfully')
   },
@@ -86,37 +87,37 @@ export default defineConfig({
     }
   },
 
-  // // 添加这个钩子来处理 Markdown 文件
-  // markdown: {
-  //   config: (md) => {
-  //     const defaultRender = md.render;
-  //     md.render = function (src, env) {
-  //       console.log('Rendering file:', env.path);
-  //       if (env.path.endsWith('tutorial/index.md')) {
-  //         console.log('Content of tutorial/index.md:', src);
-  //       }
-  //       return defaultRender.call(this, src, env);
-  //     }
-  //   }
-  // },
+  // 添加这个钩子来处理 Markdown 文件
+  markdown: {
+    config: (md) => {
+      const defaultRender = md.render;
+      md.render = function (src, env) {
+        console.log('Rendering file:', env.path);
+        if (env.path.endsWith('tutorial/index.md')) {
+          console.log('Content of tutorial/index.md:', src);
+        }
+        return defaultRender.call(this, src, env);
+      }
+    }
+  },
 
-  // // 添加这个钩子来检查文件是否存在
-  // async transformPageData(pageData) {
-  //   if (pageData.relativePath === 'tutorial/index.md') {
-  //     const filePath = resolve(__dirname, '../tutorial/index.md');
-  //     if (!fs.existsSync(filePath)) {
-  //       console.error('tutorial/index.md does not exist!');
-  //     } else {
-  //       console.log('tutorial/index.md exists and its content is:');
-  //       console.log(fs.readFileSync(filePath, 'utf-8'));
-  //     }
-  //   }
-  //   return pageData;
-  // },
+  // 添加这个钩子来检查文件是否存在
+  async transformPageData(pageData) {
+    if (pageData.relativePath === 'tutorial/index.md') {
+      const filePath = resolve(__dirname, '../tutorial/index.md');
+      if (!fs.existsSync(filePath)) {
+        console.error('tutorial/index.md does not exist!');
+      } else {
+        console.log('tutorial/index.md exists and its content is:');
+        console.log(fs.readFileSync(filePath, 'utf-8'));
+      }
+    }
+    return pageData;
+  },
 
   vite: {
     build: {
-      sourcemap: 'hidden',
+      sourcemap: false,
       rollupOptions: {
         onwarn(warning, warn) {
           if (warning.code === 'UNUSED_EXTERNAL_IMPORT') return

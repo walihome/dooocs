@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java SortedSet 接口
 
 Java集合框架的`SortedSet`接口用于在一个集合中按照一定顺序存储元素。

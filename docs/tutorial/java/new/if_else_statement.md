@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java if...else语句
 
 在编程中，我们使用`if..else`语句在多个选择中运行一段代码。

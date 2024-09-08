@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 团队协作指南
 
 欢迎加入我们的团队！这里有一些关于团队协作的指南，帮助你更好地融入我们的工作环境。

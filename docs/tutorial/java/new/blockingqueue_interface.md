@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java BlockingQueue
 
 Java的`Collections`框架中的`BlockingQueue`接口扩展了`Queue`接口。它允许任何操作等待，直到可以成功执行为止。

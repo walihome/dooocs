@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java WeakHashMap
 
 Java中的`WeakHashMap`类是Java集合框架提供的一种散列表数据结构。

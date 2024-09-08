@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java InputStream 类
 
 `java.io` 包中的 `InputStream` 类是表示字节输入流的抽象超类。

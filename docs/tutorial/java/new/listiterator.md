@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ListIterator 接口
 
 Java 集合框架的 `ListIterator` 接口提供了访问列表元素的功能。

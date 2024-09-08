@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java TreeSet
 
 Java的`TreeSet`类是Java集合框架中提供树数据结构功能的类。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 性能优化
 
 修改每个 Map Worker 的输入数据量，即输入文件的分片大小，从而间接控制每个 Map 阶段下 Worker 的数量

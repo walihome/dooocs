@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Singleton Class
 
 在Java中，Singleton是一种设计模式，确保一个类只能有一个对象。

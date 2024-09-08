@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java InputStreamReader类
 
 `java.io`包中的`InputStreamReader`类可用于将字节数据转换为字符数据。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java枚举
 
 在Java中，枚举（Enumeration的缩写）是一种具有固定常量值集合的类型。我们使用`enum`关键字来声明枚举。例如，

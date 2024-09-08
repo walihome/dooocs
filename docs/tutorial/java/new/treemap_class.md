@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java TreeMap
 
 Java集合框架中的`TreeMap`类提供了树数据结构的实现。

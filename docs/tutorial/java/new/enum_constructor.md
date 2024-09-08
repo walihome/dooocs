@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java枚举的构造函数
 
 在学习枚举构造函数之前，请确保了解[Java枚举](https://www.dooocs.com/img/java-programming/enums)。

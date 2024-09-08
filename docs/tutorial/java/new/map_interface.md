@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Map 接口
 
 Java 的 `Map` 接口提供了 map 数据结构的功能。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 递归
 
 在Java中，调用自身的方法被称为递归方法。这个过程被称为递归。

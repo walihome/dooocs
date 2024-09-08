@@ -1,5 +1,15 @@
+---
+title: 快速开始
+order: 0
+head:
+  - - meta
+    - name: description
+      content: 介绍Java基础的语法内容，对Java有一个基础的了解
+  - - meta
+    - name: keywords
+      content: Java 基础语法 basic grammer 注释 变量
+---
 # 快速开始
-
 ## Java环境安装
 当然可以！以下是在 macOS 系统上配置 Java 安装环境的教程：
 

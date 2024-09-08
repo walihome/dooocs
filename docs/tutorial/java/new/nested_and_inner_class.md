@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java嵌套类和内部类
 
 在Java中，你可以在一个类中定义另一个类。这样的类被称为“嵌套类”。例如：

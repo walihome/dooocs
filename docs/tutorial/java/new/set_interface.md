@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java Set 接口
 
 Java `Collections` 框架的 `Set` 接口提供了 Java 中数学集合的功能。它扩展了 `Collection` 接口。

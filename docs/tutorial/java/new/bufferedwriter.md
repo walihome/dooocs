@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java BufferedWriter 类
 
 `java.io` 包的 `BufferedWriter` 类可以与其他字符写入器一起使用，以更高效地写入数据（以字符为单位）。

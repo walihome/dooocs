@@ -1,13 +1,9 @@
-# dooocs
-
-## md基础配置
 ---
-title: testTitle
+title: 基础教程
 category: Java
 colla: true
-order: 1
 tag:
-  - test
+  - Java基础
 head:
   - - meta
     - name: keywords
@@ -15,16 +11,4 @@ head:
   - - meta
     - name: description
       content: 全网质量最高的Java基础常见知识点和面试题总结，希望对你有帮助！
----
-
-
-## 示例
----
-title: 文档
-colla: true
-order: 50
-head:
-  - - meta
-    - name: dooocs
-      content: 最详细的文档库
 ---

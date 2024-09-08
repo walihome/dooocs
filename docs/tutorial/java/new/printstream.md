@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java PrintStream类
 
 `java.io`包的`PrintStream`类可用于以通常可读形式（文本）而不是字节写入输出数据。

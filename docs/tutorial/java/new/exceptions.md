@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 异常
 
 异常是在程序执行过程中发生的意外事件。它影响程序指令的流程，可能导致程序异常终止。

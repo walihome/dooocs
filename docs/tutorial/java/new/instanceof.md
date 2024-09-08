@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java instanceof 运算符
 
 在Java中，`instanceof` 运算符用于检查一个对象是否是特定类的实例。

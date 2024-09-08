@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java继承
 
 继承是面向对象编程的重要特性之一，它允许我们从现有类创建一个新类。

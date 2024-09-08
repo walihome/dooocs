@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java多态性
 
 多态性是面向对象编程中的一个重要概念，它简单地意味着多种形式。

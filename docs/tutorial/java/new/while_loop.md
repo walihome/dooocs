@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java while和do...while循环
 
 在计算机编程中，循环用于重复执行一段代码。例如，如果您想要显示一个消息100次，可以使用循环。这只是一个简单的例子，您可以利用循环做更多的事情。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 类型转换
 
 在学习**Java类型转换**之前，请确保你了解[Java数据类型](https://www.dooocs.com/img/java-programming/variables-primitive-data-types "Java数据类型")。

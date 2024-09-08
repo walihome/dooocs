@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 ## Java catch Multiple Exceptions
 
 在Java 7之前，即使存在代码冗余，我们也需要为不同类型的异常编写多个异常处理代码。

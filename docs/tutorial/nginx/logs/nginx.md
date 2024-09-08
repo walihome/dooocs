@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # nginx
 ## 检查nginx配置
 在 /etc/nginx/conf.d/ 目录下，你应该有一个配置文件指向你的 NodeBB 实例，确认在 proxy_pass 指令中指定的地址和端口是正确的。

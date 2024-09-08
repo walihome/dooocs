@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java continue 语句
 
 在使用循环时，有时您可能希望跳过某些语句或终止循环。在这种情况下，会使用 `break` 和 `continue` 语句。

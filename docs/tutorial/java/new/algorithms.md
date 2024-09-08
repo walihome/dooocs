@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java算法
 
 Java集合框架提供了各种算法，用于操作存储在数据结构中的元素。

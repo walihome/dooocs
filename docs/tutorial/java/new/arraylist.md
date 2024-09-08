@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ArrayList
 
 在Java中，我们使用`ArrayList`类来实现**可调整大小的数组**的功能。

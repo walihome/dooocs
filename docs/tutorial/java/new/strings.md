@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 字符串
 
 在Java中，字符串是字符的序列。例如，"hello"是一个包含字符'h'、'e'、'l'和'o'的字符串。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java BufferedReader
 
 `java.io`包中的`BufferedReader`类可以与其他读取器一起使用，以更高效地读取数据（字符）。

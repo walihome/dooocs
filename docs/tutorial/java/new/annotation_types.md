@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java注解类型
 
 Java注解是我们程序源代码的元数据（关于数据的数据）。Java SE提供了几个预定义的注解。此外，我们还可以根据需要创建自定义注解。

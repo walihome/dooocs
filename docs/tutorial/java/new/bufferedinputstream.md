@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java BufferedInputStream 类
 
 `java.io` 包中的 `BufferedInputStream` 类与其他输入流一起使用，以更高效地读取数据（以字节为单位）。

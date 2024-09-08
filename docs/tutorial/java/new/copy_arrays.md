@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java 复制数组
 
 在Java中，我们可以将一个数组复制到另一个数组中。有几种技术可以用于在Java中复制数组。

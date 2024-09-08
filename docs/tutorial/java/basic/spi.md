@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # SPI
 
 关于 SPI 的详细解读，请看这篇文章 [Java SPI 机制详解](./spi.md) 。

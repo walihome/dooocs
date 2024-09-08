@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java匿名类
 
 在Java中，一个类可以包含另一个称为嵌套类的类。可以创建一个没有名称的嵌套类。

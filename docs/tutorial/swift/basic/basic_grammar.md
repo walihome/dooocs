@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # 基础语法
 Swift是用于iOS、macOS、watchOS和tvOS应用程序开发的编程语言。如果您有C或Objective-C开发经验，那么Swift的许多部分都会很熟悉。
 

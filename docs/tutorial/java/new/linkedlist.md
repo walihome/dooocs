@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java LinkedList
 
 Java集合框架的`LinkedList`类提供了链表数据结构（双向链表）的功能。

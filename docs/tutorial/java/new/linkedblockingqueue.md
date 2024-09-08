@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java LinkedBlockingQueue
 
 Java的`Collections`框架中的`LinkedBlockingQueue`类提供了使用链表实现的阻塞队列。

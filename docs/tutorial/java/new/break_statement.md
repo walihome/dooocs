@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java break语句
 
 在使用循环时，有时候希望跳过循环内的某些语句或者立即终止循环而不检查测试表达式。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java枚举字符串
 
 在学习Java枚举字符串之前，请确保了解[Java枚举](https://www.programiz.com/java-programming/enums)。

@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java ConcurrentMap接口
 
 Java集合框架的`ConcurrentMap`接口提供了一个线程安全的映射。也就是说，多个线程可以同时访问映射而不会影响映射中条目的一致性。

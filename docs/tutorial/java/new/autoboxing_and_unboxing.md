@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 ## Java自动装箱和拆箱
 
 在Java中，**自动装箱**是指编译器自动将基本类型转换为其对应的包装类对象。例如，

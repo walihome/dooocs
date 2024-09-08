@@ -1,3 +1,12 @@
+---
+title: 文档
+colla: true
+order: 50
+head:
+  - - meta
+    - name: dooocs
+      content: 最详细的文档库
+---
 # Java StringReader 类
 
 `java.io` 包中的 `StringReader` 类可用于从字符串中读取数据（以字符为单位）。
