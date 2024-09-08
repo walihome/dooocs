@@ -1,7 +1,7 @@
 ---
 title: 文档
 colla: true
-order: 50
+order: 1
 head:
   - - meta
     - name: dooocs
