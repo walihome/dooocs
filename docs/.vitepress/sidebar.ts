@@ -111,7 +111,11 @@ console.log('目录:', directories);
 
 const sidebar: Record<string, SidebarItem[]> = {}
 
-directories.forEach(dir => { 
+directories.forEach(dir => {
+    // 跳过文件夹名称为 'public' 的文件夹
+    if (dir === 'public') {
+        return;
+    }
     const secondLevelDirectories = getDirectories(path.join(docsPath, dir))
     secondLevelDirectories.forEach(subDir => {
         sidebar[`/${dir}/${subDir}/`] = generateSidebar(`${dir}/${subDir}`, `/${dir}/${subDir}`)
