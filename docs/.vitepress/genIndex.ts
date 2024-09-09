@@ -21,6 +21,10 @@ async function genIndex() {
 
     // 遍历二级目录
     for (const dir of dirs) {
+	// 跳过文件夹名称为 'public' 的文件夹
+	    if (dir === 'public') {
+		continue;
+	    }
         const dirPath = path.join(docsDir, dir);
         console.log(`创建目录: ${dirPath}`);
         if (!fs.existsSync(dirPath)) {
