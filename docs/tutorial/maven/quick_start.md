@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 安装
 colla: true
 order: 50
 head:
