@@ -1,3 +1,8 @@
+---
+editLink: false
+---
+
+
 <div class="custom-layout">
     <div class="horizontal-layout">
         <h2>速记表</h2>
