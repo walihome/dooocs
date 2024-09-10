@@ -1,11 +1,11 @@
 ---
-title: 文档
+title: 性能优化
 colla: true
 order: 50
 head:
   - - meta
-    - name: dooocs
-      content: 最详细的文档库
+    - name: odps 性能优化 dooocs 数据倾斜 map worker mapjoin join sql
+      content: 性能优化
 ---
 # 性能优化
 
