@@ -1,11 +1,11 @@
 ---
-title: 文档
+title: 基础DML
 colla: true
 order: 50
 head:
   - - meta
-    - name: dooocs
-      content: 最详细的文档库
+    - name: odps dml dooocs
+      content: odps dml
 ---
 # ODPS 基础DML实例
 ## 创建一张表
