@@ -1,3 +1,7 @@
+---
+editLink: false
+---
+
 # tutorial
 
 - [ai](./ai/index.md)
