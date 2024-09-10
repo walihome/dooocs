@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: 基础语法
 colla: true
 order: 50
 head:
