@@ -1,10 +1,10 @@
 ---
-title: Python入参
+title: Python 入参
 order: 17
 description: args 和 kwargs 可能看起来很吓人，但实际上它们并不难理解，并且能够赋予你的函数灵活性和可读性
 ---
 
-# Python入参（Args and Kwargs）
+# Python 入参（Args and Kwargs）
 
 [Python args 和 kwargs 简单易懂](https://docs.python.org/3/tutorial/index.html)
   
