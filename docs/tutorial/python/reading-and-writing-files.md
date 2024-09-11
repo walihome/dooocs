@@ -24,7 +24,7 @@ description: 在 Python 中读写文件时，您需要使用 with 语句，它�
 'Hello World!'
 ```
 
-Alternatively, you can use the _readlines()_ method to get a list of string values from the file, one string for each line of text:
+或者，您可以使用`readlines()`方法从文件中获取一个字符串值列表，每个文本行对应一个字符串。
 
 ```python
 >>> with open('sonnet29.txt') as sonnet_file:
@@ -36,8 +36,7 @@ Alternatively, you can use the _readlines()_ method to get a list of string valu
 # look upon myself and curse my fate,']
 ```
 
-You can also iterate through the file line by line:
-
+您也可以逐行遍历文件：
 ```python
 >>> with open('sonnet29.txt') as sonnet_file:
 ...     for line in sonnet_file:
@@ -49,7 +48,7 @@ You can also iterate through the file line by line:
 # And look upon myself and curse my fate,
 ```
 
-## Writing to files
+## 写入文件
 
 ```python
 >>> with open('bacon.txt', 'w') as bacon_file:
