@@ -1,5 +1,5 @@
 ---
-title: Python内置函数
+title: Python 内置函数
 order: 2
 description: Python 解释器内置了许多函数和类型，这些函数和类型始终可用。
 ---
