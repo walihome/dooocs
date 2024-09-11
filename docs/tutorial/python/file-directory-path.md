@@ -513,7 +513,4 @@ If there is no eggs folder, then `move()` will rename bacon.txt to a file named 
   
     Pathlib vs Os Module
   
-  
-    `pathlib` provides a lot more functionality than the ones listed above, like getting file name, getting file extension, reading/writing a file without manually opening it, etc. See the <a target="_blank" href="https://docs.python.org/3/library/pathlib.html">official documentation</a> if you intend to know more.
-  
-
+> `pathlib` 提供了比上述列出的更多功能，比如获取文件名、获取文件扩展名、无需手动打开即可读取/写入文件等。参见 [官方文档](https://docs.python.org/3/library/pathlib.html)
