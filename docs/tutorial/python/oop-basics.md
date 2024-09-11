@@ -1,5 +1,5 @@
 ---
-title: Python面向对象(OOP)
+title: Python 面向对象(OOP)
 order: 20
 description: Object-Oriented Programming (OOP) is a programming paradigm that revolves around the concept of objects
 ---
@@ -17,11 +17,11 @@ description: Object-Oriented Programming (OOP) is a programming paradigm that re
 
 封装是面向对象编程的基本概念之一，有助于保护对象的数据和方法免受未经授权的访问和修改。这是一种实现数据抽象的方法，这意味着对象的实现细节对外界隐藏，只暴露必要的信息。
 
-在 Python 中，可以通过使用访问修饰符来实现封装。访问修饰符是定义类中属性和方法可访问性的关键字。Python 中有三种访问修饰符：public（公共）、private（私有）和 protected（受保护）。然而，Python 没有像 Java 和 C++ 等其他编程语言那样明确定义访问修饰符的方法。相反，它使用下划线前缀的约定来表示访问级别。
+在 Python 中，可以通过使用访问修饰符来实现封装。访问修饰符是定义类中属性和方法可访问性的关键字。Python 中有三种访问修饰符：`public（公共）`、`private（私有）`和 `protected（受保护）`。然而，Python 没有像 Java 和 C++ 等其他编程语言那样明确定义访问修饰符的方法。相反，它使用下划线前缀的约定来表示访问级别。
 
-在给定的代码示例中，类 MyClass 有两个属性，_protected_var 和 __private_var。_protected_var 通过使用单下划线前缀标记为受保护。这意味着该属性可以在类及其子类中访问，但不能在类外部访问。__private_var 通过使用双下划线前缀标记为私有。这意味着该属性只能在类内部访问，不能在类外部访问，甚至在其子类中也不能访问。
+在给定的代码示例中，类 MyClass 有两个属性， `_protected_var` 和 `__private_var`。`_protected_var` 通过使用单下划线前缀标记为受保护。这意味着该属性可以在类及其子类中访问，但不能在类外部访问。`__private_var` 通过使用双下划线前缀标记为私有。这意味着该属性只能在类内部访问，不能在类外部访问，甚至在其子类中也不能访问。
 
-当我们创建 MyClass 类的对象时，可以使用对象名称和单下划线前缀访问 _protected_var 属性。然而，我们不能使用对象名称访问 __private_var 属性，因为它对外界隐藏。如果我们尝试访问 __private_var 属性，将会得到一个 AttributeError，如代码所示。
+当我们创建 MyClass 类的对象时，可以使用对象名称和单下划线前缀访问 `_protected_var` 属性。然而，我们不能使用对象名称访问 `__private_var` 属性，因为它对外界隐藏。如果我们尝试访问 `__private_var` 属性，将会得到一个 `AttributeError`，如代码所示。
 
 总之，封装是面向对象编程中的一个重要概念，有助于保护对象的实现细节。在 Python 中，我们可以通过使用访问修饰符和下划线前缀来表示访问级别来实现封装。
 
