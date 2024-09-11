@@ -353,10 +353,8 @@ furniture
 ## 元组数据类型
 
 
-  
-    [元组与列表的区别](https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each)
-  
-    元组和列表的主要区别在于，<code>元组</code>是<i>不可变</i>对象，而<code>列表</code>是<i>可变</i>的。这意味着元组不能被更改，而列表可以被修改。元组比列表更节省内存。
+[元组与列表的区别](https://stackoverflow.com/questions/1708510/list-vs-tuple-when-to-use-each)
+> 元组和列表的主要区别在于，<code>元组</code>是<i>不可变</i>对象，而<code>列表</code>是<i>可变</i>的。这意味着元组不能被更改，而列表可以被修改。元组比列表更节省内存。
 
 
 ```python
