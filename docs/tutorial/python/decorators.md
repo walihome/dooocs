@@ -1,5 +1,5 @@
 ---
-title: Python装饰器
+title: Python 装饰器
 order: 18
 description: Python 装饰器是一种语法，提供了一种简洁且可重用的方式来扩展函数或类。
 ---
