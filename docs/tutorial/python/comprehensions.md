@@ -26,7 +26,7 @@ description: 列表推导式提供了一种简洁的方式来创建列表
 # ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-And this is how we do the same with a List Comprehension:
+这就是我们使用列表推导式来实现相同功能的方式：
 
 ```python
 >>> names = ['Charles', 'Susan', 'Patrick', 'George']
@@ -36,7 +36,7 @@ And this is how we do the same with a List Comprehension:
 # ['Charles', 'Susan', 'Patrick', 'George']
 ```
 
-We can do the same with numbers:
+我们也可以用数字来做同样的事情：
 
 ```python
 >>> n = [(a, b) for a in range(1, 3) for b in range(1, 3)]
@@ -44,9 +44,9 @@ We can do the same with numbers:
 # [(1, 1), (1, 2), (2, 1), (2, 2)]
 ```
 
-## Adding conditionals
+## 添加条件语句
 
-If we want `new_list` to have only the names that start with C, with a for loop, we would do it like this:
+如果我们想要`new_list`只包含以C开头的名字，我们可以使用for循环这样做：
 
 ```python
 >>> names = ['Charles', 'Susan', 'Patrick', 'George', 'Carol']
@@ -60,7 +60,7 @@ If we want `new_list` to have only the names that start with C, with a for loop,
 # ['Charles', 'Carol']
 ```
 
-In a List Comprehension, we add the `if` statement at the end:
+在列表推导式中，我们将`if`语句放在末尾：
 
 ```python
 >>> new_list = [n for n in names if n.startswith('C')]
@@ -68,7 +68,7 @@ In a List Comprehension, we add the `if` statement at the end:
 # ['Charles', 'Carol']
 ```
 
-To use an `if-else` statement in a List Comprehension:
+在列表推导式中使用 `if-else` 语句：
 
 ```python
 >>> nums = [1, 2, 3, 4, 5, 6]
@@ -78,15 +78,13 @@ To use an `if-else` statement in a List Comprehension:
 ```
 
 
+> 集合「sets」和字典「dictionaries」推导式
   
-    Set and Dict comprehensions
-  
-  
-    The basics of `list` comprehensions also apply to <b>sets</b> and <b>dictionaries</b>.
+> `list` 推导式的基础也适用于 `sets` 和 `dictionaries`.
   
 
 
-## Set comprehension
+## Set 推导式
 
 ```python
 >>> b = {"abc", "def"}
@@ -94,7 +92,7 @@ To use an `if-else` statement in a List Comprehension:
 {"ABC", "DEF"}
 ```
 
-## Dict comprehension
+## Dict 推导式
 
 ```python
 >>> c = {'name': 'Pooka', 'age': 5}
@@ -102,7 +100,7 @@ To use an `if-else` statement in a List Comprehension:
 {'Pooka': 'name', 5: 'age'}
 ```
 
-A List comprehension can be generated from a dictionary:
+列表推导式可以从字典生成：
 
 ```python
 >>> c = {'name': 'Pooka', 'age': 5}
