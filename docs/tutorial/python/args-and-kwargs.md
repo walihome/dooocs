@@ -30,19 +30,13 @@ description: args 和 kwargs 可能看起来很吓人，但实际上它们并不
 >>> # or none
 >>> some_function()
 ```
+> Python 规约
+> 代码中的 `*args` 和 `**kwargs`" 是一种惯例。它们不是由解释器强制的，而是被 Python 社区认为是良好的实践。
 
-<base-warning>
-  <base-warning-title>
-    Python conventions
-  </base-warning-title>
-  <base-warning-content>
-    The words <code>*args</code> and <code>**kwargs</code> are conventions. They are not imposed by the interpreter, but considered good practice by the Python community.
-  </base-warning-content>
-</base-warning>
 
-## args
+## args 入参
 
-You can access the _arguments_ through the `args` variable:
+你可以通过`args`变量访问参数：
 
 ```python
 >>> def some_function(*args):
@@ -54,7 +48,7 @@ You can access the _arguments_ through the `args` variable:
 
 ## kwargs
 
-Keywords are accessed through the `kwargs` variable:
+关键词通过 `kwargs` 变量访问：
 
 ```python
 >>> def some_function(**kwargs):
