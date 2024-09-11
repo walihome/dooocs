@@ -43,7 +43,8 @@ export default defineConfig({
       { text: '教程', link: '/tutorial/' },
       { text: '解惑机器人', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
-
+    // 启用最近更新时间
+    lastUpdated: 'Last Updated', // 显示的文本
     sidebar: sidebar,
 
     editLink: {
