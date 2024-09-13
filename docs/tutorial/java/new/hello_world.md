@@ -1,5 +1,6 @@
 ---
 title: Hello world
+order: 1
 head:
   - - meta
     - name: description
@@ -9,7 +10,7 @@ head:
       content: Java Hello world 程序
 ---
 
-# Java Hello World 程序
+# Hello World 程序
 
 "Hello, World!" 是一个简单的程序，在屏幕上输出 `Hello, World!`。由于它是一个非常简单的程序，通常用来向新手介绍一门新的编程语言。
 
