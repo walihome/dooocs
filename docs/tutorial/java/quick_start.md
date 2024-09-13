@@ -10,8 +10,7 @@ head:
       content: Java 基础语法 basic grammer 注释 变量
 ---
 # 快速开始
-## Java环境安装
-当然可以！以下是在 macOS 系统上配置 Java 安装环境的教程：
+## Java环境安装-mac os
 
 ### 1：检查是否已安装Java
 打开终端应用程序（Terminal），输入以下命令并按下回车键：
