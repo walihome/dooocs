@@ -84,15 +84,16 @@ description: 在计算机编程和软件开发中，调试是查找和解决计�
 # The traceback info was written to errorInfo.txt.
 ```
 
-The 116 is the return value from the `write()` method, since 116 characters were written to the file. The `traceback` text was written to errorInfo.txt.
+116 是 `write()` 方法的返回值，因为 116 个字符被写入了文件。`traceback` 文本被写入到 errorInfo.txt。
 
-    Traceback (most recent call last):
-      File "<pyshell#28>", line 2, in <module>
-    Exception: This is the error message.
+```
+Traceback (most recent call last):
+  File "<pyshell#28>", line 2, in <module>
+Exception: This is the error message.
+```
+## 断言
 
-## Assertions
-
-An assertion is a sanity check to make sure your code isn’t doing something obviously wrong. These sanity checks are performed by `assert` statements. If the sanity check fails, then an `AssertionError` exception is raised. In code, an `assert` statement consists of the following:
+断言是一种健全性检查，用于确保代码没有做明显错误的事情。这些健全性检查是通过 `assert` 语句执行的。如果健全性检查失败，则会引发 `AssertionError` 异常。在代码中，一个 `assert` 语句由以下部分组成：
 
 - The `assert` keyword
 - A condition (that is, an expression that evaluates to `True` or `False`)
@@ -110,23 +111,22 @@ An assertion is a sanity check to make sure your code isn’t doing something ob
 #     assert pod_bay_door_status == 'open', 'The pod bay doors need to be "open".'
 # AssertionError: The pod bay doors need to be "open".
 ```
+简单来说，assert 语句表示“我断言这个条件为真，如果不为真，那么程序中存在一个错误。”与异常不同，你的代码不应该使用 try 和 except 来处理 assert 语句；如果 assert 失败，你的程序应该崩溃。通过快速失败，你可以缩短从错误的最初原因到你第一次注意到错误之间的时间。这将减少你在找到导致错误的代码之前需要检查的代码量。
 
-In plain English, an assert statement says, “I assert that this condition holds true, and if not, there is a bug somewhere in the program.” Unlike exceptions, your code should not handle assert statements with try and except; if an assert fails, your program should crash. By failing fast like this, you shorten the time between the original cause of the bug and when you first notice the bug. This will reduce the amount of code you will have to check before finding the code that’s causing the bug.
+### 禁用断言
 
-### Disabling Assertions
+可以通过在运行 Python 时传递 `-O` 选项来禁用断言。
 
-Assertions can be disabled by passing the `-O` option when running Python.
+## 日志记录
 
-## Logging
-
-To enable the `logging` module to display log messages on your screen as your program runs, copy the following to the top of your program:
+要启用 `logging` 模块在程序运行时在屏幕上显示日志消息，请将以下内容复制到程序的顶部：
 
 ```python
 >>> import logging
 >>> logging.basicConfig(level=logging.DEBUG, format=' %(asctime)s - %(levelname)s- %(message)s')
 ```
 
-Say you wrote a function to calculate the factorial of a number. In mathematics, factorial 4 is 1 × 2 × 3 × 4, or 24. Factorial 7 is 1 × 2 × 3 × 4 × 5 × 6 × 7, or 5,040. Open a new file editor window and enter the following code. It has a bug in it, but you will also enter several log messages to help yourself figure out what is going wrong. Save the program as factorialLog.py.
+假设你编写了一个函数来计算一个数的阶乘。在数学中，4 的阶乘是 1 × 2 × 3 × 4，即 24。7 的阶乘是 1 × 2 × 3 × 4 × 5 × 6 × 7，即 5,040。打开一个新的文件编辑器窗口并输入以下代码。代码中有一个错误，但你也会输入几个日志消息来帮助自己找出问题所在。将程序保存为 factorialLog.py。
 
 ```python
 >>> import logging
@@ -157,21 +157,21 @@ Say you wrote a function to calculate the factorial of a number. In mathematics,
 # 2015-05-23 16:20:12,684 - DEBUG - End of program
 ```
 
-## Logging Levels
+## 日志级别
 
-Logging levels provide a way to categorize your log messages by importance. There are five logging levels, described in Table 10-1 from least to most important. Messages can be logged at each level using a different logging function.
+日志级别提供了一种按重要性对日志消息进行分类的方法。日志级别有五种，从最不重要到最重要的顺序在表10-1中描述。每个级别的消息可以使用不同的日志函数记录。
 
-| Level      | Logging Function     | Description                                                                                                                    |
+| 级别       | 日志函数              | 描述                                                                                                                           |
 | ---------- | -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
-| `DEBUG`    | `logging.debug()`    | The lowest level. Used for small details. Usually you care about these messages only when diagnosing problems.                 |
-| `INFO`     | `logging.info()`     | Used to record information on general events in your program or confirm that things are working at their point in the program. |
-| `WARNING`  | `logging.warning()`  | Used to indicate a potential problem that doesn’t prevent the program from working but might do so in the future.              |
-| `ERROR`    | `logging.error()`    | Used to record an error that caused the program to fail to do something.                                                       |
-| `CRITICAL` | `logging.critical()` | The highest level. Used to indicate a fatal error that has caused or is about to cause the program to stop running entirely.   |
+| `DEBUG`    | `logging.debug()`    | 最低级别。用于记录细节。通常只有在诊断问题时才会关心这些消息。                 |
+| `INFO`     | `logging.info()`     | 用于记录程序中的一般事件或确认程序中的某些点是否正常工作。 |
+| `WARNING`  | `logging.warning()`  | 用于指示潜在问题，这些问题不会阻止程序运行，但将来可能会。              |
+| `ERROR`    | `logging.error()`    | 用于记录导致程序无法执行某些操作的错误。                                                       |
+| `CRITICAL` | `logging.critical()` | 最高级别。用于指示致命错误，这些错误已经或即将导致程序完全停止运行。   |
 
-## Disabling Logging
+## 禁用日志记录
 
-After you’ve debugged your program, you probably don’t want all these log messages cluttering the screen. The logging.disable() function disables these so that you don’t have to go into your program and remove all the logging calls by hand.
+在调试完程序后，你可能不希望所有这些日志消息充斥屏幕。logging.disable() 函数可以禁用这些日志消息，这样你就不必手动进入程序并删除所有的日志调用。
 
 ```python
 >>> import logging
@@ -184,10 +184,9 @@ After you’ve debugged your program, you probably don’t want all these log me
 >>> logging.critical('Critical error! Critical error!')
 >>> logging.error('Error! Error!')
 ```
+## 日志记录到文件
 
-## Logging to a File
-
-Instead of displaying the log messages to the screen, you can write them to a text file. The `logging.basicConfig()` function takes a filename keyword argument, like so:
+与其将日志消息显示到屏幕上，你可以将它们写入到一个文本文件中。`logging.basicConfig()` 函数接受一个 filename 关键字参数，如下所示：
 
 ```python
 >>> import logging

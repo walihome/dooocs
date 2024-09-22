@@ -40,4 +40,4 @@ setup(
 )
 ```
 
-Find more information visit the [official documentation](http://docs.python.org/3.11/install/index.html).
+欲了解更多信息，请访问[官方文档](http://docs.python.org/3.11/install/index.html)。

@@ -1,7 +1,7 @@
 ---
-标题: Python 异常处理
-顺序: 15
-描述: 在Python中，异常处理是响应异常发生的过程。
+title: Python 异常处理
+order: 15
+description: 在Python中，异常处理是响应异常发生的过程。
 ---
 
 
@@ -30,7 +30,7 @@ Python 有许多[内置异常](https://docs.python.org/3/library/exceptions.html
 # ZeroDivisionError: division by zero
 ```
 
-Let's say we don't want our program to stop its execution or show the user an output he will not understand. Say we want to print a useful and clear message, then we need to **_handle_** the exception with the `try` and `except` keywords:
+假设我们不希望程序停止执行或向用户显示他们无法理解的输出。假设我们想打印一个有用且清晰的消息，那么我们需要使用 `try` 和 `except` 关键字来**处理**异常：
 
 ```python
 >>> def divide(dividend , divisor):
@@ -46,9 +46,9 @@ Let's say we don't want our program to stop its execution or show the user an ou
 # You can not divide by 0
 ```
 
-## Handling Multiple exceptions using one exception block
+## 使用一个异常块处理多个异常
 
-You can also handle multiple exceptions in one line like the following without the need to create multiple exception blocks.
+你也可以像下面这样在一行中处理多个异常，而无需创建多个异常块。
 
 ```python
 >>> def divide(dividend , divisor):
@@ -66,9 +66,9 @@ You can also handle multiple exceptions in one line like the following without t
 # `can only concatenate str (not "int") to str` Error message
 ```
 
-## Finally code in exception handling
+## 异常处理中的 finally 代码
 
-The code inside the `finally` section is always executed, no matter if an exception has been raised or not:
+无论是否引发异常，`finally` 部分中的代码总是会被执行：
 
 ```python
 >>> def divide(dividend , divisor):
@@ -88,9 +88,9 @@ The code inside the `finally` section is always executed, no matter if an except
 # Execution finished
 ```
 
-## Custom Exceptions
+## 自定义异常
 
-Custom exceptions initialize by creating a `class` that inherits from the base `Exception` class of Python, and are raised using the `raise` keyword:
+自定义异常通过创建一个继承自 Python 基础 `Exception` 类的 `class` 来初始化，并使用 `raise` 关键字来引发：
 
 ```python
 >>> class MyCustomException(Exception):
@@ -102,7 +102,7 @@ Custom exceptions initialize by creating a `class` that inherits from the base `
 # __main__.MyCustomException
 ```
 
-To declare a custom exception message, you can pass it as a parameter:
+要声明自定义异常消息，可以将其作为参数传递：
 
 ```python
 >>> class MyCustomException(Exception):
@@ -114,7 +114,7 @@ To declare a custom exception message, you can pass it as a parameter:
 # __main__.MyCustomException: A custom message for my custom exception
 ```
 
-Handling a custom exception is the same as any other:
+处理自定义异常与处理其他异常相同：
 
 ```python
 >>> try:

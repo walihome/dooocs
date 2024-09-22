@@ -1,7 +1,7 @@
 ---
-title: Python数据类
+title: Python 数据类
 order: 21
-description: Dataclasses are python classes, but are suited for storing data objects. This module provides a decorator and functions for automatically adding generated special methods such as __init__() and __repr__() to user-defined classes.
+description: 数据类是 Python 类，但更适合用于存储数据对象。这个模块提供了一个装饰器和一些函数，可以自动为用户定义的类添加生成的特殊方法，比如 __init__() 和 __repr__()。
 ---
 
 
@@ -28,7 +28,7 @@ Python 3.7 提供了一个装饰器 dataclass，用于将类转换为数据类�
 # 2
 ```
 
-with dataclass
+使用数据类
 
 ```python
 >>> @dataclass
@@ -40,9 +40,9 @@ with dataclass
 # 2
 ```
 
-## Default values
+## 默认值
 
-It is easy to add default values to the fields of your data class.
+在数据类的字段中添加默认值非常容易。
 
 ```python
 >>> @dataclass
@@ -62,9 +62,9 @@ It is easy to add default values to the fields of your data class.
 # 0.0
 ```
 
-## Type hints
+## 类型提示
 
-It is mandatory to define the data type in dataclass. However, If you would rather not specify the datatype then, use `typing.Any`.
+在数据类中定义数据类型是强制性的。然而，如果你不想指定数据类型，可以使用 `typing.Any`。
 
 ```python
 >>> from dataclasses import dataclass

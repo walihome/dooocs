@@ -31,7 +31,7 @@ os.path VS pathlib
 # 'usr\\bin\\spam'
 ```
 
-And using `pathlib` on \*nix:
+在 \*nix 系统上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -66,7 +66,7 @@ Using `os.path.join` on Windows:
 # C:\Users\asweigart\invite.docx
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 系统上使用 `pathlib`：
 
 ```python
 >>> my_files = ['accounts.txt', 'details.csv', 'invite.docx']
@@ -79,9 +79,9 @@ Using `pathlib` on \*nix:
 # /home/asweigart/invite.docx
 ```
 
-## The current working directory
+## 当前工作目录
 
-Using `os` on Windows:
+在 Windows 上使用 `os`：
 
 ```python
 >>> import os
@@ -94,7 +94,7 @@ Using `os` on Windows:
 # 'C:\\Windows\\System32'
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 系统上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -108,9 +108,9 @@ Using `pathlib` on \*nix:
 # /usr/lib/python3.6
 ```
 
-## Creating new folders
+## 创建新文件夹
 
-Using `os` on Windows:
+在 Windows 上使用 `os`：
 
 ```python
 >>> import os
@@ -132,9 +132,7 @@ Using `pathlib` on \*nix:
 # FileNotFoundError: [Errno 2] No such file or directory: '/home/asweigart/delicious/walnut/waffles'
 ```
 
-Oh no, we got a nasty error! The reason is that the 'delicious' directory does
-not exist, so we cannot make the 'walnut' and the 'waffles' directories under
-it. To fix this, do:
+哦不，我们遇到了一个严重的错误！原因是 'delicious' 目录不存在，所以我们不能在其下创建 'walnut' 和 'waffles' 目录。要解决这个问题，请执行以下操作：
 
 ```python
 >>> from pathlib import Path
@@ -142,22 +140,22 @@ it. To fix this, do:
 >>> (cwd / 'delicious' / 'walnut' / 'waffles').mkdir(parents=True)
 ```
 
-And all is good :)
+一切都很好 :)
 
-## Absolute vs. Relative paths
+## 绝对路径 vs. 相对路径
 
-There are two ways to specify a file path.
+有两种指定文件路径的方法。
 
-- An **absolute path**, which always begins with the root folder
-- A **relative path**, which is relative to the program’s current working directory
+- **绝对路径**，总是以根文件夹开始
+- **相对路径**，相对于程序的当前工作目录
 
-There are also the dot (`.`) and dot-dot (`..`) folders. These are not real folders, but special names that can be used in a path. A single period (“dot”) for a folder name is shorthand for “this directory.” Two periods (“dot-dot”) means “the parent folder.”
+还有点 (`.`) 和点点 (`..`) 文件夹。这些不是真正的文件夹，而是可以在路径中使用的特殊名称。单个句点（“点”）表示“此目录”的简写。两个句点（“点点”）表示“父文件夹”。
 
-### Handling Absolute paths
+### 处理绝对路径
 
-To see if a path is an absolute path:
+查看路径是否为绝对路径：
 
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -168,7 +166,7 @@ Using `os.path` on \*nix:
 # False
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -179,9 +177,9 @@ Using `pathlib` on \*nix:
 # False
 ```
 
-You can extract an absolute path with both `os.path` and `pathlib`
+你可以使用 `os.path` 和 `pathlib` 提取绝对路径
 
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -192,7 +190,7 @@ Using `os.path` on \*nix:
 '/home'
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 from pathlib import Path
@@ -203,11 +201,11 @@ print(Path('..').resolve())
 # /home
 ```
 
-### Handling Relative paths
+### 处理相对路径
 
-You can get a relative path from a starting path to another path.
+你可以从一个起始路径获取到另一个路径的相对路径。
 
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -215,7 +213,7 @@ Using `os.path` on \*nix:
 # 'etc/passwd'
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -223,11 +221,11 @@ Using `pathlib` on \*nix:
 # etc/passwd
 ```
 
-## Path and File validity
+## 路径和文件有效性
 
-### Checking if a file/directory exists
+### 检查文件/目录是否存在
 
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -245,7 +243,7 @@ Using `os.path` on \*nix:
 # False
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 from pathlib import Path
@@ -262,10 +260,9 @@ from pathlib import Path
 >>> Path('nonexistentfile').exists()
 # False
 ```
+### 检查路径是否是文件
 
-### Checking if a path is a file
-
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -280,7 +277,7 @@ Using `os.path` on \*nix:
 # False
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -295,9 +292,9 @@ Using `pathlib` on \*nix:
 # False
 ```
 
-### Checking if a path is a directory
+### 检查路径是否是目录
 
-Using `os.path` on \*nix:
+在 \*nix 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -312,7 +309,7 @@ Using `os.path` on \*nix:
 # False
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -327,9 +324,9 @@ Using `pathlib` on \*nix:
 # False
 ```
 
-## Getting a file's size in bytes
+## 获取文件的大小（以字节为单位）
 
-Using `os.path` on Windows:
+在 Windows 上使用 `os.path`：
 
 ```python
 >>> import os
@@ -338,7 +335,7 @@ Using `os.path` on Windows:
 # 776192
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -353,9 +350,9 @@ Using `pathlib` on \*nix:
 # 10024
 ```
 
-## Listing directories
+## 列出目录
 
-Listing directory contents using `os.listdir` on Windows:
+在 Windows 上使用 `os.listdir` 列出目录内容：
 
 ```python
 >>> import os
@@ -366,7 +363,7 @@ Listing directory contents using `os.listdir` on Windows:
 # 'xwtpdui.dll', 'xwtpw32.dll', 'zh-CN', 'zh-HK', 'zh-TW', 'zipfldr.dll']
 ```
 
-Listing directory contents using `pathlib` on \*nix:
+使用 `pathlib` 列出 \*nix 上的目录内容：
 
 ```python
 >>> from pathlib import Path
@@ -387,18 +384,13 @@ Listing directory contents using `pathlib` on \*nix:
 # ...
 ```
 
-## Directory file sizes
+## 目录文件大小
 
-<base-warning>
-  <base-warning-title>
-    WARNING
-  </base-warning-title>
-  <base-warning-content>
-    Directories themselves also have a size! So, you might want to check for whether a path is a file or directory using the methods in the methods discussed in the above section.
-  </base-warning-content>
-</base-warning>
+> **警告**
+> 
+> 目录本身也有大小！因此，您可能需要使用上面讨论的方法来检查路径是文件还是目录。
 
-Using `os.path.getsize()` and `os.listdir()` together on Windows:
+在 Windows 上使用 `os.path.getsize()` 和 `os.listdir()` 一起使用：
 
 ```python
 >>> import os
@@ -411,7 +403,7 @@ Using `os.path.getsize()` and `os.listdir()` together on Windows:
 # 1117846456
 ```
 
-Using `pathlib` on \*nix:
+在 \*nix 上使用 `pathlib`：
 
 ```python
 >>> from pathlib import Path
@@ -424,9 +416,9 @@ Using `pathlib` on \*nix:
 # 1903178911
 ```
 
-## Copying files and folders
+## 复制文件和文件夹
 
-The `shutil` module provides functions for copying files, as well as entire folders.
+`shutil` 模块提供了复制文件以及整个文件夹的功能。
 
 ```python
 >>> import shutil, os
@@ -439,7 +431,7 @@ The `shutil` module provides functions for copying files, as well as entire fold
 # 'C:\\delicious\\eggs2.txt'
 ```
 
-While `shutil.copy()` will copy a single file, `shutil.copytree()` will copy an entire folder and every folder and file contained in it:
+虽然 `shutil.copy()` 会复制单个文件，但 `shutil.copytree()` 会复制整个文件夹及其包含的所有文件和文件夹：
 
 ```python
 >>> import shutil, os
@@ -449,7 +441,7 @@ While `shutil.copy()` will copy a single file, `shutil.copytree()` will copy an 
 # 'C:\\bacon_backup'
 ```
 
-## Moving and Renaming
+## 移动和重命名
 
 ```python
 >>> import shutil
@@ -458,29 +450,28 @@ While `shutil.copy()` will copy a single file, `shutil.copytree()` will copy an 
 # 'C:\\eggs\\bacon.txt'
 ```
 
-The destination path can also specify a filename. In the following example, the source file is moved and renamed:
+目标路径也可以指定文件名。在以下示例中，源文件被移动并重命名：
 
 ```python
 >>> shutil.move('C:\\bacon.txt', 'C:\\eggs\\new_bacon.txt')
 # 'C:\\eggs\\new_bacon.txt'
 ```
 
-If there is no eggs folder, then `move()` will rename bacon.txt to a file named eggs:
+如果没有 eggs 文件夹，那么 `move()` 会将 bacon.txt 重命名为名为 eggs 的文件：
 
 ```python
 >>> shutil.move('C:\\bacon.txt', 'C:\\eggs')
 # 'C:\\eggs'
 ```
+## 删除文件和文件夹
 
-## Deleting files and folders
+- 调用 `os.unlink(path)` 或 `Path.unlink()` 将删除指定路径的文件。
 
-- Calling `os.unlink(path)` or `Path.unlink()` will delete the file at path.
+- 调用 `os.rmdir(path)` 或 `Path.rmdir()` 将删除指定路径的文件夹。该文件夹必须为空文件夹。
 
-- Calling `os.rmdir(path)` or `Path.rmdir()` will delete the folder at path. This folder must be empty of any files or folders.
+- 调用 `shutil.rmtree(path)` 将删除指定路径的文件夹及其包含的所有文件和文件夹。
 
-- Calling `shutil.rmtree(path)` will remove the folder at path, and all files and folders it contains will also be deleted.
-
-## Walking a Directory Tree
+## 遍历目录树
 
 ```python
 >>> import os
@@ -511,6 +502,6 @@ If there is no eggs folder, then `move()` will rename bacon.txt to a file named 
 
 
   
-    Pathlib vs Os Module
+Pathlib 模块 vs Os 模块
   
 > `pathlib` 提供了比上述列出的更多功能，比如获取文件名、获取文件扩展名、无需手动打开即可读取/写入文件等。参见 [官方文档](https://docs.python.org/3/library/pathlib.html)

@@ -33,7 +33,7 @@ foo()
 # After func!
 ```
 
-## Decorator for a function with parameters
+## 带参数的函数装饰器
 
 ```python
 def your_decorator(func):
@@ -56,9 +56,9 @@ foo("Jack")
 # After func!
 ```
 
-## Template for a basic decorator
+## 基本装饰器模板
 
-This template is useful for most decorator use-cases. It is valid for functions with or without parameters, and with or without a return value.
+此模板适用于大多数装饰器的使用情况。它适用于有或没有参数的函数，以及有或没有返回值的函数。
 
 ```python
 import functools
@@ -73,9 +73,9 @@ def your_decorator(func):
   return wrapper
 ```
 
-## Decorator with parameters
+## 带参数的装饰器
 
-You can also define parameters for the decorator to use.
+你也可以为装饰器定义参数来使用。
 
 ```python
 import functools
@@ -92,7 +92,7 @@ def your_decorator(arg):
   return decorator
 ```
 
-To use this decorator:
+要使用这个装饰器：
 
 ```python
 @your_decorator(arg = 'x')
@@ -100,9 +100,9 @@ def foo(bar):
   return bar
 ```
 
-## Class based decorators
+## 基于类的装饰器
 
-A decorator can also be defined as a class instead of a method. This is useful for maintaining and updating a state, such as in the following example, where we count the number of calls made to a method:
+装饰器也可以定义为类而不是方法。这对于维护和更新状态非常有用，例如在以下示例中，我们计算对方法的调用次数：
 
 ```python
 class CountCallNumber:
@@ -130,12 +130,9 @@ say_hi("James")
 ```
 
   
-    Count Example
-  
-  
-  This count example is inspired by Patrick Loeber's <a href="https://youtu.be/HGOBQPFzWKo?si=IUvFzeQbzTmeEgKV" target="_blank">YouTube tutorial</a>.
-  
+计数示例
 
+此计数示例的灵感来自于 Patrick Loeber 的 [YouTube 教程](https://youtu.be/HGOBQPFzWKo?si=IUvFzeQbzTmeEgKV)。
 
 
 

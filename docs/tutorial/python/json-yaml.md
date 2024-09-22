@@ -18,7 +18,7 @@ JSON 代表 JavaScript 对象表示法，是一种用于存储和传输数据的
 ...     content = json.load(f)
 ```
 
-Write a JSON file with:
+写一个包含以下内容的 JSON 文件：
 
 ```python
 >>> import json
@@ -30,19 +30,18 @@ Write a JSON file with:
 
 ## YAML
 
-Compared to JSON, YAML allows a much better human maintainability and gives ability to add comments. It is a convenient choice for configuration files where a human will have to edit.
+与 JSON 相比，YAML 具有更好的可维护性，并且可以添加注释。它是需要人工编辑的配置文件的方便选择。
 
-There are two main libraries allowing to access to YAML files:
+有两个主要的库可以访问 YAML 文件：
 
 - [PyYaml](https://pypi.python.org/pypi/PyYAML)
 - [Ruamel.yaml](https://pypi.python.org/pypi/ruamel.yaml)
 
-Install them using `pip install` in your virtual environment.
+在你的虚拟环境中使用 `pip install` 安装它们。
 
-The first one is easier to use but the second one, Ruamel, implements much better the YAML
-specification, and allow for example to modify a YAML content without altering comments.
+第一个库更容易使用，但第二个库 Ruamel 更好地实现了 YAML 规范，并且例如允许在不改变注释的情况下修改 YAML 内容。
 
-Open a YAML file with:
+打开一个 YAML 文件：
 
 ```python
 >>> from ruamel.yaml import YAML
@@ -54,15 +53,15 @@ Open a YAML file with:
 
 ## Anyconfig
 
-[Anyconfig](https://pypi.python.org/pypi/anyconfig) is a very handy package, allowing to abstract completely the underlying configuration file format. It allows to load a Python dictionary from JSON, YAML, TOML, and so on.
+[Anyconfig](https://pypi.python.org/pypi/anyconfig) 是一个非常方便的包，允许完全抽象底层的配置文件格式。它允许从 JSON、YAML、TOML 等加载 Python 字典。
 
-Install it with:
+安装方法：
 
 ```bash
 pip install anyconfig
 ```
 
-Usage:
+用法：
 
 ```python
 >>> import anyconfig

@@ -1,5 +1,5 @@
 ---
-title: Python虚拟环境
+title: Python 虚拟环境
 order: 24
 description: 使用虚拟环境的目的是在封装的环境中测试Python代码，并且避免将我们可能只用于一个项目的库填充到基础Python安装中。
 ---
@@ -29,13 +29,12 @@ pip install virtualenvwrapper-win
 ```
 mkvirtualenv HelloWorld
 ```
-        
 
-    现在我们安装的任何东西都将特定于这个项目。并且可用于我们连接到此环境的项目。
+现在我们安装的任何东西都将特定于这个项目。并且可用于我们连接到此环境的项目。
 
 1.  设置项目目录
 
-    要将我们的虚拟环境与当前工作目录绑定，只需输入：
+要将我们的虚拟环境与当前工作目录绑定，只需输入：
 ```
 setprojectdir .
 ```
@@ -43,18 +42,16 @@ setprojectdir .
 
 1.  退出虚拟环境
 
-    要在命令行中继续其他操作，输入 `deactivate` 以停用您的环境。
+要在命令行中继续其他操作，输入 `deactivate` 以停用您的环境。
 ```
 deactivate
 ```
-        
 
-    注意括号如何消失。
+注意括号如何消失。
 
 1.  使用 Workon
 
-    打开命令提示符并输入 `workon HelloWorld` 以激活环境并进入您的根项目文件夹
-
+打开命令提示符并输入 `workon HelloWorld` 以激活环境并进入您的根项目文件夹
 ```
 workon HelloWorld
 ```
@@ -154,7 +151,7 @@ cd my_project
 pipenv install <package>
 ```
 
-    Pipenv 会为你安装包并在你的项目目录中创建一个 Pipfile。Pipfile 用于跟踪你的项目需要哪些依赖项，以防你需要重新安装它们。
+Pipenv 会为你安装包并在你的项目目录中创建一个 Pipfile。Pipfile 用于跟踪你的项目需要哪些依赖项，以防你需要重新安装它们。
 
 3.  卸载包
 

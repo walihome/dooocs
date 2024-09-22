@@ -42,7 +42,7 @@ Python 中所有的正则表达式函数都在 re 模块中：
 | `[abc]`                  | 匹配方括号内的任意字符（如 a、b、c）。                 |
 | `[^abc]`                 | 匹配不在方括号内的任意字符。                           |
 
-## Matching regex objects
+## 匹配正则表达式对象
 
 ```python
 >>> phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d')
@@ -53,7 +53,7 @@ Python 中所有的正则表达式函数都在 re 模块中：
 # Phone number found: 415-555-4242
 ```
 
-## Grouping with parentheses
+## 使用括号分组
 
 ```python
 >>> phone_num_regex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
@@ -72,7 +72,7 @@ Python 中所有的正则表达式函数都在 re 模块中：
 # '415-555-4242'
 ```
 
-To retrieve all the groups at once use the `groups()` method:
+要一次性获取所有分组，请使用 `groups()` 方法：
 
 ```python
 >>> mo.groups()
@@ -87,9 +87,9 @@ To retrieve all the groups at once use the `groups()` method:
 555-4242
 ```
 
-## Multiple groups with Pipe
+## 使用管道符号进行多组匹配
 
-You can use the `|` character anywhere you want to match one of many expressions.
+你可以在任何地方使用 `|` 字符来匹配多个表达式中的一个。
 
 ```python
 >>> hero_regex = re.compile (r'Batman|Tina Fey')
@@ -103,7 +103,7 @@ You can use the `|` character anywhere you want to match one of many expressions
 # 'Tina Fey'
 ```
 
-You can also use the pipe to match one of several patterns as part of your regex:
+你也可以使用管道符号来匹配正则表达式中的多个模式之一：
 
 ```python
 >>> bat_regex = re.compile(r'Bat(man|mobile|copter|bat)')
@@ -116,9 +116,9 @@ You can also use the pipe to match one of several patterns as part of your regex
 # 'mobile'
 ```
 
-## Optional matching with the Question Mark
+## 使用问号进行可选匹配
 
-The `?` character flags the group that precedes it as an optional part of the pattern.
+`?` 字符将其前面的分组标记为模式的可选部分。
 
 ```python
 >>> bat_regex = re.compile(r'Bat(wo)?man')
@@ -132,9 +132,9 @@ The `?` character flags the group that precedes it as an optional part of the pa
 # 'Batwoman'
 ```
 
-## Matching zero or more with the Star
+## 使用星号匹配零次或多次
 
-The `*` (star or asterisk) means “match zero or more”. The group that precedes the star can occur any number of times in the text.
+`*`（星号或星号）表示“匹配零次或多次”。星号前面的分组可以在文本中出现任意次数。
 
 ```python
 >>> bat_regex = re.compile(r'Bat(wo)*man')
@@ -151,9 +151,9 @@ The `*` (star or asterisk) means “match zero or more”. The group that preced
 'Batwowowowoman'
 ```
 
-## Matching one or more with the Plus
+## 使用加号匹配一个或多个
 
-The `+` (or plus) _means match one or more_. The group preceding a plus must appear at least once:
+`+`（或加号）表示匹配一个或多个。加号前面的分组必须至少出现一次：
 
 ```python
 >>> bat_regex = re.compile(r'Bat(wo)+man')
@@ -170,10 +170,9 @@ The `+` (or plus) _means match one or more_. The group preceding a plus must app
 >>> mo3 is None
 # True
 ```
+## 使用大括号匹配特定次数的重复
 
-## Matching specific repetitions with Curly Brackets
-
-If you have a group that you want to repeat a specific number of times, follow the group in your regex with a number in curly brackets:
+如果你有一个想要重复特定次数的分组，在正则表达式中跟随该分组后面加上大括号中的数字：
 
 ```python
 >>> ha_regex = re.compile(r'(Ha){3}')
@@ -187,7 +186,7 @@ If you have a group that you want to repeat a specific number of times, follow t
 # True
 ```
 
-Instead of one number, you can specify a range with minimum and a maximum in between the curly brackets. For example, the regex (Ha){3,5} will match 'HaHaHa', 'HaHaHaHa', and 'HaHaHaHaHa'.
+你可以在大括号中指定一个范围，而不是一个数字。例如，正则表达式 (Ha){3,5} 将匹配 'HaHaHa'、'HaHaHaHa' 和 'HaHaHaHaHa'。
 
 ```python
 >>> ha_regex = re.compile(r'(Ha){2,3}')
@@ -196,9 +195,9 @@ Instead of one number, you can specify a range with minimum and a maximum in bet
 # 'HaHaHa'
 ```
 
-## Greedy and non-greedy matching
+## 贪婪和非贪婪匹配
 
-Python’s regular expressions are greedy by default: in ambiguous situations they will match the longest string possible. The non-greedy version of the curly brackets, which matches the shortest string possible, has the closing curly bracket followed by a question mark.
+Python 的正则表达式默认是贪婪的：在模糊情况下，它们会匹配尽可能长的字符串。大括号的非贪婪版本匹配尽可能短的字符串，闭合大括号后面跟一个问号。
 
 ```python
 >>> greedy_ha_regex = re.compile(r'(Ha){3,5}')
@@ -213,9 +212,9 @@ Python’s regular expressions are greedy by default: in ambiguous situations th
 # 'HaHaHa'
 ```
 
-## The findall() method
+## findall() 方法
 
-The `findall()` method will return the strings of every match in the searched string.
+`findall()` 方法将返回搜索字符串中每个匹配的字符串。
 
 ```python
 >>> phone_num_regex = re.compile(r'\d\d\d-\d\d\d-\d\d\d\d') # has no groups
@@ -224,9 +223,9 @@ The `findall()` method will return the strings of every match in the searched st
 # ['415-555-9999', '212-555-0000']
 ```
 
-## Making your own character classes
+## 创建你自己的字符类
 
-You can define your own character class using square brackets. For example, the character class _[aeiouAEIOU]_ will match any vowel, both lowercase and uppercase.
+你可以使用方括号定义你自己的字符类。例如，字符类 _[aeiouAEIOU]_ 将匹配任何元音字母，包括小写和大写。
 
 ```python
 >>> vowel_regex = re.compile(r'[aeiouAEIOU]')
@@ -234,9 +233,9 @@ You can define your own character class using square brackets. For example, the 
 # ['o', 'o', 'o', 'e', 'a', 'a', 'o', 'o', 'A', 'O', 'O']
 ```
 
-You can also include ranges of letters or numbers by using a hyphen. For example, the character class _[a-zA-Z0-9]_ will match all lowercase letters, uppercase letters, and numbers.
+你也可以通过使用连字符来包含字母或数字的范围。例如，字符类 _[a-zA-Z0-9]_ 将匹配所有小写字母、大写字母和数字。
 
-By placing a caret character (`^`) just after the character class’s opening bracket, you can make a negative character class that will match all the characters that are not in the character class:
+通过在字符类的开头方括号后面放置一个插入符号 (`^`)，你可以创建一个否定字符类，它将匹配所有不在字符类中的字符：
 
 ```python
 >>> consonant_regex = re.compile(r'[^aeiouAEIOU]')
@@ -244,16 +243,15 @@ By placing a caret character (`^`) just after the character class’s opening br
 # ['R', 'b', 'c', 'p', ' ', 't', 's', ' ', 'b', 'b', 'y', ' ', 'f', 'd', '.', '
 # ', 'B', 'B', 'Y', ' ', 'F', 'D', '.']
 ```
+## 插入符号和美元符号字符
 
-## The Caret and Dollar sign characters
+- 你也可以在正则表达式的开头使用插入符号 `^`，以表示匹配必须出现在搜索文本的开头。
 
-- You can also use the caret symbol `^` at the start of a regex to indicate that a match must occur at the beginning of the searched text.
+- 同样，你可以在正则表达式的末尾放置一个美元符号 `$`，以表示字符串必须以此正则表达式模式结尾。
 
-- Likewise, you can put a dollar sign `$` at the end of the regex to indicate the string must end with this regex pattern.
+- 你可以同时使用 `^` 和 `$`，以表示整个字符串必须匹配正则表达式。
 
-- And you can use the `^` and `$` together to indicate that the entire string must match the regex.
-
-The `r'^Hello`' regular expression string matches strings that begin with 'Hello':
+正则表达式字符串 `r'^Hello'` 匹配以 'Hello' 开头的字符串：
 
 ```python
 >>> begins_with_hello = re.compile(r'^Hello')
@@ -264,7 +262,7 @@ The `r'^Hello`' regular expression string matches strings that begin with 'Hello
 # True
 ```
 
-The `r'\d\$'` regular expression string matches strings that end with a numeric character from 0 to 9:
+正则表达式字符串 `r'\d\$'` 匹配以数字字符（0到9）结尾的字符串：
 
 ```python
 >>> whole_string_is_num = re.compile(r'^\d+$')
@@ -279,9 +277,9 @@ The `r'\d\$'` regular expression string matches strings that end with a numeric 
 # True
 ```
 
-## The Wildcard character
+## 通配符字符
 
-The `.` (or dot) character in a regular expression will match any character except for a newline:
+在正则表达式中，`.`（或点）字符将匹配除换行符以外的任何字符：
 
 ```python
 >>> at_regex = re.compile(r'.at')
@@ -290,7 +288,7 @@ The `.` (or dot) character in a regular expression will match any character exce
 ['cat', 'hat', 'sat', 'lat', 'mat']
 ```
 
-## Matching everything with Dot-Star
+## 使用点星匹配所有内容
 
 ```python
 >>> name_regex = re.compile(r'First Name: (.*) Last Name: (.*)')
@@ -303,7 +301,7 @@ The `.` (or dot) character in a regular expression will match any character exce
 'Sweigart'
 ```
 
-The `.*` uses greedy mode: It will always try to match as much text as possible. To match any and all text in a non-greedy fashion, use the dot, star, and question mark (`.*?`). The question mark tells Python to match in a non-greedy way:
+`.*` 使用贪婪模式：它总是会尝试匹配尽可能多的文本。要以非贪婪方式匹配任何和所有文本，请使用点、星号和问号（`.*?`）。问号告诉 Python 以非贪婪方式进行匹配：
 
 ```python
 >>> non_greedy_regex = re.compile(r'<.*?>')
@@ -317,9 +315,9 @@ The `.*` uses greedy mode: It will always try to match as much text as possible.
 # '<To serve man> for dinner.>'
 ```
 
-## Matching newlines with the Dot character
+## 使用点字符匹配换行符
 
-The dot-star will match everything except a newline. By passing `re.DOTALL` as the second argument to `re.compile()`, you can make the dot character match all characters, including the newline character:
+点星将匹配除换行符以外的所有内容。通过将 `re.DOTALL` 作为第二个参数传递给 `re.compile()`，可以使点字符匹配所有字符，包括换行符：
 
 ```python
 >>> no_newline_regex = re.compile('.*')
@@ -331,9 +329,9 @@ The dot-star will match everything except a newline. By passing `re.DOTALL` as t
 # 'Serve the public trust.\nProtect the innocent.\nUphold the law.'
 ```
 
-## Case-Insensitive matching
+## 不区分大小写匹配
 
-To make your regex case-insensitive, you can pass `re.IGNORECASE` or `re.I` as a second argument to `re.compile()`:
+要使正则表达式不区分大小写，可以将 `re.IGNORECASE` 或 `re.I` 作为第二个参数传递给 `re.compile()`：
 
 ```python
 >>> robocop = re.compile(r'robocop', re.I)
@@ -348,14 +346,14 @@ To make your regex case-insensitive, you can pass `re.IGNORECASE` or `re.I` as a
 # 'robocop'
 ```
 
-## Substituting strings with the sub() method
+## 使用 sub() 方法替换字符串
 
-The `sub()` method for Regex objects is passed two arguments:
+正则表达式对象的 `sub()` 方法接受两个参数：
 
-1. The first argument is a string to replace any matches.
-1. The second is the string for the regular expression.
+1. 第一个参数是用于替换任何匹配项的字符串。
+1. 第二个参数是正则表达式的字符串。
 
-The `sub()` method returns a string with the substitutions applied:
+`sub()` 方法返回一个应用了替换的字符串：
 
 ```python
 >>> names_regex = re.compile(r'Agent \w+')
@@ -364,17 +362,17 @@ The `sub()` method returns a string with the substitutions applied:
 # 'CENSORED gave the secret documents to CENSORED.'
 ```
 
-## Managing complex Regexes
+## 管理复杂的正则表达式
 
-To tell the `re.compile()` function to ignore whitespace and comments inside the regular expression string, “verbose mode” can be enabled by passing the variable `re.VERBOSE` as the second argument to `re.compile()`.
+要告诉 `re.compile()` 函数忽略正则表达式字符串中的空格和注释，可以通过将变量 `re.VERBOSE` 作为第二个参数传递给 `re.compile()` 来启用“详细模式”。
 
-Now instead of a hard-to-read regular expression like this:
+现在，不再需要像这样难以阅读的正则表达式：
 
 ```python
 phone_regex = re.compile(r'((\d{3}|\(\d{3}\))?(\s|-|\.)?\d{3}(\s|-|\.)\d{4}(\s*(ext|x|ext.)\s*\d{2,5})?)')
 ```
 
-you can spread the regular expression over multiple lines with comments like this:
+你可以像这样将正则表达式分成多行并添加注释：
 
 ```python
 phone_regex = re.compile(r'''(
