@@ -1,7 +1,7 @@
 ---
 title: 快速开始
 colla: true
-order: 50
+order: 2
 head:
   - - meta
     - name: dooocs
