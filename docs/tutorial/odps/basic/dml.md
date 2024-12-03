@@ -1,13 +1,13 @@
 ---
-title: 基础DML
+title: DML示例
 colla: true
 order: 50
 head:
   - - meta
-    - name: odps dml dooocs
+    - name: odps dml dooocs dml示例
       content: odps dml
 ---
-# ODPS 基础DML实例
+# DML示例
 ## 创建一张表
 ```sql
 create table if not exists adm_xx_dd
