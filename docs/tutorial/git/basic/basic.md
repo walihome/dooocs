@@ -1,13 +1,13 @@
 ---
-title: git基础学习手册
+title: git基础命令
 colla: true
 order: 1
 head:
   - - meta
-    - name: dooocs git
-      content: git git学习
+    - name: dooocs git 基础 命令 基础命令 删除 分支
+      content: git 
 ---
-# Git基础学习手册
+# Git基础命令
 
 
 git 删除 本地多余的分支
