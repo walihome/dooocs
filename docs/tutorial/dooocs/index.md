@@ -1,5 +1,5 @@
 ---
-title: D站开发思路
+title: D站愿景和目标
 colla: true
 order: 1
 head:
@@ -7,4 +7,4 @@ head:
     - name: dooocs D站
       content: D站
 ---
-# D站开发思路
+# D站愿景和目标
