@@ -1,5 +1,5 @@
 ---
-title: D站事记
+title: D站文档库
 colla: true
 order: 0
 head:
@@ -7,4 +7,4 @@ head:
     - name: dooocs D站
       content: D站
 ---
-# D站事记
+# D站文档库
