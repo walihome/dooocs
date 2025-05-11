@@ -25,15 +25,16 @@ editLink: false
 
 
 .horizontal-layout a {
-  text-decoration: none;
-  color: #3eaf7c;
-  border-bottom: 10px solid;
+  text-decoration: none !important;
+  color: #3eaf7c !important; 
+  border-bottom: 10px solid !important;
 }
 
 .horizontal-layout h2 {
-  border-top: none;
-  border-bottom: 10px solid;
-  margin: 0 0;
+  border-top: none !important;
+  border-bottom: 10px solid !important;
+  margin: 0 0 !important;
+  color: #3eaf7c !important; 
 }
 
 .custom-layout {
@@ -46,8 +47,8 @@ editLink: false
 }
 
 .horizontal-layout {
-  margin: 0px 0px;
-  padding: 0px 0px;
+  margin: 0px 0px !important;
+  padding: 0px 0px !important;
 }
 
 .custom-block {
@@ -58,9 +59,4 @@ editLink: false
   width: auto;
 }
 
-h2 {
-  color: #3eaf7c;
-  margin-bottom: 0.5rem;
-  white-space: nowrap;
-}
 </style>
