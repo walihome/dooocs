@@ -1,23 +1,10 @@
----
-editLink: false
----
-
 # tutorial
 
-- [ai](./ai/index.md)
-- [chatgpt](./chatgpt/index.md)
-- [contact](./contact/index.md)
 - [git](./git/index.md)
 - [ios](./ios/index.md)
 - [java](./java/index.md)
 - [markdown](./markdown/index.md)
 - [maven](./maven/index.md)
-- [mongodb](./mongodb/index.md)
-- [nginx](./nginx/index.md)
-- [nodebb](./nodebb/index.md)
 - [odps](./odps/index.md)
-- [public](./public/index.md)
 - [python](./python/index.md)
-- [seo](./seo/index.md)
 - [swift](./swift/index.md)
-- [work](./work/index.md)

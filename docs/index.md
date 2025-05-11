@@ -4,21 +4,38 @@ editLink: false
 
 
 <div class="custom-layout">
-    <div class="horizontal-layout">
-        <h2>速记表</h2>
-    </div>
-    <div class="horizontal-layout">
-        <h2>roadmap</h2>
-    </div>
+  <div class="horizontal-layout">
+    <h2><a href="/note/index.html">Note</a></h2>
+  </div>
+  <div class="horizontal-layout">
+    <h2><a href="/resource/index.html">资源</a></h2>
+  </div>
   <div class="horizontal-layout">
     <h2><a href="/tutorial/index.html">教程</a></h2>
   </div>
   <div class="horizontal-layout">
-    <h2><a href="/resource/index.html">资源下载</a></h2>
+        <h2>速记表</h2>
   </div>
+    <div class="horizontal-layout">
+        <h2>Roadmap</h2>
+    </div>
 </div>
 
 <style>
+
+
+.horizontal-layout a {
+  text-decoration: none;
+  color: #3eaf7c;
+  border-bottom: 10px solid;
+}
+
+.horizontal-layout h2 {
+  border-top: none;
+  border-bottom: 10px solid;
+  margin: 0 0;
+}
+
 .custom-layout {
   display: flex;
   flex-direction: row;
@@ -29,7 +46,8 @@ editLink: false
 }
 
 .horizontal-layout {
-  margin: 0 1rem;
+  margin: 0px 0px;
+  padding: 0px 0px;
 }
 
 .custom-block {
