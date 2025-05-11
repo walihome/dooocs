@@ -39,7 +39,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Home', link: 'https://www.dooocs.com' },
       { text: '教程', link: '/tutorial/' },
       { text: '解惑机器人', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
