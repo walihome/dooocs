@@ -12,7 +12,7 @@ head:
 
 # 配置文件解读
 
-```json
+```js
 import { defineConfig } from 'vitepress'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
