@@ -64,7 +64,7 @@ function generateSidebar(dir: string, basePath: string = ''): SidebarItem[] {
           order: getOrderFromMd(path.join(dir, file, 'index.md'))
         })
       }
-    } else if (path.extname(file) === '.md' && file !== 'index.md') {
+    } else if (path.extname(file) === '.md') {
       sidebarItems.push({
         text: getTitleFromMd(path.join(dir, file)),
         link: `${basePath}/${path.basename(file, '.md')}`,
@@ -89,7 +89,7 @@ function getTitleFromMd(filePath: string): string {
     const content = fs.readFileSync(fullPath, 'utf-8')
     const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/)
     if (frontmatterMatch) {
-      const frontmatter = frontmatterMatch[1]
+      const frontmatter = frontmatterMatch[1] 
       const titleMatch = frontmatter.match(/title:\s*(.*)/)
       console.log('titleMatch:', titleMatch);
       if (titleMatch) {
