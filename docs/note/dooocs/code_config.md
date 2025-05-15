@@ -1,5 +1,5 @@
 ---
-title: D站文档配置代码解读
+title: 文档配置代码
 order: 3
 head:
   - - meta
@@ -10,7 +10,7 @@ head:
       content: D站 代码 配置
 ---
 
-# 配置文件解读
+# 文档配置代码
 
 ```js
 import { defineConfig } from 'vitepress'
