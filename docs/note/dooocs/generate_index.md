@@ -1,5 +1,5 @@
 ---
-title: 生成目录部分代码
+title: 目录生成代码
 order: 4
 head:
   - - meta
