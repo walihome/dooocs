@@ -1,6 +1,6 @@
 ---
 title: D站文档配置代码解读
-order: 1
+order: 3
 head:
   - - meta
     - name: description
@@ -12,7 +12,7 @@ head:
 
 # 配置文件解读
 
-```
+```json
 import { defineConfig } from 'vitepress'
 import { SitemapStream } from 'sitemap'
 import { createWriteStream } from 'node:fs'
