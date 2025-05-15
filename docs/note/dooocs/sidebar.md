@@ -1,6 +1,6 @@
 ---
 title: sidebar生成代码
-order: 1
+order: 5
 head:
   - - meta
     - name: description
