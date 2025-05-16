@@ -26,6 +26,8 @@ export default defineConfig({
       "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-659VJ2QMN0');",
     ],
     ['link', {rel: 'icon', href: '/logo.png'}],
+    // 其他 head 标签...
+    ['link', { rel: 'stylesheet', href: '/custom.css' }] // 关键在这里
     [
       'script',
       {
