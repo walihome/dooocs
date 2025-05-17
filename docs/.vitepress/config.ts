@@ -27,7 +27,7 @@ export default defineConfig({
     ],
     ['link', {rel: 'icon', href: '/logo.png'}],
     // 其他 head 标签...
-    ['link', { rel: 'stylesheet', href: '/custom.css' }] // 关键在这里
+    ['link', { rel: 'stylesheet', href: '/custom.css' }],
     [
       'script',
       {
