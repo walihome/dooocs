@@ -1,7 +1,6 @@
 ---
 title: 用命令行来设置mac
-colla: true
-order: 1
+order: 2
 head:
   - - meta
     - name: 命令行 设置 mac
