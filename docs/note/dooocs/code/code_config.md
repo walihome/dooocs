@@ -4,10 +4,10 @@ order: 3
 head:
   - - meta
     - name: description
-      content: D站代码配置解读
+      content: 代码配置 解读
   - - meta
     - name: keywords
-      content: D站 代码 配置
+      content: 代码 配置
 ---
 
 # 文档配置代码
