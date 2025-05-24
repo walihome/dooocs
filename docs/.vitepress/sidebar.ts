@@ -64,7 +64,7 @@ function generateSidebar(dir: string, basePath: string = ''): SidebarItem[] {
           order: getOrderFromMd(path.join(dir, file, 'index.md'))
         })
       }
-    } else if (path.extname(file) === '.md') {
+    } else if (path.extname(file) === '.md' && file !== 'index.md') {
       sidebarItems.push({
         text: getTitleFromMd(path.join(dir, file)),
         link: `${basePath}/${path.basename(file, '.md')}`,
