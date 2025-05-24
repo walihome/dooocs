@@ -229,7 +229,12 @@ async function genIndex() {
 
 			// 生成index.md内容
 			const indexPath = path.join(knowledgeBasePath, 'index.md');
-			let indexContent = `---\ntitle: ${knowledgeBase}\norder: 1\ncolla: false\n---\n\n# ${knowledgeBase}\n\n`;
+			let indexContent = `---\ntitle: ${knowledgeBase}\norder: 1\ncolla: false\n---\n\n`;
+			
+			// 添加CSS样式去掉链接下划线
+			indexContent += `<style>\n.content a {\n  text-decoration: none;\n}\n.content a:hover {\n  text-decoration: underline;\n}\n</style>\n\n`;
+			
+			indexContent += `# ${knowledgeBase}\n\n`;
 			indexContent += `这个知识库包含以下内容：\n\n`;
 			
 			for (const item of allItems) {
