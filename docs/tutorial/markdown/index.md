@@ -1,5 +1,5 @@
 ---
-title: 文档
+title: markdown基础教程
 colla: true
 order: 50
 head:
