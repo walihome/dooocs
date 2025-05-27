@@ -12,3 +12,6 @@ order: 7
 
 #### 开发工具
 接收验证码：https://sms-activate.io/
+金融量化系统: https://github.com/AI4Finance-Foundation/FinRobot?tab=readme-ov-file
+![image](https://github.com/user-attachments/assets/5528fd56-b0dd-4c63-938c-395adb0b2d20)
+
