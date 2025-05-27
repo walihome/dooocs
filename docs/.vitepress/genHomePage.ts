@@ -115,7 +115,7 @@ async function genHomePage() {
       return {
         name: subDir,
         displayName: subDisplayName || subDir,
-        link: `/${dir}/${subDir}/`,
+        link: `/doc/${dir}/${subDir}/`,
         order: subOrder
       };
     });
