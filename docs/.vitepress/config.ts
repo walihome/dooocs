@@ -11,6 +11,7 @@ export default defineConfig({
   description: "build your dream, duild your life",
   
   ignoreDeadLinks: true, // 忽略死链接警告
+  base: '/doc/',
 
   head: [
     [
