@@ -1,6 +1,6 @@
 ---
 title: 配置SSH密钥
-order: 3
+order: 6
 ---
 
 # 配置SSH密钥
