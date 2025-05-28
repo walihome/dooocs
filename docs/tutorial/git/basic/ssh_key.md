@@ -71,15 +71,15 @@ Bash
 
 
 ## 5. 测试连接
-测试 GitHub:
-```
+
+::: code-group
+```测试 GitHub
 ssh -T git@github.com
 ```
-
-测试阿里云云效 (假设主机名是 codeup.aliyun.com):
-```
+```测试阿里云
 ssh -T git@codeup.aliyun.com
 ```
+::: 
 
 如果一切配置正确，你会看到认证成功的消息。
 
