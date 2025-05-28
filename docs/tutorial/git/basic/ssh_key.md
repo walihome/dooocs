@@ -9,7 +9,7 @@ order: 3
 打开终端 (Terminal)。
 运行命令生成新的密钥对（推荐使用 Ed25519，如果需要兼容旧系统，可以使用 RSA）：
 ```
-ssh-keygen -t ed25519 -C "your_email@example.com"
+ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 ```
 
 `-C "your_email@example.com" `是一个注释，通常用你的邮箱，方便识别。
