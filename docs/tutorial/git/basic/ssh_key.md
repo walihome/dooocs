@@ -73,7 +73,7 @@ Bash
 ## 5. 测试连接
 
 ::: code-group
-```测试 GitHub
+```测试GitHub
 ssh -T git@github.com
 ```
 ```测试阿里云
