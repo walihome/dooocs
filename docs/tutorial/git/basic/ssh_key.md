@@ -11,11 +11,8 @@ order: 3
 ```
 ssh-keygen -t ed25519 -C "your_email@example.com"
 ```
-或者 RSA:
-```
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-```
--C "your_email@example.com" 是一个注释，通常用你的邮箱，方便识别。
+
+`-C "your_email@example.com" `是一个注释，通常用你的邮箱，方便识别。
 
 保存位置：它会提示你保存密钥文件的位置。
 如果你没有其他密钥，或者想覆盖默认密钥，可以直接按回车键（默认保存在 ~/.ssh/id_ed25519 或 ~/.ssh/id_rsa）。
