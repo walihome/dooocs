@@ -40,10 +40,6 @@ ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 ```
 cat ~/.ssh/id_ed25519.pub
 ```
-或者 (如果你指定了其他文件名，如 github_aliyun_new_key):
-```
-cat ~/.ssh/github_aliyun_new_key.pub
-```
 复制输出的全部内容（以 ssh-ed25519 或 ssh-rsa 开头）。
 回到 GitHub 的 "SSH and GPG keys" 设置页面。
 点击 "New SSH key" 或 "Add SSH key"。
