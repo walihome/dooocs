@@ -5,7 +5,7 @@ order: 6
 
 # 配置SSH密钥
 
-### 1. 在你的本地电脑上生成新的 SSH 密钥对
+## 1. 在你的本地电脑上生成新的 SSH 密钥对
 打开终端 (Terminal)。
 运行命令生成新的密钥对（推荐使用 Ed25519，如果需要兼容旧系统，可以使用 RSA）：
 ```
@@ -21,7 +21,7 @@ ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 
 设置密码 (Passphrase)：强烈建议为你的新私钥设置一个密码。这样即使私钥文件被盗，没有密码也无法使用。连续输入两次密码。
 
-### 2. 删除 GitHub 上旧的公钥
+## 2. 删除 GitHub 上旧的公钥
 登录你的 GitHub 账户。
 点击右上角的头像，选择 "Settings"。
 在左侧导航栏中，选择 "SSH and GPG keys"。
@@ -37,7 +37,7 @@ ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 
 :::
 
-### 3. 将新的公钥添加到 GitHub
+## 3. 将新的公钥添加到 GitHub
 获取你新生成的公钥内容。如果你的密钥保存在默认位置：
 ```
 cat ~/.ssh/id_ed25519.pub
@@ -58,7 +58,7 @@ cat ~/.ssh/id_ed25519.pub
 保存或添加公钥。
 :::
 
-### 4. 配置本地 SSH Agent (推荐)
+## 4. 配置本地 SSH Agent (推荐)
 启动 SSH agent (如果尚未运行)：
 eval "$(ssh-agent -s)"
 Use code with caution.
@@ -70,7 +70,7 @@ Bash
 输入你为私钥设置的密码。这样在当前会话中就不需要重复输入密码了。
 
 
-### 5. 测试连接
+## 5. 测试连接
 测试 GitHub:
 ```
 ssh -T git@github.com
