@@ -37,13 +37,13 @@ cat ~/.ssh/id_ed25519.pub
 
 
 
-## 3. 测试验证
+## 3. 本地验证
 
 ::: code-group
-```测试GitHub
+```验证GitHub
 ssh -T git@github.com
 ```
-```测试阿里云
+```验证阿里云云效
 ssh -T git@codeup.aliyun.com
 ```
 ::: 
