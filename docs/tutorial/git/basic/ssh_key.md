@@ -1,5 +1,6 @@
 ---
 title: 配置SSH密钥
+meta: ssh 配置ssh ssh秘钥
 order: 6
 ---
 
@@ -19,25 +20,10 @@ ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 
 默认保存在 `~/.ssh/id_ed25519`。
 
-设置密码 (Passphrase)：强烈建议为你的新私钥设置一个密码。这样即使私钥文件被盗，没有密码也无法使用。连续输入两次密码。
+设置密码 (Passphrase)：默认需要输入密码，连续输入两次，可以直接回车；
 
-## 2. 删除 GitHub 上旧的公钥
-登录你的 GitHub 账户。
-点击右上角的头像，选择 "Settings"。
-在左侧导航栏中，选择 "SSH and GPG keys"。
-找到你想要删除的旧公钥（通常可以通过注释或添加日期来识别）。
-点击对应公钥旁边的 "Delete" 按钮，并确认删除。
 
-::: info
-删除阿里云云效代码仓库 (Codeup) 上旧的公钥
-登录你的阿里云账户，并进入云效 Codeup。
-进入个人设置区域（通常点击右上角头像 -> "个人设置"）。
-在左侧菜单找到 "SSH 公钥" 或类似条目。找到你想要删除的旧公钥。
-点击删除按钮（通常是 "删除" 或一个垃圾桶图标），并确认。
-
-:::
-
-## 3. 将新的公钥添加到 GitHub
+## 2. 将新的公钥添加到 GitHub
 获取你新生成的公钥内容。如果你的密钥保存在默认位置：
 ```
 cat ~/.ssh/id_ed25519.pub
@@ -49,28 +35,9 @@ cat ~/.ssh/id_ed25519.pub
 将复制的新公钥内容粘贴到 "Key" 字段中。
 点击 "Add SSH key"。
 
-::: info
-同样使用第 4 步中复制的新公钥内容。
-回到阿里云效 Codeup 的 "SSH 公钥" 管理页面。
-点击 "添加 SSH 公钥" 或类似的按钮。
-给公钥起一个名称。
-将复制的新公钥内容粘贴到相应的文本框中。
-保存或添加公钥。
-:::
-
-## 4. 配置本地 SSH Agent (推荐)
-启动 SSH agent (如果尚未运行)：
-eval "$(ssh-agent -s)"
-Use code with caution.
-Bash
-将你的新私钥添加到 agent (如果你使用了非默认文件名，请替换)：
-ssh-add ~/.ssh/id_ed25519  # 或者 ~/.ssh/github_aliyun_new_key
-Use code with caution.
-Bash
-输入你为私钥设置的密码。这样在当前会话中就不需要重复输入密码了。
 
 
-## 5. 测试连接
+## 3. 测试连接
 
 ::: code-group
 ```测试GitHub
