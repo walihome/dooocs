@@ -6,7 +6,7 @@ order: 6
 
 # 配置SSH密钥
 
-## 1. 在你的本地电脑上生成新的 SSH 密钥对
+## 1. 生成SSH密钥对
 打开终端 (Terminal)。
 运行命令生成新的密钥对（推荐使用 Ed25519，如果需要兼容旧系统，可以使用 RSA）：
 ```
@@ -23,7 +23,7 @@ ssh-keygen -t ed25519 -C "szqworking@gmail.com"
 设置密码 (Passphrase)：默认需要输入密码，连续输入两次，可以直接回车；
 
 
-## 2. 将新的公钥添加到 GitHub
+## 2. 添加公钥到GitHub
 获取你新生成的公钥内容。如果你的密钥保存在默认位置：
 ```
 cat ~/.ssh/id_ed25519.pub
@@ -37,7 +37,7 @@ cat ~/.ssh/id_ed25519.pub
 
 
 
-## 3. 测试连接
+## 3. 测试验证
 
 ::: code-group
 ```测试GitHub
