@@ -1,5 +1,5 @@
 ---
-title: Java资源下载
+title: Java开发资源
 colla: true
 order: 1
 head:
@@ -7,7 +7,7 @@ head:
     - name: java资源下载
       content: 资源下载库
 ---
-# Java资源下载
+# Java开发资源
 
 ## 资源
 
