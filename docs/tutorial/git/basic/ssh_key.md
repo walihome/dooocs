@@ -51,7 +51,7 @@ ssh -T git@codeup.aliyun.com
 如果一切配置正确，你会看到认证成功的消息。
 
 
-:::warn
+::: warning
 重要提示：
 备份你的新私钥！ 将其安全地存放在一个或多个外部存储设备上（例如加密的U盘）。
 确保新私钥文件的权限正确：chmod 600 ~/.ssh/your_new_private_key_file。
