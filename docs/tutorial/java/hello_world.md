@@ -1,9 +1,9 @@
 ---
-title: 写一个hello world
+title: hello world
 order: 3
 ---
 
-# 写一个hello world
+# hello world
 
 以下是一个简单的Java快速入门示例：
 ```java
