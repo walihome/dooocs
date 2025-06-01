@@ -7,7 +7,7 @@ order: 2
 
 ## 下载maven
 
-点击[maven下载链接](https://maven.apache.org/download.cgi)，下载maven对应版本；
+访问[maven下载链接](https://maven.apache.org/download.cgi)，下载maven对应版本，推荐最新版本；
 
 
 
