@@ -12,7 +12,7 @@ https://maven.apache.org/download.cgi
 
 
 ## 配置环境变量
-查看终端类型，bash or zsh
+查看终端类型，`zsh` or `bash`
 ```shell
 echo $SHELL
 ```
