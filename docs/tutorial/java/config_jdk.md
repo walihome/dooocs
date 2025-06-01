@@ -10,15 +10,14 @@ head:
       content: JDK 配置JDK
 ---
 # 配置JDK
-## 下载JDK
 
-### 1：下载安装
+## 1：下载安装
 访问[下载链接](https://www.oracle.com/java/technologies/downloads/#java21)，下载JDK文件，推荐java21；
 
 下载完成后，双击下载的 JDK 安装包（.dmg 文件），然后按照安装向导的指示进行安装。
 
 
-### 2：配置环境变量
+## 2：配置环境变量
 打开终端应用程序，并输入以下命令：
 ::: code-group
 ```shell [bash]
@@ -49,7 +48,7 @@ source ~/.zshrc
 ```
 :::
 
-步骤 3：验证安装
+## 3：验证
 重新打开终端应用程序，并输入以下命令：
 ```
 java -version
