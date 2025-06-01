@@ -19,10 +19,10 @@ echo $SHELL
 终端返回 `/bin/zsh` 则说明是zsh，接着修改环境变量
 
 ::: code-group
-```zsh
+```shell [zsh]
 vim ~/.zshrc
 ```
-```bash
+```shell [bash]
 vim ~/.bash_profile
 ```
 :::
