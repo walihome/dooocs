@@ -13,7 +13,38 @@ head:
 # Git网络问题
 
 
-## push github很慢问题解决
+## v2rayN
+查看实际代理的端口
+``` shell
+sudo lsof -i -P -n | grep LISTEN | grep -i 'xray'
+```
+返回结果如下，说明端口值为：`10808`
+`xray      71772          logan    4u  IPv4 0x2bf510ccac63d37b      0t0    TCP 127.0.0.1:10808 (LISTEN)`
+
+基于这个端口配置git代理，访问git方式不同，对应的配置也不同
+::: code-group
+
+```shell [ssh]
+vim ~/.ssh/config
+```
+:::
+
+增加如下配置：
+```shell
+Host github.com gitlab.com bitbucket.org
+    User git
+    ProxyCommand nc -X 5 -x 127.0.0.1:10808 %h %p
+```
+
+验证：
+```shell
+ssh -T git@github.com
+```
+
+
+
+
+
 ### 方案
 
 通过设置代理地址来解决这个问题，根据自己的代理软件，设置不同的代理地址和端口
