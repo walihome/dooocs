@@ -27,7 +27,7 @@ vim ~/.bash_profile
 ```
 :::
 
-增加以下内容：
+增加以下内容，需替换`M2_HOME`为实际maven路径
 ```
 # Maven Environment Variables
 export M2_HOME="/Users/logan/box/4_config/idea_setting/apache-maven-3.9.9"
