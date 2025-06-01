@@ -29,14 +29,12 @@ vim ~/.zshrc
 vim ~/.bash_profile
 ```
 :::
-这将打开一个文本编辑器，在其中您可以编辑您的 bash 配置文件。
 
-在打开的文本编辑器中，将以下行添加到文件的末尾：
+在打开的文本编辑器中，将以下行添加到文件的末尾，请注意，将 `JAVA_HOME` 替换为实际安装的Java路径：
 ```
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/<jdk_version>/Contents/Home
 export PATH=$JAVA_HOME/bin:$PATH
 ```
-请注意，将 `<jdk_version>` 替换为您下载的 JDK 版本号。例如，如果您下载的是 JDK 11，则路径应为 `/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home`。
 
 保存文件并关闭文本编辑器。然后，在终端中运行以下命令以使更改生效：
 ::: code-group
