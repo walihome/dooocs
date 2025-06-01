@@ -2,7 +2,7 @@
 title: 查看终端类型
 order: 4
 ---
-# 查看mac电脑终端类型
+# 查看终端类型
 
 查看终端类型，zsh or bash
 
