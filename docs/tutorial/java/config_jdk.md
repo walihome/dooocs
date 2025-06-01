@@ -18,15 +18,16 @@ head:
 
 
 ## 2：配置环境变量
+访问[查看mac终端类型](https://www.dooocs.com/doc/note/%E6%89%93%E9%80%A0%E9%AB%98%E6%95%88%E7%9A%84mac/shell_type.html)判断终端类型，为`zsh`or `bash`
+
 打开终端应用程序，并输入以下命令：
 ::: code-group
-```shell [bash]
-vim ~/.bash_profile
-```
 ```shell [zsh]
 vim ~/.zshrc
 ```
-
+```shell [bash]
+vim ~/.bash_profile
+```
 :::
 这将打开一个文本编辑器，在其中您可以编辑您的 bash 配置文件。
 
@@ -39,12 +40,11 @@ export PATH=$JAVA_HOME/bin:$PATH
 
 保存文件并关闭文本编辑器。然后，在终端中运行以下命令以使更改生效：
 ::: code-group
-
-```shell [bash]
-source ~/.bash_profile
-```
 ```shell [zsh]
 source ~/.zshrc
+```
+```shell [bash]
+source ~/.bash_profile
 ```
 :::
 
