@@ -1,37 +1,34 @@
 ---
-title: 快速开始
+title: 配置JDK
 order: 0
 head:
   - - meta
     - name: description
-      content: 介绍Java基础的语法内容，对Java有一个基础的了解
+      content: 配置JDK
   - - meta
     - name: keywords
-      content: Java 基础语法 basic grammer 注释 变量
+      content: JDK 配置JDK
 ---
-# 快速开始
-## Java环境安装-mac os
+# 配置JDK
+## 下载JDK
 
-### 1：检查是否已安装Java
-打开终端应用程序（Terminal），输入以下命令并按下回车键：
-```
-java -version
-```
-如果您已经安装了 Java，终端将显示已安装的 Java 版本信息。如果没有安装，您将看到一条类似于“command not found”的错误消息。
+### 1：下载安装
+访问[下载链接](https://www.oracle.com/java/technologies/downloads/#java21)，下载JDK文件，推荐java21；
 
-### 2：下载 Java （JDK）
-访问 Oracle 官方网站的 Java 下载页面：https://www.oracle.com/java/technologies/javase-jdk11-downloads.html
-
-在页面上找到适用于 macOS 的最新版本的 JDK 下载链接，并点击下载。请注意，您需要有 Oracle 账户才能下载 JDK。
-
-### 3：安装 JDK
 下载完成后，双击下载的 JDK 安装包（.dmg 文件），然后按照安装向导的指示进行安装。
 
-### 4：配置环境变量
+
+### 2：配置环境变量
 打开终端应用程序，并输入以下命令：
+::: code-group
+```shell [bash]
+vim ~/.bash_profile
 ```
-nano ~/.bash_profile
+```shell [zsh]
+vim ~/.zshrc
 ```
+
+:::
 这将打开一个文本编辑器，在其中您可以编辑您的 bash 配置文件。
 
 在打开的文本编辑器中，将以下行添加到文件的末尾：
@@ -42,11 +39,17 @@ export PATH=$JAVA_HOME/bin:$PATH
 请注意，将 `<jdk_version>` 替换为您下载的 JDK 版本号。例如，如果您下载的是 JDK 11，则路径应为 `/Library/Java/JavaVirtualMachines/jdk-11.jdk/Contents/Home`。
 
 保存文件并关闭文本编辑器。然后，在终端中运行以下命令以使更改生效：
-```
+::: code-group
+
+```shell [bash]
 source ~/.bash_profile
 ```
+```shell [zsh]
+source ~/.zshrc
+```
+:::
 
-步骤 5：验证安装
+步骤 3：验证安装
 重新打开终端应用程序，并输入以下命令：
 ```
 java -version
