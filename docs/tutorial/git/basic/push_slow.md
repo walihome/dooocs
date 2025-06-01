@@ -19,7 +19,9 @@ head:
 sudo lsof -i -P -n | grep LISTEN | grep -i 'xray'
 ```
 返回结果如下，说明端口值为：`10808`
+```shell
 `xray      71772          logan    4u  IPv4 0x2bf510ccac63d37b      0t0    TCP 127.0.0.1:10808 (LISTEN)`
+```
 
 基于这个端口配置git代理，访问git方式不同，对应的配置也不同
 ::: code-group
