@@ -1,9 +1,9 @@
 ---
-title: maven配置说明
+title: 配置maven
 order: 2
 ---
 
-# maven配置说明
+# 配置maven
 
 ## 下载maven
 
