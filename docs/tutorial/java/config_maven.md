@@ -18,21 +18,36 @@ echo $SHELL
 ```
 终端返回 `/bin/zsh` 则说明是zsh，接着修改环境变量
 
-```shell
+::: code-group
+```zsh
 vim ~/.zshrc
 ```
+```bash
+vim ~/.bash_profile
+```
+:::
+
 增加以下内容：
 ```
 # Maven Environment Variables
 export M2_HOME="/Users/logan/box/4_config/idea_setting/apache-maven-3.9.9"
 export PATH="$M2_HOME/bin:$PATH"
 ```
-保存 ~/.zshrc之后，source一下
-```
+保存 ~/.zshrc之后，source生效
+
+::: code-group
+
+```zsh
 source ~/.zshrc
 ```
+```bash
+source ~/.bash_profile
+```
+
+::: 
 
 ## 验证配置
+
 ```
 mvn -version
 ```
