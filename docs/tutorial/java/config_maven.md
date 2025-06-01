@@ -1,9 +1,9 @@
 ---
-title: 配置maven
+title: maven配置说明
 order: 2
 ---
 
-# 配置maven
+# maven配置说明
 
 ## 下载maven
 
@@ -46,12 +46,12 @@ source ~/.bash_profile
 
 ::: 
 
-## 验证配置
+## 验证
 
 ```
 mvn -version
 ```
-终端返回结果如下，说明了maven的位置以及java的位置
+终端返回结果如下，说明maven配置成功
 ```
 Maven home: /Users/logan/box/4_config/idea_setting/apache-maven-3.9.9
 Java version: 21.0.7, vendor: Oracle Corporation, runtime: /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home
