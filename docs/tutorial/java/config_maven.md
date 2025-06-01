@@ -7,8 +7,8 @@ order: 2
 
 ## 下载maven
 
-点击链接，下载maven对应版本；
-[maven下载链接](https://maven.apache.org/download.cgi)
+点击[maven下载链接](https://maven.apache.org/download.cgi)，下载maven对应版本；
+
 
 
 ## 配置环境变量
