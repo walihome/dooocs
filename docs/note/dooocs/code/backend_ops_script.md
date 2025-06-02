@@ -4,18 +4,20 @@ order: 7
 ---
 
 # 阿里云云效-服务端部署脚本
-```
+```shell
 #!/bin/bash
 set -e
 
 DEPLOY_DIR="/opt/backend"
-BACKUP_DIR="/opt/backend_backup/$(date +%Y%m%d%H%M%S)"
+BACKUP_DIR_CURRENT="/opt/backend_backup/$(date +%Y%m%d%H%M%S)"
+BACKUP_DIR="/opt/backend_backup"
 PORT=8080
 sudo mkdir -p $DEPLOY_DIR
-sudo mkdir -p $BACKUP_DIR
+sudo rm -rf $BACKUP_DIR/*
+sudo mkdir -p $BACKUP_DIR_CURRENT
 sudo chown -R $(whoami):$(whoami) $DEPLOY_DIR
 touch $DEPLOY_DIR/ab
-mv $DEPLOY_DIR/* $BACKUP_DIR/
+mv $DEPLOY_DIR/* $BACKUP_DIR_CURRENT/
 
 cd /home/admin/app
 tar -xzf package_backend.tgz -C $DEPLOY_DIR
