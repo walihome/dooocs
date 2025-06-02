@@ -7,7 +7,7 @@ order: 3
 ## 服务器磁盘满
 先查看服务器磁盘具体情况
 ```shell
-sudo du -sh /*
+df -h
 ```
 返回结果如下
 ```shell
