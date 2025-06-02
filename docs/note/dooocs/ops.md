@@ -5,6 +5,15 @@ order: 3
 # 运维问题记录
 
 ## 服务器磁盘满
+
+阿里云控制台报错：
+<img width="1264" alt="image" src="https://github.com/user-attachments/assets/79ade11a-47de-4ab3-99da-f119512d5aca" />
+<img width="1410" alt="image" src="https://github.com/user-attachments/assets/9314694a-8b38-459d-9bbf-326182fc95b4" />
+
+```
+ExecutePluginOnlineOrLocal LOCKING_ERR.NoSpaceLeftOnDevice: Failed to execute plugin[ecsgo-helper ]: Failed to open or create plugin-wise lock file: open /usr/local/share/aliyun-assist/cache/plugin-manager/ecsgo-helper.lock: no space left on device
+```
+
 先查看服务器磁盘具体情况
 ```shell
 df -h
