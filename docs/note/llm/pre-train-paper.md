@@ -8,9 +8,8 @@ order: 3
 这种方法的核心思想是“双向理解”，其代表作是 BERT。
 
 ### BERT （2018）
-名称： `BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)`  
- 作者/机构： `Jacob Devlin et al. (Google AI)`   
-  链接： https://arxiv.org/abs/1810.04805
+名称： [`BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)`](https://arxiv.org/abs/1810.04805)   
+作者/机构： `Jacob Devlin et al. (Google AI)`   
 
 核心贡献（必读经典）：
 开创性地提出了 Masked Language Model (MLM)，即“完形填空”任务，让模型能够同时利用一个词左右两边的上下文信息进行预测，实现了真正的“双向”理解。
@@ -18,9 +17,8 @@ order: 3
 提出了“预训练-微调” (Pre-training and Fine-tuning) 的范式，通过在海量数据上预训练一个通用模型，然后在各种下游任务（如文本分类、问答）上进行简单微调，即可取得当时最优（SOTA）的效果，极大地推动了NLP领域的发展。
 
 ### RoBERTa （2019）
-`RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019) `  
+名称： [`RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019) ` ](https://arxiv.org/abs/1907.11692)  
 作者/机构： `Yinhan Liu et al. (Facebook AI)`  
-链接： https://arxiv.org/abs/1907.11692
 
 核心贡献：
 这篇论文可以看作是 “如何更好地训练BERT” 的一份官方指南。
