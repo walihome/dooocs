@@ -8,7 +8,7 @@ order: 3
 这种方法的核心思想是“双向理解”，其代表作是 BERT。
 
 ### BERT （2018）
-`BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)`  
+名称： `BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding (2018)`  
  作者/机构： `Jacob Devlin et al. (Google AI)`   
   链接： https://arxiv.org/abs/1810.04805
 
