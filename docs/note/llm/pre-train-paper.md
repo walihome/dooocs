@@ -17,7 +17,7 @@ order: 3
 提出了“预训练-微调” (Pre-training and Fine-tuning) 的范式，通过在海量数据上预训练一个通用模型，然后在各种下游任务（如文本分类、问答）上进行简单微调，即可取得当时最优（SOTA）的效果，极大地推动了NLP领域的发展。
 
 ### RoBERTa （2019）
-名称： [`RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019) ` ](https://arxiv.org/abs/1907.11692)  
+名称： [RoBERTa: A Robustly Optimized BERT Pretraining Approach (2019)](https://arxiv.org/abs/1907.11692)  
 作者/机构： `Yinhan Liu et al. (Facebook AI)`  
 
 核心贡献：
