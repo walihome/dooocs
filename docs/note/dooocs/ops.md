@@ -56,3 +56,32 @@ sudo du -sh /*
 20G     /opt/frontend_backup
 ```
 `/opt/frontend_backup`占了大头，这个是前端部署的冗余代码，说明部署脚本设计不合理，长期下来会把磁盘占满，需要优化。
+
+
+## 阿里云ecs升级中间件版本
+> 阿里云ecs升级基础中间件时访问某些网站慢，导致升级超时失败，这里有一些稳定的升级地址
+
+1. 升级nvm
+```shell
+curl -o- https://gitee.com/mirrors/nvm/raw/master/install.sh | bash
+```
+nvm安装成功之后，需要让当前ssh会话生效，否则刚安装好在终端输入`nvm -v`时提示不认识这个命令
+
+```shell
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+```
+
+2. 升级nodejs 版本
+```
+nvm install --lts
+```
+
+3. 升级npm版本
+如果nodejs版本很低时，npm也无法升级到lts版本，原因是npm也是需要node环境来执行的
+```
+npm install -g npm@latest
+```
+
+
+
