@@ -11,7 +11,7 @@ head:
 
 ## 资源
 
-- [JDK](https://www.oracle.com/java/technologies/javase-downloads.html)
+- [微软JDK下载](https://learn.microsoft.com/zh-cn/java/openjdk/download)
 - [Spring Boot](https://start.spring.io/)
 - [Spring Cloud](https://spring.io/projects/spring-cloud)
 - [Spring Security](https://spring.io/projects/spring-security)
