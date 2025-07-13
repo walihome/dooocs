@@ -11,7 +11,8 @@ head:
 
 ## 资源
 
-- [微软JDK下载](https://learn.microsoft.com/zh-cn/java/openjdk/download)
+- [微软JDK下载(17+)](https://learn.microsoft.com/zh-cn/java/openjdk/download)
+- [idea社区版下载](https://www.jetbrains.com/idea/download/?section=mac)
 - [Spring Boot](https://start.spring.io/)
 - [Spring Cloud](https://spring.io/projects/spring-cloud)
 - [Spring Security](https://spring.io/projects/spring-security)
