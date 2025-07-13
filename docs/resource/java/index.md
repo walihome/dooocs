@@ -11,7 +11,8 @@ head:
 
 ## 资源
 
-- [微软JDK下载(17+)](https://learn.microsoft.com/zh-cn/java/openjdk/download)
+- [Open JDK下载(17+) 微软下载链接](https://learn.microsoft.com/zh-cn/java/openjdk/download)
+- [Open JDK下载(1.8) adoptium下载](https://adoptium.net/temurin/releases/?version=8)
 - [idea社区版下载](https://www.jetbrains.com/idea/download/?section=mac)
 - [Spring Boot](https://start.spring.io/)
 - [Spring Cloud](https://spring.io/projects/spring-cloud)
