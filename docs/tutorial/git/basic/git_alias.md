@@ -1,6 +1,6 @@
 ---
 title: git alias配置
-order：8
+order: 8
 ---
 
 # git alias 配置
