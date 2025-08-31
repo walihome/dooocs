@@ -8,29 +8,36 @@ editLink: false
       <thead>
         <tr>
           <th>分类</th>
+          <th>二级分类</th>
           <th>内容</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td class="category-name">🗺️ 路线图</td>
+          <td class="category-name" rowspan="1">📁 人工智能</td>          <td class="sub-category-name">AI 开源趋势</td>
+          <td class="content-links"><a href="/人工智能/AI 开源趋势/Ai 技术趋势-20250828" class="content-link">Ai 技术趋势-20250828</a></td>
+        </tr>
+        <tr>
+          <td class="category-name" rowspan="1">📁 全栈开发</td>          <td class="sub-category-name">个人开发者必备</td>
+          <td class="content-links"><a href="/全栈开发/个人开发者必备/Forum 技术趋势-20250828" class="content-link">Forum 技术趋势-20250828</a> · <a href="/全栈开发/个人开发者必备/个人开发者 技术趋势-20250830" class="content-link">个人开发者 技术趋势-20250830</a> · <a href="/全栈开发/个人开发者必备/评论 技术趋势-20250828" class="content-link">评论 技术趋势-20250828</a></td>
+        </tr>
+        <tr>
+          <td class="category-name" rowspan="1">📁 工具资源</td>
+          <td class="sub-category-name">暂无二级目录</td>
           <td class="content-links">暂无内容</td>
         </tr>
         <tr>
-          <td class="category-name">⚡ 速记表</td>
-          <td class="content-links"><a href="/cheatsheet/css/" class="content-link">css</a></td>
+          <td class="category-name" rowspan="1">📁 操作系统</td>
+          <td class="sub-category-name">暂无二级目录</td>
+          <td class="content-links">暂无内容</td>
         </tr>
         <tr>
-          <td class="category-name">📝 笔记</td>
-          <td class="content-links"><a href="/note/dooocs/" class="content-link">D站文档库</a> · <a href="/note/前端学习/" class="content-link">前端学习记录</a> · <a href="/note/打造高效的mac/" class="content-link">打造高效的mac</a></td>
+          <td class="category-name" rowspan="2">📁 编程语言</td>          <td class="sub-category-name">javascript</td>
+          <td class="content-links"><a href="/编程语言/javascript/Javascript 技术趋势-20250828" class="content-link">Javascript 技术趋势-20250828</a></td>
         </tr>
         <tr>
-          <td class="category-name">🎯 资源</td>
-          <td class="content-links"><a href="/resource/java/" class="content-link">Java资源下载</a></td>
-        </tr>
-        <tr>
-          <td class="category-name">📚 教程</td>
-          <td class="content-links"><a href="/tutorial/ios/" class="content-link">文档</a> · <a href="/tutorial/python/" class="content-link">python 基础</a> · <a href="/tutorial/swift/" class="content-link">关于swift语言</a> · <a href="/tutorial/git/" class="content-link">文档</a> · <a href="/tutorial/java/" class="content-link">文档</a> · <a href="/tutorial/markdown/" class="content-link">文档</a> · <a href="/tutorial/maven/" class="content-link">文档</a> · <a href="/tutorial/odps/" class="content-link">文档</a></td>
+          <td class="sub-category-name">python</td>
+          <td class="content-links"><a href="/编程语言/python/Python 技术趋势-20250828" class="content-link">Python 技术趋势-20250828</a></td>
         </tr>
       </tbody>
     </table>
@@ -46,7 +53,7 @@ editLink: false
 
 .knowledge-base-table {
   overflow-x: auto;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
 }
 
@@ -65,7 +72,7 @@ editLink: false
   padding: 1rem;
   text-align: left;
   font-weight: 600;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   border-bottom: 1px solid var(--vp-c-divider);
 }
 
@@ -88,13 +95,22 @@ editLink: false
   font-weight: 600;
   color: var(--vp-c-brand-1);
   min-width: 120px;
-  width: 25%;
+  width: 20%;
   padding: 1rem;
   font-size: 1.05rem;
 }
 
+.sub-category-name {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  min-width: 100px;
+  width: 25%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
 .content-links {
-  width: 75%;
+  width: 55%;
   line-height: 1.6;
 }
 
@@ -116,31 +132,38 @@ editLink: false
   }
   
   .knowledge-base-table table {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .knowledge-base-table th,
   .knowledge-base-table td {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
   
   .knowledge-base-table th {
-    font-size: 1.1rem;
-  }
-  
-  .content-link {
-    font-size: 0.9rem;
-  }
-  
-  .category-name {
-    min-width: 100px;
-    width: 30%;
-    padding: 0.75rem;
     font-size: 1rem;
   }
   
+  .content-link {
+    font-size: 0.85rem;
+  }
+  
+  .category-name {
+    min-width: 80px;
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .sub-category-name {
+    min-width: 80px;
+    width: 30%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
   .content-links {
-    width: 70%;
+    width: 45%;
   }
 }
 

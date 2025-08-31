@@ -1,18 +1,20 @@
 import { defineConfig } from 'vitepress'
-import { SitemapStream } from 'sitemap'
-import { createWriteStream } from 'node:fs'
-import { resolve } from 'node:path'
 import { sidebar } from './sidebar'
-import fs from 'fs'
+import { SitemapStream } from 'sitemap'
+import { createWriteStream, existsSync, readFileSync } from 'fs'
+import { resolve } from 'path'
 
 export default defineConfig({
-
   title: "dooocs",
-  description: "build your dream, duild your life",
+  description: "开发者灯塔：CS开源项目、教程与文档的聚合之地",
   
-  ignoreDeadLinks: true, // 忽略死链接警告
-  base: '/doc/',
+  ignoreDeadLinks: true,
+  base: '/', 
+  
+  // 启用最近更新时间
+  lastUpdated: true,
 
+  // 暂时移除所有 head 配置，只保留基本图标
   head: [
     [
       'script',
@@ -42,29 +44,29 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: 'Home', link: 'https://www.dooocs.com' },
-      { text: '教程', link: '/tutorial/' },
+      { text: 'Home', link: '/' },
       { text: '解惑机器人', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
-    // 启用最近更新时间
-    lastUpdated: 'Last Updated', // 显示的文本
+    // 在主题配置中也启用最近更新时间
+    lastUpdated: {
+      text: 'Updated at',
+      formatOptions: {
+        dateStyle: 'full',
+        timeStyle: 'medium'
+      }
+    },
     sidebar: sidebar,
-
     editLink: {
-      pattern: 'https://github.com/walihome/dooocs/tree/main/docs/:path',
+      pattern: 'https://github.com/walihome/dooocs/tree/main/:path',
       text: 'Edit this page on GitHub'
     },
     footer: {
-      message: 'Released under the <a href="https://github.com/vuejs/vitepress/blob/main/LICENSE">MIT License</a>.',
-      copyright: '<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022023772号</a>'
+      message: 'Released under the MIT License.',
+      copyright: '浙ICP备2022023772号'
     }
   },
 
-  // 确保 tutorial/index.md 被识别为 /tutorial/ 路由
-  rewrites: {
-    // 'tutorial/index.md': 'tutorial/index.html',
-  },
-
+  // 暂时移除复杂的钩子配置
   buildEnd: async ({ pages, outDir }) => {
     if (pages.length === 0) {
       console.warn('No pages found for sitemap generation');
@@ -83,7 +85,7 @@ export default defineConfig({
   
     sitemap.end()
   
-    await new Promise((r) => writeStream.on('finish', r))
+    await new Promise<void>((resolve) => writeStream.on('finish', () => resolve()))
     console.log('Sitemap generated successfully')
   },
 
@@ -113,11 +115,11 @@ export default defineConfig({
   async transformPageData(pageData) {
     if (pageData.relativePath === 'tutorial/index.md') {
       const filePath = resolve(__dirname, '../tutorial/index.md');
-      if (!fs.existsSync(filePath)) {
+      if (!existsSync(filePath)) {
         console.error('tutorial/index.md does not exist!');
       } else {
         console.log('tutorial/index.md exists and its content is:');
-        console.log(fs.readFileSync(filePath, 'utf-8'));
+        console.log(readFileSync(filePath, 'utf-8'));
       }
     }
     return pageData;

@@ -16,6 +16,18 @@ interface DirectoryInfo {
     displayName: string;
     link: string;
     order: number;
+    thirdLevelContent: {
+      name: string;
+      displayName: string;
+      link: string;
+      order: number;
+    }[];
+    markdownFiles: {
+      name: string;
+      displayName: string;
+      link: string;
+      order: number;
+    }[];
   }[];
 }
 
@@ -61,13 +73,61 @@ function getDirectoryDisplayName(dirPath: string, dirName: string): string {
   return title || dirName;
 }
 
+function getMarkdownFiles(dirPath: string): { name: string; displayName: string; link: string; order: number }[] {
+  const files = fs.readdirSync(dirPath).filter(file => 
+    file.endsWith('.md') && 
+    file !== 'index.md' && 
+    !file.startsWith('.')
+  );
+
+  return files.map(file => {
+    const filePath = path.join(dirPath, file);
+    const content = fs.readFileSync(filePath, 'utf-8');
+    
+    // 尝试从 frontmatter 获取标题
+    const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+    let displayName = file.replace('.md', '');
+    
+    if (frontmatterMatch) {
+      const frontmatter = frontmatterMatch[1];
+      const titleMatch = frontmatter.match(/title:\s*(.*)/);
+      if (titleMatch) {
+        displayName = titleMatch[1].trim();
+      }
+    } else {
+      // 如果没有 frontmatter，尝试获取第一个标题
+      const titleMatch = content.match(/^#\s+(.*)$/m);
+      if (titleMatch) {
+        displayName = titleMatch[1].trim();
+      }
+    }
+    
+    const order = getOrderFromMd(filePath);
+    const relativePath = path.relative(docsDir, filePath).replace(/\\/g, '/');
+    const link = `/${relativePath.replace('.md', '')}`;
+    
+    return {
+      name: file,
+      displayName,
+      link,
+      order
+    };
+  });
+}
+
 // 目录名称映射，用于更好的显示
 const categoryNameMap: Record<string, string> = {
   'tutorial': '教程',
   'note': '笔记',
   'resource': '资源',
   'cheatsheet': '速记表',
-  'roadmap': '路线图'
+  'roadmap': '路线图',
+  // 新增分类
+  'ai': '人工智能',
+  'fullstack': '全栈开发',
+  'tools': '工具资源',
+  'os': '操作系统',
+  'programming_language': '编程语言'
 };
 
 // 分类图标映射，为每个分类提供合适的图标
@@ -76,7 +136,13 @@ const categoryIconMap: Record<string, string> = {
   'note': '📝',         // 笔记 - 记事本
   'resource': '🎯',     // 资源 - 目标/资源
   'cheatsheet': '⚡',   // 速记表 - 闪电（快速）
-  'roadmap': '🗺️'       // 路线图 - 地图
+  'roadmap': '🗺️',       // 路线图 - 地图
+  // 新增分类图标
+  'ai': '🧠',             // 人工智能 - 大脑
+  'fullstack': '🌐',      // 全栈开发 - 地球/网络
+  'tools': '⚙️',          // 工具资源 - 齿轮
+  'os': '💻',             // 操作系统 - 笔记本电脑
+  'programming_language': '✍️' // 编程语言 - 手写/代码
 };
 
 async function genHomePage() {
@@ -106,17 +172,47 @@ async function genHomePage() {
       !subDir.startsWith('.')
     );
 
-    console.log(`${dir} 的二级目录: ` + subDirs);
+    console.log(`${dir} 的二级分类: ` + subDirs);
 
     const subDirectories = subDirs.map(subDir => {
       const subDirPath = path.join(dirPath, subDir);
       const subDisplayName = getDirectoryDisplayName(subDirPath, subDir);
       const subOrder = getOrderFromMd(path.join(subDirPath, 'index.md'));
+      
+      // 查询三级目录列表
+      const thirdLevelDirs = fs.readdirSync(subDirPath).filter(thirdDir => 
+        fs.statSync(path.join(subDirPath, thirdDir)).isDirectory() && 
+        !thirdDir.startsWith('.')
+      );
+
+      console.log(`${dir}/${subDir} 的三级目录: ` + thirdLevelDirs);
+
+      const thirdLevelContent = thirdLevelDirs.map(thirdDir => {
+        const thirdDirPath = path.join(subDirPath, thirdDir);
+        const thirdDisplayName = getDirectoryDisplayName(thirdDirPath, thirdDir);
+        const thirdOrder = getOrderFromMd(path.join(thirdDirPath, 'index.md'));
+        return {
+          name: thirdDir,
+          displayName: thirdDisplayName || thirdDir,
+          link: `/${dir}/${subDir}/${thirdDir}/`,
+          order: thirdOrder
+        };
+      });
+
+      // 对三级目录排序
+      thirdLevelContent.sort((a, b) => a.order - b.order);
+
+      // 获取二级目录下的 markdown 文件
+      const markdownFiles = getMarkdownFiles(subDirPath);
+      markdownFiles.sort((a, b) => a.order - b.order);
+
       return {
         name: subDir,
         displayName: subDisplayName || subDir,
-        link: `/doc/${dir}/${subDir}/`,
-        order: subOrder
+        link: `/${dir}/${subDir}/`,
+        order: subOrder,
+        thirdLevelContent,
+        markdownFiles
       };
     });
 
@@ -145,6 +241,7 @@ editLink: false
       <thead>
         <tr>
           <th>分类</th>
+          <th>二级分类</th>
           <th>内容</th>
         </tr>
       </thead>
@@ -158,21 +255,51 @@ editLink: false
     if (dirInfo.subDirectories.length === 0) {
       // 如果没有二级目录，显示空内容
       homeContent += `        <tr>
-          <td class="category-name">${categoryDisplayName}</td>
+          <td class="category-name" rowspan="1">${categoryDisplayName}</td>
+          <td class="sub-category-name">暂无二级目录</td>
           <td class="content-links">暂无内容</td>
         </tr>
 `;
     } else {
       // 有二级目录的情况
-      const links = dirInfo.subDirectories.map(sub => 
-        `<a href="${sub.link}" class="content-link">${sub.displayName}</a>`
-      ).join(' · ');
-      
-      homeContent += `        <tr>
-          <td class="category-name">${categoryDisplayName}</td>
+      let isFirstRow = true;
+      for (const subDir of dirInfo.subDirectories) {
+        const rowspan = isFirstRow ? dirInfo.subDirectories.length : 0;
+        const categoryCell = isFirstRow ? `          <td class="category-name" rowspan="${dirInfo.subDirectories.length}">${categoryDisplayName}</td>` : '';
+        
+        // 合并三级目录和 markdown 文件
+        const allContent = [
+          ...subDir.thirdLevelContent.map(third => ({
+            ...third,
+            type: 'directory'
+          })),
+          ...subDir.markdownFiles.map(file => ({
+            ...file,
+            type: 'file'
+          }))
+        ].sort((a, b) => a.order - b.order);
+
+        if (allContent.length === 0) {
+          // 如果没有内容，显示空内容
+          homeContent += `        <tr>
+${categoryCell}          <td class="sub-category-name">${subDir.displayName}</td>
+          <td class="content-links">暂无内容</td>
+        </tr>
+`;
+        } else {
+          // 有内容的情况
+          const links = allContent.map(item => 
+            `<a href="${item.link}" class="content-link">${item.displayName}</a>`
+          ).join(' · ');
+          
+          homeContent += `        <tr>
+${categoryCell}          <td class="sub-category-name">${subDir.displayName}</td>
           <td class="content-links">${links}</td>
         </tr>
 `;
+        }
+        isFirstRow = false;
+      }
     }
   }
 
@@ -190,7 +317,7 @@ editLink: false
 
 .knowledge-base-table {
   overflow-x: auto;
-  max-width: 1200px;
+  max-width: 1400px;
   width: 100%;
 }
 
@@ -232,13 +359,22 @@ editLink: false
   font-weight: 600;
   color: var(--vp-c-brand-1);
   min-width: 120px;
-  width: 25%;
+  width: 20%;
   padding: 1rem;
   font-size: 1.05rem;
 }
 
+.sub-category-name {
+  font-weight: 500;
+  color: var(--vp-c-text-1);
+  min-width: 100px;
+  width: 25%;
+  padding: 1rem;
+  font-size: 1rem;
+}
+
 .content-links {
-  width: 75%;
+  width: 55%;
   line-height: 1.6;
 }
 
@@ -260,31 +396,38 @@ editLink: false
   }
   
   .knowledge-base-table table {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .knowledge-base-table th,
   .knowledge-base-table td {
-    padding: 0.75rem;
+    padding: 0.5rem;
   }
   
   .knowledge-base-table th {
-    font-size: 1.1rem;
-  }
-  
-  .content-link {
-    font-size: 0.9rem;
-  }
-  
-  .category-name {
-    min-width: 100px;
-    width: 30%;
-    padding: 0.75rem;
     font-size: 1rem;
   }
   
+  .content-link {
+    font-size: 0.85rem;
+  }
+  
+  .category-name {
+    min-width: 80px;
+    width: 25%;
+    padding: 0.5rem;
+    font-size: 0.95rem;
+  }
+  
+  .sub-category-name {
+    min-width: 80px;
+    width: 30%;
+    padding: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
   .content-links {
-    width: 70%;
+    width: 45%;
   }
 }
 
