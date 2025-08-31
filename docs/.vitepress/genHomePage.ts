@@ -134,14 +134,14 @@ const categoryNameMap: Record<string, string> = {
 const categoryIconMap: Record<string, string> = {
   'tutorial': '📚',     // 教程 - 书本
   'note': '📝',         // 笔记 - 记事本
-  'resource': '🎯',     // 资源 - 目标/资源
+  '编程语言': '🎯',     // 资源 - 目标/资源
   'cheatsheet': '⚡',   // 速记表 - 闪电（快速）
   'roadmap': '🗺️',       // 路线图 - 地图
   // 新增分类图标
-  'ai': '🧠',             // 人工智能 - 大脑
-  'fullstack': '🌐',      // 全栈开发 - 地球/网络
-  'tools': '⚙️',          // 工具资源 - 齿轮
-  'os': '💻',             // 操作系统 - 笔记本电脑
+  '人工智能': '🧠',             // 人工智能 - 大脑
+  '操作系统': '🌐',      // 全栈开发 - 地球/网络
+  '工具资源': '⚙️',          // 工具资源 - 齿轮
+  '全栈开发': '💻',             // 操作系统 - 笔记本电脑
   'programming_language': '✍️' // 编程语言 - 手写/代码
 };
 

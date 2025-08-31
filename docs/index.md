@@ -14,25 +14,25 @@ editLink: false
       </thead>
       <tbody>
         <tr>
-          <td class="category-name" rowspan="1">📁 人工智能</td>          <td class="sub-category-name">AI 开源趋势</td>
+          <td class="category-name" rowspan="1">🧠 人工智能</td>          <td class="sub-category-name">AI 开源趋势</td>
           <td class="content-links"><a href="/人工智能/AI 开源趋势/Ai 技术趋势-20250828" class="content-link">Ai 技术趋势-20250828</a></td>
         </tr>
         <tr>
-          <td class="category-name" rowspan="1">📁 全栈开发</td>          <td class="sub-category-name">个人开发者必备</td>
+          <td class="category-name" rowspan="1">💻 全栈开发</td>          <td class="sub-category-name">个人开发者必备</td>
           <td class="content-links"><a href="/全栈开发/个人开发者必备/Forum 技术趋势-20250828" class="content-link">Forum 技术趋势-20250828</a> · <a href="/全栈开发/个人开发者必备/个人开发者 技术趋势-20250830" class="content-link">个人开发者 技术趋势-20250830</a> · <a href="/全栈开发/个人开发者必备/评论 技术趋势-20250828" class="content-link">评论 技术趋势-20250828</a></td>
         </tr>
         <tr>
-          <td class="category-name" rowspan="1">📁 工具资源</td>
+          <td class="category-name" rowspan="1">⚙️ 工具资源</td>
           <td class="sub-category-name">暂无二级目录</td>
           <td class="content-links">暂无内容</td>
         </tr>
         <tr>
-          <td class="category-name" rowspan="1">📁 操作系统</td>
+          <td class="category-name" rowspan="1">🌐 操作系统</td>
           <td class="sub-category-name">暂无二级目录</td>
           <td class="content-links">暂无内容</td>
         </tr>
         <tr>
-          <td class="category-name" rowspan="2">📁 编程语言</td>          <td class="sub-category-name">javascript</td>
+          <td class="category-name" rowspan="2">🎯 编程语言</td>          <td class="sub-category-name">javascript</td>
           <td class="content-links"><a href="/编程语言/javascript/Javascript 技术趋势-20250828" class="content-link">Javascript 技术趋势-20250828</a></td>
         </tr>
         <tr>
