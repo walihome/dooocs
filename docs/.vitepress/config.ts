@@ -5,8 +5,8 @@ import { createWriteStream, existsSync, readFileSync } from 'fs'
 import { resolve } from 'path'
 
 export default defineConfig({
-  title: "dooocs",
-  description: "开发者灯塔：CS开源项目、教程与文档的聚合之地",
+  title: "夏斑文档",
+  description: "认真生活，快乐工作，早点下班～",
   
   ignoreDeadLinks: true,
   base: '/', 
