@@ -1,3 +1,15 @@
+---
+title: functions.md
+category: Java
+order: 6
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到 **Java函数魔法学院**！🎩✨ 在这里，你将学会创造自己的魔法咒语（函数），让代码变得强大而优雅！
 
 ### 1. 🎯 关卡目标 Quest Objective
