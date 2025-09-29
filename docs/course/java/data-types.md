@@ -1,3 +1,15 @@
+---
+title: data-types.md
+category: Java
+order: 3
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到Java编程世界的**第4关：数据类型**！🎉
 
 作为你编程冒险中的重要一站，掌握数据类型就像学会了分辨不同种类的"魔法材料" - 知道每种材料的特性，你才能施展出完美的魔法！
