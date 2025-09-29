@@ -1,5 +1,5 @@
 ---
-title: functions.md
+title: 函数
 category: Java
 order: 6
 tag:
