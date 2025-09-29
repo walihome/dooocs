@@ -1,5 +1,5 @@
 ---
-title: data-types.md
+title: 数据类型
 category: Java
 order: 3
 tag:
