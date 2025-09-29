@@ -1,3 +1,15 @@
+---
+title: control-flow.md
+category: Java
+order: 5
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到编程冒险的**控制流**关卡！这是你从"知道代码"到"让代码思考"的关键一步！🚀
 
 ### 1. 🎯 关卡目标 Quest Objective
