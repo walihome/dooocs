@@ -1,3 +1,15 @@
+---
+title: development-environment-setup.md
+category: Java
+order: 1
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到Java编程世界的冒险之旅！🚀 我是你的学习向导，今天我们将一起完成第一个重要关卡——搭建你的编程工作站。
 
 ### 🎯 关卡目标 Quest Objective
