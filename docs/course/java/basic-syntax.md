@@ -1,3 +1,15 @@
+---
+title: basic-syntax.md
+category: Java
+order: 2
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到Java编程世界的第二关！🎉 你已经搭建好了开发环境，现在让我们开始真正的编程冒险吧！
 
 ### 1. 🎯 关卡目标 Quest Objective
