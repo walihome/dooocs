@@ -1,13 +1,13 @@
 ---
 title: 数据类型
-category: $('Edit Fields').item.json.language
+category: Java
 order: 4
-tag:
-  - $('Edit Fields').item.json.tag
+tag: Java教程
+  - 
 head:
   - - meta
     - name: keywords
-      content: $('Edit Fields').item.json['meta-content']
+      content: Java急速教程、Java极简教程
 ---
 
 # 🎮 Java数据类型闯关 - 掌握编程的"建筑材料"！
