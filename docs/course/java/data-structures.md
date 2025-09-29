@@ -1,3 +1,15 @@
+---
+title: data-structures.md
+category: Java
+order: 7
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！欢迎来到Java编程的**数据结构大冒险**！这是你成为Java大师的关键一步！🚀
 
 ## 🎯 关卡目标 Quest Objective
