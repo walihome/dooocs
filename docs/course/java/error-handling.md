@@ -1,3 +1,15 @@
+---
+title: error-handling.md
+category: Java
+order: 8
+tag:
+  - Java教程
+head:
+  - - meta
+    - name: keywords
+      content: Java极简教程 Java急速教程
+---
+
 太棒了！你已经走到了Java冒险的最后一关——**错误处理**！这是从"代码新手"成长为"可靠程序员"的关键一步！🚀
 
 ### 🎯 关卡目标 Quest Objective
