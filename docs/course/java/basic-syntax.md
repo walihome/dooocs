@@ -1,5 +1,5 @@
 ---
-title: basic-syntax.md
+title: 基本语法-输入、输出、日志打印
 category: Java
 order: 2
 tag:
