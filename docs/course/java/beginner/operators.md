@@ -1,13 +1,13 @@
 ---
 title: 基础运算
-category: $('Edit Fields').item.json.language
+category: Java
 order: 5
-tag:
-  - $('Edit Fields').item.json.tag
+tag: Java教程
+  - 
 head:
   - - meta
     - name: keywords
-      content: $('Edit Fields').item.json['meta-content']
+      content: Java急速教程、Java极简教程
 ---
 
 # 🎮 第5关：基础运算 Basic Operations
