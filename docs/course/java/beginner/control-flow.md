@@ -1,13 +1,13 @@
 ---
 title: 控制流
-category: $('Edit Fields').item.json.language
+category: Java
 order: 7
-tag:
-  - $('Edit Fields').item.json.tag
+tag: Java教程
+  - 
 head:
   - - meta
     - name: keywords
-      content: $('Edit Fields').item.json['meta-content']
+      content: Java急速教程、Java极简教程
 ---
 
 # 🎮 闯关开始！掌握Java控制流 Control Flow
