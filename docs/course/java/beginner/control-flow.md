@@ -10,18 +10,18 @@ head:
       content: Java急速教程、Java极简教程
 ---
 
-# Java控制流 Control Flow 教程
+# 控制流 Control Flow 🚦
 
 ## 课程大纲 Course Outline
 
-1. 开发环境搭建 Development Environment Setup
-2. Hello World 程序
-3. 基本语法 Basic Syntax
-4. 数据类型 Data Types
-5. 基础运算 Basic Operations
-6. 集合 Collections
-7. **控制流 Control Flow** ← 当前章节
-8. 类、属性、方法 Classes, Properties, Methods
+1. **开发环境搭建** Development Environment Setup
+2. **Hello World** Hello World Program
+3. **基本语法** Basic Syntax
+4. **数据类型** Data Types
+5. **基础运算** Basic Operations
+6. **集合** Collections
+7. **控制流** Control Flow ⭐ *当前章节*
+8. **类、属性、方法** Classes, Properties, Methods
 
 ---
 
@@ -29,31 +29,32 @@ head:
 
 ### 概念 Explanation
 
-**Control Flow（控制流）** 是程序执行的顺序和路径。在Java中，我们使用控制流语句来决定程序如何执行：
-- **Loop（循环）**：重复执行代码块
-- **Conditional Statement（条件语句）**：根据条件选择执行路径
+**Control Flow（控制流）** 是程序执行的顺序和路径。就像交通信号灯🚦控制车辆行驶方向一样，控制流语句决定了代码的执行顺序。
 
-控制流让程序变得智能和高效，能够处理重复任务和做出决策。
-
----
+Java中的三种主要控制流：
+- **Conditional Statements（条件语句）**：根据条件决定是否执行代码
+- **Loop Statements（循环语句）**：重复执行代码块
+- **Jump Statements（跳转语句）**：改变程序执行流程
 
 ### 代码示例 Code Examples
 
-#### 1. for循环 For Loop
+#### 1. if语法 - Conditional Statements 🤔
 
-**For Loop（for循环）** 用于已知循环次数的重复执行。
+**if statement（if语句）** 用于根据条件执行不同的代码块。
 
 ```java
-public class ForLoopExample {
+public class ConditionalExample {
     public static void main(String[] args) {
-        // Basic for loop 基本for循环
-        System.out.println("Counting from 1 to 5: 从1数到5:");
-        for (int i = 1; i <= 5; i++) {
-            System.out.println("Count: " + i + " 计数: " + i);
+        int age = 18;
+        int score = 85;
+        
+        // Basic if statement 基本if语句
+        if (age >= 18) {
+            System.out.println("You are an adult!"); // 你是成年人！
         }
         
-        // Loop through array 遍历数组
-        String[] fruits = {"apple", "banana", "orange"};
-        System.out.println("\nFruits list 水果列表:");
-        for (int i = 0; i < fruits.length; i++) {
-            System.out.println("Fruit " + (i + 1) + 
+        // if-else statement if-else语句
+        if (score >= 90) {
+            System.out.println("Excellent!"); // 优秀！
+        } else {
+            System.out.println("Good job!"); // 
