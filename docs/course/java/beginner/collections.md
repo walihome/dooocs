@@ -1,13 +1,13 @@
 ---
 title: 集合
-category: $('Edit Fields').item.json.language
+category: Java
 order: 6
-tag:
-  - $('Edit Fields').item.json.tag
+tag: Java教程
+  - 
 head:
   - - meta
     - name: keywords
-      content: $('Edit Fields').item.json['meta-content']
+      content: Java急速教程、Java极简教程
 ---
 
 # 🎮 闯关7：征服Java集合世界！
