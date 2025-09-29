@@ -10,12 +10,12 @@ head:
       content: Java急速教程、Java极简教程
 ---
 
-# Java入门教程 - Hello World
+# Hello World 章节
 
 ## 课程大纲 Course Outline
 
 1. 开发环境搭建 Development Environment Setup
-2. **Hello World** ⭐ (当前章节)
+2. **Hello World** 👈 当前章节
 3. 基本语法 Basic Syntax
 4. 数据类型 Data Types
 5. 基础运算 Basic Operations
@@ -29,12 +29,16 @@ head:
 
 ### 概念 Explanation
 
-**Hello World** 是编程学习的第一步，它是一个简单的程序，用于验证开发环境是否正确配置，并让初学者体验编写和运行程序的完整流程。
+🎉 恭喜你！现在我们要编写第一个Java程序了！**Hello World** 是编程世界的传统入门仪式，就像学习一门新语言时说的第一句"你好"一样。
 
-在Java中，我们需要了解以下核心概念：
-- **Class（类）**：Java程序的基本组织单位
-- **Main Method（主方法）**：程序的入口点
-- **System.out.println()**：输出语句，用于在控制台显示信息
+在Java中，**Hello World Program（Hello World程序）** 帮助我们理解：
+- **Class（类）** 的基本结构
+- **Main Method（主方法）** 的作用
+- **System.out.println()** 输出语句的使用
+
+::: tip 💡 学习小贴士
+把Java程序想象成一个工厂🏭，**Class（类）** 就是工厂的蓝图，**Main Method（主方法）** 就是工厂的启动按钮！
+:::
 
 ### 代码示例 Code Examples
 
@@ -44,20 +48,13 @@ head:
 public class HelloWorld {
     public static void main(String[] args) {
         // Print hello world message 输出hello world信息
-        System.out.println("Hello World!");
+        System.out.println("Hello, World!");
     }
 }
 ```
 
 **代码解析 Code Analysis：**
 
-1. `public class HelloWorld`：定义一个名为HelloWorld的**Public Class（公共类）**
-2. `public static void main(String[] args)`：**Main Method（主方法）**，程序执行的起点
-3. `System.out.println("Hello World!")`：**Output Statement（输出语句）**，在控制台打印文本
-
-#### 扩展示例：多行输出
-
-```java
-public class HelloWorldExtended {
-    public static void main(String[] args) {
-        
+1. `public class HelloWorld` 
+   - **public**：**Access Modifier（访问修饰符）**，表示这个类可以被其他类访问
+   - **class**：**Class Keyword（类关键字）**，用来定义
