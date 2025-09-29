@@ -10,18 +10,18 @@ head:
       content: Java急速教程、Java极简教程
 ---
 
-# Java数据类型入门教程 Data Types Tutorial
+# Java数据类型入门教程 📊
 
 ## 课程大纲 Course Outline
 
-1. 开发环境搭建 Development Environment Setup
-2. Hello World程序 Hello World Program
-3. 基本语法 Basic Syntax
-4. **数据类型 Data Types** ← 当前章节
-5. 基础运算 Basic Operations
-6. 集合 Collections
-7. 控制流 Control Flow
-8. 类、属性、方法 Classes, Properties, Methods
+1. **开发环境搭建** Development Environment Setup
+2. **Hello World** Hello World Program
+3. **基本语法** Basic Syntax
+4. **数据类型** Data Types ⭐ (当前章节)
+5. **基础运算** Basic Operations
+6. **集合** Collections
+7. **控制流** Control Flow
+8. **类、属性、方法** Classes, Properties, Methods
 
 ---
 
@@ -29,30 +29,31 @@ head:
 
 ### 概念 Explanation
 
-**Data Types（数据类型）** 是Java中用来定义**Variables（变量）** 可以存储什么类型数据的规范。Java是一种**Strongly Typed Language（强类型语言）**，这意味着每个变量都必须声明其数据类型。
+在Java中，**Data Type（数据类型）** 是用来定义变量可以存储什么类型数据的规则。就像生活中的容器一样：
+- 🥛 杯子装水
+- 📦 盒子装物品
+- 💰 钱包装钱
 
-Java中的**Primitive Data Types（基本数据类型）** 包括：
-- **Integer Types（整数类型）**：存储整数值
-- **Floating-Point Types（浮点数类型）**：存储小数值
-- **Character Type（字符类型）**：存储单个字符
-- **Boolean Type（布尔类型）**：存储true/false值
+Java的数据类型告诉计算机：这个**Variable（变量）** 应该装什么类型的数据！
+
+Java有两大类数据类型：
+- **Primitive Types（基本数据类型）**：直接存储值
+- **Reference Types（引用数据类型）**：存储对象的引用
 
 ### 代码示例 Code Examples
 
-#### 1. 整数 Integer Types
+#### 1. 整数 Integer Types 🔢
+
+Java提供了多种整数类型，用于存储不同范围的整数：
 
 ```java
 public class IntegerExample {
     public static void main(String[] args) {
-        // int - most commonly used integer type 最常用的整数类型
-        int age = 25;
-        int temperature = -10;
+        // byte: -128 to 127 (8位)
+        byte smallNumber = 100;
+        System.out.println("Byte value: " + smallNumber); // 字节值
         
-        // long - for larger numbers 用于更大的数字
-        long population = 7800000000L; // Note the 'L' suffix 注意L后缀
+        // short: -32,768 to 32,767 (16位)
+        short mediumNumber = 30000;
+        System.out.println("Short value: " + mediumNumber); // 短整型值
         
-        // short - for smaller numbers 用于较小的数字
-        short score = 100;
-        
-        // byte - smallest integer type 最小的整数类型
-        byte
