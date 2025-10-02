@@ -10,217 +10,290 @@ head:
       content: Java急速教程、Java极简教程
 ---
 
-# Java入门教程：基础运算
+ ## **Assignment Operator（赋值运算符）**
 
-## 课程大纲 Course Outline
-- 开发环境搭建 Development Environment Setup
-- Hello World
-- 基本语法 Basic Syntax
-- 数据类型 Data Types
-- **基础运算 Basic Operations**（当前章节）
-- 集合 Collections
-- 控制流 Control Flow
-- 类、属性、方法 Classes, Attributes, Methods
+### **概念 Explanation**
 
----
+**Assignment（赋值）** 是编程中最基础的操作，使用 **`=`** 符号将右边的值存储到左边的变量中。📦 就像把东西装进盒子里，盒子就是变量，东西就是值。
 
-## 章节内容 Chapter Content: 基础运算
-
-### 概念 Explanation
-在本章节中，我们将学习Java中的基础运算，这些是编程的核心构建块，就像数学中的加减乘除一样简单但重要！✨ 我们将覆盖：
-- **Assignment（赋值）**：将值存储到变量中
-- **Arithmetic Operations（数学操作）**：进行加减乘除等计算
-- **Comparison Operations（比较运算）**：比较值的大小或相等性
-- **Logical Operations（逻辑运算）**：组合多个条件，用于决策
-
-想象一下，这些运算就像厨房里的工具：赋值是往碗里放食材，数学操作是搅拌混合，比较是尝味道判断咸淡，逻辑运算是决定是否加盐！🍳
-
-### 代码示例 Code Examples
-所有代码示例都使用英文变量名和注释，注释格式为 `// English comment 中文翻译`，以帮助您同时学习编程和计算机英语。
-
-#### 1. 赋值 Assignment
-赋值是将一个值存储到变量中的过程。在Java中，我们使用 `=` 运算符。
 ```java
-public class BasicOperations {
+// Basic assignment 基本赋值
+int age = 25;  // Assign value 25 to variable age 将值25赋给变量age
+
+// Reassignment 重新赋值
+age = 30;  // Update the value 更新值
+
+// Multiple assignments 多重赋值
+int a, b, c;
+a = b = c = 10;  // All variables get value 10 所有变量都得到值10
+```
+
+### **代码示例 Code Examples**
+
+```java
+public class AssignmentExample {
     public static void main(String[] args) {
-        // Assignment examples 赋值示例
-        int number = 5; // Assign 5 to variable 'number' 将5赋给变量number
-        double price = 10.99; // Assign a decimal value 赋值一个小数值
-        String message = "Hello"; // Assign a text string 赋值一个文本字符串
+        // Simple assignment 简单赋值
+        String name = "Alice";  // Assign string to variable 将字符串赋给变量
+        int score = 95;  // Assign integer to variable 将整数赋给变量
         
-        System.out.println("Number: " + number); // Output: Number: 5
-        System.out.println("Price: " + price); // Output: Price: 10.99
-        System.out.println("Message: " + message); // Output: Message: Hello
+        // Assignment with expressions 表达式赋值
+        int total = 100 + 50;  // Calculate then assign 先计算再赋值
+        System.out.println("Total: " + total);  // Output: Total: 150
+        
+        // Copy value from one variable to another 从一个变量复制值到另一个变量
+        int original = 42;
+        int copy = original;  // copy gets value 42 copy获得值42
+        System.out.println("Original: " + original + ", Copy: " + copy);
     }
 }
 ```
 
-#### 2. 数学操作 Arithmetic Operations
-数学操作包括加法、减法、乘法、除法和求余（模运算）。这些操作使用标准运算符。
+### **练习 Exercises**
+
+1. 创建一个变量 `temperature`，赋值为 `25`，然后将其更新为 `30`
+2. 创建两个变量 `width` 和 `height`，分别赋值为 `10` 和 `20`，然后创建第三个变量 `area` 存储它们的乘积
+
+---
+
+## **Arithmetic Operators（算术运算符）**
+
+### **概念 Explanation**
+
+**Arithmetic Operators（算术运算符）** 用于执行数学计算。Java 提供五个基本算术运算符：
+
+- **`+`** Addition（加法）
+- **`-`** Subtraction（减法）
+- **`*`** Multiplication（乘法）
+- **`/`** Division（除法）
+- **`%`** Modulus（取余/求模）- 返回除法的余数
+
+### **代码示例 Code Examples**
+
 ```java
 public class ArithmeticExample {
     public static void main(String[] args) {
+        // Basic arithmetic operations 基本算术操作
         int a = 10;
         int b = 3;
         
         // Addition 加法
-        int sum = a + b; // Calculate sum 计算和
-        System.out.println("Sum: " + sum); // Output: Sum: 13
+        int sum = a + b;  // Result: 13 结果：13
+        System.out.println("Sum: " + sum);
         
         // Subtraction 减法
-        int difference = a - b; // Calculate difference 计算差
-        System.out.println("Difference: " + difference); // Output: Difference: 7
+        int difference = a - b;  // Result: 7 结果：7
+        System.out.println("Difference: " + difference);
         
         // Multiplication 乘法
-        int product = a * b; // Calculate product 计算乘积
-        System.out.println("Product: " + product); // Output: Product: 30
+        int product = a * b;  // Result: 30 结果：30
+        System.out.println("Product: " + product);
         
         // Division 除法
-        int quotient = a / b; // Calculate quotient (integer division) 计算商（整数除法）
-        System.out.println("Quotient: " + quotient); // Output: Quotient: 3
+        int quotient = a / b;  // Result: 3 (integer division) 结果：3（整数除法）
+        System.out.println("Quotient: " + quotient);
         
-        // Modulus 求余
-        int remainder = a % b; // Calculate remainder 计算余数
-        System.out.println("Remainder: " + remainder); // Output: Remainder: 1
+        // Modulus (remainder) 取余（余数）
+        int remainder = a % b;  // Result: 1 (10 ÷ 3 = 3 remainder 1) 结果：1
+        System.out.println("Remainder: " + remainder);
         
-        // Note: For decimal division, use double or float 注意：对于小数除法，使用double或float类型
-        double decimalQuotient = (double) a / b; // Cast to double for precise result 转换为double以获取精确结果
-        System.out.println("Decimal Quotient: " + decimalQuotient); // Output: Decimal Quotient: 3.333...
+        // Floating-point division 浮点数除法
+        double preciseResult = 10.0 / 3.0;  // Result: 3.333... 结果：3.333...
+        System.out.println("Precise division: " + preciseResult);
     }
 }
 ```
 
-#### 3. 比较运算 Comparison Operations
-比较运算用于比较两个值，返回布尔值（true或false）。常用运算符包括等于、大于、小于等。
-```java
-public class ComparisonExample {
-    public static void main(String[] args) {
-        int x = 5;
-        int y = 10;
-        
-        // Equal to 等于
-        boolean isEqual = (x == y); // Check if x equals y 检查x是否等于y
-        System.out.println("Is x equal to y? " + isEqual); // Output: Is x equal to y? false
-        
-        // Not equal to 不等于
-        boolean notEqual = (x != y); // Check if x is not equal to y 检查x是否不等于y
-        System.out.println("Is x not equal to y? " + notEqual); // Output: Is x not equal to y? true
-        
-        // Greater than 大于
-        boolean greater = (x > y); // Check if x is greater than y 检查x是否大于y
-        System.out.println("Is x greater than y? " + greater); // Output: Is x greater than y? false
-        
-        // Less than 小于
-        boolean less = (x < y); // Check if x is less than y 检查x是否小于y
-        System.out.println("Is x less than y? " + less); // Output: Is x less than y? true
-        
-        // Greater than or equal to 大于等于
-        boolean greaterOrEqual = (x >= y); // Check if x is greater than or equal to y 检查x是否大于或等于y
-        System.out.println("Is x greater or equal to y? " + greaterOrEqual); // Output: Is x greater or equal to y? false
-        
-        // Less than or equal to 小于等于
-        boolean lessOrEqual = (x <= y); // Check if x is less than or equal to y 检查x是否小于或等于y
-        System.out.println("Is x less or equal to y? " + lessOrEqual); // Output: Is x less or equal to y? true
-    }
-}
-```
+**⚠️ 注意事项：**
+- 整数除法会丢弃小数部分：`10 / 3 = 3`（不是 3.33）
+- 取余运算符 `%` 常用于判断奇偶数：`number % 2 == 0` 表示偶数
 
-#### 4. 逻辑运算 Logical Operations
-逻辑运算用于组合多个布尔条件，常用运算符包括AND（&&）和OR（||）。这些在控制流中非常有用，比如在if语句中。
-```java
-public class LogicalExample {
-    public static void main(String[] args) {
-        boolean condition1 = true;
-        boolean condition2 = false;
-        
-        // Logical AND 逻辑与
-        boolean andResult = condition1 && condition2; // True only if both are true 仅当两者都为真时结果为真
-        System.out.println("AND Result: " + andResult); // Output: AND Result: false
-        
-        // Logical OR 逻辑或
-        boolean orResult = condition1 || condition2; // True if at least one is true 如果至少一个为真则结果为真
-        System.out.println("OR Result: " + orResult); // Output: OR Result: true
-        
-        // Practical example with comparisons 结合比较运算的实用示例
-        int age = 20;
-        boolean hasLicense = true;
-        
-        // Check if age is over 18 AND has license 检查年龄是否超过18岁并且有驾照
-        boolean canDrive = (age >= 18) && hasLicense; // Combine conditions 组合条件
-        System.out.println("Can drive? " + canDrive); // Output: Can drive? true
-        
-        // Check if age is under 16 OR over 65 检查年龄是否小于16岁或超过65岁
-        boolean isEligibleForDiscount = (age < 16) || (age > 65); // Use OR for multiple conditions 使用OR处理多个条件
-        System.out.println("Eligible for discount? " + isEligibleForDiscount); // Output: Eligible for discount? false
-    }
-}
-```
+### **练习 Exercises**
 
-### 练习 Exercises
-通过以下练习题巩固所学知识。尝试自己编写代码并运行！💻 每个练习都包含提示，使用英文变量名和注释。
-
-#### 练习 1: 基础数学运算
-写一个Java程序，计算两个整数的和、差、积、商和余数，并输出结果。
-- 提示：定义两个变量，例如 `int num1 = 15;` 和 `int num2 = 4;`，然后使用数学运算符。
-- 示例代码框架：
-```java
-public class Exercise1 {
-    public static void main(String[] args) {
-        // Define two integers 定义两个整数
-        int num1 = 15;
-        int num2 = 4;
-        
-        // Calculate and print results 计算并打印结果
-        // Your code here 你的代码在这里
-    }
-}
-```
-
-#### 练习 2: 比较和逻辑运算
-写一个程序，检查一个数字是否在1到100之间（包括1和100），并使用逻辑运算符组合条件。
-- 提示：使用比较运算符（如 `>=` 和 `<=`）和逻辑AND（`&&`）。
-- 示例代码框架：
-```java
-public class Exercise2 {
-    public static void main(String[] args) {
-        int number = 50; // Change this value to test 更改此值进行测试
-        
-        // Check if number is between 1 and 100 inclusive 检查数字是否在1到100之间（包括）
-        // Your code here 你的代码在这里
-        // Expected output for number=50: "Is number between 1 and 100? true"
-    }
-}
-```
-
-#### 练习 3: 综合应用
-创建一个程序，模拟简单登录检查：如果用户名是 "admin" 且密码是 "1234"，则输出 "Login successful"；否则输出 "Login failed"。
-- 提示：使用字符串比较（`equals` 方法，例如 `username.equals("admin")`）和逻辑AND。
-- 示例代码框架：
-```java
-public class Exercise3 {
-    public static void main(String[] args) {
-        String username = "admin";
-        String password = "1234";
-        
-        // Check login credentials 检查登录凭据
-        // Your code here 你的代码在这里
-    }
-}
-```
+1. 计算一个矩形的周长，已知 `length = 15` 和 `width = 8`（公式：`perimeter = 2 * (length + width)`）
+2. 判断数字 `17` 除以 `5` 的余数是多少
+3. 计算 `25.5 / 4.0` 的结果
 
 ---
 
-## 总结 Summary
-在本章节中，我们学习了Java基础运算的核心概念，这些是编程的基石！🎯 让我们回顾关键点：
+## **Comparison Operators（比较运算符）**
 
-- **Assignment（赋值）**：使用 `=` 将值存储到变量中，例如 `int x = 5;`。
-- **Arithmetic Operations（数学操作）**：包括加法（`+`）、减法（`-`）、乘法（`*`）、除法（`/`）和求余（`%`）。注意整数除法会截断小数部分。
-- **Comparison Operations（比较运算）**：返回布尔值，包括等于（`==`）、不等于（`!=`）、大于（`>`）、小于（`<`）等。
-- **Logical Operations（逻辑运算）**：用于组合条件，AND（`&&`）要求所有条件为真，OR（`||`）要求至少一个条件为真。
+### **概念 Explanation**
 
-重要专业术语强调：
-- **Variable（变量）**：存储数据的容器。
-- **Operator（运算符）**：用于执行操作的符号，如 `+` 或 `==`。
-- **Boolean（布尔）**：一种数据类型，只有 `true` 或 `false` 两个值。
+**Comparison Operators（比较运算符）** 用于比较两个值，返回 **boolean（布尔值）**：`true` 或 `false`。🔍 就像裁判判断输赢。
 
-通过练习，您已经应用了这些概念来解决实际问题。继续练习以加深理解！在下一章中，我们将探索集合，学习如何管理一组数据。🚀
+| **Operator 运算符** | **Meaning 含义** | **Example 示例** |
+|---------------------|------------------|------------------|
+| `==` | Equal to（等于） | `5 == 5` → `true` |
+| `!=` | Not equal to（不等于） | `5 != 3` → `true` |
+| `>` | Greater than（大于） | `5 > 3` → `true` |
+| `<` | Less than（小于） | `5 < 3` → `false` |
+| `>=` | Greater than or equal to（大于等于） | `5 >= 5` → `true` |
+| `<=` | Less than or equal to（小于等于） | `3 <= 5` → `true` |
+
+### **代码示例 Code Examples**
+
+```java
+public class ComparisonExample {
+    public static void main(String[] args) {
+        int x = 10;
+        int y = 20;
+        
+        // Equal to 等于
+        boolean isEqual = (x == y);  // false
+        System.out.println("x == y: " + isEqual);
+        
+        // Not equal to 不等于
+        boolean isNotEqual = (x != y);  // true
+        System.out.println("x != y: " + isNotEqual);
+        
+        // Greater than 大于
+        boolean isGreater = (x > y);  // false
+        System.out.println("x > y: " + isGreater);
+        
+        // Less than 小于
+        boolean isLess = (x < y);  // true
+        System.out.println("x < y: " + isLess);
+        
+        // Greater than or equal to 大于等于
+        boolean isGreaterOrEqual = (x >= 10);  // true
+        System.out.println("x >= 10: " + isGreaterOrEqual);
+        
+        // Less than or equal to 小于等于
+        boolean isLessOrEqual = (y <= 20);  // true
+        System.out.println("y <= 20: " + isLessOrEqual);
+        
+        // Practical example 实际例子
+        int age = 18;
+        boolean isAdult = (age >= 18);  // Check if adult 检查是否成年
+        System.out.println("Is adult: " + isAdult);
+    }
+}
+```
+
+**⚠️ 重要提醒：**
+- 比较相等用 `==`，不是 `=`（`=` 是赋值）
+- 字符串比较要用 `.equals()` 方法，不能用 `==`
+
+### **练习 Exercises**
+
+1. 比较两个数字 `score1 = 85` 和 `score2 = 90`，判断 `score1` 是否大于等于 `score2`
+2. 创建变量 `temperature = 25`，判断温度是否在舒适范围内（`>= 20` 且 `<= 26`）
+
+---
+
+## **Logical Operators（逻辑运算符）**
+
+### **概念 Explanation**
+
+**Logical Operators（逻辑运算符）** 用于组合多个布尔表达式，返回 `true` 或 `false`。🧩 就像拼图，组合多个条件。
+
+| **Operator 运算符** | **Name 名称** | **Description 描述** | **Example 示例** |
+|---------------------|---------------|----------------------|------------------|
+| `&&` | AND（与） | 所有条件都为 true 时返回 true | `true && true` → `true` |
+| `\|\|` | OR（或） | 至少一个条件为 true 时返回 true | `true \|\| false` → `true` |
+| `!` | NOT（非） | 反转布尔值 | `!true` → `false` |
+
+### **代码示例 Code Examples**
+
+```java
+public class LogicalExample {
+    public static void main(String[] args) {
+        int age = 25;
+        boolean hasLicense = true;
+        int score = 85;
+        
+        // AND operator (&&) 与运算符
+        // Both conditions must be true 两个条件都必须为真
+        boolean canDrive = (age >= 18) && hasLicense;
+        System.out.println("Can drive: " + canDrive);  // true
+        
+        boolean validAge = (age >= 18) && (age <= 65);
+        System.out.println("Valid age: " + validAge);  // true
+        
+        // OR operator (||) 或运算符
+        // At least one condition must be true 至少一个条件为真
+        boolean isWeekend = false;
+        boolean isHoliday = true;
+        boolean canRest = isWeekend || isHoliday;
+        System.out.println("Can rest: " + canRest);  // true
+        
+        // NOT operator (!) 非运算符
+        // Inverts the boolean value 反转布尔值
+        boolean isBusy = false;
+        boolean isFree = !isBusy;
+        System.out.println("Is free: " + isFree);  // true
+        
+        // Complex conditions 复杂条件
+        boolean passExam = (score >= 60) && (score <= 100);
+        boolean isExcellent = (score >= 90) || (score == 100);
+        System.out.println("Pass exam: " + passExam);  // true
+        System.out.println("Excellent: " + isExcellent);  // false
+        
+        // Combining multiple operators 组合多个运算符
+        int temperature = 25;
+        boolean isComfortable = (temperature >= 20) && (temperature <= 26) && !isWeekend;
+        System.out.println("Comfortable working conditions: " + isComfortable);
+    }
+}
+```
+
+**💡 逻辑运算真值表：**
+
+**AND (`&&`) 真值表：**
+```
+true  && true  = true
+true  && false = false
+false && true  = false
+false && false = false
+```
+
+**OR (`||`) 真值表：**
+```
+true  || true  = true
+true  || false = true
+false || true  = true
+false || false = false
+```
+
+### **练习 Exercises**
+
+1. 创建一个检查器，判断一个人是否可以投票：年龄 `>= 18` 并且是公民（`isCitizen = true`）
+2. 判断一个学生是否获得奖学金：成绩 `>= 90` 或者 在体育比赛中获奖（`hasAward = true`）
+3. 创建一个变量 `isRaining = true`，使用 NOT 运算符判断是否不下雨
+
+---
+
+## **总结 Summary**
+
+本章节学习了 Java 中的 **四大基础运算符 Four Basic Operators**：
+
+1. **Assignment Operator（赋值运算符）**：
+   - 使用 `=` 将值存储到变量中
+   - 关键词：**assign（赋值）**、**variable（变量）**
+
+2. **Arithmetic Operators（算术运算符）**：
+   - `+` Addition（加法）、`-` Subtraction（减法）、`*` Multiplication（乘法）
+   - `/` Division（除法）、`%` Modulus（取余）
+   - 注意整数除法会丢弃小数部分
+
+3. **Comparison Operators（比较运算符）**：
+   - `==` Equal（等于）、`!=` Not equal（不等于）
+   - `>` Greater than（大于）、`<` Less than（小于）
+   - `>=` Greater or equal（大于等于）、`<=` Less or equal（小于等于）
+   - 返回 **boolean（布尔值）**：`true` 或 `false`
+
+4. **Logical Operators（逻辑运算符）**：
+   - `&&` AND（与）：所有条件为真
+   - `||` OR（或）：至少一个条件为真
+   - `!` NOT（非）：反转布尔值
+   - 用于组合多个条件判断
+
+🎯 **核心英文术语 Key Terms**：
+- **operator（运算符）**
+- **expression（表达式）**
+- **boolean（布尔值）**
+- **true / false（真 / 假）**
+- **condition（条件）**
+
+掌握这些运算符是编写程序逻辑的基础！下一章节将学习如何使用这些运算符控制程序流程。💪
