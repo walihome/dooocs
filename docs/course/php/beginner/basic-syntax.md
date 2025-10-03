@@ -12,213 +12,223 @@ head:
 
  # 基本语法
 
-在Python中,我们需要掌握四个最基础的操作:存储数据、显示数据、添加说明和调试程序。让我们逐个来学习。
-
-## 定义变量(Variable)
+## 变量(Variable)
 
 💡 **概念说明**
 
-变量就像一个带标签的盒子,用来存储数据。你给盒子起个名字,就能随时使用里面的内容。
+变量就像一个贴了标签的盒子,用来存放数据。PHP中的变量都以 `$` 符号开头。
+
+## 定义变量
 
 ### 📝 代码示例
 
-```python{1-3}
-name = "张三"
-age = 25
-price = 99.9
+```php{1,2,3,4}
+<?php
+$name = "张三";
+$age = 25;
+$price = 99.5;
+$isStudent = true;
 ```
 
-**运行说明**: 这段代码运行后不会显示任何内容,但数据已经存储好了。
-
-::: tip 命名建议
-- 使用英文字母、数字和下划线
-- 不能以数字开头
-- 建议使用有意义的英文单词:`user_name` 比 `a` 更容易理解
+::: tip 提示
+- 变量名必须以 `$` 开头
+- 等号 `=` 表示"把右边的值放进左边的变量里"
+- PHP会自动识别数据类型,不需要你声明
 :::
 
 ### 💪 练习题
 
-**练习1**: 创建三个变量,分别存储你的姓名、年龄和所在城市
+**练习1**: 创建三个变量,分别存储你的姓名、城市和喜欢的数字
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
+```php
+<?php
+$myName = "李四";
+$myCity = "北京";
+$luckyNumber = 8;
+```
+
+</details>
+
+**练习2**: 创建一个变量存储商品价格,另一个变量存储数量
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+$productPrice = 29.9;
+$quantity = 3;
 ```
 
 </details>
 
 ## 输出变量
 
-💡 **概念说明**
-
-使用`print()`函数(Function)可以将变量的内容显示在屏幕上。
-
 ### 📝 代码示例
 
-```python{4-5}
-name = "张三"
-age = 25
-
-print(name)
-print(age)
+```php{3,4,5}
+<?php
+$fruit = "苹果";
+echo $fruit;
+echo "<br>";
+echo "我喜欢吃" . $fruit;
 ```
 
 **运行结果**:
 ```
-张三
-25
+苹果
+我喜欢吃苹果
 ```
 
-你也可以一次输出多个变量:
-
-```python{4}
-name = "张三"
-age = 25
-
-print("姓名:", name, "年龄:", age)
-```
-
-**运行结果**:
-```
-姓名: 张三 年龄: 25
-```
-
-### 💪 练习题
-
-**练习2**: 输出练习1中创建的三个变量
-
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
-```
-
-</details>
-
-## 增加注释(Comment)
-
-💡 **概念说明**
-
-注释是写给人看的说明文字,程序运行时会自动忽略。就像给代码写的备忘录。
-
-### 📝 代码示例
-
-```python{1,4,7-9}
-# 这是单行注释,用井号开头
-
-name = "张三"  # 也可以写在代码后面
-
-age = 25
-
-"""
-这是多行注释
-可以写很多行说明
-"""
-print(name, age)
-```
-
-**运行结果**:
-```
-张三 25
-```
-
-::: tip 什么时候需要注释?
-- 解释复杂的逻辑
-- 说明某个数字的含义(如 `tax_rate = 0.13  # 增值税率`)
-- 暂时不想运行某段代码时,在前面加`#`
+::: tip 提示
+- `echo` 用于输出内容到页面
+- `<br>` 是HTML换行标签
+- 点号 `.` 用于连接文字和变量
 :::
 
 ### 💪 练习题
 
-**练习3**: 为你的代码添加注释,说明每个变量的用途
+定义变量 `$city = "上海"` 和 `$weather = "晴天"`,输出"上海今天是晴天"
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-# 存储用户的基本信息
-my_name = "李四"  # 用户姓名
-my_age = 20       # 用户年龄
-city = "北京"     # 所在城市
+```php
+<?php
+$city = "上海";
+$weather = "晴天";
+echo $city . "今天是" . $weather;
+```
 
-# 输出用户信息
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
+</details>
+
+## 注释(Comment)
+
+### 💡 概念说明
+
+注释是给人看的说明文字,程序运行时会被忽略。
+
+### 📝 代码示例
+
+```php{1,4,7-9}
+// 这是单行注释,用于简短说明
+
+<?php
+$price = 100; // 计算商品价格
+
+/*
+这是多行注释
+可以写很多行说明
+*/
+$discount = 0.8;
+```
+
+::: warning 注意
+注释要写得简洁明了,说明"为什么这样做",而不是"做了什么"
+:::
+
+### 💪 练习题
+
+为以下代码添加合适的注释:
+
+```php
+<?php
+$original = 200;
+$rate = 0.7;
+$final = $original * $rate;
+```
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+// 原价
+$original = 200;
+// 折扣比例
+$rate = 0.7;
+// 计算最终价格
+$final = $original * $rate;
 ```
 
 </details>
 
 ## 日志打印
 
-💡 **概念说明**
+### 💡 概念说明
 
-`print()`就是最基本的日志打印方式,帮助你查看程序运行过程中的数据变化。
+`var_dump()` 用于查看变量的详细信息,包括类型和值,常用于调试代码。
 
 ### 📝 代码示例
 
-```python{7,10,13}
-# 计算商品总价
-price = 100
-quantity = 3
+```php{3,4,5,6}
+<?php
+$username = "王五";
+var_dump($username);
 
-# 打印初始值
-print("单价:", price)
-print("数量:", quantity)
-
-# 计算总价
-total = price * quantity
-print("总价:", total)
-
-# 应用折扣
-discount = 0.9
-final_price = total * discount
-print("折后价:", final_price)
+$count = 10;
+var_dump($count);
 ```
 
 **运行结果**:
 ```
-单价: 100
-数量: 3
-总价: 300
-折后价: 270.0
+string(6) "王五"
+int(10)
 ```
 
-::: warning 调试技巧
-当程序结果不对时,在关键位置添加`print()`,检查每一步的数据是否正确。
+::: tip 提示
+- `string(6)` 表示这是一个字符串,长度为6个字节(中文一个字占3个字节)
+- `int(10)` 表示这是一个整数,值为10
 :::
+
+### 📝 对比示例
+
+```php{3,4,6,7}
+<?php
+$score = 85;
+// 普通输出
+echo $score;
+
+// 详细信息输出
+var_dump($score);
+```
+
+**运行结果**:
+```
+85
+int(85)
+```
 
 ### 💪 练习题
 
-**练习4**: 编写一个程序,计算矩形面积(长×宽),并用`print()`显示每一步的值
+使用 `var_dump()` 查看变量 `$price = 99.9` 和 `$isVip = true` 的详细信息
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-# 定义矩形的长和宽
-length = 10
-width = 5
-print("长度:", length)
-print("宽度:", width)
+```php
+<?php
+$price = 99.9;
+$isVip = true;
 
-# 计算面积
-area = length * width
-print("面积:", area)
+var_dump($price);
+var_dump($isVip);
+```
+
+**运行结果**:
+```
+float(99.9)
+bool(true)
 ```
 
 </details>
 
 ## 📌 小结
 
-- **变量**: 使用`=`存储数据,如`name = "张三"`
-- **输出**: 使用`print()`显示内容
-- **注释**: 使用`#`添加单行说明,使用`""" """`添加多行说明
-- **调试**: 通过`print()`查看程序运行中的数据状态
+1. 变量以 `$` 开头,用于存储数据
+2. 使用 `echo` 输出内容,用 `.` 连接文字和变量
+3. 添加注释让代码更易理解,但不影响程序运行
+4. 使用 `var_dump()` 查看变量的类型和值,方便调试
