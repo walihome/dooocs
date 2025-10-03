@@ -10,150 +10,291 @@ head:
       content: c极简教程
 ---
 
- # 动手实践
+<think>
 
-恭喜你!你已经学会了 Python 编程中最核心的内容。你可能不敢相信,但事实是:**90% 的 Python 程序都是用你刚学的这些知识组合而成的**。
+用户要求我编写一个C语言零基础入门教程的"动手实践"章节。让我梳理一下关键要求：
 
-变量(Variable)、数据类型(Data Type)、条件判断(Conditional)、循环(Loop)——这些就是编程的"乐高积木"。现在,让我们用它们搭建一个真正的程序!
+1. **章节定位**：这是一个综合练习章节，让学生应用前面学到的知识
+2. **目标读者**：完全零基础的新手
+3. **核心内容**：学生成绩管理系统（5个学生，计算最高分、最低分、平均分、及格人数）
+4. **详细程度**：要说明代码怎么写、如何执行、用什么命令、会出现什么结果
 
-::: tip 费曼学习法的启示
-诺贝尔物理学奖得主费曼说过:能用自己的方式做出来,才算真正学会。读懂代码不等于会写代码,就像看懂菜谱不等于会做菜。
-:::
+5. **教学原则**：
+   - 循序渐进
+   - 理论与实践结合
+   - 双语教学（代码英文，术语双语）
+   - 使用Markdown和VitePress格式
 
-## 💡 实战项目:个性化问候助手
+6. **写作要求**：
+   - 用第二人称"你"
+   - 避免"很简单"等表述
+   - 多用疑问句引导思考
+   - 不要一次性引入太多概念
+   - 不要逐行解释
+   - 不要列举常见错误
 
-我们要做一个小程序,它能:
-- 询问用户的姓名和年龄
-- 根据年龄给出不同的问候
-- 统计用户输入了多少个字符
+7. **格式要求**：
+   - 用 ## 和 ### 组织结构
+   - 代码示例用```c
+   - 使用VitePress的代码高亮语法
+   - 使用VitePress容器（tip/warning/danger）
+   - 练习题答案要折叠
 
-这个项目会用到你学过的所有知识点!
+8. **章节结构**：
+   - 💡 概念说明
+   - 📝 代码示例
+   - 💪 练习题
+   - 📌 小结
+
+我将设计一个激励性的章节框架，帮助零基础学生逐步构建学生成绩管理系统。重点是通过实践巩固之前学习的编程知识，让学生感受到编程的乐趣和成就感。章节将采用循序渐进的方式，引导学生理解并实现一个实用的小型项目。
+</think>
+# 动手实践
+
+恭喜你！你已经学完了 C 语言的基础知识。现在是时候把这些知识串联起来，做一个真正的小项目了。
+
+## 💡 项目需求
+
+我们要做一个**学生成绩管理系统**，功能包括：
+- 输入 5 个学生的成绩
+- 计算最高分
+- 计算最低分
+- 计算平均分
+- 统计及格人数（60分及以上）
 
 ## 📝 完整代码
 
-```python{1-2,5-6,9-14,17-20}
-# 获取用户输入
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+把下面的代码保存为 `score_manager.c`：
 
-# 数据类型转换
-age = int(age)
+```c{8-12,15-20,23-30,33-41}
+#include <stdio.h>
 
-# 根据年龄给出不同问候
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
-
-# 计算名字长度并输出
-name_length = len(name)
-print(greeting + "," + name + "!")
-print("你的名字有", name_length, "个字符")
-print("=" * 30)
-
-# 显示用户信息
-print("用户信息:")
-print("姓名:", name)
-print("年龄:", age)
-print("=" * 30)
+int main() {
+    // 定义变量
+    float scores[5];
+    float sum = 0;
+    float average;
+    float max_score;
+    float min_score;
+    int pass_count = 0;
+    
+    // 输入5个学生的成绩
+    printf("=== 学生成绩管理系统 ===\n");
+    printf("请输入5个学生的成绩：\n");
+    for (int i = 0; i < 5; i++) {
+        printf("学生%d的成绩: ", i + 1);
+        scanf("%f", &scores[i]);
+        sum = sum + scores[i];
+    }
+    
+    // 初始化最高分和最低分
+    max_score = scores[0];
+    min_score = scores[0];
+    
+    // 计算最高分、最低分和及格人数
+    for (int i = 0; i < 5; i++) {
+        if (scores[i] > max_score) {
+            max_score = scores[i];
+        }
+        if (scores[i] < min_score) {
+            min_score = scores[i];
+        }
+        if (scores[i] >= 60) {
+            pass_count = pass_count + 1;
+        }
+    }
+    
+    // 计算平均分
+    average = sum / 5;
+    
+    // 输出结果
+    printf("\n=== 统计结果 ===\n");
+    printf("最高分: %.2f\n", max_score);
+    printf("最低分: %.2f\n", min_score);
+    printf("平均分: %.2f\n", average);
+    printf("及格人数: %d\n", pass_count);
+    
+    return 0;
+}
 ```
 
-### 运行结果
+::: tip 代码重点
+高亮的代码行是核心逻辑：
+- **8-12行**：声明所需的变量(Variable)
+- **15-20行**：循环(Loop)输入成绩并累加
+- **23-30行**：初始化并查找最值
+- **33-41行**：计算平均分并输出结果
+:::
 
-当你运行这个程序时,会看到:
+## 🚀 如何运行这个程序
 
+### 第一步：编译代码
+
+打开终端(Terminal)或命令提示符(Command Prompt)，输入：
+
+```bash
+gcc score_manager.c -o score_manager
 ```
-请输入你的名字:小明
-请输入你的年龄:25
-你好,朋友,小明!
-你的名字有 2 个字符
-==============================
-用户信息:
-姓名: 小明
-年龄: 25
-==============================
-```
-
-## 🔍 代码解析
-
-### 这个程序做了什么?
-
-1. **第 1-2 行**:用 `input()` 获取用户输入
-2. **第 5-6 行**:把年龄从文本转换成数字(为了后面比较大小)
-3. **第 9-14 行**:用 `if-elif-else` 根据年龄选择问候语
-4. **第 17-20 行**:计算名字长度并输出结果
 
 ::: warning 注意
-`input()` 获取的是字符串类型,如果要进行数字比较,必须先用 `int()` 转换!
+如果提示找不到 `gcc` 命令，说明编译器(Compiler)还没安装好。
 :::
 
-## 💪 你的挑战
+### 第二步：运行程序
 
-### 挑战 1:增加年龄验证
+编译成功后，执行：
 
-修改程序,如果用户输入的年龄小于 0 或大于 150,显示"年龄输入有误!"
+```bash
+./score_manager
+```
 
-::: details 点击查看答案
-```python{7-10}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+::: tip Windows 用户
+在 Windows 系统上，执行命令是：
+```bash
+score_manager.exe
+```
+:::
 
-age = int(age)
+### 第三步：输入数据
 
-# 验证年龄范围
-if age < 0 or age > 150:
-    print("年龄输入有误!")
-else:
-    if age < 18:
-        greeting = "你好,年轻人"
-    elif age < 60:
-        greeting = "你好,朋友"
-    else:
-        greeting = "你好,尊敬的长者"
+程序运行后会提示你输入成绩，你可以这样输入：
+
+```
+=== 学生成绩管理系统 ===
+请输入5个学生的成绩：
+学生1的成绩: 85
+学生2的成绩: 92
+学生3的成绩: 78
+学生4的成绩: 55
+学生5的成绩: 88
+```
+
+### 第四步：查看结果
+
+输入完成后，程序会自动计算并显示：
+
+```
+=== 统计结果 ===
+最高分: 92.00
+最低分: 55.00
+平均分: 79.60
+及格人数: 4
+```
+
+## 💪 练习题
+
+### 练习 1：添加不及格统计
+
+在原有代码基础上，增加统计不及格人数的功能。
+
+<details>
+<summary>点击查看答案</summary>
+
+```c{10,27-29,48}
+#include <stdio.h>
+
+int main() {
+    float scores[5];
+    float sum = 0;
+    float average;
+    float max_score;
+    float min_score;
+    int pass_count = 0;
+    int fail_count = 0;  // 新增：不及格人数
     
-    name_length = len(name)
-    print(greeting + "," + name + "!")
-    print("你的名字有", name_length, "个字符")
+    printf("=== 学生成绩管理系统 ===\n");
+    printf("请输入5个学生的成绩：\n");
+    for (int i = 0; i < 5; i++) {
+        printf("学生%d的成绩: ", i + 1);
+        scanf("%f", &scores[i]);
+        sum = sum + scores[i];
+    }
+    
+    max_score = scores[0];
+    min_score = scores[0];
+    
+    for (int i = 0; i < 5; i++) {
+        if (scores[i] > max_score) max_score = scores[i];
+        if (scores[i] < min_score) min_score = scores[i];
+        if (scores[i] >= 60) {
+            pass_count++;
+        } else {
+            fail_count++;  // 新增：统计不及格
+        }
+    }
+    
+    average = sum / 5;
+    
+    printf("\n=== 统计结果 ===\n");
+    printf("最高分: %.2f\n", max_score);
+    printf("最低分: %.2f\n", min_score);
+    printf("平均分: %.2f\n", average);
+    printf("及格人数: %d\n", pass_count);
+    printf("不及格人数: %d\n", fail_count);  // 新增：输出不及格人数
+    
+    return 0;
+}
 ```
-:::
 
-### 挑战 2:重复问候
+</details>
 
-让程序询问"需要问候几次?",然后用循环重复显示问候语。
+### 练习 2：管理 10 个学生
 
-::: details 点击查看答案
-```python{8-9,12-13}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+修改程序，让它可以处理 10 个学生的成绩。
 
-age = int(age)
+<details>
+<summary>点击查看答案</summary>
 
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
+```c{5,15,39}
+#include <stdio.h>
 
-times = input("需要问候几次?")
-times = int(times)
-
-# 循环输出问候
-for i in range(times):
-    print(greeting + "," + name + "!")
+int main() {
+    // 将数组(Array)大小改为10
+    float scores[10];
+    float sum = 0;
+    float average;
+    float max_score;
+    float min_score;
+    int pass_count = 0;
+    
+    printf("=== 学生成绩管理系统 ===\n");
+    printf("请输入10个学生的成绩：\n");
+    // 循环次数改为10
+    for (int i = 0; i < 10; i++) {
+        printf("学生%d的成绩: ", i + 1);
+        scanf("%f", &scores[i]);
+        sum = sum + scores[i];
+    }
+    
+    max_score = scores[0];
+    min_score = scores[0];
+    
+    for (int i = 0; i < 10; i++) {
+        if (scores[i] > max_score) max_score = scores[i];
+        if (scores[i] < min_score) min_score = scores[i];
+        if (scores[i] >= 60) pass_count++;
+    }
+    
+    // 除数改为10
+    average = sum / 10;
+    
+    printf("\n=== 统计结果 ===\n");
+    printf("最高分: %.2f\n", max_score);
+    printf("最低分: %.2f\n", min_score);
+    printf("平均分: %.2f\n", average);
+    printf("及格人数: %d\n", pass_count);
+    
+    return 0;
+}
 ```
-:::
+
+</details>
 
 ## 📌 小结
 
-- **编程就是组合**:没有什么"高级技巧",只有把基础知识灵活组合
-- **动手才能学会**:看懂和做出来是两回事,多写才能进步
-- **80/20 法则**:你已经掌握了 Python 最核心的 20% 知识,足以完成 80% 的任务
+- 你已经完成了第一个完整的 C 语言程序
+- 你学会了如何编译和运行代码：`gcc 文件名.c -o 程序名` → `./程序名`
+- 你能够组合使用变量(Variable)、循环(Loop)、条件判断(Conditional)来解决实际问题
 
 ::: tip 下一步
-现在你已经能写出真正的程序了!后续的学习都是在这个基础上扩展——列表(List)让你处理更多数据,函数(Function)让你重复使用代码,模块(Module)让你调用别人的代码。但核心逻辑,永远是这些基础知识的组合。
-
-试着修改这个程序,加入你自己的想法吧!
+试着修改代码，添加你自己的功能！编程最好的学习方式就是不断尝试和修改。
 :::
