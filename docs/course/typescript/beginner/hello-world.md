@@ -12,122 +12,75 @@ head:
 
  # Hello World
 
-学习编程的第一步，就是让计算机对你说"你好"。全世界的程序员开始学习一门新语言时，都会先写一个 Hello World 程序。这是一个传统，也是一个测试——确认你的开发环境可以正常工作。
-
 ## 💡 什么是 Hello World
 
-Hello World 程序只做一件事：在屏幕上显示 "Hello World"。虽然简单，但它包含了编程的基本流程：
-- 写代码
-- 运行代码
-- 看到结果
+Hello World 是编程世界的"第一声问候"。就像学说话时先学"你好"一样,写程序时我们先让计算机说"Hello World"。这是一个传统,也是验证你的开发环境是否正常工作的最简单方式。
 
-## 📝 第一个 Python 程序
+## 📝 创建你的第一个 TypeScript 程序
 
-创建一个新文件，命名为 `hello.py`，输入以下代码：
+### 步骤 1:创建文件
 
-```python
-print("Hello World")
-```
-
-就这么简单！只需要一行代码。
-
-### 运行程序
-
-打开终端(Terminal)或命令提示符(Command Prompt)，进入文件所在目录，输入：
-
-```bash
-python hello.py
-```
-
-你会看到屏幕上输出：
-
-```
-Hello World
-```
+在你的电脑上创建一个文件夹,然后在文件夹里新建一个文件,命名为 `hello.ts`
 
 ::: tip 提示
-`print()` 是 Python 的内置函数(Built-in Function)，用于在屏幕上显示内容。括号里的内容就是你想显示的东西。
+`.ts` 是 TypeScript 文件的扩展名,就像 Word 文档的 `.docx` 一样
 :::
 
-## 📝 显示更多内容
+### 步骤 2:编写代码
 
-你可以显示任何你想说的话：
+在 `hello.ts` 文件中输入以下代码:
 
-```python{1-3}
-print("Hello World")
-print("我是一名程序员")
-print("Python 很有趣")
+```typescript{1}
+console.log("Hello World");
 ```
 
-运行结果：
+### 步骤 3:运行程序
+
+打开命令行工具(Windows 系统叫"命令提示符"或"PowerShell",Mac 系统叫"终端"),输入以下命令:
+
+```bash
+ts-node hello.ts
+```
+
+你会在屏幕上看到:
 
 ```
 Hello World
-我是一名程序员
-Python 很有趣
-```
-
-每个 `print()` 会在新的一行显示内容。
-
-## 📝 显示数字和计算结果
-
-`print()` 不仅可以显示文字，还可以显示数字和计算结果：
-
-```python{1-3}
-print(2025)
-print(10 + 5)
-print(100 - 20)
-```
-
-运行结果：
-
-```
-2025
-15
-80
 ```
 
 ::: warning 注意
-文字需要用引号 `""` 包起来，数字和计算式不需要引号。
+如果提示 `ts-node: command not found`,说明还没有安装 TypeScript 运行环境。请在命令行中先执行 `npm install -g ts-node typescript`
 :::
 
-## 💪 练习题
+## 💪 动手练习
 
-### 练习 1：个人介绍
-编写一个程序，依次输出你的名字、年龄和爱好。
+### 练习 1:修改问候语
 
-::: details 参考答案
-```python
-print("我叫小明")
-print("今年 20 岁")
-print("喜欢打篮球")
+把 "Hello World" 改成你的名字,比如 "Hello 张三"
+
+::: details 查看答案
+```typescript
+console.log("Hello 张三");
 ```
 :::
 
-### 练习 2：简单计算器
-编写一个程序，计算并显示：
-- 123 + 456
-- 1000 - 234
-- 50 × 8（Python 中乘法用 `*`）
+### 练习 2:多行输出
 
-::: details 参考答案
-```python
-print(123 + 456)
-print(1000 - 234)
-print(50 * 8)
-```
+让程序依次输出三行文字:
+- 第一行:Hello World
+- 第二行:Welcome to TypeScript
+- 第三行:Let's start coding
 
-运行结果：
-```
-579
-766
-400
+::: details 查看答案
+```typescript
+console.log("Hello World");
+console.log("Welcome to TypeScript");
+console.log("Let's start coding");
 ```
 :::
 
 ## 📌 小结
 
-- `print()` 函数用于在屏幕上显示内容
-- 文字需要用引号 `""` 包起来，数字不需要
-- 一个 `print()` 语句会在新的一行显示内容
-- Python 可以直接进行数学计算
+- `console.log()` 可以让程序在屏幕上显示文字
+- 文字内容需要用双引号 `""` 包裹起来
+- 用 `ts-node` 命令可以运行 TypeScript 文件
