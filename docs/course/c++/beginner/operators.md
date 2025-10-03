@@ -12,86 +12,123 @@ head:
 
  # 基础运算
 
-编程的核心之一就是让计算机帮我们做计算。在这一章,你将学会如何在Python中进行各种运算操作。
+计算机的本质就是计算,就像你用计算器一样。在C++中,你可以让计算机帮你做各种运算。
 
 ## 赋值(Assignment)
 
 ### 💡 概念说明
 
-赋值就是给一个变量(Variable)存储一个值。使用等号 `=` 来完成赋值操作。
+赋值就是把一个值存到变量里,使用 `=` 符号。
+
+::: warning 注意
+`=` 不是"相等"的意思,而是"把右边的值放到左边的变量里"。
+:::
 
 ### 📝 代码示例
 
-```python{1-3}
-age = 25
-name = "Alice"
-price = 19.99
+```cpp{5,8,11}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 18;  // 把18存入age变量
+    cout << "年龄: " << age << endl;
+    
+    age = 20;  // 把age的值改为20
+    cout << "新年龄: " << age << endl;
+    
+    int score = age;  // 把age的值复制给score
+    cout << "分数: " << score << endl;
+    
+    return 0;
+}
 ```
 
-运行后不会显示任何内容,但Python已经把这些值存储在变量中了。
-
-::: tip 提示
-等号 `=` 在编程中表示"赋值",而不是数学中的"等于"。
-:::
-
-### 💪 练习题
-
-1. 创建一个变量 `score`,赋值为 100
-2. 创建一个变量 `city`,赋值为你所在的城市名称
-
-::: details 查看答案
-```python
-score = 100
-city = "Beijing"
+**运行结果**:
 ```
-:::
+年龄: 18
+新年龄: 20
+分数: 20
+```
 
 ## 数学运算(Arithmetic Operations)
 
 ### 💡 概念说明
 
-Python支持常见的数学运算:
-- 加法 `+`
-- 减法 `-`
-- 乘法 `*`
-- 除法 `/`
-- 求余 `%` (计算除法的余数)
+C++支持五种基本数学运算:
+- `+` 加法(Addition)
+- `-` 减法(Subtraction)
+- `*` 乘法(Multiplication)
+- `/` 除法(Division)
+- `%` 求余(Modulo,取余数)
 
 ### 📝 代码示例
 
-```python{1-5,8-9}
-# 基础运算
-result1 = 10 + 5      # 加法
-result2 = 20 - 8      # 减法
-result3 = 6 * 7       # 乘法
-result4 = 15 / 3      # 除法
+```cpp{5-9}
+#include <iostream>
+using namespace std;
 
-# 求余运算
-remainder = 17 % 5    # 17除以5余2
-print(remainder)
+int main() {
+    cout << "10 + 3 = " << 10 + 3 << endl;
+    cout << "10 - 3 = " << 10 - 3 << endl;
+    cout << "10 * 3 = " << 10 * 3 << endl;
+    cout << "10 / 3 = " << 10 / 3 << endl;  // 整数除法
+    cout << "10 % 3 = " << 10 % 3 << endl;  // 余数是1
+    
+    return 0;
+}
 ```
 
-运行结果:
+**运行结果**:
 ```
-2
+10 + 3 = 13
+10 - 3 = 7
+10 * 3 = 30
+10 / 3 = 3
+10 % 3 = 1
 ```
 
-::: warning 注意
-除法 `/` 的结果总是小数(浮点数),即使能整除。例如 `10 / 5` 结果是 `2.0` 而不是 `2`。
+::: tip 提示
+两个整数相除,结果也是整数,小数部分会被丢弃。10/3结果是3而不是3.333...
 :::
 
 ### 💪 练习题
 
-1. 计算 `(50 + 30) * 2` 的结果,存储在变量 `total` 中
-2. 计算 `23 % 4` 的结果并打印出来
+**练习1**: 计算你的出生年份。假设今年是2025年,你18岁,编写代码计算出生年。
 
 ::: details 查看答案
-```python
-total = (50 + 30) * 2
-print(total)  # 输出: 160
+```cpp
+#include <iostream>
+using namespace std;
 
-result = 23 % 4
-print(result)  # 输出: 3
+int main() {
+    int current_year = 2025;
+    int age = 18;
+    int birth_year = current_year - age;
+    
+    cout << "出生年份: " << birth_year << endl;
+    
+    return 0;
+}
+```
+:::
+
+**练习2**: 判断一个数是奇数还是偶数。提示:偶数除以2余数为0。
+
+::: details 查看答案
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int number = 17;
+    int remainder = number % 2;
+    
+    cout << number << " 除以 2 的余数是: " << remainder << endl;
+    // 余数为0就是偶数,余数为1就是奇数
+    
+    return 0;
+}
 ```
 :::
 
@@ -99,115 +136,113 @@ print(result)  # 输出: 3
 
 ### 💡 概念说明
 
-比较运算用于比较两个值,结果是 `True`(真)或 `False`(假):
-- 相等 `==`
-- 不相等 `!=`
-- 大于 `>`
-- 小于 `<`
-- 大于等于 `>=`
-- 小于等于 `<=`
+比较运算用来判断两个值的关系,结果是 `true`(真) 或 `false`(假):
+- `==` 相等(Equal)
+- `!=` 不相等(Not equal)
+- `>` 大于(Greater than)
+- `<` 小于(Less than)
+- `>=` 大于等于(Greater than or equal)
+- `<=` 小于等于(Less than or equal)
+
+::: warning 注意
+判断相等用 `==` (两个等号),不是 `=` (一个等号)!
+:::
 
 ### 📝 代码示例
 
-```python{1-6}
-print(10 == 10)    # 判断是否相等
-print(5 > 3)       # 判断5是否大于3
-print(8 < 2)       # 判断8是否小于2
-print(7 >= 7)      # 判断7是否大于等于7
-print(10 != 5)     # 判断10是否不等于5
-print("cat" == "dog")  # 文本也可以比较
+```cpp{5-10}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << (10 == 10) << endl;  // 1表示true
+    cout << (10 != 5) << endl;   // 1表示true
+    cout << (10 > 5) << endl;    // 1表示true
+    cout << (10 < 5) << endl;    // 0表示false
+    cout << (10 >= 10) << endl;  // 1表示true
+    cout << (10 <= 9) << endl;   // 0表示false
+    
+    return 0;
+}
 ```
 
-运行结果:
+**运行结果**:
 ```
-True
-True
-False
-True
-True
-False
+1
+1
+1
+0
+1
+0
 ```
 
-::: danger 警告
-判断相等用 `==` (两个等号),不是 `=` (一个等号)。`=` 是赋值操作。
-:::
-
-### 💪 练习题
-
-1. 判断 `15` 是否大于 `20`,打印结果
-2. 判断你的年龄是否大于等于 `18`,打印结果
-
-::: details 查看答案
-```python
-print(15 > 20)      # False
-
-age = 25
-print(age >= 18)    # True
-```
+::: tip 提示
+在C++中,`true`显示为1,`false`显示为0。
 :::
 
 ## 逻辑运算(Logical Operations)
 
 ### 💡 概念说明
 
-逻辑运算用于组合多个条件:
-- `and` (且): 两个条件都为True时,结果才是True
-- `or` (或): 只要有一个条件为True,结果就是True
-- `not` (非): 反转结果,True变False,False变True
+逻辑运算用来组合多个条件:
+- `&&` 且(AND) - 两个条件都为真时结果才为真
+- `||` 或(OR) - 至少一个条件为真时结果就为真
+- `!` 非(NOT) - 把真变假,把假变真
 
 ### 📝 代码示例
 
-```python{2,5,8}
-# and运算 - 两个条件都要满足
-print(True and True)      # True
-print(True and False)     # False
+```cpp{5-13}
+#include <iostream>
+using namespace std;
 
-# or运算 - 满足任意一个条件即可
-print(True or False)      # True
-print(False or False)     # False
-
-# not运算 - 取反
-print(not True)           # False
-print(not False)          # True
+int main() {
+    int age = 20;
+    int score = 85;
+    
+    // AND: 年龄大于18 且 分数大于80
+    cout << (age > 18 && score > 80) << endl;  // 1
+    
+    // OR: 年龄小于18 或 分数大于90
+    cout << (age < 18 || score > 90) << endl;  // 0
+    
+    // NOT: 年龄不等于20
+    cout << !(age == 20) << endl;  // 0
+    
+    return 0;
+}
 ```
 
-实际应用示例:
-
-```python{1-4}
-age = 20
-has_ticket = True
-# 判断是否可以进场:年龄大于18且有票
-can_enter = age > 18 and has_ticket
-print(can_enter)  # True
+**运行结果**:
 ```
-
-运行结果:
-```
-True
+1
+0
+0
 ```
 
 ### 💪 练习题
 
-1. 判断一个数字是否在10到20之间(包含10和20)
-2. 判断一个数字是否小于0或大于100
+**练习**: 判断一个人是否可以看PG-13电影(年龄13岁以上)且有家长陪同。
 
 ::: details 查看答案
-```python
-num = 15
-# 方法:数字要大于等于10 并且 小于等于20
-in_range = num >= 10 and num <= 20
-print(in_range)  # True
+```cpp
+#include <iostream>
+using namespace std;
 
-num2 = 50
-# 方法:数字小于0 或者 大于100
-out_range = num2 < 0 or num2 > 100
-print(out_range)  # False
+int main() {
+    int age = 15;
+    bool has_parent = true;  // true表示有家长陪同
+    
+    bool can_watch = age >= 13 && has_parent;
+    cout << "可以观看: " << can_watch << endl;
+    
+    return 0;
+}
 ```
 :::
 
 ## 📌 小结
 
-- **赋值**: 使用 `=` 给变量存储值
-- **数学运算**: 加 `+`、减 `-`、乘 `*`、除 `/`、求余 `%`
-- **比较运算**: 相等 `==`、大于 `>`、小于 `<` 等,结果是 `True` 或 `False`
-- **逻辑运算**: `and`(且)、`or`(或)、`not`(非) 用于组合多个条件
+- 赋值使用 `=`,把右边的值存到左边的变量
+- 数学运算有五种: `+` `-` `*` `/` `%`
+- 比较运算返回true/false,判断相等用 `==` 不是 `=`
+- 逻辑运算用 `&&` `||` `!` 组合多个条件
