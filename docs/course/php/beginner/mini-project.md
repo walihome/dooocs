@@ -12,148 +12,200 @@ head:
 
  # 动手实践
 
-恭喜你!你已经学会了 Python 编程中最核心的内容。你可能不敢相信,但事实是:**90% 的 Python 程序都是用你刚学的这些知识组合而成的**。
+恭喜你!🎉 你已经掌握了 PHP 的基础语法——变量(Variable)、数组(Array)、循环(Loop)、条件判断(Conditional)等核心概念。现在是时候把这些知识串联起来,做一个真实的小项目了。
 
-变量(Variable)、数据类型(Data Type)、条件判断(Conditional)、循环(Loop)——这些就是编程的"乐高积木"。现在,让我们用它们搭建一个真正的程序!
+今天我们要做一个**学生成绩管理系统**,虽然功能简单,但会让你体会到编程解决实际问题的乐趣。
 
-::: tip 费曼学习法的启示
-诺贝尔物理学奖得主费曼说过:能用自己的方式做出来,才算真正学会。读懂代码不等于会写代码,就像看懂菜谱不等于会做菜。
-:::
+## 💡 项目需求
 
-## 💡 实战项目:个性化问候助手
-
-我们要做一个小程序,它能:
-- 询问用户的姓名和年龄
-- 根据年龄给出不同的问候
-- 统计用户输入了多少个字符
-
-这个项目会用到你学过的所有知识点!
+我们要管理 5 个学生的成绩,并计算:
+- 最高分(Maximum Score)
+- 最低分(Minimum Score)  
+- 平均分(Average Score)
+- 及格人数(Pass Count,60分为及格线)
 
 ## 📝 完整代码
 
-```python{1-2,5-6,9-14,17-20}
-# 获取用户输入
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+创建一个新文件 `student_score.php`,输入以下代码:
 
-# 数据类型转换
-age = int(age)
+```php{2,5,8,11,14,20,26}
+<?php
+// 学生成绩数据
+$scores = [85, 92, 78, 65, 58];
 
-# 根据年龄给出不同问候
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
+// 计算最高分
+$maxScore = max($scores);
 
-# 计算名字长度并输出
-name_length = len(name)
-print(greeting + "," + name + "!")
-print("你的名字有", name_length, "个字符")
-print("=" * 30)
+// 计算最低分
+$minScore = min($scores);
 
-# 显示用户信息
-print("用户信息:")
-print("姓名:", name)
-print("年龄:", age)
-print("=" * 30)
+// 计算平均分
+$totalScore = array_sum($scores);
+$averageScore = $totalScore / count($scores);
+
+// 计算及格人数
+$passCount = 0;
+foreach ($scores as $score) {
+    if ($score >= 60) {
+        $passCount++;
+    }
+}
+
+// 输出结果
+echo "========== 学生成绩统计 ==========\n";
+echo "共有学生: " . count($scores) . " 人\n";
+echo "最高分: " . $maxScore . " 分\n";
+echo "最低分: " . $minScore . " 分\n";
+echo "平均分: " . round($averageScore, 2) . " 分\n";
+echo "及格人数: " . $passCount . " 人\n";
+echo "不及格人数: " . (count($scores) - $passCount) . " 人\n";
+?>
 ```
 
-### 运行结果
+::: tip 代码亮点
+- 第2行:用数组存储所有学生成绩
+- 第5行:`max()` 函数直接找出最大值
+- 第8行:`min()` 函数直接找出最小值
+- 第11-12行:`array_sum()` 求和,`count()` 统计个数
+- 第14-20行:用循环遍历统计及格人数
+:::
 
-当你运行这个程序时,会看到:
+## 🚀 如何运行代码
+
+### 方式一:命令行运行(推荐)
+
+打开终端(Terminal),进入文件所在目录,执行:
+
+```bash
+php student_score.php
+```
+
+### 方式二:浏览器运行
+
+如果你安装了本地服务器(如 XAMPP、MAMP):
+1. 将文件放到服务器根目录(通常是 `htdocs` 文件夹)
+2. 浏览器访问:`http://localhost/student_score.php`
+
+## 📊 运行结果
+
+你会看到类似这样的输出:
 
 ```
-请输入你的名字:小明
-请输入你的年龄:25
-你好,朋友,小明!
-你的名字有 2 个字符
-==============================
-用户信息:
-姓名: 小明
-年龄: 25
-==============================
+========== 学生成绩统计 ==========
+共有学生: 5 人
+最高分: 92 分
+最低分: 58 分
+平均分: 75.6 分
+及格人数: 4 人
+不及格人数: 1 人
 ```
-
-## 🔍 代码解析
-
-### 这个程序做了什么?
-
-1. **第 1-2 行**:用 `input()` 获取用户输入
-2. **第 5-6 行**:把年龄从文本转换成数字(为了后面比较大小)
-3. **第 9-14 行**:用 `if-elif-else` 根据年龄选择问候语
-4. **第 17-20 行**:计算名字长度并输出结果
 
 ::: warning 注意
-`input()` 获取的是字符串类型,如果要进行数字比较,必须先用 `int()` 转换!
+如果在命令行运行看不到换行效果,把代码中的 `\n` 改为 `<br>`,然后用浏览器访问。
 :::
 
-## 💪 你的挑战
+## 💪 挑战练习
 
-### 挑战 1:增加年龄验证
+### 练习 1:添加学生姓名
 
-修改程序,如果用户输入的年龄小于 0 或大于 150,显示"年龄输入有误!"
+修改代码,让每个成绩对应一个学生姓名,输出时显示"张三: 85分"这样的格式。
 
-::: details 点击查看答案
-```python{7-10}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+<details>
+<summary>点击查看答案</summary>
 
-age = int(age)
+```php{2-8,11-13}
+<?php
+// 使用关联数组存储学生信息
+$students = [
+    "张三" => 85,
+    "李四" => 92,
+    "王五" => 78,
+    "赵六" => 65,
+    "孙七" => 58
+];
 
-# 验证年龄范围
-if age < 0 or age > 150:
-    print("年龄输入有误!")
-else:
-    if age < 18:
-        greeting = "你好,年轻人"
-    elif age < 60:
-        greeting = "你好,朋友"
-    else:
-        greeting = "你好,尊敬的长者"
-    
-    name_length = len(name)
-    print(greeting + "," + name + "!")
-    print("你的名字有", name_length, "个字符")
+// 提取成绩用于计算
+$scores = array_values($students);
+
+$maxScore = max($scores);
+$minScore = min($scores);
+$averageScore = array_sum($scores) / count($scores);
+
+$passCount = 0;
+foreach ($scores as $score) {
+    if ($score >= 60) {
+        $passCount++;
+    }
+}
+
+echo "========== 学生成绩明细 ==========\n";
+foreach ($students as $name => $score) {
+    echo $name . ": " . $score . " 分\n";
+}
+
+echo "\n========== 统计结果 ==========\n";
+echo "最高分: " . $maxScore . " 分\n";
+echo "最低分: " . $minScore . " 分\n";
+echo "平均分: " . round($averageScore, 2) . " 分\n";
+echo "及格人数: " . $passCount . " 人\n";
+?>
 ```
-:::
 
-### 挑战 2:重复问候
+</details>
 
-让程序询问"需要问候几次?",然后用循环重复显示问候语。
+### 练习 2:找出最高分学生
 
-::: details 点击查看答案
-```python{8-9,12-13}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+在练习1的基础上,输出哪位学生获得了最高分。
 
-age = int(age)
+<details>
+<summary>点击查看答案</summary>
 
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
+```php{16-21}
+<?php
+$students = [
+    "张三" => 85,
+    "李四" => 92,
+    "王五" => 78,
+    "赵六" => 65,
+    "孙七" => 58
+];
 
-times = input("需要问候几次?")
-times = int(times)
+$scores = array_values($students);
+$maxScore = max($scores);
+$minScore = min($scores);
+$averageScore = array_sum($scores) / count($scores);
 
-# 循环输出问候
-for i in range(times):
-    print(greeting + "," + name + "!")
+// 找出最高分学生
+$topStudent = "";
+foreach ($students as $name => $score) {
+    if ($score == $maxScore) {
+        $topStudent = $name;
+        break;
+    }
+}
+
+$passCount = 0;
+foreach ($scores as $score) {
+    if ($score >= 60) {
+        $passCount++;
+    }
+}
+
+echo "========== 统计结果 ==========\n";
+echo "最高分: " . $maxScore . " 分 (获得者: " . $topStudent . ")\n";
+echo "最低分: " . $minScore . " 分\n";
+echo "平均分: " . round($averageScore, 2) . " 分\n";
+echo "及格人数: " . $passCount . " 人\n";
+?>
 ```
-:::
+
+</details>
 
 ## 📌 小结
 
-- **编程就是组合**:没有什么"高级技巧",只有把基础知识灵活组合
-- **动手才能学会**:看懂和做出来是两回事,多写才能进步
-- **80/20 法则**:你已经掌握了 Python 最核心的 20% 知识,足以完成 80% 的任务
+- **数组是存储多个数据的好工具**,用 `[]` 或 `array()` 创建
+- **PHP内置函数很强大**:`max()`、`min()`、`array_sum()`、`count()` 让计算变简单
+- **循环配合条件判断可以统计符合条件的数据**,这是数据分析的基础
+- **实践是最好的学习方式**,动手写代码比看十遍教程更有效
 
-::: tip 下一步
-现在你已经能写出真正的程序了!后续的学习都是在这个基础上扩展——列表(List)让你处理更多数据,函数(Function)让你重复使用代码,模块(Module)让你调用别人的代码。但核心逻辑,永远是这些基础知识的组合。
-
-试着修改这个程序,加入你自己的想法吧!
-:::
+你已经能够独立完成一个小项目了,这是一个重要的里程碑!继续保持这种动手实践的习惯,你会进步得更快。💪
