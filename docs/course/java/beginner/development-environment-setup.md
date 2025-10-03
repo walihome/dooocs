@@ -1,7 +1,7 @@
 ---
 title: 开发环境搭建
 category: Java
-order: 6
+order: 7
 tag: 菜鸟教程、新手教程
   - 
 head:
@@ -10,510 +10,558 @@ head:
       content: Java极简教程
 ---
 
- # 集合
+ # 控制流
 
-你有没有想过这样的问题:当你需要存储多个学生的成绩时,用数组可以做到;但如果你需要快速查找某个学生的成绩,或者确保学生名单里没有重复的名字,数组就显得力不从心了。这就是为什么 Java 提供了更强大的**集合(Collection)**工具。
+在编程世界里,程序不会永远按照从上到下的顺序执行。就像你在玩游戏时,会根据不同的情况做出不同的选择:遇到敌人要战斗,血量不足要补给,任务完成要领奖励。程序也需要这样的"决策能力"和"重复能力",这就是我们今天要学习的**控制流(Control Flow)**。
 
-在这一章,你将学习三种最常用的数据存储方式:数组(Array)、Set 和 Map。它们各有特点,适用于不同的场景。
+控制流让程序变得"聪明",可以:
+- 根据条件做出不同的反应(if 语句)
+- 重复执行某些操作(循环语句)
 
----
-
-## 数组(Array)
+## 条件判断 - if 语句
 
 ### 💡 概念讲解
 
-想象你有一排储物柜,每个柜子都有编号(0、1、2、3...),每个柜子只能放一种类型的物品(比如都放书,或者都放鞋)。**数组(Array)**就是这样一个固定大小、有序的容器。
+想象你在自动售货机前买饮料:
+- **如果**你投入了足够的钱 → 机器会给你饮料
+- **如果**钱不够 → 机器会提示你继续投币
 
-**数组的特点:**
-- **固定长度**:创建时就确定大小,之后不能改变
-- **类型统一**:只能存储同一种类型的数据
-- **通过索引访问**:使用编号(索引 Index)快速获取元素
-- **索引从 0 开始**:第一个元素的编号是 0,第二个是 1,以此类推
+这种"如果...那么..."的逻辑,在 Java 中就是 **if 语句(if statement)**。
 
-**什么时候用数组?**
-- 你事先知道要存储多少个数据
-- 需要通过位置快速访问某个元素
-- 数据量不会频繁变化
+**if 语句的基本结构:**
+
+```java
+if (条件) {
+    // 条件为真时执行的代码
+}
+```
+
+这里的"条件"必须是一个**布尔值(boolean)**,也就是 `true` 或 `false`。
+
+::: tip 布尔值快速回顾
+布尔值只有两种可能:
+- `true` - 真,表示条件成立
+- `false` - 假,表示条件不成立
+
+常见的比较运算符:
+- `==` 等于
+- `!=` 不等于
+- `>` 大于
+- `<` 小于
+- `>=` 大于等于
+- `<=` 小于等于
+:::
 
 ### 📝 代码示例
 
-#### 示例 1: 创建和使用数组
+**示例 1: 基本的 if 语句**
+
+```java
+public class IfExample {
+    public static void main(String[] args) {
+        int age = 20; // 定义年龄变量 define age variable
+        
+        // 判断是否成年 check if adult
+        if (age >= 18) {
+            System.out.println("你已经成年了!"); // 条件为真时执行 execute when condition is true
+        }
+        
+        System.out.println("程序继续执行"); // 无论条件真假都会执行 always execute
+    }
+}
+```
+
+**运行结果:**
+```
+你已经成年了!
+程序继续执行
+```
+
+**示例 2: if-else 语句**
+
+有时候我们需要在条件不成立时执行另一段代码,这时就用 **else**:
+
+```java
+public class IfElseExample {
+    public static void main(String[] args) {
+        int score = 75; // 考试分数 exam score
+        
+        // 判断是否及格 check if pass
+        if (score >= 60) {
+            System.out.println("恭喜你,考试通过!"); // 及格的情况 pass case
+        } else {
+            System.out.println("很遗憾,需要补考"); // 不及格的情况 fail case
+        }
+    }
+}
+```
+
+**示例 3: if-else if-else 多条件判断**
+
+当有多个条件需要判断时,可以使用 **else if**:
+
+```java
+public class GradeChecker {
+    public static void main(String[] args) {
+        int score = 85; // 成绩 grade score
+        
+        // 根据分数划分等级 classify grade level
+        if (score >= 90) {
+            System.out.println("等级: 优秀"); // excellent
+        } else if (score >= 80) {
+            System.out.println("等级: 良好"); // good
+        } else if (score >= 60) {
+            System.out.println("等级: 及格"); // pass
+        } else {
+            System.out.println("等级: 不及格"); // fail
+        }
+    }
+}
+```
+
+::: warning 注意执行顺序
+if-else if-else 语句会从上到下依次判断,一旦某个条件为真,就执行对应的代码块,然后跳过后面所有的判断。就像走迷宫,找到出口就不会继续探索其他路径了。
+:::
+
+### ✅ 验证方法
+
+创建一个新的 Java 文件,复制上面的任意示例代码,然后:
+
+1. 在终端或命令提示符中编译:
+```bash
+javac IfExample.java
+```
+
+2. 运行程序:
+```bash
+java IfExample
+```
+
+3. 尝试修改变量的值,观察输出的变化:
+   - 将 `age` 改为 `15`,看看是否还输出"你已经成年了"
+   - 将 `score` 改为 `50`,看看输出是否变成"不及格"
+
+### 💪 练习题
+
+**练习 1: 判断奇偶数**
+编写程序,判断一个数字是奇数还是偶数。
+提示: 使用 `%` 取余运算符,`number % 2 == 0` 表示能被 2 整除
+
+**练习 2: 温度提醒**
+根据温度给出穿衣建议:
+- 温度 < 10°C: "天气很冷,穿厚外套"
+- 温度 10-20°C: "天气凉爽,穿长袖"
+- 温度 > 20°C: "天气温暖,穿短袖"
+
+**练习 3: 登录验证**
+模拟简单的登录验证,检查用户名和密码是否正确。
+```java
+String username = "admin";
+String password = "123456";
+// 你的判断代码...
+```
+
+### 📌 小结
+
+- **if 语句**用于根据条件执行不同的代码
+- 条件必须是布尔值(`true` 或 `false`)
+- `else` 处理条件不成立的情况
+- `else if` 用于多个条件的判断
+- 条件判断是按顺序执行的,找到第一个为真的条件就停止
+
+---
+
+## while 循环
+
+### 💡 概念讲解
+
+想象你在刷牙:你会重复"上下刷动"这个动作,直到牙齿干净为止。这种"重复做某件事,直到满足某个条件"的过程,就是**循环(Loop)**。
+
+**while 循环(while loop)**的意思是:"当条件为真时,持续执行某段代码"。
+
+基本结构:
+```java
+while (条件) {
+    // 重复执行的代码
+}
+```
+
+::: danger 警告:无限循环
+如果条件永远为真,程序会一直循环下去,无法停止!这叫做**无限循环(Infinite Loop)**。记得要在循环体内改变条件相关的变量,让循环能够结束。
+:::
+
+### 📝 代码示例
+
+**示例 1: 倒计时**
+
+```java
+public class CountdownExample {
+    public static void main(String[] args) {
+        int count = 5; // 从5开始倒数 start from 5
+        
+        // 当count大于0时继续循环 continue while count > 0
+        while (count > 0) {
+            System.out.println("倒计时: " + count);
+            count--; // 每次减1 decrease by 1 each time
+        }
+        
+        System.out.println("发射!"); // 循环结束后执行 execute after loop ends
+    }
+}
+```
+
+**运行结果:**
+```
+倒计时: 5
+倒计时: 4
+倒计时: 3
+倒计时: 2
+倒计时: 1
+发射!
+```
+
+**示例 2: 累加求和**
+
+计算 1 + 2 + 3 + ... + 10 的结果:
+
+```java
+public class SumCalculator {
+    public static void main(String[] args) {
+        int number = 1; // 当前数字 current number
+        int sum = 0; // 累加和 accumulated sum
+        
+        // 当number小于等于10时继续 continue while number <= 10
+        while (number <= 10) {
+            sum = sum + number; // 累加 add to sum
+            number++; // 移动到下一个数字 move to next number
+        }
+        
+        System.out.println("1到10的和是: " + sum);
+    }
+}
+```
+
+**示例 3: 用户输入验证**
+
+实际开发中,while 循环常用于验证用户输入:
+
+```java
+import java.util.Scanner; // 导入Scanner类 import Scanner class
+
+public class PasswordValidator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); // 创建输入对象 create input object
+        String password = ""; // 初始化密码变量 initialize password variable
+        
+        // 当密码不是"123456"时继续询问 continue while password is not correct
+        while (!password.equals("123456")) {
+            System.out.print("请输入密码: ");
+            password = scanner.nextLine(); // 读取用户输入 read user input
+            
+            if (!password.equals("123456")) {
+                System.out.println("密码错误,请重试!");
+            }
+        }
+        
+        System.out.println("密码正确,欢迎!");
+        scanner.close(); // 关闭Scanner close scanner
+    }
+}
+```
+
+::: tip Scanner 使用说明
+`Scanner` 是 Java 提供的用于读取用户输入的工具类:
+- `new Scanner(System.in)` - 创建一个从键盘读取输入的对象
+- `nextLine()` - 读取一行文本
+- `nextInt()` - 读取一个整数
+- 使用完后记得调用 `close()` 关闭资源
+:::
+
+### ✅ 验证方法
+
+1. 运行倒计时示例,确认输出从 5 递减到 1
+2. 运行求和示例,验证结果是否为 55(1+2+...+10=55)
+3. 运行密码验证示例,尝试输入错误密码和正确密码,观察程序行为
+
+### 💪 练习题
+
+**练习 1: 打印偶数**
+使用 while 循环打印 1 到 20 之间的所有偶数
+
+**练习 2: 猜数字游戏**
+程序随机生成一个 1-100 的数字,用户不断猜测,直到猜对为止
+提示: 使用 `(int)(Math.random() * 100) + 1` 生成随机数
+
+**练习 3: 计算阶乘**
+计算 5 的阶乘(5! = 5 × 4 × 3 × 2 × 1)
+
+### 📌 小结
+
+- **while 循环**用于重复执行代码,直到条件为假
+- 循环体内必须改变条件相关的变量,否则会造成无限循环
+- `!=` 表示"不等于", `!` 表示"非"(取反)
+- Scanner 可以读取用户从键盘输入的数据
+- 循环在处理重复任务时非常高效
+
+---
+
+## for 循环
+
+### 💡 概念讲解
+
+如果说 while 循环像是"不知道要重复多少次,直到满足条件为止",那么 **for 循环(for loop)**就像是"我明确知道要重复几次"。
+
+想象你在点名:班上有 30 个学生,你需要从第 1 个点到第 30 个。这种"有明确次数"的重复,用 for 循环最合适。
+
+**for 循环的结构:**
+
+```java
+for (初始化; 条件判断; 更新) {
+    // 循环体 loop body
+}
+```
+
+这三部分的执行顺序:
+1. **初始化** - 只执行一次,在循环开始前
+2. **条件判断** - 每次循环前检查,为真则继续
+3. **循环体** - 执行实际操作
+4. **更新** - 每次循环后执行
+5. 回到步骤 2
+
+### 📝 代码示例
+
+**示例 1: 打印数字**
+
+```java
+public class ForLoopBasic {
+    public static void main(String[] args) {
+        // i从0开始,每次加1,直到i小于5 i starts from 0, increases by 1, until i < 5
+        for (int i = 0; i < 5; i++) {
+            System.out.println("第 " + i + " 次循环");
+        }
+    }
+}
+```
+
+**运行结果:**
+```
+第 0 次循环
+第 1 次循环
+第 2 次循环
+第 3 次循环
+第 4 次循环
+```
+
+::: tip i++ 是什么意思?
+`i++` 是 `i = i + 1` 的简写,表示"将 i 的值增加 1"。
+类似的还有:
+- `i--` 表示 `i = i - 1`(减 1)
+- `i += 2` 表示 `i = i + 2`(增加 2)
+:::
+
+**示例 2: 计算乘法表**
+
+```java
+public class MultiplicationTable {
+    public static void main(String[] args) {
+        int number = 7; // 要计算的数字 number to calculate
+        
+        // 打印7的乘法表 print multiplication table of 7
+        for (int i = 1; i <= 10; i++) {
+            int result = number * i; // 计算结果 calculate result
+            System.out.println(number + " × " + i + " = " + result);
+        }
+    }
+}
+```
+
+**示例 3: 数组遍历**
+
+for 循环最常见的用途之一是遍历**数组(Array)**:
 
 ```java
 public class ArrayExample {
     public static void main(String[] args) {
-        // 方式1: 声明并指定大小 declare array with size
-        int[] scores = new int[5]; // 创建一个可以存储5个整数的数组
+        // 创建一个水果数组 create a fruit array
+        String[] fruits = {"苹果", "香蕉", "橙子", "葡萄", "西瓜"};
         
-        // 给数组赋值 assign values to array
-        scores[0] = 85;  // 第一个学生的分数
-        scores[1] = 92;
-        scores[2] = 78;
-        scores[3] = 95;
-        scores[4] = 88;
-        
-        // 访问数组元素 access array element
-        System.out.println("第一个学生的分数: " + scores[0]);
-        System.out.println("第三个学生的分数: " + scores[2]);
-        
-        // 方式2: 创建时直接初始化 initialize array with values
-        String[] names = {"张三", "李四", "王五", "赵六"};
-        
-        // 获取数组长度 get array length
-        System.out.println("学生总数: " + names.length);
-        
-        // 遍历数组 traverse array
-        System.out.println("\n所有学生名单:");
-        for (int i = 0; i < names.length; i++) {
-            System.out.println("学生 " + (i + 1) + ": " + names[i]);
+        // 遍历数组中的每个元素 traverse each element in array
+        for (int i = 0; i < fruits.length; i++) {
+            System.out.println("第 " + (i + 1) + " 个水果: " + fruits[i]);
         }
     }
 }
 ```
 
-#### 示例 2: 使用增强型 for 循环
-
-```java
-public class ArrayLoop {
-    public static void main(String[] args) {
-        int[] numbers = {10, 20, 30, 40, 50};
-        
-        // 增强型 for 循环(for-each loop)
-        // 读作: "对于 numbers 中的每一个 number"
-        System.out.println("使用 for-each 循环:");
-        for (int number : numbers) {
-            System.out.println(number);
-        }
-        
-        // 计算数组元素的总和 calculate sum
-        int sum = 0;
-        for (int number : numbers) {
-            sum += number;  // sum = sum + number
-        }
-        System.out.println("总和: " + sum);
-        System.out.println("平均值: " + (sum / numbers.length));
-    }
-}
-```
-
-::: warning 常见错误
-**数组越界(ArrayIndexOutOfBoundsException)**
-```java
-int[] arr = {1, 2, 3};
-System.out.println(arr[3]); // 错误! 数组只有索引 0, 1, 2
-```
-数组的最大索引是 `length - 1`,访问不存在的索引会导致程序崩溃。
+::: tip 数组快速入门
+数组是一组相同类型数据的集合:
+- 声明: `类型[] 数组名 = {元素1, 元素2, ...};`
+- 访问: `数组名[索引]`(索引从 0 开始)
+- 长度: `数组名.length`
 :::
+
+**示例 4: 嵌套循环**
+
+for 循环可以嵌套使用,常用于处理二维数据:
+
+```java
+public class NestedLoop {
+    public static void main(String[] args) {
+        // 打印一个5x5的星号矩阵 print a 5x5 star matrix
+        for (int row = 0; row < 5; row++) { // 外层循环控制行 outer loop controls rows
+            for (int col = 0; col < 5; col++) { // 内层循环控制列 inner loop controls columns
+                System.out.print("* "); // print不换行 print without newline
+            }
+            System.out.println(); // 每行结束后换行 newline after each row
+        }
+    }
+}
+```
+
+**运行结果:**
+```
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+* * * * * 
+```
 
 ### ✅ 验证方法
 
-将上面的代码保存为 `ArrayExample.java`,运行后你应该看到:
-
-```
-第一个学生的分数: 85
-第三个学生的分数: 78
-学生总数: 4
-
-所有学生名单:
-学生 1: 张三
-学生 2: 李四
-学生 3: 王五
-学生 4: 赵六
-```
+1. 运行基础示例,确认输出了 0 到 4 共 5 次
+2. 修改乘法表的 `number` 值,测试不同数字的乘法表
+3. 在数组示例中添加或删除水果,观察程序是否正确遍历
+4. 修改嵌套循环的行列数,尝试打印不同大小的矩阵
 
 ### 💪 练习题
 
-1. **基础练习**: 创建一个包含 7 个整数的数组,存储一周的气温,然后计算并输出平均气温。
+**练习 1: 求平均分**
+创建一个包含 5 个考试成绩的数组,使用 for 循环计算平均分
+```java
+int[] scores = {85, 92, 78, 90, 88};
+// 你的代码...
+```
 
-2. **进阶练习**: 创建一个字符串数组存储 5 个城市名称,使用循环找出名字最长的城市。
+**练习 2: 找最大值**
+在一个数字数组中找出最大的数字
+```java
+int[] numbers = {23, 45, 12, 67, 34, 89, 56};
+// 提示: 先假设第一个数是最大值,然后逐个比较
+```
 
-3. **挑战练习**: 编写代码将数组 `{5, 2, 8, 1, 9}` 中的元素倒序输出(不创建新数组)。
+**练习 3: 打印直角三角形**
+使用嵌套循环打印一个星号组成的直角三角形:
+```
+*
+**
+***
+****
+*****
+```
 
 ### 📌 小结
 
-- 数组是**固定长度**的数据容器
-- 索引从 **0** 开始,最大索引是 `length - 1`
-- 使用 `数组名[索引]` 访问元素
-- `for-each` 循环适合遍历整个数组
-- 数组创建后大小不可改变
+- **for 循环**适合已知循环次数的场景
+- 结构包含三部分:初始化、条件判断、更新
+- `i++` 是常见的递增操作
+- 数组索引从 0 开始,长度用 `.length` 获取
+- 嵌套循环用于处理多维数据
 
 ---
 
-## Set 集合
+## 三种控制流的选择
 
-### 💡 概念讲解
+你可能会问:什么时候用 if,什么时候用 while,什么时候用 for?
 
-还记得学校班级的学号吗?每个学生的学号都是唯一的,不会有两个学生的学号相同。**Set**就像一个自动去重的名单,它会确保里面的每个元素都是独一无二的。
-
-**Set 的特点:**
-- **元素唯一**:自动忽略重复的元素
-- **无序**:不保证元素的存储顺序(HashSet)
-- **大小可变**:可以随时添加或删除元素
-- **不能通过索引访问**:没有像数组那样的 `[0]、[1]` 访问方式
-
-**什么时候用 Set?**
-- 需要确保数据不重复(如用户名、身份证号)
-- 不关心元素的顺序
-- 需要快速判断某个元素是否存在
-
-::: tip 提示
-Java 中最常用的 Set 实现是 **HashSet**。如果你需要元素按顺序排列,可以使用 **TreeSet**(会自动排序)。
-:::
-
-### 📝 代码示例
-
-#### 示例 1: HashSet 基本用法
-
-```java
-import java.util.HashSet;
-import java.util.Set;
-
-public class SetExample {
-    public static void main(String[] args) {
-        // 创建一个 Set create a HashSet
-        Set<String> fruits = new HashSet<>();
-        
-        // 添加元素 add elements
-        fruits.add("苹果");
-        fruits.add("香蕉");
-        fruits.add("橙子");
-        fruits.add("苹果");  // 重复元素,不会被添加
-        
-        // 输出 Set 的大小 print size
-        System.out.println("水果种类数量: " + fruits.size()); // 输出 3,不是 4
-        
-        // 检查元素是否存在 check if element exists
-        if (fruits.contains("苹果")) {
-            System.out.println("有苹果!");
-        }
-        
-        // 遍历 Set traverse Set
-        System.out.println("\n所有水果:");
-        for (String fruit : fruits) {
-            System.out.println("- " + fruit);
-        }
-        
-        // 删除元素 remove element
-        fruits.remove("香蕉");
-        System.out.println("\n删除香蕉后的数量: " + fruits.size());
-    }
-}
-```
-
-#### 示例 2: Set 的实际应用 - 去重
-
-```java
-import java.util.HashSet;
-import java.util.Set;
-import java.util.Arrays;
-
-public class SetRemoveDuplicate {
-    public static void main(String[] args) {
-        // 原始数据包含重复 original data with duplicates
-        String[] names = {"张三", "李四", "张三", "王五", "李四", "赵六"};
-        
-        System.out.println("原始数据: " + Arrays.toString(names));
-        
-        // 使用 Set 去重 remove duplicates using Set
-        Set<String> uniqueNames = new HashSet<>();
-        for (String name : names) {
-            uniqueNames.add(name);
-        }
-        
-        System.out.println("\n去重后的结果:");
-        for (String name : uniqueNames) {
-            System.out.println(name);
-        }
-        
-        System.out.println("\n原始数量: " + names.length);
-        System.out.println("去重后数量: " + uniqueNames.size());
-    }
-}
-```
-
-::: warning 注意
-Set 不保证元素的顺序!每次运行程序,输出的顺序可能不同。如果需要保持插入顺序,使用 **LinkedHashSet**。
-:::
-
-### ✅ 验证方法
-
-运行 `SetExample.java`,你应该看到类似这样的输出(顺序可能不同):
+**决策树:**
 
 ```
-水果种类数量: 3
-有苹果!
+需要根据条件做不同的事? 
+    └→ 是 → 使用 if/else
 
-所有水果:
-- 橙子
-- 苹果
-- 香蕉
-
-删除香蕉后的数量: 2
+需要重复执行某些操作?
+    └→ 是 → 知道要重复几次?
+              └→ 是 → 使用 for 循环
+              └→ 否 → 使用 while 循环
 ```
 
-注意"苹果"虽然添加了两次,但 Set 中只有一个。
+**实际例子:**
 
-### 💪 练习题
-
-1. **基础练习**: 创建一个 HashSet 存储 10 个整数(包括一些重复的),然后输出实际存储的元素个数。
-
-2. **进阶练习**: 编写代码判断两个 Set 是否有共同元素,输出所有共同的元素。
-
-3. **挑战练习**: 创建一个程序,输入一段文字,统计其中有多少个不同的单词(提示:先用 `split()` 分割字符串)。
-
-### 📌 小结
-
-- **Set** 自动确保元素唯一性
-- **HashSet** 最常用,元素无序
-- 使用 `add()` 添加元素,`remove()` 删除元素
-- 使用 `contains()` 检查元素是否存在
-- Set 适合需要**去重**的场景
+| 场景 | 使用的控制流 | 原因 |
+|-----|------------|------|
+| 判断用户是否成年 | if | 只需要做一次判断 |
+| 打印 1-100 的数字 | for | 明确知道要循环 100 次 |
+| 等待用户输入正确密码 | while | 不知道用户要尝试几次 |
+| 根据成绩给评级 | if-else if | 多个条件判断 |
+| 遍历数组 | for | 数组有明确的长度 |
 
 ---
 
-## Map 集合
+## 综合练习:数字猜猜看游戏
 
-### 💡 概念讲解
-
-你有没有用过字典?你查"apple"这个单词,字典会告诉你它的意思是"苹果"。**Map**就像一本字典,它存储的是**键值对(Key-Value Pair)**,每个"键(Key)"对应一个"值(Value)"。
-
-**Map 的特点:**
-- **键值对存储**:数据以 `key → value` 的形式存储
-- **键唯一**:每个键只能出现一次(就像字典里不会有两个"apple"词条)
-- **值可重复**:不同的键可以对应相同的值
-- **通过键查找值**:类似数组的索引,但更灵活(键可以是字符串、对象等)
-
-**什么时候用 Map?**
-- 需要通过"标识"快速查找数据(如学号→学生信息)
-- 数据有明确的对应关系(如单词→释义、身份证号→姓名)
-- 需要统计或分组数据
-
-::: tip 提示
-Java 中最常用的 Map 实现是 **HashMap**。如果需要键按顺序排列,使用 **TreeMap**。
-:::
-
-### 📝 代码示例
-
-#### 示例 1: HashMap 基本用法
+现在让我们综合运用本章学到的所有知识,制作一个完整的小游戏:
 
 ```java
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Scanner;
 
-public class MapExample {
+public class GuessingGame {
     public static void main(String[] args) {
-        // 创建 Map: 学号 → 姓名 create HashMap: student ID → name
-        Map<String, String> students = new HashMap<>();
+        Scanner scanner = new Scanner(System.in);
         
-        // 添加键值对 add key-value pairs
-        students.put("001", "张三");
-        students.put("002", "李四");
-        students.put("003", "王五");
+        // 生成1-100的随机数 generate random number between 1-100
+        int targetNumber = (int)(Math.random() * 100) + 1;
+        int guess = 0; // 用户猜的数字 user's guess
+        int attempts = 0; // 尝试次数 number of attempts
         
-        // 通过键获取值 get value by key
-        String name = students.get("002");
-        System.out.println("学号 002 的学生是: " + name);
+        System.out.println("=== 欢迎来到猜数字游戏 ===");
+        System.out.println("我想了一个1到100之间的数字,你能猜对吗?");
         
-        // 检查键是否存在 check if key exists
-        if (students.containsKey("001")) {
-            System.out.println("找到学号 001");
-        }
-        
-        // 检查值是否存在 check if value exists
-        if (students.containsValue("王五")) {
-            System.out.println("班上有学生叫王五");
-        }
-        
-        // 获取 Map 的大小 get size
-        System.out.println("\n学生总数: " + students.size());
-        
-        // 遍历 Map traverse Map
-        System.out.println("\n所有学生:");
-        for (String id : students.keySet()) {  // keySet() 获取所有的键
-            System.out.println("学号: " + id + ", 姓名: " + students.get(id));
-        }
-    }
-}
-```
-
-#### 示例 2: Map 的实际应用 - 统计单词出现次数
-
-```java
-import java.util.HashMap;
-import java.util.Map;
-
-public class WordCount {
-    public static void main(String[] args) {
-        String text = "apple banana apple orange banana apple";
-        String[] words = text.split(" ");  // 按空格分割字符串 split by space
-        
-        // 创建 Map 存储: 单词 → 出现次数 word → count
-        Map<String, Integer> wordCount = new HashMap<>();
-        
-        // 统计每个单词的出现次数 count word frequency
-        for (String word : words) {
-            if (wordCount.containsKey(word)) {
-                // 如果单词已存在,次数加1 if word exists, increment count
-                int count = wordCount.get(word);
-                wordCount.put(word, count + 1);
+        // 当还没猜对时继续 continue while not guessed correctly
+        while (guess != targetNumber) {
+            System.out.print("请输入你的猜测: ");
+            guess = scanner.nextInt(); // 读取用户输入的整数 read user input integer
+            attempts++; // 尝试次数加1 increase attempts
+            
+            // 判断猜测结果 check guess result
+            if (guess < targetNumber) {
+                System.out.println("太小了!再试试");
+            } else if (guess > targetNumber) {
+                System.out.println("太大了!再试试");
             } else {
-                // 如果单词第一次出现,设置为1 if first occurrence, set to 1
-                wordCount.put(word, 1);
+                System.out.println("恭喜你!猜对了!");
+                System.out.println("你一共用了 " + attempts + " 次尝试");
             }
         }
         
-        // 输出统计结果 print results
-        System.out.println("单词出现次数统计:");
-        for (String word : wordCount.keySet()) {
-            System.out.println(word + ": " + wordCount.get(word) + " 次");
-        }
+        scanner.close();
     }
 }
 ```
 
-#### 示例 3: 更简洁的统计方法
-
-```java
-import java.util.HashMap;
-import java.util.Map;
-
-public class WordCountSimple {
-    public static void main(String[] args) {
-        String text = "java is fun java is powerful";
-        String[] words = text.split(" ");
-        
-        Map<String, Integer> wordCount = new HashMap<>();
-        
-        for (String word : words) {
-            // getOrDefault: 如果键不存在返回默认值0,否则返回当前值
-            // get current count or 0 if not exists, then add 1
-            wordCount.put(word, wordCount.getOrDefault(word, 0) + 1);
-        }
-        
-        System.out.println("统计结果: " + wordCount);
-    }
-}
-```
-
-::: tip 提示
-`getOrDefault()` 方法很实用:
-- 如果键存在,返回对应的值
-- 如果键不存在,返回你指定的默认值(这里是 0)
-
-这样可以避免写 if-else 判断,代码更简洁。
-:::
-
-### ✅ 验证方法
-
-运行 `WordCount.java`,你应该看到:
-
-```
-单词出现次数统计:
-orange: 1 次
-banana: 2 次
-apple: 3 次
-```
-
-注意:HashMap 的输出顺序可能与添加顺序不同。
-
-### 💪 练习题
-
-1. **基础练习**: 创建一个 Map 存储 3 个城市及其人口数(如"北京" → 2154),然后查询并输出某个城市的人口。
-
-2. **进阶练习**: 编写程序,输入一串数字(如"1 2 3 2 1 4 1"),统计每个数字出现的次数。
-
-3. **挑战练习**: 创建一个"学生成绩管理系统":
-   - 使用 Map 存储学生姓名和成绩
-   - 实现添加学生、查询成绩、计算平均分的功能
-
-### 📌 小结
-
-- **Map** 存储**键值对(Key-Value)**关系
-- **HashMap** 最常用,键不能重复,值可以重复
-- 使用 `put(key, value)` 添加数据
-- 使用 `get(key)` 获取数据
-- `keySet()` 获取所有的键,用于遍历 Map
-- `getOrDefault()` 可以简化代码,避免空值判断
+这个游戏用到了:
+- **if-else if-else** 判断猜测是太大、太小还是正确
+- **while 循环** 持续让用户猜测,直到猜对
+- **变量** 保存目标数字、猜测值和尝试次数
 
 ---
 
-## 三种集合的对比
+## 最后的挑战
 
-你现在学会了三种数据存储方式,什么时候用哪种呢?
+尝试改进上面的猜数字游戏:
 
-| 特性 | 数组(Array) | Set | Map |
-|------|------------|-----|-----|
-| **大小** | 固定不变 | 可变 | 可变 |
-| **重复元素** | 允许 | 不允许 | 键不重复,值可重复 |
-| **访问方式** | 通过索引(0, 1, 2...) | 遍历 | 通过键查找值 |
-| **顺序** | 有序 | 无序(HashSet) | 无序(HashMap) |
-| **使用场景** | 固定数量数据 | 去重、成员检查 | 键值对关系、查找 |
+1. **限制尝试次数**:只给用户 7 次机会,超过就游戏结束
+   - 提示:添加一个条件到 while 循环
 
-**快速决策:**
-- 数据量固定,需要按位置访问 → **数组**
-- 需要确保数据不重复 → **Set**
-- 需要通过某个标识快速查找数据 → **Map**
+2. **添加难度选择**:让用户选择简单(1-50)、普通(1-100)或困难(1-200)模式
+   - 提示:使用 if-else 根据用户选择生成不同范围的随机数
 
----
+3. **显示进度提示**:告诉用户还剩几次机会
+   - 提示:使用 `7 - attempts` 计算剩余次数
 
-## 实战综合练习
+通过这些练习,你已经掌握了编程中最重要的控制流概念!记住:
+- **if** 让程序能做决定
+- **while** 让程序能等待和重复
+- **for** 让程序能高效地处理批量任务
 
-现在用你学到的知识完成这个小项目:
-
-**任务**: 创建一个简单的"课程选修系统"
-- 使用 **数组** 存储可选课程列表(固定 5 门课)
-- 使用 **Set** 存储某个学生已选的课程(不能重复选)
-- 使用 **Map** 存储课程代码和课程名称的对应关系
-
-```java
-import java.util.*;
-
-public class CourseSystem {
-    public static void main(String[] args) {
-        // 1. 可选课程列表(数组) available courses (array)
-        String[] allCourses = {"JAVA101", "PYTHON101", "WEB101", "DB101", "AI101"};
-        
-        // 2. 学生已选课程(Set) selected courses (Set)
-        Set<String> selectedCourses = new HashSet<>();
-        
-        // 3. 课程代码→课程名称(Map) course code → course name (Map)
-        Map<String, String> courseNames = new HashMap<>();
-        courseNames.put("JAVA101", "Java 编程基础");
-        courseNames.put("PYTHON101", "Python 入门");
-        courseNames.put("WEB101", "Web 开发");
-        courseNames.put("DB101", "数据库原理");
-        courseNames.put("AI101", "人工智能导论");
-        
-        // 模拟选课 simulate course selection
-        selectedCourses.add("JAVA101");
-        selectedCourses.add("WEB101");
-        selectedCourses.add("JAVA101");  // 重复选择,会被忽略
-        
-        // 输出结果 print results
-        System.out.println("=== 可选课程列表 ===");
-        for (String code : allCourses) {
-            System.out.println(code + " - " + courseNames.get(code));
-        }
-        
-        System.out.println("\n=== 已选课程 ===");
-        System.out.println("已选课程数: " + selectedCourses.size());
-        for (String code : selectedCourses) {
-            System.out.println(code + " - " + courseNames.get(code));
-        }
-    }
-}
-```
-
-尝试在这个基础上添加新功能:
-- 添加退课功能(从 Set 中移除)
-- 检查是否选满(Set 大小是否达到上限)
-- 列出还未选择的课程
-
----
-
-恭喜你完成了集合这一章!你现在掌握了 Java 中三种最重要的数据存储方式。记住:
-- **数组**适合固定大小的数据
-- **Set**用于去重和成员检查
-- **Map**用于建立键值对应关系
-
-在实际编程中,你会发现 Set 和 Map 的使用频率甚至超过数组,因为它们更灵活强大。继续练习,尝试在不同场景下选择合适的数据结构!
+这三个工具组合起来,就能构建出复杂而智能的程序逻辑!
