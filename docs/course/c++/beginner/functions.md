@@ -12,167 +12,216 @@ head:
 
  # 函数与方法
 
-## 💡 什么是函数(Function)
+## 什么是函数(Function)
 
-函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
+💡 函数就像一台自动售货机:你投入硬币(输入参数),它给你饮料(返回结果)。
 
-比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
+在C++中,函数帮助我们:
+- 把重复的代码打包起来,需要时直接调用
+- 让代码更容易理解和维护
 
-## 定义函数(Function Definition)
+## 定义一个基础函数
 
-### 📝 基本语法
+### 最简单的函数
 
-```python{1}
-def 函数名():
-    # 这里写函数要做的事情
-    print("Hello")
+```cpp{1-3}
+void sayHello() {
+    cout << "Hello, World!" << endl;
+}
+
+int main() {
+    sayHello();  // 调用函数
+    return 0;
+}
 ```
 
-- `def` 是定义函数的关键字
-- 函数名后面必须有小括号 `()`
-- 冒号 `:` 不能忘
-- 函数内的代码必须缩进(按一次Tab键)
-
-### 代码示例
-
-```python{1-2}
-def say_hello():
-    print("你好,欢迎学习Python!")
-```
-
-这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
-
-## 调用函数(Function Call)
-
-定义好函数后,需要"调用"它才会执行:
-
-```python{1-2,4}
-def say_hello():
-    print("你好,欢迎学习Python!")
-
-say_hello()  # 调用函数
-```
-
-**运行结果:**
-```
-你好,欢迎学习Python!
-```
+**函数的组成部分:**
+- `void` - 返回类型(Return Type),`void`表示不返回任何值
+- `sayHello` - 函数名(Function Name)
+- `()` - 参数列表(Parameters),空括号表示不需要输入
+- `{}` - 函数体(Function Body),实际执行的代码
 
 ::: tip 提示
-调用函数时,函数名后面的小括号 `()` 不能省略!
+函数必须先定义,再调用。建议把函数写在`main()`函数前面。
 :::
 
-## 带参数的函数(Function with Parameters)
+### 完整可运行示例
 
-### 💡 为什么需要参数
+```cpp{1-3,7}
+#include <iostream>
+using namespace std;
 
-有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
+void sayHello() {
+    cout << "Hello, World!" << endl;
+}
 
-### 📝 代码示例
-
-```python{1,4}
-def greet(name):
-    print(f"你好,{name}!")
-
-greet("小明")  # 传入参数"小明"
+int main() {
+    sayHello();
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-你好,小明!
+Hello, World!
 ```
 
-你可以多次调用,传入不同的参数:
+## 带参数的函数(Parameters)
 
-```python{1-2,4-5}
-def greet(name):
-    print(f"你好,{name}!")
+### 传递一个参数
 
-greet("小明")
-greet("小红")
-```
+```cpp{1-3,7}
+#include <iostream>
+using namespace std;
 
-**运行结果:**
-```
-你好,小明!
-你好,小红!
-```
+void greet(string name) {  // name是参数
+    cout << "Hello, " << name << "!" << endl;
+}
 
-## 返回值(Return Value)
-
-### 💡 什么是返回值
-
-有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
-
-### 📝 代码示例
-
-```python{1-2,4-5}
-def calculate_square(number):
-    return number * number
-
-result = calculate_square(5)  # 函数返回25
-print(f"5的平方是: {result}")
+int main() {
+    greet("Alice");  // 传入"Alice"作为参数
+    greet("Bob");    // 传入"Bob"作为参数
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-5的平方是: 25
+Hello, Alice!
+Hello, Bob!
+```
+
+### 传递多个参数
+
+```cpp{4-6,11}
+#include <iostream>
+using namespace std;
+
+void introduce(string name, int age) {
+    cout << "我叫" << name << ",今年" << age << "岁" << endl;
+}
+
+int main() {
+    introduce("小明", 18);
+    introduce("小红", 20);
+    return 0;
+}
+```
+
+**运行结果:**
+```
+我叫小明,今年18岁
+我叫小红,今年20岁
 ```
 
 ::: warning 注意
-如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
+参数的顺序很重要!调用时必须按定义的顺序传入。
 :::
 
-## 多个参数(Multiple Parameters)
+## 有返回值的函数(Return Value)
 
-函数可以接收多个参数,用逗号分隔:
+### 返回计算结果
 
-```python{1-2,4}
-def add_numbers(a, b):
-    return a + b
+```cpp{4-7,11-12}
+#include <iostream>
+using namespace std;
 
-result = add_numbers(10, 20)
-print(f"10 + 20 = {result}")
+int add(int a, int b) {
+    int sum = a + b;
+    return sum;  // 返回计算结果
+}
+
+int main() {
+    int result = add(5, 3);  // 接收返回值
+    cout << "5 + 3 = " << result << endl;
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-10 + 20 = 30
+5 + 3 = 8
+```
+
+**关键点:**
+- `int add(...)` - `int`表示函数返回一个整数
+- `return sum` - 把结果返回给调用者
+- `int result = add(5, 3)` - 用变量接收返回值
+
+### 直接使用返回值
+
+```cpp{4-6,10}
+#include <iostream>
+using namespace std;
+
+double multiply(double x, double y) {
+    return x * y;  // 直接返回计算结果
+}
+
+int main() {
+    cout << "3.5 * 2 = " << multiply(3.5, 2) << endl;
+    return 0;
+}
+```
+
+**运行结果:**
+```
+3.5 * 2 = 7
 ```
 
 ## 💪 练习题
 
-### 练习1:定义并调用函数
+### 练习1:计算面积
 
-编写一个函数 `introduce_yourself`,打印你的名字和年龄。
+编写一个函数`calculateArea`,计算矩形面积(长 × 宽)。
 
-::: details 点击查看答案
-```python
-def introduce_yourself():
-    print("我叫小明")
-    print("我今年18岁")
+<details>
+<summary>点击查看答案</summary>
 
-introduce_yourself()
+```cpp
+#include <iostream>
+using namespace std;
+
+double calculateArea(double length, double width) {
+    return length * width;
+}
+
+int main() {
+    double area = calculateArea(5.0, 3.0);
+    cout << "面积是: " << area << endl;
+    return 0;
+}
 ```
-:::
 
-### 练习2:带参数的函数
+</details>
 
-编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
+### 练习2:判断奇偶
 
-::: details 点击查看答案
-```python
-def calculate_rectangle_area(length, width):
-    return length * width
+编写一个函数`isEven`,判断一个数字是否为偶数,返回`true`或`false`。
 
-area = calculate_rectangle_area(5, 3)
-print(f"矩形面积是: {area}")
+<details>
+<summary>点击查看答案</summary>
+
+```cpp
+#include <iostream>
+using namespace std;
+
+bool isEven(int number) {
+    return number % 2 == 0;
+}
+
+int main() {
+    cout << "4是偶数吗? " << (isEven(4) ? "是" : "否") << endl;
+    cout << "7是偶数吗? " << (isEven(7) ? "是" : "否") << endl;
+    return 0;
+}
 ```
-:::
+
+</details>
 
 ## 📌 小结
 
-1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
-2. **调用函数**:写出函数名并加上小括号 `函数名()`
-3. **参数**:让函数处理不同的数据,在小括号内定义参数
-4. **返回值**:用 `return` 把计算结果交还给调用者
+- **定义函数**: `返回类型 函数名(参数类型 参数名) { 函数体 }`
+- **调用函数**: 直接写`函数名(参数值)`
+- **返回值**: 使用`return`语句把结果返回给调用者
+- 函数让代码可以重复使用,避免重复编写相同逻辑
