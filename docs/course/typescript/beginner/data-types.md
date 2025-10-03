@@ -12,109 +12,83 @@ head:
 
  # 数据类型
 
-在编程世界里,计算机需要知道你给它的信息是什么类型,就像你需要知道手里拿的是苹果还是橘子。Python 有几种基本的数据类型(Data Types),让我们一个个来认识它们。
+在 TypeScript 中,数据类型(Data Type)就是告诉计算机"这个盒子里装的是什么"。就像你的衣柜有专门放衣服的格子、放鞋子的格子,程序也需要不同类型的"格子"来存放不同的数据。
 
-## 整数(Integer)
-
-### 💡 概念说明
-
-整数就是没有小数点的数字,可以是正数、负数或零。在 Python 中用 `int` 表示。
-
-### 📝 代码示例
-
-```python{1-4}
-age = 25                    # 正整数
-temperature = -5            # 负整数
-score = 0                   # 零
-population = 1400000000     # 大数字也可以
-```
-
-**运行结果**:这段代码不会显示任何内容,它只是把数据存储在变量中。
-
-让我们用 `print()` 函数看看这些整数:
-
-```python{1,2,5}
-year = 2025
-print(year)           # 输出: 2025
-
-result = 10 + 20
-print(result)         # 输出: 30
-```
-
-### 💪 练习题
-
-**练习 1**: 创建一个变量存储你的年龄,然后打印出来。
-
-::: details 查看答案
-```python
-my_age = 18
-print(my_age)
-```
-:::
-
-**练习 2**: 计算两个整数的和并打印结果。
-
-::: details 查看答案
-```python
-num1 = 15
-num2 = 27
-total = num1 + num2
-print(total)  # 输出: 42
-```
-:::
-
-## 浮点数(Float)
+## 整数(Integer/Number)
 
 ### 💡 概念说明
 
-浮点数就是带小数点的数字,用于表示更精确的值。在 Python 中用 `float` 表示。
+整数就是没有小数点的数字,比如 1、100、-5。在 TypeScript 中,整数使用 `number` 类型表示。
 
 ### 📝 代码示例
 
-```python{1-3}
-height = 1.75              # 身高(米)
-price = 29.99              # 价格
-temperature = -3.5         # 温度
+```typescript{1,4,7}
+let age: number = 25;  // 年龄
+console.log(age);
+
+let temperature: number = -10;  // 温度(可以是负数)
+console.log(temperature);
+
+let score: number = 0;  // 分数
+console.log(score);
 ```
 
-你可以对浮点数进行计算:
-
-```python{1-3}
-length = 5.5
-width = 3.2
-area = length * width
-print(area)                # 输出: 17.6
+**运行结果**:
+```
+25
+-10
+0
 ```
 
 ::: tip 提示
-整数和浮点数可以一起计算,结果会是浮点数:
-```python
-result = 10 + 3.5
-print(result)  # 输出: 13.5
-```
+`let` 是用来创建变量的关键字,冒号后面的 `number` 告诉 TypeScript 这个变量只能存放数字。
 :::
+
+## 浮点数(Float/Number)
+
+### 💡 概念说明
+
+浮点数就是带小数点的数字,比如 3.14、0.5、-2.8。TypeScript 中整数和浮点数都使用 `number` 类型。
+
+### 📝 代码示例
+
+```typescript{1,4,7}
+let price: number = 19.99;  // 价格
+console.log(price);
+
+let weight: number = 65.5;  // 体重
+console.log(weight);
+
+let pi: number = 3.14159;  // 圆周率
+console.log(pi);
+```
+
+**运行结果**:
+```
+19.99
+65.5
+3.14159
+```
 
 ### 💪 练习题
 
-**练习 1**: 计算一个长方形的面积(长 4.5,宽 2.8)。
+**练习 1**: 创建一个变量存储你的身高(单位:米),并打印出来。
 
 ::: details 查看答案
-```python
-length = 4.5
-width = 2.8
-area = length * width
-print(area)  # 输出: 12.6
+```typescript
+let height: number = 1.75;
+console.log(height);
 ```
 :::
 
-**练习 2**: 计算商品打折后的价格(原价 99.9,折扣 0.8)。
+**练习 2**: 创建两个变量,一个存储商品原价 100,另一个存储折扣后的价格 79.9,分别打印。
 
 ::: details 查看答案
-```python
-original_price = 99.9
-discount = 0.8
-final_price = original_price * discount
-print(final_price)  # 输出: 79.92
+```typescript
+let originalPrice: number = 100;
+let discountPrice: number = 79.9;
+console.log(originalPrice);
+console.log(discountPrice);
 ```
 :::
 
@@ -122,66 +96,74 @@ print(final_price)  # 输出: 79.92
 
 ### 💡 概念说明
 
-字符串是用引号包起来的文字,可以是单引号 `'` 或双引号 `"`。在 Python 中用 `str` 表示。
+字符串就是文本内容,需要用引号包起来。可以使用:
+- 单引号 `'hello'`
+- 双引号 `"hello"`
+- 反引号 `` `hello` ``
 
 ### 📝 代码示例
 
-```python{1-3}
-name = "张三"
-city = 'Beijing'
-message = "Hello, World!"
+```typescript{1,4,7,10}
+let userName: string = "张三";  // 姓名
+console.log(userName);
+
+let email: string = 'user@example.com';  // 邮箱
+console.log(email);
+
+let greeting: string = `你好,世界!`;  // 问候语
+console.log(greeting);
+
+let emptyText: string = "";  // 空字符串也是字符串
+console.log(emptyText);
 ```
 
-字符串可以拼接(连接)在一起:
-
-```python{1-3}
-first_name = "李"
-last_name = "明"
-full_name = first_name + last_name
-print(full_name)           # 输出: 李明
+**运行结果**:
 ```
+张三
+user@example.com
+你好,世界!
 
-字符串和数字不能直接拼接,需要转换:
-
-```python{1-2}
-age = 25
-text = "我今年" + str(age) + "岁"
-print(text)                # 输出: 我今年25岁
 ```
 
 ::: warning 注意
-单引号和双引号要成对出现,不能混用:
-```python
-# ✅ 正确
-name = "Alice"
-city = 'Tokyo'
+引号必须成对出现,不能一边单引号一边双引号:`"hello'` 是错误的。
+:::
 
-# ❌ 错误
-name = "Alice'
+### 📝 字符串拼接
+
+```typescript{1-2,5-6}
+let firstName: string = "张";
+let lastName: string = "三";
+
+// 使用 + 号拼接
+let fullName: string = firstName + lastName;
+console.log(fullName);
+
+// 使用反引号模板(推荐)
+let greeting: string = `你好,我叫${firstName}${lastName}`;
+console.log(greeting);
 ```
+
+**运行结果**:
+```
+张三
+你好,我叫张三
+```
+
+::: tip 提示
+反引号中使用 `${}` 可以插入变量,这种方式叫做模板字符串(Template String),更加直观。
 :::
 
 ### 💪 练习题
 
-**练习 1**: 创建两个字符串变量,分别存储你的姓和名,然后拼接打印。
+**练习**: 创建两个变量,一个存储你的城市,一个存储你的爱好,然后用模板字符串打印 "我住在{城市},喜欢{爱好}"。
 
 ::: details 查看答案
-```python
-first = "王"
-last = "小明"
-full = first + last
-print(full)  # 输出: 王小明
-```
-:::
-
-**练习 2**: 创建一个自我介绍的字符串,包含姓名和年龄。
-
-::: details 查看答案
-```python
-name = "李华"
-age = 20
-intro = "大家好,我叫" + name + ",今年" + str(age) + "岁"
-print(intro)  # 输出: 大家好,我叫李华,今年20岁
+```typescript
+let city: string = "北京";
+let hobby: string = "编程";
+let introduction: string = `我住在${city},喜欢${hobby}`;
+console.log(introduction);
 ```
 :::
 
@@ -189,56 +171,77 @@ print(intro)  # 输出: 大家好,我叫李华,今年20岁
 
 ### 💡 概念说明
 
-布尔值只有两个值:`True`(真)和 `False`(假),用于表示是或否、对或错。在 Python 中用 `bool` 表示。
+布尔值只有两个值:
+- `true` - 表示"是"、"真"、"开"
+- `false` - 表示"否"、"假"、"关"
 
-::: danger 警告
-`True` 和 `False` 的首字母必须大写,否则会出错!
-:::
+常用于表示开关状态、判断结果等。
 
 ### 📝 代码示例
 
-```python{1-2}
-is_student = True
-has_license = False
+```typescript{1,4,7,10}
+let isOnline: boolean = true;  // 是否在线
+console.log(isOnline);
+
+let hasPassword: boolean = false;  // 是否有密码
+console.log(hasPassword);
+
+let isAdult: boolean = true;  // 是否成年
+console.log(isAdult);
+
+let isSunny: boolean = false;  // 是否晴天
+console.log(isSunny);
 ```
 
-布尔值常用于判断和比较:
+**运行结果**:
+```
+true
+false
+true
+false
+```
 
-```python{1-5}
-age = 18
-is_adult = age >= 18
-print(is_adult)            # 输出: True
+::: warning 注意
+`true` 和 `false` 都是小写,不要写成 `True` 或 `FALSE`。
+:::
 
-print(10 > 5)              # 输出: True
-print(3 == 5)              # 输出: False
+### 📝 布尔值的实际应用
+
+```typescript{2,5,8}
+let age: number = 20;
+let isAdult: boolean = age >= 18;  // 判断是否成年
+console.log(isAdult);
+
+let score: number = 85;
+let isPassed: boolean = score >= 60;  // 判断是否及格
+console.log(isPassed);
+
+let temperature: number = 30;
+let isHot: boolean = temperature > 28;  // 判断是否炎热
+console.log(isHot);
+```
+
+**运行结果**:
+```
+true
+true
+true
 ```
 
 ### 💪 练习题
 
-**练习 1**: 判断一个数字是否大于 100。
+**练习**: 创建一个变量存储商品库存数量为 0,然后创建一个布尔变量判断是否有库存(库存数量大于 0)。
 
 ::: details 查看答案
-```python
-number = 150
-is_large = number > 100
-print(is_large)  # 输出: True
-```
-:::
-
-**练习 2**: 比较两个数字是否相等。
-
-::: details 查看答案
-```python
-num1 = 50
-num2 = 50
-are_equal = num1 == num2
-print(are_equal)  # 输出: True
+```typescript
+let stock: number = 0;
+let hasStock: boolean = stock > 0;
+console.log(hasStock);  // false
 ```
 :::
 
 ## 📌 小结
 
-- **整数(int)**:没有小数点的数字,如 `25`、`-10`、`0`
-- **浮点数(float)**:带小数点的数字,如 `3.14`、`-2.5`
-- **字符串(str)**:用引号包起来的文字,如 `"Hello"`、`'Python'`
-- **布尔值(bool)**:只有 `True` 或 `False` 两个值
+- **number** - 用于存储数字(整数和小数都是 number 类型)
+- **string** - 用于存储文本,需要用引号包裹,推荐使用反引号模板字符串
+- **boolean** - 只有 `true` 和 `false` 两个值,用于表示是非判断
