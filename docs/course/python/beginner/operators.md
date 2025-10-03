@@ -12,185 +12,202 @@ head:
 
  # 基础运算
 
-编程的本质就是让计算机帮我们处理数据。在这一章,你将学会如何让 Python 进行计算、比较和判断。
+编程的核心之一就是让计算机帮我们做计算。在这一章,你将学会如何在Python中进行各种运算操作。
 
 ## 赋值(Assignment)
 
-**赋值(Assignment)** 就是把一个值存储到变量中,就像给数据贴上标签。
+### 💡 概念说明
+
+赋值就是给一个变量(Variable)存储一个值。使用等号 `=` 来完成赋值操作。
 
 ### 📝 代码示例
 
-```python{1,4,7}
-age = 25  # 把数字 25 存到变量 age 里
-
-# 可以随时修改变量的值
-age = 26  
-
-# 一次性给多个变量赋值
-x, y, z = 10, 20, 30
+```python{1-3}
+age = 25
+name = "Alice"
+price = 19.99
 ```
 
-**运行结果**:代码执行后不会显示任何内容,但变量已经存储好了值。
+运行后不会显示任何内容,但Python已经把这些值存储在变量中了。
 
 ::: tip 提示
-变量名要有意义,`age` 比 `a` 更容易理解代码的用途。
+等号 `=` 在编程中表示"赋值",而不是数学中的"等于"。
+:::
+
+### 💪 练习题
+
+1. 创建一个变量 `score`,赋值为 100
+2. 创建一个变量 `city`,赋值为你所在的城市名称
+
+::: details 查看答案
+```python
+score = 100
+city = "Beijing"
+```
 :::
 
 ## 数学运算(Arithmetic Operations)
 
-Python 可以像计算器一样进行数学计算。
+### 💡 概念说明
 
-### 📝 基本运算符
+Python支持常见的数学运算:
+- 加法 `+`
+- 减法 `-`
+- 乘法 `*`
+- 除法 `/`
+- 求余 `%` (计算除法的余数)
 
-```python{1-5}
-print(10 + 3)   # 加法: 13
-print(10 - 3)   # 减法: 7
-print(10 * 3)   # 乘法: 30
-print(10 / 3)   # 除法: 3.3333...
-print(10 % 3)   # 求余: 1 (10除以3余1)
+### 📝 代码示例
 
-# 实际应用示例
-price = 49
-quantity = 3
-total = price * quantity
-print(total)  # 147
+```python{1-5,8-9}
+# 基础运算
+result1 = 10 + 5      # 加法
+result2 = 20 - 8      # 减法
+result3 = 6 * 7       # 乘法
+result4 = 15 / 3      # 除法
+
+# 求余运算
+remainder = 17 % 5    # 17除以5余2
+print(remainder)
 ```
 
-**运行结果**:
+运行结果:
 ```
-13
-7
-30
-3.3333333333333335
-1
-147
+2
 ```
 
 ::: warning 注意
-`/` 除法的结果总是小数,即使能整除。`10 / 5` 的结果是 `2.0` 而不是 `2`。
+除法 `/` 的结果总是小数(浮点数),即使能整除。例如 `10 / 5` 结果是 `2.0` 而不是 `2`。
 :::
 
 ### 💪 练习题
 
-**练习 1**: 计算一件商品打 8 折后的价格(原价 158 元)。
+1. 计算 `(50 + 30) * 2` 的结果,存储在变量 `total` 中
+2. 计算 `23 % 4` 的结果并打印出来
 
-<details>
-<summary>查看答案</summary>
-
+::: details 查看答案
 ```python
-original_price = 158
-discount = 0.8
-final_price = original_price * discount
-print(final_price)  # 126.4
+total = (50 + 30) * 2
+print(total)  # 输出: 160
+
+result = 23 % 4
+print(result)  # 输出: 3
 ```
-
-</details>
-
-**练习 2**: 判断一个数字是奇数还是偶数(提示:偶数除以 2 余数为 0)。
-
-<details>
-<summary>查看答案</summary>
-
-```python
-number = 17
-remainder = number % 2
-print(remainder)  # 1 表示奇数, 0 表示偶数
-```
-
-</details>
+:::
 
 ## 比较运算(Comparison Operations)
 
-**比较运算(Comparison)** 用于判断两个值的大小关系,结果是 `True`(真)或 `False`(假)。
+### 💡 概念说明
 
-### 📝 比较运算符
+比较运算用于比较两个值,结果是 `True`(真)或 `False`(假):
+- 相等 `==`
+- 不相等 `!=`
+- 大于 `>`
+- 小于 `<`
+- 大于等于 `>=`
+- 小于等于 `<=`
+
+### 📝 代码示例
 
 ```python{1-6}
-print(5 == 5)   # 相等: True
-print(5 != 3)   # 不等于: True
-print(5 > 3)    # 大于: True
-print(5 < 3)    # 小于: False
-print(5 >= 5)   # 大于或等于: True
-print(5 <= 3)   # 小于或等于: False
-
-# 实际应用
-age = 18
-is_adult = age >= 18
-print(is_adult)  # True
+print(10 == 10)    # 判断是否相等
+print(5 > 3)       # 判断5是否大于3
+print(8 < 2)       # 判断8是否小于2
+print(7 >= 7)      # 判断7是否大于等于7
+print(10 != 5)     # 判断10是否不等于5
+print("cat" == "dog")  # 文本也可以比较
 ```
 
-**运行结果**:
+运行结果:
 ```
-True
 True
 True
 False
 True
-False
 True
+False
 ```
 
-::: warning 注意
-判断相等用 `==`(两个等号),不是 `=`(一个等号)。`=` 是赋值,`==` 是比较。
+::: danger 警告
+判断相等用 `==` (两个等号),不是 `=` (一个等号)。`=` 是赋值操作。
+:::
+
+### 💪 练习题
+
+1. 判断 `15` 是否大于 `20`,打印结果
+2. 判断你的年龄是否大于等于 `18`,打印结果
+
+::: details 查看答案
+```python
+print(15 > 20)      # False
+
+age = 25
+print(age >= 18)    # True
+```
 :::
 
 ## 逻辑运算(Logical Operations)
 
-**逻辑运算(Logical Operations)** 用于组合多个条件判断。
+### 💡 概念说明
 
-### 📝 逻辑运算符
+逻辑运算用于组合多个条件:
+- `and` (且): 两个条件都为True时,结果才是True
+- `or` (或): 只要有一个条件为True,结果就是True
+- `not` (非): 反转结果,True变False,False变True
 
-- **and**: 两个条件都为真时,结果才为真
-- **or**: 只要有一个条件为真,结果就为真
-- **not**: 取反,真变假,假变真
+### 📝 代码示例
 
-```python{1-2,5-6,9}
-# and: 必须同时满足
-print(True and True)    # True
-print(True and False)   # False
+```python{2,5,8}
+# and运算 - 两个条件都要满足
+print(True and True)      # True
+print(True and False)     # False
 
-# or: 满足其中一个即可
-print(True or False)    # True
-print(False or False)   # False
+# or运算 - 满足任意一个条件即可
+print(True or False)      # True
+print(False or False)     # False
 
-# not: 取反
-print(not True)         # False
+# not运算 - 取反
+print(not True)           # False
+print(not False)          # True
+```
 
-# 实际应用
+实际应用示例:
+
+```python{1-4}
 age = 20
-has_id = True
-can_enter = age >= 18 and has_id
+has_ticket = True
+# 判断是否可以进场:年龄大于18且有票
+can_enter = age > 18 and has_ticket
 print(can_enter)  # True
 ```
 
-**运行结果**:
+运行结果:
 ```
-True
-False
-True
-False
-False
 True
 ```
 
 ### 💪 练习题
 
-**练习**: 判断一个人是否可以享受学生票优惠(年龄在 6-22 岁之间)。
+1. 判断一个数字是否在10到20之间(包含10和20)
+2. 判断一个数字是否小于0或大于100
 
-<details>
-<summary>查看答案</summary>
-
+::: details 查看答案
 ```python
-age = 19
-is_student_age = age >= 6 and age <= 22
-print(is_student_age)  # True
-```
+num = 15
+# 方法:数字要大于等于10 并且 小于等于20
+in_range = num >= 10 and num <= 20
+print(in_range)  # True
 
-</details>
+num2 = 50
+# 方法:数字小于0 或者 大于100
+out_range = num2 < 0 or num2 > 100
+print(out_range)  # False
+```
+:::
 
 ## 📌 小结
 
-- **赋值**: 使用 `=` 把值存储到变量中
-- **数学运算**: `+` `-` `*` `/` `%` 分别对应加减乘除求余
-- **比较运算**: `==` `!=` `>` `<` `>=` `<=` 返回 True 或 False
-- **逻辑运算**: `and` 要求同时满足,`or` 满足一个即可,`not` 取反
+- **赋值**: 使用 `=` 给变量存储值
+- **数学运算**: 加 `+`、减 `-`、乘 `*`、除 `/`、求余 `%`
+- **比较运算**: 相等 `==`、大于 `>`、小于 `<` 等,结果是 `True` 或 `False`
+- **逻辑运算**: `and`(且)、`or`(或)、`not`(非) 用于组合多个条件
