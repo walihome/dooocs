@@ -14,82 +14,37 @@ head:
 
 ## 💡 什么是函数(Function)
 
-函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
+函数就像一个「小机器」,你给它输入一些东西,它帮你处理后输出结果。
 
-比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
+比如:
+- 一个计算总价的函数:输入单价和数量 → 输出总价
+- 一个打招呼的函数:输入名字 → 输出问候语
 
-## 定义函数(Function Definition)
+## 定义函数
 
-### 📝 基本语法
+### 基本语法
 
-```python{1}
-def 函数名():
-    # 这里写函数要做的事情
-    print("Hello")
-```
+```javascript{1,5}
+function sayHello() {
+  console.log("Hello!");
+}
 
-- `def` 是定义函数的关键字
-- 函数名后面必须有小括号 `()`
-- 冒号 `:` 不能忘
-- 函数内的代码必须缩进(按一次Tab键)
-
-### 代码示例
-
-```python{1-2}
-def say_hello():
-    print("你好,欢迎学习Python!")
-```
-
-这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
-
-## 调用函数(Function Call)
-
-定义好函数后,需要"调用"它才会执行:
-
-```python{1-2,4}
-def say_hello():
-    print("你好,欢迎学习Python!")
-
-say_hello()  # 调用函数
-```
-
-**运行结果:**
-```
-你好,欢迎学习Python!
+sayHello(); // 调用函数
 ```
 
 ::: tip 提示
-调用函数时,函数名后面的小括号 `()` 不能省略!
+函数定义后不会自动执行,必须「调用」它才会运行。
 :::
 
-## 带参数的函数(Function with Parameters)
+### 带参数(Parameter)的函数
 
-### 💡 为什么需要参数
+```javascript{1,6}
+function greet(name) {
+  console.log("你好," + name + "!");
+}
 
-有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
-
-### 📝 代码示例
-
-```python{1,4}
-def greet(name):
-    print(f"你好,{name}!")
-
-greet("小明")  # 传入参数"小明"
-```
-
-**运行结果:**
-```
-你好,小明!
-```
-
-你可以多次调用,传入不同的参数:
-
-```python{1-2,4-5}
-def greet(name):
-    print(f"你好,{name}!")
-
-greet("小明")
-greet("小红")
+greet("小明"); // 输出:你好,小明!
+greet("小红"); // 输出:你好,小红!
 ```
 
 **运行结果:**
@@ -98,81 +53,104 @@ greet("小红")
 你好,小红!
 ```
 
-## 返回值(Return Value)
+### 带返回值(Return)的函数
 
-### 💡 什么是返回值
+```javascript{2,6}
+function add(a, b) {
+  return a + b; // 返回计算结果
+}
 
-有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
-
-### 📝 代码示例
-
-```python{1-2,4-5}
-def calculate_square(number):
-    return number * number
-
-result = calculate_square(5)  # 函数返回25
-print(f"5的平方是: {result}")
+let result = add(3, 5);
+console.log(result); // 输出:8
 ```
 
 **运行结果:**
 ```
-5的平方是: 25
+8
 ```
 
 ::: warning 注意
-如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
+`return` 后面的代码不会执行,函数会立即结束。
 :::
 
-## 多个参数(Multiple Parameters)
+## 方法(Method)
 
-函数可以接收多个参数,用逗号分隔:
+方法是「属于某个对象的函数」。
 
-```python{1-2,4}
-def add_numbers(a, b):
-    return a + b
+### 对象中的方法
 
-result = add_numbers(10, 20)
-print(f"10 + 20 = {result}")
+```javascript{3-5,9}
+let person = {
+  name: "张三",
+  sayHi: function() {
+    console.log("大家好,我是" + this.name);
+  }
+};
+
+// 调用方法
+person.sayHi(); // 输出:大家好,我是张三
 ```
 
 **运行结果:**
 ```
-10 + 20 = 30
+大家好,我是张三
+```
+
+### 简写语法
+
+```javascript{3-5}
+let calculator = {
+  price: 100,
+  calculate(quantity) {
+    return this.price * quantity;
+  }
+};
+
+console.log(calculator.calculate(3)); // 输出:300
+```
+
+**运行结果:**
+```
+300
 ```
 
 ## 💪 练习题
 
-### 练习1:定义并调用函数
+### 练习 1:创建一个计算器函数
 
-编写一个函数 `introduce_yourself`,打印你的名字和年龄。
+编写一个函数 `multiply`,接收两个数字,返回它们的乘积。
 
-::: details 点击查看答案
-```python
-def introduce_yourself():
-    print("我叫小明")
-    print("我今年18岁")
+::: details 查看答案
+```javascript
+function multiply(x, y) {
+  return x * y;
+}
 
-introduce_yourself()
+console.log(multiply(4, 5)); // 输出:20
+console.log(multiply(10, 3)); // 输出:30
 ```
 :::
 
-### 练习2:带参数的函数
+### 练习 2:创建一个用户对象
 
-编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
+创建一个 `user` 对象,包含 `name` 属性和 `introduce` 方法,方法输出自我介绍。
 
-::: details 点击查看答案
-```python
-def calculate_rectangle_area(length, width):
-    return length * width
+::: details 查看答案
+```javascript
+let user = {
+  name: "李明",
+  age: 25,
+  introduce: function() {
+    console.log("我叫" + this.name + ",今年" + this.age + "岁");
+  }
+};
 
-area = calculate_rectangle_area(5, 3)
-print(f"矩形面积是: {area}")
+user.introduce(); // 输出:我叫李明,今年25岁
 ```
 :::
 
 ## 📌 小结
 
-1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
-2. **调用函数**:写出函数名并加上小括号 `函数名()`
-3. **参数**:让函数处理不同的数据,在小括号内定义参数
-4. **返回值**:用 `return` 把计算结果交还给调用者
+1. **函数定义**: 用 `function` 关键字定义,可以接收参数和返回值
+2. **函数调用**: 函数名后加 `()` 即可调用,有参数就传入参数
+3. **方法**: 对象中的函数,用 `对象名.方法名()` 调用,可以用 `this` 访问对象属性
