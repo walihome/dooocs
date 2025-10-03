@@ -12,94 +12,102 @@ head:
 
  # 基础运算
 
-编程的核心之一就是让计算机帮我们做计算。在这一章,你将学会如何在Python中进行各种运算操作。
+编程的核心之一就是处理数据,而运算是处理数据最基本的方式。这一章我们将学习如何让程序进行各种计算和判断。
 
-## 赋值(Assignment)
+## 赋值运算(Assignment)
 
 ### 💡 概念说明
 
-赋值就是给一个变量(Variable)存储一个值。使用等号 `=` 来完成赋值操作。
+赋值就是把一个值存储到变量中,使用 `=` 符号。
+
+::: tip 提示
+赋值符号 `=` 不是"等于",而是"把右边的值放入左边的变量"
+:::
 
 ### 📝 代码示例
 
-```python{1-3}
-age = 25
-name = "Alice"
-price = 19.99
+```php{3-5}
+<?php
+// 基本赋值
+$price = 100;           // 把 100 赋值给 price
+$name = "iPhone";       // 把字符串赋值给 name
+$isAvailable = true;    // 把布尔值赋值给 isAvailable
+
+echo $price;            // 输出: 100
+?>
 ```
 
-运行后不会显示任何内容,但Python已经把这些值存储在变量中了。
-
-::: tip 提示
-等号 `=` 在编程中表示"赋值",而不是数学中的"等于"。
-:::
-
-### 💪 练习题
-
-1. 创建一个变量 `score`,赋值为 100
-2. 创建一个变量 `city`,赋值为你所在的城市名称
-
-::: details 查看答案
-```python
-score = 100
-city = "Beijing"
-```
-:::
+**运行结果**: 屏幕显示 `100`
 
 ## 数学运算(Arithmetic Operations)
 
 ### 💡 概念说明
 
-Python支持常见的数学运算:
+PHP 支持五种基本数学运算:
 - 加法 `+`
 - 减法 `-`
 - 乘法 `*`
 - 除法 `/`
-- 求余 `%` (计算除法的余数)
+- 求余 `%` (取余数)
 
 ### 📝 代码示例
 
-```python{1-5,8-9}
-# 基础运算
-result1 = 10 + 5      # 加法
-result2 = 20 - 8      # 减法
-result3 = 6 * 7       # 乘法
-result4 = 15 / 3      # 除法
+```php{3-7}
+<?php
+// 基本数学运算
+$sum = 10 + 5;          // 加法: 15
+$difference = 10 - 5;   // 减法: 5
+$product = 10 * 5;      // 乘法: 50
+$quotient = 10 / 5;     // 除法: 2
+$remainder = 10 % 3;    // 求余: 1 (10除以3余1)
 
-# 求余运算
-remainder = 17 % 5    # 17除以5余2
-print(remainder)
+echo "加法: $sum\n";
+echo "减法: $difference\n";
+echo "乘法: $product\n";
+echo "除法: $quotient\n";
+echo "求余: $remainder\n";
+?>
 ```
 
-运行结果:
+**运行结果**:
 ```
-2
+加法: 15
+减法: 5
+乘法: 50
+除法: 2
+求余: 1
 ```
 
 ::: warning 注意
-除法 `/` 的结果总是小数(浮点数),即使能整除。例如 `10 / 5` 结果是 `2.0` 而不是 `2`。
+除法运算时,除数不能为 0,否则会报错
 :::
 
-### 💪 练习题
+### 实际应用示例
 
-1. 计算 `(50 + 30) * 2` 的结果,存储在变量 `total` 中
-2. 计算 `23 % 4` 的结果并打印出来
+```php{4-6}
+<?php
+// 计算商品总价
+$unitPrice = 29.9;      // 单价
+$quantity = 3;          // 数量
+$total = $unitPrice * $quantity;  // 总价
+$discount = $total * 0.8;         // 打8折
 
-::: details 查看答案
-```python
-total = (50 + 30) * 2
-print(total)  # 输出: 160
-
-result = 23 % 4
-print(result)  # 输出: 3
+echo "原价: $total 元\n";
+echo "折后价: $discount 元";
+?>
 ```
-:::
+
+**运行结果**:
+```
+原价: 89.7 元
+折后价: 71.76 元
+```
 
 ## 比较运算(Comparison Operations)
 
 ### 💡 概念说明
 
-比较运算用于比较两个值,结果是 `True`(真)或 `False`(假):
+比较运算用于判断两个值的关系,结果是布尔值(`true` 或 `false`):
 - 相等 `==`
 - 不相等 `!=`
 - 大于 `>`
@@ -109,105 +117,174 @@ print(result)  # 输出: 3
 
 ### 📝 代码示例
 
-```python{1-6}
-print(10 == 10)    # 判断是否相等
-print(5 > 3)       # 判断5是否大于3
-print(8 < 2)       # 判断8是否小于2
-print(7 >= 7)      # 判断7是否大于等于7
-print(10 != 5)     # 判断10是否不等于5
-print("cat" == "dog")  # 文本也可以比较
+```php{3-8}
+<?php
+// 比较运算
+$a = 10;
+$b = 5;
+
+$isEqual = ($a == $b);      // false (10不等于5)
+$isGreater = ($a > $b);     // true (10大于5)
+$isLess = ($a < $b);        // false (10不小于5)
+$isGreaterEqual = ($a >= 10); // true (10大于等于10)
+
+// 使用 var_dump 可以看到布尔值
+var_dump($isEqual);         // bool(false)
+var_dump($isGreater);       // bool(true)
+?>
 ```
 
-运行结果:
+**运行结果**:
 ```
-True
-True
-False
-True
-True
-False
+bool(false)
+bool(true)
 ```
 
-::: danger 警告
-判断相等用 `==` (两个等号),不是 `=` (一个等号)。`=` 是赋值操作。
-:::
+### 实际应用示例
 
-### 💪 练习题
+```php{4-5}
+<?php
+// 判断是否达到免运费标准
+$orderAmount = 120;
+$freeShippingLimit = 99;
+$isFreeShipping = ($orderAmount >= $freeShippingLimit);
 
-1. 判断 `15` 是否大于 `20`,打印结果
-2. 判断你的年龄是否大于等于 `18`,打印结果
-
-::: details 查看答案
-```python
-print(15 > 20)      # False
-
-age = 25
-print(age >= 18)    # True
+if ($isFreeShipping) {
+    echo "恭喜!订单满99免运费";
+} else {
+    echo "还需" . ($freeShippingLimit - $orderAmount) . "元即可免运费";
+}
+?>
 ```
-:::
+
+**运行结果**: `恭喜!订单满99免运费`
 
 ## 逻辑运算(Logical Operations)
 
 ### 💡 概念说明
 
 逻辑运算用于组合多个条件:
-- `and` (且): 两个条件都为True时,结果才是True
-- `or` (或): 只要有一个条件为True,结果就是True
-- `not` (非): 反转结果,True变False,False变True
+- `&&` 或 `and` - 并且(两个条件都为真)
+- `||` 或 `or` - 或者(至少一个条件为真)
+- `!` - 非(取反)
 
 ### 📝 代码示例
 
-```python{2,5,8}
-# and运算 - 两个条件都要满足
-print(True and True)      # True
-print(True and False)     # False
+```php{5-7}
+<?php
+$age = 25;
+$hasLicense = true;
 
-# or运算 - 满足任意一个条件即可
-print(True or False)      # True
-print(False or False)     # False
+$canDrive = ($age >= 18) && $hasLicense;     // 年满18岁 并且 有驾照
+$needsCheck = ($age < 18) || !$hasLicense;   // 未满18岁 或者 没有驾照
+$isAdult = $age >= 18;                        // 是否成年
 
-# not运算 - 取反
-print(not True)           # False
-print(not False)          # True
+var_dump($canDrive);        // bool(true)
+var_dump($needsCheck);      // bool(false)
+var_dump($isAdult);         // bool(true)
+?>
 ```
 
-实际应用示例:
-
-```python{1-4}
-age = 20
-has_ticket = True
-# 判断是否可以进场:年龄大于18且有票
-can_enter = age > 18 and has_ticket
-print(can_enter)  # True
+**运行结果**:
+```
+bool(true)
+bool(false)
+bool(true)
 ```
 
-运行结果:
+### 实际应用示例
+
+```php{5-6}
+<?php
+// 判断用户是否可以购买
+$userAge = 20;
+$accountBalance = 50;
+$productPrice = 30;
+
+$canPurchase = ($userAge >= 18) && ($accountBalance >= $productPrice);
+
+if ($canPurchase) {
+    echo "可以购买";
+} else {
+    echo "无法购买";
+}
+?>
 ```
-True
-```
 
-### 💪 练习题
+**运行结果**: `可以购买`
 
-1. 判断一个数字是否在10到20之间(包含10和20)
-2. 判断一个数字是否小于0或大于100
-
-::: details 查看答案
-```python
-num = 15
-# 方法:数字要大于等于10 并且 小于等于20
-in_range = num >= 10 and num <= 20
-print(in_range)  # True
-
-num2 = 50
-# 方法:数字小于0 或者 大于100
-out_range = num2 < 0 or num2 > 100
-print(out_range)  # False
-```
+::: tip 提示
+`&&` 和 `and` 功能相同,但 `&&` 优先级更高,建议使用 `&&`
 :::
+
+## 💪 练习题
+
+### 练习 1: 计算折扣价
+
+编写代码计算商品打折后的价格:
+- 原价 299 元
+- 如果会员,打 8 折
+- 如果订单满 200 元,再减 20 元
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+$originalPrice = 299;
+$isMember = true;
+$discountRate = 0.8;
+
+// 计算会员折扣
+if ($isMember) {
+    $price = $originalPrice * $discountRate;
+} else {
+    $price = $originalPrice;
+}
+
+// 满减优惠
+if ($price >= 200) {
+    $price = $price - 20;
+}
+
+echo "最终价格: $price 元";
+// 输出: 最终价格: 219.2 元
+?>
+```
+
+</details>
+
+### 练习 2: 判断及格状态
+
+编写代码判断学生是否通过考试:
+- 总分 100 分
+- 60 分及格
+- 如果分数 >= 60 并且出勤率 >= 80%,显示"通过"
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+$score = 75;
+$attendance = 0.85;  // 85% 出勤率
+
+$isPassed = ($score >= 60) && ($attendance >= 0.8);
+
+if ($isPassed) {
+    echo "恭喜通过考试!";
+} else {
+    echo "未通过考试";
+}
+// 输出: 恭喜通过考试!
+?>
+```
+
+</details>
 
 ## 📌 小结
 
-- **赋值**: 使用 `=` 给变量存储值
-- **数学运算**: 加 `+`、减 `-`、乘 `*`、除 `/`、求余 `%`
-- **比较运算**: 相等 `==`、大于 `>`、小于 `<` 等,结果是 `True` 或 `False`
-- **逻辑运算**: `and`(且)、`or`(或)、`not`(非) 用于组合多个条件
+1. **赋值运算**使用 `=` 把值存入变量
+2. **数学运算**包括 `+` `-` `*` `/` `%` 五种基本操作
+3. **比较运算**用于判断大小关系,结果是 `true` 或 `false`
+4. **逻辑运算**用 `&&` `||` `!` 组合多个条件
