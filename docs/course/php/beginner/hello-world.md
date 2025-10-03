@@ -12,122 +12,109 @@ head:
 
  # Hello World
 
-学习编程的第一步，就是让计算机对你说"你好"。全世界的程序员开始学习一门新语言时，都会先写一个 Hello World 程序。这是一个传统，也是一个测试——确认你的开发环境可以正常工作。
-
 ## 💡 什么是 Hello World
 
-Hello World 程序只做一件事：在屏幕上显示 "Hello World"。虽然简单，但它包含了编程的基本流程：
-- 写代码
-- 运行代码
-- 看到结果
+"Hello World" 是全世界程序员学习新编程语言时编写的第一个程序。它的作用很简单：让计算机在屏幕上显示一句话。
 
-## 📝 第一个 Python 程序
+通过这个程序，你会学到：
+- 如何创建一个 PHP 文件
+- 如何让浏览器显示内容
+- PHP 代码的基本结构
 
-创建一个新文件，命名为 `hello.py`，输入以下代码：
+## 📝 第一个 PHP 程序
 
-```python
-print("Hello World")
+### 创建文件
+
+1. 打开你的代码编辑器(Editor)
+2. 新建一个文件，命名为 `hello.php`
+3. 输入以下代码：
+
+```php{2}
+<?php
+echo "Hello World";
+?>
 ```
 
-就这么简单！只需要一行代码。
-
-### 运行程序
-
-打开终端(Terminal)或命令提示符(Command Prompt)，进入文件所在目录，输入：
-
-```bash
-python hello.py
-```
-
-你会看到屏幕上输出：
-
-```
-Hello World
-```
+**运行结果**：浏览器会显示 `Hello World`
 
 ::: tip 提示
-`print()` 是 Python 的内置函数(Built-in Function)，用于在屏幕上显示内容。括号里的内容就是你想显示的东西。
+文件必须以 `.php` 结尾，这样服务器才知道这是一个 PHP 文件
 :::
 
-## 📝 显示更多内容
+### 代码说明
 
-你可以显示任何你想说的话：
-
-```python{1-3}
-print("Hello World")
-print("我是一名程序员")
-print("Python 很有趣")
+```php
+<?php
+// 这是 PHP 代码的开始标记
+echo "Hello World";
+// echo 是输出命令,用于在页面显示内容
+?>
 ```
 
-运行结果：
+这段代码包含三个部分：
+- `<?php` - PHP 代码开始标记(Start Tag)
+- `echo` - 输出命令(Output Command)
+- `?>` - PHP 代码结束标记(End Tag)
 
+## 💪 动手练习
+
+### 练习 1：显示你的名字
+
+修改代码，让页面显示 `我叫张三`
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+echo "我叫张三";
+?>
 ```
-Hello World
-我是一名程序员
-Python 很有趣
+
+</details>
+
+### 练习 2：显示多行内容
+
+尝试让页面同时显示两行文字：
+- 第一行：Hello World
+- 第二行：欢迎学习 PHP
+
+<details>
+<summary>点击查看答案</summary>
+
+```php
+<?php
+echo "Hello World<br>";
+echo "欢迎学习 PHP";
+?>
 ```
 
-每个 `print()` 会在新的一行显示内容。
+`<br>` 是换行标签(Line Break Tag),用于在网页上换行
 
-## 📝 显示数字和计算结果
+</details>
 
-`print()` 不仅可以显示文字，还可以显示数字和计算结果：
+## 🔧 如何运行代码
 
-```python{1-3}
-print(2025)
-print(10 + 5)
-print(100 - 20)
+你需要一个 PHP 运行环境：
+
+**方法 1：使用集成环境**
+- 安装 XAMPP 或 WAMP
+- 将 `hello.php` 放入 `htdocs` 文件夹
+- 打开浏览器访问 `http://localhost/hello.php`
+
+**方法 2：使用 PHP 内置服务器**
+```bash
+# 在 hello.php 所在目录打开终端
+php -S localhost:8000
 ```
-
-运行结果：
-
-```
-2025
-15
-80
-```
+然后访问 `http://localhost:8000/hello.php`
 
 ::: warning 注意
-文字需要用引号 `""` 包起来，数字和计算式不需要引号。
-:::
-
-## 💪 练习题
-
-### 练习 1：个人介绍
-编写一个程序，依次输出你的名字、年龄和爱好。
-
-::: details 参考答案
-```python
-print("我叫小明")
-print("今年 20 岁")
-print("喜欢打篮球")
-```
-:::
-
-### 练习 2：简单计算器
-编写一个程序，计算并显示：
-- 123 + 456
-- 1000 - 234
-- 50 × 8（Python 中乘法用 `*`）
-
-::: details 参考答案
-```python
-print(123 + 456)
-print(1000 - 234)
-print(50 * 8)
-```
-
-运行结果：
-```
-579
-766
-400
-```
+双击 PHP 文件不会运行程序，必须通过浏览器访问
 :::
 
 ## 📌 小结
 
-- `print()` 函数用于在屏幕上显示内容
-- 文字需要用引号 `""` 包起来，数字不需要
-- 一个 `print()` 语句会在新的一行显示内容
-- Python 可以直接进行数学计算
+- PHP 代码写在 `<?php` 和 `?>` 之间
+- `echo` 用于输出内容到浏览器
+- 文件必须保存为 `.php` 扩展名
