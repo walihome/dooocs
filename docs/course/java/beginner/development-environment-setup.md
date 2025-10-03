@@ -1,7 +1,7 @@
 ---
 title: 开发环境搭建
 category: Java
-order: 7
+order: 8
 tag: 菜鸟教程、新手教程
   - 
 head:
@@ -10,558 +10,561 @@ head:
       content: Java极简教程
 ---
 
- # 控制流
+ # 类、属性、方法
 
-在编程世界里,程序不会永远按照从上到下的顺序执行。就像你在玩游戏时,会根据不同的情况做出不同的选择:遇到敌人要战斗,血量不足要补给,任务完成要领奖励。程序也需要这样的"决策能力"和"重复能力",这就是我们今天要学习的**控制流(Control Flow)**。
+在 Java 的世界里,**类(Class)** 就像是一张蓝图或者设计图纸。就像建筑师画的房屋设计图,它定义了房子有哪些房间(属性)、能做什么事情(方法)。类本身不是房子,但可以根据这张图纸建造出无数栋真实的房子(对象)。
 
-控制流让程序变得"聪明",可以:
-- 根据条件做出不同的反应(if 语句)
-- 重复执行某些操作(循环语句)
+## 💡 为什么需要类?
 
-## 条件判断 - if 语句
-
-### 💡 概念讲解
-
-想象你在自动售货机前买饮料:
-- **如果**你投入了足够的钱 → 机器会给你饮料
-- **如果**钱不够 → 机器会提示你继续投币
-
-这种"如果...那么..."的逻辑,在 Java 中就是 **if 语句(if statement)**。
-
-**if 语句的基本结构:**
+你有没有想过,当我们需要管理很多学生的信息时,如果每个学生的姓名、年龄、成绩都用单独的变量存储,会有多混乱?
 
 ```java
-if (条件) {
-    // 条件为真时执行的代码
+// 不使用类的混乱写法
+String student1Name = "张三";
+int student1Age = 18;
+double student1Score = 85.5;
+
+String student2Name = "李四";
+int student2Age = 19;
+double student2Score = 90.0;
+// 如果有 100 个学生呢?
+```
+
+类的出现就是为了把相关的数据和操作组织在一起,让代码更清晰、更易管理。
+
+## 定义你的第一个类
+
+让我们从最简单的例子开始——创建一个学生类。
+
+### 📝 基础类结构
+
+```java
+// Student.java
+public class Student {
+    // 类的内容将写在这里
 }
 ```
 
-这里的"条件"必须是一个**布尔值(boolean)**,也就是 `true` 或 `false`。
+**关键要点**:
+- `public` - **访问修饰符(Access Modifier)**,表示这个类可以被其他类访问
+- `class` - **类关键字(Class Keyword)**,声明这是一个类
+- `Student` - **类名(Class Name)**,首字母必须大写
+- `{}` - **类体(Class Body)**,类的所有内容都写在大括号内
 
-::: tip 布尔值快速回顾
-布尔值只有两种可能:
-- `true` - 真,表示条件成立
-- `false` - 假,表示条件不成立
-
-常见的比较运算符:
-- `==` 等于
-- `!=` 不等于
-- `>` 大于
-- `<` 小于
-- `>=` 大于等于
-- `<=` 小于等于
+::: tip 命名规范
+类名使用 **帕斯卡命名法(PascalCase)**:每个单词首字母大写,例如 `Student`、`BankAccount`、`ShoppingCart`。文件名必须与类名完全一致:`Student.java`。
 :::
 
-### 📝 代码示例
+## 类字段(属性)
 
-**示例 1: 基本的 if 语句**
+**字段(Field)** 也叫 **属性(Attribute)** 或 **成员变量(Member Variable)**,它们存储对象的数据。就像学生卡上的信息:姓名、学号、年龄。
+
+### 📝 定义类字段
 
 ```java
-public class IfExample {
-    public static void main(String[] args) {
-        int age = 20; // 定义年龄变量 define age variable
-        
-        // 判断是否成年 check if adult
-        if (age >= 18) {
-            System.out.println("你已经成年了!"); // 条件为真时执行 execute when condition is true
-        }
-        
-        System.out.println("程序继续执行"); // 无论条件真假都会执行 always execute
-    }
+// Student.java
+public class Student {
+    // 定义字段 define fields
+    String name;        // 姓名 student name
+    int age;           // 年龄 student age
+    double score;      // 成绩 student score
 }
 ```
 
-**运行结果:**
-```
-你已经成年了!
-程序继续执行
-```
+每个 `Student` 对象都会有自己的 `name`、`age` 和 `score`。这就像每个学生都有自己的姓名和成绩,互不干扰。
 
-**示例 2: if-else 语句**
+::: warning 注意
+字段定义在类体内,但在任何方法之外。它们属于整个类,不属于某个特定方法。
+:::
 
-有时候我们需要在条件不成立时执行另一段代码,这时就用 **else**:
+## 类字段的访问等级
+
+**访问修饰符(Access Modifier)** 控制谁可以访问这些字段。这就像你家的门:有些房间可以让客人进入,有些房间是私密的。
+
+### 💡 四种访问级别
+
+| 修饰符 | 中文 | 本类 | 同包 | 子类 | 所有类 |
+|--------|------|------|------|------|--------|
+| `private` | 私有的 | ✅ | ❌ | ❌ | ❌ |
+| (默认) | 包私有 | ✅ | ✅ | ❌ | ❌ |
+| `protected` | 受保护的 | ✅ | ✅ | ✅ | ❌ |
+| `public` | 公开的 | ✅ | ✅ | ✅ | ✅ |
+
+### 📝 实际应用示例
 
 ```java
-public class IfElseExample {
-    public static void main(String[] args) {
-        int score = 75; // 考试分数 exam score
-        
-        // 判断是否及格 check if pass
-        if (score >= 60) {
-            System.out.println("恭喜你,考试通过!"); // 及格的情况 pass case
+// Student.java
+public class Student {
+    // private: 只能在 Student 类内部访问
+    private String name;
+    private int age;
+    private double score;
+    
+    // public: 任何地方都可以访问
+    public String studentId;  // 学号 student ID
+}
+```
+
+::: tip 最佳实践
+通常我们将字段设为 `private`,然后提供 `public` 方法来访问它们。这叫做 **封装(Encapsulation)**,是面向对象编程的核心原则之一。为什么?因为这样可以控制数据的访问方式,防止不合理的修改。
+:::
+
+### 💡 为什么需要 private?
+
+想象一下,如果学生的年龄字段是 `public` 的:
+
+```java
+// 不好的设计
+public class Student {
+    public int age;  // 任何人都能直接修改
+}
+
+// 使用时可能出现问题
+Student student = new Student();
+student.age = -5;  // 年龄怎么能是负数? 但没人能阻止!
+student.age = 999; // 这也不合理!
+```
+
+使用 `private` 配合方法就能解决这个问题:
+
+```java
+// 好的设计
+public class Student {
+    private int age;  // 私有字段
+    
+    // 提供方法来设置年龄 set age with validation
+    public void setAge(int age) {
+        if (age > 0 && age < 150) {  // 验证数据合理性
+            this.age = age;
         } else {
-            System.out.println("很遗憾,需要补考"); // 不及格的情况 fail case
+            System.out.println("年龄不合理!");
         }
     }
 }
 ```
 
-**示例 3: if-else if-else 多条件判断**
+## 类的方法
 
-当有多个条件需要判断时,可以使用 **else if**:
+**方法(Method)** 定义了类能做什么事情。就像学生可以"学习"、"参加考试"、"自我介绍"。
+
+### 📝 方法的基本结构
 
 ```java
-public class GradeChecker {
-    public static void main(String[] args) {
-        int score = 85; // 成绩 grade score
-        
-        // 根据分数划分等级 classify grade level
-        if (score >= 90) {
-            System.out.println("等级: 优秀"); // excellent
-        } else if (score >= 80) {
-            System.out.println("等级: 良好"); // good
-        } else if (score >= 60) {
-            System.out.println("等级: 及格"); // pass
+访问修饰符 返回类型 方法名(参数列表) {
+    // 方法体 method body
+    // 执行的代码
+    return 返回值;  // 如果有返回值
+}
+```
+
+### 💡 完整示例:带方法的学生类
+
+```java
+// Student.java
+public class Student {
+    // 字段 fields
+    private String name;
+    private int age;
+    private double score;
+    
+    // 方法1: 设置姓名 set student name
+    public void setName(String name) {
+        this.name = name;  // this 表示当前对象的字段
+    }
+    
+    // 方法2: 获取姓名 get student name
+    public String getName() {
+        return this.name;  // 返回姓名
+    }
+    
+    // 方法3: 设置年龄(带验证) set age with validation
+    public void setAge(int age) {
+        if (age > 0 && age < 150) {
+            this.age = age;
         } else {
-            System.out.println("等级: 不及格"); // fail
+            System.out.println("年龄必须在 1-150 之间!");
         }
+    }
+    
+    // 方法4: 获取年龄 get student age
+    public int getAge() {
+        return this.age;
+    }
+    
+    // 方法5: 设置成绩 set score
+    public void setScore(double score) {
+        if (score >= 0 && score <= 100) {
+            this.score = score;
+        } else {
+            System.out.println("成绩必须在 0-100 之间!");
+        }
+    }
+    
+    // 方法6: 获取成绩 get score
+    public double getScore() {
+        return this.score;
+    }
+    
+    // 方法7: 自我介绍 introduce self
+    public void introduce() {
+        System.out.println("大家好,我叫 " + this.name + 
+                         ",今年 " + this.age + " 岁" +
+                         ",成绩是 " + this.score + " 分。");
+    }
+    
+    // 方法8: 判断是否及格 check if passed
+    public boolean isPassed() {
+        return this.score >= 60;  // 60分及格
     }
 }
 ```
 
-::: warning 注意执行顺序
-if-else if-else 语句会从上到下依次判断,一旦某个条件为真,就执行对应的代码块,然后跳过后面所有的判断。就像走迷宫,找到出口就不会继续探索其他路径了。
-:::
+### 💡 方法详解
 
-### ✅ 验证方法
+**1. this 关键字**
 
-创建一个新的 Java 文件,复制上面的任意示例代码,然后:
+`this` 代表"当前对象"。当参数名和字段名相同时,用 `this.` 来区分:
 
-1. 在终端或命令提示符中编译:
+```java
+public void setName(String name) {
+    this.name = name;  // this.name 是字段, name 是参数
+}
+```
+
+**2. 返回类型(Return Type)**
+
+- `void` - 无返回值,方法执行完就结束
+- `String` - 返回文本
+- `int` - 返回整数
+- `boolean` - 返回 true 或 false
+- 其他类型...
+
+**3. 参数(Parameters)**
+
+方法可以接收外部传入的数据:
+
+```java
+// 无参数 no parameters
+public void sayHello() {
+    System.out.println("Hello!");
+}
+
+// 单个参数 single parameter
+public void setName(String name) {
+    this.name = name;
+}
+
+// 多个参数 multiple parameters
+public void setInfo(String name, int age, double score) {
+    this.name = name;
+    this.age = age;
+    this.score = score;
+}
+```
+
+## ✅ 完整可运行示例
+
+让我们创建一个完整的程序来验证所有概念:
+
+```java
+// Student.java
+public class Student {
+    // 私有字段 private fields
+    private String name;
+    private int age;
+    private double score;
+    
+    // Getter 和 Setter 方法
+    public void setName(String name) {
+        this.name = name;
+    }
+    
+    public String getName() {
+        return this.name;
+    }
+    
+    public void setAge(int age) {
+        if (age > 0 && age < 150) {
+            this.age = age;
+        } else {
+            System.out.println("年龄不合理!");
+        }
+    }
+    
+    public int getAge() {
+        return this.age;
+    }
+    
+    public void setScore(double score) {
+        if (score >= 0 && score <= 100) {
+            this.score = score;
+        } else {
+            System.out.println("成绩不合理!");
+        }
+    }
+    
+    public double getScore() {
+        return this.score;
+    }
+    
+    // 业务方法 business methods
+    public void introduce() {
+        System.out.println("姓名: " + this.name + 
+                         ", 年龄: " + this.age + 
+                         ", 成绩: " + this.score);
+    }
+    
+    public boolean isPassed() {
+        return this.score >= 60;
+    }
+}
+```
+
+```java
+// Main.java
+public class Main {
+    public static void main(String[] args) {
+        // 创建学生对象 create student object
+        Student student1 = new Student();
+        
+        // 设置学生信息 set student information
+        student1.setName("张三");
+        student1.setAge(18);
+        student1.setScore(85.5);
+        
+        // 调用方法 call methods
+        student1.introduce();
+        
+        // 判断是否及格 check if passed
+        if (student1.isPassed()) {
+            System.out.println(student1.getName() + " 及格了!");
+        }
+        
+        // 创建第二个学生 create second student
+        Student student2 = new Student();
+        student2.setName("李四");
+        student2.setAge(19);
+        student2.setScore(55.0);
+        
+        student2.introduce();
+        if (!student2.isPassed()) {
+            System.out.println(student2.getName() + " 没有及格,需要努力!");
+        }
+        
+        // 测试数据验证 test data validation
+        student1.setAge(-5);     // 会显示错误信息
+        student1.setScore(150);  // 会显示错误信息
+    }
+}
+```
+
+### 🔍 运行步骤
+
+**1. 创建文件**
+
+在同一个文件夹下创建两个文件:
+- `Student.java`
+- `Main.java`
+
+**2. 编译代码**
+
 ```bash
-javac IfExample.java
+javac Student.java Main.java
 ```
 
-2. 运行程序:
+**3. 运行程序**
+
 ```bash
-java IfExample
+java Main
 ```
 
-3. 尝试修改变量的值,观察输出的变化:
-   - 将 `age` 改为 `15`,看看是否还输出"你已经成年了"
-   - 将 `score` 改为 `50`,看看输出是否变成"不及格"
+**4. 预期输出**
 
-### 💪 练习题
-
-**练习 1: 判断奇偶数**
-编写程序,判断一个数字是奇数还是偶数。
-提示: 使用 `%` 取余运算符,`number % 2 == 0` 表示能被 2 整除
-
-**练习 2: 温度提醒**
-根据温度给出穿衣建议:
-- 温度 < 10°C: "天气很冷,穿厚外套"
-- 温度 10-20°C: "天气凉爽,穿长袖"
-- 温度 > 20°C: "天气温暖,穿短袖"
-
-**练习 3: 登录验证**
-模拟简单的登录验证,检查用户名和密码是否正确。
-```java
-String username = "admin";
-String password = "123456";
-// 你的判断代码...
+```
+姓名: 张三, 年龄: 18, 成绩: 85.5
+张三 及格了!
+姓名: 李四, 年龄: 19, 成绩: 55.0
+李四 没有及格,需要努力!
+年龄不合理!
+成绩不合理!
 ```
 
-### 📌 小结
+## 💪 练习题
 
-- **if 语句**用于根据条件执行不同的代码
-- 条件必须是布尔值(`true` 或 `false`)
-- `else` 处理条件不成立的情况
-- `else if` 用于多个条件的判断
-- 条件判断是按顺序执行的,找到第一个为真的条件就停止
+### 练习 1: 创建图书类
 
----
+创建一个 `Book` 类,包含以下内容:
+- 私有字段:书名(`title`),作者(`author`),价格(`price`)
+- 为每个字段提供 getter 和 setter 方法
+- 价格的 setter 要验证:价格必须大于 0
+- 创建一个 `displayInfo()` 方法显示图书信息
 
-## while 循环
-
-### 💡 概念讲解
-
-想象你在刷牙:你会重复"上下刷动"这个动作,直到牙齿干净为止。这种"重复做某件事,直到满足某个条件"的过程,就是**循环(Loop)**。
-
-**while 循环(while loop)**的意思是:"当条件为真时,持续执行某段代码"。
-
-基本结构:
-```java
-while (条件) {
-    // 重复执行的代码
-}
-```
-
-::: danger 警告:无限循环
-如果条件永远为真,程序会一直循环下去,无法停止!这叫做**无限循环(Infinite Loop)**。记得要在循环体内改变条件相关的变量,让循环能够结束。
-:::
-
-### 📝 代码示例
-
-**示例 1: 倒计时**
+<details>
+<summary>💡 参考答案</summary>
 
 ```java
-public class CountdownExample {
-    public static void main(String[] args) {
-        int count = 5; // 从5开始倒数 start from 5
-        
-        // 当count大于0时继续循环 continue while count > 0
-        while (count > 0) {
-            System.out.println("倒计时: " + count);
-            count--; // 每次减1 decrease by 1 each time
+// Book.java
+public class Book {
+    private String title;
+    private String author;
+    private double price;
+    
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public String getTitle() {
+        return this.title;
+    }
+    
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+    
+    public String getAuthor() {
+        return this.author;
+    }
+    
+    public void setPrice(double price) {
+        if (price > 0) {
+            this.price = price;
+        } else {
+            System.out.println("价格必须大于0!");
         }
-        
-        System.out.println("发射!"); // 循环结束后执行 execute after loop ends
+    }
+    
+    public double getPrice() {
+        return this.price;
+    }
+    
+    public void displayInfo() {
+        System.out.println("《" + this.title + "》");
+        System.out.println("作者: " + this.author);
+        System.out.println("价格: " + this.price + " 元");
     }
 }
 ```
+</details>
 
-**运行结果:**
-```
-倒计时: 5
-倒计时: 4
-倒计时: 3
-倒计时: 2
-倒计时: 1
-发射!
-```
+### 练习 2: 添加业务方法
 
-**示例 2: 累加求和**
+为上面的 `Book` 类添加以下方法:
+- `applyDiscount(double percentage)` - 打折方法,参数是折扣百分比(如 10 表示打9折)
+- `isExpensive()` - 判断图书是否昂贵(价格超过50元返回 true)
 
-计算 1 + 2 + 3 + ... + 10 的结果:
+<details>
+<summary>💡 参考答案</summary>
 
 ```java
-public class SumCalculator {
-    public static void main(String[] args) {
-        int number = 1; // 当前数字 current number
-        int sum = 0; // 累加和 accumulated sum
-        
-        // 当number小于等于10时继续 continue while number <= 10
-        while (number <= 10) {
-            sum = sum + number; // 累加 add to sum
-            number++; // 移动到下一个数字 move to next number
-        }
-        
-        System.out.println("1到10的和是: " + sum);
+public void applyDiscount(double percentage) {
+    if (percentage > 0 && percentage < 100) {
+        this.price = this.price * (100 - percentage) / 100;
+        System.out.println("已应用 " + percentage + "% 折扣");
+    } else {
+        System.out.println("折扣百分比不合理!");
     }
 }
+
+public boolean isExpensive() {
+    return this.price > 50;
+}
 ```
+</details>
 
-**示例 3: 用户输入验证**
+### 练习 3: 创建银行账户类
 
-实际开发中,while 循环常用于验证用户输入:
+挑战题!创建一个 `BankAccount` 类:
+- 私有字段:账户号(`accountNumber`),余额(`balance`)
+- 提供 getter 方法(但不提供 balance 的 setter)
+- 创建 `deposit(double amount)` 存款方法(金额必须大于0)
+- 创建 `withdraw(double amount)` 取款方法(余额必须足够,金额必须大于0)
+- 创建 `displayBalance()` 显示余额方法
+
+<details>
+<summary>💡 参考答案</summary>
 
 ```java
-import java.util.Scanner; // 导入Scanner类 import Scanner class
-
-public class PasswordValidator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in); // 创建输入对象 create input object
-        String password = ""; // 初始化密码变量 initialize password variable
-        
-        // 当密码不是"123456"时继续询问 continue while password is not correct
-        while (!password.equals("123456")) {
-            System.out.print("请输入密码: ");
-            password = scanner.nextLine(); // 读取用户输入 read user input
-            
-            if (!password.equals("123456")) {
-                System.out.println("密码错误,请重试!");
-            }
-        }
-        
-        System.out.println("密码正确,欢迎!");
-        scanner.close(); // 关闭Scanner close scanner
+// BankAccount.java
+public class BankAccount {
+    private String accountNumber;
+    private double balance;
+    
+    public void setAccountNumber(String accountNumber) {
+        this.accountNumber = accountNumber;
     }
-}
-```
-
-::: tip Scanner 使用说明
-`Scanner` 是 Java 提供的用于读取用户输入的工具类:
-- `new Scanner(System.in)` - 创建一个从键盘读取输入的对象
-- `nextLine()` - 读取一行文本
-- `nextInt()` - 读取一个整数
-- 使用完后记得调用 `close()` 关闭资源
-:::
-
-### ✅ 验证方法
-
-1. 运行倒计时示例,确认输出从 5 递减到 1
-2. 运行求和示例,验证结果是否为 55(1+2+...+10=55)
-3. 运行密码验证示例,尝试输入错误密码和正确密码,观察程序行为
-
-### 💪 练习题
-
-**练习 1: 打印偶数**
-使用 while 循环打印 1 到 20 之间的所有偶数
-
-**练习 2: 猜数字游戏**
-程序随机生成一个 1-100 的数字,用户不断猜测,直到猜对为止
-提示: 使用 `(int)(Math.random() * 100) + 1` 生成随机数
-
-**练习 3: 计算阶乘**
-计算 5 的阶乘(5! = 5 × 4 × 3 × 2 × 1)
-
-### 📌 小结
-
-- **while 循环**用于重复执行代码,直到条件为假
-- 循环体内必须改变条件相关的变量,否则会造成无限循环
-- `!=` 表示"不等于", `!` 表示"非"(取反)
-- Scanner 可以读取用户从键盘输入的数据
-- 循环在处理重复任务时非常高效
-
----
-
-## for 循环
-
-### 💡 概念讲解
-
-如果说 while 循环像是"不知道要重复多少次,直到满足条件为止",那么 **for 循环(for loop)**就像是"我明确知道要重复几次"。
-
-想象你在点名:班上有 30 个学生,你需要从第 1 个点到第 30 个。这种"有明确次数"的重复,用 for 循环最合适。
-
-**for 循环的结构:**
-
-```java
-for (初始化; 条件判断; 更新) {
-    // 循环体 loop body
-}
-```
-
-这三部分的执行顺序:
-1. **初始化** - 只执行一次,在循环开始前
-2. **条件判断** - 每次循环前检查,为真则继续
-3. **循环体** - 执行实际操作
-4. **更新** - 每次循环后执行
-5. 回到步骤 2
-
-### 📝 代码示例
-
-**示例 1: 打印数字**
-
-```java
-public class ForLoopBasic {
-    public static void main(String[] args) {
-        // i从0开始,每次加1,直到i小于5 i starts from 0, increases by 1, until i < 5
-        for (int i = 0; i < 5; i++) {
-            System.out.println("第 " + i + " 次循环");
+    
+    public String getAccountNumber() {
+        return this.accountNumber;
+    }
+    
+    public double getBalance() {
+        return this.balance;
+    }
+    
+    public void deposit(double amount) {
+        if (amount > 0) {
+            this.balance = this.balance + amount;
+            System.out.println("存款成功! 存入: " + amount + " 元");
+        } else {
+            System.out.println("存款金额必须大于0!");
         }
     }
-}
-```
-
-**运行结果:**
-```
-第 0 次循环
-第 1 次循环
-第 2 次循环
-第 3 次循环
-第 4 次循环
-```
-
-::: tip i++ 是什么意思?
-`i++` 是 `i = i + 1` 的简写,表示"将 i 的值增加 1"。
-类似的还有:
-- `i--` 表示 `i = i - 1`(减 1)
-- `i += 2` 表示 `i = i + 2`(增加 2)
-:::
-
-**示例 2: 计算乘法表**
-
-```java
-public class MultiplicationTable {
-    public static void main(String[] args) {
-        int number = 7; // 要计算的数字 number to calculate
-        
-        // 打印7的乘法表 print multiplication table of 7
-        for (int i = 1; i <= 10; i++) {
-            int result = number * i; // 计算结果 calculate result
-            System.out.println(number + " × " + i + " = " + result);
-        }
-    }
-}
-```
-
-**示例 3: 数组遍历**
-
-for 循环最常见的用途之一是遍历**数组(Array)**:
-
-```java
-public class ArrayExample {
-    public static void main(String[] args) {
-        // 创建一个水果数组 create a fruit array
-        String[] fruits = {"苹果", "香蕉", "橙子", "葡萄", "西瓜"};
-        
-        // 遍历数组中的每个元素 traverse each element in array
-        for (int i = 0; i < fruits.length; i++) {
-            System.out.println("第 " + (i + 1) + " 个水果: " + fruits[i]);
-        }
-    }
-}
-```
-
-::: tip 数组快速入门
-数组是一组相同类型数据的集合:
-- 声明: `类型[] 数组名 = {元素1, 元素2, ...};`
-- 访问: `数组名[索引]`(索引从 0 开始)
-- 长度: `数组名.length`
-:::
-
-**示例 4: 嵌套循环**
-
-for 循环可以嵌套使用,常用于处理二维数据:
-
-```java
-public class NestedLoop {
-    public static void main(String[] args) {
-        // 打印一个5x5的星号矩阵 print a 5x5 star matrix
-        for (int row = 0; row < 5; row++) { // 外层循环控制行 outer loop controls rows
-            for (int col = 0; col < 5; col++) { // 内层循环控制列 inner loop controls columns
-                System.out.print("* "); // print不换行 print without newline
-            }
-            System.out.println(); // 每行结束后换行 newline after each row
-        }
-    }
-}
-```
-
-**运行结果:**
-```
-* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
-* * * * * 
-```
-
-### ✅ 验证方法
-
-1. 运行基础示例,确认输出了 0 到 4 共 5 次
-2. 修改乘法表的 `number` 值,测试不同数字的乘法表
-3. 在数组示例中添加或删除水果,观察程序是否正确遍历
-4. 修改嵌套循环的行列数,尝试打印不同大小的矩阵
-
-### 💪 练习题
-
-**练习 1: 求平均分**
-创建一个包含 5 个考试成绩的数组,使用 for 循环计算平均分
-```java
-int[] scores = {85, 92, 78, 90, 88};
-// 你的代码...
-```
-
-**练习 2: 找最大值**
-在一个数字数组中找出最大的数字
-```java
-int[] numbers = {23, 45, 12, 67, 34, 89, 56};
-// 提示: 先假设第一个数是最大值,然后逐个比较
-```
-
-**练习 3: 打印直角三角形**
-使用嵌套循环打印一个星号组成的直角三角形:
-```
-*
-**
-***
-****
-*****
-```
-
-### 📌 小结
-
-- **for 循环**适合已知循环次数的场景
-- 结构包含三部分:初始化、条件判断、更新
-- `i++` 是常见的递增操作
-- 数组索引从 0 开始,长度用 `.length` 获取
-- 嵌套循环用于处理多维数据
-
----
-
-## 三种控制流的选择
-
-你可能会问:什么时候用 if,什么时候用 while,什么时候用 for?
-
-**决策树:**
-
-```
-需要根据条件做不同的事? 
-    └→ 是 → 使用 if/else
-
-需要重复执行某些操作?
-    └→ 是 → 知道要重复几次?
-              └→ 是 → 使用 for 循环
-              └→ 否 → 使用 while 循环
-```
-
-**实际例子:**
-
-| 场景 | 使用的控制流 | 原因 |
-|-----|------------|------|
-| 判断用户是否成年 | if | 只需要做一次判断 |
-| 打印 1-100 的数字 | for | 明确知道要循环 100 次 |
-| 等待用户输入正确密码 | while | 不知道用户要尝试几次 |
-| 根据成绩给评级 | if-else if | 多个条件判断 |
-| 遍历数组 | for | 数组有明确的长度 |
-
----
-
-## 综合练习:数字猜猜看游戏
-
-现在让我们综合运用本章学到的所有知识,制作一个完整的小游戏:
-
-```java
-import java.util.Scanner;
-
-public class GuessingGame {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        
-        // 生成1-100的随机数 generate random number between 1-100
-        int targetNumber = (int)(Math.random() * 100) + 1;
-        int guess = 0; // 用户猜的数字 user's guess
-        int attempts = 0; // 尝试次数 number of attempts
-        
-        System.out.println("=== 欢迎来到猜数字游戏 ===");
-        System.out.println("我想了一个1到100之间的数字,你能猜对吗?");
-        
-        // 当还没猜对时继续 continue while not guessed correctly
-        while (guess != targetNumber) {
-            System.out.print("请输入你的猜测: ");
-            guess = scanner.nextInt(); // 读取用户输入的整数 read user input integer
-            attempts++; // 尝试次数加1 increase attempts
-            
-            // 判断猜测结果 check guess result
-            if (guess < targetNumber) {
-                System.out.println("太小了!再试试");
-            } else if (guess > targetNumber) {
-                System.out.println("太大了!再试试");
+    
+    public void withdraw(double amount) {
+        if (amount > 0) {
+            if (this.balance >= amount) {
+                this.balance = this.balance - amount;
+                System.out.println("取款成功! 取出: " + amount + " 元");
             } else {
-                System.out.println("恭喜你!猜对了!");
-                System.out.println("你一共用了 " + attempts + " 次尝试");
+                System.out.println("余额不足!");
             }
+        } else {
+            System.out.println("取款金额必须大于0!");
         }
-        
-        scanner.close();
+    }
+    
+    public void displayBalance() {
+        System.out.println("账户: " + this.accountNumber);
+        System.out.println("余额: " + this.balance + " 元");
     }
 }
 ```
+</details>
 
-这个游戏用到了:
-- **if-else if-else** 判断猜测是太大、太小还是正确
-- **while 循环** 持续让用户猜测,直到猜对
-- **变量** 保存目标数字、猜测值和尝试次数
+## 📌 本章小结
 
----
+### 关键概念回顾
 
-## 最后的挑战
+1. **类(Class)** 是对象的蓝图,定义了对象的属性和行为
+2. **字段(Field)** 存储对象的数据,通常设为 `private`
+3. **方法(Method)** 定义对象的行为,提供访问和操作数据的方式
+4. **访问修饰符(Access Modifier)** 控制成员的可见性:
+   - `private` - 最安全,只能类内部访问
+   - `public` - 完全公开,任何地方都能访问
+5. **this 关键字** 代表当前对象,用于区分字段和参数
 
-尝试改进上面的猜数字游戏:
+### 重要实践原则
 
-1. **限制尝试次数**:只给用户 7 次机会,超过就游戏结束
-   - 提示:添加一个条件到 while 循环
+- ✅ 字段通常使用 `private`,通过方法访问
+- ✅ 方法名使用 **驼峰命名法(camelCase)**:首字母小写,后续单词首字母大写
+- ✅ Getter 方法以 `get` 开头,Setter 方法以 `set` 开头
+- ✅ 在 Setter 方法中添加数据验证逻辑
+- ✅ 类名与文件名必须一致
 
-2. **添加难度选择**:让用户选择简单(1-50)、普通(1-100)或困难(1-200)模式
-   - 提示:使用 if-else 根据用户选择生成不同范围的随机数
+::: tip 下一步
+现在你已经掌握了类的基础知识,接下来可以学习 **构造方法(Constructor)**,它可以让对象创建时就初始化数据,让代码更简洁!
+:::
 
-3. **显示进度提示**:告诉用户还剩几次机会
-   - 提示:使用 `7 - attempts` 计算剩余次数
+## 🔍 常见问题解答
 
-通过这些练习,你已经掌握了编程中最重要的控制流概念!记住:
-- **if** 让程序能做决定
-- **while** 让程序能等待和重复
-- **for** 让程序能高效地处理批量任务
+**Q: 为什么字段要设为 private,不是更麻烦吗?**
 
-这三个工具组合起来,就能构建出复杂而智能的程序逻辑!
+A: 这是为了数据安全。如果字段是 public 的,任何人都能随意修改,可能导致不合理的数据(比如年龄设为-5)。使用 private + 方法的方式,你可以在方法里添加验证逻辑,保证数据的合理性。
+
+**Q: this 关键字什么时候必须写?**
+
+A: 当参数名和字段名相同时必须写 `this.`,否则 Java 会认为你在操作参数。在其他情况下,`this.` 可以省略,但建议写上以提高代码可读性。
+
+**Q: 一个 .java 文件可以有多个类吗?**
+
+A: 可以,但只能有一个 `public` 类,且该类名必须与文件名相同。其他类可以不加 `public` 修饰符。不过对于初学者,建议一个文件只写一个类,更清晰。
