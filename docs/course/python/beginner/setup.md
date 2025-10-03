@@ -12,210 +12,229 @@ head:
 
  # 开发环境搭建
 
-## 💡 为什么需要开发环境
+在开始写 Python 代码之前,你需要先安装 Python 解释器(Interpreter)。解释器就是能读懂并执行 Python 代码的程序。
 
-写代码就像写文章,你需要一个编辑器来写字,还需要一个程序来执行这些代码。**开发环境(Development Environment)**就是帮你编写和运行代码的工具集合。
+## 下载 Python
 
-对于Python,你需要安装两样东西:
-- **Python解释器(Python Interpreter)**:执行代码的程序
-- **代码编辑器(Code Editor)**:写代码的工具
+访问 Python 官网下载页面:
 
-## 安装Python解释器
-
-### Windows系统
-
-**步骤1:下载安装包**
-
-访问Python官网下载页面:https://www.python.org/downloads/
-
-点击黄色的"Download Python 3.x.x"按钮(数字可能不同,选最新版本即可)。
-
-**步骤2:运行安装程序**
-
-找到下载的文件(通常在"下载"文件夹),双击运行。
-
-::: warning 重要
-安装界面底部有个复选框 **"Add Python to PATH"**,一定要勾选!这样你才能在任何地方运行Python。
-:::
-
-然后点击"Install Now"开始安装。
-
-**步骤3:验证安装**
-
-按 `Win + R` 键,输入 `cmd`,按回车打开**命令提示符(Command Prompt)**。
-
-输入以下命令:
-
-```bash
-python --version
+```
+https://www.python.org/downloads/
 ```
 
-如果看到类似 `Python 3.12.0` 的版本号,说明安装成功!
+::: tip 提示
+官网会自动识别你的操作系统,推荐适合你的版本。建议下载最新的稳定版本(Stable Release)。
+:::
 
-### macOS系统
+### Windows 系统
 
-**步骤1:下载安装包**
+1. 点击下载按钮,获取安装包(例如 `python-3.12.x-amd64.exe`)
+2. 双击安装包
+3. **重要**:勾选 `Add Python to PATH` 选项
+4. 点击 `Install Now`
 
-访问 https://www.python.org/downloads/,下载macOS版本。
+::: warning 注意
+如果忘记勾选 `Add Python to PATH`,后续在命令行中无法直接使用 `python` 命令。
+:::
 
-**步骤2:安装**
+### macOS 系统
 
-双击下载的 `.pkg` 文件,按照提示一路点击"继续"和"安装"。
+1. 下载 `.pkg` 安装包
+2. 双击安装包,按照提示完成安装
 
-**步骤3:验证安装**
+::: tip 提示
+macOS 系统自带 Python 2.x,但我们需要安装 Python 3.x。两者可以共存。
+:::
 
-按 `Command + 空格` 打开**聚焦搜索(Spotlight)**,输入 `terminal` 打开**终端(Terminal)**。
+### Linux 系统
 
-输入命令:
+大多数 Linux 发行版已预装 Python 3。打开终端(Terminal)验证:
 
 ```bash
 python3 --version
 ```
 
-::: tip 提示
-macOS系统上使用 `python3` 命令,而不是 `python`。
-:::
+如果未安装,使用包管理器安装:
 
-## 安装代码编辑器
+```bash
+# Ubuntu/Debian
+sudo apt update
+sudo apt install python3
 
-推荐使用 **VS Code(Visual Studio Code)**,它免费、功能强大、对新手友好。
+# CentOS/RHEL
+sudo yum install python3
+```
 
-### 下载并安装VS Code
+## 验证安装
 
-访问 https://code.visualstudio.com/,点击下载按钮,选择你的操作系统版本。
+安装完成后,打开命令行工具验证:
 
-- Windows:下载后双击安装,保持默认选项即可
-- macOS:下载后拖动到"应用程序"文件夹
+- **Windows**: 按 `Win + R`,输入 `cmd`,回车
+- **macOS**: 按 `Command + 空格`,输入 `Terminal`,回车
+- **Linux**: 按 `Ctrl + Alt + T`
 
-### 安装Python扩展
+在命令行中输入:
 
-**步骤1:打开VS Code**
+```bash
+python --version
+```
 
-第一次打开可能是英文界面,我们先安装中文语言包。
+或者(某些系统需要):
 
-**步骤2:安装中文语言包(可选)**
+```bash
+python3 --version
+```
 
-1. 点击左侧边栏最下方的扩展图标(四个方块组成的图标)
-2. 搜索 `Chinese`
-3. 找到"Chinese (Simplified) Language Pack",点击"Install"
-4. 安装完成后重启VS Code
+如果看到类似 `Python 3.12.0` 的输出,说明安装成功。
 
-**步骤3:安装Python扩展**
+## 编写第一个程序
 
-1. 再次点击扩展图标
-2. 搜索 `Python`
-3. 找到Microsoft官方发布的"Python"扩展(作者是Microsoft),点击"安装"
+### 使用交互式解释器(Interactive Interpreter)
 
-## 创建第一个Python文件
+在命令行中输入:
 
-### 创建项目文件夹
+```bash
+python
+```
 
-在你的电脑上创建一个文件夹,比如 `D:\my_python` (Windows) 或 `~/my_python` (macOS)。
+你会看到类似这样的提示符:
 
-### 在VS Code中打开文件夹
+```
+Python 3.12.0 (main, Oct 2023, 12:00:00)
+>>> 
+```
 
-1. 打开VS Code
-2. 点击菜单"文件" → "打开文件夹"
-3. 选择刚才创建的 `my_python` 文件夹
+`>>>` 表示 Python 正在等待你输入代码。试试输入:
 
-### 创建Python文件
-
-1. 在VS Code左侧文件列表空白处右键,选择"新建文件"
-2. 输入文件名 `hello.py`
-
-::: tip 提示
-Python文件的扩展名必须是 `.py`
-:::
-
-### 编写第一行代码
-
-在 `hello.py` 文件中输入:
-
-```python{1}
+```python
 print("Hello, Python!")
 ```
 
-保存文件(`Ctrl + S` 或 `Command + S`)。
+按回车,你会立即看到输出:
 
-## 运行Python代码
-
-### 方法1:使用VS Code运行按钮
-
-1. 确保打开了 `hello.py` 文件
-2. 点击右上角的三角形▶️运行按钮
-3. 在下方**终端(Terminal)**区域看到输出: `Hello, Python!`
-
-### 方法2:使用命令行运行
-
-在VS Code中按 `` Ctrl + ` `` (反引号键,通常在数字1左边) 打开终端。
-
-输入命令:
-
-```bash
-# Windows系统
-python hello.py
-
-# macOS/Linux系统
-python3 hello.py
-```
-
-你会看到输出:
 ```
 Hello, Python!
 ```
 
-::: tip 运行成功的标志
-- 终端显示了 `Hello, Python!`
-- 没有出现红色错误信息
+::: tip 提示
+输入 `exit()` 可以退出交互式解释器。
+:::
+
+### 使用文本编辑器
+
+交互式解释器适合快速测试,但实际开发需要将代码保存到文件中。
+
+1. 打开任意文本编辑器(记事本、TextEdit 等)
+2. 输入以下代码:
+
+```python
+# 这是我的第一个 Python 程序
+print("Hello, Python!")
+print("编程世界,我来了!")
+```
+
+3. 保存文件,命名为 `hello.py`(扩展名必须是 `.py`)
+4. 在命令行中切换到文件所在目录,执行:
+
+```bash
+python hello.py
+```
+
+你会看到:
+
+```
+Hello, Python!
+编程世界,我来了!
+```
+
+::: warning 注意
+文件名不要包含中文或特殊字符,建议使用小写字母和下划线,如 `my_first_program.py`。
+:::
+
+## 安装代码编辑器(可选但推荐)
+
+虽然记事本可以写代码,但专业的代码编辑器会提供语法高亮(Syntax Highlighting)、自动补全等功能,让编程更轻松。
+
+推荐以下编辑器之一:
+
+1. **VS Code**(最推荐)
+   - 下载地址: `https://code.visualstudio.com/`
+   - 安装后,在扩展商店搜索 `Python`,安装官方扩展
+
+2. **PyCharm Community**(功能更强大)
+   - 下载地址: `https://www.jetbrains.com/pycharm/download/`
+   - 选择免费的 Community 版本
+
+3. **Sublime Text**(轻量快速)
+   - 下载地址: `https://www.sublimetext.com/`
+
+### 使用 VS Code 运行代码
+
+1. 打开 VS Code
+2. 点击 `File` → `Open Folder`,选择你的代码文件夹
+3. 创建新文件 `test.py`,输入:
+
+```python{1}
+print("使用 VS Code 运行 Python!")
+```
+
+4. 点击右上角的运行按钮(▶️),或按 `F5`
+5. 在下方的终端(Terminal)中查看输出结果
+
+::: tip 提示
+首次运行时,VS Code 可能提示安装 Python 扩展,点击安装即可。
 :::
 
 ## 💪 练习题
 
-**练习1:修改输出内容**
+### 练习 1:验证环境
 
-把 `hello.py` 中的代码改成:
+在命令行中依次执行以下命令,并记录输出结果:
 
-```python
-print("我的第一个Python程序")
+```bash
+python --version
+python -c "print('环境配置成功!')"
 ```
 
-运行看看会输出什么?
+::: details 查看答案
+第一条命令应显示 Python 版本号,如 `Python 3.12.0`。
 
-<details>
-<summary>点击查看答案</summary>
+第二条命令应输出:`环境配置成功!`
 
-```python
-print("我的第一个Python程序")
-```
+`-c` 参数表示直接执行后面的代码,而不是运行文件。
+:::
 
-运行后终端会输出: `我的第一个Python程序`
+### 练习 2:创建并运行程序
 
-</details>
-
-**练习2:输出多行内容**
-
-创建一个新文件 `intro.py`,让程序输出三行内容:
-- 第一行:你的名字
-- 第二行:你的年龄  
-- 第三行:你为什么学习Python
-
-<details>
-<summary>点击查看答案</summary>
+创建文件 `intro.py`,让程序输出你的名字和学习目标:
 
 ```python
-print("张三")
-print("25岁")
-print("想学编程找更好的工作")
+# 在这里写代码
 ```
 
-运行后会看到三行输出。每个 `print()` 函数会输出一行内容。
+::: details 查看答案
+```python
+# intro.py
+print("我是张三")
+print("我的学习目标是:掌握 Python 编程基础")
+```
 
-</details>
+运行方式:
+
+```bash
+python intro.py
+```
+
+预期输出:
+```
+我是张三
+我的学习目标是:掌握 Python 编程基础
+```
+:::
 
 ## 📌 小结
 
-- **Python解释器**是运行代码的核心程序,安装时记得勾选"Add to PATH"
-- **VS Code**是编写代码的工具,需要安装Python扩展才能更好地支持Python开发
-- Python文件以 `.py` 为扩展名,使用 `python 文件名.py` 命令运行
-
-现在你已经搭建好了开发环境,可以开始真正的Python学习之旅了!
+- Python 解释器(Interpreter)是执行代码的程序,需要先安装
+- 使用 `python --version` 验证安装是否成功
+- Python 代码文件的扩展名是 `.py`
+- 使用 `python 文件名.py` 命令运行程序
