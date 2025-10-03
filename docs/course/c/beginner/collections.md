@@ -10,217 +10,186 @@ head:
       content: c极简教程
 ---
 
- # 集合(Set)
+ # 数组
 
-## 💡 什么是集合
+## 什么是数组(Array)
 
-集合(Set)是Python中用来存储**不重复**元素的数据类型。你可以把它想象成一个自动去重的容器——往里面放相同的东西,它只会保留一份。
+数组是一个容器,可以存储**多个相同类型**的数据。
 
-集合主要有两个特点:
-- **元素唯一**: 自动去除重复元素
-- **无序性**: 不像列表那样按顺序排列
+想象一下:
+- 你要记录班级里 5 个同学的成绩
+- 如果没有数组,你需要创建 5 个变量:`score1`, `score2`, `score3`, `score4`, `score5`
+- 有了数组,只需要一个变量:`scores[5]`
 
-::: tip 集合 vs 列表
-列表(List)可以有重复元素,集合(Set)会自动去重。如果你需要存储不重复的数据,集合是更好的选择。
-:::
+## 如何创建数组
 
-## 创建集合
+### 基本语法
 
-### 使用花括号创建
-
-```python{1,4,7}
-# 创建一个水果集合
-fruits = {'apple', 'banana', 'orange'}
-print(fruits)
-# 输出: {'apple', 'banana', 'orange'}
-
-# 自动去重
-numbers = {1, 2, 2, 3, 3, 3}
-print(numbers)
-# 输出: {1, 2, 3}
+```c
+数据类型 数组名[元素个数];
 ```
 
-### 使用set()函数创建
+### 实际例子
 
-```python{1,4,7,10}
-# 从列表创建集合
-my_list = [1, 2, 2, 3, 4, 4]
-my_set = set(my_list)
-print(my_set)  # 输出: {1, 2, 3, 4}
+```c{3}
+#include <stdio.h>
 
-# 从字符串创建集合
-text = "hello"
-char_set = set(text)
-print(char_set)  # 输出: {'h', 'e', 'l', 'o'}
+int main() {
+    int scores[5];  // 创建一个可以存储5个整数的数组
+    return 0;
+}
+```
 
-# 创建空集合(注意:{}创建的是字典)
-empty_set = set()
-print(empty_set)  # 输出: set()
+::: tip 提示
+`scores[5]` 表示这个数组有 5 个位置,可以存储 5 个整数
+:::
+
+### 创建时直接赋值
+
+```c{3-4}
+#include <stdio.h>
+
+int main() {
+    int scores[5] = {85, 92, 78, 95, 88};  // 创建并初始化
+    return 0;
+}
+```
+
+## 数组的编号规则
+
+数组的编号(索引,Index)从 **0** 开始:
+
+```
+数组: [85, 92, 78, 95, 88]
+索引:  0   1   2   3   4
 ```
 
 ::: warning 注意
-`{}`创建的是空字典,不是空集合! 要创建空集合必须用`set()`。
+5 个元素的数组,索引是 0-4,**不是** 1-5
 :::
 
-## 查看集合元素
+## 读取数组中的值
 
-### 检查元素是否存在
+使用 `数组名[索引]` 来读取:
 
-```python{4,7}
-fruits = {'apple', 'banana', 'orange'}
+```c{5-7}
+#include <stdio.h>
 
-# 使用in关键字
-print('apple' in fruits)     # 输出: True
-print('grape' in fruits)     # 输出: False
-
-# 使用not in
-print('grape' not in fruits) # 输出: True
+int main() {
+    int scores[5] = {85, 92, 78, 95, 88};
+    
+    printf("第1个学生的成绩: %d\n", scores[0]);  // 输出: 85
+    printf("第3个学生的成绩: %d\n", scores[2]);  // 输出: 78
+    
+    return 0;
+}
 ```
 
-### 获取集合长度
-
-```python{4}
-fruits = {'apple', 'banana', 'orange'}
-
-# 使用len()函数
-print(len(fruits))  # 输出: 3
+**运行结果:**
+```
+第1个学生的成绩: 85
+第3个学生的成绩: 78
 ```
 
-::: tip 为什么集合不能用索引
-集合是无序的,所以不能像列表那样用`fruits[0]`来获取元素。如果你需要按顺序访问元素,应该使用列表(List)。
-:::
+## 修改数组中的值
 
-## 修改集合
+使用 `数组名[索引] = 新值` 来修改:
 
-### 添加单个元素
+```c{5-7}
+#include <stdio.h>
 
-```python{4,7}
-fruits = {'apple', 'banana'}
-
-# 使用add()添加一个元素
-fruits.add('orange')
-print(fruits)  # 输出: {'apple', 'banana', 'orange'}
-
-# 添加已存在的元素(不会报错,但也不会重复添加)
-fruits.add('apple')
-print(fruits)  # 输出: {'apple', 'banana', 'orange'}
+int main() {
+    int scores[5] = {85, 92, 78, 95, 88};
+    
+    printf("修改前: %d\n", scores[0]);  // 输出: 85
+    scores[0] = 90;                     // 修改第1个元素
+    printf("修改后: %d\n", scores[0]);  // 输出: 90
+    
+    return 0;
+}
 ```
 
-### 添加多个元素
-
-```python{4,8}
-fruits = {'apple', 'banana'}
-
-# 使用update()添加多个元素
-fruits.update(['orange', 'grape', 'apple'])
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape'}
-
-# 也可以用另一个集合来更新
-more_fruits = {'mango', 'kiwi'}
-fruits.update(more_fruits)
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape', 'mango', 'kiwi'}
+**运行结果:**
+```
+修改前: 85
+修改后: 90
 ```
 
-### 删除元素
+## 完整示例:管理学生成绩
 
-```python{4,8,12}
-fruits = {'apple', 'banana', 'orange'}
+```c{4,7-8,11-12}
+#include <stdio.h>
 
-# 使用remove()删除(如果元素不存在会报错)
-fruits.remove('banana')
-print(fruits)  # 输出: {'apple', 'orange'}
-
-# 使用discard()删除(元素不存在也不会报错)
-fruits.discard('grape')  # 不会报错
-print(fruits)  # 输出: {'apple', 'orange'}
-
-# 使用pop()随机删除一个元素
-removed = fruits.pop()
-print(f"删除了: {removed}")
-print(fruits)
-
-# 使用clear()清空集合
-fruits.clear()
-print(fruits)  # 输出: set()
+int main() {
+    int scores[3] = {75, 82, 90};
+    
+    // 读取并显示所有成绩
+    printf("学生1: %d分\n", scores[0]);
+    printf("学生2: %d分\n", scores[1]);
+    printf("学生3: %d分\n", scores[2]);
+    
+    // 修改第2个学生的成绩
+    scores[1] = 88;
+    printf("修改后,学生2: %d分\n", scores[1]);
+    
+    return 0;
+}
 ```
 
-::: warning remove() vs discard()
-- `remove()`: 删除不存在的元素会报错
-- `discard()`: 删除不存在的元素不会报错(更安全)
-:::
-
-## 集合运算
-
-### 交集、并集、差集
-
-```python{4,7,10,13}
-set1 = {1, 2, 3, 4}
-set2 = {3, 4, 5, 6}
-
-# 交集(共同拥有的元素)
-print(set1 & set2)  # 输出: {3, 4}
-
-# 并集(所有元素,自动去重)
-print(set1 | set2)  # 输出: {1, 2, 3, 4, 5, 6}
-
-# 差集(set1有但set2没有的)
-print(set1 - set2)  # 输出: {1, 2}
-
-# 对称差集(不同时存在于两个集合的元素)
-print(set1 ^ set2)  # 输出: {1, 2, 5, 6}
+**运行结果:**
+```
+学生1: 75分
+学生2: 82分
+学生3: 90分
+修改后,学生2: 88分
 ```
 
 ## 💪 练习题
 
-### 练习1: 去除列表中的重复元素
-有一个包含重复数字的列表,请使用集合去除重复元素,然后转回列表。
+### 练习1:创建并输出数组
 
-```python
-numbers = [1, 2, 3, 2, 4, 1, 5, 3]
-# 你的代码写在这里
-```
+创建一个数组存储 4 个整数:`10, 20, 30, 40`,然后输出第 2 个和第 4 个数字。
 
 ::: details 查看答案
-```python
-numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+```c
+#include <stdio.h>
 
-# 转换为集合去重,再转回列表
-unique_numbers = list(set(numbers))
-print(unique_numbers)  # 输出: [1, 2, 3, 4, 5] (顺序可能不同)
+int main() {
+    int numbers[4] = {10, 20, 30, 40};
+    
+    printf("第2个数字: %d\n", numbers[1]);  // 输出: 20
+    printf("第4个数字: %d\n", numbers[3]);  // 输出: 40
+    
+    return 0;
+}
 ```
 :::
 
-### 练习2: 找出两个班级的共同学生
-A班和B班各有一些学生,找出同时在两个班的学生。
+### 练习2:修改数组元素
 
-```python
-class_a = {'张三', '李四', '王五', '赵六'}
-class_b = {'李四', '王五', '孙七', '周八'}
-# 你的代码写在这里
-```
+创建数组 `{5, 10, 15}`,将第 1 个元素改为 `8`,第 3 个元素改为 `20`,然后输出所有元素。
 
 ::: details 查看答案
-```python
-class_a = {'张三', '李四', '王五', '赵六'}
-class_b = {'李四', '王五', '孙七', '周八'}
+```c
+#include <stdio.h>
 
-# 使用交集找出共同学生
-common_students = class_a & class_b
-print(f"同时在两个班的学生: {common_students}")
-# 输出: 同时在两个班的学生: {'李四', '王五'}
-
-# 也可以用intersection()方法
-common_students2 = class_a.intersection(class_b)
-print(common_students2)
+int main() {
+    int data[3] = {5, 10, 15};
+    
+    data[0] = 8;   // 修改第1个
+    data[2] = 20;  // 修改第3个
+    
+    printf("%d, %d, %d\n", data[0], data[1], data[2]);
+    // 输出: 8, 10, 20
+    
+    return 0;
+}
 ```
 :::
 
 ## 📌 小结
 
-- 集合使用`{}`或`set()`创建,会**自动去除重复元素**
-- 集合是**无序**的,不能使用索引访问
-- 使用`add()`添加单个元素,`update()`添加多个元素
-- 使用`remove()`或`discard()`删除元素,后者更安全
-- 集合支持交集(`&`)、并集(`|`)、差集(`-`)等运算
+- 数组用于存储多个相同类型的数据:`int scores[5];`
+- 数组索引从 0 开始,5 个元素的索引是 0-4
+- 读取:`scores[0]` 获取第 1 个元素
+- 修改:`scores[0] = 90;` 改变第 1 个元素的值
