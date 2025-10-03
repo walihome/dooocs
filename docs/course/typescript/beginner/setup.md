@@ -12,229 +12,205 @@ head:
 
  # 开发环境搭建
 
-在开始写 Python 代码之前,你需要先安装 Python 解释器(Interpreter)。解释器就是能读懂并执行 Python 代码的程序。
+在开始编写 TypeScript 代码之前,你需要先在电脑上安装一些工具。这就像烹饪前要准备好厨具一样——没有这些工具,代码是无法运行的。
 
-## 下载 Python
+## 💡 需要安装什么
 
-访问 Python 官网下载页面:
+我们需要安装两个核心工具:
 
-```
-https://www.python.org/downloads/
-```
+1. **Node.js** - 让电脑能够执行 JavaScript 和 TypeScript 代码的程序
+2. **TypeScript** - 将 TypeScript 代码转换为 JavaScript 的工具
 
-::: tip 提示
-官网会自动识别你的操作系统,推荐适合你的版本。建议下载最新的稳定版本(Stable Release)。
+::: tip 为什么需要两步?
+TypeScript 代码不能直接运行,需要先转换成 JavaScript,然后由 Node.js 执行。
 :::
+
+## 安装 Node.js
 
 ### Windows 系统
 
-1. 点击下载按钮,获取安装包(例如 `python-3.12.x-amd64.exe`)
-2. 双击安装包
-3. **重要**:勾选 `Add Python to PATH` 选项
-4. 点击 `Install Now`
-
-::: warning 注意
-如果忘记勾选 `Add Python to PATH`,后续在命令行中无法直接使用 `python` 命令。
-:::
+1. 打开浏览器,访问 [https://nodejs.org](https://nodejs.org)
+2. 点击下载 **LTS 版本**(长期支持版,更稳定)
+3. 下载完成后,双击安装包
+4. 安装过程中全部点击"下一步",保持默认设置即可
 
 ### macOS 系统
 
-1. 下载 `.pkg` 安装包
-2. 双击安装包,按照提示完成安装
+1. 访问 [https://nodejs.org](https://nodejs.org)
+2. 下载 **LTS 版本**
+3. 双击 `.pkg` 文件安装
+4. 按照安装向导提示完成安装
 
-::: tip 提示
-macOS 系统自带 Python 2.x,但我们需要安装 Python 3.x。两者可以共存。
-:::
+### 验证安装
 
-### Linux 系统
+安装完成后,我们需要确认 Node.js 是否安装成功:
 
-大多数 Linux 发行版已预装 Python 3。打开终端(Terminal)验证:
-
-```bash
-python3 --version
-```
-
-如果未安装,使用包管理器安装:
+**Windows 用户:**
+1. 按 `Win + R` 键
+2. 输入 `cmd` 并回车
+3. 在黑色窗口中输入以下命令:
 
 ```bash
-# Ubuntu/Debian
-sudo apt update
-sudo apt install python3
-
-# CentOS/RHEL
-sudo yum install python3
+node --version
 ```
 
-## 验证安装
-
-安装完成后,打开命令行工具验证:
-
-- **Windows**: 按 `Win + R`,输入 `cmd`,回车
-- **macOS**: 按 `Command + 空格`,输入 `Terminal`,回车
-- **Linux**: 按 `Ctrl + Alt + T`
-
-在命令行中输入:
+**macOS 用户:**
+1. 按 `Command + 空格` 打开 Spotlight
+2. 输入 `terminal` 并回车
+3. 在终端中输入以下命令:
 
 ```bash
-python --version
+node --version
 ```
 
-或者(某些系统需要):
-
-```bash
-python3 --version
-```
-
-如果看到类似 `Python 3.12.0` 的输出,说明安装成功。
-
-## 编写第一个程序
-
-### 使用交互式解释器(Interactive Interpreter)
-
-在命令行中输入:
-
-```bash
-python
-```
-
-你会看到类似这样的提示符:
-
-```
-Python 3.12.0 (main, Oct 2023, 12:00:00)
->>> 
-```
-
-`>>>` 表示 Python 正在等待你输入代码。试试输入:
-
-```python
-print("Hello, Python!")
-```
-
-按回车,你会立即看到输出:
-
-```
-Hello, Python!
-```
-
-::: tip 提示
-输入 `exit()` 可以退出交互式解释器。
-:::
-
-### 使用文本编辑器
-
-交互式解释器适合快速测试,但实际开发需要将代码保存到文件中。
-
-1. 打开任意文本编辑器(记事本、TextEdit 等)
-2. 输入以下代码:
-
-```python
-# 这是我的第一个 Python 程序
-print("Hello, Python!")
-print("编程世界,我来了!")
-```
-
-3. 保存文件,命名为 `hello.py`(扩展名必须是 `.py`)
-4. 在命令行中切换到文件所在目录,执行:
-
-```bash
-python hello.py
-```
-
-你会看到:
-
-```
-Hello, Python!
-编程世界,我来了!
-```
+如果看到类似 `v20.10.0` 的版本号,说明安装成功了!
 
 ::: warning 注意
-文件名不要包含中文或特殊字符,建议使用小写字母和下划线,如 `my_first_program.py`。
+如果提示"命令未找到"或"不是内部命令",说明安装有问题,需要重新安装 Node.js。
 :::
 
-## 安装代码编辑器(可选但推荐)
+## 安装 TypeScript
 
-虽然记事本可以写代码,但专业的代码编辑器会提供语法高亮(Syntax Highlighting)、自动补全等功能,让编程更轻松。
+现在我们要安装 TypeScript 编译器(Compiler)。在刚才打开的命令行窗口中输入:
 
-推荐以下编辑器之一:
-
-1. **VS Code**(最推荐)
-   - 下载地址: `https://code.visualstudio.com/`
-   - 安装后,在扩展商店搜索 `Python`,安装官方扩展
-
-2. **PyCharm Community**(功能更强大)
-   - 下载地址: `https://www.jetbrains.com/pycharm/download/`
-   - 选择免费的 Community 版本
-
-3. **Sublime Text**(轻量快速)
-   - 下载地址: `https://www.sublimetext.com/`
-
-### 使用 VS Code 运行代码
-
-1. 打开 VS Code
-2. 点击 `File` → `Open Folder`,选择你的代码文件夹
-3. 创建新文件 `test.py`,输入:
-
-```python{1}
-print("使用 VS Code 运行 Python!")
+```bash
+npm install -g typescript
 ```
 
-4. 点击右上角的运行按钮(▶️),或按 `F5`
-5. 在下方的终端(Terminal)中查看输出结果
+::: tip 什么是 npm?
+npm 是 Node.js 自带的包管理工具(Package Manager),用于安装各种 JavaScript 工具。`-g` 表示全局安装(Global),让你在任何地方都能使用 TypeScript。
+:::
 
-::: tip 提示
-首次运行时,VS Code 可能提示安装 Python 扩展,点击安装即可。
+安装过程可能需要 1-2 分钟,耐心等待即可。
+
+### 验证 TypeScript 安装
+
+安装完成后,输入以下命令验证:
+
+```bash
+tsc --version
+```
+
+如果看到类似 `Version 5.3.3` 的版本号,恭喜你,TypeScript 安装成功!
+
+## 安装代码编辑器
+
+虽然可以用记事本写代码,但专业的代码编辑器(Code Editor)会让你的编程体验好很多。我们推荐使用 **Visual Studio Code**(简称 VS Code):
+
+1. 访问 [https://code.visualstudio.com](https://code.visualstudio.com)
+2. 下载对应系统的版本
+3. 安装过程保持默认设置即可
+
+::: tip VS Code 的优势
+VS Code 会自动提示代码错误,帮你补全代码,还能快速查看函数说明——这些功能对新手特别友好。
+:::
+
+## 创建第一个 TypeScript 文件
+
+现在让我们验证环境是否真的可以工作:
+
+### 步骤 1: 创建项目文件夹
+
+在桌面或任意位置创建一个文件夹,命名为 `typescript-learning`。
+
+### 步骤 2: 创建代码文件
+
+1. 用 VS Code 打开这个文件夹(文件 → 打开文件夹)
+2. 点击 VS Code 左侧的"新建文件"图标
+3. 命名为 `hello.ts`(`.ts` 是 TypeScript 文件的扩展名)
+4. 在文件中输入以下代码:
+
+```typescript{1}
+console.log("Hello, TypeScript!");
+```
+
+### 步骤 3: 编译并运行
+
+1. 在 VS Code 中按 `` Ctrl + ` ``(Windows)或 `` Control + ` ``(macOS)打开终端
+2. 输入以下命令编译 TypeScript 文件:
+
+```bash
+tsc hello.ts
+```
+
+你会发现文件夹中多了一个 `hello.js` 文件——这就是 TypeScript 转换后的 JavaScript 代码。
+
+3. 运行生成的 JavaScript 文件:
+
+```bash
+node hello.js
+```
+
+你应该会在终端中看到:
+
+```
+Hello, TypeScript!
+```
+
+::: tip 两步操作的含义
+- `tsc hello.ts` - 将 TypeScript 转换为 JavaScript
+- `node hello.js` - 执行 JavaScript 代码
 :::
 
 ## 💪 练习题
 
-### 练习 1:验证环境
+### 练习 1: 修改输出内容
 
-在命令行中依次执行以下命令,并记录输出结果:
+将 `hello.ts` 中的文字改为你的名字,重新编译并运行,看看会输出什么。
+
+<details>
+<summary>点击查看答案</summary>
+
+```typescript
+console.log("我的名字是张三");
+```
+
+编译运行:
+```bash
+tsc hello.ts
+node hello.js
+```
+
+输出:
+```
+我的名字是张三
+```
+
+</details>
+
+### 练习 2: 运行多行代码
+
+创建一个新文件 `practice.ts`,写入以下内容并运行:
+
+```typescript
+console.log("第一行");
+console.log("第二行");
+console.log("第三行");
+```
+
+<details>
+<summary>点击查看答案</summary>
 
 ```bash
-python --version
-python -c "print('环境配置成功!')"
+tsc practice.ts
+node practice.js
 ```
 
-::: details 查看答案
-第一条命令应显示 Python 版本号,如 `Python 3.12.0`。
-
-第二条命令应输出:`环境配置成功!`
-
-`-c` 参数表示直接执行后面的代码,而不是运行文件。
-:::
-
-### 练习 2:创建并运行程序
-
-创建文件 `intro.py`,让程序输出你的名字和学习目标:
-
-```python
-# 在这里写代码
+输出:
+```
+第一行
+第二行
+第三行
 ```
 
-::: details 查看答案
-```python
-# intro.py
-print("我是张三")
-print("我的学习目标是:掌握 Python 编程基础")
-```
+代码会按顺序从上到下执行,每个 `console.log()` 会输出一行内容。
 
-运行方式:
-
-```bash
-python intro.py
-```
-
-预期输出:
-```
-我是张三
-我的学习目标是:掌握 Python 编程基础
-```
-:::
+</details>
 
 ## 📌 小结
 
-- Python 解释器(Interpreter)是执行代码的程序,需要先安装
-- 使用 `python --version` 验证安装是否成功
-- Python 代码文件的扩展名是 `.py`
-- 使用 `python 文件名.py` 命令运行程序
+- **Node.js** 是运行 JavaScript/TypeScript 代码的运行时环境(Runtime)
+- **TypeScript 编译器(tsc)** 将 `.ts` 文件转换为 `.js` 文件
+- **开发流程**: 编写 `.ts` 代码 → 使用 `tsc` 编译 → 使用 `node` 运行
+
+现在你已经成功搭建了 TypeScript 开发环境,可以开始正式学习 TypeScript 语法了!
