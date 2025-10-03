@@ -14,95 +14,41 @@ head:
 
 ## 💡 什么是集合(Collection)
 
-你有没有想过,如果要存储一个班级所有学生的成绩,用变量一个个定义太麻烦了。集合就是用来存储一组数据的容器,就像一个可以自动扩容的盒子。
+当你需要存储多个数据时，数组的长度固定，使用起来不够灵活。Java 提供了集合框架，让你可以更方便地管理数据。集合主要分为三类：
 
-Java 中最常用的集合有三种:
-- **数组(Array)**: 固定大小的容器
-- **Set**: 不允许重复的集合
-- **Map**: 键值对形式存储数据
+- **List(列表)**：有序、可重复，像一个可变长度的数组
+- **Set(集合)**：无序、不可重复，自动去重
+- **Map(映射)**：存储键值对，通过 key 快速查找 value
 
-## 数组(Array)
+## List - 可变长度的数组
 
-### 📝 代码示例
+### 💡 概念说明
 
-```java
-public class ArrayDemo {
-    public static void main(String[] args) {
-        // 创建一个可以存储 5 个整数的数组
-        int[] scores = new int[5];
-        
-        // 给数组赋值(索引从 0 开始)
-        scores[0] = 85;
-        scores[1] = 92;
-        scores[2] = 78;
-        scores[3] = 95;
-        scores[4] = 88;
-        
-        // 读取数组中的值
-        System.out.println("第一个学生的成绩: " + scores[0]);
-        System.out.println("数组长度: " + scores.length);
-        
-        // 遍历数组
-        for (int i = 0; i < scores.length; i++) {
-            System.out.println("学生 " + (i + 1) + " 的成绩: " + scores[i]);
-        }
-    }
-}
-```
-
-::: tip 快捷创建方式
-如果你已经知道要存储的值,可以这样创建:
-```java
-int[] scores = {85, 92, 78, 95, 88};
-```
-:::
-
-### ✅ 验证方法
-
-运行上面的代码,你会看到:
-```
-第一个学生的成绩: 85
-数组长度: 5
-学生 1 的成绩: 85
-学生 2 的成绩: 92
-学生 3 的成绩: 78
-学生 4 的成绩: 95
-学生 5 的成绩: 88
-```
-
-### 💪 练习题
-
-1. 创建一个数组存储 7 天的气温,打印出最高温度
-2. 创建一个字符串数组存储 3 个城市名称,依次打印
-3. 计算数组中所有数字的平均值
-
-## Set
+**ArrayList** 是最常用的 List，它可以动态增长，不需要事先指定大小。
 
 ### 📝 代码示例
 
-```java
-import java.util.HashSet;
-import java.util.Set;
+```java{9,12,15,18}
+import java.util.ArrayList;
 
-public class SetDemo {
+public class ListExample {
     public static void main(String[] args) {
-        // 创建一个 Set
-        Set<String> fruits = new HashSet<>();
+        // 创建一个存储字符串的 ArrayList
+        ArrayList<String> fruits = new ArrayList<>();
         
         // 添加元素
         fruits.add("apple");
         fruits.add("banana");
-        fruits.add("apple");  // 重复元素不会被添加
+        fruits.add("orange");
+        fruits.add("banana");  // 可以添加重复元素
         
-        System.out.println("水果种类数量: " + fruits.size());
-        System.out.println("所有水果: " + fruits);
+        // 获取元素
+        System.out.println(fruits.get(0));  // apple
         
-        // 检查是否包含某个元素
-        if (fruits.contains("apple")) {
-            System.out.println("有苹果");
-        }
+        // 查看大小
+        System.out.println(fruits.size());  // 4
         
-        // 遍历 Set
+        // 遍历所有元素
         for (String fruit : fruits) {
             System.out.println(fruit);
         }
@@ -110,85 +56,155 @@ public class SetDemo {
 }
 ```
 
-::: warning 注意
-Set 中的元素没有固定顺序,打印出来的顺序可能和添加顺序不同。
-:::
-
-### ✅ 验证方法
-
-运行代码,你会看到类似这样的输出:
+**运行结果：**
 ```
-水果种类数量: 2
-所有水果: [banana, apple]
-有苹果
-banana
 apple
+4
+apple
+banana
+orange
+banana
 ```
+
+::: tip 提示
+`<String>` 表示这个 ArrayList 只能存储字符串类型的数据。你也可以使用 `<Integer>` 存储整数。
+:::
 
 ### 💪 练习题
 
-1. 创建一个 Set 存储 5 个数字,尝试添加重复的数字,观察结果
-2. 使用 `remove()` 方法从 Set 中删除一个元素
-3. 创建一个 Set 存储学生姓名,确保没有重复名字
+1. 创建一个 ArrayList 存储 5 个城市名称，并打印出来
+2. 创建一个存储整数的 ArrayList，添加 1-5 这五个数字，然后删除第 3 个元素（提示：使用 `remove(2)`）
+3. 创建一个学生姓名列表，判断列表中是否包含 "张三"（提示：使用 `contains()` 方法）
 
-## Map
+## Set - 自动去重的集合
+
+### 💡 概念说明
+
+**HashSet** 会自动去除重复元素，当你需要确保数据不重复时使用它。
 
 ### 📝 代码示例
 
-```java
-import java.util.HashMap;
-import java.util.Map;
+```java{7,10-11,14,17}
+import java.util.HashSet;
 
-public class MapDemo {
+public class SetExample {
     public static void main(String[] args) {
-        // 创建一个 Map,键是学生姓名,值是成绩
-        Map<String, Integer> studentScores = new HashMap<>();
+        HashSet<String> emails = new HashSet<>();
         
-        // 添加键值对
-        studentScores.put("Zhang San", 85);
-        studentScores.put("Li Si", 92);
-        studentScores.put("Wang Wu", 78);
+        emails.add("user1@example.com");
+        emails.add("user2@example.com");
+        emails.add("user1@example.com");  // 重复元素不会被添加
+        emails.add("user1@example.com");  // 重复元素不会被添加
         
-        // 获取某个键对应的值
-        int score = studentScores.get("Li Si");
-        System.out.println("Li Si 的成绩: " + score);
+        // 只会输出 2，重复的被自动去除了
+        System.out.println("邮箱数量: " + emails.size());
         
-        // 检查是否包含某个键
-        if (studentScores.containsKey("Zhang San")) {
-            System.out.println("找到 Zhang San 的成绩");
+        // 检查是否存在
+        if (emails.contains("user1@example.com")) {
+            System.out.println("该邮箱已注册");
         }
         
-        // 遍历 Map
-        for (String name : studentScores.keySet()) {
-            System.out.println(name + " 的成绩是 " + studentScores.get(name));
+        // 遍历
+        for (String email : emails) {
+            System.out.println(email);
         }
     }
 }
 ```
 
-::: tip 理解 Map
-Map 就像一个字典,你用"单词"(键 Key)去查找"释义"(值 Value)。键必须是唯一的,但值可以重复。
+**运行结果：**
+```
+邮箱数量: 2
+该邮箱已注册
+user1@example.com
+user2@example.com
+```
+
+::: warning 注意
+HashSet 中的元素是无序的，输出顺序可能和添加顺序不一致。
 :::
-
-### ✅ 验证方法
-
-运行代码,输出类似:
-```
-Li Si 的成绩: 92
-找到 Zhang San 的成绩
-Zhang San 的成绩是 85
-Li Si 的成绩是 92
-Wang Wu 的成绩是 78
-```
 
 ### 💪 练习题
 
-1. 创建一个 Map 存储水果名称和价格,打印所有水果的价格
-2. 修改 Map 中某个学生的成绩(提示: 再次使用 `put()` 方法)
-3. 使用 `size()` 方法获取 Map 中有多少个键值对
+1. 创建一个 HashSet 存储学生 ID，尝试添加重复的 ID 并观察结果
+2. 创建一个整数 HashSet，添加 1, 2, 3, 2, 1，打印大小和内容
+
+## Map - 键值对存储
+
+### 💡 概念说明
+
+**HashMap** 存储键值对(key-value)，通过 key 可以快速查找对应的 value。就像字典一样，通过单词(key)查找释义(value)。
+
+### 📝 代码示例
+
+```java{7,10,13,16,19}
+import java.util.HashMap;
+
+public class MapExample {
+    public static void main(String[] args) {
+        // 创建一个存储学生姓名和分数的 HashMap
+        HashMap<String, Integer> scores = new HashMap<>();
+        
+        // 添加键值对
+        scores.put("张三", 85);
+        scores.put("李四", 92);
+        scores.put("王五", 78);
+        
+        // 通过 key 获取 value
+        System.out.println("张三的分数: " + scores.get("张三"));
+        
+        // 修改分数（使用相同的 key）
+        scores.put("张三", 90);
+        System.out.println("张三的新分数: " + scores.get("张三"));
+        
+        // 遍历所有键值对
+        for (String name : scores.keySet()) {
+            System.out.println(name + ": " + scores.get(name) + "分");
+        }
+    }
+}
+```
+
+**运行结果：**
+```
+张三的分数: 85
+张三的新分数: 90
+张三: 90分
+李四: 92分
+王五: 78分
+```
+
+### 📝 常用操作示例
+
+```java{5,8,11,14}
+HashMap<String, Integer> map = new HashMap<>();
+
+map.put("apple", 5);
+// 检查是否包含某个 key
+System.out.println(map.containsKey("apple"));  // true
+
+// 检查是否包含某个 value
+System.out.println(map.containsValue(5));  // true
+
+// 获取 Map 大小
+System.out.println(map.size());  // 1
+
+// 删除键值对
+map.remove("apple");
+```
+
+::: tip 提示
+Map 中的 key 不能重复，如果使用相同的 key 再次 put，会覆盖原来的 value。
+:::
+
+### 💪 练习题
+
+1. 创建一个 HashMap 存储 3 个国家和它们的首都，然后打印所有国家名称
+2. 创建一个商品价格表(商品名-价格)，添加 5 个商品，计算所有商品的总价格
+3. 创建一个电话簿(姓名-电话号码)，查询某个人的电话，如果不存在则提示"未找到"(提示：`get()` 方法在 key 不存在时返回 `null`)
 
 ## 📌 小结
 
-- **数组(Array)** 大小固定,通过索引访问元素,索引从 0 开始
-- **Set** 不允许重复元素,适合存储唯一值的场景
-- **Map** 存储键值对,通过键快速查找值,键不能重复
+- **ArrayList**：当你需要按顺序存储数据，并且数量会变化时使用
+- **HashSet**：当你需要确保数据不重复时使用  
+- **HashMap**：当你需要通过一个值(key)快速查找另一个值(value)时使用
