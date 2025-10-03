@@ -12,213 +12,219 @@ head:
 
  # 基本语法
 
-在Python中,我们需要掌握四个最基础的操作:存储数据、显示数据、添加说明和调试程序。让我们逐个来学习。
+## 变量定义(Variable Definition)
 
-## 定义变量(Variable)
+💡 **什么是变量?**
 
-💡 **概念说明**
-
-变量就像一个带标签的盒子,用来存储数据。你给盒子起个名字,就能随时使用里面的内容。
+变量就像一个带标签的盒子,用来存储数据。在C++中,你需要先告诉计算机"这个盒子装什么类型的东西",再给它取个名字。
 
 ### 📝 代码示例
 
-```python{1-3}
-name = "张三"
-age = 25
-price = 99.9
+```cpp{4-7}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 25;           // 定义整数变量
+    double price = 19.99;   // 定义小数变量
+    string name = "Zhang";  // 定义文本变量
+    
+    return 0;
+}
 ```
 
-**运行说明**: 这段代码运行后不会显示任何内容,但数据已经存储好了。
-
-::: tip 命名建议
-- 使用英文字母、数字和下划线
-- 不能以数字开头
-- 建议使用有意义的英文单词:`user_name` 比 `a` 更容易理解
+::: tip 变量命名规则
+- 只能包含字母、数字、下划线
+- 必须以字母或下划线开头
+- 推荐使用有意义的英文单词:如 `studentAge` 而不是 `a`
 :::
 
 ### 💪 练习题
 
-**练习1**: 创建三个变量,分别存储你的姓名、年龄和所在城市
+**练习1**: 定义三个变量,分别存储你的年龄、身高(米)、姓名
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
+```cpp
+int myAge = 20;
+double myHeight = 1.75;
+string myName = "Li";
 ```
 
 </details>
 
-## 输出变量
+## 输出变量(Output Variables)
 
-💡 **概念说明**
+💡 **如何显示变量的内容?**
 
-使用`print()`函数(Function)可以将变量的内容显示在屏幕上。
-
-### 📝 代码示例
-
-```python{4-5}
-name = "张三"
-age = 25
-
-print(name)
-print(age)
-```
-
-**运行结果**:
-```
-张三
-25
-```
-
-你也可以一次输出多个变量:
-
-```python{4}
-name = "张三"
-age = 25
-
-print("姓名:", name, "年龄:", age)
-```
-
-**运行结果**:
-```
-姓名: 张三 年龄: 25
-```
-
-### 💪 练习题
-
-**练习2**: 输出练习1中创建的三个变量
-
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
-```
-
-</details>
-
-## 增加注释(Comment)
-
-💡 **概念说明**
-
-注释是写给人看的说明文字,程序运行时会自动忽略。就像给代码写的备忘录。
+使用 `cout` 命令将变量的值输出到屏幕上。
 
 ### 📝 代码示例
 
-```python{1,4,7-9}
-# 这是单行注释,用井号开头
+```cpp{9-11}
+#include <iostream>
+using namespace std;
 
-name = "张三"  # 也可以写在代码后面
-
-age = 25
-
-"""
-这是多行注释
-可以写很多行说明
-"""
-print(name, age)
+int main() {
+    int score = 95;
+    string subject = "Math";
+    
+    // 输出变量
+    cout << "Subject: " << subject << endl;
+    cout << "Score: " << score << endl;
+    cout << "Pass!" << endl;
+    
+    return 0;
+}
 ```
 
 **运行结果**:
 ```
-张三 25
+Subject: Math
+Score: 95
+Pass!
 ```
 
-::: tip 什么时候需要注释?
-- 解释复杂的逻辑
-- 说明某个数字的含义(如 `tax_rate = 0.13  # 增值税率`)
-- 暂时不想运行某段代码时,在前面加`#`
+::: tip endl 的作用
+`endl` 表示换行,让下一次输出从新的一行开始
 :::
 
 ### 💪 练习题
 
-**练习3**: 为你的代码添加注释,说明每个变量的用途
+**练习1**: 定义商品名称和价格两个变量,然后输出"商品: 苹果,价格: 5.5元"的格式
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-# 存储用户的基本信息
-my_name = "李四"  # 用户姓名
-my_age = 20       # 用户年龄
-city = "北京"     # 所在城市
-
-# 输出用户信息
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
+```cpp
+string product = "Apple";
+double price = 5.5;
+cout << "Product: " << product << ", Price: " << price << " yuan" << endl;
 ```
 
 </details>
 
-## 日志打印
+## 注释(Comments)
 
-💡 **概念说明**
+💡 **为什么需要注释?**
 
-`print()`就是最基本的日志打印方式,帮助你查看程序运行过程中的数据变化。
+注释是给人看的说明文字,计算机会忽略它。帮助你记住代码的作用。
 
 ### 📝 代码示例
 
-```python{7,10,13}
-# 计算商品总价
-price = 100
-quantity = 3
+```cpp{5,8,11-13}
+#include <iostream>
+using namespace std;
 
-# 打印初始值
-print("单价:", price)
-print("数量:", quantity)
-
-# 计算总价
-total = price * quantity
-print("总价:", total)
-
-# 应用折扣
-discount = 0.9
-final_price = total * discount
-print("折后价:", final_price)
+int main() {
+    // 这是单行注释:计算学生总分
+    int mathScore = 90;
+    int englishScore = 85;
+    int total = mathScore + englishScore;  // 也可以写在代码后面
+    
+    /*
+       这是多行注释
+       用于较长的说明文字
+    */
+    cout << "Total: " << total << endl;
+    
+    return 0;
+}
 ```
 
-**运行结果**:
-```
-单价: 100
-数量: 3
-总价: 300
-折后价: 270.0
-```
-
-::: warning 调试技巧
-当程序结果不对时,在关键位置添加`print()`,检查每一步的数据是否正确。
+::: warning 注意
+- 单行注释: `//` 后面的内容
+- 多行注释: `/*` 和 `*/` 之间的内容
+- 注释过多会影响代码阅读,适度使用
 :::
 
 ### 💪 练习题
 
-**练习4**: 编写一个程序,计算矩形面积(长×宽),并用`print()`显示每一步的值
+**练习1**: 为下面的代码添加注释
+
+```cpp
+int radius = 5;
+double pi = 3.14;
+double area = pi * radius * radius;
+cout << area << endl;
+```
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
-```python
-# 定义矩形的长和宽
-length = 10
-width = 5
-print("长度:", length)
-print("宽度:", width)
+```cpp
+// 定义圆的半径
+int radius = 5;
+// 定义圆周率
+double pi = 3.14;
+// 计算圆的面积
+double area = pi * radius * radius;
+// 输出面积
+cout << area << endl;
+```
 
-# 计算面积
-area = length * width
-print("面积:", area)
+</details>
+
+## 日志打印(Log Printing)
+
+💡 **调试程序的好帮手**
+
+日志打印就是在程序运行过程中输出关键信息,帮助你了解程序执行到哪一步了。
+
+### 📝 代码示例
+
+```cpp{6,9,12}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a = 10, b = 20;
+    cout << "[DEBUG] Start calculation" << endl;
+    
+    int sum = a + b;
+    cout << "[DEBUG] a=" << a << ", b=" << b << endl;
+    
+    int result = sum * 2;
+    cout << "[DEBUG] Final result=" << result << endl;
+    
+    return 0;
+}
+```
+
+**运行结果**:
+```
+[DEBUG] Start calculation
+[DEBUG] a=10, b=20
+[DEBUG] Final result=60
+```
+
+::: tip 日志标签
+使用 `[DEBUG]`、`[INFO]`、`[ERROR]` 等标签,方便识别不同类型的信息
+:::
+
+### 💪 练习题
+
+**练习1**: 编写程序计算矩形面积,在计算前后分别打印日志
+
+<details>
+<summary>点击查看答案</summary>
+
+```cpp
+int length = 10;
+int width = 5;
+cout << "[INFO] Start area calculation" << endl;
+cout << "[DEBUG] length=" << length << ", width=" << width << endl;
+
+int area = length * width;
+cout << "[INFO] Area calculated: " << area << endl;
 ```
 
 </details>
 
 ## 📌 小结
 
-- **变量**: 使用`=`存储数据,如`name = "张三"`
-- **输出**: 使用`print()`显示内容
-- **注释**: 使用`#`添加单行说明,使用`""" """`添加多行说明
-- **调试**: 通过`print()`查看程序运行中的数据状态
+- **变量定义**: `类型 名称 = 值;` 格式,如 `int age = 18;`
+- **输出变量**: 使用 `cout <<` 输出内容, `endl` 换行
+- **注释**: 单行用 `//`,多行用 `/* */`,帮助理解代码
+- **日志打印**: 通过输出关键信息追踪程序执行过程
