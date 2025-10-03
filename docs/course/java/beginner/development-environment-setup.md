@@ -12,117 +12,43 @@ head:
 
  # 开发环境搭建
 
-在开始编写 Java 程序之前,你需要先准备好两样东西:让计算机能够运行 Java 程序的**运行环境(JRE)**,以及帮助你编写代码的**开发工具包(JDK)**。
+在开始写 Java 代码之前,你需要先准备好开发工具。就像做饭需要准备厨具一样,写代码也需要准备编程工具。
 
-## 💡 为什么需要搭建环境?
+## 💡 需要安装什么?
 
-你可以把这个过程想象成:
-- **JDK(Java Development Kit)** = 一套完整的工具箱,包含编译器、运行环境等
-- **编译器(Compiler)** = 把你写的代码翻译成计算机能理解的语言
-- **运行环境(JRE)** = 让翻译后的程序在你的电脑上运行起来
+我们需要安装两个东西:
 
-## 📥 下载并安装 JDK
+1. **JDK(Java Development Kit)** - Java 开发工具包,让你的电脑能运行 Java 程序
+2. **IDE(Integrated Development Environment)** - 集成开发环境,一个专门用来写代码的软件
 
-### Windows 系统
-
-**步骤1: 下载 JDK**
-
-访问 Oracle 官网下载页面:
-```
-https://www.oracle.com/java/technologies/downloads/
-```
-
-选择 **Java 17** 或更高版本,点击 **Windows** 标签,下载 `x64 Installer` 版本。
-
-::: tip 提示
-Java 17 是长期支持版本(LTS),适合初学者使用。
+::: tip 为什么需要 JDK?
+你的电脑默认是"听不懂" Java 语言的,JDK 就像一个翻译官,把你写的 Java 代码翻译成电脑能理解的指令。
 :::
 
-**步骤2: 安装 JDK**
+## 安装 JDK
 
-1. 双击下载的 `.exe` 文件
-2. 一路点击 "Next",保持默认选项即可
-3. 记住安装路径(通常是 `C:\Program Files\Java\jdk-17`)
+### Windows 系统安装
 
-**步骤3: 配置环境变量**
+**步骤 1**: 下载 JDK
 
-这一步是为了让你在任何位置都能使用 Java 命令。
+访问 Oracle 官网: https://www.oracle.com/java/technologies/downloads/
 
-1. 右键点击 "此电脑" → 选择 "属性"
-2. 点击 "高级系统设置" → "环境变量"
-3. 在 "系统变量" 区域点击 "新建":
-   - 变量名: `JAVA_HOME`
-   - 变量值: `C:\Program Files\Java\jdk-17` (你的实际安装路径)
-4. 找到 "系统变量" 中的 `Path`,点击 "编辑" → "新建"
-5. 添加: `%JAVA_HOME%\bin`
-6. 一路点击 "确定" 保存
+选择 **Java 17** 或 **Java 21** (推荐新手使用长期支持版本)
 
-### macOS 系统
+点击 **Windows** 标签,下载 **x64 Installer** (`.exe` 文件)
 
-**步骤1: 下载 JDK**
+**步骤 2**: 安装 JDK
 
-同样访问 Oracle 官网:
-```
-https://www.oracle.com/java/technologies/downloads/
-```
+双击下载的 `.exe` 文件,按照安装向导点击"下一步"即可。
 
-选择 **Java 17**,点击 **macOS** 标签:
-- **Apple Silicon (M1/M2/M3 芯片)**: 下载 `ARM64 DMG Installer`
-- **Intel 芯片**: 下载 `x64 DMG Installer`
-
-::: warning 注意
-不确定你的 Mac 是什么芯片?点击左上角苹果图标 → "关于本机" → 查看 "芯片" 信息。
+::: warning 注意安装路径
+记住安装路径,例如: `C:\Program Files\Java\jdk-17`
+后续配置会用到。
 :::
 
-**步骤2: 安装 JDK**
+**步骤 3**: 验证安装
 
-1. 双击下载的 `.dmg` 文件
-2. 双击 `.pkg` 安装包
-3. 按照提示输入密码,完成安装
-
-**步骤3: 配置环境变量**
-
-macOS 的环境变量配置在终端(Terminal)中完成:
-
-1. 打开 "终端" 应用(在 "启动台" → "其他" 中找到)
-2. 输入以下命令查看使用的 Shell:
-
-```bash
-echo $SHELL
-```
-
-3. 根据结果编辑对应的配置文件:
-
-如果显示 `/bin/zsh` (macOS 默认):
-```bash
-nano ~/.zshrc
-```
-
-如果显示 `/bin/bash`:
-```bash
-nano ~/.bash_profile
-```
-
-4. 在打开的编辑器中,添加以下内容:
-
-```bash
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
-export PATH=$JAVA_HOME/bin:$PATH
-```
-
-5. 按 `Control + X`,然后按 `Y`,最后按 `Enter` 保存
-6. 让配置生效:
-
-```bash
-source ~/.zshrc
-```
-
-## ✅ 验证安装
-
-无论是 Windows 还是 macOS,都需要验证 JDK 是否安装成功。
-
-**Windows**: 打开 "命令提示符"(搜索 `cmd`)  
-**macOS**: 打开 "终端"
+按下 `Win + R`,输入 `cmd`,按回车打开命令提示符。
 
 输入以下命令:
 
@@ -130,103 +56,160 @@ source ~/.zshrc
 java -version
 ```
 
-如果看到类似这样的输出,就说明安装成功了:
-
-```
-java version "17.0.9" 2023-10-17 LTS
-Java(TM) SE Runtime Environment (build 17.0.9+11-LTS-201)
-Java HotSpot(TM) 64-Bit Server VM (build 17.0.9+11-LTS-201, mixed mode, sharing)
-```
-
-再输入:
+如果看到类似下面的信息,说明安装成功:
 
 ```bash
-javac -version
+java version "17.0.9" 2023-10-17 LTS
+Java(TM) SE Runtime Environment (build 17.0.9+11-LTS-201)
 ```
 
-应该看到:
+### macOS 系统安装
 
-```
-javac 17.0.9
-```
+**步骤 1**: 下载 JDK
 
-::: danger 警告
-如果提示 "不是内部或外部命令" 或 "command not found",说明环境变量配置有误,请重新检查上述步骤。
+访问 Oracle 官网: https://www.oracle.com/java/technologies/downloads/
+
+选择 **Java 17** 或 **Java 21**
+
+点击 **macOS** 标签:
+- **Apple Silicon (M1/M2/M3 芯片)**: 下载 **Arm 64 DMG Installer**
+- **Intel 芯片**: 下载 **x64 DMG Installer**
+
+::: tip 如何确认芯片类型?
+点击屏幕左上角  图标 → **关于本机**,查看"芯片"或"处理器"信息。
 :::
 
-## 🎉 编写第一个 Java 程序
+**步骤 2**: 安装 JDK
 
-现在环境已经准备好了,让我们写一个简单的程序来测试一下。
+双击下载的 `.dmg` 文件,按照提示完成安装。
 
-**步骤1: 创建项目文件夹**
+**步骤 3**: 验证安装
 
-在桌面或任意位置创建一个文件夹,命名为 `JavaLearning`。
+按下 `Command + 空格`,输入 `terminal`,打开终端。
 
-**步骤2: 创建 Java 文件**
+输入以下命令:
 
-在 `JavaLearning` 文件夹中,创建一个文本文件,命名为 `HelloWorld.java`。
+```bash
+java -version
+```
 
-::: warning 注意
-- 扩展名必须是 `.java`,不是 `.txt`
-- Windows 用户需要在文件资源管理器中显示扩展名(查看 → 勾选 "文件扩展名")
-:::
+看到版本信息即表示安装成功。
 
-**步骤3: 编写代码**
+## 安装 IntelliJ IDEA
 
-用记事本(Windows)或文本编辑(macOS)打开 `HelloWorld.java`,输入以下代码:
+IntelliJ IDEA 是目前最流行的 Java IDE,它能帮你自动补全代码、发现错误、运行程序。
 
-```java{1,3}
+### 下载与安装
+
+**步骤 1**: 访问官网
+
+https://www.jetbrains.com/idea/download/
+
+**步骤 2**: 选择版本
+
+选择 **Community Edition (免费版)** - 对新手来说功能已经足够。
+
+根据你的操作系统选择对应版本下载。
+
+**步骤 3**: 安装
+
+- **Windows**: 双击 `.exe` 文件,按提示安装即可
+- **macOS**: 打开 `.dmg` 文件,将 IDEA 图标拖到"应用程序"文件夹
+
+### 首次启动配置
+
+**步骤 1**: 启动 IDEA
+
+第一次打开会询问是否导入配置,选择 **Do not import settings**。
+
+**步骤 2**: 选择主题
+
+根据个人喜好选择 **Light (浅色)** 或 **Dark (深色)** 主题。
+
+**步骤 3**: 创建第一个项目
+
+点击 **New Project**
+
+填写项目信息:
+- **Name**: 输入 `HelloJava`
+- **Location**: 选择保存位置(默认即可)
+- **Language**: 选择 **Java**
+- **Build System**: 选择 **IntelliJ**
+- **JDK**: 如果显示已安装的 JDK 版本,直接选择;如果没有,点击 **Add JDK** 手动选择安装路径
+
+点击 **Create** 创建项目。
+
+## 💪 实践:运行第一个 Java 程序
+
+让我们验证环境是否正常工作。
+
+### 创建 Java 文件
+
+在 IDEA 左侧项目树中:
+
+1. 展开 `HelloJava` → `src` 文件夹
+2. 右键点击 `src` → **New** → **Java Class**
+3. 输入 `HelloWorld`,按回车
+
+### 编写代码
+
+在打开的文件中输入以下代码:
+
+```java{5}
 public class HelloWorld {
     public static void main(String[] args) {
+        // 打印欢迎信息
         System.out.println("Hello, Java!");
+        System.out.println("我的第一个 Java 程序!");
     }
 }
 ```
 
-保存文件。
+::: tip 代码输入技巧
+在 IDEA 中输入 `psvm` 然后按 `Tab` 键,会自动生成 `public static void main` 方法。
+输入 `sout` 然后按 `Tab` 键,会自动生成 `System.out.println()` 语句。
+:::
 
-**步骤4: 编译并运行**
+### 运行程序
 
-打开命令行工具,进入 `JavaLearning` 文件夹:
+点击代码编辑区左侧第 1 行旁边的绿色三角形 ▶️,选择 **Run 'HelloWorld.main()'**。
 
-**Windows**:
-```bash
-cd Desktop\JavaLearning
-```
+**运行结果**:
 
-**macOS**:
-```bash
-cd ~/Desktop/JavaLearning
-```
-
-编译 Java 文件:
-
-```bash
-javac HelloWorld.java
-```
-
-如果没有任何错误提示,说明编译成功。此时文件夹中会生成一个 `HelloWorld.class` 文件。
-
-运行程序:
-
-```bash
-java HelloWorld
-```
-
-你会看到:
+在 IDEA 底部的控制台窗口中,你会看到:
 
 ```
 Hello, Java!
+我的第一个 Java 程序!
 ```
 
-## 💪 练习题
+::: warning 如果运行失败
+检查以下几点:
+- 文件名 `HelloWorld` 是否与代码中 `class HelloWorld` 一致
+- 代码是否有拼写错误(注意大小写)
+- JDK 是否正确配置
+:::
 
-1. **修改输出内容**: 把程序中的 `"Hello, Java!"` 改成 `"我的第一个 Java 程序"`,重新编译运行
-2. **验证环境**: 在不同的文件夹位置打开命令行,输入 `java -version`,确认无论在哪里都能看到版本信息
+## 💪 练习
+
+尝试修改代码,让程序输出你自己的名字和今天的日期。
+
+<details>
+<summary>点击查看参考答案</summary>
+
+```java
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("我是张三");
+        System.out.println("今天是 2025年10月3日");
+    }
+}
+```
+
+</details>
 
 ## 📌 小结
 
-- **JDK** 包含了编写和运行 Java 程序的所有工具
-- **环境变量** 让你可以在任何位置使用 Java 命令
-- **编译(javac)** 把 `.java` 文件转换成 `.class` 文件
-- **运行(java)** 执行编译后的 `.class` 文件
+- **JDK** 是运行 Java 程序的必备工具,通过 `java -version` 验证安装
+- **IntelliJ IDEA** 是写代码的工具,Community 版本免费且功能足够
+- 创建项目 → 新建类 → 编写代码 → 运行,这是你今后的基本工作流程
