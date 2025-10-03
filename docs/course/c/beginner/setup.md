@@ -12,229 +12,218 @@ head:
 
  # 开发环境搭建
 
-在开始写 Python 代码之前,你需要先安装 Python 解释器(Interpreter)。解释器就是能读懂并执行 Python 代码的程序。
+在开始编写 C 语言(C Language)程序之前,你需要先安装两个工具:一个用来**写代码**的文本编辑器(Text Editor),一个用来**运行代码**的编译器(Compiler)。就像你需要纸和笔才能写字一样。
 
-## 下载 Python
+## 安装编译器(Compiler)
 
-访问 Python 官网下载页面:
+### 💡 什么是编译器
+
+编译器是一个程序,它能把你写的 C 代码翻译成计算机能理解的指令。没有编译器,你的代码就只是普通的文本文件。
+
+### Windows 系统安装 MinGW
+
+**步骤 1：下载安装包**
+
+打开浏览器访问: `https://github.com/niXman/mingw-builds-binaries/releases`
+
+找到最新版本,下载文件名类似 `x86_64-13.2.0-release-posix-seh-ucrt-rt_v11-rev1.7z` 的压缩包。
+
+**步骤 2：解压到指定位置**
+
+将下载的压缩包解压到 `C:\mingw64` (你可以选择其他位置,但路径中不要有中文和空格)。
+
+**步骤 3：配置环境变量(Environment Variable)**
+
+1. 右键点击"此电脑" → 选择"属性"
+2. 点击"高级系统设置"
+3. 点击"环境变量"按钮
+4. 在"系统变量"中找到 `Path`,双击打开
+5. 点击"新建",输入 `C:\mingw64\bin`
+6. 连续点击"确定"保存
+
+**步骤 4：验证安装**
+
+按 `Win + R` 键,输入 `cmd`,回车打开命令提示符(Command Prompt)。
+
+输入以下命令:
+
+```bash
+gcc --version
+```
+
+如果看到类似下面的输出,说明安装成功:
 
 ```
-https://www.python.org/downloads/
+gcc (x86_64-posix-seh-rev1, Built by MinGW-Builds project) 13.2.0
 ```
-
-::: tip 提示
-官网会自动识别你的操作系统,推荐适合你的版本。建议下载最新的稳定版本(Stable Release)。
-:::
-
-### Windows 系统
-
-1. 点击下载按钮,获取安装包(例如 `python-3.12.x-amd64.exe`)
-2. 双击安装包
-3. **重要**:勾选 `Add Python to PATH` 选项
-4. 点击 `Install Now`
 
 ::: warning 注意
-如果忘记勾选 `Add Python to PATH`,后续在命令行中无法直接使用 `python` 命令。
+如果提示"不是内部或外部命令",说明环境变量配置有问题,需要重新检查路径是否正确,或者重启电脑后再试。
 :::
 
-### macOS 系统
+### macOS 系统安装 Xcode Command Line Tools
 
-1. 下载 `.pkg` 安装包
-2. 双击安装包,按照提示完成安装
+打开"终端"应用(Terminal),输入以下命令:
+
+```bash
+xcode-select --install
+```
+
+在弹出的窗口中点击"安装"按钮,等待安装完成(可能需要 10-30 分钟)。
+
+安装完成后,在终端输入:
+
+```bash
+gcc --version
+```
+
+看到版本信息即表示安装成功。
+
+### Linux 系统安装 GCC
+
+大多数 Linux 发行版已经预装了 GCC。在终端输入:
+
+```bash
+gcc --version
+```
+
+如果没有安装,根据你的系统执行对应命令:
+
+**Ubuntu/Debian:**
+```bash
+sudo apt update
+sudo apt install build-essential
+```
+
+**Fedora:**
+```bash
+sudo dnf install gcc
+```
+
+## 选择代码编辑器(Code Editor)
+
+### 💡 为什么需要代码编辑器
+
+虽然记事本(Notepad)也能写代码,但专业的代码编辑器能提供语法高亮(Syntax Highlighting)、自动补全(Auto-completion)等功能,让你写代码更轻松。
+
+### 推荐选项
+
+**方案一：Visual Studio Code (推荐新手)**
+
+1. 访问 `https://code.visualstudio.com/`
+2. 下载并安装对应系统的版本
+3. 安装后打开 VS Code,点击左侧扩展图标(Extensions)
+4. 搜索 `C/C++`,安装微软官方插件
+
+**方案二：在线编辑器(无需安装)**
+
+访问 `https://www.programiz.com/c-programming/online-compiler/` 可以直接在浏览器中写代码和运行。
 
 ::: tip 提示
-macOS 系统自带 Python 2.x,但我们需要安装 Python 3.x。两者可以共存。
+如果你只是想快速体验 C 语言,使用在线编辑器最方便。如果想深入学习,建议在本地安装 VS Code。
 :::
-
-### Linux 系统
-
-大多数 Linux 发行版已预装 Python 3。打开终端(Terminal)验证:
-
-```bash
-python3 --version
-```
-
-如果未安装,使用包管理器安装:
-
-```bash
-# Ubuntu/Debian
-sudo apt update
-sudo apt install python3
-
-# CentOS/RHEL
-sudo yum install python3
-```
-
-## 验证安装
-
-安装完成后,打开命令行工具验证:
-
-- **Windows**: 按 `Win + R`,输入 `cmd`,回车
-- **macOS**: 按 `Command + 空格`,输入 `Terminal`,回车
-- **Linux**: 按 `Ctrl + Alt + T`
-
-在命令行中输入:
-
-```bash
-python --version
-```
-
-或者(某些系统需要):
-
-```bash
-python3 --version
-```
-
-如果看到类似 `Python 3.12.0` 的输出,说明安装成功。
 
 ## 编写第一个程序
 
-### 使用交互式解释器(Interactive Interpreter)
+### 📝 创建代码文件
 
-在命令行中输入:
-
-```bash
-python
-```
-
-你会看到类似这样的提示符:
-
-```
-Python 3.12.0 (main, Oct 2023, 12:00:00)
->>> 
-```
-
-`>>>` 表示 Python 正在等待你输入代码。试试输入:
-
-```python
-print("Hello, Python!")
-```
-
-按回车,你会立即看到输出:
-
-```
-Hello, Python!
-```
-
-::: tip 提示
-输入 `exit()` 可以退出交互式解释器。
-:::
-
-### 使用文本编辑器
-
-交互式解释器适合快速测试,但实际开发需要将代码保存到文件中。
-
-1. 打开任意文本编辑器(记事本、TextEdit 等)
-2. 输入以下代码:
-
-```python
-# 这是我的第一个 Python 程序
-print("Hello, Python!")
-print("编程世界,我来了!")
-```
-
-3. 保存文件,命名为 `hello.py`(扩展名必须是 `.py`)
-4. 在命令行中切换到文件所在目录,执行:
-
-```bash
-python hello.py
-```
-
-你会看到:
-
-```
-Hello, Python!
-编程世界,我来了!
-```
-
-::: warning 注意
-文件名不要包含中文或特殊字符,建议使用小写字母和下划线,如 `my_first_program.py`。
-:::
-
-## 安装代码编辑器(可选但推荐)
-
-虽然记事本可以写代码,但专业的代码编辑器会提供语法高亮(Syntax Highlighting)、自动补全等功能,让编程更轻松。
-
-推荐以下编辑器之一:
-
-1. **VS Code**(最推荐)
-   - 下载地址: `https://code.visualstudio.com/`
-   - 安装后,在扩展商店搜索 `Python`,安装官方扩展
-
-2. **PyCharm Community**(功能更强大)
-   - 下载地址: `https://www.jetbrains.com/pycharm/download/`
-   - 选择免费的 Community 版本
-
-3. **Sublime Text**(轻量快速)
-   - 下载地址: `https://www.sublimetext.com/`
-
-### 使用 VS Code 运行代码
+**使用 VS Code:**
 
 1. 打开 VS Code
-2. 点击 `File` → `Open Folder`,选择你的代码文件夹
-3. 创建新文件 `test.py`,输入:
+2. 点击"文件" → "新建文件"
+3. 点击"文件" → "保存",文件名输入 `hello.c` (必须以 `.c` 结尾)
 
-```python{1}
-print("使用 VS Code 运行 Python!")
+**代码内容:**
+
+```c{1,4}
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
 ```
 
-4. 点击右上角的运行按钮(▶️),或按 `F5`
-5. 在下方的终端(Terminal)中查看输出结果
+### 💡 编译并运行
 
-::: tip 提示
-首次运行时,VS Code 可能提示安装 Python 扩展,点击安装即可。
+**Windows 系统:**
+
+在 VS Code 中按 `Ctrl + ` ` (反引号键)打开终端,输入:
+
+```bash
+gcc hello.c -o hello
+hello.exe
+```
+
+**macOS/Linux 系统:**
+
+在 VS Code 终端中输入:
+
+```bash
+gcc hello.c -o hello
+./hello
+```
+
+**运行结果:**
+
+你会在终端看到:
+
+```
+Hello, World!
+```
+
+::: tip 理解命令
+- `gcc hello.c -o hello` 的意思是:用 gcc 编译器把 `hello.c` 编译成可执行文件 `hello`
+- `hello.exe` 或 `./hello` 是运行刚才生成的程序
 :::
 
 ## 💪 练习题
 
-### 练习 1:验证环境
+### 练习 1：修改输出内容
 
-在命令行中依次执行以下命令,并记录输出结果:
+修改代码,让程序输出你的名字,例如 `My name is Tom`。
 
-```bash
-python --version
-python -c "print('环境配置成功!')"
+<details>
+<summary>查看答案</summary>
+
+```c{4}
+#include <stdio.h>
+
+int main() {
+    printf("My name is Tom\n");
+    return 0;
+}
 ```
 
-::: details 查看答案
-第一条命令应显示 Python 版本号,如 `Python 3.12.0`。
+记得修改后需要重新编译才能看到新的输出。
 
-第二条命令应输出:`环境配置成功!`
+</details>
 
-`-c` 参数表示直接执行后面的代码,而不是运行文件。
-:::
+### 练习 2：输出多行
 
-### 练习 2:创建并运行程序
+让程序输出两行内容:第一行是你的名字,第二行是你的年龄。
 
-创建文件 `intro.py`,让程序输出你的名字和学习目标:
+<details>
+<summary>查看答案</summary>
 
-```python
-# 在这里写代码
+```c{4-5}
+#include <stdio.h>
+
+int main() {
+    printf("My name is Tom\n");
+    printf("I am 20 years old\n");
+    return 0;
+}
 ```
 
-::: details 查看答案
-```python
-# intro.py
-print("我是张三")
-print("我的学习目标是:掌握 Python 编程基础")
-```
+`\n` 表示换行,每个 `printf` 语句输出一行内容。
 
-运行方式:
-
-```bash
-python intro.py
-```
-
-预期输出:
-```
-我是张三
-我的学习目标是:掌握 Python 编程基础
-```
-:::
+</details>
 
 ## 📌 小结
 
-- Python 解释器(Interpreter)是执行代码的程序,需要先安装
-- 使用 `python --version` 验证安装是否成功
-- Python 代码文件的扩展名是 `.py`
-- 使用 `python 文件名.py` 命令运行程序
+- 编译器(Compiler)把 C 代码翻译成计算机能执行的程序
+- 使用 `gcc` 命令编译代码,使用 `./程序名` 运行程序
+- 代码文件必须以 `.c` 结尾
+
+现在你已经拥有了完整的 C 语言开发环境,可以开始编写程序了!
