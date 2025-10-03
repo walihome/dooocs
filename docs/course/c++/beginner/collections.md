@@ -10,217 +10,173 @@ head:
       content: c++极简教程
 ---
 
- # 集合(Set)
+ # 数组(Array)
 
-## 💡 什么是集合
+## 💡 什么是数组
 
-集合(Set)是Python中用来存储**不重复**元素的数据类型。你可以把它想象成一个自动去重的容器——往里面放相同的东西,它只会保留一份。
+数组就像一排带编号的盒子,可以存储多个相同类型的数据。比如你要存储班级里5个同学的成绩,不需要创建5个变量,用1个数组就够了。
 
-集合主要有两个特点:
-- **元素唯一**: 自动去除重复元素
-- **无序性**: 不像列表那样按顺序排列
+**关键特点:**
+- 编号从0开始(不是1!)
+- 大小固定,创建后不能改变
+- 所有元素类型必须相同
 
-::: tip 集合 vs 列表
-列表(List)可以有重复元素,集合(Set)会自动去重。如果你需要存储不重复的数据,集合是更好的选择。
-:::
+## 数组的定义
 
-## 创建集合
+### 📝 基本语法
 
-### 使用花括号创建
+```cpp
+// 语法格式
+数据类型 数组名[元素个数];
 
-```python{1,4,7}
-# 创建一个水果集合
-fruits = {'apple', 'banana', 'orange'}
-print(fruits)
-# 输出: {'apple', 'banana', 'orange'}
-
-# 自动去重
-numbers = {1, 2, 2, 3, 3, 3}
-print(numbers)
-# 输出: {1, 2, 3}
+// 示例
+int scores[5];  // 创建能存储5个整数的数组
 ```
 
-### 使用set()函数创建
+### 📝 定义时赋初值
 
-```python{1,4,7,10}
-# 从列表创建集合
-my_list = [1, 2, 2, 3, 4, 4]
-my_set = set(my_list)
-print(my_set)  # 输出: {1, 2, 3, 4}
+```cpp{4,7,10}
+#include <iostream>
+using namespace std;
 
-# 从字符串创建集合
-text = "hello"
-char_set = set(text)
-print(char_set)  # 输出: {'h', 'e', 'l', 'o'}
+int main() {
+    // 方式1: 完整赋值
+    int scores[5] = {85, 92, 78, 90, 88};
+    
+    // 方式2: 部分赋值(剩余自动为0)
+    int ages[5] = {18, 19};  // 结果: 18, 19, 0, 0, 0
+    
+    // 方式3: 自动推断大小
+    int nums[] = {10, 20, 30};  // 自动创建3个元素的数组
+    
+    return 0;
+}
+```
 
-# 创建空集合(注意:{}创建的是字典)
-empty_set = set()
-print(empty_set)  # 输出: set()
+::: tip 提示
+如果用 `[]` 中不写数字,编译器会根据 `{}` 中的元素个数自动确定数组大小。
+:::
+
+## 数组的读取和修改
+
+### 📝 通过下标(Index)访问
+
+```cpp{7-8,11-12}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int scores[3] = {85, 92, 78};
+    
+    // 读取: 数组名[下标]
+    cout << "第1个成绩: " << scores[0] << endl;  // 输出: 85
+    cout << "第3个成绩: " << scores[2] << endl;  // 输出: 78
+    
+    // 修改: 数组名[下标] = 新值
+    scores[1] = 95;  // 把第2个成绩改为95
+    cout << "修改后: " << scores[1] << endl;  // 输出: 95
+    
+    return 0;
+}
+```
+
+**运行结果:**
+```
+第1个成绩: 85
+第3个成绩: 78
+修改后: 95
 ```
 
 ::: warning 注意
-`{}`创建的是空字典,不是空集合! 要创建空集合必须用`set()`。
+下标从0开始!如果数组有5个元素,有效下标是0-4,使用 `scores[5]` 会出错。
 :::
 
-## 查看集合元素
+### 📝 循环遍历数组
 
-### 检查元素是否存在
+```cpp{7-9}
+#include <iostream>
+using namespace std;
 
-```python{4,7}
-fruits = {'apple', 'banana', 'orange'}
-
-# 使用in关键字
-print('apple' in fruits)     # 输出: True
-print('grape' in fruits)     # 输出: False
-
-# 使用not in
-print('grape' not in fruits) # 输出: True
+int main() {
+    int nums[4] = {10, 20, 30, 40};
+    
+    // 用for循环输出所有元素
+    for (int i = 0; i < 4; i++) {
+        cout << "nums[" << i << "] = " << nums[i] << endl;
+    }
+    
+    return 0;
+}
 ```
 
-### 获取集合长度
-
-```python{4}
-fruits = {'apple', 'banana', 'orange'}
-
-# 使用len()函数
-print(len(fruits))  # 输出: 3
+**运行结果:**
 ```
-
-::: tip 为什么集合不能用索引
-集合是无序的,所以不能像列表那样用`fruits[0]`来获取元素。如果你需要按顺序访问元素,应该使用列表(List)。
-:::
-
-## 修改集合
-
-### 添加单个元素
-
-```python{4,7}
-fruits = {'apple', 'banana'}
-
-# 使用add()添加一个元素
-fruits.add('orange')
-print(fruits)  # 输出: {'apple', 'banana', 'orange'}
-
-# 添加已存在的元素(不会报错,但也不会重复添加)
-fruits.add('apple')
-print(fruits)  # 输出: {'apple', 'banana', 'orange'}
-```
-
-### 添加多个元素
-
-```python{4,8}
-fruits = {'apple', 'banana'}
-
-# 使用update()添加多个元素
-fruits.update(['orange', 'grape', 'apple'])
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape'}
-
-# 也可以用另一个集合来更新
-more_fruits = {'mango', 'kiwi'}
-fruits.update(more_fruits)
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape', 'mango', 'kiwi'}
-```
-
-### 删除元素
-
-```python{4,8,12}
-fruits = {'apple', 'banana', 'orange'}
-
-# 使用remove()删除(如果元素不存在会报错)
-fruits.remove('banana')
-print(fruits)  # 输出: {'apple', 'orange'}
-
-# 使用discard()删除(元素不存在也不会报错)
-fruits.discard('grape')  # 不会报错
-print(fruits)  # 输出: {'apple', 'orange'}
-
-# 使用pop()随机删除一个元素
-removed = fruits.pop()
-print(f"删除了: {removed}")
-print(fruits)
-
-# 使用clear()清空集合
-fruits.clear()
-print(fruits)  # 输出: set()
-```
-
-::: warning remove() vs discard()
-- `remove()`: 删除不存在的元素会报错
-- `discard()`: 删除不存在的元素不会报错(更安全)
-:::
-
-## 集合运算
-
-### 交集、并集、差集
-
-```python{4,7,10,13}
-set1 = {1, 2, 3, 4}
-set2 = {3, 4, 5, 6}
-
-# 交集(共同拥有的元素)
-print(set1 & set2)  # 输出: {3, 4}
-
-# 并集(所有元素,自动去重)
-print(set1 | set2)  # 输出: {1, 2, 3, 4, 5, 6}
-
-# 差集(set1有但set2没有的)
-print(set1 - set2)  # 输出: {1, 2}
-
-# 对称差集(不同时存在于两个集合的元素)
-print(set1 ^ set2)  # 输出: {1, 2, 5, 6}
+nums[0] = 10
+nums[1] = 20
+nums[2] = 30
+nums[3] = 40
 ```
 
 ## 💪 练习题
 
-### 练习1: 去除列表中的重复元素
-有一个包含重复数字的列表,请使用集合去除重复元素,然后转回列表。
+### 练习1: 计算平均分
 
-```python
-numbers = [1, 2, 3, 2, 4, 1, 5, 3]
-# 你的代码写在这里
-```
+创建一个包含5个学生成绩的数组,计算并输出平均分。
 
 ::: details 查看答案
-```python
-numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+```cpp
+#include <iostream>
+using namespace std;
 
-# 转换为集合去重,再转回列表
-unique_numbers = list(set(numbers))
-print(unique_numbers)  # 输出: [1, 2, 3, 4, 5] (顺序可能不同)
+int main() {
+    int scores[5] = {85, 92, 78, 90, 88};
+    int sum = 0;
+    
+    // 累加所有成绩
+    for (int i = 0; i < 5; i++) {
+        sum = sum + scores[i];
+    }
+    
+    // 计算平均分
+    double average = sum / 5.0;
+    cout << "平均分: " << average << endl;
+    
+    return 0;
+}
 ```
+**输出:** `平均分: 86.6`
 :::
 
-### 练习2: 找出两个班级的共同学生
-A班和B班各有一些学生,找出同时在两个班的学生。
+### 练习2: 找出最大值
 
-```python
-class_a = {'张三', '李四', '王五', '赵六'}
-class_b = {'李四', '王五', '孙七', '周八'}
-# 你的代码写在这里
-```
+从数组中找出最大的数字并输出。
 
 ::: details 查看答案
-```python
-class_a = {'张三', '李四', '王五', '赵六'}
-class_b = {'李四', '王五', '孙七', '周八'}
+```cpp
+#include <iostream>
+using namespace std;
 
-# 使用交集找出共同学生
-common_students = class_a & class_b
-print(f"同时在两个班的学生: {common_students}")
-# 输出: 同时在两个班的学生: {'李四', '王五'}
-
-# 也可以用intersection()方法
-common_students2 = class_a.intersection(class_b)
-print(common_students2)
+int main() {
+    int nums[6] = {45, 23, 89, 12, 67, 34};
+    int max = nums[0];  // 假设第1个数最大
+    
+    // 遍历比较
+    for (int i = 1; i < 6; i++) {
+        if (nums[i] > max) {
+            max = nums[i];  // 发现更大的就更新
+        }
+    }
+    
+    cout << "最大值: " << max << endl;
+    
+    return 0;
+}
 ```
+**输出:** `最大值: 89`
 :::
 
 ## 📌 小结
 
-- 集合使用`{}`或`set()`创建,会**自动去除重复元素**
-- 集合是**无序**的,不能使用索引访问
-- 使用`add()`添加单个元素,`update()`添加多个元素
-- 使用`remove()`或`discard()`删除元素,后者更安全
-- 集合支持交集(`&`)、并集(`|`)、差集(`-`)等运算
+- **定义数组**: `int arr[5];` 创建5个元素的整数数组
+- **下标规则**: 第1个元素是 `arr[0]`,第5个元素是 `arr[4]`
+- **访问方式**: 读取用 `arr[i]`,修改用 `arr[i] = 新值`
