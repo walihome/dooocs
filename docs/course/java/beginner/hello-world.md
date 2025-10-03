@@ -12,17 +12,20 @@ head:
 
  # Hello World
 
-## 💡 概念说明(Concept)
+## 💡 概念说明
 
-**Hello World** 是编程世界的"第一句话"。就像学英语从"Hello"开始，学 Java 也从打印这句话开始。
+**Hello World** 是编程世界的第一个程序，它的作用很简单：在屏幕上显示一行文字。
 
-**打印(Print)** = 让程序在屏幕上显示文字
+通过这个程序，你将学会：
+- 如何编写 Java 代码
+- 如何运行 Java 程序
+- 如何在屏幕上输出内容
 
-## 📝 代码示例(Code Example)
+## 📝 代码示例
 
-创建一个名为 `HelloWorld.java` 的文件,输入以下代码:
+创建一个名为 `HelloWorld.java` 的文件，输入以下代码：
 
-```java
+```java{1,3}
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello World");
@@ -30,91 +33,63 @@ public class HelloWorld {
 }
 ```
 
-::: tip 提示
-- 文件名必须和 `class` 后的名字完全一致
-- 大小写必须一致:`HelloWorld.java` 不能写成 `helloworld.java`
+::: tip 文件名规则
+文件名必须与 `class` 后面的名称完全一致，包括大小写。这里 class 名是 `HelloWorld`，所以文件名必须是 `HelloWorld.java`
 :::
 
-## 🚀 运行步骤(How to Run)
+**运行步骤**：
 
-**步骤 1: 编译(Compile)**
+1. 打开命令行工具(Terminal/CMD)
+2. 进入代码文件所在目录
+3. 执行编译命令(Compile)：
 
 ```bash
 javac HelloWorld.java
 ```
 
-如果没有报错,会生成一个 `HelloWorld.class` 文件。
-
-**步骤 2: 运行(Run)**
+4. 执行运行命令：
 
 ```bash
 java HelloWorld
 ```
 
-**运行结果:**
+**运行结果**：
 
 ```
 Hello World
 ```
 
 ::: warning 注意
-运行时写 `java HelloWorld`,不要加 `.class` 后缀
+如果提示 `javac` 命令找不到，说明 Java 开发环境(JDK)还未安装。你需要先安装 JDK 并配置环境变量。
 :::
 
-## ✅ 验证方法(Verification)
+## 💪 练习题
 
-你应该看到:
-- ✅ 屏幕上显示 `Hello World`
-- ✅ 目录里多了 `HelloWorld.class` 文件
+### 练习 1：修改输出内容
+将 `"Hello World"` 改成 `"你好，Java"`，运行看看结果。
 
-## 💪 练习题(Exercise)
-
-**练习 1**: 修改输出内容
-
-把 `"Hello World"` 改成你的名字,比如 `"Hello Zhang San"`,重新编译运行。
-
-**练习 2**: 输出多行
-
-在 `System.out.println("Hello World");` 下面再加一行:
+### 练习 2：输出多行内容
+尝试添加更多 `System.out.println()` 语句，输出 3 行不同的文字。
 
 ```java
-System.out.println("Welcome to Java");
-```
-
-看看会输出什么?
-
-**练习 3**: 创建新程序
-
-创建 `MyFirstProgram.java`,让它输出 `"I love programming"`:
-
-```java
-public class MyFirstProgram {
+public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("I love programming");
+        System.out.println("第一行");
+        // 在这里添加第二行
+        // 在这里添加第三行
     }
 }
 ```
 
-::: danger 警告
-文件名必须改成 `MyFirstProgram.java`,否则无法运行
+### 练习 3：观察错误
+故意把第 1 行的 `HelloWorld` 改成 `Helloworld`（注意大小写），编译看看会发生什么。
+
+::: tip 小提示
+错误是学习的一部分，不要害怕尝试。通过观察错误信息，你能更快理解 Java 的规则。
 :::
 
-## 🔍 代码含义(Code Explanation)
+## 📌 小结
 
-你可能好奇这些代码是什么意思:
-
-- `public class HelloWorld` - 定义一个名为 HelloWorld 的**类(Class)**
-- `public static void main(String[] args)` - 程序的**入口(Entry Point)**,Java 从这里开始执行
-- `System.out.println()` - **打印方法(Print Method)**,在屏幕显示内容
-- `"Hello World"` - **字符串(String)**,用双引号包起来的文字
-
-现在不用完全理解,只需记住:
-1. 写代码要在 `main` 里
-2. 用 `System.out.println()` 打印内容
-3. 文字要放在双引号 `""` 里
-
-## 📌 小结(Key Points)
-
-1. Java 程序的文件名必须和类名完全一致
-2. 用 `javac` 编译,用 `java` 运行
-3. `System.out.println()` 可以在屏幕上显示内容
+- Java 程序的文件名必须与 **类名(Class Name)** 完全一致
+- `System.out.println()` 用于在屏幕上输出内容
+- 运行 Java 程序需要两步：先 **编译(javac)**，再 **运行(java)**
