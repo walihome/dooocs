@@ -12,183 +12,148 @@ head:
 
  # 动手实践
 
-恭喜你!你已经掌握了 Python 编程中最常用的核心内容。这些基础知识——**变量(Variable)**、**数据类型(Data Type)**、**条件判断(Conditional)**、**循环(Loop)**和**函数(Function)**——构成了 90% 日常编程工作的基础。
+恭喜你!你已经学会了 Python 编程中最核心的内容。你可能不敢相信,但事实是:**90% 的 Python 程序都是用你刚学的这些知识组合而成的**。
 
-但是,光看懂代码还不够。根据费曼学习法,只有当你能**独立完成一个真实需求**时,才算真正学会。现在,让我们通过一个实际项目来巩固所学知识。
+变量(Variable)、数据类型(Data Type)、条件判断(Conditional)、循环(Loop)——这些就是编程的"乐高积木"。现在,让我们用它们搭建一个真正的程序!
 
-## 🎯 实战项目:个人记账小助手
+::: tip 费曼学习法的启示
+诺贝尔物理学奖得主费曼说过:能用自己的方式做出来,才算真正学会。读懂代码不等于会写代码,就像看懂菜谱不等于会做菜。
+:::
 
-我们要开发一个简单的记账程序,它能够:
-- 记录每笔收入和支出
-- 计算总余额
-- 显示所有交易记录
+## 💡 实战项目:个性化问候助手
 
-这个项目会用到你学过的所有知识点。
+我们要做一个小程序,它能:
+- 询问用户的姓名和年龄
+- 根据年龄给出不同的问候
+- 统计用户输入了多少个字符
 
-## 💡 需求分析
+这个项目会用到你学过的所有知识点!
 
-在动手写代码之前,先思考一下:
-- 需要用什么数据结构存储交易记录?(列表!)
-- 如何区分收入和支出?(条件判断!)
-- 怎么让用户持续输入直到想退出?(循环!)
-- 如何让代码更清晰易读?(函数!)
+## 📝 完整代码
 
-## 📝 完整代码实现
+```python{1-2,5-6,9-14,17-20}
+# 获取用户输入
+name = input("请输入你的名字:")
+age = input("请输入你的年龄:")
 
-```python{1-3,8-18,23-31,36-45}
-# 个人记账小助手
+# 数据类型转换
+age = int(age)
 
-# 存储所有交易记录
-transactions = []
+# 根据年龄给出不同问候
+if age < 18:
+    greeting = "你好,年轻人"
+elif age < 60:
+    greeting = "你好,朋友"
+else:
+    greeting = "你好,尊敬的长者"
 
-# 添加交易记录的函数
-def add_transaction():
-    print("\n--- 记录一笔交易 ---")
-    description = input("请输入交易描述: ")
-    amount = float(input("请输入金额: "))
-    transaction_type = input("收入还是支出? (输入'收入'或'支出'): ")
-    
-    if transaction_type == "收入":
-        transactions.append({"描述": description, "金额": amount, "类型": "收入"})
-    elif transaction_type == "支出":
-        transactions.append({"描述": description, "金额": -amount, "类型": "支出"})
-    else:
-        print("输入错误!请输入'收入'或'支出'")
+# 计算名字长度并输出
+name_length = len(name)
+print(greeting + "," + name + "!")
+print("你的名字有", name_length, "个字符")
+print("=" * 30)
 
-# 查看所有记录的函数
-def show_transactions():
-    print("\n--- 所有交易记录 ---")
-    if len(transactions) == 0:
-        print("还没有任何记录")
-    else:
-        for i in range(len(transactions)):
-            t = transactions[i]
-            print(f"{i+1}. {t['描述']} - {t['类型']}: {abs(t['金额'])}元")
-
-# 计算余额的函数
-def calculate_balance():
-    total = 0
-    for t in transactions:
-        total += t["金额"]
-    print(f"\n当前余额: {total}元")
-
-# 主程序
-while True:
-    print("\n=== 记账小助手 ===")
-    print("1. 添加交易")
-    print("2. 查看记录")
-    print("3. 查看余额")
-    print("4. 退出")
-    
-    choice = input("请选择操作(1-4): ")
-    
-    if choice == "1":
-        add_transaction()
-    elif choice == "2":
-        show_transactions()
-    elif choice == "3":
-        calculate_balance()
-    elif choice == "4":
-        print("感谢使用!再见!")
-        break
-    else:
-        print("无效选择,请重新输入")
+# 显示用户信息
+print("用户信息:")
+print("姓名:", name)
+print("年龄:", age)
+print("=" * 30)
 ```
 
-## 🎮 运行效果
+### 运行结果
 
-当你运行这个程序时,会看到这样的交互:
+当你运行这个程序时,会看到:
 
-```bash
-=== 记账小助手 ===
-1. 添加交易
-2. 查看记录
-3. 查看余额
-4. 退出
-请选择操作(1-4): 1
-
---- 记录一笔交易 ---
-请输入交易描述: 工资
-请输入金额: 5000
-收入还是支出? (输入'收入'或'支出'): 收入
-
-=== 记账小助手 ===
-1. 添加交易
-2. 查看记录
-3. 查看余额
-4. 退出
-请选择操作(1-4): 1
-
---- 记录一笔交易 ---
-请输入交易描述: 午餐
-请输入金额: 30
-收入还是支出? (输入'收入'或'支出'): 支出
-
-=== 记账小助手 ===
-1. 添加交易
-2. 查看记录
-3. 查看余额
-4. 退出
-请选择操作(1-4): 3
-
-当前余额: 4970.0元
+```
+请输入你的名字:小明
+请输入你的年龄:25
+你好,朋友,小明!
+你的名字有 2 个字符
+==============================
+用户信息:
+姓名: 小明
+年龄: 25
+==============================
 ```
 
-## 💪 练习任务
+## 🔍 代码解析
 
-### 任务1:添加删除功能
+### 这个程序做了什么?
 
-为程序添加删除交易记录的功能。提示:可以让用户输入要删除的记录编号。
+1. **第 1-2 行**:用 `input()` 获取用户输入
+2. **第 5-6 行**:把年龄从文本转换成数字(为了后面比较大小)
+3. **第 9-14 行**:用 `if-elif-else` 根据年龄选择问候语
+4. **第 17-20 行**:计算名字长度并输出结果
 
-::: details 参考答案
-```python{2-10}
-def delete_transaction():
-    show_transactions()
-    if len(transactions) == 0:
-        return
-    
-    index = int(input("请输入要删除的记录编号: ")) - 1
-    if 0 <= index < len(transactions):
-        transactions.pop(index)
-        print("删除成功!")
+::: warning 注意
+`input()` 获取的是字符串类型,如果要进行数字比较,必须先用 `int()` 转换!
+:::
+
+## 💪 你的挑战
+
+### 挑战 1:增加年龄验证
+
+修改程序,如果用户输入的年龄小于 0 或大于 150,显示"年龄输入有误!"
+
+::: details 点击查看答案
+```python{7-10}
+name = input("请输入你的名字:")
+age = input("请输入你的年龄:")
+
+age = int(age)
+
+# 验证年龄范围
+if age < 0 or age > 150:
+    print("年龄输入有误!")
+else:
+    if age < 18:
+        greeting = "你好,年轻人"
+    elif age < 60:
+        greeting = "你好,朋友"
     else:
-        print("无效的编号")
-
-# 在主程序的菜单中添加:
-# print("5. 删除记录")
-# 并在 choice 判断中添加对应的 elif 分支
+        greeting = "你好,尊敬的长者"
+    
+    name_length = len(name)
+    print(greeting + "," + name + "!")
+    print("你的名字有", name_length, "个字符")
 ```
 :::
 
-### 任务2:统计收支情况
+### 挑战 2:重复问候
 
-添加一个功能,分别统计总收入和总支出。
+让程序询问"需要问候几次?",然后用循环重复显示问候语。
 
-::: details 参考答案
-```python{2-11}
-def show_summary():
-    income = 0
-    expense = 0
-    for t in transactions:
-        if t["金额"] > 0:
-            income += t["金额"]
-        else:
-            expense += abs(t["金额"])
-    
-    print(f"\n总收入: {income}元")
-    print(f"总支出: {expense}元")
-    print(f"余额: {income - expense}元")
+::: details 点击查看答案
+```python{8-9,12-13}
+name = input("请输入你的名字:")
+age = input("请输入你的年龄:")
+
+age = int(age)
+
+if age < 18:
+    greeting = "你好,年轻人"
+elif age < 60:
+    greeting = "你好,朋友"
+else:
+    greeting = "你好,尊敬的长者"
+
+times = input("需要问候几次?")
+times = int(times)
+
+# 循环输出问候
+for i in range(times):
+    print(greeting + "," + name + "!")
 ```
 :::
 
 ## 📌 小结
 
-通过这个实战项目,你完成了:
-- ✅ 使用**列表(List)**和**字典(Dictionary)**存储结构化数据
-- ✅ 用**函数(Function)**组织代码,让程序结构更清晰
-- ✅ 通过**while 循环**实现持续交互,用**for 循环**遍历数据
-- ✅ 运用**条件判断(if-elif-else)**处理不同的用户选择
+- **编程就是组合**:没有什么"高级技巧",只有把基础知识灵活组合
+- **动手才能学会**:看懂和做出来是两回事,多写才能进步
+- **80/20 法则**:你已经掌握了 Python 最核心的 20% 知识,足以完成 80% 的任务
 
-::: tip 🎉 你已经是真正的程序员了!
-这个小项目虽然简单,但它包含了真实软件的核心要素:数据存储、用户交互、逻辑处理。接下来的进阶内容,都是在这个基础上的延伸和优化。继续保持这种动手实践的学习方式,你会进步得更快!
+::: tip 下一步
+现在你已经能写出真正的程序了!后续的学习都是在这个基础上扩展——列表(List)让你处理更多数据,函数(Function)让你重复使用代码,模块(Module)让你调用别人的代码。但核心逻辑,永远是这些基础知识的组合。
+
+试着修改这个程序,加入你自己的想法吧!
 :::
