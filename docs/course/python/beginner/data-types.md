@@ -12,246 +12,233 @@ head:
 
  # 数据类型
 
-当你在 Python 中写下 `age = 18` 时,Python 需要知道这个 `18` 是一个数字,还是一段文本?这就是数据类型的作用——它告诉 Python 如何理解和处理你的数据。
+在编程世界里,计算机需要知道你给它的信息是什么类型,就像你需要知道手里拿的是苹果还是橘子。Python 有几种基本的数据类型(Data Types),让我们一个个来认识它们。
 
 ## 整数(Integer)
 
 ### 💡 概念说明
 
-**整数(Integer)** 就是没有小数部分的数字,可以是正数、负数或零。
+整数就是没有小数点的数字,可以是正数、负数或零。在 Python 中用 `int` 表示。
 
 ### 📝 代码示例
 
 ```python{1-4}
-age = 18                    # 正整数
+age = 25                    # 正整数
 temperature = -5            # 负整数
 score = 0                   # 零
-
-print(age)                  # 输出: 18
-print(temperature)          # 输出: -5
-print(type(age))           # 输出: <class 'int'>
+population = 1400000000     # 大数字也可以
 ```
 
-::: tip 提示
-`type()` 函数可以帮你查看数据的类型,`int` 就是 integer(整数)的缩写。
-:::
+**运行结果**:这段代码不会显示任何内容,它只是把数据存储在变量中。
+
+让我们用 `print()` 函数看看这些整数:
+
+```python{1,2,5}
+year = 2025
+print(year)           # 输出: 2025
+
+result = 10 + 20
+print(result)         # 输出: 30
+```
 
 ### 💪 练习题
 
-**练习 1**: 创建一个变量存储你的出生年份,并打印出来。
+**练习 1**: 创建一个变量存储你的年龄,然后打印出来。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-birth_year = 2000
-print(birth_year)
-print(type(birth_year))
+my_age = 18
+print(my_age)
 ```
+:::
 
-</details>
+**练习 2**: 计算两个整数的和并打印结果。
 
-**练习 2**: 尝试创建一个负数,比如欠款金额,并查看它的类型。
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-debt = -1000
-print(debt)
-print(type(debt))           # 输出: <class 'int'>
+num1 = 15
+num2 = 27
+total = num1 + num2
+print(total)  # 输出: 42
 ```
-
-</details>
+:::
 
 ## 浮点数(Float)
 
 ### 💡 概念说明
 
-**浮点数(Float)** 就是带小数点的数字,用于表示更精确的数值。
+浮点数就是带小数点的数字,用于表示更精确的值。在 Python 中用 `float` 表示。
 
 ### 📝 代码示例
 
 ```python{1-3}
-height = 1.75               # 身高(米)
-price = 99.99               # 价格
-pi = 3.14159                # 圆周率
-
-print(height)               # 输出: 1.75
-print(type(price))         # 输出: <class 'float'>
+height = 1.75              # 身高(米)
+price = 29.99              # 价格
+temperature = -3.5         # 温度
 ```
 
-::: warning 注意
-即使是 `5.0`,Python 也会把它当作浮点数,而不是整数。
+你可以对浮点数进行计算:
+
+```python{1-3}
+length = 5.5
+width = 3.2
+area = length * width
+print(area)                # 输出: 17.6
+```
+
+::: tip 提示
+整数和浮点数可以一起计算,结果会是浮点数:
+```python
+result = 10 + 3.5
+print(result)  # 输出: 13.5
+```
 :::
-
-```python{1-2}
-num1 = 5                    # 这是整数
-num2 = 5.0                  # 这是浮点数
-
-print(type(num1))          # 输出: <class 'int'>
-print(type(num2))          # 输出: <class 'float'>
-```
 
 ### 💪 练习题
 
-**练习 1**: 创建一个变量存储你的体重(带小数),并打印类型。
+**练习 1**: 计算一个长方形的面积(长 4.5,宽 2.8)。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-weight = 65.5
-print(weight)
-print(type(weight))         # 输出: <class 'float'>
+length = 4.5
+width = 2.8
+area = length * width
+print(area)  # 输出: 12.6
 ```
+:::
 
-</details>
+**练习 2**: 计算商品打折后的价格(原价 99.9,折扣 0.8)。
 
-**练习 2**: 你有没有想过,整数和浮点数能一起运算吗?试试 `10 + 3.5` 会得到什么类型?
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-result = 10 + 3.5
-print(result)               # 输出: 13.5
-print(type(result))        # 输出: <class 'float'>
-# 整数和浮点数运算,结果是浮点数
+original_price = 99.9
+discount = 0.8
+final_price = original_price * discount
+print(final_price)  # 输出: 79.92
 ```
-
-</details>
+:::
 
 ## 字符串(String)
 
 ### 💡 概念说明
 
-**字符串(String)** 是用引号包起来的文本内容,可以是单引号 `'` 或双引号 `"`。
+字符串是用引号包起来的文字,可以是单引号 `'` 或双引号 `"`。在 Python 中用 `str` 表示。
 
 ### 📝 代码示例
 
-```python{1-4}
-name = "Alice"              # 双引号
-city = 'Beijing'            # 单引号
-message = "Hello, World!"   # 包含标点符号
-number_text = "123"         # 看起来是数字,但用引号包着就是字符串
-
-print(name)                 # 输出: Alice
-print(type(message))       # 输出: <class 'str'>
+```python{1-3}
+name = "张三"
+city = 'Beijing'
+message = "Hello, World!"
 ```
 
-::: tip 提示
-`str` 是 string(字符串)的缩写。单引号和双引号效果相同,但如果文本里有引号,就需要注意配对。
-:::
+字符串可以拼接(连接)在一起:
+
+```python{1-3}
+first_name = "李"
+last_name = "明"
+full_name = first_name + last_name
+print(full_name)           # 输出: 李明
+```
+
+字符串和数字不能直接拼接,需要转换:
 
 ```python{1-2}
-sentence1 = "He said 'Hello'"      # 外面用双引号,里面可以用单引号
-sentence2 = 'She said "Hi"'        # 外面用单引号,里面可以用双引号
-
-print(sentence1)            # 输出: He said 'Hello'
-print(sentence2)            # 输出: She said "Hi"
+age = 25
+text = "我今年" + str(age) + "岁"
+print(text)                # 输出: 我今年25岁
 ```
+
+::: warning 注意
+单引号和双引号要成对出现,不能混用:
+```python
+# ✅ 正确
+name = "Alice"
+city = 'Tokyo'
+
+# ❌ 错误
+name = "Alice'
+```
+:::
 
 ### 💪 练习题
 
-**练习 1**: 创建一个变量存储你的名字,并打印出来。
+**练习 1**: 创建两个字符串变量,分别存储你的姓和名,然后拼接打印。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-my_name = "张三"
-print(my_name)
-print(type(my_name))        # 输出: <class 'str'>
+first = "王"
+last = "小明"
+full = first + last
+print(full)  # 输出: 王小明
 ```
+:::
 
-</details>
+**练习 2**: 创建一个自我介绍的字符串,包含姓名和年龄。
 
-**练习 2**: 字符串 `"123"` 和整数 `123` 有什么区别?试试看它们能直接相加吗?
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-text_num = "123"
-real_num = 123
-
-print(type(text_num))       # 输出: <class 'str'>
-print(type(real_num))       # 输出: <class 'int'>
-
-# text_num + real_num        # 这会报错!字符串和数字不能直接相加
-print(text_num + "456")     # 输出: 123456 (字符串拼接)
-print(real_num + 456)       # 输出: 579 (数字相加)
+name = "李华"
+age = 20
+intro = "大家好,我叫" + name + ",今年" + str(age) + "岁"
+print(intro)  # 输出: 大家好,我叫李华,今年20岁
 ```
-
-</details>
+:::
 
 ## 布尔值(Boolean)
 
 ### 💡 概念说明
 
-**布尔值(Boolean)** 只有两个值:`True`(真)和 `False`(假),用于表示"是"或"否"的判断。
+布尔值只有两个值:`True`(真)和 `False`(假),用于表示是或否、对或错。在 Python 中用 `bool` 表示。
 
-::: warning 注意
-`True` 和 `False` 的首字母必须大写,这是 Python 的规定。
+::: danger 警告
+`True` 和 `False` 的首字母必须大写,否则会出错!
 :::
 
 ### 📝 代码示例
 
 ```python{1-2}
-is_student = True           # 是学生
-is_raining = False          # 没下雨
-
-print(is_student)           # 输出: True
-print(type(is_raining))    # 输出: <class 'bool'>
+is_student = True
+has_license = False
 ```
 
-布尔值通常用于条件判断:
+布尔值常用于判断和比较:
 
-```python{1-2}
+```python{1-5}
 age = 18
-is_adult = age >= 18        # 判断是否成年
+is_adult = age >= 18
+print(is_adult)            # 输出: True
 
-print(is_adult)             # 输出: True
-print(type(is_adult))      # 输出: <class 'bool'>
+print(10 > 5)              # 输出: True
+print(3 == 5)              # 输出: False
 ```
 
 ### 💪 练习题
 
-**练习 1**: 创建一个变量判断 10 是否大于 5,并打印结果。
+**练习 1**: 判断一个数字是否大于 100。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-result = 10 > 5
-print(result)               # 输出: True
-print(type(result))        # 输出: <class 'bool'>
+number = 150
+is_large = number > 100
+print(is_large)  # 输出: True
 ```
+:::
 
-</details>
+**练习 2**: 比较两个数字是否相等。
 
-**练习 2**: 试试看 `5 == 5` 和 `5 = 5` 有什么区别?
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```python
-result = 5 == 5             # == 是比较是否相等
-print(result)               # 输出: True
-
-# num = 5 = 5               # 这会报错!= 是赋值,不是比较
-num = 5                     # 正确的赋值
-print(num)
+num1 = 50
+num2 = 50
+are_equal = num1 == num2
+print(are_equal)  # 输出: True
 ```
-
-</details>
+:::
 
 ## 📌 小结
 
-- **整数(int)**:没有小数点的数字,如 `18`、`-5`
-- **浮点数(float)**:带小数点的数字,如 `3.14`、`99.99`
-- **字符串(str)**:用引号包起来的文本,如 `"Hello"`、`'Python'`
+- **整数(int)**:没有小数点的数字,如 `25`、`-10`、`0`
+- **浮点数(float)**:带小数点的数字,如 `3.14`、`-2.5`
+- **字符串(str)**:用引号包起来的文字,如 `"Hello"`、`'Python'`
 - **布尔值(bool)**:只有 `True` 或 `False` 两个值
-
-现在你可以用 `type()` 函数检查任何数据的类型,这会帮助你理解 Python 如何处理不同的数据。
