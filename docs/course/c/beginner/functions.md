@@ -14,165 +14,162 @@ head:
 
 ## 💡 什么是函数(Function)
 
-函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
+函数就像一个"任务执行器"——你把需要重复做的事情装进一个盒子里,需要的时候喊一声名字,它就会帮你执行。
 
-比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
+比如:计算两个数的和这件事,如果程序里要做10次,你可以写10遍计算代码,也可以写1个函数,调用10次。
 
-## 定义函数(Function Definition)
+## 📝 定义你的第一个函数
 
-### 📝 基本语法
+### 基本语法结构
 
-```python{1}
-def 函数名():
-    # 这里写函数要做的事情
-    print("Hello")
+```c
+返回类型 函数名(参数类型 参数名) {
+    // 函数体:要执行的代码
+    return 返回值;
+}
 ```
 
-- `def` 是定义函数的关键字
-- 函数名后面必须有小括号 `()`
-- 冒号 `:` 不能忘
-- 函数内的代码必须缩进(按一次Tab键)
+### 完整示例
 
-### 代码示例
+```c{1-4}
+#include <stdio.h>
 
-```python{1-2}
-def say_hello():
-    print("你好,欢迎学习Python!")
-```
+// 定义一个打招呼的函数
+void sayHello() {
+    printf("Hello, World!\n");
+}
 
-这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
-
-## 调用函数(Function Call)
-
-定义好函数后,需要"调用"它才会执行:
-
-```python{1-2,4}
-def say_hello():
-    print("你好,欢迎学习Python!")
-
-say_hello()  # 调用函数
+int main() {
+    sayHello();  // 调用函数
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-你好,欢迎学习Python!
+Hello, World!
 ```
 
 ::: tip 提示
-调用函数时,函数名后面的小括号 `()` 不能省略!
+`void` 表示这个函数不需要返回任何值,就像一个只负责做事不需要回报的助手。
 :::
 
-## 带参数的函数(Function with Parameters)
+## 📝 带参数(Parameter)的函数
 
-### 💡 为什么需要参数
+参数就是你传递给函数的"原材料"。
 
-有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
+```c{4-7,11}
+#include <stdio.h>
 
-### 📝 代码示例
+// 定义一个计算两数之和的函数
+int add(int a, int b) {
+    int sum = a + b;
+    return sum;  // 返回计算结果
+}
 
-```python{1,4}
-def greet(name):
-    print(f"你好,{name}!")
-
-greet("小明")  # 传入参数"小明"
+int main() {
+    int result = add(5, 3);  // 调用函数,传入5和3
+    printf("5 + 3 = %d\n", result);
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-你好,小明!
+5 + 3 = 8
 ```
 
-你可以多次调用,传入不同的参数:
+### 参数的作用
 
-```python{1-2,4-5}
-def greet(name):
-    print(f"你好,{name}!")
+- `int a, int b` - 告诉函数需要两个整数
+- `5, 3` - 调用时传入的具体数值
+- `return sum` - 把计算结果返回给调用者
 
-greet("小明")
-greet("小红")
+## 📝 实用示例:计算矩形面积
+
+```c{4-7,11-13}
+#include <stdio.h>
+
+// 计算矩形面积
+int calculateArea(int width, int height) {
+    int area = width * height;
+    return area;
+}
+
+int main() {
+    // 计算第一个矩形
+    int area1 = calculateArea(5, 10);
+    printf("矩形1面积: %d\n", area1);
+    
+    // 计算第二个矩形
+    int area2 = calculateArea(8, 6);
+    printf("矩形2面积: %d\n", area2);
+    
+    return 0;
+}
 ```
 
 **运行结果:**
 ```
-你好,小明!
-你好,小红!
+矩形1面积: 50
+矩形2面积: 48
 ```
 
-## 返回值(Return Value)
-
-### 💡 什么是返回值
-
-有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
-
-### 📝 代码示例
-
-```python{1-2,4-5}
-def calculate_square(number):
-    return number * number
-
-result = calculate_square(5)  # 函数返回25
-print(f"5的平方是: {result}")
-```
-
-**运行结果:**
-```
-5的平方是: 25
-```
-
-::: warning 注意
-如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
+::: tip 提示
+同一个函数可以被多次调用,每次传入不同的参数,得到不同的结果。
 :::
-
-## 多个参数(Multiple Parameters)
-
-函数可以接收多个参数,用逗号分隔:
-
-```python{1-2,4}
-def add_numbers(a, b):
-    return a + b
-
-result = add_numbers(10, 20)
-print(f"10 + 20 = {result}")
-```
-
-**运行结果:**
-```
-10 + 20 = 30
-```
 
 ## 💪 练习题
 
-### 练习1:定义并调用函数
+### 练习1:温度转换
+编写一个函数,将摄氏温度转换为华氏温度。公式: `华氏度 = 摄氏度 × 1.8 + 32`
 
-编写一个函数 `introduce_yourself`,打印你的名字和年龄。
+::: details 查看答案
+```c
+#include <stdio.h>
 
-::: details 点击查看答案
-```python
-def introduce_yourself():
-    print("我叫小明")
-    print("我今年18岁")
+float celsiusToFahrenheit(float celsius) {
+    float fahrenheit = celsius * 1.8 + 32;
+    return fahrenheit;
+}
 
-introduce_yourself()
+int main() {
+    float temp = celsiusToFahrenheit(25);
+    printf("25°C = %.1f°F\n", temp);
+    return 0;
+}
 ```
 :::
 
-### 练习2:带参数的函数
+### 练习2:判断奇偶数
+编写一个函数,判断一个数是奇数还是偶数,是偶数返回1,是奇数返回0。
 
-编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
+::: details 查看答案
+```c
+#include <stdio.h>
 
-::: details 点击查看答案
-```python
-def calculate_rectangle_area(length, width):
-    return length * width
+int isEven(int num) {
+    if (num % 2 == 0) {
+        return 1;  // 偶数
+    } else {
+        return 0;  // 奇数
+    }
+}
 
-area = calculate_rectangle_area(5, 3)
-print(f"矩形面积是: {area}")
+int main() {
+    int number = 7;
+    if (isEven(number)) {
+        printf("%d 是偶数\n", number);
+    } else {
+        printf("%d 是奇数\n", number);
+    }
+    return 0;
+}
 ```
 :::
 
 ## 📌 小结
 
-1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
-2. **调用函数**:写出函数名并加上小括号 `函数名()`
-3. **参数**:让函数处理不同的数据,在小括号内定义参数
-4. **返回值**:用 `return` 把计算结果交还给调用者
+- **定义函数**: `返回类型 函数名(参数) { 函数体 }`
+- **调用函数**: 直接写函数名和参数 `functionName(value)`
+- **函数的好处**: 避免重复代码,让程序结构更清晰
