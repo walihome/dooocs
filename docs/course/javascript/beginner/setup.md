@@ -12,229 +12,195 @@ head:
 
  # 开发环境搭建
 
-在开始写 Python 代码之前,你需要先安装 Python 解释器(Interpreter)。解释器就是能读懂并执行 Python 代码的程序。
+在开始编写 JavaScript 代码之前,你需要准备两样工具:一个用来写代码的编辑器,和一个用来运行代码的浏览器。
 
-## 下载 Python
+## 💡 为什么需要开发环境
 
-访问 Python 官网下载页面:
+JavaScript 代码需要在浏览器中运行,就像你需要用微信才能发送消息一样。开发环境就是让你能够编写和运行代码的工具组合。
 
-```
-https://www.python.org/downloads/
-```
+## 安装代码编辑器 VS Code
 
-::: tip 提示
-官网会自动识别你的操作系统,推荐适合你的版本。建议下载最新的稳定版本(Stable Release)。
+### 💡 什么是 VS Code
+
+VS Code(Visual Studio Code)是微软开发的免费代码编辑器,它能帮你:
+- 高亮显示代码,让代码更容易阅读
+- 自动提示代码,减少输入错误
+- 发现代码中的错误
+
+### 📝 下载和安装步骤
+
+**步骤 1: 下载 VS Code**
+
+访问官方网站: `https://code.visualstudio.com`
+
+点击页面上的 "Download" 按钮,选择适合你操作系统的版本:
+- Windows 用户:下载 `.exe` 文件
+- Mac 用户:下载 `.dmg` 文件
+
+**步骤 2: 安装 VS Code**
+
+双击下载的安装包,按照提示完成安装:
+- Windows:建议勾选 "添加到 PATH" 选项
+- Mac:将 VS Code 图标拖到应用程序文件夹
+
+**步骤 3: 启动 VS Code**
+
+安装完成后,打开 VS Code,你会看到一个欢迎界面。
+
+### 📝 创建第一个 JavaScript 文件
+
+**步骤 1: 创建项目文件夹**
+
+在你的电脑上创建一个新文件夹,比如命名为 `my-first-js`:
+- Windows:在桌面右键 → 新建 → 文件夹
+- Mac:在桌面按 `Command + Shift + N`
+
+**步骤 2: 用 VS Code 打开文件夹**
+
+- 打开 VS Code
+- 点击菜单 `文件(File)` → `打开文件夹(Open Folder)`
+- 选择刚才创建的 `my-first-js` 文件夹
+
+**步骤 3: 创建 HTML 文件**
+
+在 VS Code 左侧的文件列表区域,点击 "新建文件" 图标(或右键 → 新建文件),创建一个名为 `index.html` 的文件。
+
+::: tip 为什么是 HTML 文件
+JavaScript 代码需要在网页中运行,而 HTML 文件就是网页的基础。你可以把 HTML 理解为房子的框架,JavaScript 是让房子"动起来"的电路系统。
 :::
 
-### Windows 系统
+**步骤 4: 编写第一个网页**
 
-1. 点击下载按钮,获取安装包(例如 `python-3.12.x-amd64.exe`)
-2. 双击安装包
-3. **重要**:勾选 `Add Python to PATH` 选项
-4. 点击 `Install Now`
+在 `index.html` 文件中输入以下代码:
 
-::: warning 注意
-如果忘记勾选 `Add Python to PATH`,后续在命令行中无法直接使用 `python` 命令。
-:::
-
-### macOS 系统
-
-1. 下载 `.pkg` 安装包
-2. 双击安装包,按照提示完成安装
-
-::: tip 提示
-macOS 系统自带 Python 2.x,但我们需要安装 Python 3.x。两者可以共存。
-:::
-
-### Linux 系统
-
-大多数 Linux 发行版已预装 Python 3。打开终端(Terminal)验证:
-
-```bash
-python3 --version
+```html{8}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的第一个 JavaScript 程序</title>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <script src="main.js"></script>
+</body>
+</html>
 ```
 
-如果未安装,使用包管理器安装:
+**步骤 5: 创建 JavaScript 文件**
 
-```bash
-# Ubuntu/Debian
-sudo apt update
-sudo apt install python3
+继续创建一个名为 `main.js` 的文件,输入以下代码:
 
-# CentOS/RHEL
-sudo yum install python3
+```javascript{1}
+alert('欢迎学习 JavaScript!');
 ```
 
-## 验证安装
+## 在浏览器中运行代码
 
-安装完成后,打开命令行工具验证:
+### 💡 使用浏览器运行代码
 
-- **Windows**: 按 `Win + R`,输入 `cmd`,回车
-- **macOS**: 按 `Command + 空格`,输入 `Terminal`,回车
-- **Linux**: 按 `Ctrl + Alt + T`
+浏览器内置了 JavaScript 引擎(Engine),可以直接执行 JavaScript 代码。推荐使用:
+- Google Chrome
+- Microsoft Edge
+- Firefox
 
-在命令行中输入:
+### 📝 运行你的第一个程序
 
-```bash
-python --version
+**步骤 1: 打开 HTML 文件**
+
+在 VS Code 中,右键点击 `index.html` 文件,你会看到几个选项:
+
+- 如果安装了 "Live Server" 插件:选择 `Open with Live Server`
+- 没有插件:选择 `在文件资源管理器中显示(Reveal in File Explorer)`,然后双击 `index.html` 文件
+
+**步骤 2: 查看运行结果**
+
+浏览器会打开你的网页,你会看到一个弹窗显示 "欢迎学习 JavaScript!"。
+
+恭喜!你已经成功运行了第一个 JavaScript 程序。
+
+### 📝 安装 Live Server 插件(推荐)
+
+Live Server 可以让你的代码修改后自动刷新浏览器,非常方便。
+
+**安装步骤:**
+
+1. 在 VS Code 左侧点击扩展图标(四个方块组成的图标)
+2. 在搜索框输入 `Live Server`
+3. 找到 "Live Server" 插件(作者是 Ritwick Dey)
+4. 点击 `安装(Install)` 按钮
+
+安装完成后,右键 HTML 文件就能看到 `Open with Live Server` 选项了。
+
+## 使用浏览器开发者工具
+
+### 💡 什么是开发者工具
+
+浏览器内置的开发者工具(DevTools)可以帮你:
+- 查看代码运行结果
+- 发现和调试错误
+- 直接在浏览器中测试代码
+
+### 📝 打开开发者工具
+
+**方法 1: 使用快捷键**
+- Windows: 按 `F12` 或 `Ctrl + Shift + I`
+- Mac: 按 `Command + Option + I`
+
+**方法 2: 使用菜单**
+- Chrome: 点击右上角三个点 → 更多工具 → 开发者工具
+- Edge: 点击右上角三个点 → 更多工具 → 开发者工具
+
+### 📝 在控制台运行代码
+
+开发者工具打开后,点击 `Console(控制台)` 标签,你可以直接在这里输入 JavaScript 代码:
+
+```javascript
+console.log('Hello from Console!');
 ```
 
-或者(某些系统需要):
+按回车键,你会立即看到运行结果。
 
-```bash
-python3 --version
-```
-
-如果看到类似 `Python 3.12.0` 的输出,说明安装成功。
-
-## 编写第一个程序
-
-### 使用交互式解释器(Interactive Interpreter)
-
-在命令行中输入:
-
-```bash
-python
-```
-
-你会看到类似这样的提示符:
-
-```
-Python 3.12.0 (main, Oct 2023, 12:00:00)
->>> 
-```
-
-`>>>` 表示 Python 正在等待你输入代码。试试输入:
-
-```python
-print("Hello, Python!")
-```
-
-按回车,你会立即看到输出:
-
-```
-Hello, Python!
-```
-
-::: tip 提示
-输入 `exit()` 可以退出交互式解释器。
-:::
-
-### 使用文本编辑器
-
-交互式解释器适合快速测试,但实际开发需要将代码保存到文件中。
-
-1. 打开任意文本编辑器(记事本、TextEdit 等)
-2. 输入以下代码:
-
-```python
-# 这是我的第一个 Python 程序
-print("Hello, Python!")
-print("编程世界,我来了!")
-```
-
-3. 保存文件,命名为 `hello.py`(扩展名必须是 `.py`)
-4. 在命令行中切换到文件所在目录,执行:
-
-```bash
-python hello.py
-```
-
-你会看到:
-
-```
-Hello, Python!
-编程世界,我来了!
-```
-
-::: warning 注意
-文件名不要包含中文或特殊字符,建议使用小写字母和下划线,如 `my_first_program.py`。
-:::
-
-## 安装代码编辑器(可选但推荐)
-
-虽然记事本可以写代码,但专业的代码编辑器会提供语法高亮(Syntax Highlighting)、自动补全等功能,让编程更轻松。
-
-推荐以下编辑器之一:
-
-1. **VS Code**(最推荐)
-   - 下载地址: `https://code.visualstudio.com/`
-   - 安装后,在扩展商店搜索 `Python`,安装官方扩展
-
-2. **PyCharm Community**(功能更强大)
-   - 下载地址: `https://www.jetbrains.com/pycharm/download/`
-   - 选择免费的 Community 版本
-
-3. **Sublime Text**(轻量快速)
-   - 下载地址: `https://www.sublimetext.com/`
-
-### 使用 VS Code 运行代码
-
-1. 打开 VS Code
-2. 点击 `File` → `Open Folder`,选择你的代码文件夹
-3. 创建新文件 `test.py`,输入:
-
-```python{1}
-print("使用 VS Code 运行 Python!")
-```
-
-4. 点击右上角的运行按钮(▶️),或按 `F5`
-5. 在下方的终端(Terminal)中查看输出结果
-
-::: tip 提示
-首次运行时,VS Code 可能提示安装 Python 扩展,点击安装即可。
+::: tip 控制台的作用
+控制台(Console)是学习 JavaScript 最好的练习场,你可以随时输入代码并立即看到结果,不需要创建文件。
 :::
 
 ## 💪 练习题
 
-### 练习 1:验证环境
+**练习 1: 修改弹窗内容**
 
-在命令行中依次执行以下命令,并记录输出结果:
+将 `main.js` 中的文字改为你自己的名字,保存文件后刷新浏览器,查看变化。
 
-```bash
-python --version
-python -c "print('环境配置成功!')"
+<details>
+<summary>查看答案</summary>
+
+```javascript
+alert('我叫张三,正在学习 JavaScript!');
 ```
 
-::: details 查看答案
-第一条命令应显示 Python 版本号,如 `Python 3.12.0`。
+保存文件,刷新浏览器(按 `F5` 或 `Ctrl/Command + R`),你会看到新的弹窗内容。
 
-第二条命令应输出:`环境配置成功!`
+</details>
 
-`-c` 参数表示直接执行后面的代码,而不是运行文件。
-:::
+**练习 2: 在控制台输出信息**
 
-### 练习 2:创建并运行程序
+在 `main.js` 中添加一行代码,让浏览器控制台显示一条消息:
 
-创建文件 `intro.py`,让程序输出你的名字和学习目标:
+<details>
+<summary>查看答案</summary>
 
-```python
-# 在这里写代码
+```javascript{2}
+alert('欢迎学习 JavaScript!');
+console.log('这条消息显示在控制台中');
 ```
 
-::: details 查看答案
-```python
-# intro.py
-print("我是张三")
-print("我的学习目标是:掌握 Python 编程基础")
-```
+保存文件,刷新浏览器,按 `F12` 打开开发者工具,切换到 `Console` 标签,你会看到输出的消息。
 
-运行方式:
-
-```bash
-python intro.py
-```
-
-预期输出:
-```
-我是张三
-我的学习目标是:掌握 Python 编程基础
-```
-:::
+</details>
 
 ## 📌 小结
 
-- Python 解释器(Interpreter)是执行代码的程序,需要先安装
-- 使用 `python --version` 验证安装是否成功
-- Python 代码文件的扩展名是 `.py`
-- 使用 `python 文件名.py` 命令运行程序
+- **VS Code** 是用来编写代码的编辑器,让代码更易读易写
+- **浏览器** 是用来运行 JavaScript 代码的环境,内置了 JavaScript 引擎
+- **开发者工具** 是调试代码的利器,特别是控制台(Console)可以立即测试代码
+
+现在你已经搭建好了开发环境,可以开始编写和运行 JavaScript 代码了!
