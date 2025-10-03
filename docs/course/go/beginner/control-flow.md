@@ -10,241 +10,346 @@ head:
       content: go极简教程
 ---
 
- # 控制流
+ # 控制流(Control Flow)
 
-程序需要根据不同情况做出不同的决策，或者重复执行某些操作。这就是控制流(Control Flow)要解决的问题。
+程序不总是从上到下顺序执行——有时需要重复做某事,有时需要根据条件选择不同的路径。这就是控制流要解决的问题。
 
-## if 语句 - 让程序做判断
+## for 循环(For Loop)
 
 ### 💡 概念说明
 
-`if` 语句让程序根据条件决定是否执行某段代码。就像生活中的"如果...就..."。
+当你需要重复执行某段代码时,用 `for` 循环。Go 语言只有 `for` 一种循环,但它可以实现多种循环方式。
 
-基本形式:
-- `if` - 如果条件成立
-- `elif` - 否则如果(可选,可多个)
-- `else` - 否则(可选)
+### 📝 基本用法
 
-### 📝 代码示例
+```go{4}
+package main
 
-```python{1,4,6}
-age = 18
+import "fmt"
 
-if age >= 18:
-    print("你可以考驾照了")  // 条件成立时执行
-elif age >= 16:
-    print("你可以骑电动车")  // 第一个条件不成立,检查这个
-else:
-    print("你还需要等几年")  // 所有条件都不成立时执行
+func main() {
+    // 打印 5 次问候语
+    for i := 0; i < 5; i++ {
+        fmt.Println("你好,这是第", i+1, "次问候")
+    }
+}
 ```
 
-运行结果会显示:`你可以考驾照了`
+**运行结果:**
+```
+你好,这是第 1 次问候
+你好,这是第 2 次问候
+你好,这是第 3 次问候
+你好,这是第 4 次问候
+你好,这是第 5 次问候
+```
 
 ::: tip 提示
-缩进(Indentation)很重要! Python 用缩进表示代码块,通常用 4 个空格或 1 个 Tab。
+`for` 循环的三部分:`i := 0`(初始值) ; `i < 5`(继续条件) ; `i++`(每次递增)
 :::
 
-**多个条件组合:**
+### 📝 省略初始值和递增
 
-```python{3-4}
-score = 85
+```go{4-7}
+package main
 
-if score >= 60 and score < 90:  // 使用 and 连接两个条件
-    print("成绩良好")
+import "fmt"
+
+func main() {
+    count := 0
+    // 只保留条件部分
+    for count < 3 {
+        fmt.Println("计数:", count)
+        count++
+    }
+}
 ```
 
-常用的条件运算符:
-- `and` - 并且(两个条件都要满足)
-- `or` - 或者(满足其中一个即可)
-- `not` - 取反
+**运行结果:**
+```
+计数: 0
+计数: 1
+计数: 2
+```
+
+### 📝 无限循环
+
+```go{4-9}
+package main
+
+import "fmt"
+
+func main() {
+    counter := 0
+    // 不写任何条件,就是无限循环
+    for {
+        fmt.Println("循环次数:", counter)
+        counter++
+        if counter >= 3 {
+            break // 跳出循环
+        }
+    }
+}
+```
+
+**运行结果:**
+```
+循环次数: 0
+循环次数: 1
+循环次数: 2
+```
 
 ### 💪 练习题
 
-**练习 1**: 写一个程序判断一个数字是正数、负数还是零。
+**练习 1:** 用 `for` 循环计算 1 到 10 的总和,并打印结果
 
-::: details 点击查看答案
-```python
-number = -5
+<details>
+<summary>点击查看答案</summary>
 
-if number > 0:
-    print("这是正数")
-elif number < 0:
-    print("这是负数")
-else:
-    print("这是零")
+```go
+package main
+
+import "fmt"
+
+func main() {
+    sum := 0
+    for i := 1; i <= 10; i++ {
+        sum = sum + i
+    }
+    fmt.Println("1到10的总和是:", sum)
+}
 ```
-:::
 
-**练习 2**: 判断用户输入的密码是否正确(假设正确密码是 "123456")。
+</details>
 
-::: details 点击查看答案
-```python
-password = input("请输入密码: ")
+**练习 2:** 打印 1 到 20 之间的所有偶数
 
-if password == "123456":
-    print("密码正确")
-else:
-    print("密码错误")
+<details>
+<summary>点击查看答案</summary>
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    for i := 1; i <= 20; i++ {
+        if i%2 == 0 {
+            fmt.Println(i)
+        }
+    }
+}
 ```
-:::
 
-## for 循环 - 遍历序列
+</details>
+
+## while 风格的循环
 
 ### 💡 概念说明
 
-`for` 循环用于遍历(Iterate)序列中的每个元素,自动处理每一项。
+Go 没有 `while` 关键字,但 `for` 可以当 `while` 用——只写条件部分即可。
 
 ### 📝 代码示例
 
-**遍历列表(List):**
+```go{4-10}
+package main
 
-```python{3-4}
-fruits = ["苹果", "香蕉", "橙子"]
+import "fmt"
 
-for fruit in fruits:  // fruit 会依次变成列表中的每个元素
-    print(f"我喜欢吃{fruit}")
-```
-
-运行结果:
-```
-我喜欢吃苹果
-我喜欢吃香蕉
-我喜欢吃橙子
-```
-
-**使用 range() 函数:**
-
-```python{1,4}
-for i in range(5):  // range(5) 生成 0, 1, 2, 3, 4
-    print(f"这是第 {i + 1} 次循环")
+func main() {
+    temperature := 30
     
-for i in range(1, 6):  // range(1, 6) 生成 1, 2, 3, 4, 5
-    print(i)
+    // 类似其他语言的 while(temperature > 25)
+    for temperature > 25 {
+        fmt.Println("当前温度:", temperature, "度,正在降温...")
+        temperature = temperature - 2
+    }
+    
+    fmt.Println("降温完成,当前温度:", temperature, "度")
+}
 ```
 
-`range()` 的三种用法:
-- `range(5)` - 从 0 到 4
-- `range(1, 6)` - 从 1 到 5
-- `range(0, 10, 2)` - 从 0 到 9,步长为 2(即 0, 2, 4, 6, 8)
+**运行结果:**
+```
+当前温度: 30 度,正在降温...
+当前温度: 28 度,正在降温...
+当前温度: 26 度,正在降温...
+降温完成,当前温度: 24 度
+```
 
 ### 💪 练习题
 
-**练习 1**: 计算 1 到 10 的总和。
+**练习:** 从 100 开始,每次减 7,直到小于 50 为止,打印每一步的值
 
-::: details 点击查看答案
-```python
-total = 0
+<details>
+<summary>点击查看答案</summary>
 
-for i in range(1, 11):
-    total = total + i
+```go
+package main
 
-print(f"总和是: {total}")
+import "fmt"
+
+func main() {
+    number := 100
+    for number >= 50 {
+        fmt.Println(number)
+        number = number - 7
+    }
+}
 ```
-:::
 
-**练习 2**: 打印九九乘法表的前 3 行。
+</details>
 
-::: details 点击查看答案
-```python
-for i in range(1, 4):
-    for j in range(1, 10):
-        print(f"{i} × {j} = {i * j}", end="  ")
-    print()  // 换行
-```
-:::
-
-## while 循环 - 条件满足就继续
+## if 条件判断(If Statement)
 
 ### 💡 概念说明
 
-`while` 循环在条件为真时持续执行,直到条件变为假。适合不知道要循环多少次的情况。
+根据条件决定是否执行某段代码。可以单独使用 `if`,也可以配合 `else`(否则)使用。
 
-### 📝 代码示例
+### 📝 基本 if
 
-**基本用法:**
+```go{4-6}
+package main
 
-```python{1,3-5}
-count = 0
+import "fmt"
 
-while count < 5:  // 当 count 小于 5 时持续执行
-    print(f"count 的值是: {count}")
-    count = count + 1  // 每次循环后 count 加 1
+func main() {
+    age := 20
+    
+    if age >= 18 {
+        fmt.Println("你已经成年了")
+    }
+}
 ```
 
-运行结果:
+**运行结果:**
 ```
-count 的值是: 0
-count 的值是: 1
-count 的值是: 2
-count 的值是: 3
-count 的值是: 4
+你已经成年了
+```
+
+### 📝 if-else
+
+```go{4-8}
+package main
+
+import "fmt"
+
+func main() {
+    score := 75
+    
+    if score >= 60 {
+        fmt.Println("及格了!")
+    } else {
+        fmt.Println("需要继续努力")
+    }
+}
+```
+
+**运行结果:**
+```
+及格了!
+```
+
+### 📝 if-else if-else
+
+```go{4-12}
+package main
+
+import "fmt"
+
+func main() {
+    temperature := 28
+    
+    if temperature > 30 {
+        fmt.Println("天气很热")
+    } else if temperature > 20 {
+        fmt.Println("天气舒适")
+    } else {
+        fmt.Println("天气有点凉")
+    }
+}
+```
+
+**运行结果:**
+```
+天气舒适
+```
+
+### 📝 if 的简短声明
+
+```go{4-7}
+package main
+
+import "fmt"
+
+func main() {
+    // 在 if 中声明变量并判断
+    if price := 150; price > 100 {
+        fmt.Println("价格超过100元")
+    }
+    // 注意:price 只在 if 块内有效
+}
+```
+
+**运行结果:**
+```
+价格超过100元
 ```
 
 ::: warning 注意
-如果条件永远为真,会造成无限循环(Infinite Loop)! 确保循环体内有改变条件的代码。
+在 `if` 语句中声明的变量,只能在 `if-else` 块内使用
 :::
-
-**使用 break 提前退出:**
-
-```python{5-6}
-number = 1
-
-while number <= 10:
-    print(number)
-    if number == 5:
-        break  // 遇到 5 就退出循环
-    number = number + 1
-```
-
-**使用 continue 跳过本次:**
-
-```python{4-5}
-number = 0
-
-while number < 5:
-    number = number + 1
-    if number == 3:
-        continue  // 跳过 3,继续下一次循环
-    print(number)
-```
 
 ### 💪 练习题
 
-**练习 1**: 让用户输入密码,最多尝试 3 次,正确就退出。
+**练习 1:** 判断一个数字是正数、负数还是零
 
-::: details 点击查看答案
-```python
-attempts = 0
-correct_password = "123456"
+<details>
+<summary>点击查看答案</summary>
 
-while attempts < 3:
-    password = input("请输入密码: ")
-    if password == correct_password:
-        print("登录成功!")
-        break
-    else:
-        attempts = attempts + 1
-        print(f"密码错误,还剩 {3 - attempts} 次机会")
+```go
+package main
+
+import "fmt"
+
+func main() {
+    number := -5
+    
+    if number > 0 {
+        fmt.Println("这是正数")
+    } else if number < 0 {
+        fmt.Println("这是负数")
+    } else {
+        fmt.Println("这是零")
+    }
+}
 ```
-:::
 
-**练习 2**: 计算从 1 累加到多少时总和会超过 100。
+</details>
 
-::: details 点击查看答案
-```python
-total = 0
-number = 1
+**练习 2:** 结合 `for` 和 `if`,打印 1 到 10 中能被 3 整除的数字
 
-while total <= 100:
-    total = total + number
-    number = number + 1
+<details>
+<summary>点击查看答案</summary>
 
-print(f"累加到 {number - 1} 时,总和为 {total}")
+```go
+package main
+
+import "fmt"
+
+func main() {
+    for i := 1; i <= 10; i++ {
+        if i%3 == 0 {
+            fmt.Println(i, "能被3整除")
+        }
+    }
+}
 ```
-:::
+
+</details>
 
 ## 📌 小结
 
-- **if 语句**: 根据条件决定是否执行代码,使用 `elif` 和 `else` 处理多种情况
-- **for 循环**: 遍历序列或使用 `range()` 重复固定次数,适合已知循环次数的场景
-- **while 循环**: 条件为真时持续执行,适合未知循环次数的场景,记得用 `break` 或改变条件避免无限循环
+1. **for 循环**是 Go 中唯一的循环方式,可以写成完整的三段式,也可以只保留条件部分当 `while` 用
+2. **if 语句**用于条件判断,可以单独使用或配合 `else`、`else if` 组合使用
+3. 使用 `break` 可以跳出循环,控制流可以让程序更灵活地处理重复任务和条件分支
