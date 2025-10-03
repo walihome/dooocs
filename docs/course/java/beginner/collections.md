@@ -12,322 +12,218 @@ head:
 
  # 集合
 
-## 💡 什么是集合(Collection)
+## 💡 什么是数组(Array)
 
-你有没有想过，如果要存储 100 个学生的成绩，难道要创建 100 个变量吗？集合就是用来解决这个问题的——它可以存储一组相关的数据。
+数组是一个**容器(Container)**,可以存储多个**相同类型(Same Type)**的数据。
 
-Java 中常用的集合有三种：
-- **数组(Array)**：固定大小，可以重复
-- **Set**：不固定大小，不能重复
-- **Map**：不固定大小，键值对存储
+想象一下:
+- 你有 5 个苹果,需要一个篮子来装 → 这个篮子就是数组
+- 你想记录班级 30 个同学的成绩 → 用数组存储这 30 个数字
 
-## 数组(Array)
+数组的三个关键特点:
+- **固定长度**:创建时就确定能装多少个元素
+- **相同类型**:只能装同一种数据(都是整数或都是字符串)
+- **有序排列**:每个位置有编号,从 0 开始
 
-### 💡 概念说明
+## 创建数组
 
-数组是最基础的集合，特点是：
-- 创建时必须指定大小
-- 大小不能改变
-- 可以存储重复的元素
+### 📝 基本语法
 
-### 📝 代码示例
+创建数组需要三步:声明 → 分配空间 → 赋值
 
-```java{3,6,9}
-public class ArrayExample {
-    public static void main(String[] args) {
-        // 创建一个能存储 5 个整数的数组
-        int[] scores = new int[5];
-        
-        // 给数组赋值（索引从 0 开始）
-        scores[0] = 85;
-        scores[1] = 92;
-        scores[2] = 78;
-        
-        // 读取数组中的值
-        System.out.println("第一个成绩: " + scores[0]);
-        System.out.println("数组长度: " + scores.length);
-    }
-}
-```
+```java{1,4,7}
+// 方式1:分步创建
+int[] scores;              // 声明一个整数数组
+scores = new int[3];       // 分配空间,可以装3个整数
+scores[0] = 85;            // 给第1个位置赋值
 
-**运行结果：**
-```
-第一个成绩: 85
-数组长度: 5
+// 方式2:创建时直接赋值
+int[] ages = {18, 20, 22}; // 一步完成
 ```
 
 ::: tip 提示
-数组的索引从 0 开始，所以第一个元素是 `scores[0]`，最后一个元素是 `scores[4]`
+- `int[]` 表示"整数数组类型"
+- `new int[3]` 表示创建一个能装 3 个整数的数组
+- 大括号 `{}` 方式更简洁,适合已知所有数据的情况
 :::
 
-### 📝 更简洁的创建方式
+### 💻 完整示例
 
-```java{2,5}
-public class ArrayExample2 {
+```java{5-6,9-10}
+public class ArrayDemo {
     public static void main(String[] args) {
-        // 创建数组的同时赋值
+        
+        // 创建一个装3个学生年龄的数组
+        int[] ages = new int[3];
+        System.out.println("数组创建成功,长度是:" + ages.length);
+        
+        // 创建时直接填入数据
         String[] names = {"张三", "李四", "王五"};
-        
-        // 遍历数组
-        for (int i = 0; i < names.length; i++) {
-            System.out.println(names[i]);
-        }
+        System.out.println("学生姓名数组创建成功,长度是:" + names.length);
     }
 }
 ```
 
-**运行结果：**
+**运行结果:**
 ```
-张三
-李四
-王五
-```
-
-### 💪 练习题
-
-**练习 1**：创建一个存储 7 天温度的数组，并计算平均温度
-
-<details>
-<summary>查看答案</summary>
-
-```java
-public class TemperatureArray {
-    public static void main(String[] args) {
-        int[] temperatures = {25, 27, 26, 28, 30, 29, 27};
-        
-        int sum = 0;
-        for (int i = 0; i < temperatures.length; i++) {
-            sum += temperatures[i];
-        }
-        
-        double average = (double) sum / temperatures.length;
-        System.out.println("平均温度: " + average + "℃");
-    }
-}
-```
-
-</details>
-
-## Set（集合）
-
-### 💡 概念说明
-
-Set 是一种不允许重复元素的集合：
-- 大小可以动态改变
-- 自动去除重复元素
-- 常用的实现类是 **HashSet**
-
-### 📝 代码示例
-
-```java{1,5-6,9,12}
-import java.util.HashSet;
-
-public class SetExample {
-    public static void main(String[] args) {
-        // 创建一个 Set
-        HashSet<String> fruits = new HashSet<>();
-        
-        // 添加元素
-        fruits.add("苹果");
-        fruits.add("香蕉");
-        fruits.add("苹果");  // 重复的元素不会被添加
-        
-        System.out.println("水果种类: " + fruits);
-        System.out.println("总共有 " + fruits.size() + " 种水果");
-    }
-}
-```
-
-**运行结果：**
-```
-水果种类: [香蕉, 苹果]
-总共有 2 种水果
+数组创建成功,长度是:3
+学生姓名数组创建成功,长度是:3
 ```
 
 ::: warning 注意
-Set 会自动去除重复元素，所以两次添加"苹果"，最终只会保留一个
+数组创建后长度不能改变。如果 `new int[3]`,就永远只能装 3 个整数。
 :::
 
-### 📝 Set 的常用操作
+## 数组的读取
 
-```java{1,8,11,14}
-import java.util.HashSet;
+### 💡 索引(Index)概念
 
-public class SetOperations {
+数组中每个位置都有一个编号,这个编号叫**索引(Index)**。
+
+**关键规则:索引从 0 开始!**
+
+```
+数组: ["苹果", "香蕉", "橙子"]
+索引:    0       1       2
+```
+
+### 📝 读取语法
+
+使用 `数组名[索引]` 来读取指定位置的元素:
+
+```java{4-6}
+public class ReadArray {
     public static void main(String[] args) {
-        HashSet<Integer> numbers = new HashSet<>();
+        String[] fruits = {"苹果", "香蕉", "橙子"};
         
-        numbers.add(10);
-        numbers.add(20);
-        numbers.add(30);
+        System.out.println("第1个水果是:" + fruits[0]);  // 苹果
+        System.out.println("第2个水果是:" + fruits[1]);  // 香蕉
+        System.out.println("第3个水果是:" + fruits[2]);  // 橙子
+    }
+}
+```
+
+**运行结果:**
+```
+第1个水果是:苹果
+第2个水果是:香蕉
+第3个水果是:橙子
+```
+
+::: danger 警告
+索引不能超出范围! 如果数组长度是 3,索引只能是 0、1、2。使用 `fruits[3]` 会报错。
+:::
+
+## 数组的修改
+
+### 📝 修改语法
+
+使用 `数组名[索引] = 新值` 来修改指定位置的元素:
+
+```java{6,9}
+public class ModifyArray {
+    public static void main(String[] args) {
+        int[] scores = {85, 90, 78};
         
-        // 检查是否包含某个元素
-        System.out.println("包含 20? " + numbers.contains(20));
+        System.out.println("修改前,第1个成绩:" + scores[0]);
+        scores[0] = 95;  // 把第1个成绩改为95
+        System.out.println("修改后,第1个成绩:" + scores[0]);
         
-        // 删除元素
-        numbers.remove(20);
-        System.out.println("删除后: " + numbers);
+        scores[2] = scores[2] + 10;  // 把第3个成绩加10分
+        System.out.println("加分后,第3个成绩:" + scores[2]);
+    }
+}
+```
+
+**运行结果:**
+```
+修改前,第1个成绩:85
+修改后,第1个成绩:95
+加分后,第3个成绩:88
+```
+
+## 遍历数组
+
+### 💡 什么是遍历(Traverse)
+
+遍历就是**依次访问数组中的每一个元素**。
+
+### 📝 使用循环遍历
+
+```java{5-7}
+public class TraverseArray {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
         
-        // 遍历 Set
-        for (Integer num : numbers) {
-            System.out.println(num);
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println("索引" + i + "的值是:" + numbers[i]);
         }
     }
 }
 ```
 
-**运行结果：**
+**运行结果:**
 ```
-包含 20? true
-删除后: [10, 30]
-10
-30
-```
-
-### 💪 练习题
-
-**练习 1**：从一组数字中去除重复项并打印
-
-<details>
-<summary>查看答案</summary>
-
-```java
-import java.util.HashSet;
-
-public class RemoveDuplicates {
-    public static void main(String[] args) {
-        int[] numbers = {1, 2, 3, 2, 4, 1, 5};
-        HashSet<Integer> uniqueNumbers = new HashSet<>();
-        
-        for (int num : numbers) {
-            uniqueNumbers.add(num);
-        }
-        
-        System.out.println("去重后的数字: " + uniqueNumbers);
-    }
-}
-```
-
-</details>
-
-## Map（映射）
-
-### 💡 概念说明
-
-Map 存储的是**键值对(Key-Value Pair)**：
-- 每个键(Key)对应一个值(Value)
-- 键不能重复，值可以重复
-- 常用的实现类是 **HashMap**
-
-### 📝 代码示例
-
-```java{1,5-6,9-10,13}
-import java.util.HashMap;
-
-public class MapExample {
-    public static void main(String[] args) {
-        // 创建一个 Map（键是学号，值是姓名）
-        HashMap<String, String> students = new HashMap<>();
-        
-        // 添加键值对
-        students.put("001", "张三");
-        students.put("002", "李四");
-        students.put("003", "王五");
-        
-        // 根据键获取值
-        System.out.println("学号 002 的学生: " + students.get("002"));
-        System.out.println("总共有 " + students.size() + " 个学生");
-    }
-}
-```
-
-**运行结果：**
-```
-学号 002 的学生: 李四
-总共有 3 个学生
-```
-
-### 📝 Map 的常用操作
-
-```java{1,8,11,14,17}
-import java.util.HashMap;
-
-public class MapOperations {
-    public static void main(String[] args) {
-        HashMap<String, Integer> scores = new HashMap<>();
-        
-        scores.put("语文", 85);
-        scores.put("数学", 92);
-        scores.put("英语", 78);
-        
-        // 检查是否包含某个键
-        System.out.println("包含数学成绩? " + scores.containsKey("数学"));
-        
-        // 修改值（如果键已存在，会覆盖原来的值）
-        scores.put("数学", 95);
-        
-        // 遍历 Map
-        for (String subject : scores.keySet()) {
-            System.out.println(subject + ": " + scores.get(subject) + "分");
-        }
-    }
-}
-```
-
-**运行结果：**
-```
-包含数学成绩? true
-数学: 95分
-语文: 85分
-英语: 78分
+索引0的值是:10
+索引1的值是:20
+索引2的值是:30
+索引3的值是:40
+索引4的值是:50
 ```
 
 ::: tip 提示
-`put()` 方法如果键已存在，会用新值覆盖旧值
+- `numbers.length` 获取数组长度
+- `i < numbers.length` 确保索引不会越界
+- 循环变量 `i` 正好可以当作索引使用
 :::
 
-### 💪 练习题
+## 💪 练习题
 
-**练习 1**：创建一个学生成绩管理系统，可以添加学生成绩并查询
+### 练习 1:创建并修改数组
+创建一个装 4 个整数的数组,初始值为 `{1, 2, 3, 4}`,然后把每个元素都乘以 2,最后打印所有元素。
 
-<details>
-<summary>查看答案</summary>
-
+::: details 查看答案
 ```java
-import java.util.HashMap;
-
-public class ScoreManager {
+public class Exercise1 {
     public static void main(String[] args) {
-        HashMap<String, Integer> studentScores = new HashMap<>();
+        int[] numbers = {1, 2, 3, 4};
         
-        // 添加学生成绩
-        studentScores.put("张三", 85);
-        studentScores.put("李四", 92);
-        studentScores.put("王五", 78);
-        
-        // 查询指定学生成绩
-        String studentName = "李四";
-        if (studentScores.containsKey(studentName)) {
-            System.out.println(studentName + "的成绩: " + studentScores.get(studentName));
-        } else {
-            System.out.println("未找到该学生");
+        // 每个元素乘以2
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = numbers[i] * 2;
         }
         
-        // 计算平均分
-        int total = 0;
-        for (Integer score : studentScores.values()) {
-            total += score;
+        // 打印所有元素
+        for (int i = 0; i < numbers.length; i++) {
+            System.out.println(numbers[i]);
         }
-        double average = (double) total / studentScores.size();
-        System.out.println("平均分: " + average);
     }
 }
 ```
+:::
 
-</details>
+### 练习 2:计算数组总和
+创建一个数组 `{10, 20, 30, 40, 50}`,计算所有元素的总和并打印。
+
+::: details 查看答案
+```java
+public class Exercise2 {
+    public static void main(String[] args) {
+        int[] numbers = {10, 20, 30, 40, 50};
+        int sum = 0;
+        
+        for (int i = 0; i < numbers.length; i++) {
+            sum = sum + numbers[i];
+        }
+        
+        System.out.println("总和是:" + sum);
+    }
+}
+```
+:::
 
 ## 📌 小结
 
-1. **数组(Array)**：固定大小，适合存储数量已知的数据
-2. **Set**：自动去重，适合需要唯一性的场景
-3. **Map**：键值对存储，适合需要通过标识符查找数据的场景
+1. **数组是容器**:用于存储多个相同类型的数据,长度固定
+2. **索引从 0 开始**:`数组名[0]` 访问第 1 个元素,`数组名[1]` 访问第 2 个元素
+3. **读取和修改**:使用 `数组名[索引]` 来读取或修改指定位置的元素
