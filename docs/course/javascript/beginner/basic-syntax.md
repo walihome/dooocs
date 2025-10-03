@@ -12,213 +12,189 @@ head:
 
  # 基本语法
 
-在Python中,我们需要掌握四个最基础的操作:存储数据、显示数据、添加说明和调试程序。让我们逐个来学习。
+## 变量(Variable)
 
-## 定义变量(Variable)
+💡 **是什么?**
 
-💡 **概念说明**
+变量就像一个带标签的盒子,用来存放数据。你可以随时往盒子里放东西,也可以随时取出来用。
 
-变量就像一个带标签的盒子,用来存储数据。你给盒子起个名字,就能随时使用里面的内容。
-
-### 📝 代码示例
-
-```python{1-3}
-name = "张三"
-age = 25
-price = 99.9
+```javascript{1}
+let name = "张三";
 ```
 
-**运行说明**: 这段代码运行后不会显示任何内容,但数据已经存储好了。
+这行代码做了三件事:
+- `let` 告诉电脑"我要创建一个盒子"
+- `name` 是盒子的标签
+- `"张三"` 是放进盒子里的内容
 
-::: tip 命名建议
-- 使用英文字母、数字和下划线
+### 📝 完整示例
+
+```javascript{1-3}
+let age = 18;
+let city = "北京";
+let isStudent = true;
+```
+
+**运行结果**: 代码执行后,电脑内存中会创建三个变量,但你暂时看不到任何输出。
+
+::: tip 命名规则
+- 变量名只能包含字母、数字、下划线和美元符号
 - 不能以数字开头
-- 建议使用有意义的英文单词:`user_name` 比 `a` 更容易理解
+- 推荐使用有意义的英文单词: `userName` 而不是 `a`
 :::
-
-### 💪 练习题
-
-**练习1**: 创建三个变量,分别存储你的姓名、年龄和所在城市
-
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-```
-
-</details>
 
 ## 输出变量
 
-💡 **概念说明**
+💡 **为什么需要输出?**
 
-使用`print()`函数(Function)可以将变量的内容显示在屏幕上。
+创建变量后,你需要一种方式查看变量里存了什么内容。
 
-### 📝 代码示例
+### 📝 使用 console.log()
 
-```python{4-5}
-name = "张三"
-age = 25
+```javascript{1-2,4}
+let score = 95;
+let subject = "数学";
 
-print(name)
-print(age)
+console.log(score);    // 输出: 95
+console.log(subject);  // 输出: 数学
+```
+
+**运行结果**: 在浏览器的控制台(Console)中会显示:
+```
+95
+数学
+```
+
+### 📝 输出多个变量
+
+```javascript{1-3,5-6}
+let firstName = "李";
+let lastName = "明";
+let fullAge = 20;
+
+console.log(firstName, lastName);     // 输出: 李 明
+console.log("年龄是:", fullAge);      // 输出: 年龄是: 20
 ```
 
 **运行结果**:
 ```
-张三
-25
+李 明
+年龄是: 20
 ```
 
-你也可以一次输出多个变量:
-
-```python{4}
-name = "张三"
-age = 25
-
-print("姓名:", name, "年龄:", age)
-```
-
-**运行结果**:
-```
-姓名: 张三 年龄: 25
-```
-
-### 💪 练习题
-
-**练习2**: 输出练习1中创建的三个变量
-
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
-```
-
-</details>
-
-## 增加注释(Comment)
-
-💡 **概念说明**
-
-注释是写给人看的说明文字,程序运行时会自动忽略。就像给代码写的备忘录。
-
-### 📝 代码示例
-
-```python{1,4,7-9}
-# 这是单行注释,用井号开头
-
-name = "张三"  # 也可以写在代码后面
-
-age = 25
-
-"""
-这是多行注释
-可以写很多行说明
-"""
-print(name, age)
-```
-
-**运行结果**:
-```
-张三 25
-```
-
-::: tip 什么时候需要注释?
-- 解释复杂的逻辑
-- 说明某个数字的含义(如 `tax_rate = 0.13  # 增值税率`)
-- 暂时不想运行某段代码时,在前面加`#`
+::: warning 新手容易忘记
+`console.log()` 中的括号和分号都不能省略
 :::
 
-### 💪 练习题
+## 注释(Comment)
 
-**练习3**: 为你的代码添加注释,说明每个变量的用途
+💡 **是什么?**
 
-<details>
-<summary>查看答案</summary>
+注释是写给人看的说明文字,电脑会自动忽略它。
 
-```python
-# 存储用户的基本信息
-my_name = "李四"  # 用户姓名
-my_age = 20       # 用户年龄
-city = "北京"     # 所在城市
+### 📝 单行注释
 
-# 输出用户信息
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
+```javascript{1,4}
+// 这是注释,不会被执行
+
+let price = 100;
+// let discount = 0.8;  这行代码被注释掉了,不会执行
 ```
 
-</details>
+### 📝 多行注释
+
+```javascript{1-4}
+/*
+  这是一个计算程序
+  作者: 张三
+*/
+let result = 10 + 20;
+```
+
+::: tip 什么时候用注释?
+- 解释复杂的代码逻辑
+- 暂时禁用某行代码
+- 标记待办事项
+:::
 
 ## 日志打印
 
-💡 **概念说明**
+💡 **console.log() 的更多用法**
 
-`print()`就是最基本的日志打印方式,帮助你查看程序运行过程中的数据变化。
+除了输出变量,你还可以输出各种内容来帮助调试代码。
 
-### 📝 代码示例
+### 📝 输出计算结果
 
-```python{7,10,13}
-# 计算商品总价
-price = 100
-quantity = 3
+```javascript{1-2}
+console.log(10 + 5);           // 输出: 15
+console.log(100 - 30);         // 输出: 70
+console.log("你好" + "世界");   // 输出: 你好世界
+```
 
-# 打印初始值
-print("单价:", price)
-print("数量:", quantity)
+### 📝 输出多种数据类型
 
-# 计算总价
-total = price * quantity
-print("总价:", total)
-
-# 应用折扣
-discount = 0.9
-final_price = total * discount
-print("折后价:", final_price)
+```javascript{1-4}
+console.log(123);              // 数字
+console.log("Hello");          // 文本
+console.log(true);             // 布尔值
+console.log(10, "岁", true);   // 混合输出
 ```
 
 **运行结果**:
 ```
-单价: 100
-数量: 3
-总价: 300
-折后价: 270.0
+123
+Hello
+true
+10 岁 true
 ```
 
-::: warning 调试技巧
-当程序结果不对时,在关键位置添加`print()`,检查每一步的数据是否正确。
-:::
+### 📝 查看变量内容
 
-### 💪 练习题
+```javascript{1-5}
+let userName = "王芳";
+let userAge = 25;
 
-**练习4**: 编写一个程序,计算矩形面积(长×宽),并用`print()`显示每一步的值
+console.log("用户名:", userName);
+console.log("年龄:", userAge);
+```
+
+**运行结果**:
+```
+用户名: 王芳
+年龄: 25
+```
+
+## 💪 练习题
+
+**练习 1**: 创建一个存储你喜欢的水果名称的变量,并输出它
 
 <details>
 <summary>查看答案</summary>
 
-```python
-# 定义矩形的长和宽
-length = 10
-width = 5
-print("长度:", length)
-print("宽度:", width)
+```javascript
+let favoriteFruit = "苹果";
+console.log(favoriteFruit);
+```
 
-# 计算面积
-area = length * width
-print("面积:", area)
+</details>
+
+**练习 2**: 创建两个变量分别存储数学成绩和英语成绩,然后输出它们
+
+<details>
+<summary>查看答案</summary>
+
+```javascript
+let mathScore = 88;
+let englishScore = 92;
+
+console.log("数学成绩:", mathScore);
+console.log("英语成绩:", englishScore);
 ```
 
 </details>
 
 ## 📌 小结
 
-- **变量**: 使用`=`存储数据,如`name = "张三"`
-- **输出**: 使用`print()`显示内容
-- **注释**: 使用`#`添加单行说明,使用`""" """`添加多行说明
-- **调试**: 通过`print()`查看程序运行中的数据状态
+- **变量**: 使用 `let` 创建变量来存储数据
+- **输出**: 使用 `console.log()` 查看变量内容
+- **注释**: 使用 `//` 或 `/* */` 添加代码说明
