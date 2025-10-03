@@ -5,8 +5,8 @@ import { createWriteStream, existsSync, readFileSync } from 'fs'
 import { resolve } from 'path'
 
 export default defineConfig({
-  title: "夏斑文档",
-  description: "认真生活，快乐工作，早点下班～",
+  title: "极简教程",
+  description: "西蒙学习法，花20%的时间掌握80%的内容。",
   
   ignoreDeadLinks: true,
   base: '/', 
