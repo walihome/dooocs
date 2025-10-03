@@ -1,5 +1,5 @@
 ---
-title: 类、属性、方法
+title: 函数与方法
 category: Java
 order: 8
 tag: 菜鸟教程、新手教程
@@ -10,251 +10,232 @@ head:
       content: Java极简教程
 ---
 
- # 类、属性、方法
+ # 函数与方法
 
-## 💡 什么是类(Class)
+## 💡 什么是函数
 
-类是创建对象的模板。你可以把类想象成建筑图纸,它定义了对象应该有哪些特征和能做什么事情。
+函数(Function)就像一个专门做某件事的小机器。你给它一些材料,它帮你完成工作,然后返回结果。
 
-在Java中,几乎所有代码都要写在类里面。
+比如:
+- 计算器 → 输入两个数字 → 返回相加结果
+- 榨汁机 → 输入水果 → 返回果汁
 
-## 定义一个类
+## 定义一个方法
 
-### 📝 基本语法
+### 📝 基础语法
 
-```java
-public class Person {
-    // 类的内容写在这里
+```java{1}
+public static void sayHello() {
+    System.out.println("Hello!");
 }
 ```
 
-::: tip 提示
-类名必须和文件名完全一致。如果类名是 `Person`,文件名就必须是 `Person.java`
+::: tip 术语说明
+在 Java 中,我们通常把函数叫做 **方法(Method)**
 :::
+
+### 💡 语法组成
+
+一个方法由这几部分组成:
+
+```java
+public static void sayHello() {
+    // 方法体:要执行的代码
+}
+```
+
+- `public static` - 暂时不用理解,每次都这样写
+- `void` - 表示这个方法不返回任何结果
+- `sayHello` - 方法的名字,你可以自己取
+- `()` - 小括号,用来接收输入参数
+- `{}` - 大括号,里面写要执行的代码
 
 ### 📝 完整示例
 
-创建一个名为 `Person.java` 的文件:
+创建一个文件 `MethodDemo.java`:
 
-```java{1-2,5}
-// Person.java
-public class Person {
-    // 这是一个空类
+```java{3-5,8}
+public class MethodDemo {
+    
+    public static void sayHello() {
+        System.out.println("Hello, World!");
+    }
     
     public static void main(String[] args) {
-        System.out.println("这是 Person 类");
+        sayHello();  // 调用方法
     }
 }
 ```
 
-运行后会输出:
+**运行结果:**
 ```
-这是 Person 类
-```
-
-## 定义类字段(Field)
-
-类字段也叫**属性(Attribute)**或**成员变量(Member Variable)**,用来存储对象的数据。
-
-### 📝 代码示例
-
-```java{3-4}
-// Person.java
-public class Person {
-    String name;    // 姓名
-    int age;        // 年龄
-    
-    public static void main(String[] args) {
-        Person person = new Person();
-        person.name = "张三";
-        person.age = 25;
-        
-        System.out.println("姓名: " + person.name);
-        System.out.println("年龄: " + person.age);
-    }
-}
-```
-
-运行后会输出:
-```
-姓名: 张三
-年龄: 25
+Hello, World!
 ```
 
 ::: tip 提示
-`new Person()` 表示根据类创建一个具体的对象
+`main` 方法是程序的入口,程序从这里开始执行
 :::
 
-## 定义类的方法(Method)
+## 带参数的方法
 
-方法定义了对象能做什么事情,相当于对象的行为。
+### 💡 什么是参数
 
-### 📝 代码示例
+**参数(Parameter)** 就是方法需要的输入材料。
 
-```java{6-8}
-// Person.java
-public class Person {
-    String name;
-    int age;
+```java{1,2}
+public static void greet(String name) {
+    System.out.println("Hello, " + name + "!");
+}
+```
+
+- `String name` - 定义一个叫 `name` 的参数,类型是 `String`(文本)
+
+### 📝 使用示例
+
+```java{3-5,8-10}
+public class MethodDemo {
     
-    void sayHello() {
-        System.out.println("你好,我是 " + name);
+    public static void greet(String name) {
+        System.out.println("Hello, " + name + "!");
     }
     
     public static void main(String[] args) {
-        Person person = new Person();
-        person.name = "李四";
-        person.sayHello();  // 调用方法
+        greet("Alice");  // 传入 "Alice"
+        greet("Bob");    // 传入 "Bob"
     }
 }
 ```
 
-运行后会输出:
+**运行结果:**
 ```
-你好,我是 李四
+Hello, Alice!
+Hello, Bob!
 ```
 
-### 📝 带参数和返回值的方法
+### 📝 多个参数
 
-```java{6-8}
-// Calculator.java
+```java{3-6,9}
 public class Calculator {
     
-    // 计算两个数的和
-    int add(int a, int b) {
+    public static void add(int a, int b) {
+        int sum = a + b;
+        System.out.println(a + " + " + b + " = " + sum);
+    }
+    
+    public static void main(String[] args) {
+        add(5, 3);   // 计算 5 + 3
+        add(10, 20); // 计算 10 + 20
+    }
+}
+```
+
+**运行结果:**
+```
+5 + 3 = 8
+10 + 20 = 30
+```
+
+## 返回值
+
+### 💡 什么是返回值
+
+有些方法不仅执行操作,还需要把结果返回给调用者。
+
+```java{1,3}
+public static int add(int a, int b) {
+    int sum = a + b;
+    return sum;  // 把结果返回
+}
+```
+
+- 把 `void` 改成 `int`,表示返回一个整数
+- 使用 `return` 关键字返回结果
+
+### 📝 完整示例
+
+```java{3-5,8-10}
+public class Calculator {
+    
+    public static int add(int a, int b) {
         return a + b;
     }
     
     public static void main(String[] args) {
-        Calculator calc = new Calculator();
-        int result = calc.add(10, 20);
-        System.out.println("结果: " + result);
+        int result = add(5, 3);  // 接收返回值
+        System.out.println("结果是: " + result);
     }
 }
 ```
 
-运行后会输出:
+**运行结果:**
 ```
-结果: 30
+结果是: 8
 ```
 
-## 类字段的访问等级(Access Level)
+### 📝 直接使用返回值
 
-访问等级控制其他代码能否访问你的字段和方法。
-
-### 💡 四种访问等级
-
-- **public**: 任何地方都能访问
-- **private**: 只能在类内部访问
-- **protected**: 同一包或子类可以访问
-- **不写修饰符**: 同一包内可以访问
-
-### 📝 代码示例
-
-```java{3-4}
-// BankAccount.java
-public class BankAccount {
-    private double balance;  // 私有字段,外部不能直接访问
-    public String owner;     // 公开字段,外部可以访问
+```java{3-5,8-9}
+public class Calculator {
     
-    // 提供公开方法来访问私有字段
-    public void deposit(double amount) {
-        balance = balance + amount;
-    }
-    
-    public double getBalance() {
-        return balance;
+    public static int multiply(int a, int b) {
+        return a * b;
     }
     
     public static void main(String[] args) {
-        BankAccount account = new BankAccount();
-        account.owner = "王五";
-        account.deposit(1000);
-        
-        System.out.println("账户主: " + account.owner);
-        System.out.println("余额: " + account.getBalance());
-        
-        // account.balance = 9999;  // 错误!无法直接访问 private 字段
+        System.out.println("5 × 3 = " + multiply(5, 3));
+        System.out.println("10 × 2 = " + multiply(10, 2));
     }
 }
 ```
 
-运行后会输出:
+**运行结果:**
 ```
-账户主: 王五
-余额: 1000.0
+5 × 3 = 15
+10 × 2 = 20
 ```
-
-::: warning 注意
-通常建议字段设为 `private`,通过 `public` 方法来访问,这样可以保护数据安全
-:::
 
 ## 💪 练习题
 
-### 练习1:创建一个学生类
+### 练习 1: 计算面积
 
-创建一个 `Student` 类,包含:
-- 字段:`name`(姓名)、`score`(分数)
-- 方法:`showInfo()`(显示学生信息)
+编写一个方法 `calculateArea`,接收长和宽两个参数,返回矩形面积。
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
 ```java
-// Student.java
-public class Student {
-    String name;
-    int score;
+public class Practice {
     
-    void showInfo() {
-        System.out.println("姓名: " + name);
-        System.out.println("分数: " + score);
+    public static int calculateArea(int length, int width) {
+        return length * width;
     }
     
     public static void main(String[] args) {
-        Student student = new Student();
-        student.name = "小明";
-        student.score = 95;
-        student.showInfo();
+        int area = calculateArea(5, 3);
+        System.out.println("面积是: " + area);
     }
 }
 ```
 
 </details>
 
-### 练习2:创建一个商品类
+### 练习 2: 判断奇偶
 
-创建一个 `Product` 类,包含:
-- 私有字段:`price`(价格)
-- 公开字段:`name`(商品名)
-- 方法:`setPrice(double p)`(设置价格)、`getPrice()`(获取价格)
+编写一个方法 `isEven`,接收一个整数,如果是偶数返回 `true`,否则返回 `false`。
 
 <details>
-<summary>查看答案</summary>
+<summary>点击查看答案</summary>
 
 ```java
-// Product.java
-public class Product {
-    public String name;
-    private double price;
+public class Practice {
     
-    public void setPrice(double p) {
-        if (p > 0) {
-            price = p;
-        }
-    }
-    
-    public double getPrice() {
-        return price;
+    public static boolean isEven(int number) {
+        return number % 2 == 0;
     }
     
     public static void main(String[] args) {
-        Product product = new Product();
-        product.name = "手机";
-        product.setPrice(2999);
-        
-        System.out.println("商品: " + product.name);
-        System.out.println("价格: " + product.getPrice());
+        System.out.println("4 是偶数吗? " + isEven(4));
+        System.out.println("7 是偶数吗? " + isEven(7));
     }
 }
 ```
@@ -263,7 +244,7 @@ public class Product {
 
 ## 📌 小结
 
-- **类(Class)**是创建对象的模板,类名必须和文件名一致
-- **字段(Field)**存储对象的数据,定义在类里面
-- **方法(Method)**定义对象的行为,可以有参数和返回值
-- **访问等级**:`private`保护数据,`public`允许外部访问
+- 方法用 `public static 返回类型 方法名(参数)` 定义
+- 用 `方法名(参数值)` 调用方法
+- `void` 表示无返回值,其他类型(如 `int`)表示有返回值
+- 使用 `return` 返回结果
