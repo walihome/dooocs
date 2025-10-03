@@ -10,16 +10,18 @@ head:
       content: python极简教程
 ---
 
- # 集合
+ # 集合(Set)
 
-## 💡 什么是集合(Set)
+## 💡 什么是集合
 
-**集合(Set)** 是一种特殊的数据容器,它有两个重要特点:
-- **元素唯一**: 不允许重复的元素存在
-- **无序**: 元素没有固定的位置
+集合(Set)是Python中用来存储**不重复**元素的数据类型。你可以把它想象成一个自动去重的容器——往里面放相同的东西,它只会保留一份。
 
-::: tip 生活中的集合
-想象一个装弹珠的袋子,即使你放入两颗一模一样的红色弹珠,袋子里也只会保留一颗。而且从袋子里倒出弹珠时,顺序是随机的。
+集合主要有两个特点:
+- **元素唯一**: 自动去除重复元素
+- **无序性**: 不像列表那样按顺序排列
+
+::: tip 集合 vs 列表
+列表(List)可以有重复元素,集合(Set)会自动去重。如果你需要存储不重复的数据,集合是更好的选择。
 :::
 
 ## 创建集合
@@ -30,7 +32,7 @@ head:
 # 创建一个水果集合
 fruits = {'apple', 'banana', 'orange'}
 print(fruits)
-# 输出: {'apple', 'banana', 'orange'} (顺序可能不同)
+# 输出: {'apple', 'banana', 'orange'}
 
 # 自动去重
 numbers = {1, 2, 2, 3, 3, 3}
@@ -38,225 +40,187 @@ print(numbers)
 # 输出: {1, 2, 3}
 ```
 
-::: warning 注意
-空的花括号 `{}` 不是集合,而是字典(Dictionary)! 创建空集合要用 `set()`
-:::
+### 使用set()函数创建
 
-### 使用 set() 函数
-
-```python{1,4,7}
-# 创建空集合
-empty_set = set()
-print(empty_set)
-# 输出: set()
-
+```python{1,4,7,10}
 # 从列表创建集合
-my_list = [1, 2, 2, 3, 4, 4, 5]
+my_list = [1, 2, 2, 3, 4, 4]
 my_set = set(my_list)
-print(my_set)
-# 输出: {1, 2, 3, 4, 5}
+print(my_set)  # 输出: {1, 2, 3, 4}
+
+# 从字符串创建集合
+text = "hello"
+char_set = set(text)
+print(char_set)  # 输出: {'h', 'e', 'l', 'o'}
+
+# 创建空集合(注意:{}创建的是字典)
+empty_set = set()
+print(empty_set)  # 输出: set()
 ```
 
-## 添加元素
-
-### 添加单个元素 - add()
-
-```python{2,5}
-fruits = {'apple', 'banana'}
-fruits.add('orange')
-print(fruits)
-# 输出: {'apple', 'banana', 'orange'}
-
-fruits.add('apple')  # 添加已存在的元素
-print(fruits)
-# 输出: {'apple', 'banana', 'orange'} (没有变化)
-```
-
-### 添加多个元素 - update()
-
-```python{2,6}
-fruits = {'apple'}
-fruits.update(['banana', 'orange', 'grape'])
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape'}
-
-fruits.update(['apple', 'mango'])  # 'apple'已存在会被忽略
-print(fruits)
-# 输出: {'apple', 'banana', 'orange', 'grape', 'mango'}
-```
-
-## 删除元素
-
-### remove() - 删除指定元素
-
-```python{2}
-fruits = {'apple', 'banana', 'orange'}
-fruits.remove('banana')
-print(fruits)
-# 输出: {'apple', 'orange'}
-```
-
-::: danger 警告
-如果删除不存在的元素,会报错!
-```python
-fruits.remove('mango')  # KeyError: 'mango'
-```
+::: warning 注意
+`{}`创建的是空字典,不是空集合! 要创建空集合必须用`set()`。
 :::
 
-### discard() - 安全删除
+## 查看集合元素
 
-```python{2,5}
+### 检查元素是否存在
+
+```python{4,7}
 fruits = {'apple', 'banana', 'orange'}
-fruits.discard('banana')
-print(fruits)
-# 输出: {'apple', 'orange'}
 
-fruits.discard('mango')  # 不存在也不会报错
-print(fruits)
-# 输出: {'apple', 'orange'}
-```
+# 使用in关键字
+print('apple' in fruits)     # 输出: True
+print('grape' in fruits)     # 输出: False
 
-### pop() - 随机删除
-
-```python{2}
-fruits = {'apple', 'banana', 'orange'}
-removed = fruits.pop()  # 随机删除一个元素
-print(f"删除了: {removed}")
-print(f"剩余: {fruits}")
-```
-
-### clear() - 清空集合
-
-```python{2}
-fruits = {'apple', 'banana', 'orange'}
-fruits.clear()
-print(fruits)
-# 输出: set()
-```
-
-## 检查元素
-
-### 使用 in 关键字
-
-```python{2-3,6-7}
-fruits = {'apple', 'banana', 'orange'}
-print('apple' in fruits)
-# 输出: True
-
-print('mango' in fruits)
-# 输出: False
+# 使用not in
+print('grape' not in fruits) # 输出: True
 ```
 
 ### 获取集合长度
 
-```python{2}
+```python{4}
 fruits = {'apple', 'banana', 'orange'}
-print(len(fruits))
-# 输出: 3
+
+# 使用len()函数
+print(len(fruits))  # 输出: 3
 ```
+
+::: tip 为什么集合不能用索引
+集合是无序的,所以不能像列表那样用`fruits[0]`来获取元素。如果你需要按顺序访问元素,应该使用列表(List)。
+:::
+
+## 修改集合
+
+### 添加单个元素
+
+```python{4,7}
+fruits = {'apple', 'banana'}
+
+# 使用add()添加一个元素
+fruits.add('orange')
+print(fruits)  # 输出: {'apple', 'banana', 'orange'}
+
+# 添加已存在的元素(不会报错,但也不会重复添加)
+fruits.add('apple')
+print(fruits)  # 输出: {'apple', 'banana', 'orange'}
+```
+
+### 添加多个元素
+
+```python{4,8}
+fruits = {'apple', 'banana'}
+
+# 使用update()添加多个元素
+fruits.update(['orange', 'grape', 'apple'])
+print(fruits)
+# 输出: {'apple', 'banana', 'orange', 'grape'}
+
+# 也可以用另一个集合来更新
+more_fruits = {'mango', 'kiwi'}
+fruits.update(more_fruits)
+print(fruits)
+# 输出: {'apple', 'banana', 'orange', 'grape', 'mango', 'kiwi'}
+```
+
+### 删除元素
+
+```python{4,8,12}
+fruits = {'apple', 'banana', 'orange'}
+
+# 使用remove()删除(如果元素不存在会报错)
+fruits.remove('banana')
+print(fruits)  # 输出: {'apple', 'orange'}
+
+# 使用discard()删除(元素不存在也不会报错)
+fruits.discard('grape')  # 不会报错
+print(fruits)  # 输出: {'apple', 'orange'}
+
+# 使用pop()随机删除一个元素
+removed = fruits.pop()
+print(f"删除了: {removed}")
+print(fruits)
+
+# 使用clear()清空集合
+fruits.clear()
+print(fruits)  # 输出: set()
+```
+
+::: warning remove() vs discard()
+- `remove()`: 删除不存在的元素会报错
+- `discard()`: 删除不存在的元素不会报错(更安全)
+:::
 
 ## 集合运算
 
-### 并集(Union) - 所有元素
+### 交集、并集、差集
 
-```python{3,6}
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
-result = set1 | set2
-print(result)
-# 输出: {1, 2, 3, 4, 5}
+```python{4,7,10,13}
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
 
-result = set1.union(set2)  # 另一种写法
-print(result)
+# 交集(共同拥有的元素)
+print(set1 & set2)  # 输出: {3, 4}
+
+# 并集(所有元素,自动去重)
+print(set1 | set2)  # 输出: {1, 2, 3, 4, 5, 6}
+
+# 差集(set1有但set2没有的)
+print(set1 - set2)  # 输出: {1, 2}
+
+# 对称差集(不同时存在于两个集合的元素)
+print(set1 ^ set2)  # 输出: {1, 2, 5, 6}
 ```
-
-### 交集(Intersection) - 共同元素
-
-```python{3,6}
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
-result = set1 & set2
-print(result)
-# 输出: {3}
-
-result = set1.intersection(set2)  # 另一种写法
-print(result)
-```
-
-### 差集(Difference) - 独有元素
-
-```python{3,6}
-set1 = {1, 2, 3}
-set2 = {3, 4, 5}
-result = set1 - set2  # set1有但set2没有的
-print(result)
-# 输出: {1, 2}
-
-result = set2 - set1  # set2有但set1没有的
-print(result)
-# 输出: {4, 5}
-```
-
-## 遍历集合
-
-```python{2-3}
-fruits = {'apple', 'banana', 'orange'}
-for fruit in fruits:
-    print(fruit)
-# 输出顺序不固定
-```
-
-::: tip 提示
-因为集合是无序的,每次遍历的顺序可能不同
-:::
 
 ## 💪 练习题
 
-### 练习 1: 去除重复
-创建一个程序,接收用户输入的多个数字(用空格分隔),输出去重后的数字。
-
-<details>
-<summary>点击查看答案</summary>
+### 练习1: 去除列表中的重复元素
+有一个包含重复数字的列表,请使用集合去除重复元素,然后转回列表。
 
 ```python
-# 接收输入
-user_input = input("请输入数字(用空格分隔): ")
-# 分割成列表
-numbers = user_input.split()
-# 转换为整数集合
-number_set = set(int(num) for num in numbers)
-# 输出结果
-print(f"去重后: {sorted(number_set)}")
+numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+# 你的代码写在这里
 ```
 
-运行示例:
+::: details 查看答案
+```python
+numbers = [1, 2, 3, 2, 4, 1, 5, 3]
+
+# 转换为集合去重,再转回列表
+unique_numbers = list(set(numbers))
+print(unique_numbers)  # 输出: [1, 2, 3, 4, 5] (顺序可能不同)
 ```
-请输入数字(用空格分隔): 1 2 3 2 4 3 5
-去重后: [1, 2, 3, 4, 5]
-```
+:::
 
-</details>
-
-### 练习 2: 找出共同好友
-假设小明的好友是 `{'Tom', 'Jerry', 'Bob'}`,小红的好友是 `{'Jerry', 'Alice', 'Bob'}`,找出他们的共同好友。
-
-<details>
-<summary>点击查看答案</summary>
+### 练习2: 找出两个班级的共同学生
+A班和B班各有一些学生,找出同时在两个班的学生。
 
 ```python
-xiaoming_friends = {'Tom', 'Jerry', 'Bob'}
-xiaohong_friends = {'Jerry', 'Alice', 'Bob'}
-
-common_friends = xiaoming_friends & xiaohong_friends
-print(f"共同好友: {common_friends}")
-# 输出: 共同好友: {'Jerry', 'Bob'}
+class_a = {'张三', '李四', '王五', '赵六'}
+class_b = {'李四', '王五', '孙七', '周八'}
+# 你的代码写在这里
 ```
 
-</details>
+::: details 查看答案
+```python
+class_a = {'张三', '李四', '王五', '赵六'}
+class_b = {'李四', '王五', '孙七', '周八'}
+
+# 使用交集找出共同学生
+common_students = class_a & class_b
+print(f"同时在两个班的学生: {common_students}")
+# 输出: 同时在两个班的学生: {'李四', '王五'}
+
+# 也可以用intersection()方法
+common_students2 = class_a.intersection(class_b)
+print(common_students2)
+```
+:::
 
 ## 📌 小结
 
-- **集合(Set)** 存储唯一且无序的元素
-- 使用 `{}` 或 `set()` 创建,空集合必须用 `set()`
-- 常用操作: `add()` 添加、`remove()`/`discard()` 删除、`in` 检查
-- 支持数学运算: 并集 `|`、交集 `&`、差集 `-`
+- 集合使用`{}`或`set()`创建,会**自动去除重复元素**
+- 集合是**无序**的,不能使用索引访问
+- 使用`add()`添加单个元素,`update()`添加多个元素
+- 使用`remove()`或`discard()`删除元素,后者更安全
+- 集合支持交集(`&`)、并集(`|`)、差集(`-`)等运算
