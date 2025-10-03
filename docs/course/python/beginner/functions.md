@@ -14,41 +14,43 @@ head:
 
 ## 💡 什么是函数(Function)
 
-函数就像一个可以重复使用的"工具盒"。你把想要重复执行的代码放进去,需要的时候喊一声它的名字,它就会帮你完成任务。
+函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
 
-**为什么需要函数?**
-- 避免重复写相同的代码
-- 让代码更容易阅读和维护
-- 可以随时调用,想用几次就用几次
+比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
 
-## 定义函数(Define Function)
+## 定义函数(Function Definition)
 
 ### 📝 基本语法
 
 ```python{1}
-def greet():
+def 函数名():
+    # 这里写函数要做的事情
+    print("Hello")
+```
+
+- `def` 是定义函数的关键字
+- 函数名后面必须有小括号 `()`
+- 冒号 `:` 不能忘
+- 函数内的代码必须缩进(按一次Tab键)
+
+### 代码示例
+
+```python{1-2}
+def say_hello():
     print("你好,欢迎学习Python!")
 ```
 
-**语法结构:**
-- `def` - 告诉Python"我要定义一个函数"
-- `greet` - 函数的名字(你可以自己取)
-- `()` - 小括号(暂时留空,后面会用到)
-- `:` - 冒号,表示函数内容开始
-- 缩进的代码 - 函数要执行的具体任务
+这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
 
-::: tip 提示
-函数定义后不会自动运行,就像你买了一个工具箱但还没打开使用。
-:::
+## 调用函数(Function Call)
 
-### 📝 完整示例
+定义好函数后,需要"调用"它才会执行:
 
-```python{1,5}
-def greet():
+```python{1-2,4}
+def say_hello():
     print("你好,欢迎学习Python!")
 
-# 调用函数
-greet()
+say_hello()  # 调用函数
 ```
 
 **运行结果:**
@@ -56,17 +58,36 @@ greet()
 你好,欢迎学习Python!
 ```
 
+::: tip 提示
+调用函数时,函数名后面的小括号 `()` 不能省略!
+:::
+
 ## 带参数的函数(Function with Parameters)
 
-### 💡 什么是参数(Parameter)
+### 💡 为什么需要参数
 
-参数就像函数的"输入口",可以让函数根据不同的输入做不同的事情。
+有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
 
-```python{1,5,6}
+### 📝 代码示例
+
+```python{1,4}
 def greet(name):
     print(f"你好,{name}!")
 
-# 调用时传入不同的名字
+greet("小明")  # 传入参数"小明"
+```
+
+**运行结果:**
+```
+你好,小明!
+```
+
+你可以多次调用,传入不同的参数:
+
+```python{1-2,4-5}
+def greet(name):
+    print(f"你好,{name}!")
+
 greet("小明")
 greet("小红")
 ```
@@ -77,148 +98,81 @@ greet("小红")
 你好,小红!
 ```
 
-### 📝 多个参数示例
-
-```python{1,5}
-def add_numbers(a, b):
-    result = a + b
-    print(f"{a} + {b} = {result}")
-
-add_numbers(5, 3)
-```
-
-**运行结果:**
-```
-5 + 3 = 8
-```
-
 ## 返回值(Return Value)
 
-### 💡 为什么需要返回值
+### 💡 什么是返回值
 
-有时候我们不只是想让函数打印结果,还想把结果保存下来继续使用。这就需要用到 `return`。
+有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
 
-```python{3,6,7}
-def add_numbers(a, b):
-    result = a + b
-    return result
+### 📝 代码示例
 
-# 把函数的结果保存到变量中
-total = add_numbers(10, 20)
-print(f"计算结果是: {total}")
+```python{1-2,4-5}
+def calculate_square(number):
+    return number * number
+
+result = calculate_square(5)  # 函数返回25
+print(f"5的平方是: {result}")
 ```
 
 **运行结果:**
 ```
-计算结果是: 30
+5的平方是: 25
 ```
 
 ::: warning 注意
-`return` 和 `print` 的区别:
-- `print` 只是显示结果,不能保存
-- `return` 把结果返回,可以保存到变量中继续使用
+如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
 :::
 
-### 📝 实用示例
+## 多个参数(Multiple Parameters)
 
-```python{1-3,6-8}
-def calculate_total(price, quantity):
-    total = price * quantity
-    return total
+函数可以接收多个参数,用逗号分隔:
 
-# 计算购物总价
-apple_total = calculate_total(5, 10)
-banana_total = calculate_total(3, 8)
-print(f"苹果总价: {apple_total}元, 香蕉总价: {banana_total}元")
+```python{1-2,4}
+def add_numbers(a, b):
+    return a + b
+
+result = add_numbers(10, 20)
+print(f"10 + 20 = {result}")
 ```
 
 **运行结果:**
 ```
-苹果总价: 50元, 香蕉总价: 24元
+10 + 20 = 30
 ```
-
-## 方法(Method)
-
-### 💡 函数 vs 方法
-
-**方法(Method)** 是"属于"某个对象的函数。Python中的很多数据类型都自带了一些方法。
-
-```python{2,5}
-# 字符串的方法
-message = "hello"
-print(message.upper())
-
-# 列表的方法
-numbers = [3, 1, 2]
-numbers.sort()
-print(numbers)
-```
-
-**运行结果:**
-```
-HELLO
-[1, 2, 3]
-```
-
-::: tip 提示
-方法的调用方式是: `对象.方法名()`
-:::
 
 ## 💪 练习题
 
-### 练习 1: 自我介绍函数
+### 练习1:定义并调用函数
 
-创建一个函数,输入姓名和年龄,打印自我介绍。
+编写一个函数 `introduce_yourself`,打印你的名字和年龄。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 点击查看答案
 ```python
-def introduce(name, age):
-    print(f"我叫{name},今年{age}岁")
+def introduce_yourself():
+    print("我叫小明")
+    print("我今年18岁")
 
-introduce("张三", 25)
-introduce("李四", 30)
+introduce_yourself()
 ```
+:::
 
-**运行结果:**
-```
-我叫张三,今年25岁
-我叫李四,今年30岁
-```
+### 练习2:带参数的函数
 
-</details>
+编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
 
-### 练习 2: 计算器函数
-
-创建一个函数,计算两个数字的乘积并返回结果。
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 点击查看答案
 ```python
-def multiply(x, y):
-    return x * y
+def calculate_rectangle_area(length, width):
+    return length * width
 
-result1 = multiply(4, 5)
-result2 = multiply(7, 8)
-
-print(f"4 × 5 = {result1}")
-print(f"7 × 8 = {result2}")
+area = calculate_rectangle_area(5, 3)
+print(f"矩形面积是: {area}")
 ```
-
-**运行结果:**
-```
-4 × 5 = 20
-7 × 8 = 56
-```
-
-</details>
+:::
 
 ## 📌 小结
 
-- **定义函数**: 使用 `def 函数名():` 创建可重复使用的代码块
-- **调用函数**: 通过 `函数名()` 来执行函数
-- **参数(Parameter)**: 让函数接收输入,使其更灵活
-- **返回值(Return)**: 用 `return` 把结果返回,方便后续使用
-- **方法(Method)**: 属于对象的函数,通过 `对象.方法名()` 调用
+1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
+2. **调用函数**:写出函数名并加上小括号 `函数名()`
+3. **参数**:让函数处理不同的数据,在小括号内定义参数
+4. **返回值**:用 `return` 把计算结果交还给调用者
