@@ -12,96 +12,89 @@ head:
 
  # 基础运算
 
-编程的核心之一就是让计算机帮我们做计算。在这一章,你将学会如何在Python中进行各种运算操作。
+编程的核心之一就是让计算机帮我们完成各种计算。在这一章,你将学会如何让 TypeScript 进行数学计算、比较大小,以及做出逻辑判断。
 
 ## 赋值(Assignment)
 
 ### 💡 概念说明
 
-赋值就是给一个变量(Variable)存储一个值。使用等号 `=` 来完成赋值操作。
+赋值就是把一个值存储到变量中,使用 `=` 符号完成。
+
+::: tip 提示
+`=` 在编程中不是"等于"的意思,而是"赋值"——把右边的值放到左边的变量里。
+:::
 
 ### 📝 代码示例
 
-```python{1-3}
-age = 25
-name = "Alice"
-price = 19.99
+```typescript{1,4,7}
+let score = 95; // 把 95 存到 score 变量中
+
+// 可以重新赋值
+score = 100; // score 现在是 100
+
+// 可以用一个变量的值赋给另一个变量
+let finalScore = score; // finalScore 也是 100
+
+console.log(score); // 输出: 100
+console.log(finalScore); // 输出: 100
 ```
 
-运行后不会显示任何内容,但Python已经把这些值存储在变量中了。
+**运行结果**: 控制台会显示两个 100
 
-::: tip 提示
-等号 `=` 在编程中表示"赋值",而不是数学中的"等于"。
-:::
-
-### 💪 练习题
-
-1. 创建一个变量 `score`,赋值为 100
-2. 创建一个变量 `city`,赋值为你所在的城市名称
-
-::: details 查看答案
-```python
-score = 100
-city = "Beijing"
-```
-:::
-
-## 数学运算(Arithmetic Operations)
+## 数学运算(Arithmetic Operators)
 
 ### 💡 概念说明
 
-Python支持常见的数学运算:
+TypeScript 支持基本的数学运算:
 - 加法 `+`
 - 减法 `-`
 - 乘法 `*`
 - 除法 `/`
-- 求余 `%` (计算除法的余数)
+- 求余(取模) `%`
 
 ### 📝 代码示例
 
-```python{1-5,8-9}
-# 基础运算
-result1 = 10 + 5      # 加法
-result2 = 20 - 8      # 减法
-result3 = 6 * 7       # 乘法
-result4 = 15 / 3      # 除法
+```typescript{2,5,8,11,14}
+// 加法
+let total = 50 + 30; // total 是 80
 
-# 求余运算
-remainder = 17 % 5    # 17除以5余2
-print(remainder)
+// 减法
+let remaining = 100 - 25; // remaining 是 75
+
+// 乘法
+let price = 20 * 3; // price 是 60
+
+// 除法
+let average = 100 / 4; // average 是 25
+
+// 求余 - 除法后的余数
+let remainder = 17 % 5; // remainder 是 2 (因为 17÷5=3余2)
+
+console.log(total); // 80
+console.log(remainder); // 2
 ```
 
-运行结果:
-```
-2
-```
+**运行结果**: 控制台显示 80 和 2
 
-::: warning 注意
-除法 `/` 的结果总是小数(浮点数),即使能整除。例如 `10 / 5` 结果是 `2.0` 而不是 `2`。
+::: tip 提示
+求余运算 `%` 常用于判断奇偶数:如果 `number % 2` 结果是 0,说明是偶数;结果是 1,说明是奇数。
 :::
 
-### 💪 练习题
+### 📝 组合运算
 
-1. 计算 `(50 + 30) * 2` 的结果,存储在变量 `total` 中
-2. 计算 `23 % 4` 的结果并打印出来
-
-::: details 查看答案
-```python
-total = (50 + 30) * 2
-print(total)  # 输出: 160
-
-result = 23 % 4
-print(result)  # 输出: 3
+```typescript{2-3}
+let a = 10;
+let result = (a + 5) * 2; // 先算括号内: 10+5=15, 再乘2: 15*2=30
+console.log(result); // 30
 ```
-:::
 
-## 比较运算(Comparison Operations)
+## 比较运算(Comparison Operators)
 
 ### 💡 概念说明
 
-比较运算用于比较两个值,结果是 `True`(真)或 `False`(假):
-- 相等 `==`
-- 不相等 `!=`
+比较运算用于比较两个值,结果是 `boolean` 类型(true 或 false):
+- 相等 `===`
+- 不相等 `!==`
 - 大于 `>`
 - 小于 `<`
 - 大于等于 `>=`
@@ -109,105 +102,130 @@ print(result)  # 输出: 3
 
 ### 📝 代码示例
 
-```python{1-6}
-print(10 == 10)    # 判断是否相等
-print(5 > 3)       # 判断5是否大于3
-print(8 < 2)       # 判断8是否小于2
-print(7 >= 7)      # 判断7是否大于等于7
-print(10 != 5)     # 判断10是否不等于5
-print("cat" == "dog")  # 文本也可以比较
+```typescript{2,5,8,11,14,17}
+// 相等判断
+let isEqual = 10 === 10; // true
+
+// 不相等判断
+let isNotEqual = 10 !== 5; // true
+
+// 大于
+let isGreater = 20 > 15; // true
+
+// 小于
+let isLess = 10 < 5; // false
+
+// 大于等于
+let isGreaterOrEqual = 10 >= 10; // true
+
+// 小于等于
+let isLessOrEqual = 8 <= 10; // true
+
+console.log(isEqual); // true
+console.log(isLess); // false
 ```
 
-运行结果:
-```
-True
-True
-False
-True
-True
-False
-```
+**运行结果**: 控制台显示 true 和 false
 
-::: danger 警告
-判断相等用 `==` (两个等号),不是 `=` (一个等号)。`=` 是赋值操作。
+::: warning 注意
+TypeScript 中判断相等用 `===`(三个等号),不是 `=`(一个等号是赋值)。
 :::
 
-### 💪 练习题
+### 📝 实际应用
 
-1. 判断 `15` 是否大于 `20`,打印结果
-2. 判断你的年龄是否大于等于 `18`,打印结果
+```typescript{1,2,4}
+let userAge = 18;
+let canVote = userAge >= 18; // true
 
-::: details 查看答案
-```python
-print(15 > 20)      # False
-
-age = 25
-print(age >= 18)    # True
+console.log(canVote); // true
 ```
-:::
 
-## 逻辑运算(Logical Operations)
+## 逻辑运算(Logical Operators)
 
 ### 💡 概念说明
 
 逻辑运算用于组合多个条件:
-- `and` (且): 两个条件都为True时,结果才是True
-- `or` (或): 只要有一个条件为True,结果就是True
-- `not` (非): 反转结果,True变False,False变True
+- 与(AND) `&&` - 两个条件都为 true 时,结果才是 true
+- 或(OR) `||` - 任意一个条件为 true 时,结果就是 true
+- 非(NOT) `!` - 反转结果,true 变 false,false 变 true
 
 ### 📝 代码示例
 
-```python{2,5,8}
-# and运算 - 两个条件都要满足
-print(True and True)      # True
-print(True and False)     # False
+```typescript{2,5,8,11}
+// 与运算 - 都要满足
+let hasTicket = true;
+let hasTime = true;
+let canWatchMovie = hasTicket && hasTime; // true
 
-# or运算 - 满足任意一个条件即可
-print(True or False)      # True
-print(False or False)     # False
+// 或运算 - 满足一个即可
+let isWeekend = false;
+let isHoliday = true;
+let canRest = isWeekend || isHoliday; // true
 
-# not运算 - 取反
-print(not True)           # False
-print(not False)          # True
+// 非运算 - 取反
+let isBusy = false;
+let isFree = !isBusy; // true
+
+console.log(canWatchMovie); // true
+console.log(canRest); // true
+console.log(isFree); // true
 ```
 
-实际应用示例:
+**运行结果**: 控制台显示三个 true
 
-```python{1-4}
-age = 20
-has_ticket = True
-# 判断是否可以进场:年龄大于18且有票
-can_enter = age > 18 and has_ticket
-print(can_enter)  # True
+### 📝 组合使用
+
+```typescript{1-3,4}
+let age = 25;
+let hasLicense = true;
+let canDrive = age >= 18 && hasLicense; // true (年龄够 且 有驾照)
+console.log(canDrive); // true
 ```
 
-运行结果:
-```
-True
-```
-
-### 💪 练习题
-
-1. 判断一个数字是否在10到20之间(包含10和20)
-2. 判断一个数字是否小于0或大于100
-
-::: details 查看答案
-```python
-num = 15
-# 方法:数字要大于等于10 并且 小于等于20
-in_range = num >= 10 and num <= 20
-print(in_range)  # True
-
-num2 = 50
-# 方法:数字小于0 或者 大于100
-out_range = num2 < 0 or num2 > 100
-print(out_range)  # False
-```
+::: tip 提示
+`&&` 运算中,如果第一个条件是 false,TypeScript 不会检查第二个条件(因为结果必然是 false)。这叫做"短路求值"。
 :::
+
+## 💪 练习题
+
+### 练习 1: 计算购物总价
+
+一件商品原价 120 元,打 8 折,你买了 3 件。计算总价。
+
+<details>
+<summary>点击查看答案</summary>
+
+```typescript
+let originalPrice = 120;
+let discount = 0.8;
+let quantity = 3;
+
+let total = originalPrice * discount * quantity;
+console.log(total); // 288
+```
+
+</details>
+
+### 练习 2: 判断是否可以免费送货
+
+商城规则:订单金额 >= 99 元或者是会员,就可以免费送货。请判断以下情况是否免费送货。
+
+<details>
+<summary>点击查看答案</summary>
+
+```typescript
+let orderAmount = 85;
+let isMember = true;
+
+let freeShipping = orderAmount >= 99 || isMember;
+console.log(freeShipping); // true (因为是会员)
+```
+
+</details>
 
 ## 📌 小结
 
-- **赋值**: 使用 `=` 给变量存储值
-- **数学运算**: 加 `+`、减 `-`、乘 `*`、除 `/`、求余 `%`
-- **比较运算**: 相等 `==`、大于 `>`、小于 `<` 等,结果是 `True` 或 `False`
-- **逻辑运算**: `and`(且)、`or`(或)、`not`(非) 用于组合多个条件
+- **赋值** 使用 `=`,把右边的值存入左边的变量
+- **数学运算** 包括 `+` `-` `*` `/` `%`,其中 `%` 是求余数
+- **比较运算** 使用 `===` `>` `<` 等,结果是 boolean 类型
+- **逻辑运算** 中,`&&` 要求都满足,`||` 满足一个即可,`!` 用于取反
