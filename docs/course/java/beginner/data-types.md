@@ -12,182 +12,211 @@ head:
 
  # 数据类型
 
-## 💡 概念说明(Concept)
+## 💡 什么是数据类型(Data Type)
 
-在 Java 中，**数据类型(Data Type)** 告诉计算机如何存储和处理数据。就像现实生活中，我们用不同的容器装不同的东西——用杯子装水,用盒子装糖果。
+编程就是让计算机处理数据。不同的数据需要用不同的方式存储和处理:
 
-Java 有四种最常用的基本数据类型:
+- **整数(Integer)** - 用来存储没有小数部分的数字
+- **浮点数(Floating Point)** - 用来存储带小数的数字
+- **字符串(String)** - 用来存储文本内容
+- **布尔值(Boolean)** - 用来表示真或假
 
-- **int** - 存储整数(没有小数点的数字)
-- **double** - 存储浮点数(带小数点的数字)
-- **String** - 存储文本(字符串)
-- **boolean** - 存储真/假值
+## 整数(Integer)
 
-## 📝 整数类型(Integer)
+### 📝 代码示例
 
-整数类型用 `int` 表示,可以存储正数、负数和零。
-
-```java{1,2,3,5}
+```java{3-6}
 public class IntegerDemo {
     public static void main(String[] args) {
-        int age = 18;
-        int temperature = -5;
-        int score = 0;
+        int age = 25;                    // 年龄
+        int score = 98;                  // 分数
+        int temperature = -5;            // 温度(可以是负数)
         
-        System.out.println("年龄: " + age);
-        System.out.println("温度: " + temperature);
-        System.out.println("分数: " + score);
+        System.out.println(age);         // 输出: 25
+        System.out.println(score);       // 输出: 98
+        System.out.println(temperature); // 输出: -5
     }
 }
-```
-
-**运行结果:**
-```
-年龄: 18
-温度: -5
-分数: 0
 ```
 
 ::: tip 提示
-`int` 可以存储的数字范围是 -2,147,483,648 到 2,147,483,647
+`int` 是 integer 的缩写,表示整数类型。整数可以是正数、负数或零。
 :::
 
-## 📝 浮点数类型(Floating Point)
+### 💪 练习题
 
-浮点数类型用 `double` 表示,用于存储带小数的数字。
+**练习1**: 创建三个整数变量,分别存储你的出生年份、当前年份,然后计算并输出你的年龄。
 
-```java{3,4,5}
+::: details 查看答案
+```java
+public class AgeCalculator {
+    public static void main(String[] args) {
+        int birthYear = 2000;
+        int currentYear = 2025;
+        int myAge = currentYear - birthYear;
+        
+        System.out.println(myAge);  // 输出: 25
+    }
+}
+```
+:::
+
+## 浮点数(Floating Point)
+
+### 📝 代码示例
+
+```java{3-5}
 public class DoubleDemo {
     public static void main(String[] args) {
-        double price = 19.99;
-        double pi = 3.14159;
-        double temperature = -5.5;
+        double price = 19.99;           // 商品价格
+        double pi = 3.14159;            // 圆周率
+        double temperature = 36.5;      // 体温
         
-        System.out.println("价格: " + price);
-        System.out.println("圆周率: " + pi);
-        System.out.println("温度: " + temperature);
+        System.out.println(price);      // 输出: 19.99
+        System.out.println(pi);         // 输出: 3.14159
+        System.out.println(temperature);// 输出: 36.5
     }
 }
 ```
 
-**运行结果:**
+::: tip 提示
+`double` 表示双精度浮点数,用于存储带小数的数字。适合存储价格、温度、距离等需要精确度的数据。
+:::
+
+### 💪 练习题
+
+**练习2**: 计算一个矩形的面积。已知长是 5.5,宽是 3.2,面积 = 长 × 宽。
+
+::: details 查看答案
+```java
+public class RectangleArea {
+    public static void main(String[] args) {
+        double length = 5.5;
+        double width = 3.2;
+        double area = length * width;
+        
+        System.out.println(area);  // 输出: 17.6
+    }
+}
 ```
-价格: 19.99
-圆周率: 3.14159
-温度: -5.5
+:::
+
+## 字符串(String)
+
+### 📝 代码示例
+
+```java{3-6}
+public class StringDemo {
+    public static void main(String[] args) {
+        String name = "张三";           // 姓名
+        String city = "北京";           // 城市
+        String greeting = "Hello";      // 问候语
+        
+        System.out.println(name);       // 输出: 张三
+        System.out.println(city);       // 输出: 北京
+        System.out.println(greeting);   // 输出: Hello
+    }
+}
 ```
 
 ::: warning 注意
-小数点用英文的点 `.` 而不是中文的点 `。`
+字符串的值必须用双引号 `""` 包裹,不能用单引号。
 :::
 
-## 📝 字符串类型(String)
+### 字符串拼接
 
-字符串用 `String` 表示,用于存储文本内容。文本内容必须用双引号 `"` 包裹。
-
-```java{3,4,5}
-public class StringDemo {
+```java{4-5}
+public class StringConcat {
     public static void main(String[] args) {
-        String name = "张三";
-        String greeting = "Hello World";
-        String empty = "";
+        String firstName = "三";
+        String fullName = "张" + firstName;        // 用 + 拼接字符串
+        String message = "你好," + fullName;
         
-        System.out.println(name);
-        System.out.println(greeting);
-        System.out.println("空字符串长度: " + empty.length());
+        System.out.println(fullName);   // 输出: 张三
+        System.out.println(message);    // 输出: 你好,张三
     }
 }
 ```
 
-**运行结果:**
-```
-张三
-Hello World
-空字符串长度: 0
-```
+### 💪 练习题
 
-::: tip 提示
-- `String` 的首字母是大写的 `S`
-- 字符串可以包含中文、英文、数字、符号
-- 空字符串 `""` 表示没有任何内容
+**练习3**: 创建你的自我介绍,包含姓名、年龄、城市,并用一句话输出。
+
+::: details 查看答案
+```java
+public class SelfIntro {
+    public static void main(String[] args) {
+        String name = "李四";
+        int age = 20;
+        String city = "上海";
+        
+        String intro = "我叫" + name + ",今年" + age + "岁,来自" + city;
+        System.out.println(intro);
+        // 输出: 我叫李四,今年20岁,来自上海
+    }
+}
+```
 :::
 
-## 📝 布尔类型(Boolean)
+## 布尔值(Boolean)
 
-布尔类型用 `boolean` 表示,只有两个值: `true`(真) 或 `false`(假)。
+### 📝 代码示例
 
-```java{3,4}
+```java{3-5}
 public class BooleanDemo {
     public static void main(String[] args) {
-        boolean isStudent = true;
-        boolean hasLicense = false;
+        boolean isStudent = true;       // 是否是学生
+        boolean isRaining = false;      // 是否在下雨
+        boolean hasLicense = true;      // 是否有驾照
         
-        System.out.println("是学生: " + isStudent);
-        System.out.println("有驾照: " + hasLicense);
+        System.out.println(isStudent);  // 输出: true
+        System.out.println(isRaining);  // 输出: false
+        System.out.println(hasLicense); // 输出: true
     }
 }
-```
-
-**运行结果:**
-```
-是学生: true
-有驾照: false
 ```
 
 ::: tip 提示
-`true` 和 `false` 是关键字,不需要加引号
+布尔值只有两个可能的值: `true`(真) 或 `false`(假)。常用于表示是或否、开或关等二选一的情况。
 :::
 
-## 💪 练习题(Exercise)
+### 布尔值的运算
 
-### 练习 1: 个人信息卡
-创建一个程序,存储并打印你的个人信息:
-
-```java
-public class PersonalInfo {
+```java{4-6}
+public class BooleanCompare {
     public static void main(String[] args) {
-        // 在这里定义变量
-        // String name = ?
-        // int age = ?
-        // double height = ?
-        // boolean isStudent = ?
+        int score = 85;
+        boolean isPassed = score >= 60;    // 是否及格
+        boolean isExcellent = score >= 90; // 是否优秀
         
-        // 打印信息
+        System.out.println(isPassed);      // 输出: true
+        System.out.println(isExcellent);   // 输出: false
     }
 }
 ```
 
-### 练习 2: 简单计算
-创建一个程序,计算两个数字的和:
+### 💪 练习题
 
+**练习4**: 判断一个人是否成年(年龄 >= 18),以及是否是未成年人。
+
+::: details 查看答案
 ```java
-public class Calculator {
+public class AgeCheck {
     public static void main(String[] args) {
-        int num1 = 10;
-        int num2 = 20;
-        // 计算 num1 + num2 的和,存储在变量 sum 中
-        // 打印结果
-    }
-}
-}
-```
-
-### 练习 3: 价格计算
-一件商品原价 99.9 元,打 8 折后是多少钱?
-
-```java
-public class PriceCalculator {
-    public static void main(String[] args) {
-        double originalPrice = 99.9;
-        // 计算打折后的价格
-        // 提示: 8折 = 0.8
+        int age = 16;
+        boolean isAdult = age >= 18;
+        boolean isMinor = age < 18;
+        
+        System.out.println(isAdult);  // 输出: false
+        System.out.println(isMinor);  // 输出: true
     }
 }
 ```
+:::
 
-## 📌 小结(Key Points)
+## 📌 小结
 
-1. **int** 用于存储整数,如: `int age = 18;`
-2. **double** 用于存储小数,如: `double price = 19.99;`
-3. **String** 用于存储文本,记得用双引号,如: `String name = "张三";`
-4. **boolean** 只有 `true` 和 `false` 两个值
+- **int** - 存储整数,如年龄、数量
+- **double** - 存储小数,如价格、温度
+- **String** - 存储文本,必须用双引号包裹
+- **boolean** - 存储真假值,只有 `true` 或 `false`
