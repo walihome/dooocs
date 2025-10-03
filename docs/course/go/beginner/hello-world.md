@@ -12,122 +12,152 @@ head:
 
  # Hello World
 
-学习编程的第一步，就是让计算机对你说"你好"。全世界的程序员开始学习一门新语言时，都会先写一个 Hello World 程序。这是一个传统，也是一个测试——确认你的开发环境可以正常工作。
-
 ## 💡 什么是 Hello World
 
-Hello World 程序只做一件事：在屏幕上显示 "Hello World"。虽然简单，但它包含了编程的基本流程：
-- 写代码
-- 运行代码
-- 看到结果
+Hello World 是编程世界的"你好"——这是一个传统,全世界的程序员学习新语言时都会先写这个程序。它的作用很简单:让程序在屏幕上显示一行文字。
 
-## 📝 第一个 Python 程序
+通过这个小程序,你会验证:
+- Go 语言环境安装成功
+- 你能成功运行一个 Go 程序
+- 你写出了人生第一行 Go 代码
 
-创建一个新文件，命名为 `hello.py`，输入以下代码：
+## 📝 创建你的第一个 Go 程序
 
-```python
-print("Hello World")
-```
+### 步骤 1: 创建项目文件夹
 
-就这么简单！只需要一行代码。
-
-### 运行程序
-
-打开终端(Terminal)或命令提示符(Command Prompt)，进入文件所在目录，输入：
+打开终端(Terminal),执行以下命令:
 
 ```bash
-python hello.py
+mkdir hello
+cd hello
 ```
 
-你会看到屏幕上输出：
+### 步骤 2: 初始化 Go 模块
 
-```
-Hello World
+```bash
+go mod init hello
 ```
 
 ::: tip 提示
-`print()` 是 Python 的内置函数(Built-in Function)，用于在屏幕上显示内容。括号里的内容就是你想显示的东西。
+这一步会创建一个 `go.mod` 文件,Go 用它来管理项目。
 :::
 
-## 📝 显示更多内容
+### 步骤 3: 创建代码文件
 
-你可以显示任何你想说的话：
+创建一个名为 `main.go` 的文件,写入以下代码:
 
-```python{1-3}
-print("Hello World")
-print("我是一名程序员")
-print("Python 很有趣")
-```
+```go{1,3,5}
+package main
 
-运行结果：
+import "fmt"
 
-```
-Hello World
-我是一名程序员
-Python 很有趣
-```
-
-每个 `print()` 会在新的一行显示内容。
-
-## 📝 显示数字和计算结果
-
-`print()` 不仅可以显示文字，还可以显示数字和计算结果：
-
-```python{1-3}
-print(2025)
-print(10 + 5)
-print(100 - 20)
-```
-
-运行结果：
-
-```
-2025
-15
-80
+func main() {
+    fmt.Println("Hello World")
+}
 ```
 
 ::: warning 注意
-文字需要用引号 `""` 包起来，数字和计算式不需要引号。
+- 文件名必须是 `main.go`
+- 代码中的标点符号必须是英文符号
+- 大小写要完全一致
 :::
 
-## 💪 练习题
+### 步骤 4: 运行程序
 
-### 练习 1：个人介绍
-编写一个程序，依次输出你的名字、年龄和爱好。
+在终端执行:
 
-::: details 参考答案
-```python
-print("我叫小明")
-print("今年 20 岁")
-print("喜欢打篮球")
+```bash
+go run main.go
+```
+
+你会看到屏幕上输出:
+
+```
+Hello World
+```
+
+恭喜!你刚刚运行了第一个 Go 程序!
+
+## 💡 代码解释
+
+让我们看看这 5 行代码分别是什么:
+
+**第 1 行** - `package main`  
+告诉 Go 这是一个可执行程序(Program)。
+
+**第 3 行** - `import "fmt"`  
+导入(Import)一个工具包,`fmt` 可以帮你打印文字。
+
+**第 5 行** - `func main()`  
+这是程序的入口(Entry Point),程序从这里开始执行。
+
+**第 6 行** - `fmt.Println("Hello World")`  
+调用 `fmt` 包的 `Println` 函数(Function),在屏幕上打印文字。
+
+## 💪 动手练习
+
+### 练习 1: 修改问候语
+
+把 `"Hello World"` 改成你自己的名字,比如 `"你好,张三"`,然后重新运行程序。
+
+::: details 查看答案
+```go{6}
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("你好,张三")
+}
+```
+
+运行后会输出:
+```
+你好,张三
 ```
 :::
 
-### 练习 2：简单计算器
-编写一个程序，计算并显示：
-- 123 + 456
-- 1000 - 234
-- 50 × 8（Python 中乘法用 `*`）
+### 练习 2: 多行输出
 
-::: details 参考答案
-```python
-print(123 + 456)
-print(1000 - 234)
-print(50 * 8)
+尝试输出两行文字:第一行是 `Hello`,第二行是 `World`。
+
+::: details 查看答案
+```go{6-7}
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello")
+    fmt.Println("World")
+}
 ```
 
-运行结果：
+运行后会输出:
 ```
-579
-766
-400
+Hello
+World
 ```
+:::
+
+## 🎯 其他运行方式
+
+除了 `go run`,你还可以先编译(Compile)再运行:
+
+```bash
+go build main.go
+./main
+```
+
+这会生成一个可执行文件 `main`,直接运行它也能看到 `Hello World`。
+
+::: tip 提示
+`go run` 适合快速测试,`go build` 适合发布程序给别人使用。
 :::
 
 ## 📌 小结
 
-- `print()` 函数用于在屏幕上显示内容
-- 文字需要用引号 `""` 包起来，数字不需要
-- 一个 `print()` 语句会在新的一行显示内容
-- Python 可以直接进行数学计算
+- `package main` + `func main()` 是 Go 程序的标准结构
+- `import "fmt"` 导入打印工具包
+- `fmt.Println()` 用于输出文字到屏幕
+- `go run` 可以直接运行 Go 代码
