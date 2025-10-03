@@ -12,180 +12,168 @@ head:
 
  # 控制流
 
-程序就像一条道路,代码从上往下一行行执行。但现实中我们常需要"如果...就..."或"重复做某事",这就是控制流要解决的问题。
-
-## if 语法
-
-### 💡 概念说明
-
-**条件判断(if Statement)** 让程序根据情况做出不同选择。
-
-### 📝 代码示例
-
-```java
-public class IfDemo {
-    public static void main(String[] args) {
-        int age = 18;
-        
-        // 单个条件判断
-        if (age >= 18) {
-            System.out.println("你是成年人");
-        }
-        
-        // 两个分支
-        int score = 75;
-        if (score >= 60) {
-            System.out.println("及格");
-        } else {
-            System.out.println("不及格");
-        }
-        
-        // 多个分支
-        int temperature = 25;
-        if (temperature > 30) {
-            System.out.println("天气炎热");
-        } else if (temperature > 20) {
-            System.out.println("天气温暖");
-        } else {
-            System.out.println("天气寒冷");
-        }
-    }
-}
-```
-
-### ✅ 验证方法
-
-将代码保存为 `IfDemo.java`,运行后会看到:
-
-```
-你是成年人
-及格
-天气温暖
-```
-
-试着修改 `age`、`score`、`temperature` 的值,观察输出变化。
-
-### 💪 练习题
-
-1. 写一个程序判断数字是正数、负数还是零
-2. 判断一个年份是否为闰年(能被4整除但不能被100整除,或能被400整除)
-
-## while 循环
-
-### 💡 概念说明
-
-**while 循环(while Loop)** 在条件为真时重复执行代码块。
-
-### 📝 代码示例
-
-```java
-public class WhileDemo {
-    public static void main(String[] args) {
-        // 打印 1 到 5
-        int count = 1;
-        while (count <= 5) {
-            System.out.println("第 " + count + " 次");
-            count++;  // count = count + 1
-        }
-        
-        // 计算 1+2+3+4+5
-        int num = 1;
-        int sum = 0;
-        while (num <= 5) {
-            sum = sum + num;
-            num++;
-        }
-        System.out.println("总和: " + sum);
-    }
-}
-```
-
-::: warning 注意
-如果忘记写 `count++`,循环会永远执行下去(死循环)。遇到这种情况按 `Ctrl + C` 强制停止程序。
-:::
-
-### ✅ 验证方法
-
-运行后看到:
-
-```
-第 1 次
-第 2 次
-第 3 次
-第 4 次
-第 5 次
-总和: 15
-```
-
-### 💪 练习题
-
-1. 使用 while 循环打印 10 到 1 的倒计时
-2. 计算 1 到 100 的所有偶数之和
+在编程中，程序不总是从上到下一行行执行的。有时候我们需要让程序重复执行某些代码，或者根据不同情况执行不同的代码。这就是**控制流(Control Flow)**要解决的问题。
 
 ## for 循环
 
 ### 💡 概念说明
 
-**for 循环(for Loop)** 是最常用的循环,特别适合已知循环次数的场景。
+当你需要重复执行某段代码时，就需要用到**循环(Loop)**。`for` 循环是最常用的循环方式，它的结构包含三个部分：
+- 初始化：从哪里开始
+- 条件判断：什么时候停止
+- 更新：每次循环后如何变化
 
 ### 📝 代码示例
 
-```java
-public class ForDemo {
+```java{1,3}
+public class ForLoopExample {
     public static void main(String[] args) {
-        // 打印 0 到 4
         for (int i = 0; i < 5; i++) {
-            System.out.println("i = " + i);
-        }
-        
-        // 打印九九乘法表的一行
-        for (int j = 1; j <= 9; j++) {
-            System.out.print("3 x " + j + " = " + (3 * j) + "  ");
-        }
-        System.out.println();
-        
-        // 嵌套循环:打印矩形
-        for (int row = 1; row <= 3; row++) {
-            for (int col = 1; col <= 5; col++) {
-                System.out.print("* ");
-            }
-            System.out.println();
+            System.out.println("这是第 " + i + " 次循环");
         }
     }
 }
 ```
 
+**运行结果：**
+```
+这是第 0 次循环
+这是第 1 次循环
+这是第 2 次循环
+这是第 3 次循环
+这是第 4 次循环
+```
+
+第 1 行中的 `for` 循环包含：
+- `int i = 0` - 从 0 开始计数
+- `i < 5` - 当 i 小于 5 时继续循环
+- `i++` - 每次循环后 i 增加 1
+
 ::: tip 提示
-`for (int i = 0; i < 5; i++)` 包含三部分:
-- `int i = 0` - 初始化,只执行一次
-- `i < 5` - 每次循环前检查条件
-- `i++` - 每次循环后执行
+`i++` 是 `i = i + 1` 的简写，表示让 i 的值增加 1。
 :::
-
-### ✅ 验证方法
-
-运行后看到:
-
-```
-i = 0
-i = 1
-i = 2
-i = 3
-i = 4
-3 x 1 = 3  3 x 2 = 6  3 x 3 = 9  3 x 4 = 12  3 x 5 = 15  3 x 6 = 18  3 x 7 = 21  3 x 8 = 24  3 x 9 = 27  
-* * * * * 
-* * * * * 
-* * * * * 
-```
 
 ### 💪 练习题
 
-1. 使用 for 循环计算 1! + 2! + 3! + 4! + 5! (阶乘)
-2. 打印完整的九九乘法表(使用嵌套循环)
-3. 找出 1 到 100 之间所有能被 7 整除的数
+1. 修改代码，让它打印 1 到 10 的数字
+2. 打印 0 到 100 之间所有的偶数（提示：可以用 `i += 2` 让 i 每次增加 2）
+
+## while 循环
+
+### 💡 概念说明
+
+`while` 循环比 `for` 循环更简单，它只需要一个条件：只要条件为真，就一直执行循环体内的代码。
+
+### 📝 代码示例
+
+```java{3,5}
+public class WhileExample {
+    public static void main(String[] args) {
+        int count = 0;
+        
+        while (count < 3) {
+            System.out.println("计数: " + count);
+            count++;
+        }
+    }
+}
+```
+
+**运行结果：**
+```
+计数: 0
+计数: 1
+计数: 2
+```
+
+第 3 行定义了一个变量 `count`，第 5 行检查 `count < 3` 是否成立。如果成立，就执行大括号内的代码，然后再次检查条件。
+
+::: warning 注意
+如果忘记写 `count++`，`count` 永远小于 3，程序会无限循环下去！这叫做**死循环(Infinite Loop)**。
+:::
+
+### 💪 练习题
+
+1. 使用 `while` 循环打印 5 到 1 的倒计时（提示：用 `count--` 让数字递减）
+2. 计算 1 + 2 + 3 + ... + 100 的总和
+
+## if 条件判断
+
+### 💡 概念说明
+
+有时候我们需要根据不同情况执行不同的代码。**条件判断(Conditional Statement)** 让程序可以"做决定"。`if` 语句包含：
+- `if` - 如果条件成立，执行这段代码
+- `else if` - 否则，如果另一个条件成立，执行这段代码
+- `else` - 否则，执行这段代码
+
+### 📝 代码示例
+
+```java{3-9}
+public class IfExample {
+    public static void main(String[] args) {
+        int score = 85;
+        
+        if (score >= 90) {
+            System.out.println("优秀");
+        } else if (score >= 60) {
+            System.out.println("及格");
+        } else {
+            System.out.println("不及格");
+        }
+    }
+}
+```
+
+**运行结果：**
+```
+及格
+```
+
+第 3 行定义了分数，第 5-11 行根据不同的分数段打印不同的评价。程序会从上到下检查条件，一旦某个条件成立，就执行对应的代码块，然后跳过剩余的条件。
+
+::: tip 提示
+条件判断中常用的**比较运算符(Comparison Operator)**：
+- `==` 等于
+- `!=` 不等于
+- `>` 大于
+- `<` 小于
+- `>=` 大于等于
+- `<=` 小于等于
+:::
+
+**结合循环使用：**
+
+```java{3-7}
+public class CombinedExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i % 2 == 0) {
+                System.out.println(i + " 是偶数");
+            }
+        }
+    }
+}
+```
+
+**运行结果：**
+```
+2 是偶数
+4 是偶数
+6 是偶数
+8 是偶数
+10 是偶数
+```
+
+第 4 行中的 `%` 是**取余运算符(Modulo Operator)**，`i % 2` 表示 i 除以 2 的余数。如果余数为 0，说明 i 是偶数。
+
+### 💪 练习题
+
+1. 打印 1 到 20 的数字，但只打印能被 3 整除的数字
+2. 使用 `for` 循环和 `if` 判断，找出 1 到 100 之间所有能同时被 3 和 5 整除的数字
+3. 写一个程序判断一个数字是正数、负数还是零
 
 ## 📌 小结
 
-- **if 语句**根据条件决定执行哪段代码,可以有多个分支
-- **while 循环**在条件为真时持续执行,要注意更新循环变量避免死循环
-- **for 循环**适合已知次数的重复任务,三个部分控制循环的开始、继续和更新
+- `for` 循环适合知道循环次数的情况，格式为 `for(初始化; 条件; 更新)`
+- `while` 循环适合不确定循环次数，只知道停止条件的情况
+- `if` 语句让程序根据条件执行不同的代码，可以配合 `else if` 和 `else` 使用
