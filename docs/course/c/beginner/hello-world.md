@@ -12,122 +12,149 @@ head:
 
  # Hello World
 
-学习编程的第一步，就是让计算机对你说"你好"。全世界的程序员开始学习一门新语言时，都会先写一个 Hello World 程序。这是一个传统，也是一个测试——确认你的开发环境可以正常工作。
+当你开始学习编程时,第一个程序总是"Hello World"。这是一个传统,也是最简单的程序——让计算机在屏幕上显示一句话。
 
 ## 💡 什么是 Hello World
 
-Hello World 程序只做一件事：在屏幕上显示 "Hello World"。虽然简单，但它包含了编程的基本流程：
-- 写代码
-- 运行代码
-- 看到结果
+Hello World 是一个最基础的程序,它的作用很简单:在屏幕上输出文字 "Hello World"。
 
-## 📝 第一个 Python 程序
+通过这个程序,你可以验证:
+- 编程环境是否正常工作
+- 你是否掌握了基本的代码编写和运行流程
 
-创建一个新文件，命名为 `hello.py`，输入以下代码：
+## 📝 代码示例
 
-```python
-print("Hello World")
+创建一个名为 `hello.c` 的文件,写入以下代码:
+
+```c{5}
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World\n");
+    return 0;
+}
 ```
 
-就这么简单！只需要一行代码。
-
-### 运行程序
-
-打开终端(Terminal)或命令提示符(Command Prompt)，进入文件所在目录，输入：
-
-```bash
-python hello.py
-```
-
-你会看到屏幕上输出：
-
-```
-Hello World
-```
-
-::: tip 提示
-`print()` 是 Python 的内置函数(Built-in Function)，用于在屏幕上显示内容。括号里的内容就是你想显示的东西。
+::: tip 关于文件名
+文件名可以自己定义,但必须以 `.c` 结尾,比如 `hello.c`、`test.c` 都可以。
 :::
 
-## 📝 显示更多内容
+### 如何运行这段代码
 
-你可以显示任何你想说的话：
+**第一步:编译(Compile)**
 
-```python{1-3}
-print("Hello World")
-print("我是一名程序员")
-print("Python 很有趣")
+打开终端或命令行,进入代码所在目录,执行:
+
+```bash
+gcc hello.c -o hello
 ```
 
-运行结果：
+这会生成一个可执行文件 `hello`(Windows 上是 `hello.exe`)。
+
+**第二步:运行**
+
+```bash
+./hello          # Linux/Mac
+hello.exe        # Windows
+```
+
+**运行结果:**
 
 ```
 Hello World
-我是一名程序员
-Python 很有趣
 ```
 
-每个 `print()` 会在新的一行显示内容。
+你会在屏幕上看到这行文字。
 
-## 📝 显示数字和计算结果
+## 💡 代码含义
 
-`print()` 不仅可以显示文字，还可以显示数字和计算结果：
+让我们看看这 7 行代码分别是什么:
 
-```python{1-3}
-print(2025)
-print(10 + 5)
-print(100 - 20)
+```c
+#include <stdio.h>  // 引入标准输入输出库
 ```
+这一行告诉编译器,我们需要使用 `printf` 这个功能。
 
-运行结果：
+```c
+int main()
+```
+这是程序的入口,程序从这里开始执行。
 
+```c
+{
+    // 代码内容
+}
 ```
-2025
-15
-80
+花括号包裹的是 `main` 函数的内容。
+
+```c
+printf("Hello World\n");
 ```
+`printf` 用来在屏幕上输出文字,`\n` 表示换行。
+
+```c
+return 0;
+```
+表示程序正常结束。
 
 ::: warning 注意
-文字需要用引号 `""` 包起来，数字和计算式不需要引号。
+- 每条语句末尾都有分号 `;`
+- 引号必须是英文引号 `""`
+- 所有符号都必须是英文符号
 :::
 
 ## 💪 练习题
 
-### 练习 1：个人介绍
-编写一个程序，依次输出你的名字、年龄和爱好。
+### 练习 1:修改输出内容
 
-::: details 参考答案
-```python
-print("我叫小明")
-print("今年 20 岁")
-print("喜欢打篮球")
+把 "Hello World" 改成你的名字,比如 "Hello Zhang San"。
+
+<details>
+<summary>点击查看答案</summary>
+
+```c{5}
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello Zhang San\n");
+    return 0;
+}
 ```
+
+</details>
+
+### 练习 2:输出多行文字
+
+让程序输出两行文字:
+```
+Hello World
+Welcome to C
+```
+
+<details>
+<summary>点击查看答案</summary>
+
+```c{5-6}
+#include <stdio.h>
+
+int main()
+{
+    printf("Hello World\n");
+    printf("Welcome to C\n");
+    return 0;
+}
+```
+
+::: tip 提示
+每个 `printf` 会输出一行,记得在末尾加 `\n` 换行。
 :::
 
-### 练习 2：简单计算器
-编写一个程序，计算并显示：
-- 123 + 456
-- 1000 - 234
-- 50 × 8（Python 中乘法用 `*`）
-
-::: details 参考答案
-```python
-print(123 + 456)
-print(1000 - 234)
-print(50 * 8)
-```
-
-运行结果：
-```
-579
-766
-400
-```
-:::
+</details>
 
 ## 📌 小结
 
-- `print()` 函数用于在屏幕上显示内容
-- 文字需要用引号 `""` 包起来，数字不需要
-- 一个 `print()` 语句会在新的一行显示内容
-- Python 可以直接进行数学计算
+- C 程序从 `main` 函数开始执行
+- `printf` 用于在屏幕上输出文字
+- 编译后才能运行:先用 `gcc` 编译,再执行生成的文件
