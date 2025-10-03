@@ -12,148 +12,171 @@ head:
 
  # 动手实践
 
-恭喜你!你已经学会了 Python 编程中最核心的内容。你可能不敢相信,但事实是:**90% 的 Python 程序都是用你刚学的这些知识组合而成的**。
+恭喜你!🎉 你已经学习完了 TypeScript 的基础知识。现在是时候把这些知识串联起来,做一个真正的小项目了。我们要做一个**学生成绩管理系统(Student Grade Management System)**,用来管理 5 位学生的成绩。
 
-变量(Variable)、数据类型(Data Type)、条件判断(Conditional)、循环(Loop)——这些就是编程的"乐高积木"。现在,让我们用它们搭建一个真正的程序!
+## 💡 项目需求
 
-::: tip 费曼学习法的启示
-诺贝尔物理学奖得主费曼说过:能用自己的方式做出来,才算真正学会。读懂代码不等于会写代码,就像看懂菜谱不等于会做菜。
-:::
-
-## 💡 实战项目:个性化问候助手
-
-我们要做一个小程序,它能:
-- 询问用户的姓名和年龄
-- 根据年龄给出不同的问候
-- 统计用户输入了多少个字符
-
-这个项目会用到你学过的所有知识点!
+这个系统需要实现以下功能:
+- 计算最高分(Highest Score)
+- 计算最低分(Lowest Score)
+- 计算平均分(Average Score)
+- 统计及格人数(Pass Count,60分及以上)
 
 ## 📝 完整代码
 
-```python{1-2,5-6,9-14,17-20}
-# 获取用户输入
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+创建一个新文件 `gradeManager.ts`,把下面的代码复制进去:
 
-# 数据类型转换
-age = int(age)
+```typescript{2-9,12-13,16-21,24-29,32-38,41-42,45-51}
+// 定义学生信息的类型
+type Student = {
+  name: string;        // 学生姓名
+  score: number;       // 成绩
+};
 
-# 根据年龄给出不同问候
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
+// 学生数据
+const students: Student[] = [
+  { name: "张三", score: 85 },
+  { name: "李四", score: 92 },
+  { name: "王五", score: 58 },
+  { name: "赵六", score: 76 },
+  { name: "孙七", score: 88 }
+];
 
-# 计算名字长度并输出
-name_length = len(name)
-print(greeting + "," + name + "!")
-print("你的名字有", name_length, "个字符")
-print("=" * 30)
+// 计算最高分
+function getHighestScore(students: Student[]): number {
+  let highest = students[0].score;
+  for (let i = 1; i < students.length; i++) {
+    if (students[i].score > highest) {
+      highest = students[i].score;
+    }
+  }
+  return highest;
+}
 
-# 显示用户信息
-print("用户信息:")
-print("姓名:", name)
-print("年龄:", age)
-print("=" * 30)
+// 计算最低分
+function getLowestScore(students: Student[]): number {
+  let lowest = students[0].score;
+  for (let i = 1; i < students.length; i++) {
+    if (students[i].score < lowest) {
+      lowest = students[i].score;
+    }
+  }
+  return lowest;
+}
+
+// 计算平均分
+function getAverageScore(students: Student[]): number {
+  let total = 0;
+  for (let i = 0; i < students.length; i++) {
+    total += students[i].score;
+  }
+  return total / students.length;
+}
+
+// 统计及格人数
+function getPassCount(students: Student[]): number {
+  let count = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 60) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// 输出统计结果
+console.log("=== 学生成绩统计系统 ===");
+console.log(`总人数: ${students.length}`);
+console.log(`最高分: ${getHighestScore(students)}`);
+console.log(`最低分: ${getLowestScore(students)}`);
+console.log(`平均分: ${getAverageScore(students).toFixed(2)}`);
+console.log(`及格人数: ${getPassCount(students)}`);
 ```
 
-### 运行结果
+## 🚀 如何运行代码
 
-当你运行这个程序时,会看到:
+### 第一步:编译 TypeScript
 
-```
-请输入你的名字:小明
-请输入你的年龄:25
-你好,朋友,小明!
-你的名字有 2 个字符
-==============================
-用户信息:
-姓名: 小明
-年龄: 25
-==============================
+打开终端(Terminal),进入你的项目文件夹,运行:
+
+```bash
+tsc gradeManager.ts
 ```
 
-## 🔍 代码解析
-
-### 这个程序做了什么?
-
-1. **第 1-2 行**:用 `input()` 获取用户输入
-2. **第 5-6 行**:把年龄从文本转换成数字(为了后面比较大小)
-3. **第 9-14 行**:用 `if-elif-else` 根据年龄选择问候语
-4. **第 17-20 行**:计算名字长度并输出结果
-
-::: warning 注意
-`input()` 获取的是字符串类型,如果要进行数字比较,必须先用 `int()` 转换!
-:::
-
-## 💪 你的挑战
-
-### 挑战 1:增加年龄验证
-
-修改程序,如果用户输入的年龄小于 0 或大于 150,显示"年龄输入有误!"
-
-::: details 点击查看答案
-```python{7-10}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
-
-age = int(age)
-
-# 验证年龄范围
-if age < 0 or age > 150:
-    print("年龄输入有误!")
-else:
-    if age < 18:
-        greeting = "你好,年轻人"
-    elif age < 60:
-        greeting = "你好,朋友"
-    else:
-        greeting = "你好,尊敬的长者"
-    
-    name_length = len(name)
-    print(greeting + "," + name + "!")
-    print("你的名字有", name_length, "个字符")
+::: tip 提示
+如果提示 `tsc` 命令找不到,需要先全局安装 TypeScript:
+```bash
+npm install -g typescript
 ```
 :::
 
-### 挑战 2:重复问候
+编译成功后,会生成一个 `gradeManager.js` 文件。
 
-让程序询问"需要问候几次?",然后用循环重复显示问候语。
+### 第二步:运行 JavaScript 文件
+
+在终端继续输入:
+
+```bash
+node gradeManager.js
+```
+
+### 第三步:查看运行结果
+
+你会看到类似这样的输出:
+
+```
+=== 学生成绩统计系统 ===
+总人数: 5
+最高分: 92
+最低分: 58
+平均分: 79.80
+及格人数: 4
+```
+
+## 💪 练习题
+
+### 练习 1:添加新功能
+
+为系统添加一个新功能:找出成绩最高的学生姓名。
 
 ::: details 点击查看答案
-```python{8-9,12-13}
-name = input("请输入你的名字:")
-age = input("请输入你的年龄:")
+```typescript
+function getTopStudent(students: Student[]): string {
+  let topStudent = students[0];
+  for (let i = 1; i < students.length; i++) {
+    if (students[i].score > topStudent.score) {
+      topStudent = students[i];
+    }
+  }
+  return topStudent.name;
+}
 
-age = int(age)
-
-if age < 18:
-    greeting = "你好,年轻人"
-elif age < 60:
-    greeting = "你好,朋友"
-else:
-    greeting = "你好,尊敬的长者"
-
-times = input("需要问候几次?")
-times = int(times)
-
-# 循环输出问候
-for i in range(times):
-    print(greeting + "," + name + "!")
+// 在输出部分添加
+console.log(`最高分学生: ${getTopStudent(students)}`);
 ```
+:::
+
+### 练习 2:修改及格线
+
+把及格分数线从 60 分改为 70 分,重新运行程序,看看及格人数有什么变化?
+
+::: details 点击查看答案
+```typescript
+function getPassCount(students: Student[]): number {
+  let count = 0;
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 70) {  // 修改这里
+      count++;
+    }
+  }
+  return count;
+}
+```
+运行结果:及格人数会变成 3(只有 85、92、76、88 这四位超过 70 分,王五的 58 分不及格)
 :::
 
 ## 📌 小结
 
-- **编程就是组合**:没有什么"高级技巧",只有把基础知识灵活组合
-- **动手才能学会**:看懂和做出来是两回事,多写才能进步
-- **80/20 法则**:你已经掌握了 Python 最核心的 20% 知识,足以完成 80% 的任务
-
-::: tip 下一步
-现在你已经能写出真正的程序了!后续的学习都是在这个基础上扩展——列表(List)让你处理更多数据,函数(Function)让你重复使用代码,模块(Module)让你调用别人的代码。但核心逻辑,永远是这些基础知识的组合。
-
-试着修改这个程序,加入你自己的想法吧!
-:::
+- 你已经完成了第一个完整的 TypeScript 项目
+- 学会了如何编译和运行 TypeScript 代码
+- 掌握了类型定义、函数、循环等知识的综合运用
