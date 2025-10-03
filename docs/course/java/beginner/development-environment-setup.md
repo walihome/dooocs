@@ -12,192 +12,221 @@ head:
 
  # 开发环境搭建
 
-## 💡 什么是开发环境
+在开始编写 Java 程序之前,你需要先准备好两样东西:让计算机能够运行 Java 程序的**运行环境(JRE)**,以及帮助你编写代码的**开发工具包(JDK)**。
 
-写 Java 代码需要两个工具：
-- **JDK(Java Development Kit)**：让计算机能理解和运行 Java 代码
-- **代码编辑器**：你写代码的地方
+## 💡 为什么需要搭建环境?
 
-想象一下，JDK 就像一个翻译官，把你写的代码翻译给计算机；编辑器就像你的笔记本，用来书写代码。
+你可以把这个过程想象成:
+- **JDK(Java Development Kit)** = 一套完整的工具箱,包含编译器、运行环境等
+- **编译器(Compiler)** = 把你写的代码翻译成计算机能理解的语言
+- **运行环境(JRE)** = 让翻译后的程序在你的电脑上运行起来
 
----
-
-## 📥 安装 JDK
+## 📥 下载并安装 JDK
 
 ### Windows 系统
 
-**步骤 1：下载 JDK**
+**步骤1: 下载 JDK**
 
-1. 访问 Oracle 官网：https://www.oracle.com/java/technologies/downloads/
-2. 选择 **Java 17** 或更高版本
-3. 下载 `x64 Installer`（.exe 文件）
+访问 Oracle 官网下载页面:
+```
+https://www.oracle.com/java/technologies/downloads/
+```
 
-::: tip 为什么选 Java 17？
-Java 17 是长期支持版本(LTS)，稳定且被广泛使用。
+选择 **Java 17** 或更高版本,点击 **Windows** 标签,下载 `x64 Installer` 版本。
+
+::: tip 提示
+Java 17 是长期支持版本(LTS),适合初学者使用。
 :::
 
-**步骤 2：安装**
+**步骤2: 安装 JDK**
 
 1. 双击下载的 `.exe` 文件
-2. 一路点击 **Next**，保持默认设置
-3. 记住安装路径（通常是 `C:\Program Files\Java\jdk-17`）
+2. 一路点击 "Next",保持默认选项即可
+3. 记住安装路径(通常是 `C:\Program Files\Java\jdk-17`)
 
-**步骤 3：验证安装**
+**步骤3: 配置环境变量**
 
-1. 按 `Win + R`，输入 `cmd`，按回车
-2. 在黑色窗口中输入：
+这一步是为了让你在任何位置都能使用 Java 命令。
 
-```bash
-java -version
-```
-
-如果看到类似这样的输出，说明安装成功：
-
-```
-java version "17.0.8" 2023-07-18 LTS
-Java(TM) SE Runtime Environment (build 17.0.8+9-LTS-211)
-```
-
-::: warning 如果提示"不是内部或外部命令"
-说明系统找不到 Java，需要配置环境变量(Environment Variables)：
-
-1. 右键 **此电脑** → **属性** → **高级系统设置**
-2. 点击 **环境变量**
-3. 在 **系统变量** 中找到 `Path`，点击 **编辑**
-4. 点击 **新建**，输入：`C:\Program Files\Java\jdk-17\bin`
-5. 确定后，**重新打开** cmd 窗口，再次输入 `java -version`
-:::
-
----
+1. 右键点击 "此电脑" → 选择 "属性"
+2. 点击 "高级系统设置" → "环境变量"
+3. 在 "系统变量" 区域点击 "新建":
+   - 变量名: `JAVA_HOME`
+   - 变量值: `C:\Program Files\Java\jdk-17` (你的实际安装路径)
+4. 找到 "系统变量" 中的 `Path`,点击 "编辑" → "新建"
+5. 添加: `%JAVA_HOME%\bin`
+6. 一路点击 "确定" 保存
 
 ### macOS 系统
 
-**步骤 1：下载 JDK**
+**步骤1: 下载 JDK**
 
-1. 访问 Oracle 官网：https://www.oracle.com/java/technologies/downloads/
-2. 选择 **Java 17** 或更高版本
-3. 下载 **macOS** 对应的 `.dmg` 文件
+同样访问 Oracle 官网:
+```
+https://www.oracle.com/java/technologies/downloads/
+```
 
-**步骤 2：安装**
+选择 **Java 17**,点击 **macOS** 标签:
+- **Apple Silicon (M1/M2/M3 芯片)**: 下载 `ARM64 DMG Installer`
+- **Intel 芯片**: 下载 `x64 DMG Installer`
 
-1. 双击 `.dmg` 文件
+::: warning 注意
+不确定你的 Mac 是什么芯片?点击左上角苹果图标 → "关于本机" → 查看 "芯片" 信息。
+:::
+
+**步骤2: 安装 JDK**
+
+1. 双击下载的 `.dmg` 文件
 2. 双击 `.pkg` 安装包
-3. 按提示输入密码，完成安装
+3. 按照提示输入密码,完成安装
 
-**步骤 3：验证安装**
+**步骤3: 配置环境变量**
 
-1. 按 `Command + 空格`，输入 `terminal`，打开终端
-2. 输入：
+macOS 的环境变量配置在终端(Terminal)中完成:
+
+1. 打开 "终端" 应用(在 "启动台" → "其他" 中找到)
+2. 输入以下命令查看使用的 Shell:
+
+```bash
+echo $SHELL
+```
+
+3. 根据结果编辑对应的配置文件:
+
+如果显示 `/bin/zsh` (macOS 默认):
+```bash
+nano ~/.zshrc
+```
+
+如果显示 `/bin/bash`:
+```bash
+nano ~/.bash_profile
+```
+
+4. 在打开的编辑器中,添加以下内容:
+
+```bash
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+```
+
+5. 按 `Control + X`,然后按 `Y`,最后按 `Enter` 保存
+6. 让配置生效:
+
+```bash
+source ~/.zshrc
+```
+
+## ✅ 验证安装
+
+无论是 Windows 还是 macOS,都需要验证 JDK 是否安装成功。
+
+**Windows**: 打开 "命令提示符"(搜索 `cmd`)  
+**macOS**: 打开 "终端"
+
+输入以下命令:
 
 ```bash
 java -version
 ```
 
-如果看到版本信息，说明安装成功。
+如果看到类似这样的输出,就说明安装成功了:
 
-::: tip macOS 用户提示
-macOS 通常会自动配置环境变量，无需手动设置。
+```
+java version "17.0.9" 2023-10-17 LTS
+Java(TM) SE Runtime Environment (build 17.0.9+11-LTS-201)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.9+11-LTS-201, mixed mode, sharing)
+```
+
+再输入:
+
+```bash
+javac -version
+```
+
+应该看到:
+
+```
+javac 17.0.9
+```
+
+::: danger 警告
+如果提示 "不是内部或外部命令" 或 "command not found",说明环境变量配置有误,请重新检查上述步骤。
 :::
 
----
+## 🎉 编写第一个 Java 程序
 
-## 📝 安装代码编辑器
+现在环境已经准备好了,让我们写一个简单的程序来测试一下。
 
-推荐使用 **Visual Studio Code(VS Code)**，它免费、轻量、支持多种语言。
+**步骤1: 创建项目文件夹**
 
-### Windows 和 macOS 通用步骤
+在桌面或任意位置创建一个文件夹,命名为 `JavaLearning`。
 
-**步骤 1：下载**
-- 访问：https://code.visualstudio.com/
-- 点击 **Download** 按钮
+**步骤2: 创建 Java 文件**
 
-**步骤 2：安装**
-- Windows：双击 `.exe` 文件，一路 Next
-- macOS：拖动 VS Code 图标到 Applications 文件夹
+在 `JavaLearning` 文件夹中,创建一个文本文件,命名为 `HelloWorld.java`。
 
-**步骤 3：安装 Java 扩展**
-
-1. 打开 VS Code
-2. 点击左侧 **Extensions**（扩展）图标（或按 `Ctrl/Cmd + Shift + X`）
-3. 搜索 `Extension Pack for Java`
-4. 点击 **Install** 安装
-
-::: tip 为什么需要扩展？
-扩展让 VS Code 能识别 Java 语法，提供代码提示和错误检查。
+::: warning 注意
+- 扩展名必须是 `.java`,不是 `.txt`
+- Windows 用户需要在文件资源管理器中显示扩展名(查看 → 勾选 "文件扩展名")
 :::
 
----
+**步骤3: 编写代码**
 
-## ✅ 验证完整环境
+用记事本(Windows)或文本编辑(macOS)打开 `HelloWorld.java`,输入以下代码:
 
-创建你的第一个 Java 程序：
-
-**步骤 1：创建文件夹**
-- Windows：在桌面新建文件夹 `JavaProjects`
-- macOS：在主目录新建文件夹 `JavaProjects`
-
-**步骤 2：用 VS Code 打开文件夹**
-1. 打开 VS Code
-2. 点击 **File** → **Open Folder**
-3. 选择刚创建的 `JavaProjects` 文件夹
-
-**步骤 3：创建文件**
-1. 点击 **New File** 图标
-2. 文件名输入：`Hello.java`
-
-**步骤 4：编写代码**
-
-```java
-public class Hello {
+```java{1,3}
+public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, Java!");
     }
 }
 ```
 
-**步骤 5：运行代码**
+保存文件。
 
-在 VS Code 中：
-1. 右键代码区域
-2. 选择 **Run Java**
+**步骤4: 编译并运行**
 
-或者使用命令行：
+打开命令行工具,进入 `JavaLearning` 文件夹:
 
+**Windows**:
 ```bash
-# Windows (cmd)
-cd Desktop\JavaProjects
-javac Hello.java
-java Hello
-
-# macOS (terminal)
-cd ~/JavaProjects
-javac Hello.java
-java Hello
+cd Desktop\JavaLearning
 ```
 
-**预期结果：**
+**macOS**:
+```bash
+cd ~/Desktop/JavaLearning
+```
+
+编译 Java 文件:
+
+```bash
+javac HelloWorld.java
+```
+
+如果没有任何错误提示,说明编译成功。此时文件夹中会生成一个 `HelloWorld.class` 文件。
+
+运行程序:
+
+```bash
+java HelloWorld
+```
+
+你会看到:
 
 ```
 Hello, Java!
 ```
 
-::: tip 命令解释
-- `javac Hello.java`：编译代码，生成 `Hello.class` 文件
-- `java Hello`：运行编译后的程序
-:::
-
----
-
 ## 💪 练习题
 
-1. **验证 JDK 版本**：在命令行输入 `java -version` 和 `javac -version`，截图两个命令的输出
-2. **修改输出内容**：把 `"Hello, Java!"` 改成你的名字，运行看看
-3. **创建第二个程序**：新建 `Welcome.java`，输出 `"Welcome to Java World!"`
-
----
+1. **修改输出内容**: 把程序中的 `"Hello, Java!"` 改成 `"我的第一个 Java 程序"`,重新编译运行
+2. **验证环境**: 在不同的文件夹位置打开命令行,输入 `java -version`,确认无论在哪里都能看到版本信息
 
 ## 📌 小结
 
-- JDK 是运行 Java 程序的必备工具，记得验证 `java -version`
-- VS Code + Java 扩展是最适合新手的开发环境
-- `javac` 编译代码，`java` 运行程序 —— 记住这两个命令
+- **JDK** 包含了编写和运行 Java 程序的所有工具
+- **环境变量** 让你可以在任何位置使用 Java 命令
+- **编译(javac)** 把 `.java` 文件转换成 `.class` 文件
+- **运行(java)** 执行编译后的 `.class` 文件
