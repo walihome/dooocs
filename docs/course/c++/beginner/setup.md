@@ -12,229 +12,231 @@ head:
 
  # 开发环境搭建
 
-在开始写 Python 代码之前,你需要先安装 Python 解释器(Interpreter)。解释器就是能读懂并执行 Python 代码的程序。
+在开始编写 C++ 程序之前,你需要准备一个"工作台"。就像木匠需要工具箱一样,程序员需要一套工具来编写和运行代码。
 
-## 下载 Python
+## 💡 什么是开发环境
 
-访问 Python 官网下载页面:
+开发环境(Development Environment)包含两个核心工具:
 
-```
-https://www.python.org/downloads/
-```
+- **编辑器(Editor)**:用来写代码的地方,就像 Word 用来写文档
+- **编译器(Compiler)**:把你写的代码翻译成计算机能理解的语言
 
-::: tip 提示
-官网会自动识别你的操作系统,推荐适合你的版本。建议下载最新的稳定版本(Stable Release)。
+::: tip 为什么需要编译器?
+计算机只认识 0 和 1,你写的 C++ 代码需要先"翻译"成机器能懂的指令,这个翻译过程就叫编译(Compile)。
 :::
 
-### Windows 系统
+## 推荐方案:Visual Studio Code + MinGW
 
-1. 点击下载按钮,获取安装包(例如 `python-3.12.x-amd64.exe`)
-2. 双击安装包
-3. **重要**:勾选 `Add Python to PATH` 选项
-4. 点击 `Install Now`
+我们选择 VS Code 作为编辑器,MinGW 作为编译器。这个组合免费、轻量、适合新手。
+
+### 第一步:安装 Visual Studio Code
+
+1. 访问官网下载页面:`https://code.visualstudio.com/`
+2. 点击下载按钮,自动识别你的操作系统
+3. 下载完成后双击安装包,一路点击"下一步"即可
 
 ::: warning 注意
-如果忘记勾选 `Add Python to PATH`,后续在命令行中无法直接使用 `python` 命令。
+VS Code 和 Visual Studio 是两个不同的软件,不要搞混!我们用的是 VS Code(轻量级编辑器)。
 :::
 
-### macOS 系统
+### 第二步:安装 MinGW 编译器
 
-1. 下载 `.pkg` 安装包
-2. 双击安装包,按照提示完成安装
+**Windows 用户:**
 
-::: tip 提示
-macOS 系统自带 Python 2.x,但我们需要安装 Python 3.x。两者可以共存。
-:::
+1. 下载 MinGW 安装器:
+   ```
+   https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/
+   ```
+   选择 `x86_64-posix-seh` 版本
 
-### Linux 系统
+2. 解压下载的文件到 `C:\mingw64`(建议使用这个路径,方便后续配置)
 
-大多数 Linux 发行版已预装 Python 3。打开终端(Terminal)验证:
+3. 添加到系统环境变量(Path):
+   - 右键"此电脑" → 属性 → 高级系统设置 → 环境变量
+   - 在"系统变量"中找到 `Path`,双击编辑
+   - 点击"新建",输入 `C:\mingw64\bin`
+   - 一路点击"确定"保存
 
-```bash
-python3 --version
-```
+4. 验证安装是否成功:
+   - 按 `Win + R`,输入 `cmd`,回车打开命令提示符
+   - 输入以下命令:
+   ```bash
+   g++ --version
+   ```
+   - 如果显示版本号信息,说明安装成功
 
-如果未安装,使用包管理器安装:
+**macOS 用户:**
+
+1. 打开"终端"应用(在 Launchpad 中搜索 Terminal)
+
+2. 安装 Xcode 命令行工具:
+   ```bash
+   xcode-select --install
+   ```
+
+3. 按提示完成安装,验证:
+   ```bash
+   g++ --version
+   ```
+
+**Linux 用户:**
+
+打开终端,根据你的发行版执行:
 
 ```bash
 # Ubuntu/Debian
 sudo apt update
-sudo apt install python3
+sudo apt install build-essential
 
-# CentOS/RHEL
-sudo yum install python3
+# Fedora
+sudo dnf install gcc-c++
+
+# Arch Linux
+sudo pacman -S base-devel
 ```
 
-## 验证安装
-
-安装完成后,打开命令行工具验证:
-
-- **Windows**: 按 `Win + R`,输入 `cmd`,回车
-- **macOS**: 按 `Command + 空格`,输入 `Terminal`,回车
-- **Linux**: 按 `Ctrl + Alt + T`
-
-在命令行中输入:
-
+验证安装:
 ```bash
-python --version
+g++ --version
 ```
 
-或者(某些系统需要):
+### 第三步:配置 VS Code
 
-```bash
-python3 --version
+1. 打开 VS Code,点击左侧扩展图标(或按 `Ctrl+Shift+X`)
+
+2. 搜索并安装以下扩展:
+   - **C/C++**(Microsoft 官方)
+   - **Code Runner**(可选,方便运行代码)
+
+3. 创建第一个 C++ 文件:
+   - 点击"文件" → "新建文件"
+   - 保存为 `hello.cpp`(注意扩展名是 `.cpp`)
+
+## 📝 验证环境
+
+在 `hello.cpp` 中输入以下代码:
+
+```cpp{1,5}
+#include <iostream>
+
+int main() {
+    // 输出一句话到屏幕
+    std::cout << "Hello, C++!" << std::endl;
+    return 0;
+}
 ```
 
-如果看到类似 `Python 3.12.0` 的输出,说明安装成功。
+### 编译并运行
 
-## 编写第一个程序
+**方法一:使用终端(推荐)**
 
-### 使用交互式解释器(Interactive Interpreter)
+1. 在 VS Code 中按 `` Ctrl+` `` 打开终端
 
-在命令行中输入:
+2. 编译代码:
+   ```bash
+   g++ hello.cpp -o hello
+   ```
+   这条命令的意思是:用 `g++` 编译器把 `hello.cpp` 编译成可执行文件 `hello`
 
-```bash
-python
+3. 运行程序:
+   ```bash
+   # Windows
+   hello.exe
+   
+   # macOS/Linux
+   ./hello
+   ```
+
+**运行结果:**
+```
+Hello, C++!
 ```
 
-你会看到类似这样的提示符:
-
-```
-Python 3.12.0 (main, Oct 2023, 12:00:00)
->>> 
-```
-
-`>>>` 表示 Python 正在等待你输入代码。试试输入:
-
-```python
-print("Hello, Python!")
-```
-
-按回车,你会立即看到输出:
-
-```
-Hello, Python!
-```
-
-::: tip 提示
-输入 `exit()` 可以退出交互式解释器。
+::: tip 解释一下
+- `g++`:调用编译器
+- `hello.cpp`:你的源代码文件
+- `-o hello`:指定输出的可执行文件名为 `hello`
 :::
 
-### 使用文本编辑器
+**方法二:使用 Code Runner 扩展**
 
-交互式解释器适合快速测试,但实际开发需要将代码保存到文件中。
-
-1. 打开任意文本编辑器(记事本、TextEdit 等)
-2. 输入以下代码:
-
-```python
-# 这是我的第一个 Python 程序
-print("Hello, Python!")
-print("编程世界,我来了!")
-```
-
-3. 保存文件,命名为 `hello.py`(扩展名必须是 `.py`)
-4. 在命令行中切换到文件所在目录,执行:
-
-```bash
-python hello.py
-```
-
-你会看到:
-
-```
-Hello, Python!
-编程世界,我来了!
-```
-
-::: warning 注意
-文件名不要包含中文或特殊字符,建议使用小写字母和下划线,如 `my_first_program.py`。
-:::
-
-## 安装代码编辑器(可选但推荐)
-
-虽然记事本可以写代码,但专业的代码编辑器会提供语法高亮(Syntax Highlighting)、自动补全等功能,让编程更轻松。
-
-推荐以下编辑器之一:
-
-1. **VS Code**(最推荐)
-   - 下载地址: `https://code.visualstudio.com/`
-   - 安装后,在扩展商店搜索 `Python`,安装官方扩展
-
-2. **PyCharm Community**(功能更强大)
-   - 下载地址: `https://www.jetbrains.com/pycharm/download/`
-   - 选择免费的 Community 版本
-
-3. **Sublime Text**(轻量快速)
-   - 下载地址: `https://www.sublimetext.com/`
-
-### 使用 VS Code 运行代码
-
-1. 打开 VS Code
-2. 点击 `File` → `Open Folder`,选择你的代码文件夹
-3. 创建新文件 `test.py`,输入:
-
-```python{1}
-print("使用 VS Code 运行 Python!")
-```
-
-4. 点击右上角的运行按钮(▶️),或按 `F5`
-5. 在下方的终端(Terminal)中查看输出结果
-
-::: tip 提示
-首次运行时,VS Code 可能提示安装 Python 扩展,点击安装即可。
-:::
+如果你安装了 Code Runner 扩展,可以直接点击右上角的"运行"按钮(▶️),或按 `Ctrl+Alt+N`。
 
 ## 💪 练习题
 
-### 练习 1:验证环境
+### 练习 1:修改输出内容
 
-在命令行中依次执行以下命令,并记录输出结果:
+把代码中的 `"Hello, C++"` 改成 `"我的第一个程序"`,重新编译运行,看看结果。
 
-```bash
-python --version
-python -c "print('环境配置成功!')"
+<details>
+<summary>点击查看答案</summary>
+
+```cpp{5}
+#include <iostream>
+
+int main() {
+    // 输出一句话到屏幕
+    std::cout << "我的第一个程序" << std::endl;
+    return 0;
+}
 ```
 
-::: details 查看答案
-第一条命令应显示 Python 版本号,如 `Python 3.12.0`。
+编译运行步骤:
+```bash
+g++ hello.cpp -o hello
+./hello  # Linux/macOS
+# 或
+hello.exe  # Windows
+```
 
-第二条命令应输出:`环境配置成功!`
+运行结果:
+```
+我的第一个程序
+```
 
-`-c` 参数表示直接执行后面的代码,而不是运行文件。
+</details>
+
+### 练习 2:输出多行内容
+
+修改代码,让程序输出两行内容:
+- 第一行:`欢迎学习 C++`
+- 第二行:`今天是个好日子`
+
+<details>
+<summary>点击查看答案</summary>
+
+```cpp{5-6}
+#include <iostream>
+
+int main() {
+    // 输出两行内容
+    std::cout << "欢迎学习 C++" << std::endl;
+    std::cout << "今天是个好日子" << std::endl;
+    return 0;
+}
+```
+
+运行结果:
+```
+欢迎学习 C++
+今天是个好日子
+```
+
+::: tip 提示
+每个 `std::cout` 语句输出一行内容,`std::endl` 表示换行。
 :::
 
-### 练习 2:创建并运行程序
-
-创建文件 `intro.py`,让程序输出你的名字和学习目标:
-
-```python
-# 在这里写代码
-```
-
-::: details 查看答案
-```python
-# intro.py
-print("我是张三")
-print("我的学习目标是:掌握 Python 编程基础")
-```
-
-运行方式:
-
-```bash
-python intro.py
-```
-
-预期输出:
-```
-我是张三
-我的学习目标是:掌握 Python 编程基础
-```
-:::
+</details>
 
 ## 📌 小结
 
-- Python 解释器(Interpreter)是执行代码的程序,需要先安装
-- 使用 `python --version` 验证安装是否成功
-- Python 代码文件的扩展名是 `.py`
-- 使用 `python 文件名.py` 命令运行程序
+- 开发环境包含**编辑器**(写代码)和**编译器**(翻译代码)
+- 推荐使用 **VS Code + MinGW/GCC** 组合
+- 编译命令:`g++ 源文件.cpp -o 可执行文件名`
+- 成功看到 `Hello, C++!` 输出,说明环境搭建完成
+
+::: tip 遇到问题?
+- 如果编译时提示"找不到 g++",检查环境变量配置
+- 如果 VS Code 提示找不到编译器,重启 VS Code 或电脑
+- 确保文件扩展名是 `.cpp` 而不是 `.cpp.txt`
+:::
