@@ -14,243 +14,256 @@ head:
 
 ## 💡 什么是类(Class)
 
-类是创建对象的模板。你可以把类想象成建筑图纸，而对象是根据图纸建造出来的房子。
+类是创建对象的模板。你可以把类想象成建筑图纸,它定义了对象应该有哪些特征和能做什么事情。
 
-类包含两部分核心内容：
-- **属性(Field/Attribute)**：描述对象的特征，比如一个人的姓名、年龄
-- **方法(Method)**：定义对象可以执行的操作，比如一个人可以说话、走路
+在Java中,几乎所有代码都要写在类里面。
 
-## 📝 创建你的第一个类
+## 定义一个类
 
-让我们创建一个 `Person` 类来表示一个人：
-
-```java{1,3,6}
-public class Person {
-    // 这里放属性和方法
-    String name;
-    int age;
-
-    void sayHello() {
-        System.out.println("Hello, my name is " + name);
-    }
-}
-```
-
-**代码说明：**
-- 第 1 行：定义一个名为 `Person` 的类
-- 第 3-4 行：定义了两个属性
-- 第 6-8 行：定义了一个方法
-
-::: tip 命名规范
-类名使用大驼峰命名法(PascalCase)，每个单词首字母大写，如 `Person`、`StudentInfo`
-:::
-
-## 📝 定义类的属性
-
-属性用来存储对象的数据。语法格式：`数据类型 属性名;`
-
-```java{2-3}
-public class Student {
-    String name;      // 学生姓名
-    int score;        // 学生分数
-}
-```
-
-### 常用数据类型
-
-| 数据类型 | 说明 | 示例 |
-|---------|------|------|
-| `String` | 文本 | `"张三"` |
-| `int` | 整数 | `18` |
-| `double` | 小数 | `98.5` |
-| `boolean` | 真/假 | `true` 或 `false` |
+### 📝 基本语法
 
 ```java
-public class Car {
-    String brand;        // 品牌
-    String color;        // 颜色
-    double price;        // 价格
-    boolean isRunning;   // 是否在运行
+public class Person {
+    // 类的内容写在这里
 }
 ```
 
-## 📝 定义类的方法
-
-方法定义对象能做什么。语法格式：`返回类型 方法名() { 方法体 }`
-
-```java{5-7,9-12}
-public class Calculator {
-    int number1;
-    int number2;
-
-    void showNumbers() {
-        System.out.println("Number 1: " + number1);
-        System.out.println("Number 2: " + number2);
-    }
-
-    int add() {
-        return number1 + number2;
-    }
-}
-```
-
-**方法的两种类型：**
-
-1. **无返回值方法**：使用 `void`，只执行操作不返回结果
-2. **有返回值方法**：指定返回类型（如 `int`），使用 `return` 返回结果
-
-## 📝 完整示例：创建和使用类
-
-创建一个 `Dog` 类并使用它：
-
-```java{1-11,15-19}
-public class Dog {
-    String name;
-    int age;
-
-    void bark() {
-        System.out.println(name + " says: Woof!");
-    }
-
-    void introduce() {
-        System.out.println("I am " + name + ", " + age + " years old");
-    }
-}
-
-// 在 main 方法中使用
-public class Main {
-    public static void main(String[] args) {
-        Dog myDog = new Dog();     // 创建对象
-        myDog.name = "Buddy";      // 设置属性
-        myDog.age = 3;
-        
-        myDog.bark();              // 调用方法
-        myDog.introduce();
-    }
-}
-```
-
-**运行结果：**
-```
-Buddy says: Woof!
-I am Buddy, 3 years old
-```
-
-## 📝 属性的访问级别(Access Level)
-
-访问级别控制谁可以访问类的属性。最常用的两种：
-
-### public - 公开的
-
-任何地方都可以访问：
-
-```java{2-3}
-public class Book {
-    public String title;
-    public double price;
-}
-
-// 在其他类中可以直接访问
-Book book = new Book();
-book.title = "Java Tutorial";  // ✅ 可以访问
-```
-
-### private - 私有的
-
-只能在类内部访问：
-
-```java{2-3,5-11}
-public class BankAccount {
-    private String accountNumber;
-    private double balance;
-
-    public void deposit(double amount) {
-        balance = balance + amount;  // ✅ 类内部可以访问
-    }
-
-    public double getBalance() {
-        return balance;              // ✅ 类内部可以访问
-    }
-}
-
-// 在其他类中
-BankAccount account = new BankAccount();
-account.balance = 1000;  // ❌ 错误！无法访问 private 属性
-account.deposit(1000);   // ✅ 正确！通过 public 方法访问
-```
-
-::: tip 最佳实践
-通常将属性设为 `private`，通过 `public` 方法来访问和修改，这样可以更好地保护数据
+::: tip 提示
+类名必须和文件名完全一致。如果类名是 `Person`,文件名就必须是 `Person.java`
 :::
 
-### 完整的示例
+### 📝 完整示例
 
-```java{2-3,6-8,11-13}
-public class Student {
-    private String name;
-    private int score;
+创建一个名为 `Person.java` 的文件:
 
-    // 设置姓名
-    public void setName(String newName) {
-        name = newName;
-    }
-
-    // 获取姓名
-    public String getName() {
-        return name;
-    }
-
-    // 设置分数（带验证）
-    public void setScore(int newScore) {
-        if (newScore >= 0 && newScore <= 100) {
-            score = newScore;
-        } else {
-            System.out.println("Invalid score!");
-        }
-    }
-
-    // 获取分数
-    public int getScore() {
-        return score;
-    }
-}
-
-// 使用示例
-public class Main {
+```java{1-2,5}
+// Person.java
+public class Person {
+    // 这是一个空类
+    
     public static void main(String[] args) {
-        Student student = new Student();
-        student.setName("Alice");
-        student.setScore(95);
-        
-        System.out.println(student.getName() + "'s score: " + student.getScore());
+        System.out.println("这是 Person 类");
     }
 }
 ```
 
-**运行结果：**
+运行后会输出:
 ```
-Alice's score: 95
+这是 Person 类
 ```
+
+## 定义类字段(Field)
+
+类字段也叫**属性(Attribute)**或**成员变量(Member Variable)**,用来存储对象的数据。
+
+### 📝 代码示例
+
+```java{3-4}
+// Person.java
+public class Person {
+    String name;    // 姓名
+    int age;        // 年龄
+    
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.name = "张三";
+        person.age = 25;
+        
+        System.out.println("姓名: " + person.name);
+        System.out.println("年龄: " + person.age);
+    }
+}
+```
+
+运行后会输出:
+```
+姓名: 张三
+年龄: 25
+```
+
+::: tip 提示
+`new Person()` 表示根据类创建一个具体的对象
+:::
+
+## 定义类的方法(Method)
+
+方法定义了对象能做什么事情,相当于对象的行为。
+
+### 📝 代码示例
+
+```java{6-8}
+// Person.java
+public class Person {
+    String name;
+    int age;
+    
+    void sayHello() {
+        System.out.println("你好,我是 " + name);
+    }
+    
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.name = "李四";
+        person.sayHello();  // 调用方法
+    }
+}
+```
+
+运行后会输出:
+```
+你好,我是 李四
+```
+
+### 📝 带参数和返回值的方法
+
+```java{6-8}
+// Calculator.java
+public class Calculator {
+    
+    // 计算两个数的和
+    int add(int a, int b) {
+        return a + b;
+    }
+    
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+        int result = calc.add(10, 20);
+        System.out.println("结果: " + result);
+    }
+}
+```
+
+运行后会输出:
+```
+结果: 30
+```
+
+## 类字段的访问等级(Access Level)
+
+访问等级控制其他代码能否访问你的字段和方法。
+
+### 💡 四种访问等级
+
+- **public**: 任何地方都能访问
+- **private**: 只能在类内部访问
+- **protected**: 同一包或子类可以访问
+- **不写修饰符**: 同一包内可以访问
+
+### 📝 代码示例
+
+```java{3-4}
+// BankAccount.java
+public class BankAccount {
+    private double balance;  // 私有字段,外部不能直接访问
+    public String owner;     // 公开字段,外部可以访问
+    
+    // 提供公开方法来访问私有字段
+    public void deposit(double amount) {
+        balance = balance + amount;
+    }
+    
+    public double getBalance() {
+        return balance;
+    }
+    
+    public static void main(String[] args) {
+        BankAccount account = new BankAccount();
+        account.owner = "王五";
+        account.deposit(1000);
+        
+        System.out.println("账户主: " + account.owner);
+        System.out.println("余额: " + account.getBalance());
+        
+        // account.balance = 9999;  // 错误!无法直接访问 private 字段
+    }
+}
+```
+
+运行后会输出:
+```
+账户主: 王五
+余额: 1000.0
+```
+
+::: warning 注意
+通常建议字段设为 `private`,通过 `public` 方法来访问,这样可以保护数据安全
+:::
 
 ## 💪 练习题
 
-### 练习 1：创建手机类
-创建一个 `Phone` 类，包含：
-- 属性：`brand`（品牌）、`price`（价格）
-- 方法：`showInfo()`（显示手机信息）
+### 练习1:创建一个学生类
 
-### 练习 2：创建计数器类
-创建一个 `Counter` 类，包含：
-- 私有属性：`count`（初始值为 0）
-- 方法：`increment()`（加 1）、`getCount()`（获取当前值）
+创建一个 `Student` 类,包含:
+- 字段:`name`(姓名)、`score`(分数)
+- 方法:`showInfo()`(显示学生信息)
 
-### 练习 3：创建矩形类
-创建一个 `Rectangle` 类，包含：
-- 私有属性：`width`（宽）、`height`（高）
-- 方法：`setWidth()`、`setHeight()`、`getArea()`（计算面积）
+<details>
+<summary>查看答案</summary>
 
-## 📌 关键要点
+```java
+// Student.java
+public class Student {
+    String name;
+    int score;
+    
+    void showInfo() {
+        System.out.println("姓名: " + name);
+        System.out.println("分数: " + score);
+    }
+    
+    public static void main(String[] args) {
+        Student student = new Student();
+        student.name = "小明";
+        student.score = 95;
+        student.showInfo();
+    }
+}
+```
 
-1. **类是对象的模板**，包含属性和方法
-2. **属性存储数据**，方法定义行为
-3. **`private` 属性更安全**，通过 `public` 方法访问
+</details>
+
+### 练习2:创建一个商品类
+
+创建一个 `Product` 类,包含:
+- 私有字段:`price`(价格)
+- 公开字段:`name`(商品名)
+- 方法:`setPrice(double p)`(设置价格)、`getPrice()`(获取价格)
+
+<details>
+<summary>查看答案</summary>
+
+```java
+// Product.java
+public class Product {
+    public String name;
+    private double price;
+    
+    public void setPrice(double p) {
+        if (p > 0) {
+            price = p;
+        }
+    }
+    
+    public double getPrice() {
+        return price;
+    }
+    
+    public static void main(String[] args) {
+        Product product = new Product();
+        product.name = "手机";
+        product.setPrice(2999);
+        
+        System.out.println("商品: " + product.name);
+        System.out.println("价格: " + product.getPrice());
+    }
+}
+```
+
+</details>
+
+## 📌 小结
+
+- **类(Class)**是创建对象的模板,类名必须和文件名一致
+- **字段(Field)**存储对象的数据,定义在类里面
+- **方法(Method)**定义对象的行为,可以有参数和返回值
+- **访问等级**:`private`保护数据,`public`允许外部访问
