@@ -14,165 +14,207 @@ head:
 
 ## 💡 什么是函数(Function)
 
-函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
+函数就像一个"任务打包盒"——你把一段经常要做的事情装进这个盒子里,需要时就直接叫它的名字,它就会帮你完成任务。
 
-比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
+比如说,你每天都要计算商品总价(单价 × 数量),与其每次都写一遍计算公式,不如把这个计算过程打包成一个函数,用的时候直接调用就行。
 
-## 定义函数(Function Definition)
+## 创建你的第一个函数
 
-### 📝 基本语法
+### 📝 基础语法
 
-```python{1}
-def 函数名():
-    # 这里写函数要做的事情
-    print("Hello")
+```php{1,3}
+function 函数名() {
+    // 要执行的代码
+}
 ```
 
-- `def` 是定义函数的关键字
-- 函数名后面必须有小括号 `()`
-- 冒号 `:` 不能忘
-- 函数内的代码必须缩进(按一次Tab键)
+让我们创建一个打招呼的函数:
 
-### 代码示例
+```php{1-3,6}
+<?php
+function sayHello() {
+    echo "你好,欢迎学习 PHP!";
+}
 
-```python{1-2}
-def say_hello():
-    print("你好,欢迎学习Python!")
-```
-
-这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
-
-## 调用函数(Function Call)
-
-定义好函数后,需要"调用"它才会执行:
-
-```python{1-2,4}
-def say_hello():
-    print("你好,欢迎学习Python!")
-
-say_hello()  # 调用函数
+sayHello(); // 调用函数
+?>
 ```
 
 **运行结果:**
 ```
-你好,欢迎学习Python!
+你好,欢迎学习 PHP!
 ```
 
 ::: tip 提示
-调用函数时,函数名后面的小括号 `()` 不能省略!
+函数名遵循变量命名规则,但不需要加 `$` 符号。推荐使用驼峰命名法,如 `calculatePrice`、`getUserName`。
 :::
 
-## 带参数的函数(Function with Parameters)
+## 带参数(Parameter)的函数
 
-### 💡 为什么需要参数
+如果你想让函数更灵活,可以给它传递参数:
 
-有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
+```php{1,6}
+<?php
+function greet($name) {
+    echo "你好, " . $name . "!";
+}
 
-### 📝 代码示例
-
-```python{1,4}
-def greet(name):
-    print(f"你好,{name}!")
-
-greet("小明")  # 传入参数"小明"
+greet("小明"); // 传入参数
+greet("小红");
+?>
 ```
 
 **运行结果:**
 ```
-你好,小明!
+你好, 小明!
+你好, 小红!
 ```
 
-你可以多次调用,传入不同的参数:
+### 📝 多个参数示例
 
-```python{1-2,4-5}
-def greet(name):
-    print(f"你好,{name}!")
+```php{1,6-7}
+<?php
+function calculateTotal($price, $quantity) {
+    echo "总价: " . ($price * $quantity) . " 元";
+}
 
-greet("小明")
-greet("小红")
+calculateTotal(50, 3);  // 50元 × 3个
+calculateTotal(120, 2); // 120元 × 2个
+?>
 ```
 
 **运行结果:**
 ```
-你好,小明!
-你好,小红!
+总价: 150 元
+总价: 240 元
 ```
 
 ## 返回值(Return Value)
 
-### 💡 什么是返回值
+函数可以把计算结果"还给你",而不是直接输出:
 
-有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
+```php{2,6-7}
+<?php
+function add($a, $b) {
+    return $a + $b; // 返回计算结果
+}
 
-### 📝 代码示例
-
-```python{1-2,4-5}
-def calculate_square(number):
-    return number * number
-
-result = calculate_square(5)  # 函数返回25
-print(f"5的平方是: {result}")
+$result = add(10, 20); // 接收返回值
+echo "结果是: " . $result;
+?>
 ```
 
 **运行结果:**
 ```
-5的平方是: 25
+结果是: 30
 ```
 
 ::: warning 注意
-如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
+`return` 后面的代码不会执行,函数会立即结束并返回结果。
 :::
 
-## 多个参数(Multiple Parameters)
+### 📝 实用示例:价格计算器
 
-函数可以接收多个参数,用逗号分隔:
+```php{1-4,7-8}
+<?php
+function calculateDiscount($price, $discountRate) {
+    $finalPrice = $price * (1 - $discountRate);
+    return $finalPrice;
+}
 
-```python{1-2,4}
-def add_numbers(a, b):
-    return a + b
+$originalPrice = 100;
+$afterDiscount = calculateDiscount($originalPrice, 0.2); // 8折
 
-result = add_numbers(10, 20)
-print(f"10 + 20 = {result}")
+echo "原价: {$originalPrice} 元<br>";
+echo "折后价: {$afterDiscount} 元";
+?>
 ```
 
 **运行结果:**
 ```
-10 + 20 = 30
+原价: 100 元
+折后价: 80 元
+```
+
+## 默认参数(Default Parameter)
+
+你可以给参数设置默认值:
+
+```php{1,5-6}
+<?php
+function makeGreeting($name, $time = "早上") {
+    echo "{$time}好, {$name}!<br>";
+}
+
+makeGreeting("小明");           // 使用默认值"早上"
+makeGreeting("小红", "下午");   // 自定义时间
+?>
+```
+
+**运行结果:**
+```
+早上好, 小明!
+下午好, 小红!
 ```
 
 ## 💪 练习题
 
-### 练习1:定义并调用函数
+### 练习 1: 创建温度转换函数
+创建一个函数,将摄氏度转换为华氏度(公式: 华氏度 = 摄氏度 × 1.8 + 32)
 
-编写一个函数 `introduce_yourself`,打印你的名字和年龄。
+::: details 查看答案
+```php
+<?php
+function celsiusToFahrenheit($celsius) {
+    return $celsius * 1.8 + 32;
+}
 
-::: details 点击查看答案
-```python
-def introduce_yourself():
-    print("我叫小明")
-    print("我今年18岁")
-
-introduce_yourself()
+echo "25°C = " . celsiusToFahrenheit(25) . "°F<br>";
+echo "0°C = " . celsiusToFahrenheit(0) . "°F";
+?>
+```
+**运行结果:**
+```
+25°C = 77°F
+0°C = 32°F
 ```
 :::
 
-### 练习2:带参数的函数
+### 练习 2: 创建会员折扣计算器
+创建一个函数,根据会员等级计算折扣后价格:
+- 普通会员: 9折
+- VIP会员: 8折
+- SVIP会员: 7折
 
-编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
+::: details 查看答案
+```php
+<?php
+function getMemberPrice($price, $level = "普通") {
+    if ($level == "普通") {
+        return $price * 0.9;
+    } elseif ($level == "VIP") {
+        return $price * 0.8;
+    } elseif ($level == "SVIP") {
+        return $price * 0.7;
+    }
+    return $price;
+}
 
-::: details 点击查看答案
-```python
-def calculate_rectangle_area(length, width):
-    return length * width
-
-area = calculate_rectangle_area(5, 3)
-print(f"矩形面积是: {area}")
+echo "普通会员价: " . getMemberPrice(100) . " 元<br>";
+echo "VIP会员价: " . getMemberPrice(100, "VIP") . " 元<br>";
+echo "SVIP会员价: " . getMemberPrice(100, "SVIP") . " 元";
+?>
+```
+**运行结果:**
+```
+普通会员价: 90 元
+VIP会员价: 80 元
+SVIP会员价: 70 元
 ```
 :::
 
 ## 📌 小结
 
-1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
-2. **调用函数**:写出函数名并加上小括号 `函数名()`
-3. **参数**:让函数处理不同的数据,在小括号内定义参数
-4. **返回值**:用 `return` 把计算结果交还给调用者
+- **函数定义**: 使用 `function` 关键字创建可重复使用的代码块
+- **参数传递**: 让函数接收外部数据,增强灵活性
+- **返回值**: 使用 `return` 将结果返回给调用者,便于后续处理
