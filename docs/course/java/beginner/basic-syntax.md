@@ -14,64 +14,30 @@ head:
 
 ## 💡 变量(Variable)
 
-**变量(Variable)** 就像一个有名字的盒子,用来存放数据。
+**变量(Variable)** 就像一个贴了标签的盒子,用来存储数据。你需要先告诉 Java 这个盒子能装什么类型的东西,然后给它起个名字。
 
-变量需要先**声明(Declare)**,再**赋值(Assign)**:
+Java 中常用的数据类型:
+- `int` - 整数(Integer),如 10, -5, 0
+- `double` - 小数(Double),如 3.14, -0.5
+- `String` - 文本(String),如 "Hello", "你好"
+- `boolean` - 布尔值(Boolean),只有 `true` 或 `false`
 
-```java
-int age;        // 声明变量
-age = 25;       // 赋值
-```
+## 📝 定义和输出变量
 
-也可以声明时直接赋值:
-
-```java
-int age = 25;   // 声明并赋值
-```
-
-变量名规则:
-- 只能包含字母、数字、下划线和美元符号
-- 必须以字母开头
-- 建议使用有意义的名字
-
-### 📝 代码示例
-
-```java{5-7}
-public class VariableDemo {
+```java{3-6,9-12}
+public class BasicSyntax {
     public static void main(String[] args) {
-        // 声明并赋值不同类型的变量
-        
-        int age = 25;              // 整数
-        double price = 99.99;      // 小数
-        String name = "张三";       // 文本
-        
-        boolean isStudent = true;  // 布尔值(真/假)
-    }
-}
-```
-
-::: tip 提示
-`int`、`double`、`String`、`boolean` 是数据类型,后续章节会详细讲解。
-:::
-
-## 💡 输出变量
-
-使用 `System.out.println()` 可以在控制台打印变量的内容。
-
-### 📝 代码示例
-
-```java{9-11}
-public class PrintDemo {
-    public static void main(String[] args) {
+        // 定义变量
         int age = 25;
-        double price = 99.99;
+        double price = 19.99;
         String name = "张三";
+        boolean isStudent = true;
         
-        // 打印变量
-        
-        System.out.println(age);     // 输出: 25
-        System.out.println(price);   // 输出: 99.99
-        System.out.println(name);    // 输出: 张三
+        // 输出变量
+        System.out.println(age);
+        System.out.println(price);
+        System.out.println(name);
+        System.out.println(isStudent);
     }
 }
 ```
@@ -79,250 +45,130 @@ public class PrintDemo {
 **运行结果:**
 ```
 25
-99.99
+19.99
 张三
+true
 ```
 
-可以使用 `+` 拼接文本和变量:
-
-```java{5-6}
-public class PrintWithTextDemo {
-    public static void main(String[] args) {
-        String name = "张三";
-        int age = 25;
-        
-        System.out.println("姓名:" + name);           // 输出: 姓名:张三
-        System.out.println("年龄:" + age + "岁");     // 输出: 年龄:25岁
-    }
-}
-```
-
-## 💡 基本运算
-
-Java 支持常见的数学运算:
-
-| 运算符 | 说明 | 示例 |
-|--------|------|------|
-| `+` | 加法 | `5 + 3` 结果为 `8` |
-| `-` | 减法 | `5 - 3` 结果为 `2` |
-| `*` | 乘法 | `5 * 3` 结果为 `15` |
-| `/` | 除法 | `6 / 3` 结果为 `2` |
-| `%` | 取余 | `5 % 2` 结果为 `1` |
-
-### 📝 代码示例
-
-```java{5-9}
-public class CalculationDemo {
-    public static void main(String[] args) {
-        int a = 10;
-        int b = 3;
-        
-        System.out.println(a + b);  // 输出: 13
-        System.out.println(a - b);  // 输出: 7
-        System.out.println(a * b);  // 输出: 30
-        System.out.println(a / b);  // 输出: 3
-        System.out.println(a % b);  // 输出: 1
-    }
-}
-```
-
-**运行结果:**
-```
-13
-7
-30
-3
-1
-```
-
-::: warning 注意
-整数除法只保留整数部分,`10 / 3` 结果是 `3` 而不是 `3.333...`
+::: tip 变量命名规则
+- 只能包含字母、数字、下划线、美元符号
+- 不能以数字开头
+- 建议使用有意义的英文单词,如 `userName` 而不是 `a`
 :::
-
-### 📝 小数运算
-
-```java{4-5}
-public class DecimalCalculationDemo {
-    public static void main(String[] args) {
-        double price = 99.5;
-        double discount = 0.8;
-        double finalPrice = price * discount;
-        
-        System.out.println("原价:" + price);
-        System.out.println("折扣:" + discount);
-        System.out.println("最终价格:" + finalPrice);
-    }
-}
-```
-
-**运行结果:**
-```
-原价:99.5
-折扣:0.8
-最终价格:79.6
-```
 
 ## 💡 注释(Comment)
 
-**注释(Comment)** 是写给人看的说明,程序运行时会被忽略。
+**注释(Comment)** 是写给人看的说明文字,程序运行时会被忽略。
 
-Java 有三种注释方式:
-
-```java
-// 单行注释:用两个斜杠开头
-
-/*
-多行注释:
-用斜杠星号开始
-用星号斜杠结束
-*/
-
-/**
- * 文档注释:
- * 用于生成API文档
- */
-```
-
-### 📝 代码示例
-
-```java{3,6,9-11}
+```java{2,5-8,11}
 public class CommentDemo {
+    // 这是单行注释,用两个斜杠开头
+    
     public static void main(String[] args) {
-        // 计算商品总价
-        
-        int quantity = 5;      // 数量
-        double unitPrice = 10.5;  // 单价
-        
         /*
-        总价 = 数量 × 单价
-        */
-        double totalPrice = quantity * unitPrice;
+         * 这是多行注释
+         * 可以写很多行说明
+         */
+        int score = 95;  // 也可以在代码后面加注释
         
-        System.out.println("总价:" + totalPrice);
+        System.out.println(score);  // 输出: 95
     }
 }
 ```
 
-::: tip 提示
-养成写注释的习惯,未来的你会感谢现在的你。
+::: warning 注意
+注释不要写太多,代码本身应该足够清晰。注释应该解释"为什么这样做",而不是重复代码在做什么。
 :::
 
-## 💡 日志打印
+## 💡 日志打印(Print)
 
-除了 `System.out.println()`,还有其他打印方式:
+Java 提供了三种常用的输出方式:
 
-| 方法 | 说明 |
-|------|------|
-| `System.out.println()` | 打印后换行 |
-| `System.out.print()` | 打印后不换行 |
-| `System.out.printf()` | 格式化打印 |
-
-### 📝 代码示例
-
-```java{4-6,9-12}
-public class PrintMethodsDemo {
+```java{3,6,9}
+public class PrintDemo {
     public static void main(String[] args) {
-        // println 会换行
-        System.out.println("第一行");
-        System.out.println("第二行");
+        System.out.println("Hello");  // 输出后换行
+        System.out.println("World");
         
-        // print 不换行
-        System.out.print("A");
-        System.out.print("B");
-        System.out.print("C");
-        System.out.println();  // 手动换行
+        System.out.print("Hello");    // 输出后不换行
+        System.out.print("World");
         
-        // printf 格式化打印
-        String name = "李四";
-        int age = 30;
-        double salary = 8500.5;
-        System.out.printf("姓名:%s, 年龄:%d, 工资:%.2f", name, age, salary);
+        System.out.printf("我是 %s, 今年 %d 岁", "李四", 20);  // 格式化输出
     }
 }
 ```
 
 **运行结果:**
 ```
-第一行
-第二行
-ABC
-姓名:李四, 年龄:30, 工资:8500.50
+Hello
+World
+HelloWorld
+我是 李四, 今年 20 岁
 ```
 
-`printf()` 常用占位符:
-- `%s` - 字符串
-- `%d` - 整数
-- `%f` - 小数
-- `%.2f` - 保留2位小数
+### 格式化输出占位符
+
+`printf` 中的占位符:
+- `%s` - 字符串(String)
+- `%d` - 整数(Decimal)
+- `%f` - 小数(Float)
+- `%.2f` - 保留 2 位小数
+
+```java{4}
+public class FormatDemo {
+    public static void main(String[] args) {
+        double total = 123.456;
+        System.out.printf("总价: %.2f 元", total);  // 输出: 总价: 123.46 元
+    }
+}
+```
 
 ## 💪 练习题
 
-**练习1:** 编写程序计算矩形的面积和周长
+### 练习 1: 个人信息卡
 
-要求:
-- 定义变量 `length`(长)和 `width`(宽)
-- 计算并打印面积和周长
+定义变量存储你的姓名、年龄、身高(米),然后输出这些信息。
 
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```java
-public class RectangleCalculator {
+public class Exercise1 {
     public static void main(String[] args) {
-        // 定义矩形的长和宽
-        double length = 10.5;
-        double width = 5.0;
+        String name = "王五";
+        int age = 22;
+        double height = 1.75;
         
-        // 计算面积和周长
-        double area = length * width;
-        double perimeter = 2 * (length + width);
-        
-        // 打印结果
-        System.out.println("长:" + length);
-        System.out.println("宽:" + width);
-        System.out.println("面积:" + area);
-        System.out.println("周长:" + perimeter);
+        System.out.println("姓名: " + name);
+        System.out.println("年龄: " + age);
+        System.out.println("身高: " + height + " 米");
     }
 }
 ```
+:::
 
-</details>
+### 练习 2: 购物小票
 
-**练习2:** 编写程序计算购物车总价
+使用 `printf` 输出一个商品的信息:商品名称、数量、单价、总价(保留 2 位小数)。
 
-要求:
-- 有3件商品,价格分别是 19.9、35.5、88.0
-- 使用 `printf()` 格式化打印总价,保留2位小数
-
-<details>
-<summary>点击查看答案</summary>
-
+::: details 查看答案
 ```java
-public class ShoppingCart {
+public class Exercise2 {
     public static void main(String[] args) {
-        // 商品价格
-        double item1 = 19.9;
-        double item2 = 35.5;
-        double item3 = 88.0;
+        String product = "苹果";
+        int quantity = 5;
+        double unitPrice = 3.5;
+        double total = quantity * unitPrice;
         
-        // 计算总价
-        double total = item1 + item2 + item3;
-        
-        // 格式化打印
-        System.out.println("商品1:¥" + item1);
-        System.out.println("商品2:¥" + item2);
-        System.out.println("商品3:¥" + item3);
-        System.out.printf("总价:¥%.2f", total);
+        System.out.printf("商品: %s\n", product);
+        System.out.printf("数量: %d\n", quantity);
+        System.out.printf("单价: %.2f 元\n", unitPrice);
+        System.out.printf("总价: %.2f 元\n", total);
     }
 }
 ```
-
-</details>
+:::
 
 ## 📌 小结
 
-- **变量**是存储数据的容器,格式为 `类型 变量名 = 值;`
-- **输出**使用 `System.out.println()`,可用 `+` 拼接文本和变量
-- **运算**支持 `+`、`-`、`*`、`/`、`%` 五种基本运算符
-- **注释**用 `//` 或 `/* */`,帮助理解代码
-- **日志打印**可选择 `println()`、`print()` 或 `printf()` 根据需求使用
+- **变量** = 类型 + 名称 + 值,如 `int age = 25;`
+- 使用 `//` 或 `/* */` 添加**注释**说明代码
+- `println` 输出后换行,`print` 不换行,`printf` 用于格式化输出
