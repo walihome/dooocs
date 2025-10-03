@@ -1,5 +1,5 @@
 ---
-title: 集合
+title: 数组
 category: python
 order: 6
 tag: 菜鸟教程、新手教程
