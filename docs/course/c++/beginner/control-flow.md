@@ -12,239 +12,311 @@ head:
 
  # 控制流
 
-程序需要根据不同情况做出不同的决策，或者重复执行某些操作。这就是控制流(Control Flow)要解决的问题。
+程序不仅仅是从上到下执行的。有时候你需要让程序重复做某件事，或者根据不同情况做出不同的选择。这就是控制流(Control Flow)的作用。
 
-## if 语句 - 让程序做判断
-
-### 💡 概念说明
-
-`if` 语句让程序根据条件决定是否执行某段代码。就像生活中的"如果...就..."。
-
-基本形式:
-- `if` - 如果条件成立
-- `elif` - 否则如果(可选,可多个)
-- `else` - 否则(可选)
-
-### 📝 代码示例
-
-```python{1,4,6}
-age = 18
-
-if age >= 18:
-    print("你可以考驾照了")  // 条件成立时执行
-elif age >= 16:
-    print("你可以骑电动车")  // 第一个条件不成立,检查这个
-else:
-    print("你还需要等几年")  // 所有条件都不成立时执行
-```
-
-运行结果会显示:`你可以考驾照了`
-
-::: tip 提示
-缩进(Indentation)很重要! Python 用缩进表示代码块,通常用 4 个空格或 1 个 Tab。
-:::
-
-**多个条件组合:**
-
-```python{3-4}
-score = 85
-
-if score >= 60 and score < 90:  // 使用 and 连接两个条件
-    print("成绩良好")
-```
-
-常用的条件运算符:
-- `and` - 并且(两个条件都要满足)
-- `or` - 或者(满足其中一个即可)
-- `not` - 取反
-
-### 💪 练习题
-
-**练习 1**: 写一个程序判断一个数字是正数、负数还是零。
-
-::: details 点击查看答案
-```python
-number = -5
-
-if number > 0:
-    print("这是正数")
-elif number < 0:
-    print("这是负数")
-else:
-    print("这是零")
-```
-:::
-
-**练习 2**: 判断用户输入的密码是否正确(假设正确密码是 "123456")。
-
-::: details 点击查看答案
-```python
-password = input("请输入密码: ")
-
-if password == "123456":
-    print("密码正确")
-else:
-    print("密码错误")
-```
-:::
-
-## for 循环 - 遍历序列
+## for 循环
 
 ### 💡 概念说明
 
-`for` 循环用于遍历(Iterate)序列中的每个元素,自动处理每一项。
+当你需要重复执行某段代码时,就用 `for` 循环(for loop)。比如:打印 1 到 10、计算数组中所有数字的和。
+
+基本结构:
+```cpp
+for (初始化; 条件; 更新) {
+    // 重复执行的代码
+}
+```
 
 ### 📝 代码示例
 
-**遍历列表(List):**
+```cpp{6-8}
+#include <iostream>
+using namespace std;
 
-```python{3-4}
-fruits = ["苹果", "香蕉", "橙子"]
-
-for fruit in fruits:  // fruit 会依次变成列表中的每个元素
-    print(f"我喜欢吃{fruit}")
-```
-
-运行结果:
-```
-我喜欢吃苹果
-我喜欢吃香蕉
-我喜欢吃橙子
-```
-
-**使用 range() 函数:**
-
-```python{1,4}
-for i in range(5):  // range(5) 生成 0, 1, 2, 3, 4
-    print(f"这是第 {i + 1} 次循环")
+int main() {
+    // 打印 1 到 5
+    for (int i = 1; i <= 5; i++) {
+        cout << i << endl;
+    }
     
-for i in range(1, 6):  // range(1, 6) 生成 1, 2, 3, 4, 5
-    print(i)
+    return 0;
+}
 ```
 
-`range()` 的三种用法:
-- `range(5)` - 从 0 到 4
-- `range(1, 6)` - 从 1 到 5
-- `range(0, 10, 2)` - 从 0 到 9,步长为 2(即 0, 2, 4, 6, 8)
+**运行结果:**
+```
+1
+2
+3
+4
+5
+```
+
+::: tip 理解 for 循环
+- `int i = 1` - 从 1 开始
+- `i <= 5` - 只要 i 不超过 5 就继续
+- `i++` - 每次循环后 i 加 1
+:::
+
+再看一个计算总和的例子:
+
+```cpp{6-9}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+        sum = sum + i;  // 累加每个数字
+    }
+    cout << "1到10的和是: " << sum << endl;
+    
+    return 0;
+}
+```
+
+**运行结果:**
+```
+1到10的和是: 55
+```
 
 ### 💪 练习题
 
-**练习 1**: 计算 1 到 10 的总和。
+**练习 1:** 打印 2 的前 5 个倍数(2, 4, 6, 8, 10)
 
 ::: details 点击查看答案
-```python
-total = 0
+```cpp
+#include <iostream>
+using namespace std;
 
-for i in range(1, 11):
-    total = total + i
-
-print(f"总和是: {total}")
+int main() {
+    for (int i = 1; i <= 5; i++) {
+        cout << i * 2 << endl;
+    }
+    return 0;
+}
 ```
 :::
 
-**练习 2**: 打印九九乘法表的前 3 行。
+**练习 2:** 计算 1 到 100 中所有偶数的和
 
 ::: details 点击查看答案
-```python
-for i in range(1, 4):
-    for j in range(1, 10):
-        print(f"{i} × {j} = {i * j}", end="  ")
-    print()  // 换行
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    int sum = 0;
+    for (int i = 2; i <= 100; i = i + 2) {
+        sum = sum + i;
+    }
+    cout << "偶数和: " << sum << endl;
+    return 0;
+}
 ```
 :::
 
-## while 循环 - 条件满足就继续
+## while 循环
 
 ### 💡 概念说明
 
-`while` 循环在条件为真时持续执行,直到条件变为假。适合不知道要循环多少次的情况。
+`while` 循环(while loop)在条件为真时持续执行。当你不知道要循环多少次,只知道什么时候停止时,用 `while` 更合适。
+
+基本结构:
+```cpp
+while (条件) {
+    // 条件为真时执行
+}
+```
 
 ### 📝 代码示例
 
-**基本用法:**
+```cpp{6-9}
+#include <iostream>
+using namespace std;
 
-```python{1,3-5}
-count = 0
-
-while count < 5:  // 当 count 小于 5 时持续执行
-    print(f"count 的值是: {count}")
-    count = count + 1  // 每次循环后 count 加 1
+int main() {
+    int count = 1;
+    while (count <= 5) {
+        cout << count << endl;
+        count++;  // 别忘了更新
+    }
+    
+    return 0;
+}
 ```
 
-运行结果:
+**运行结果:**
 ```
-count 的值是: 0
-count 的值是: 1
-count 的值是: 2
-count 的值是: 3
-count 的值是: 4
+1
+2
+3
+4
+5
 ```
 
 ::: warning 注意
-如果条件永远为真,会造成无限循环(Infinite Loop)! 确保循环体内有改变条件的代码。
+如果忘记在循环内更新变量(比如 `count++`),程序会无限循环,永远停不下来!
 :::
 
-**使用 break 提前退出:**
+实际应用:猜数字游戏
 
-```python{5-6}
-number = 1
+```cpp{7-13}
+#include <iostream>
+using namespace std;
 
-while number <= 10:
-    print(number)
-    if number == 5:
-        break  // 遇到 5 就退出循环
-    number = number + 1
-```
-
-**使用 continue 跳过本次:**
-
-```python{4-5}
-number = 0
-
-while number < 5:
-    number = number + 1
-    if number == 3:
-        continue  // 跳过 3,继续下一次循环
-    print(number)
+int main() {
+    int secret = 7;
+    int guess;
+    
+    while (true) {
+        cout << "猜一个数字: ";
+        cin >> guess;
+        if (guess == secret) {
+            break;  // 猜对了,退出循环
+        }
+        cout << "猜错了,再试试!" << endl;
+    }
+    
+    cout << "恭喜你猜对了!" << endl;
+    return 0;
+}
 ```
 
 ### 💪 练习题
 
-**练习 1**: 让用户输入密码,最多尝试 3 次,正确就退出。
+**练习:** 写一个程序,从 10 倒数到 1,然后打印 "发射!"
 
 ::: details 点击查看答案
-```python
-attempts = 0
-correct_password = "123456"
+```cpp
+#include <iostream>
+using namespace std;
 
-while attempts < 3:
-    password = input("请输入密码: ")
-    if password == correct_password:
-        print("登录成功!")
-        break
-    else:
-        attempts = attempts + 1
-        print(f"密码错误,还剩 {3 - attempts} 次机会")
+int main() {
+    int count = 10;
+    while (count >= 1) {
+        cout << count << endl;
+        count--;
+    }
+    cout << "发射!" << endl;
+    return 0;
+}
 ```
 :::
 
-**练习 2**: 计算从 1 累加到多少时总和会超过 100。
+## if 条件判断
+
+### 💡 概念说明
+
+`if` 语句(if statement)让程序根据条件做出选择。
+
+基本结构:
+- `if` - 如果条件为真,执行
+- `else if` - 否则如果另一个条件为真
+- `else` - 以上都不满足时执行
+
+### 📝 代码示例
+
+```cpp{6-12}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age;
+    cout << "请输入你的年龄: ";
+    cin >> age;
+    
+    if (age < 18) {
+        cout << "你是未成年人" << endl;
+    } else {
+        cout << "你是成年人" << endl;
+    }
+    
+    return 0;
+}
+```
+
+多重条件判断:
+
+```cpp{8-14}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int score;
+    cout << "请输入成绩: ";
+    cin >> score;
+    
+    if (score >= 90) {
+        cout << "优秀!" << endl;
+    } else if (score >= 60) {
+        cout << "及格" << endl;
+    } else {
+        cout << "不及格" << endl;
+    }
+    
+    return 0;
+}
+```
+
+::: tip 比较运算符
+- `==` 等于
+- `!=` 不等于
+- `>` 大于
+- `<` 小于
+- `>=` 大于等于
+- `<=` 小于等于
+:::
+
+结合多个条件:
+
+```cpp{6-10}
+#include <iostream>
+using namespace std;
+
+int main() {
+    int age = 20;
+    bool hasTicket = true;
+    
+    if (age >= 18 && hasTicket) {
+        cout << "可以入场" << endl;
+    } else {
+        cout << "不能入场" << endl;
+    }
+    
+    return 0;
+}
+```
+
+### 💪 练习题
+
+**练习:** 写一个程序判断一个数是正数、负数还是零
 
 ::: details 点击查看答案
-```python
-total = 0
-number = 1
+```cpp
+#include <iostream>
+using namespace std;
 
-while total <= 100:
-    total = total + number
-    number = number + 1
-
-print(f"累加到 {number - 1} 时,总和为 {total}")
+int main() {
+    int num;
+    cout << "请输入一个数字: ";
+    cin >> num;
+    
+    if (num > 0) {
+        cout << "正数" << endl;
+    } else if (num < 0) {
+        cout << "负数" << endl;
+    } else {
+        cout << "零" << endl;
+    }
+    
+    return 0;
+}
 ```
 :::
 
 ## 📌 小结
 
-- **if 语句**: 根据条件决定是否执行代码,使用 `elif` 和 `else` 处理多种情况
-- **for 循环**: 遍历序列或使用 `range()` 重复固定次数,适合已知循环次数的场景
-- **while 循环**: 条件为真时持续执行,适合未知循环次数的场景,记得用 `break` 或改变条件避免无限循环
+- **for 循环** - 知道循环次数时使用,常用于遍历固定范围
+- **while 循环** - 根据条件决定是否继续,适合次数不确定的情况
+- **if 语句** - 让程序根据条件做出不同的选择
