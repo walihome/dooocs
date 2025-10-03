@@ -14,11 +14,23 @@ head:
 
 ## 💡 什么是 Hello World
 
-**Hello World** 是程序员编写的第一个程序,用来验证编程环境是否正常工作。它会在屏幕上显示 "Hello World" 这句话。
+**Hello World** 是程序员学习新语言时编写的第一个程序。它的作用很简单：让计算机在屏幕上显示一句话。通过这个程序，你可以验证：
+- 你的开发环境配置正确
+- 你能成功运行 Java 程序
+- 你迈出了编程的第一步
 
-## 📝 完整代码示例
+## 📝 编写你的第一个程序
 
-创建一个名为 `HelloWorld.java` 的文件,输入以下代码:
+### 创建文件
+
+1. 打开你的代码编辑器（记事本、VS Code 等都可以）
+2. 新建一个文件，命名为 `HelloWorld.java`
+
+::: warning 注意
+文件名必须和代码中的类名完全一致，包括大小写！
+:::
+
+### 输入代码
 
 ```java{1,3}
 public class HelloWorld {
@@ -28,84 +40,79 @@ public class HelloWorld {
 }
 ```
 
-::: tip 提示
-文件名 `HelloWorld.java` 必须和代码中的 `class HelloWorld` 名称完全一致,包括大小写。
+::: tip 代码说明
+- 第 1 行：创建一个名为 `HelloWorld` 的**类(Class)**
+- 第 2 行：程序的入口，Java 程序从这里开始运行
+- 第 3 行：打印输出 `Hello World` 到屏幕
 :::
 
-### 运行代码
+### 运行程序
 
-在命令行中执行:
+打开命令行，进入文件所在目录，执行：
 
 ```bash
-# 编译代码
+# 编译
 javac HelloWorld.java
 
-# 运行程序
+# 运行
 java HelloWorld
 ```
 
-**运行结果:**
-
+**运行结果：**
 ```
 Hello World
 ```
 
-## 🔍 代码说明
+## 💪 动手练习
 
-让我们看看这 4 行代码分别做了什么:
+### 练习 1：修改输出内容
+把 `Hello World` 改成你的名字，比如 `Hello 张三`，运行看看效果。
 
-**第 1 行**: `public class HelloWorld` 
-- 定义了一个**类(Class)**,名字叫 `HelloWorld`
+<details>
+<summary>点击查看答案</summary>
 
-**第 2 行**: `public static void main(String[] args)`
-- 这是程序的**入口方法(Main Method)**
-- Java 程序从这里开始执行
-
-**第 3 行**: `System.out.println("Hello World")`
-- 在屏幕上打印输出内容
-- `println` 表示打印后换行
-
-::: warning 注意
-- 每条语句结尾需要加分号 `;`
-- 大括号 `{}` 必须成对出现
-- 字符串内容需要用双引号 `""` 包裹
-:::
-
-## 💪 练习题
-
-### 练习 1:修改输出内容
-
-把 "Hello World" 改成你的名字,比如 "Hello 张三"。
-
-::: details 查看答案
-```java{3}
+```java
 public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello 张三");
     }
 }
 ```
-:::
 
-### 练习 2:输出多行内容
+运行结果：
+```
+Hello 张三
+```
 
-尝试输出两行内容:
-- 第一行:Hello World
-- 第二行:Welcome to Java
+</details>
 
-::: details 查看答案
-```java{3-4}
+### 练习 2：输出多行内容
+尝试连续输出三行不同的内容。
+
+<details>
+<summary>点击查看答案</summary>
+
+```java
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("Hello World");
-        System.out.println("Welcome to Java");
+        System.out.println("第一行");
+        System.out.println("第二行");
+        System.out.println("第三行");
     }
 }
 ```
-:::
+
+运行结果：
+```
+第一行
+第二行
+第三行
+```
+
+</details>
 
 ## 📌 小结
 
-- Java 程序必须包含 `main` 方法作为入口
-- 使用 `System.out.println()` 可以在屏幕上输出内容
-- 文件名必须和类名一致
+- 每个 Java 程序都需要一个 `main` **方法(Method)** 作为入口
+- 使用 `System.out.println()` 可以在屏幕上显示内容
+- 文件名必须与类名一致
