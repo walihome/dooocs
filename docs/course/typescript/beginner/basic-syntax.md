@@ -12,213 +12,164 @@ head:
 
  # 基本语法
 
-在Python中,我们需要掌握四个最基础的操作:存储数据、显示数据、添加说明和调试程序。让我们逐个来学习。
-
 ## 定义变量(Variable)
 
-💡 **概念说明**
+💡 **变量是什么?**
 
-变量就像一个带标签的盒子,用来存储数据。你给盒子起个名字,就能随时使用里面的内容。
+变量就像一个带标签的盒子,用来存放数据。你需要告诉 TypeScript 这个盒子叫什么名字,里面放什么类型的东西。
 
 ### 📝 代码示例
 
-```python{1-3}
-name = "张三"
-age = 25
-price = 99.9
+```typescript{1,2,3}
+let age = 25;
+let name = "张三";
+let isStudent = true;
 ```
 
-**运行说明**: 这段代码运行后不会显示任何内容,但数据已经存储好了。
+**运行结果:**
+代码运行后不会显示任何内容,但这三个变量已经创建好了,可以在后续代码中使用。
 
-::: tip 命名建议
-- 使用英文字母、数字和下划线
-- 不能以数字开头
-- 建议使用有意义的英文单词:`user_name` 比 `a` 更容易理解
+::: tip 提示
+- `let` 是定义变量的关键字
+- `=` 右边是你要存放的数据
+- 每行代码结尾用分号 `;`
 :::
 
-### 💪 练习题
+## 输出变量(Output)
 
-**练习1**: 创建三个变量,分别存储你的姓名、年龄和所在城市
+💡 **如何查看变量的值?**
 
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-```
-
-</details>
-
-## 输出变量
-
-💡 **概念说明**
-
-使用`print()`函数(Function)可以将变量的内容显示在屏幕上。
+使用 `console.log()` 可以在控制台(Console)打印出变量的内容,这是检查代码运行结果的最常用方法。
 
 ### 📝 代码示例
 
-```python{4-5}
-name = "张三"
-age = 25
-
-print(name)
-print(age)
+```typescript{4,5,6}
+let age = 25;
+let name = "张三";
+let isStudent = true;
+console.log(age);
+console.log(name);
+console.log(isStudent);
 ```
 
-**运行结果**:
+**运行结果:**
 ```
-张三
 25
+张三
+true
 ```
 
-你也可以一次输出多个变量:
-
-```python{4}
-name = "张三"
-age = 25
-
-print("姓名:", name, "年龄:", age)
+::: tip 提示
+你可以在一个 `console.log()` 中同时输出多个变量:
+```typescript
+console.log(age, name, isStudent);
 ```
-
-**运行结果**:
-```
-姓名: 张三 年龄: 25
-```
-
-### 💪 练习题
-
-**练习2**: 输出练习1中创建的三个变量
-
-<details>
-<summary>查看答案</summary>
-
-```python
-my_name = "李四"
-my_age = 20
-city = "北京"
-
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
-```
-
-</details>
+输出: `25 张三 true`
+:::
 
 ## 增加注释(Comment)
 
-💡 **概念说明**
+💡 **注释的作用?**
 
-注释是写给人看的说明文字,程序运行时会自动忽略。就像给代码写的备忘录。
+注释是写给人看的说明文字,程序运行时会自动忽略这些内容。它帮助你(和其他人)理解代码的意图。
 
 ### 📝 代码示例
 
-```python{1,4,7-9}
-# 这是单行注释,用井号开头
+```typescript{1,4,7,8,9}
+// 这是单行注释,用两个斜杠开头
 
-name = "张三"  # 也可以写在代码后面
+let age = 25; // 也可以写在代码后面
+let name = "张三";
 
-age = 25
-
-"""
+/*
 这是多行注释
 可以写很多行说明
-"""
-print(name, age)
+*/
+let isStudent = true;
 ```
 
-**运行结果**:
-```
-张三 25
-```
+**运行结果:**
+代码正常运行,注释内容不会影响程序执行。
 
-::: tip 什么时候需要注释?
-- 解释复杂的逻辑
-- 说明某个数字的含义(如 `tax_rate = 0.13  # 增值税率`)
-- 暂时不想运行某段代码时,在前面加`#`
+::: warning 注意
+注释要写得有意义,避免写无用的注释:
+- ❌ 不好: `let age = 25; // 定义 age 变量`
+- ✅ 好: `let age = 25; // 用户输入的年龄`
 :::
 
-### 💪 练习题
+## 日志打印(Console Logging)
 
-**练习3**: 为你的代码添加注释,说明每个变量的用途
+💡 **更灵活的输出方式**
+
+除了基本的 `console.log()`,还有其他日志方法用于不同场景。
+
+### 📝 代码示例
+
+```typescript{6,9,12}
+let score = 85;
+let userName = "李四";
+
+// 普通信息
+console.log("学生姓名:", userName);
+
+// 警告信息(黄色显示)
+console.warn("分数接近及格线!");
+
+// 错误信息(红色显示)
+console.error("成绩输入有误!");
+```
+
+**运行结果:**
+```
+学生姓名: 李四
+⚠️ 警告: 分数接近及格线!
+❌ 错误: 成绩输入有误!
+```
+
+::: tip 提示
+不同的日志方法会在浏览器控制台中显示不同的颜色和图标,方便区分信息类型。
+:::
+
+## 💪 练习题
+
+**练习 1**: 创建一个表示商品信息的变量组,包含商品名称、价格和是否有货,然后输出这些信息。
 
 <details>
 <summary>查看答案</summary>
 
-```python
-# 存储用户的基本信息
-my_name = "李四"  # 用户姓名
-my_age = 20       # 用户年龄
-city = "北京"     # 所在城市
+```typescript
+let productName = "iPhone 15";
+let price = 5999;
+let inStock = true;
 
-# 输出用户信息
-print("我叫", my_name, "今年", my_age, "岁,住在", city)
+console.log("商品名称:", productName);
+console.log("价格:", price);
+console.log("是否有货:", inStock);
 ```
 
 </details>
 
-## 日志打印
-
-💡 **概念说明**
-
-`print()`就是最基本的日志打印方式,帮助你查看程序运行过程中的数据变化。
-
-### 📝 代码示例
-
-```python{7,10,13}
-# 计算商品总价
-price = 100
-quantity = 3
-
-# 打印初始值
-print("单价:", price)
-print("数量:", quantity)
-
-# 计算总价
-total = price * quantity
-print("总价:", total)
-
-# 应用折扣
-discount = 0.9
-final_price = total * discount
-print("折后价:", final_price)
-```
-
-**运行结果**:
-```
-单价: 100
-数量: 3
-总价: 300
-折后价: 270.0
-```
-
-::: warning 调试技巧
-当程序结果不对时,在关键位置添加`print()`,检查每一步的数据是否正确。
-:::
-
-### 💪 练习题
-
-**练习4**: 编写一个程序,计算矩形面积(长×宽),并用`print()`显示每一步的值
+**练习 2**: 在上面的代码中添加注释,说明每个变量的用途。
 
 <details>
 <summary>查看答案</summary>
 
-```python
-# 定义矩形的长和宽
-length = 10
-width = 5
-print("长度:", length)
-print("宽度:", width)
+```typescript
+// 商品基本信息
+let productName = "iPhone 15"; // 商品名称
+let price = 5999; // 销售价格(单位:元)
+let inStock = true; // 库存状态
 
-# 计算面积
-area = length * width
-print("面积:", area)
+// 输出商品信息到控制台
+console.log("商品名称:", productName);
+console.log("价格:", price);
+console.log("是否有货:", inStock);
 ```
 
 </details>
 
 ## 📌 小结
 
-- **变量**: 使用`=`存储数据,如`name = "张三"`
-- **输出**: 使用`print()`显示内容
-- **注释**: 使用`#`添加单行说明,使用`""" """`添加多行说明
-- **调试**: 通过`print()`查看程序运行中的数据状态
+- 使用 `let` 定义变量,格式: `let 变量名 = 值;`
+- 使用 `console.log()` 输出变量内容到控制台
+- 单行注释用 `//`,多行注释用 `/* */`
