@@ -12,233 +12,210 @@ head:
 
  # 数据类型
 
-在编程世界里,计算机需要知道你给它的信息是什么类型,就像你需要知道手里拿的是苹果还是橘子。Python 有几种基本的数据类型(Data Types),让我们一个个来认识它们。
+在Go语言中,数据类型(Data Type)告诉计算机如何理解和存储数据。就像日常生活中,我们会区分数字、文字、真假判断一样,编程语言也需要这样的分类。
 
 ## 整数(Integer)
 
 ### 💡 概念说明
 
-整数就是没有小数点的数字,可以是正数、负数或零。在 Python 中用 `int` 表示。
+整数类型用于存储没有小数部分的数字,比如 1、-5、1000。Go提供了多种整数类型:
+
+- `int` - 最常用,根据系统自动选择32位或64位
+- `int8`、`int16`、`int32`、`int64` - 指定位数的整数
+- `uint` - 无符号整数(只能是正数和0)
+
+::: tip 提示
+新手直接使用 `int` 就够了,它能满足大部分需求。
+:::
 
 ### 📝 代码示例
 
-```python{1-4}
-age = 25                    # 正整数
-temperature = -5            # 负整数
-score = 0                   # 零
-population = 1400000000     # 大数字也可以
+```go{4-6}
+package main
+
+import "fmt"
+
+func main() {
+    var age int = 25           // 声明整数变量
+    var temperature int = -10   // 可以是负数
+    score := 95                 // 简短声明方式
+    
+    fmt.Println("年龄:", age)
+    fmt.Println("温度:", temperature)
+    fmt.Println("分数:", score)
+}
 ```
 
-**运行结果**:这段代码不会显示任何内容,它只是把数据存储在变量中。
-
-让我们用 `print()` 函数看看这些整数:
-
-```python{1,2,5}
-year = 2025
-print(year)           # 输出: 2025
-
-result = 10 + 20
-print(result)         # 输出: 30
+**运行结果:**
 ```
-
-### 💪 练习题
-
-**练习 1**: 创建一个变量存储你的年龄,然后打印出来。
-
-::: details 查看答案
-```python
-my_age = 18
-print(my_age)
+年龄: 25
+温度: -10
+分数: 95
 ```
-:::
-
-**练习 2**: 计算两个整数的和并打印结果。
-
-::: details 查看答案
-```python
-num1 = 15
-num2 = 27
-total = num1 + num2
-print(total)  # 输出: 42
-```
-:::
 
 ## 浮点数(Float)
 
 ### 💡 概念说明
 
-浮点数就是带小数点的数字,用于表示更精确的值。在 Python 中用 `float` 表示。
+浮点数用于存储带小数的数字,比如 3.14、-0.5、99.99。Go提供两种浮点类型:
+
+- `float32` - 单精度浮点数
+- `float64` - 双精度浮点数(推荐使用)
 
 ### 📝 代码示例
 
-```python{1-3}
-height = 1.75              # 身高(米)
-price = 29.99              # 价格
-temperature = -3.5         # 温度
+```go{5-7}
+package main
+
+import "fmt"
+
+func main() {
+    var price float64 = 19.99    // 商品价格
+    var pi float64 = 3.14159     // 圆周率
+    discount := 0.85             // 折扣(Go会自动识别为float64)
+    
+    fmt.Println("价格:", price)
+    fmt.Println("圆周率:", pi)
+    fmt.Println("折扣:", discount)
+}
 ```
 
-你可以对浮点数进行计算:
-
-```python{1-3}
-length = 5.5
-width = 3.2
-area = length * width
-print(area)                # 输出: 17.6
+**运行结果:**
+```
+价格: 19.99
+圆周率: 3.14159
+折扣: 0.85
 ```
 
-::: tip 提示
-整数和浮点数可以一起计算,结果会是浮点数:
-```python
-result = 10 + 3.5
-print(result)  # 输出: 13.5
-```
-:::
-
-### 💪 练习题
-
-**练习 1**: 计算一个长方形的面积(长 4.5,宽 2.8)。
-
-::: details 查看答案
-```python
-length = 4.5
-width = 2.8
-area = length * width
-print(area)  # 输出: 12.6
-```
-:::
-
-**练习 2**: 计算商品打折后的价格(原价 99.9,折扣 0.8)。
-
-::: details 查看答案
-```python
-original_price = 99.9
-discount = 0.8
-final_price = original_price * discount
-print(final_price)  # 输出: 79.92
-```
+::: warning 注意
+整数和浮点数不能直接混合运算,需要类型转换。
 :::
 
 ## 字符串(String)
 
 ### 💡 概念说明
 
-字符串是用引号包起来的文字,可以是单引号 `'` 或双引号 `"`。在 Python 中用 `str` 表示。
+字符串用于存储文本信息,必须用双引号 `""` 包裹。字符串可以包含中文、英文、数字、符号等任何文字内容。
 
 ### 📝 代码示例
 
-```python{1-3}
-name = "张三"
-city = 'Beijing'
-message = "Hello, World!"
+```go{5-7,10-11}
+package main
+
+import "fmt"
+
+func main() {
+    var name string = "张三"        // 中文字符串
+    var greeting string = "Hello"   // 英文字符串
+    message := "Go语言真有趣!"      // 混合字符串
+    
+    fmt.Println(name)
+    fmt.Println(greeting + ", " + name)  // 字符串拼接
+    fmt.Println(message)
+}
 ```
 
-字符串可以拼接(连接)在一起:
-
-```python{1-3}
-first_name = "李"
-last_name = "明"
-full_name = first_name + last_name
-print(full_name)           # 输出: 李明
+**运行结果:**
+```
+张三
+Hello, 张三
+Go语言真有趣!
 ```
 
-字符串和数字不能直接拼接,需要转换:
-
-```python{1-2}
-age = 25
-text = "我今年" + str(age) + "岁"
-print(text)                # 输出: 我今年25岁
-```
-
-::: warning 注意
-单引号和双引号要成对出现,不能混用:
-```python
-# ✅ 正确
-name = "Alice"
-city = 'Tokyo'
-
-# ❌ 错误
-name = "Alice'
-```
-:::
-
-### 💪 练习题
-
-**练习 1**: 创建两个字符串变量,分别存储你的姓和名,然后拼接打印。
-
-::: details 查看答案
-```python
-first = "王"
-last = "小明"
-full = first + last
-print(full)  # 输出: 王小明
-```
-:::
-
-**练习 2**: 创建一个自我介绍的字符串,包含姓名和年龄。
-
-::: details 查看答案
-```python
-name = "李华"
-age = 20
-intro = "大家好,我叫" + name + ",今年" + str(age) + "岁"
-print(intro)  # 输出: 大家好,我叫李华,今年20岁
-```
+::: tip 提示
+使用 `+` 号可以拼接字符串,就像把两段文字连接在一起。
 :::
 
 ## 布尔值(Boolean)
 
 ### 💡 概念说明
 
-布尔值只有两个值:`True`(真)和 `False`(假),用于表示是或否、对或错。在 Python 中用 `bool` 表示。
+布尔值只有两个可能的值:
+- `true` - 真,表示"是"
+- `false` - 假,表示"否"
 
-::: danger 警告
-`True` 和 `False` 的首字母必须大写,否则会出错!
-:::
+布尔值常用于判断和条件控制。
 
 ### 📝 代码示例
 
-```python{1-2}
-is_student = True
-has_license = False
+```go{5-7,9-11}
+package main
+
+import "fmt"
+
+func main() {
+    var isStudent bool = true     // 是否是学生
+    var hasLicense bool = false   // 是否有驾照
+    isAdult := true               // 是否成年
+    
+    fmt.Println("是学生吗?", isStudent)
+    fmt.Println("有驾照吗?", hasLicense)
+    fmt.Println("已成年?", isAdult)
+}
 ```
 
-布尔值常用于判断和比较:
-
-```python{1-5}
-age = 18
-is_adult = age >= 18
-print(is_adult)            # 输出: True
-
-print(10 > 5)              # 输出: True
-print(3 == 5)              # 输出: False
+**运行结果:**
+```
+是学生吗? true
+有驾照吗? false
+已成年? true
 ```
 
-### 💪 练习题
+## 💪 练习题
 
-**练习 1**: 判断一个数字是否大于 100。
+### 练习1:计算商品总价
 
-::: details 查看答案
-```python
-number = 150
-is_large = number > 100
-print(is_large)  # 输出: True
+创建一个程序,声明商品单价(浮点数)、购买数量(整数),输出商品信息。
+
+<details>
+<summary>点击查看答案</summary>
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var price float64 = 29.9  // 单价
+    var quantity int = 3      // 数量
+    
+    fmt.Println("单价:", price)
+    fmt.Println("数量:", quantity)
+}
 ```
-:::
 
-**练习 2**: 比较两个数字是否相等。
+</details>
 
-::: details 查看答案
-```python
-num1 = 50
-num2 = 50
-are_equal = num1 == num2
-print(are_equal)  # 输出: True
+### 练习2:个人信息卡片
+
+创建一个程序,使用不同数据类型存储并输出个人信息:姓名(字符串)、年龄(整数)、身高(浮点数)、是否在职(布尔值)。
+
+<details>
+<summary>点击查看答案</summary>
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    name := "李明"
+    age := 28
+    height := 175.5
+    isEmployed := true
+    
+    fmt.Println("姓名:", name)
+    fmt.Println("年龄:", age)
+    fmt.Println("身高:", height, "cm")
+    fmt.Println("在职:", isEmployed)
+}
 ```
-:::
+
+</details>
 
 ## 📌 小结
 
-- **整数(int)**:没有小数点的数字,如 `25`、`-10`、`0`
-- **浮点数(float)**:带小数点的数字,如 `3.14`、`-2.5`
-- **字符串(str)**:用引号包起来的文字,如 `"Hello"`、`'Python'`
-- **布尔值(bool)**:只有 `True` 或 `False` 两个值
+- **整数(int)**:用于存储没有小数的数字,如年龄、数量
+- **浮点数(float64)**:用于存储带小数的数字,如价格、温度
+- **字符串(string)**:用于存储文本,必须用双引号包裹,可用 `+` 拼接
+- **布尔值(bool)**:只有 `true` 和 `false` 两个值,用于表示"是"或"否"
