@@ -12,18 +12,13 @@ head:
 
  # Hello World
 
-## 💡 概念说明
+## 💡 什么是 Hello World
 
-**Hello World** 是编程世界的第一个程序，它的作用很简单：在屏幕上显示一行文字。
+**Hello World** 是程序员编写的第一个程序,用来验证编程环境是否正常工作。它会在屏幕上显示 "Hello World" 这句话。
 
-通过这个程序，你将学会：
-- 如何编写 Java 代码
-- 如何运行 Java 程序
-- 如何在屏幕上输出内容
+## 📝 完整代码示例
 
-## 📝 代码示例
-
-创建一个名为 `HelloWorld.java` 的文件，输入以下代码：
+创建一个名为 `HelloWorld.java` 的文件,输入以下代码:
 
 ```java{1,3}
 public class HelloWorld {
@@ -33,63 +28,84 @@ public class HelloWorld {
 }
 ```
 
-::: tip 文件名规则
-文件名必须与 `class` 后面的名称完全一致，包括大小写。这里 class 名是 `HelloWorld`，所以文件名必须是 `HelloWorld.java`
+::: tip 提示
+文件名 `HelloWorld.java` 必须和代码中的 `class HelloWorld` 名称完全一致,包括大小写。
 :::
 
-**运行步骤**：
+### 运行代码
 
-1. 打开命令行工具(Terminal/CMD)
-2. 进入代码文件所在目录
-3. 执行编译命令(Compile)：
+在命令行中执行:
 
 ```bash
+# 编译代码
 javac HelloWorld.java
-```
 
-4. 执行运行命令：
-
-```bash
+# 运行程序
 java HelloWorld
 ```
 
-**运行结果**：
+**运行结果:**
 
 ```
 Hello World
 ```
 
+## 🔍 代码说明
+
+让我们看看这 4 行代码分别做了什么:
+
+**第 1 行**: `public class HelloWorld` 
+- 定义了一个**类(Class)**,名字叫 `HelloWorld`
+
+**第 2 行**: `public static void main(String[] args)`
+- 这是程序的**入口方法(Main Method)**
+- Java 程序从这里开始执行
+
+**第 3 行**: `System.out.println("Hello World")`
+- 在屏幕上打印输出内容
+- `println` 表示打印后换行
+
 ::: warning 注意
-如果提示 `javac` 命令找不到，说明 Java 开发环境(JDK)还未安装。你需要先安装 JDK 并配置环境变量。
+- 每条语句结尾需要加分号 `;`
+- 大括号 `{}` 必须成对出现
+- 字符串内容需要用双引号 `""` 包裹
 :::
 
 ## 💪 练习题
 
-### 练习 1：修改输出内容
-将 `"Hello World"` 改成 `"你好，Java"`，运行看看结果。
+### 练习 1:修改输出内容
 
-### 练习 2：输出多行内容
-尝试添加更多 `System.out.println()` 语句，输出 3 行不同的文字。
+把 "Hello World" 改成你的名字,比如 "Hello 张三"。
 
-```java
+::: details 查看答案
+```java{3}
 public class HelloWorld {
     public static void main(String[] args) {
-        System.out.println("第一行");
-        // 在这里添加第二行
-        // 在这里添加第三行
+        System.out.println("Hello 张三");
     }
 }
 ```
+:::
 
-### 练习 3：观察错误
-故意把第 1 行的 `HelloWorld` 改成 `Helloworld`（注意大小写），编译看看会发生什么。
+### 练习 2:输出多行内容
 
-::: tip 小提示
-错误是学习的一部分，不要害怕尝试。通过观察错误信息，你能更快理解 Java 的规则。
+尝试输出两行内容:
+- 第一行:Hello World
+- 第二行:Welcome to Java
+
+::: details 查看答案
+```java{3-4}
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+        System.out.println("Welcome to Java");
+    }
+}
+```
 :::
 
 ## 📌 小结
 
-- Java 程序的文件名必须与 **类名(Class Name)** 完全一致
-- `System.out.println()` 用于在屏幕上输出内容
-- 运行 Java 程序需要两步：先 **编译(javac)**，再 **运行(java)**
+- Java 程序必须包含 `main` 方法作为入口
+- 使用 `System.out.println()` 可以在屏幕上输出内容
+- 文件名必须和类名一致
