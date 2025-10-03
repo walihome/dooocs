@@ -1,7 +1,7 @@
 ---
 title: 开发环境搭建
 category: Java
-order: 3
+order: 4
 tag: 菜鸟教程、新手教程
   - 
 head:
@@ -10,545 +10,489 @@ head:
       content: Java极简教程
 ---
 
- # 基本语法
+ # 数据类型
 
-欢迎开始 Java 编程的第一步!这一章会带你了解 Java 程序的基本组成部分。你可能会想:"我该如何让计算机做我想做的事?"答案就在这些基础语法中。
+你有没有想过,计算机是怎么区分数字、文字和真假判断的?就像我们在生活中会用不同的容器装不同的东西——用水杯装水、用碗装饭、用袋子装衣服,Java 也需要用不同的**数据类型(Data Type)**来存储不同种类的信息。
 
-不用担心,我们会从最简单的开始——让计算机记住一些信息,然后把它们显示出来。就像你用笔记本记事一样,只不过这次我们用代码来"记事"。
+在这一章,你将学会 Java 中最常用的四种基本数据类型。学完后,你就能让程序存储和处理各种信息了。
 
-## 💡 什么是变量(Variable)
+## 💡 什么是数据类型?
 
-想象一下,你有一个贴着标签的盒子,盒子里可以放东西。**变量(Variable)**就像这样的盒子:
+想象你在超市购物:
+- 买了 **5** 个苹果 → 这是整数
+- 苹果单价是 **3.5** 元 → 这是带小数的数字
+- 苹果品种是 **"红富士"** → 这是文字
+- 问你"苹果新鲜吗?" 你回答 **"是"或"否"** → 这是真假判断
 
-- **标签**就是变量名,比如 `age`、`name`
-- **盒子里的东西**就是变量的值,比如 `25`、`"张三"`
-- **盒子的类型**决定了能放什么东西,比如只能放数字的盒子、只能放文字的盒子
+Java 也是这样工作的!它需要知道你存储的是什么类型的数据,才能正确处理它们。
 
-::: tip 为什么需要变量?
-程序需要处理各种数据(用户输入、计算结果等),变量就是用来临时存储这些数据的"容器"。没有变量,计算机就无法"记住"任何信息!
+::: tip 为什么需要数据类型?
+计算机内存只认识 0 和 1,数据类型就像"翻译规则",告诉计算机如何理解这些 0 和 1。比如:
+- 整数 `5` 在内存中是一种表示方式
+- 小数 `3.5` 是另一种表示方式
+- 文字 `"红富士"` 又是完全不同的方式
 :::
 
-## 📝 定义变量(Variable Declaration)
+## 整数类型(Integer)
 
-在 Java 中,定义变量需要三个部分:**数据类型(Data Type)** + **变量名(Variable Name)** + **初始值(Initial Value)**。
+### 💡 概念讲解
 
-### 常用数据类型
+**整数(Integer)**就是没有小数部分的数字,包括正数、负数和零。在 Java 中,最常用的整数类型是 `int`。
 
-让我们先认识几种最常用的数据类型:
-
-| 数据类型 | 中文名称 | 用途 | 示例 |
-|---------|---------|------|------|
-| `int` | 整数(Integer) | 存储整数 | `10`, `-5`, `0` |
-| `double` | 小数(Double) | 存储带小数点的数字 | `3.14`, `99.9` |
-| `String` | 字符串(String) | 存储文字 | `"Hello"`, `"张三"` |
-| `boolean` | 布尔值(Boolean) | 存储真/假 | `true`, `false` |
+生活中的整数例子:
+- 你的年龄: 25 岁
+- 班级人数: 30 人
+- 温度: -5 度(可以是负数!)
 
 ::: warning 注意
-`String` 的首字母是大写的 `S`,这是 Java 的特殊规定。其他基本类型都是小写。
+整数不能有小数点!`3.0` 不是整数,`3` 才是。
 :::
 
-### 完整代码示例
+### 📝 代码示例
 
-创建一个名为 `BasicSyntax.java` 的文件,输入以下代码:
+让我们创建第一个 Java 程序来使用整数:
 
 ```java
-public class BasicSyntax {
+public class IntegerDemo {
     public static void main(String[] args) {
-        // 定义整数变量 define integer variable
-        int age = 25;
+        // 声明并初始化整数变量 declare and initialize integer variables
+        int age = 25;                    // 年龄 age
+        int studentCount = 30;           // 学生数量 student count
+        int temperature = -5;            // 温度(可以是负数) temperature (can be negative)
         
-        // 定义小数变量 define double variable
-        double price = 19.99;
+        // 打印输出 print output
+        System.out.println("年龄: " + age);
+        System.out.println("学生数量: " + studentCount);
+        System.out.println("温度: " + temperature + "度");
         
-        // 定义字符串变量 define string variable
-        String name = "Alice";
+        // 整数运算 integer operations
+        int appleCount = 5;              // 苹果数量 apple count
+        int orangeCount = 3;             // 橙子数量 orange count
+        int totalFruit = appleCount + orangeCount;  // 总水果数 total fruits
         
-        // 定义布尔变量 define boolean variable
-        boolean isStudent = true;
-        
-        // 你也可以先定义,再赋值 declare first, assign later
-        int score;
-        score = 95;
+        System.out.println("总共有 " + totalFruit + " 个水果");
     }
 }
 ```
 
-::: tip 代码解读
-- `int age = 25;` 表示:创建一个名为 `age` 的整数盒子,里面放数字 `25`
-- `String name = "Alice";` 表示:创建一个名为 `name` 的文字盒子,里面放文本 `"Alice"`
-- 注意:文字必须用**双引号**包起来,数字不需要
-- 每条语句结尾都要有**分号(Semicolon)** `;`
-:::
+**代码解析:**
+- `int age = 25;` - 这一行做了两件事:
+  - `int` 告诉 Java "我要创建一个整数类型的变量"
+  - `age` 是变量名(就像给这个"容器"起名字)
+  - `= 25` 把数字 25 存进这个变量
+- `System.out.println()` 用于在屏幕上显示内容
+- `+` 号可以连接文字和数字
 
-## 📺 输出变量(Print Variables)
+### ✅ 验证方法
 
-定义了变量后,你一定想看看它们的值,对吧?这时候需要用到**日志打印(Logging)**功能。
-
-### System.out.println() 详解
-
-`System.out.println()` 是 Java 中最常用的输出语句,它的作用是把内容显示在控制台(Console)上。
-
-```java
-public class PrintExample {
-    public static void main(String[] args) {
-        // 定义变量 define variables
-        int age = 25;
-        String name = "Bob";
-        double height = 1.75;
-        
-        // 方法1: 直接打印变量 print variable directly
-        System.out.println(age);        // 输出: 25
-        System.out.println(name);       // 输出: Bob
-        
-        // 方法2: 打印带说明的内容 print with description
-        System.out.println("年龄是: " + age);           // 输出: 年龄是: 25
-        System.out.println("名字是: " + name);          // 输出: 名字是: Bob
-        System.out.println("身高是: " + height + "米"); // 输出: 身高是: 1.75米
-        
-        // 方法3: 打印多个变量 print multiple variables
-        System.out.println("姓名: " + name + ", 年龄: " + age);
-        // 输出: 姓名: Bob, 年龄: 25
-    }
-}
-```
-
-::: tip 加号的魔法
-`+` 在这里不是数学加法,而是**字符串拼接(String Concatenation)**。它把文字和变量的值连接成一句完整的话。比如:
-- `"年龄是: " + 25` → `"年龄是: 25"`
-- `"Hello " + "World"` → `"Hello World"`
-:::
-
-### println() 和 print() 的区别
-
-```java
-public class PrintDifference {
-    public static void main(String[] args) {
-        // println 打印后会换行 print with new line
-        System.out.println("第一行");
-        System.out.println("第二行");
-        // 输出:
-        // 第一行
-        // 第二行
-        
-        // print 打印后不换行 print without new line
-        System.out.print("A");
-        System.out.print("B");
-        System.out.print("C");
-        // 输出: ABC
-    }
-}
-```
-
-## 🔢 基本运算(Basic Operations)
-
-变量最大的用处就是参与计算。Java 支持我们熟悉的加减乘除运算。
-
-### 数学运算符(Arithmetic Operators)
-
-| 运算符 | 名称 | 示例 | 结果 |
-|--------|------|------|------|
-| `+` | 加法(Addition) | `5 + 3` | `8` |
-| `-` | 减法(Subtraction) | `5 - 3` | `2` |
-| `*` | 乘法(Multiplication) | `5 * 3` | `15` |
-| `/` | 除法(Division) | `6 / 3` | `2` |
-| `%` | 取余(Modulo) | `7 % 3` | `1` |
-
-### 完整运算示例
-
-```java
-public class BasicCalculation {
-    public static void main(String[] args) {
-        // 定义两个数字 define two numbers
-        int a = 10;
-        int b = 3;
-        
-        // 加法运算 addition
-        int sum = a + b;
-        System.out.println("10 + 3 = " + sum);  // 输出: 10 + 3 = 13
-        
-        // 减法运算 subtraction
-        int difference = a - b;
-        System.out.println("10 - 3 = " + difference);  // 输出: 10 - 3 = 7
-        
-        // 乘法运算 multiplication
-        int product = a * b;
-        System.out.println("10 * 3 = " + product);  // 输出: 10 * 3 = 30
-        
-        // 除法运算 division
-        int quotient = a / b;
-        System.out.println("10 / 3 = " + quotient);  // 输出: 10 / 3 = 3 (注意!)
-        
-        // 取余运算 modulo (求余数)
-        int remainder = a % b;
-        System.out.println("10 % 3 = " + remainder);  // 输出: 10 % 3 = 1
-        
-        // 小数除法 division with decimal
-        double c = 10.0;
-        double d = 3.0;
-        double result = c / d;
-        System.out.println("10.0 / 3.0 = " + result);  // 输出: 10.0 / 3.0 = 3.333...
-    }
-}
-```
-
-::: warning 整数除法的陷阱
-当两个整数相除时,结果会**自动舍去小数部分**:
-- `10 / 3` 结果是 `3`,而不是 `3.333...`
-- 如果需要小数结果,至少要有一个数是 `double` 类型
-- `10.0 / 3` 或 `10 / 3.0` 才会得到 `3.333...`
-:::
-
-### 复合运算和运算顺序
-
-```java
-public class ComplexCalculation {
-    public static void main(String[] args) {
-        // 运算顺序: 先乘除,后加减 order of operations
-        int result1 = 2 + 3 * 4;
-        System.out.println("2 + 3 * 4 = " + result1);  // 输出: 14 (不是20!)
-        
-        // 使用括号改变顺序 use parentheses to change order
-        int result2 = (2 + 3) * 4;
-        System.out.println("(2 + 3) * 4 = " + result2);  // 输出: 20
-        
-        // 计算平均分 calculate average score
-        int math = 85;
-        int english = 90;
-        int science = 88;
-        double average = (math + english + science) / 3.0;
-        System.out.println("平均分: " + average);  // 输出: 平均分: 87.666...
-    }
-}
-```
-
-## 📝 添加注释(Comments)
-
-你有没有想过:写完代码后,过几天再看,会不会忘记这段代码是干什么的?**注释(Comment)**就是用来解决这个问题的。
-
-注释是写给人看的说明文字,程序运行时会**完全忽略**注释内容。
-
-### 三种注释方式
-
-```java
-public class CommentExample {
-    public static void main(String[] args) {
-        // 单行注释: 用两个斜杠开头 single-line comment
-        // 适合简短说明
-        int age = 25;  // 也可以写在代码后面
-        
-        /*
-         * 多行注释: 用斜杠星号包围 multi-line comment
-         * 适合较长的说明
-         * 可以写很多行
-         */
-        String name = "Charlie";
-        
-        /**
-         * 文档注释: 用于生成 API 文档 documentation comment
-         * 通常用在类或方法前面
-         * @param 参数说明
-         * @return 返回值说明
-         */
-        System.out.println("Hello");
-    }
-}
-```
-
-::: tip 好注释的标准
-- ✅ 解释"为什么"这样写,而不是"写了什么"(代码本身已经说明了写了什么)
-- ✅ 标注复杂逻辑的思路
-- ✅ 警告特殊情况或容易出错的地方
-- ❌ 避免写无意义的注释,如 `int a = 1; // 定义变量a`
-:::
-
-### 实用注释示例
-
-```java
-public class PracticalComments {
-    public static void main(String[] args) {
-        // 商品原价 original price
-        double price = 99.0;
-        
-        // 折扣: 0.8表示8折 discount: 0.8 means 20% off
-        double discount = 0.8;
-        
-        // 计算折后价 calculate discounted price
-        double finalPrice = price * discount;
-        
-        // 注意: 这里四舍五入到两位小数 round to 2 decimal places
-        System.out.println("最终价格: " + finalPrice);
-        
-        // TODO: 将来需要添加会员额外折扣功能 add member discount feature
-    }
-}
-```
-
-## 📋 日志打印进阶(Advanced Logging)
-
-除了基础的 `println()`,我们还可以用更灵活的方式输出信息。
-
-### 格式化输出(Formatted Output)
-
-```java
-public class FormattedPrint {
-    public static void main(String[] args) {
-        String name = "David";
-        int age = 28;
-        double salary = 8500.50;
-        
-        // 方法1: 使用 printf 进行格式化 formatted print
-        // %s = 字符串, %d = 整数, %.2f = 保留2位小数
-        System.out.printf("姓名: %s, 年龄: %d, 工资: %.2f元%n", name, age, salary);
-        // 输出: 姓名: David, 年龄: 28, 工资: 8500.50元
-        
-        // 方法2: 使用 String.format 创建格式化字符串 create formatted string
-        String info = String.format("员工 %s (年龄%d岁) 的月薪是 %.2f 元", name, age, salary);
-        System.out.println(info);
-        // 输出: 员工 David (年龄28岁) 的月薪是 8500.50 元
-        
-        // 实用示例: 打印表格 print table
-        System.out.println("=== 员工信息表 ===");
-        System.out.printf("%-10s %-5s %-10s%n", "姓名", "年龄", "工资");
-        System.out.printf("%-10s %-5d %-10.2f%n", "Alice", 25, 7500.00);
-        System.out.printf("%-10s %-5d %-10.2f%n", "Bob", 30, 9200.50);
-        System.out.printf("%-10s %-5d %-10.2f%n", "Charlie", 28, 8500.75);
-    }
-}
-```
-
-::: tip 格式化符号说明
-- `%s` - 字符串(String)
-- `%d` - 整数(Integer)
-- `%f` - 浮点数(Float/Double)
-- `%.2f` - 保留2位小数的浮点数
-- `%n` - 换行符(推荐用这个而不是 `\n`)
-- `%-10s` - 左对齐,占10个字符宽度
-:::
-
-## ✅ 验证方法
-
-让我们创建一个完整的程序来测试所有学到的知识:
-
-创建 `BasicSyntaxTest.java` 文件:
-
-```java
-public class BasicSyntaxTest {
-    public static void main(String[] args) {
-        // 第1步: 定义变量 step 1: define variables
-        int quantity = 5;
-        double unitPrice = 29.9;
-        String productName = "Java编程书";
-        
-        // 第2步: 计算总价 step 2: calculate total price
-        double totalPrice = quantity * unitPrice;
-        
-        // 第3步: 输出信息 step 3: print information
-        System.out.println("========== 购物清单 ==========");
-        System.out.println("商品名称: " + productName);
-        System.out.println("单价: " + unitPrice + "元");
-        System.out.println("数量: " + quantity + "本");
-        System.out.println("总价: " + totalPrice + "元");
-        
-        // 第4步: 计算折扣 step 4: calculate discount
-        double discount = 0.85;  // 85折
-        double finalPrice = totalPrice * discount;
-        double saved = totalPrice - finalPrice;
-        
-        System.out.println("---------- 优惠信息 ----------");
-        System.out.printf("折扣: %.0f折%n", discount * 10);
-        System.out.printf("优惠后价格: %.2f元%n", finalPrice);
-        System.out.printf("您节省了: %.2f元%n", saved);
-        System.out.println("==============================");
-    }
-}
-```
-
-### 运行步骤
-
-**Windows 系统:**
+1. 创建一个名为 `IntegerDemo.java` 的文件
+2. 复制上面的代码
+3. 在终端/命令行中运行:
 
 ```bash
-# 编译 compile
-javac BasicSyntaxTest.java
-
-# 运行 run
-java BasicSyntaxTest
+javac IntegerDemo.java
+java IntegerDemo
 ```
 
-**macOS/Linux 系统:**
-
-```bash
-# 编译 compile
-javac BasicSyntaxTest.java
-
-# 运行 run
-java BasicSyntaxTest
+**你应该看到:**
 ```
-
-### 预期输出
-
-如果一切正常,你会看到:
-
-```
-========== 购物清单 ==========
-商品名称: Java编程书
-单价: 29.9元
-数量: 5本
-总价: 149.5元
----------- 优惠信息 ----------
-折扣: 9折
-优惠后价格: 127.08元
-您节省了: 22.43元
-==============================
+年龄: 25
+学生数量: 30
+温度: -5度
+总共有 8 个水果
 ```
 
 ::: danger 常见错误
-1. **忘记分号**: `int age = 25` → 错误! 应该是 `int age = 25;`
-2. **字符串没有双引号**: `String name = Alice;` → 错误! 应该是 `String name = "Alice";`
-3. **变量名拼写错误**: 定义了 `int age`,却使用 `int agee` → 变量名必须完全一致
-4. **文件名与类名不一致**: 类名是 `BasicSyntax`,文件名却是 `basic.java` → 必须是 `BasicSyntax.java`
+❌ 错误写法: `int age = 25.5;`  
+为什么错?因为 `25.5` 有小数部分,不是整数!
+
+✅ 正确写法: `int age = 25;`
 :::
 
-## 💪 练习题
+### 💪 练习题
 
-### 练习1: 个人信息卡(初级)
+**练习 1(模仿)**: 创建三个整数变量
+- `score` 存储你的考试分数(比如 85)
+- `maxScore` 存储满分(100)
+- 计算并打印 `score + maxScore` 的结果
 
-创建一个程序,输出你的个人信息:
+**练习 2(应用)**: 计算购物
+- 创建变量 `applePrice = 3` (苹果单价,元)
+- 创建变量 `appleCount = 5` (购买数量)
+- 计算总价并打印
 
-```java
-public class MyInfo {
-    public static void main(String[] args) {
-        // TODO: 定义以下变量
-        // 1. 你的名字 (String)
-        // 2. 你的年龄 (int)
-        // 3. 你的身高(米) (double)
-        // 4. 是否是学生 (boolean)
-        
-        // TODO: 用 println 输出所有信息
-        // 格式: 姓名: xxx, 年龄: xx岁, 身高: x.xxm, 学生: true/false
-    }
-}
-```
+**练习 3(创新)**: 年龄计算器
+- 创建变量 `currentYear = 2025`
+- 创建变量 `birthYear = 2000`
+- 计算年龄并打印结果
 
-**期望输出示例:**
-```
-姓名: 张三, 年龄: 20岁, 身高: 1.75m, 学生: true
-```
+## 浮点数类型(Floating-Point Number)
 
-### 练习2: 简易计算器(中级)
+### 💡 概念讲解
 
-编写一个程序,计算两个数字的所有运算结果:
+**浮点数(Floating-Point Number)**就是带小数点的数字。在 Java 中,最常用的浮点数类型是 `double`。
 
-```java
-public class Calculator {
-    public static void main(String[] args) {
-        // TODO: 定义两个数字变量
-        int num1 = 20;
-        int num2 = 7;
-        
-        // TODO: 分别计算并输出:
-        // 1. num1 + num2
-        // 2. num1 - num2
-        // 3. num1 * num2
-        // 4. num1 / num2 (注意小数问题)
-        // 5. num1 % num2
-        
-        // 提示: 使用 printf 让输出更整齐
-    }
-}
-```
+为什么叫"浮点"?想象小数点可以在数字中"浮动"位置:
+- `3.14` → 小数点在 3 和 1 之间
+- `0.5` → 小数点在 0 和 5 之间
+- `123.456` → 小数点可以在任何位置
 
-**期望输出示例:**
-```
-20 + 7 = 27
-20 - 7 = 13
-20 * 7 = 140
-20 / 7 = 2.857142857142857
-20 % 7 = 6
-```
+生活中的浮点数例子:
+- 商品价格: 19.99 元
+- 你的身高: 1.75 米
+- 圆周率: 3.14159...
 
-### 练习3: 成绩报告(高级)
-
-创建一个学生成绩报告程序:
-
-```java
-public class GradeReport {
-    public static void main(String[] args) {
-        // TODO: 定义变量
-        // 1. 学生姓名
-        // 2. 三门课的成绩 (数学、语文、英语)
-        
-        // TODO: 计算
-        // 1. 总分
-        // 2. 平均分 (保留2位小数)
-        
-        // TODO: 输出
-        // 用 printf 输出一个格式化的成绩单
-        // 要求: 对齐、美观、包含所有信息
-    }
-}
-```
-
-**期望输出示例:**
-```
-========== 成绩单 ==========
-姓名: 李四
-------------------------
-数学:    85分
-语文:    92分
-英语:    88分
-------------------------
-总分:    265分
-平均分:  88.33分
-========================
-```
-
-::: tip 练习提示
-- 练习1 重点练习变量定义和基础输出
-- 练习2 重点练习数学运算和注意整数除法问题
-- 练习3 综合运用所有知识,注重输出格式的美观
+::: tip 为什么用 double 而不是 float?
+Java 有两种浮点数类型:`float` 和 `double`。`double` 是"双精度",可以存储更精确的小数,所以我们推荐初学者直接使用 `double`。
 :::
+
+### 📝 代码示例
+
+```java
+public class DoubleDemo {
+    public static void main(String[] args) {
+        // 声明浮点数变量 declare floating-point variables
+        double price = 19.99;            // 商品价格 product price
+        double height = 1.75;            // 身高(米) height in meters
+        double pi = 3.14159;             // 圆周率 pi value
+        
+        // 打印输出 print output
+        System.out.println("商品价格: " + price + " 元");
+        System.out.println("身高: " + height + " 米");
+        System.out.println("圆周率: " + pi);
+        
+        // 浮点数运算 floating-point operations
+        double applePrice = 3.5;         // 苹果单价 apple unit price
+        int appleCount = 5;              // 苹果数量 apple count
+        double totalPrice = applePrice * appleCount;  // 总价 total price
+        
+        System.out.println("购买 " + appleCount + " 个苹果");
+        System.out.println("总价: " + totalPrice + " 元");
+        
+        // 整数和浮点数混合运算 mixed integer and floating-point operations
+        int a = 10;
+        int b = 3;
+        double result1 = a / b;          // 结果会怎样? what will the result be?
+        double result2 = (double) a / b; // 强制转换 type casting
+        
+        System.out.println("10 / 3 = " + result1);        // 输出 3.0(注意!)
+        System.out.println("10.0 / 3 = " + result2);      // 输出 3.333...
+    }
+}
+```
+
+**代码解析:**
+- `double price = 19.99;` - 创建浮点数变量,可以存储小数
+- `applePrice * appleCount` - 小数乘以整数,结果是小数
+- `(double) a / b` - `(double)` 把整数 `a` 临时转换成浮点数,这样除法结果才会有小数
+
+::: warning 整数除法的陷阱
+当两个整数相除时,结果会自动"丢掉"小数部分!
+- `10 / 3` 在 Java 中结果是 `3`,不是 `3.333...`
+- 如果想要小数结果,至少有一个数要是浮点数:`10.0 / 3` 或 `(double)10 / 3`
+:::
+
+### ✅ 验证方法
+
+创建 `DoubleDemo.java`,复制代码并运行:
+
+```bash
+javac DoubleDemo.java
+java DoubleDemo
+```
+
+**你应该看到:**
+```
+商品价格: 19.99 元
+身高: 1.75 米
+圆周率: 3.14159
+购买 5 个苹果
+总价: 17.5 元
+10 / 3 = 3.0
+10.0 / 3 = 3.3333333333333335
+```
+
+### 💪 练习题
+
+**练习 1(模仿)**: 计算平均分
+- 创建 `subject1 = 85.5`(第一科成绩)
+- 创建 `subject2 = 92.0`(第二科成绩)
+- 计算平均分并打印
+
+**练习 2(应用)**: 货币兑换
+- 创建 `usdAmount = 100.0`(美元金额)
+- 创建 `exchangeRate = 7.25`(汇率)
+- 计算兑换成人民币的金额
+
+**练习 3(思考)**: 试试看这两行代码有什么区别?
+```java
+double result1 = 5 / 2;        // 这个结果是什么?
+double result2 = 5.0 / 2;      // 这个结果又是什么?
+```
+
+## 字符串类型(String)
+
+### 💡 概念讲解
+
+**字符串(String)**用于存储文字内容,比如名字、地址、一句话等。在 Java 中,字符串要用**双引号**包围。
+
+想象字符串是"一串字符":
+- `"Hello"` - 5 个字符连在一起
+- `"我爱编程"` - 4 个汉字字符
+- `"2025"` - 这也是字符串,不是数字!(因为有引号)
+
+::: tip String 的大写字母
+你可能注意到了,`String` 的首字母是大写的 `S`,这和 `int`、`double` 不同。这是因为 `String` 是一个"类(Class)",而不是"基本类型"。现在你不需要理解这个区别,只要记住写 `String` 时首字母要大写就行。
+:::
+
+### 📝 代码示例
+
+```java
+public class StringDemo {
+    public static void main(String[] args) {
+        // 声明字符串变量 declare string variables
+        String name = "张三";                    // 姓名 name
+        String city = "北京";                    // 城市 city
+        String greeting = "你好,世界!";          // 问候语 greeting
+        
+        // 打印输出 print output
+        System.out.println("姓名: " + name);
+        System.out.println("城市: " + city);
+        System.out.println(greeting);
+        
+        // 字符串拼接 string concatenation
+        String firstName = "张";
+        String lastName = "三";
+        String fullName = firstName + lastName;  // 拼接字符串 concatenate strings
+        
+        System.out.println("全名: " + fullName);
+        
+        // 字符串和数字混合 mixing strings and numbers
+        String product = "苹果";
+        int count = 5;
+        double price = 3.5;
+        
+        System.out.println("购买了 " + count + " 个" + product);
+        System.out.println("单价: " + price + " 元");
+        System.out.println("总价: " + (count * price) + " 元");
+        
+        // 常见的字符串方法 common string methods
+        String message = "Hello World";
+        System.out.println("字符串长度: " + message.length());        // 字符串有多少个字符
+        System.out.println("转大写: " + message.toUpperCase());       // 转换为大写
+        System.out.println("转小写: " + message.toLowerCase());       // 转换为小写
+    }
+}
+```
+
+**代码解析:**
+- `String name = "张三";` - 用双引号包围的就是字符串
+- `firstName + lastName` - 用 `+` 号可以把两个字符串连接起来
+- `message.length()` - `.length()` 是字符串的"方法",可以获取字符串长度
+- `(count * price)` - 括号确保先计算乘法,再拼接到字符串
+
+::: danger 常见错误
+❌ 错误写法: `String name = 张三;` (缺少引号)  
+❌ 错误写法: `String name = '张三';` (单引号不行)  
+✅ 正确写法: `String name = "张三";` (必须用双引号)
+:::
+
+### ✅ 验证方法
+
+创建 `StringDemo.java`,运行后你应该看到:
+
+```
+姓名: 张三
+城市: 北京
+你好,世界!
+全名: 张三
+购买了 5 个苹果
+单价: 3.5 元
+总价: 17.5 元
+字符串长度: 11
+转大写: HELLO WORLD
+转小写: hello world
+```
+
+::: tip 字符串的长度计算
+`"Hello World"` 的长度是 11,因为空格也算一个字符!
+- H-e-l-l-o-空格-W-o-r-l-d = 11 个字符
+:::
+
+### 💪 练习题
+
+**练习 1(模仿)**: 自我介绍
+- 创建 `name`(你的名字)
+- 创建 `age`(你的年龄,用整数)
+- 创建 `hobby`(你的爱好)
+- 拼接并打印:"我叫XX,今年XX岁,喜欢XX"
+
+**练习 2(应用)**: 制作标签
+- 创建 `productName = "iPhone"`
+- 创建 `model = "15 Pro"`
+- 拼接成完整的产品名称并打印
+
+**练习 3(探索)**: 试试看这两行有什么不同?
+```java
+System.out.println("10" + 20);      // 输出是什么?
+System.out.println(10 + 20);        // 输出又是什么?
+```
+
+## 布尔类型(Boolean)
+
+### 💡 概念讲解
+
+**布尔类型(Boolean)**只有两个可能的值:`true`(真)和 `false`(假)。它用于表示"是或否"、"对或错"、"开或关"这类只有两种状态的信息。
+
+生活中的布尔值例子:
+- 灯是开的吗?→ 是(`true`)或 否(`false`)
+- 今天下雨了吗?→ 是 或 否
+- 你是学生吗?→ 是 或 否
+
+在编程中,布尔值最常用于**判断和选择**,比如"如果下雨了,就带伞"。
+
+::: tip 为什么叫 Boolean?
+这个名字来自数学家乔治·布尔(George Boole),他发明了布尔代数。为了纪念他,我们把这种只有真假两个值的类型命名为 Boolean。
+:::
+
+### 📝 代码示例
+
+```java
+public class BooleanDemo {
+    public static void main(String[] args) {
+        // 声明布尔变量 declare boolean variables
+        boolean isRaining = true;              // 是否下雨 is it raining
+        boolean isWeekend = false;             // 是否周末 is it weekend
+        boolean hasUmbrella = true;            // 是否有雨伞 has umbrella
+        
+        // 打印输出 print output
+        System.out.println("下雨了吗? " + isRaining);
+        System.out.println("是周末吗? " + isWeekend);
+        System.out.println("有雨伞吗? " + hasUmbrella);
+        
+        // 比较运算产生布尔值 comparison operations produce boolean values
+        int age = 25;
+        boolean isAdult = age >= 18;           // 年龄是否大于等于18 is age >= 18
+        boolean isTeenager = age < 18;         // 年龄是否小于18 is age < 18
+        
+        System.out.println("是成年人吗? " + isAdult);
+        System.out.println("是未成年人吗? " + isTeenager);
+        
+        // 数值比较 numeric comparisons
+        int score = 85;
+        boolean passed = score >= 60;          // 是否及格(>=60分) passed (>=60 points)
+        boolean excellent = score >= 90;       // 是否优秀(>=90分) excellent (>=90 points)
+        
+        System.out.println("及格了吗? " + passed);
+        System.out.println("优秀吗? " + excellent);
+        
+        // 字符串比较 string comparison
+        String password = "abc123";
+        boolean isCorrect = password.equals("abc123");  // 密码是否正确 is password correct
+        
+        System.out.println("密码正确吗? " + isCorrect);
+        
+        // 逻辑运算 logical operations
+        boolean sunny = true;
+        boolean warm = true;
+        boolean goodWeather = sunny && warm;    // 两个条件都满足 both conditions true
+        
+        System.out.println("天气好吗? " + goodWeather);
+    }
+}
+```
+
+**代码解析:**
+- `boolean isRaining = true;` - 布尔变量只能是 `true` 或 `false`
+- `age >= 18` - 比较运算符 `>=` 会产生布尔值结果
+- `password.equals("abc123")` - `.equals()` 方法用于比较两个字符串是否相同
+- `sunny && warm` - `&&` 表示"并且",两个都是 `true` 结果才是 `true`
+
+::: warning 字符串比较的陷阱
+比较字符串不能用 `==`,要用 `.equals()` 方法!
+- ❌ 错误: `password == "abc123"`
+- ✅ 正确: `password.equals("abc123")`
+
+现在你可能不理解为什么,记住这个规则就好,后面章节会详细解释。
+:::
+
+### ✅ 验证方法
+
+创建 `BooleanDemo.java`,运行后应该看到:
+
+```
+下雨了吗? true
+是周末吗? false
+有雨伞吗? true
+是成年人吗? true
+是未成年人吗? false
+及格了吗? true
+优秀吗? false
+密码正确吗? true
+天气好吗? true
+```
+
+### 💪 练习题
+
+**练习 1(模仿)**: 资格检查
+- 创建 `age = 20`
+- 创建 `hasLicense = true`
+- 判断是否可以开车(年龄>=18 并且 有驾照)
+
+**练习 2(应用)**: 折扣判断
+- 创建 `price = 150`
+- 判断是否满足折扣条件(价格>=100)
+- 打印判断结果
+
+**练习 3(思考)**: 猜猜结果
+```java
+int a = 10;
+int b = 20;
+boolean result1 = a > b;        // 这是 true 还是 false?
+boolean result2 = a < b;        // 这又是什么?
+boolean result3 = a == 10;      // 这呢?
+```
 
 ## 📌 本章小结
 
-恭喜你完成了 Java 基础语法的学习!让我们回顾一下核心知识点:
+恭喜你!现在你已经掌握了 Java 的四种基本数据类型。让我们回顾一下:
 
-### 关键概念
+### 关键要点
 
-1. **变量(Variable)** 是存储数据的容器,需要指定类型:
-   - `int` - 整数
-   - `double` - 小数
-   - `String` - 文字
-   - `boolean` - 真/假
+1. **整数类型(int)** - 存储没有小数的数字
+   - 例子:`int age = 25;`
+   - 可以是负数:`int temperature = -5;`
 
-2. **输出语句(Print Statements)**:
-   - `System.out.println()` - 打印后换行
-   - `System.out.print()` - 打印后不换行
-   - `System.out.printf()` - 格式化打印
+2. **浮点数类型(double)** - 存储带小数的数字
+   - 例子:`double price = 19.99;`
+   - 注意整数除法陷阱:`5 / 2` 结果是 `2`,不是 `2.5`
 
-3. **基本运算(Basic Operations)**:
-   - `+` 加、`-` 减、`*` 乘、`/` 除、`%` 取余
-   - 注意整数除法会丢失小数部分
-   - 运算顺序:先乘除,后加减,括号优先
+3. **字符串类型(String)** - 存储文字内容
+   - 必须用双引号:`String name = "张三";`
+   - 可以用 `+` 拼接:`firstName + lastName`
+   - 记住首字母大写:`String`,不是 `string`
 
-4. **注释(Comments)**:
-   - `//` 单行注释
-   - `/* */` 多行注释
-   - 注释是给人看的,程序运行时会忽略
+4. **布尔类型(boolean)** - 只有 `true` 或 `false`
+   - 用于判断:`boolean isAdult = age >= 18;`
+   - 字符串比较用 `.equals()`,不用 `==`
 
-5. **语法规则**:
-   - 每条语句以分号 `;` 结尾
-   - 字符串必须用双引号 `"` 包围
-   - 变量名要见名知意,不能用中文
-   - 文件名必须与 `public class` 名称一致
+5. **选择合适的类型很重要**
+   - 年龄、数量 → 用 `int`
+   - 价格、身高 → 用 `double`
+   - 姓名、地址 → 用 `String`
+   - 是否判断 → 用 `boolean`
 
-### 下一步建议
+::: tip 下一步学习建议
+现在你可以存储数据了,但还不能根据数据做判断和选择。下一章你将学习**条件语句(if-else)**,让程序能够"思考"和"决策"!
+:::
 
-完成本章后,建议你:
+### 验证你的掌握程度
 
-1. 把所有示例代码亲自敲一遍(不要复制粘贴!)
-2. 完成三道练习题
-3. 尝试修改示例代码,观察结果变化
-4. 思考:如何用这些知识解决生活中的小问题?
+试着独立完成这个综合练习:创建一个程序,包含:
+- 一个整数变量(你的年龄)
+- 一个浮点数变量(你的身高)
+- 一个字符串变量(你的名字)
+- 一个布尔变量(判断年龄是否>=18)
+- 打印所有信息
 
-记住:编程是一项**实践技能**,看懂不等于会用,只有动手写才能真正掌握!
+如果你能独立完成,说明你已经真正掌握了这一章的内容!
