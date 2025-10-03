@@ -12,122 +12,126 @@ head:
 
  # Hello World
 
-学习编程的第一步，就是让计算机对你说"你好"。全世界的程序员开始学习一门新语言时，都会先写一个 Hello World 程序。这是一个传统，也是一个测试——确认你的开发环境可以正常工作。
-
 ## 💡 什么是 Hello World
 
-Hello World 程序只做一件事：在屏幕上显示 "Hello World"。虽然简单，但它包含了编程的基本流程：
-- 写代码
-- 运行代码
-- 看到结果
+Hello World 是全世界程序员学习任何编程语言时写的第一个程序。它的作用很简单：让程序在屏幕上显示一行文字 "Hello World"。
 
-## 📝 第一个 Python 程序
+通过这个程序，你会学到：
+- 如何创建一个 C++ 程序文件
+- 如何编译(Compile)并运行程序
+- 程序的基本结构是什么样的
 
-创建一个新文件，命名为 `hello.py`，输入以下代码：
+## 📝 第一个 C++ 程序
 
-```python
-print("Hello World")
-```
+### 创建程序文件
 
-就这么简单！只需要一行代码。
+1. 打开任意文本编辑器（记事本、VS Code、Notepad++ 都可以）
+2. 创建一个新文件，命名为 `hello.cpp`（`.cpp` 是 C++ 程序文件的扩展名）
+3. 输入以下代码：
 
-### 运行程序
+```cpp{1,5,6}
+#include <iostream>
 
-打开终端(Terminal)或命令提示符(Command Prompt)，进入文件所在目录，输入：
-
-```bash
-python hello.py
-```
-
-你会看到屏幕上输出：
-
-```
-Hello World
+int main()
+{
+    std::cout << "Hello World" << std::endl;
+    return 0;
+}
 ```
 
 ::: tip 提示
-`print()` 是 Python 的内置函数(Built-in Function)，用于在屏幕上显示内容。括号里的内容就是你想显示的东西。
+确保代码的每个字符都输入正确，包括标点符号和空格。C++ 对大小写敏感，`main` 和 `Main` 是不同的。
 :::
 
-## 📝 显示更多内容
+### 编译并运行
 
-你可以显示任何你想说的话：
-
-```python{1-3}
-print("Hello World")
-print("我是一名程序员")
-print("Python 很有趣")
+**Windows 系统：**
+```bash
+# 打开命令提示符，进入文件所在目录
+g++ hello.cpp -o hello
+hello.exe
 ```
 
-运行结果：
+**Mac/Linux 系统：**
+```bash
+# 打开终端，进入文件所在目录
+g++ hello.cpp -o hello
+./hello
+```
 
+**运行结果：**
 ```
 Hello World
-我是一名程序员
-Python 很有趣
-```
-
-每个 `print()` 会在新的一行显示内容。
-
-## 📝 显示数字和计算结果
-
-`print()` 不仅可以显示文字，还可以显示数字和计算结果：
-
-```python{1-3}
-print(2025)
-print(10 + 5)
-print(100 - 20)
-```
-
-运行结果：
-
-```
-2025
-15
-80
 ```
 
 ::: warning 注意
-文字需要用引号 `""` 包起来，数字和计算式不需要引号。
+如果提示 `g++` 命令不存在，说明你还没有安装 C++ 编译器(Compiler)。Windows 用户可以安装 MinGW，Mac 用户可以安装 Xcode Command Line Tools，Linux 用户可以用包管理器安装 `g++`。
 :::
 
-## 💪 练习题
+## 💡 程序结构说明
 
-### 练习 1：个人介绍
-编写一个程序，依次输出你的名字、年龄和爱好。
+```cpp{1}
+#include <iostream>
+```
+这一行告诉程序需要使用输入输出功能。
 
-::: details 参考答案
-```python
-print("我叫小明")
-print("今年 20 岁")
-print("喜欢打篮球")
+```cpp{3}
+int main()
+```
+这是程序的入口点(Entry Point)，程序从这里开始执行。
+
+```cpp{5}
+std::cout << "Hello World" << std::endl;
+```
+这一行的作用是在屏幕上输出文字。`std::cout` 表示输出，`<<` 用来传送要输出的内容。
+
+```cpp{6}
+return 0;
+```
+这一行表示程序正常结束。
+
+## 💪 动手练习
+
+### 练习 1：修改输出内容
+把程序中的 "Hello World" 改成你的名字，重新编译运行。
+
+::: details 查看答案
+```cpp{5}
+#include <iostream>
+
+int main()
+{
+    std::cout << "My name is Zhang San" << std::endl;
+    return 0;
+}
 ```
 :::
 
-### 练习 2：简单计算器
-编写一个程序，计算并显示：
-- 123 + 456
-- 1000 - 234
-- 50 × 8（Python 中乘法用 `*`）
+### 练习 2：输出多行文字
+尝试让程序输出两行不同的文字。
 
-::: details 参考答案
-```python
-print(123 + 456)
-print(1000 - 234)
-print(50 * 8)
+::: details 查看答案
+```cpp{5,6}
+#include <iostream>
+
+int main()
+{
+    std::cout << "Hello World" << std::endl;
+    std::cout << "Welcome to C++" << std::endl;
+    return 0;
+}
 ```
 
-运行结果：
+**运行结果：**
 ```
-579
-766
-400
+Hello World
+Welcome to C++
 ```
 :::
 
-## 📌 小结
+## 📌 本章小结
 
-- `print()` 函数用于在屏幕上显示内容
-- 文字需要用引号 `""` 包起来，数字不需要
-- 一个 `print()` 语句会在新的一行显示内容
-- Python 可以直接进行数学计算
+- C++ 程序文件以 `.cpp` 为扩展名
+- 每个程序都需要一个 `main()` 函数作为入口点
+- 使用 `std::cout` 可以在屏幕上输出内容
+- 程序需要先编译(Compile)才能运行
