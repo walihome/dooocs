@@ -12,167 +12,289 @@ head:
 
  # 函数与方法
 
-## 💡 什么是函数(Function)
+## 什么是函数(Function)
 
-函数就像一个"代码打包盒",你可以把一段经常使用的代码放进去,需要的时候直接调用,而不用重复写很多遍。
+函数就像一个工具箱,你把东西放进去,它帮你处理后给你结果。
 
-比如:你需要多次计算不同数字的平方,与其每次都写 `数字 * 数字`,不如把这个计算过程"打包"成一个函数。
+比如:
+- 计算器是个函数:输入两个数字,返回它们的和
+- 榨汁机是个函数:输入水果,返回果汁
 
-## 定义函数(Function Definition)
+## 定义一个函数
 
-### 📝 基本语法
+### 基本语法
 
-```python{1}
-def 函数名():
-    # 这里写函数要做的事情
-    print("Hello")
+```go
+func 函数名(参数) 返回值类型 {
+    // 函数体
+    return 返回值
+}
 ```
 
-- `def` 是定义函数的关键字
-- 函数名后面必须有小括号 `()`
-- 冒号 `:` 不能忘
-- 函数内的代码必须缩进(按一次Tab键)
+### 完整示例
 
-### 代码示例
+```go{5-8}
+package main
 
-```python{1-2}
-def say_hello():
-    print("你好,欢迎学习Python!")
-```
+import "fmt"
 
-这就定义好了一个名为 `say_hello` 的函数。但是此时它不会执行,因为你还没有"调用"它。
+// 定义一个计算两数之和的函数
+func add(a int, b int) int {
+    return a + b
+}
 
-## 调用函数(Function Call)
-
-定义好函数后,需要"调用"它才会执行:
-
-```python{1-2,4}
-def say_hello():
-    print("你好,欢迎学习Python!")
-
-say_hello()  # 调用函数
+func main() {
+    result := add(3, 5)
+    fmt.Println("结果是:", result)
+}
 ```
 
 **运行结果:**
 ```
-你好,欢迎学习Python!
+结果是: 8
 ```
 
 ::: tip 提示
-调用函数时,函数名后面的小括号 `()` 不能省略!
+函数名用小写字母开头(如 `add`),如果想让其他包也能用这个函数,就用大写字母开头(如 `Add`)
 :::
 
-## 带参数的函数(Function with Parameters)
+## 不同类型的函数
 
-### 💡 为什么需要参数
+### 没有参数的函数
 
-有时候你希望函数处理不同的数据,比如打招呼时叫不同的名字,这就需要"参数"。
+```go{5-7}
+package main
 
-### 📝 代码示例
+import "fmt"
 
-```python{1,4}
-def greet(name):
-    print(f"你好,{name}!")
+func sayHello() {
+    fmt.Println("Hello, World!")
+}
 
-greet("小明")  # 传入参数"小明"
+func main() {
+    sayHello()
+}
 ```
 
 **运行结果:**
 ```
-你好,小明!
+Hello, World!
 ```
 
-你可以多次调用,传入不同的参数:
+### 没有返回值的函数
 
-```python{1-2,4-5}
-def greet(name):
-    print(f"你好,{name}!")
+```go{5-7}
+package main
 
-greet("小明")
-greet("小红")
-```
+import "fmt"
 
-**运行结果:**
-```
-你好,小明!
-你好,小红!
-```
+func printMessage(message string) {
+    fmt.Println("消息:", message)
+}
 
-## 返回值(Return Value)
-
-### 💡 什么是返回值
-
-有时候你希望函数计算出一个结果并"交还"给你,这就需要 `return` 语句。
-
-### 📝 代码示例
-
-```python{1-2,4-5}
-def calculate_square(number):
-    return number * number
-
-result = calculate_square(5)  # 函数返回25
-print(f"5的平方是: {result}")
+func main() {
+    printMessage("学习Go语言真有趣")
+}
 ```
 
 **运行结果:**
 ```
-5的平方是: 25
+消息: 学习Go语言真有趣
+```
+
+### 多个返回值的函数
+
+```go{5-8}
+package main
+
+import "fmt"
+
+// 返回两个值:商和余数
+func divide(a int, b int) (int, int) {
+    return a / b, a % b
+}
+
+func main() {
+    quotient, remainder := divide(10, 3)
+    fmt.Println("商:", quotient)
+    fmt.Println("余数:", remainder)
+}
+```
+
+**运行结果:**
+```
+商: 3
+余数: 1
 ```
 
 ::: warning 注意
-如果函数没有 `return` 语句,它会返回 `None`(表示"没有值")
+多个返回值用逗号分隔,接收时也要用对应数量的变量
 :::
 
-## 多个参数(Multiple Parameters)
+## 什么是方法(Method)
 
-函数可以接收多个参数,用逗号分隔:
+方法是"属于某个类型"的函数。就像:
+- 手机有"打电话"这个方法
+- 汽车有"启动"这个方法
 
-```python{1-2,4}
-def add_numbers(a, b):
-    return a + b
+### 定义结构体(Struct)
 
-result = add_numbers(10, 20)
-print(f"10 + 20 = {result}")
+```go{5-8}
+package main
+
+import "fmt"
+
+// 定义一个矩形结构体
+type Rectangle struct {
+    width  int
+    height int
+}
+
+func main() {
+    rect := Rectangle{width: 5, height: 3}
+    fmt.Println("矩形:", rect)
+}
+```
+
+### 给结构体添加方法
+
+```go{11-13}
+package main
+
+import "fmt"
+
+type Rectangle struct {
+    width  int
+    height int
+}
+
+// 定义计算面积的方法
+func (r Rectangle) area() int {
+    return r.width * r.height
+}
+
+func main() {
+    rect := Rectangle{width: 5, height: 3}
+    result := rect.area()
+    fmt.Println("面积是:", result)
+}
 ```
 
 **运行结果:**
 ```
-10 + 20 = 30
+面积是: 15
+```
+
+::: tip 提示
+`(r Rectangle)` 叫做接收者(Receiver),表示这个方法属于 `Rectangle` 类型
+:::
+
+## 函数 vs 方法
+
+```go{8-11,14-17}
+package main
+
+import "fmt"
+
+type Circle struct {
+    radius float64
+}
+
+// 这是一个函数
+func calculateArea(radius float64) float64 {
+    return 3.14 * radius * radius
+}
+
+// 这是一个方法
+func (c Circle) area() float64 {
+    return 3.14 * c.radius * c.radius
+}
+
+func main() {
+    // 调用函数
+    area1 := calculateArea(5.0)
+    fmt.Println("函数计算的面积:", area1)
+    
+    // 调用方法
+    circle := Circle{radius: 5.0}
+    area2 := circle.area()
+    fmt.Println("方法计算的面积:", area2)
+}
+```
+
+**运行结果:**
+```
+函数计算的面积: 78.5
+方法计算的面积: 78.5
 ```
 
 ## 💪 练习题
 
-### 练习1:定义并调用函数
+### 练习 1:创建一个问候函数
 
-编写一个函数 `introduce_yourself`,打印你的名字和年龄。
+编写一个函数 `greet`,接收一个名字(string),返回问候语(string)。
 
-::: details 点击查看答案
-```python
-def introduce_yourself():
-    print("我叫小明")
-    print("我今年18岁")
+<details>
+<summary>点击查看答案</summary>
 
-introduce_yourself()
+```go
+package main
+
+import "fmt"
+
+func greet(name string) string {
+    return "你好, " + name + "!"
+}
+
+func main() {
+    message := greet("小明")
+    fmt.Println(message)
+}
 ```
-:::
 
-### 练习2:带参数的函数
-
-编写一个函数 `calculate_rectangle_area`,接收长和宽两个参数,返回矩形面积。
-
-::: details 点击查看答案
-```python
-def calculate_rectangle_area(length, width):
-    return length * width
-
-area = calculate_rectangle_area(5, 3)
-print(f"矩形面积是: {area}")
+**运行结果:**
 ```
-:::
+你好, 小明!
+```
+
+</details>
+
+### 练习 2:创建一个学生方法
+
+定义一个 `Student` 结构体(包含 `name` 和 `age`),给它添加一个 `introduce` 方法,打印自我介绍。
+
+<details>
+<summary>点击查看答案</summary>
+
+```go
+package main
+
+import "fmt"
+
+type Student struct {
+    name string
+    age  int
+}
+
+func (s Student) introduce() {
+    fmt.Printf("我叫%s,今年%d岁\n", s.name, s.age)
+}
+
+func main() {
+    student := Student{name: "小红", age: 18}
+    student.introduce()
+}
+```
+
+**运行结果:**
+```
+我叫小红,今年18岁
+```
+
+</details>
 
 ## 📌 小结
 
-1. **定义函数**:使用 `def 函数名():` 格式,函数内的代码要缩进
-2. **调用函数**:写出函数名并加上小括号 `函数名()`
-3. **参数**:让函数处理不同的数据,在小括号内定义参数
-4. **返回值**:用 `return` 把计算结果交还给调用者
+1. **函数(Function)**:独立的代码块,使用 `func` 关键字定义,可以接收参数并返回结果
+2. **方法(Method)**:属于某个类型的函数,通过接收者(Receiver)与类型关联
+3. **调用方式**:函数直接调用 `funcName()`,方法通过类型实例调用 `instance.methodName()`
