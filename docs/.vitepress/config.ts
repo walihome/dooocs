@@ -57,7 +57,7 @@ export default defineConfig({
     },
     sidebar: sidebar,
     editLink: {
-      pattern: 'https://github.com/walihome/dooocs/tree/main/:path',
+      pattern: 'https://github.com/walihome/dooocs/edit/main/docs/:path',
       text: 'Edit this page on GitHub'
     },
     footer: {
