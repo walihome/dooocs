@@ -122,6 +122,12 @@ export default defineConfig({
         console.log(readFileSync(filePath, 'utf-8'));
       }
     }
+    
+    // 处理 single: true 的页面
+    if (pageData.frontmatter?.single === true) {
+      pageData.frontmatter.pageClass = 'single-page';
+    }
+    
     return pageData;
   },
 

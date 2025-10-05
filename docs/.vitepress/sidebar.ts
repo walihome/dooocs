@@ -111,6 +111,27 @@ console.log('目录:', directories);
 
 const sidebar: Record<string, SidebarItem[]> = {}
 
+// 递归生成所有层级的 sidebar 配置
+function generateAllSidebars(dirPath: string, urlPath: string) {
+    // 为当前目录生成 sidebar
+    sidebar[urlPath] = generateSidebar(dirPath, urlPath)
+    
+    // 获取当前目录下的所有子目录
+    const fullPath = path.join(docsPath, dirPath)
+    if (!fs.existsSync(fullPath)) {
+        return
+    }
+    
+    const subDirs = getDirectories(fullPath)
+    
+    // 递归为每个子目录生成 sidebar
+    subDirs.forEach(subDir => {
+        const subDirPath = path.join(dirPath, subDir)
+        const subUrlPath = `${urlPath}${subDir}/`
+        generateAllSidebars(subDirPath, subUrlPath)
+    })
+}
+
 directories.forEach(dir => {
     // 跳过文件夹名称为 'public' 的文件夹
     if (dir === 'public') {
@@ -118,7 +139,8 @@ directories.forEach(dir => {
     }
     const secondLevelDirectories = getDirectories(path.join(docsPath, dir))
     secondLevelDirectories.forEach(subDir => {
-        sidebar[`/${dir}/${subDir}/`] = generateSidebar(`${dir}/${subDir}`, `/${dir}/${subDir}`)
+        // 递归生成所有层级的 sidebar
+        generateAllSidebars(`${dir}/${subDir}`, `/${dir}/${subDir}/`)
     })
 
     // 打印sidebar

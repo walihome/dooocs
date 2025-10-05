@@ -158,6 +158,7 @@ async function genHomePage() {
   console.log("一级目录: " + firstLevelDirs);
 
   const directoryInfos: DirectoryInfo[] = [];
+  const columns: any[] = [];
 
   // 遍历一级目录
   for (const dir of firstLevelDirs) {
@@ -165,6 +166,7 @@ async function genHomePage() {
     const displayName = getDirectoryDisplayName(dirPath, dir);
     const finalDisplayName = categoryNameMap[dir] || displayName || dir;
     const order = getOrderFromMd(path.join(dirPath, 'index.md'));
+    const categoryIcon = categoryIconMap[finalDisplayName] || categoryIconMap[dir] || '📁';
     
     // 查询二级目录列表
     const subDirs = fs.readdirSync(dirPath).filter(subDir => 
@@ -174,6 +176,7 @@ async function genHomePage() {
 
     console.log(`${dir} 的二级分类: ` + subDirs);
 
+    const sections: any[] = [];
     const subDirectories = subDirs.map(subDir => {
       const subDirPath = path.join(dirPath, subDir);
       const subDisplayName = getDirectoryDisplayName(subDirPath, subDir);
@@ -206,6 +209,12 @@ async function genHomePage() {
       const markdownFiles = getMarkdownFiles(subDirPath);
       markdownFiles.sort((a, b) => a.order - b.order);
 
+      // 为每个二级目录创建一个链接项
+      sections.push({
+        displayName: subDisplayName,
+        link: `/${dir}/${subDir}/`
+      });
+
       return {
         name: subDir,
         displayName: subDisplayName || subDir,
@@ -219,6 +228,34 @@ async function genHomePage() {
     // 对二级目录排序
     subDirectories.sort((a, b) => a.order - b.order);
 
+    // 获取一级目录下的 markdown 文件（除了 index.md）
+    const firstLevelMarkdownFiles = getMarkdownFiles(dirPath);
+    firstLevelMarkdownFiles.sort((a, b) => a.order - b.order);
+
+    // 将一级目录的 markdown 文件也添加到 sections
+    const allItems = [
+      ...sections,
+      ...firstLevelMarkdownFiles.map(file => ({
+        displayName: file.displayName,
+        link: file.link
+      }))
+    ];
+
+    // 合并后按 order 重新排序
+    const sortedItems = [
+      ...sections.map((s, idx) => ({ ...s, order: subDirectories[idx]?.order ?? Infinity })),
+      ...firstLevelMarkdownFiles.map(f => ({ displayName: f.displayName, link: f.link, order: f.order }))
+    ].sort((a, b) => a.order - b.order);
+
+    // 为每个一级目录生成一列
+    columns.push({
+      id: dir,
+      icon: categoryIcon,
+      title: finalDisplayName,
+      order: order,
+      items: sortedItems.map(item => ({ displayName: item.displayName, link: item.link }))
+    });
+
     directoryInfos.push({
       name: dir,
       displayName: finalDisplayName,
@@ -229,222 +266,35 @@ async function genHomePage() {
 
   // 对一级目录排序
   directoryInfos.sort((a, b) => a.order - b.order);
+  
+  // 对列排序
+  columns.sort((a, b) => a.order - b.order);
+
+  // 准备HomePage组件的数据
+  const homePageData = {
+    hero: {
+      title: '极简编程',
+      description: '编程如此简单！'
+    },
+    columns: columns.map(col => ({
+      id: col.id,
+      icon: col.icon,
+      title: col.title,
+      items: col.items
+    }))
+  };
 
   // 生成首页内容
-  let homeContent = `---
+  const homeContent = `---
 editLink: false
+isHomePage: true
 ---
 
-<div class="knowledge-base-container">
-  <div class="knowledge-base-table">
-    <table>
-      <thead>
-        <tr>
-          <th>分类</th>
-          <th>二级分类</th>
-          <th>内容</th>
-        </tr>
-      </thead>
-      <tbody>
-`;
+<script setup>
+const pageData = ${JSON.stringify(homePageData, null, 2)};
+</script>
 
-  for (const dirInfo of directoryInfos) {
-    const categoryIcon = categoryIconMap[dirInfo.name] || '📁';
-    const categoryDisplayName = `${categoryIcon} ${dirInfo.displayName}`;
-    
-    if (dirInfo.subDirectories.length === 0) {
-      // 如果没有二级目录，显示空内容
-      homeContent += `        <tr>
-          <td class="category-name" rowspan="1">${categoryDisplayName}</td>
-          <td class="sub-category-name">暂无二级目录</td>
-          <td class="content-links">暂无内容</td>
-        </tr>
-`;
-    } else {
-      // 有二级目录的情况
-      let isFirstRow = true;
-      for (const subDir of dirInfo.subDirectories) {
-        const rowspan = isFirstRow ? dirInfo.subDirectories.length : 0;
-        const categoryCell = isFirstRow ? `          <td class="category-name" rowspan="${dirInfo.subDirectories.length}">${categoryDisplayName}</td>` : '';
-        
-        // 合并三级目录和 markdown 文件
-        const allContent = [
-          ...subDir.thirdLevelContent.map(third => ({
-            ...third,
-            type: 'directory'
-          })),
-          ...subDir.markdownFiles.map(file => ({
-            ...file,
-            type: 'file'
-          }))
-        ].sort((a, b) => a.order - b.order);
-
-        if (allContent.length === 0) {
-          // 如果没有内容，显示空内容
-          homeContent += `        <tr>
-${categoryCell}          <td class="sub-category-name">${subDir.displayName}</td>
-          <td class="content-links">暂无内容</td>
-        </tr>
-`;
-        } else {
-          // 有内容的情况
-          const links = allContent.map(item => 
-            `<a href="${item.link}" class="content-link">${item.displayName}</a>`
-          ).join(' · ');
-          
-          homeContent += `        <tr>
-${categoryCell}          <td class="sub-category-name">${subDir.displayName}</td>
-          <td class="content-links">${links}</td>
-        </tr>
-`;
-        }
-        isFirstRow = false;
-      }
-    }
-  }
-
-  homeContent += `      </tbody>
-    </table>
-  </div>
-</div>
-
-<style>
-.knowledge-base-container {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.knowledge-base-table {
-  overflow-x: auto;
-  max-width: 1400px;
-  width: 100%;
-}
-
-.knowledge-base-table table {
-  width: 100%;
-  border-collapse: collapse;
-  background: var(--vp-c-bg);
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.knowledge-base-table th {
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  padding: 1rem;
-  text-align: left;
-  font-weight: 600;
-  font-size: 1.1rem;
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-.knowledge-base-table td {
-  padding: 1rem;
-  border-bottom: 1px solid var(--vp-c-divider);
-  vertical-align: top;
-  font-size: 1rem;
-}
-
-.knowledge-base-table tr:last-child td {
-  border-bottom: none;
-}
-
-.knowledge-base-table tr:hover {
-  background: var(--vp-c-bg-soft);
-}
-
-.category-name {
-  font-weight: 600;
-  color: var(--vp-c-brand-1);
-  min-width: 120px;
-  width: 20%;
-  padding: 1rem;
-  font-size: 1.05rem;
-}
-
-.sub-category-name {
-  font-weight: 500;
-  color: var(--vp-c-text-1);
-  min-width: 100px;
-  width: 25%;
-  padding: 1rem;
-  font-size: 1rem;
-}
-
-.content-links {
-  width: 55%;
-  line-height: 1.6;
-}
-
-.content-link {
-  color: var(--vp-c-brand-1);
-  text-decoration: none !important;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.content-link:hover {
-  color: var(--vp-c-brand-2);
-  text-decoration: none !important;
-}
-
-@media (max-width: 768px) {
-  .knowledge-base-container {
-    margin: 1rem;
-  }
-  
-  .knowledge-base-table table {
-    font-size: 0.9rem;
-  }
-  
-  .knowledge-base-table th,
-  .knowledge-base-table td {
-    padding: 0.5rem;
-  }
-  
-  .knowledge-base-table th {
-    font-size: 1rem;
-  }
-  
-  .content-link {
-    font-size: 0.85rem;
-  }
-  
-  .category-name {
-    min-width: 80px;
-    width: 25%;
-    padding: 0.5rem;
-    font-size: 0.95rem;
-  }
-  
-  .sub-category-name {
-    min-width: 80px;
-    width: 30%;
-    padding: 0.5rem;
-    font-size: 0.9rem;
-  }
-  
-  .content-links {
-    width: 45%;
-  }
-}
-
-/* 暗黑模式优化 */
-html.dark .knowledge-base-table table {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-html.dark .knowledge-base-table th {
-  background: var(--vp-c-bg-mute);
-  border-bottom: 1px solid var(--vp-c-divider);
-}
-
-html.dark .knowledge-base-table tr:hover {
-  background: var(--vp-c-bg-mute);
-}
-</style>
+<HomePage :hero="pageData.hero" :columns="pageData.columns" />
 `;
 
   // 写入首页文件

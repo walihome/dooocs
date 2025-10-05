@@ -1,4 +1,4 @@
 ---
-title: 备忘清单
-order: 1
+title: 速记表
+order: 2
 ---
