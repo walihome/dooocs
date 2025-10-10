@@ -339,7 +339,7 @@ if err := doSomething(); err != nil {
 }
 // 无条件 switch
 switch {
-    case x &lt; 0:
+    case x < 0:
         fmt.Println("negative")
     case x == 0:
         fmt.Println("zero")
@@ -351,7 +351,7 @@ switch {
       {
         title: 'for 循环',
         code: `// C 风格 for
-for i := 0; i &lt; 10; i++ {
+for i := 0; i < 10; i++ {
     fmt.Println(i)
 }
 // while 风格
@@ -382,8 +382,8 @@ continue  // 跳过本次
 return    // 返回
 // 标签跳转
 outer:
-for i := 0; i &lt; 3; i++ {
-    for j := 0; j &lt; 3; j++ {
+for i := 0; i < 3; i++ {
+    for j := 0; j < 3; j++ {
         if i == 1 && j == 1 {
             break outer
         }
@@ -695,7 +695,7 @@ default:
         title: 'WaitGroup',
         code: `import "sync"
 var wg sync.WaitGroup
-for i := 0; i &lt; 5; i++ {
+for i := 0; i < 5; i++ {
     wg.Add(1)
     go func(id int) {
         defer wg.Done()
@@ -774,7 +774,7 @@ err := json.Unmarshal(data, &obj)`,
         title: '泛型函数',
         description: 'Go 1.18+',
         code: `func Min[T constraints.Ordered](a, b T) T {
-    if a &lt; b {
+    if a < b {
         return a
     }
     return b
@@ -879,7 +879,7 @@ func TestAdd(t *testing.T) {
 }
 // 基准测试
 func BenchmarkAdd(b *testing.B) {
-    for i := 0; i &lt; b.N; i++ {
+    for i := 0; i < b.N; i++ {
         Add(2, 3)
     }
 }`,
