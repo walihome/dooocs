@@ -373,7 +373,7 @@ $result = $condition ? 'yes' : 'no';`,
       },
       {
         title: 'for 循环',
-        code: `for ($i = 0; $i &lt; 10; $i++) {
+        code: `for ($i = 0; $i < 10; $i++) {
     echo $i;
 }
 foreach ($arr as $value) {
