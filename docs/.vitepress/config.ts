@@ -10,12 +10,12 @@ export default defineConfig({
   
   ignoreDeadLinks: true,
   base: '/', 
+  // 关闭 cleanUrls，保留 .html 后缀
   cleanUrls: false,
   
   // 启用最近更新时间
   lastUpdated: true,
 
-  // 暂时移除所有 head 配置，只保留基本图标
   head: [
     [
       'script',
@@ -30,7 +30,6 @@ export default defineConfig({
       "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-659VJ2QMN0');",
     ],
     ['link', {rel: 'icon', href: '/logo.png'}],
-    // 其他 head 标签...
     ['link', { rel: 'stylesheet', href: '/custom.css' }],
     [
       'script',
@@ -48,7 +47,6 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: '提交需求', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
-    // 在主题配置中也启用最近更新时间
     lastUpdated: {
       text: 'Updated at',
       formatOptions: {
@@ -67,21 +65,35 @@ export default defineConfig({
     }
   },
 
-  // 暂时移除复杂的钩子配置
   buildEnd: async ({ pages, outDir }) => {
     if (pages.length === 0) {
       console.warn('No pages found for sitemap generation');
       return;
     }
+    
     const sitemap = new SitemapStream({ hostname: 'https://www.dooocs.com' })
     const writeStream = createWriteStream(resolve(outDir, 'sitemap.xml'))
     sitemap.pipe(writeStream)
   
     pages.forEach((page) => {
+      // 移除开头的斜杠
+      let url = page.replace(/^\//, '')
+      
+      // 处理 index.html 的情况
+      if (url === 'index.html' || url === '') {
+        url = ''
+      } else if (!url.endsWith('.html')) {
+        // 如果不是以 .html 结尾，添加 .html
+        url = url + '.html'
+      }
+      
       sitemap.write({
-        url: page.replace(/^\//, ''),
-        changefreq: 'weekly'
+        url: url,
+        changefreq: 'weekly',
+        priority: url === '' ? 1.0 : 0.8
       })
+      
+      console.log('Added to sitemap:', url)
     })
   
     sitemap.end()
@@ -98,7 +110,6 @@ export default defineConfig({
     }
   },
 
-  // 添加这个钩子来处理 Markdown 文件
   markdown: {
     config: (md) => {
       const defaultRender = md.render;
@@ -112,7 +123,6 @@ export default defineConfig({
     }
   },
 
-  // 添加这个钩子来检查文件是否存在
   async transformPageData(pageData) {
     if (pageData.relativePath === 'tutorial/index.md') {
       const filePath = resolve(__dirname, '../tutorial/index.md');
