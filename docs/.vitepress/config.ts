@@ -10,7 +10,7 @@ export default defineConfig({
   
   ignoreDeadLinks: true,
   base: '/', 
-  cleanUrls: true,
+  cleanUrls: false,
   
   // 启用最近更新时间
   lastUpdated: true,
