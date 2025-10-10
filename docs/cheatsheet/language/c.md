@@ -251,12 +251,12 @@ matrix[1][2] = 100;`,
       },
       {
         title: '遍历数组',
-        code: `for (int i = 0; i &lt; 5; i++) {
+        code: `for (int i = 0; i < 5; i++) {
     printf("%d\\n", arr[i]);
 }
 // 使用指针遍历
 int *p = arr;
-for (int i = 0; i &lt; 5; i++) {
+for (int i = 0; i < 5; i++) {
     printf("%d\\n", *(p + i));
 }`,
         language: 'c'
@@ -341,11 +341,11 @@ snprintf(buffer, sizeof(buffer), "Value: %d", value);`,
       },
       {
         title: 'for 循环',
-        code: `for (int i = 0; i &lt; 10; i++) {
+        code: `for (int i = 0; i < 10; i++) {
     printf("%d\\n", i);
 }
 // 多变量
-for (int i = 0, j = 10; i &lt; j; i++, j--) {
+for (int i = 0, j = 10; i < j; i++, j--) {
     printf("%d %d\\n", i, j);
 }`,
         language: 'c'
@@ -591,7 +591,7 @@ __TIME__    // 编译时间`,
       },
       {
         title: '#include',
-        code: `#include &lt;stdio.h>     // 系统头文件
+        code: `#include <stdio.h>     // 系统头文件
 #include "myheader.h"  // 用户头文件`,
         language: 'c'
       }
