@@ -12,7 +12,7 @@ const cheatsheetData = [
     items: [
       {
         title: 'Hello World',
-        code: `#include &lt;iostream>
+        code: `#include <iostream>
 using namespace std;
 int main() {
     cout << "Hello, World!" << endl;
@@ -22,8 +22,8 @@ int main() {
       },
       {
         title: '输入输出',
-        code: `#include &lt;iostream>
-#include &lt;string>
+        code: `#include <iostream>
+#include <string>
 using namespace std;
 int main() {
     // 输出
@@ -112,10 +112,10 @@ void`,
       },
       {
         title: 'STL 容器',
-        code: `#include &lt;vector>
-#include &lt;string&gt;
-#include &lt;map>
-#include &lt;set>
+        code: `#include <vector>
+#include <string&gt;
+#include <map>
+#include <set>
 vector<int> v;
 string s;
 map<string, int> m;
@@ -191,7 +191,7 @@ new delete // 内存管理
     items: [
       {
         title: 'string 基础',
-        code: `#include &lt;string&gt;
+        code: `#include <string&gt;
 string s = "Hello";
 s += " World";
 s.append(" !");
@@ -230,7 +230,7 @@ stod("3.14159");`,
       },
       {
         title: '字符串流',
-        code: `#include &lt;sstream>
+        code: `#include <sstream>
 stringstream ss;
 ss << "Value: " << 42;
 string result = ss.str();
@@ -247,7 +247,7 @@ ss >> a >> b >> c;`,
     items: [
       {
         title: 'vector',
-        code: `#include &lt;vector>
+        code: `#include <vector>
 vector<int> v = {1, 2, 3};
 v.push_back(4);
 v.pop_back();
@@ -264,7 +264,7 @@ v.erase(v.begin());`,
       },
       {
         title: 'map',
-        code: `#include &lt;map>
+        code: `#include <map>
 map<string, int> m;
 m["key"] = 100;
 m.insert({"key2", 200});
@@ -280,7 +280,7 @@ for (auto& [key, value] : m) {  // C++17
       },
       {
         title: 'set',
-        code: `#include &lt;set>
+        code: `#include <set>
 set<int> s;
 s.insert(10);
 s.insert(20);
@@ -295,8 +295,8 @@ for (int x : s) {
       {
         title: 'unordered_map/set',
         description: 'C++11 哈希表',
-        code: `#include &lt;unordered_map>
-#include &lt;unordered_set>
+        code: `#include <unordered_map>
+#include <unordered_set>
 unordered_map<string, int> umap;
 unordered_set<int> uset;
 // 用法同 map/set，但无序，性能更好`,
@@ -304,8 +304,8 @@ unordered_set<int> uset;
       },
       {
         title: 'deque & list',
-        code: `#include &lt;deque>
-#include &lt;list>
+        code: `#include <deque>
+#include <list>
 deque<int> dq;
 dq.push_front(1);
 dq.push_back(2);
@@ -321,7 +321,7 @@ lst.push_back(2);`,
     items: [
       {
         title: '排序与查找',
-        code: `#include &lt;algorithm>
+        code: `#include <algorithm>
 sort(v.begin(), v.end());
 sort(v.begin(), v.end(), greater<int>());
 auto it = find(v.begin(), v.end(), 5);
@@ -344,7 +344,7 @@ copy_if(v.begin(), v.end(), back_inserter(evens),
       },
       {
         title: '累积与计数',
-        code: `#include &lt;numeric>
+        code: `#include <numeric>
 int sum = accumulate(v.begin(), v.end(), 0);
 int product = accumulate(v.begin(), v.end(), 1, multiplies<int>());
 int cnt = count(v.begin(), v.end(), 5);
@@ -397,7 +397,7 @@ if (auto it = m.find("key"); it != m.end()) {
       },
       {
         title: '循环',
-        code: `for (int i = 0; i &lt; 10; i++) {}
+        code: `for (int i = 0; i < 10; i++) {}
 // 范围 for (C++11)
 for (auto& item : vec) {}
 for (const auto& [key, value] : map) {}  // C++17
@@ -531,7 +531,7 @@ public:
       {
         title: 'unique_ptr',
         description: 'C++11 独占所有权',
-        code: `#include &lt;memory>
+        code: `#include <memory>
 unique_ptr<int> ptr = make_unique<int>(10);
 *ptr = 20;
 unique_ptr<vector<int>> v = make_unique<vector<int>>();
@@ -595,7 +595,7 @@ throw ValidationError("Invalid input");`,
     items: [
       {
         title: '读取文件',
-        code: `#include &lt;fstream>
+        code: `#include <fstream>
 ifstream file("input.txt");
 if (!file.is_open()) {
     cerr << "Error opening file" << endl;
@@ -633,7 +633,7 @@ for (auto [key, value] : m) {
       {
         title: 'optional',
         description: 'C++17',
-        code: `#include &lt;optional>
+        code: `#include <optional>
 optional<int> find(vector<int>& v, int target) {
     auto it = std::find(v.begin(), v.end(), target);
     if (it != v.end()) return *it;
@@ -647,7 +647,7 @@ if (auto result = find(v, 5)) {
       {
         title: 'variant',
         description: 'C++17',
-        code: `#include &lt;variant>
+        code: `#include <variant>
 variant<int, string> v;
 v = 42;
 v = "hello";
@@ -660,7 +660,7 @@ if (holds_alternative<int>(v)) {
         title: 'Concepts',
         description: 'C++20',
         code: `template<typename T>
-concept Numeric = std::is_arithmetic_v&lt;T&gt;;
+concept Numeric = std::is_arithmetic_v<T&gt;;
 template<Numeric T>
 T add(T a, T b) {
     return a + b;
