@@ -76,21 +76,24 @@ export default defineConfig({
     sitemap.pipe(writeStream)
   
     pages.forEach((page) => {
-      // 移除开头的斜杠
-      let url = page.replace(/^\//, '')
+      // 移除开头的斜杠和 .md 扩展名
+      let url = page.replace(/^\//, '').replace(/\.md$/, '')
       
-      // 处理 index.html 的情况
-      if (url === 'index.html' || url === '') {
-        url = ''
-      } else if (!url.endsWith('.html')) {
-        // 如果不是以 .html 结尾，添加 .html
+      // 处理 index 文件：tutorial/index -> tutorial/index.html
+      if (url === 'index' || url === '') {
+        url = 'index.html'
+      } else if (url.endsWith('/index')) {
+        // tutorial/index -> tutorial/index.html
+        url = url + '.html'
+      } else {
+        // tutorial/c/beginner/setup -> tutorial/c/beginner/setup.html
         url = url + '.html'
       }
       
       sitemap.write({
         url: url,
         changefreq: 'weekly',
-        priority: url === '' ? 1.0 : 0.8
+        priority: url === 'index.html' ? 1.0 : 0.8
       })
       
       console.log('Added to sitemap:', url)
