@@ -187,7 +187,7 @@ result = x or y`,
       {
         title: '特殊运算符',
         code: `# 海象运算符 (Python 3.8+)
-if (n := len(data)) &gt; 10:
+if (n := len(data)) > 10:
     print(f"Large dataset: {n}")
 # 解包运算符
 *args, **kwargs`,
@@ -524,7 +524,7 @@ gen = (x**2 for x in range(10))`,
         return self._radius
     @radius.setter
     def radius(self, value):
-        if value &lt; 0:
+        if value < 0:
             raise ValueError("Radius must be positive")
         self._radius = value
     @property
@@ -843,7 +843,7 @@ print(i)  # i 仍可访问`,
         code: `# pip
 pip install package
 pip install -r requirements.txt
-pip freeze &gt; requirements.txt
+pip freeze > requirements.txt
 # poetry
 poetry add package
 poetry install
