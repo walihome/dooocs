@@ -106,7 +106,7 @@ char c = 'A';           // 16-bit Unicode`,
         code: `String str = "hello";
 Integer num = 100;
 int[] arr = {1, 2, 3};
-List&lt;String&gt; list = new ArrayList<>();`,
+List<String> list = new ArrayList<>();`,
         language: 'java'
       },
       {
@@ -124,10 +124,10 @@ int num = Integer.parseInt("42");`,
       },
       {
         title: '泛型',
-        code: `List&lt;String&gt; list = new ArrayList<>();
-Map&lt;String, Integer&gt; map = new HashMap<>();
+        code: `List<String> list = new ArrayList<>();
+Map<String, Integer> map = new HashMap<>();
 // 泛型类
-class Box&lt;T&gt; {
+class Box<T> {
     private T value;
     public void set(T value) { this.value = value; }
     public T get() { return value; }
@@ -172,7 +172,7 @@ instanceof       // 类型检查`,
       },
       {
         title: '三元运算符',
-        code: `int max = (a &gt; b) ? a : b;
+        code: `int max = (a > b) ? a : b;
 String result = (valid) ? "yes" : "no";`,
         language: 'java'
       }
@@ -225,11 +225,11 @@ String result = sb.toString();`,
         title: '文本块',
         description: 'Java 15+',
         code: `String html = """
-    &lt;html&gt;
-        &lt;body&gt;
-            &lt;p&gt;Hello&lt;/p&gt;
-        &lt;/body&gt;
-    &lt;/html&gt;
+    <html>
+        <body>
+            <p>Hello</p>
+        </body>
+    </html>
     """;`,
         language: 'java'
       }
@@ -240,9 +240,9 @@ String result = sb.toString();`,
     items: [
       {
         title: 'List',
-        code: `List&lt;String&gt; list = new ArrayList<>();
-List&lt;Integer&gt; nums = Arrays.asList(1, 2, 3);
-List&lt;String&gt; immutable = List.of("a", "b", "c");
+        code: `List<String> list = new ArrayList<>();
+List<Integer> nums = Arrays.asList(1, 2, 3);
+List<String> immutable = List.of("a", "b", "c");
 list.add("item");
 list.add(0, "first");
 list.remove("item");
@@ -257,9 +257,9 @@ list.clear();`,
       },
       {
         title: 'Set',
-        code: `Set&lt;String&gt; set = new HashSet<>();
-Set&lt;Integer&gt; ordered = new LinkedHashSet<>();
-Set&lt;String&gt; sorted = new TreeSet<>();
+        code: `Set<String> set = new HashSet<>();
+Set<Integer> ordered = new LinkedHashSet<>();
+Set<String> sorted = new TreeSet<>();
 set.add("item");
 set.remove("item");
 set.contains("item");
@@ -269,8 +269,8 @@ set.isEmpty();`,
       },
       {
         title: 'Map',
-        code: `Map&lt;String, Integer&gt; map = new HashMap<>();
-Map&lt;String, String&gt; ordered = new LinkedHashMap<>();
+        code: `Map<String, Integer> map = new HashMap<>();
+Map<String, String> ordered = new LinkedHashMap<>();
 map.put("key", 100);
 map.get("key");
 map.getOrDefault("key", 0);
@@ -286,11 +286,11 @@ map.entrySet();`,
       },
       {
         title: 'Queue & Deque',
-        code: `Queue&lt;Integer&gt; queue = new LinkedList<>();
+        code: `Queue<Integer> queue = new LinkedList<>();
 queue.offer(1);
 queue.poll();
 queue.peek();
-Deque&lt;Integer&gt; deque = new ArrayDeque<>();
+Deque<Integer> deque = new ArrayDeque<>();
 deque.offerFirst(1);
 deque.offerLast(2);
 deque.pollFirst();
@@ -339,7 +339,7 @@ String result = switch (day) {
       {
         title: 'for 循环',
         code: `// 传统 for
-for (int i = 0; i &lt; 10; i++) {
+for (int i = 0; i < 10; i++) {
     System.out.println(i);
 }
 // 增强 for (for-each)
@@ -424,7 +424,7 @@ Stream.iterate(0, n -> n + 1)`,
       },
       {
         title: '中间操作',
-        code: `stream.filter(x -> x &gt; 0)
+        code: `stream.filter(x -> x > 0)
 stream.map(x -> x * 2)
 stream.flatMap(list -> list.stream())
 stream.distinct()
@@ -441,9 +441,9 @@ stream.toList()  // Java 16+
 stream.collect(Collectors.toList())
 stream.reduce(0, Integer::sum)
 stream.count()
-stream.anyMatch(x -> x &gt; 10)
-stream.allMatch(x -> x &gt; 0)
-stream.noneMatch(x -> x &lt; 0)
+stream.anyMatch(x -> x > 10)
+stream.allMatch(x -> x > 0)
+stream.noneMatch(x -> x < 0)
 stream.findFirst()
 stream.findAny()`,
         language: 'java'
@@ -606,7 +606,7 @@ public class ValidationException extends Exception {
         title: '读取文件',
         code: `// Java 11+
 String content = Files.readString(Path.of("file.txt"));
-List&lt;String&gt; lines = Files.readAllLines(Path.of("file.txt"));
+List<String> lines = Files.readAllLines(Path.of("file.txt"));
 // 传统方式
 try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
     String line;
@@ -621,7 +621,7 @@ try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
         code: `// Java 11+
 Files.writeString(Path.of("file.txt"), "content");
 // 写入多行
-List&lt;String&gt; lines = Arrays.asList("line1", "line2");
+List<String> lines = Arrays.asList("line1", "line2");
 Files.write(Path.of("file.txt"), lines);
 // 传统方式
 try (BufferedWriter bw = new BufferedWriter(new FileWriter("file.txt"))) {
@@ -709,12 +709,12 @@ try {
         code: `// 使用 final 修饰不变量
 final int MAX = 100;
 // 使用 var 简化代码 (Java 10+)
-var list = new ArrayList&lt;String&gt;();
+var list = new ArrayList<String>();
 // 使用 Optional 避免 null
-Optional&lt;String&gt; opt = Optional.ofNullable(value);
+Optional<String> opt = Optional.ofNullable(value);
 // 使用 Stream API
 list.stream()
-    .filter(s -> s.length() &gt; 3)
+    .filter(s -> s.length() > 3)
     .collect(Collectors.toList());`,
         language: 'java'
       },
@@ -766,10 +766,10 @@ gradle run`,
       {
         title: '依赖管理',
         code: `<!-- Maven pom.xml -->
-&lt;dependency>
-    &lt;groupId>org.springframework.boot</groupId>
-    &lt;artifactId>spring-boot-starter-web</artifactId>
-    &lt;version>3.2.0</version>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+    <version>3.2.0</version>
 </dependency>
 // Gradle build.gradle
 dependencies {
