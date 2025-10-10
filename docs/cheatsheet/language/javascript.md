@@ -290,13 +290,13 @@ arr.sort()`,
       {
         title: '数组迭代',
         code: `arr.map(x => x * 2)
-arr.filter(x => x &gt; 0)
+arr.filter(x => x > 0)
 arr.reduce((acc, x) => acc + x, 0)
 arr.forEach(x => console.log(x))
-arr.find(x => x &gt; 5)
-arr.findIndex(x => x &gt; 5)
-arr.some(x => x &gt; 5)
-arr.every(x => x &gt; 0)`,
+arr.find(x => x > 5)
+arr.findIndex(x => x > 5)
+arr.some(x => x > 5)
+arr.every(x => x > 0)`,
         language: 'javascript'
       },
       {
@@ -367,7 +367,7 @@ const result = condition ? 'yes' : 'no'`,
       },
       {
         title: 'for 循环',
-        code: `for (let i = 0; i &lt; 10; i++) {
+        code: `for (let i = 0; i < 10; i++) {
   console.log(i)
 }
 for (const item of array) {
@@ -394,8 +394,8 @@ do {
 continue    // 跳过本次
 return value // 返回值
 // 标签跳转
-outer: for (let i = 0; i &lt; 3; i++) {
-  for (let j = 0; j &lt; 3; j++) {
+outer: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
     if (i === 1 && j === 1) break outer
   }
 }`,
@@ -803,7 +803,7 @@ const obj = { fn: function() { console.log(this) } }
 const fn = obj.fn
 fn()  // this 指向 window/undefined
 // 闭包变量
-for (var i = 0; i &lt; 3; i++) {
+for (var i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 0)  // 输出 3,3,3
 }`,
         language: 'javascript'
