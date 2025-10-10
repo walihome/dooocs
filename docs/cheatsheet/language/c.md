@@ -12,7 +12,7 @@ const cheatsheetData = [
     items: [
       {
         title: 'Hello World',
-        code: `#include &lt;stdio.h>
+        code: `#include <stdio.h>
 int main() {
     printf("Hello, World!\\n");
     return 0;
@@ -21,7 +21,7 @@ int main() {
       },
       {
         title: '输入输出',
-        code: `#include &lt;stdio.h>
+        code: `#include <stdio.h>
 int main() {
     // 输出
     printf("Hello, World!\\n");
