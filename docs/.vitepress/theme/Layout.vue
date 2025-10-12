@@ -34,8 +34,8 @@ const pageClass = computed(() => {
   }
 }
 @media (min-width: 960px) {
-    .VPDoc[data-v-10119189] {
-        padding: 0px 32px 0;
+    .VPDoc {
+        padding: 0px 32px 0 !important;
     }
 }
 
