@@ -3,6 +3,8 @@ title: 编程语言
 order: 1
 editLink: false
 isHomePage: true
+layout:
+  root: ture
 ---
 
 <script setup>
