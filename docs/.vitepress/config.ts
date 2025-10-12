@@ -45,7 +45,7 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
-      { text: '提交需求', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
+      { text: '聊一聊', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
     lastUpdated: {
       text: 'Updated at',
