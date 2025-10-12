@@ -43,5 +43,25 @@ const pageClass = computed(() => {
 .home-page-layout .VPDocFooter {
   display: none !important;
 }
+
+/* 针对首页隐藏 aside 并让内容完整居中 */
+.home-page-layout .VPDoc .aside {
+  display: none !important;
+}
+
+.home-page-layout .VPDoc.has-aside .content-container {
+  max-width: 1024px !important;
+  margin: 0 auto !important;
+}
+
+.home-page-layout .VPDoc .content {
+  max-width: 1024px !important;
+  margin: 0 auto !important;
+}
+
+.home-page-layout .VPDoc .container {
+  max-width: 1024px !important;
+  margin: 0 auto !important;
+}
 </style>
 

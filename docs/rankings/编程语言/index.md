@@ -4,7 +4,7 @@ order: 1
 editLink: false
 isHomePage: true
 layout:
-  root: ture
+  root: true
 ---
 
 <script setup>

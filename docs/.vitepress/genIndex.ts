@@ -359,6 +359,7 @@ const pageData = ${JSON.stringify(pageData, null, 2)};
 `;
 			}
 			
+			
 			// 打印并写入文件
 			console.log("indexPath: " + indexPath);
 			fs.writeFileSync(indexPath, indexContent);
@@ -366,6 +367,138 @@ const pageData = ${JSON.stringify(pageData, null, 2)};
 	}
 	
 	console.log('索引生成完成');
+	
+	// 补充三级目录 index.md 的空内容
+	console.log('\n开始补充三级目录的默认内容');
+	for (const firstDir of firstLevelDirs) {
+		const firstDirPath = path.join(docsDir, firstDir);
+		const secondLevelDirs = fs.readdirSync(firstDirPath).filter(dir => 
+			fs.statSync(path.join(firstDirPath, dir)).isDirectory() && 
+			!dir.startsWith('.')
+		);
+		
+		for (const knowledgeBase of secondLevelDirs) {
+			const knowledgeBasePath = path.join(firstDirPath, knowledgeBase);
+			if (!fs.existsSync(knowledgeBasePath)) continue;
+			
+			const thirdLevelDirs = fs.readdirSync(knowledgeBasePath).filter(dir => 
+				fs.statSync(path.join(knowledgeBasePath, dir)).isDirectory() && 
+				!dir.startsWith('.')
+			);
+			
+			for (const thirdDir of thirdLevelDirs) {
+				const thirdDirPath = path.join(knowledgeBasePath, thirdDir);
+				const thirdIndexPath = path.join(thirdDirPath, 'index.md');
+				const thirdDisplayName = getDirectoryDisplayName(thirdDirPath, thirdDir);
+				
+				if (fs.existsSync(thirdIndexPath)) {
+					const content = fs.readFileSync(thirdIndexPath, 'utf-8');
+					const frontmatterMatch = content.match(/^---\n([\s\S]*?)\n---/);
+					
+					if (frontmatterMatch) {
+						const afterFrontmatter = content.substring(frontmatterMatch[0].length).trim();
+						
+						// 检查 frontmatter 中是否有 isHomePage: true
+						const frontmatterContent = frontmatterMatch[1];
+						const isHomePageMatch = frontmatterContent.match(/isHomePage:\s*(true|false)/);
+						const isHomePage = isHomePageMatch && isHomePageMatch[1] === 'true';
+						
+						// 检查内容中是否包含 HomePage 组件
+						const hasHomePageComponent = afterFrontmatter.includes('<HomePage');
+						
+						// 如果内容为空，或者 isHomePage 为 true 但没有 HomePage 组件，则需要生成内容
+						const needsGeneration = !afterFrontmatter || (isHomePage && !hasHomePageComponent);
+						
+						if (needsGeneration) {
+							let newContent;
+							if (isHomePage) {
+								// 如果是 HomePage，生成 HomePage 组件格式
+								// 获取该目录下的所有子目录和文件
+								const subItems = fs.readdirSync(thirdDirPath)
+									.filter(item => {
+										const itemPath = path.join(thirdDirPath, item);
+										const stat = fs.statSync(itemPath);
+										return (stat.isDirectory() || item.endsWith('.md')) && 
+											   item !== 'index.md' && 
+											   !item.startsWith('.');
+									})
+									.map(item => {
+										const itemPath = path.join(thirdDirPath, item);
+										const stat = fs.statSync(itemPath);
+										const isDir = stat.isDirectory();
+										const displayName = isDir ? getDirectoryDisplayName(itemPath, item) : getTitleFromMd(itemPath) || item.replace('.md', '');
+										const link = isDir ? `/${firstDir}/${knowledgeBase}/${thirdDir}/${item}/` : `/${firstDir}/${knowledgeBase}/${thirdDir}/${item.replace('.md', '')}`;
+										const order = isDir ? getOrderFromMd(path.join(itemPath, 'index.md')) : getOrderFromMd(itemPath);
+										
+										return {
+											displayName,
+											link,
+											order
+										};
+									})
+									.sort((a, b) => a.order - b.order);
+								
+								const pageData = {
+									hero: {
+										title: thirdDisplayName,
+										description: `欢迎来到${thirdDisplayName}！这里将带你从零开始学习编程。`
+									},
+									columns: [
+										{
+											id: "content",
+											icon: "📚",
+											title: "课程内容",
+											items: subItems
+										}
+									]
+								};
+								
+								const frontmatter = frontmatterMatch[0];
+								newContent = `${frontmatter}
+
+<script setup>
+const pageData = ${JSON.stringify(pageData, null, 2)};
+</script>
+
+<HomePage :hero="pageData.hero" :columns="pageData.columns" />
+`;
+							} else {
+								// 如果不是 HomePage，生成普通 Markdown 格式
+								const frontmatter = frontmatterMatch[0];
+								newContent = `${frontmatter}
+
+# ${thirdDisplayName}
+
+欢迎来到${thirdDisplayName}！这里将带你从零开始学习编程。
+
+## 课程内容
+
+本教程涵盖编程的基础知识，包括：
+
+- 开发环境搭建
+- Hello World程序
+- 基本语法
+- 数据类型
+- 基础运算
+- 数组与集合
+- 控制流
+- 函数与方法
+- 实践项目
+
+请从左侧目录中选择你想学习的章节开始。
+`;
+							}
+							
+							console.log(`补充内容到 ${thirdIndexPath} (isHomePage: ${isHomePage})`);
+							fs.writeFileSync(thirdIndexPath, newContent);
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	console.log('三级目录内容补充完成');
 }
 
 genIndex().catch(console.error);
