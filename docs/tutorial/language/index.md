@@ -25,8 +25,8 @@ const pageData = {
           "order": null
         },
         {
-          "displayName": "c++",
-          "link": "/tutorial/language/c++/",
+          "displayName": "cpp",
+          "link": "/tutorial/language/cpp/",
           "order": null
         },
         {
