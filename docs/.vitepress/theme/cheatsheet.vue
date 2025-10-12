@@ -197,14 +197,14 @@ onUnmounted(() => {
 .toc-list {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
+  gap: 0;
 }
 
 .toc-item {
   position: relative;
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   padding-left: 1.5rem;
   font-size: 0.8125rem;
   color: var(--vp-c-text-2);
@@ -217,12 +217,14 @@ onUnmounted(() => {
 .toc-item:hover {
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg-soft);
+  font-size: 0.875rem;
 }
 
 .toc-item.active {
   color: var(--vp-c-brand-1);
   background: var(--vp-c-bg-soft);
   font-weight: 500;
+  font-size: 0.875rem;
 }
 
 .toc-item.active .toc-indicator {
