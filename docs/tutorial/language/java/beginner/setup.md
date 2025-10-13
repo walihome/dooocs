@@ -25,20 +25,22 @@ head:
 
 ## 📥 下载 JDK
 
-### Windows 系统
+::: code-group
+```plainttext [Windows 系统]
 
 1. 打开浏览器,访问 Oracle 官网: https://www.oracle.com/java/technologies/downloads/#java17
 2. 在页面中找到 **Windows** 标签
 3. 下载 **x64 Installer** (文件名类似 `jdk-17_windows-x64_bin.exe`)
-
-### macOS 系统
+```
+```plainttext [macOS 系统]
 
 1. 访问同样的网址: https://www.oracle.com/java/technologies/downloads/#java17
 2. 在页面中找到 **macOS** 标签
 3. 根据你的 Mac 芯片类型选择:
    - **Apple Silicon(M1/M2/M3 芯片)**: 下载 **ARM64 DMG Installer**
    - **Intel 芯片**: 下载 **x64 DMG Installer**
-
+```
+::: 
 ::: warning 注意
 如果不确定你的 Mac 是什么芯片,点击屏幕左上角的苹果图标 → "关于本机",查看 "芯片" 或 "处理器" 信息。
 :::
