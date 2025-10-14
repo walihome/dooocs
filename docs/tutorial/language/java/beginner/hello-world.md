@@ -9,7 +9,7 @@ head:
     - name: keywords
       content: Java极简教程
 ---
-
+![java诞生了](https://www.dooocs.com/images/java-born.png)
  # Hello World
 
 ## 💡 什么是 Hello World
