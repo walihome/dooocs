@@ -10,8 +10,8 @@ head:
       content: Java极简教程
 ---
 
- # 开发环境搭建
 ![Java的诞生](https://www.dooocs.com/images/80FAE1EC-A6D9-4131-90CC-4B3EC32CA259.png)
+ # 开发环境搭建
 
 在开始编写 Java 程序之前,你需要先安装一个能够运行 Java 代码的程序。这就像你想看电影,需要先安装一个视频播放器一样。
 
