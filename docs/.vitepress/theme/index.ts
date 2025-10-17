@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import Cheatsheet from './cheatsheet.vue'
 import HomePage from './HomePage.vue'
+import Roadmap from './roadmap.vue'
 import Layout from './Layout.vue'
 import './custom.css'
 export default {
@@ -10,5 +11,6 @@ export default {
     // 注册全局组件
     app.component('Cheatsheet', Cheatsheet)
     app.component('HomePage', HomePage)
+    app.component('Roadmap', Roadmap)
   }
 }
