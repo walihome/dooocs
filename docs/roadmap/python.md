@@ -1,5 +1,5 @@
 ---
-title: Python 开发路线图
+title: Python 开发
 sidebar: false
 single: true
 ---

@@ -1,5 +1,5 @@
 ---
-title: 前端开发路线图
+title: 前端开发
 sidebar: false
 single: true
 ---

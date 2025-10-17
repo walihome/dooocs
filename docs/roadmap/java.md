@@ -1,5 +1,5 @@
 ---
-title: Java 开发路线图
+title: Java 开发
 sidebar: false
 single: true
 ---

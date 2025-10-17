@@ -46,15 +46,15 @@ const pageData = {
       "title": "路线图",
       "items": [
         {
-          "displayName": "前端开发路线图",
+          "displayName": "前端开发",
           "link": "/roadmap/frontend"
         },
         {
-          "displayName": "Java 开发路线图",
+          "displayName": "Java 开发",
           "link": "/roadmap/java"
         },
         {
-          "displayName": "Python 开发路线图",
+          "displayName": "Python 开发",
           "link": "/roadmap/python"
         }
       ]
@@ -62,8 +62,29 @@ const pageData = {
     {
       "id": "project",
       "icon": "📁",
-      "title": "项目",
-      "items": []
+      "title": "项目集合",
+      "items": [
+        {
+          "displayName": "入门练手",
+          "link": "/project/beginner"
+        },
+        {
+          "displayName": "进阶实战",
+          "link": "/project/advanced"
+        },
+        {
+          "displayName": "工具与脚手架",
+          "link": "/project/tools"
+        },
+        {
+          "displayName": "开源精选",
+          "link": "/project/opensource"
+        },
+        {
+          "displayName": "商业级项目",
+          "link": "/project/commercial"
+        }
+      ]
     },
     {
       "id": "rankings",
