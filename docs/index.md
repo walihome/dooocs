@@ -104,6 +104,28 @@ const pageData = {
           "link": "/rankings/编程语言/"
         }
       ]
+    },
+    {
+      "id": "venture",
+      "icon": "📁",
+      "title": "创业有道",
+      "items": [
+        {
+          "displayName": "创业搭子",
+          "link": "/venture/partners/"
+        }
+      ]
+    },
+    {
+      "id": "breathe",
+      "icon": "📁",
+      "title": "认真生活",
+      "items": [
+        {
+          "displayName": "运动搭子",
+          "link": "/breathe/partners/"
+        }
+      ]
     }
   ]
 };

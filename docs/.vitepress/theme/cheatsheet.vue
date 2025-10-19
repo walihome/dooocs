@@ -7,6 +7,7 @@ interface CheatItem {
   description?: string
   code: string
   language?: string
+  width?: 'third' | 'half' | 'full'  // 控制宽度：third=1/3, half=1/2, full=全宽，默认 third
 }
 
 interface CheatSection {
@@ -30,7 +31,7 @@ const copyToClipboard = async (text: string, key: string) => {
     copiedStates.value[key] = true
     setTimeout(() => {
       copiedStates.value[key] = false
-    }, 2000)
+    }, 3000)
   } catch (err) {
     console.error('Failed to copy:', err)
   }
@@ -108,6 +109,7 @@ onUnmounted(() => {
               v-for="(item, itemIndex) in section.items" 
               :key="itemIndex"
               class="cheat-item"
+              :class="item.width ? `width-${item.width}` : 'width-third'"
             >
               <div class="item-header">
                 <h4 class="item-title">{{ item.title }}</h4>
@@ -302,11 +304,37 @@ onUnmounted(() => {
   .items-container {
     grid-template-columns: repeat(2, 1fr);
   }
+  
+  /* 640px-1024px: 2列布局 */
+  .cheat-item.width-third {
+    grid-column: span 1;  /* 1/2 宽度 */
+  }
+  
+  .cheat-item.width-half {
+    grid-column: span 1;  /* 1/2 宽度 */
+  }
+  
+  .cheat-item.width-full {
+    grid-column: span 2;  /* 全宽 */
+  }
 }
 
 @media (min-width: 1024px) {
   .items-container {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);  /* 使用6列，便于实现1/3和1/2 */
+  }
+  
+  /* 1024px+: 使用6列grid实现精确的1/3和1/2 */
+  .cheat-item.width-third {
+    grid-column: span 2;  /* 2/6 = 1/3 宽度 */
+  }
+  
+  .cheat-item.width-half {
+    grid-column: span 3;  /* 3/6 = 1/2 宽度 */
+  }
+  
+  .cheat-item.width-full {
+    grid-column: span 6;  /* 全宽 */
   }
 }
 
@@ -321,7 +349,6 @@ onUnmounted(() => {
 .cheat-item:hover {
   border-color: var(--vp-c-brand-1);
   box-shadow: 0 2px 8px var(--vp-c-bg-soft);
-  transform: translateY(-1px);
 }
 
 .item-header {
@@ -355,6 +382,7 @@ onUnmounted(() => {
   position: relative;
   overflow: hidden;
   border-radius: 0 0 0.375rem 0.375rem;
+  background: var(--vp-c-bg-soft);
 }
 
 
@@ -393,7 +421,7 @@ onUnmounted(() => {
 
 .code-content {
   position: relative;
-  background: var(--vp-c-bg);
+  background: var(--vp-c-bg-soft);
 }
 
 .code-line-wrapper {
@@ -401,7 +429,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   transition: all 0.15s ease;
-  min-height: 2rem;
+  min-height: 1.5rem;
 }
 
 .code-line-wrapper.clickable {
@@ -410,22 +438,32 @@ onUnmounted(() => {
 
 .code-line-wrapper.clickable:hover {
   background: var(--vp-c-bg-soft);
-  box-shadow: inset 2px 0 0 0 var(--vp-c-brand-1);
+  box-shadow: inset 3px 0 0 0 var(--vp-c-brand-1);
+}
+
+.code-line-wrapper.clickable:hover .code-line {
+  color: var(--vp-c-brand-1);
 }
 
 .code-line-wrapper.clickable:active {
   background: var(--vp-c-bg-soft);
 }
 
+/* copied 状态优先级高于 hover 状态 */
 .code-line-wrapper.copied {
   background: var(--vp-c-bg-soft);
-  box-shadow: inset 2px 0 0 0 var(--vp-c-green-1);
+  box-shadow: inset 3px 0 0 0 var(--vp-c-green-1) !important;
+}
+
+.code-line-wrapper.copied .code-line {
+  color: var(--vp-c-green-1) !important;
+  transition: color 0.3s ease;
 }
 
 .code-line {
   flex: 1;
   margin: 0;
-  padding: 0.5rem 0.75rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.75rem;
   line-height: 1.5;
   color: var(--vp-c-text-1);

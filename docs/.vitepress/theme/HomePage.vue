@@ -292,7 +292,7 @@ defineProps<{
 }
 
 .home-page .hero-content {
-  max-width: 1400px;
+  max-width: 1024px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -320,12 +320,11 @@ defineProps<{
 }
 
 .home-page .content-grid {
-  max-width: 1400px;
+  max-width: 1024px;
   margin: 0 auto;
   padding: 0 2rem;
   display: flex;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  gap: 2rem;
   align-items: start;
   position: relative;
   z-index: 1;
@@ -436,7 +435,7 @@ defineProps<{
   }
   
   .home-page .content-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     gap: 2rem;
     padding: 0 1rem;
   }
@@ -477,7 +476,11 @@ defineProps<{
 
 @media (min-width: 769px) and (max-width: 1024px) {
   .home-page .content-grid {
-    grid-template-columns: repeat(2, 1fr);
+    flex-wrap: wrap;
+  }
+  
+  .home-page .column {
+    flex: 0 0 calc(50% - 0.5rem);
   }
   
   .home-page .decoration {
@@ -487,7 +490,7 @@ defineProps<{
 
 @media (min-width: 1025px) {
   .home-page .content-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
   }
 }
 

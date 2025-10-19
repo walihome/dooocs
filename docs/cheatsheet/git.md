@@ -15,32 +15,22 @@ const cheatsheetData = [
         code: `git config --global user.name "Your Name"
 git config --global user.email "email@example.com"
 git config --list          # 查看所有配置
-git config user.name       # 查看特定配置`,
-        language: 'bash'
+git config user.name       # 查看特定配置
+git config --system   # 系统级（所有用户）
+git config --global   # 用户级（当前用户）
+git config --local    # 仓库级（当前仓库，默认）`,
+        language: 'bash',
+         width: 'half' 
       },
       {
         title: '配置别名',
-        code: `git config --global alias.st status
+        code: `git config --global alias.s status
 git config --global alias.co checkout
-git config --global alias.br branch
+git config --global alias.b branch
 git config --global alias.cm commit
-git config --global alias.lg "log --oneline --graph"`,
-        language: 'bash'
-      },
-      {
-        title: '配置级别',
-        code: `git config --system   # 系统级（所有用户）
-git config --global   # 用户级（当前用户）
-git config --local    # 仓库级（当前仓库，默认）`,
-        language: 'bash'
-      },
-      {
-        title: '常用配置',
-        code: `git config --global core.editor vim
-git config --global core.autocrlf true
-git config --global pull.rebase false
-git config --global init.defaultBranch main`,
-        language: 'bash'
+`,
+        language: 'bash',
+         width: 'half' 
       }
     ]
   },
@@ -53,14 +43,16 @@ git config --global init.defaultBranch main`,
 git init project       # 创建并初始化项目目录
 git clone url          # 克隆远程仓库
 git clone url dir      # 克隆到指定目录`,
-        language: 'bash'
+        language: 'bash',
+         width: 'half' 
       },
       {
         title: '克隆选项',
         code: `git clone --depth 1 url        # 浅克隆（仅最新提交）
 git clone --branch dev url     # 克隆指定分支
 git clone --single-branch url  # 仅克隆一个分支`,
-        language: 'bash'
+        language: 'bash',
+         width: 'half' 
       }
     ]
   },
@@ -99,14 +91,16 @@ git restore --staged file.txt  # 取消暂存
 git reset HEAD~1       # 撤销最近一次提交（保留修改）
 git reset --hard HEAD~1 # 撤销提交并丢弃修改
 git revert commit-hash  # 创建新提交来撤销`,
-        language: 'bash'
+        language: 'bash',
+         width: 'half' 
       },
       {
         title: '删除文件',
         code: `git rm file.txt        # 删除文件并暂存
 git rm --cached file.txt # 仅从仓库删除（保留本地）
 git mv old.txt new.txt # 重命名文件`,
-        language: 'bash'
+        language: 'bash',
+         width: 'half' 
       }
     ]
   },
