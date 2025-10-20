@@ -168,6 +168,12 @@ async function genIndex() {
 
 		console.log(`${firstDir} 下的知识库目录: ` + secondLevelDirs);
 
+		// 如果没有二级目录，跳过索引生成（这些页面通常是手动维护的）
+		if (secondLevelDirs.length === 0) {
+			console.log(`${firstDir} 没有二级目录，跳过索引生成`);
+			continue;
+		}
+
 		// 遍历每个知识库目录（二级目录）
 		for (const knowledgeBase of secondLevelDirs) {
 			const knowledgeBasePath = path.join(firstDirPath, knowledgeBase);

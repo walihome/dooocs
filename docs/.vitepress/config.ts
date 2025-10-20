@@ -76,6 +76,20 @@ export default defineConfig({
     sitemap.pipe(writeStream)
   
     pages.forEach((page) => {
+      // 检查页面是否有实际内容（排除只有 frontmatter 的空页面）
+      const pagePath = resolve(__dirname, '..', page)
+      if (existsSync(pagePath)) {
+        const content = readFileSync(pagePath, 'utf-8')
+        // 移除 frontmatter
+        const contentWithoutFrontmatter = content.replace(/^---\n[\s\S]*?\n---\n?/, '').trim()
+        
+        // 如果移除 frontmatter 后没有内容，跳过该页面
+        if (!contentWithoutFrontmatter) {
+          console.log('Skipped empty page:', page)
+          return
+        }
+      }
+      
       // 移除开头的斜杠和 .md 扩展名
       let url = page.replace(/^\//, '').replace(/\.md$/, '')
       

@@ -250,11 +250,24 @@ directories.forEach(dir => {
     if (dir === 'public') {
         return;
     }
-    const secondLevelDirectories = getDirectories(path.join(docsPath, dir))
-    secondLevelDirectories.forEach(subDir => {
-        // 递归生成所有层级的 sidebar
-        generateAllSidebars(`${dir}/${subDir}`, `/${dir}/${subDir}/`)
-    })
+    const dirPath = path.join(docsPath, dir)
+    const secondLevelDirectories = getDirectories(dirPath)
+    
+    // 如果有二级目录，为每个二级目录生成 sidebar
+    if (secondLevelDirectories.length > 0) {
+        secondLevelDirectories.forEach(subDir => {
+            // 递归生成所有层级的 sidebar
+            generateAllSidebars(`${dir}/${subDir}`, `/${dir}/${subDir}/`)
+        })
+    } else {
+        // 如果没有二级目录，但一级目录下有内容，直接为一级目录生成 sidebar
+        const indexPath = path.join(dir, 'index.md')
+        const pageType = getPageType(indexPath)
+        // 只有当 pageType 是 doc 时才生成 sidebar
+        if (pageType === 'doc' || fs.existsSync(path.join(dirPath, 'index.md'))) {
+            sidebar[`/${dir}/`] = generateSidebar(dir, `/${dir}`)
+        }
+    }
 })
 
 export { sidebar }
