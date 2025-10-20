@@ -45,6 +45,7 @@ export default defineConfig({
     logo: '/logo.png',
     nav: [
       { text: 'Home', link: '/' },
+      { text: '关于', link: '/about' },
       { text: '聊一聊', link: 'https://chatbot.weixin.qq.com/webapp/oqZiTntQCQC6wbCGGCKWod8KybXWNF?robotName=%E5%B0%8F%E7%BD%97' }
     ],
     lastUpdated: {
@@ -60,7 +61,7 @@ export default defineConfig({
       text: 'Edit this page on GitHub'
     },
     footer: {
-      message: 'Released under the MIT License.',
+      message: 'Released under the MIT License. | <a href="/about">关于我们</a> · <a href="/contact">联系我们</a> · <a href="/privacy">隐私政策</a> · <a href="/terms">服务条款</a>',
       copyright: '<a href="https://beian.miit.gov.cn/" target="_blank">浙ICP备2022023772号</a>'
     }
   },
