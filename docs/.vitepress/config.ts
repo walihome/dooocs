@@ -6,8 +6,9 @@ import { resolve } from 'path'
 
 export default defineConfig({
   title: "极简编程",
-  description: "编程如此简单！",
+  description: "极简编程 - 提供Python、Java、JavaScript等编程语言教程、速记表、项目实战和学习路线图，让编程学习变得简单高效。适合初学者入门和进阶开发者参考。",
   
+  lang: 'zh-CN',
   ignoreDeadLinks: true,
   base: '/', 
   // 关闭 cleanUrls，保留 .html 后缀
@@ -17,6 +18,22 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
+    // 核心 SEO Meta 标签
+    ['meta', { name: 'robots', content: 'index, follow' }],
+    ['meta', { name: 'keywords', content: '编程教程,Python教程,Java教程,JavaScript教程,编程入门,编程速记表,编程项目,学习路线,极简编程' }],
+    
+    // Open Graph
+    ['meta', { property: 'og:type', content: 'website' }],
+    ['meta', { property: 'og:site_name', content: '极简编程' }],
+    ['meta', { property: 'og:image', content: 'https://www.dooocs.com/logo.png' }],
+    
+    // Twitter Card
+    ['meta', { name: 'twitter:card', content: 'summary' }],
+    
+    // Favicon
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    
+    // Google Analytics
     [
       'script',
       {
@@ -29,8 +46,8 @@ export default defineConfig({
       {},
       "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-659VJ2QMN0');",
     ],
-    ['link', {rel: 'icon', href: '/logo.png'}],
-    // ['link', { rel: 'stylesheet', href: '/custom.css' }],
+    
+    // Google AdSense
     [
       'script',
       {
@@ -77,41 +94,33 @@ export default defineConfig({
     sitemap.pipe(writeStream)
   
     pages.forEach((page) => {
-      // 检查页面是否有实际内容（排除只有 frontmatter 的空页面）
       const pagePath = resolve(__dirname, '..', page)
       if (existsSync(pagePath)) {
         const content = readFileSync(pagePath, 'utf-8')
-        // 移除 frontmatter
         const contentWithoutFrontmatter = content.replace(/^---\n[\s\S]*?\n---\n?/, '').trim()
         
-        // 如果移除 frontmatter 后没有内容，跳过该页面
         if (!contentWithoutFrontmatter) {
-          console.log('Skipped empty page:', page)
           return
         }
       }
       
-      // 移除开头的斜杠和 .md 扩展名
       let url = page.replace(/^\//, '').replace(/\.md$/, '')
       
-      // 处理 index 文件：tutorial/index -> tutorial/index.html
       if (url === 'index' || url === '') {
         url = 'index.html'
       } else if (url.endsWith('/index')) {
-        // tutorial/index -> tutorial/index.html
         url = url + '.html'
       } else {
-        // tutorial/c/beginner/setup -> tutorial/c/beginner/setup.html
         url = url + '.html'
       }
+      
+      const priority = url === 'index.html' ? 1.0 : 0.8
       
       sitemap.write({
         url: url,
         changefreq: 'weekly',
-        priority: url === 'index.html' ? 1.0 : 0.8
+        priority: priority
       })
-      
-      console.log('Added to sitemap:', url)
     })
   
     sitemap.end()
@@ -158,6 +167,60 @@ export default defineConfig({
     }
     
     return pageData;
+  },
+
+  transformHead({ pageData }) {
+    const head: any[] = []
+    const siteUrl = 'https://www.dooocs.com'
+    
+    // Canonical URL
+    let canonicalUrl = `${siteUrl}/${pageData.relativePath}`
+      .replace(/index\.md$/, '')
+      .replace(/\.md$/, '.html')
+    
+    head.push(['link', { rel: 'canonical', href: canonicalUrl }])
+    
+    // 页面标题
+    const ogTitle = pageData.frontmatter.title || pageData.title || '极简编程'
+    
+    // 页面描述：优先使用 frontmatter.description，其次用 VitePress 的 pageData.description
+    let ogDescription = pageData.frontmatter.description || pageData.description
+    
+    // 如果仍然没有，根据页面类型生成
+    if (!ogDescription) {
+      const path = pageData.relativePath
+      if (path.includes('tutorial/')) {
+        ogDescription = `${ogTitle} - 编程教程，包含基础语法、示例代码和练习题`
+      } else if (path.includes('cheatsheet/')) {
+        ogDescription = `${ogTitle} - 快速参考速记表`
+      } else if (path.includes('project/')) {
+        ogDescription = `${ogTitle} - 项目实战`
+      } else {
+        ogDescription = '极简编程 - 提供编程语言教程、速记表、项目实战和学习路线图'
+      }
+    }
+    
+    head.push(['meta', { property: 'og:url', content: canonicalUrl }])
+    head.push(['meta', { property: 'og:title', content: ogTitle }])
+    head.push(['meta', { property: 'og:description', content: ogDescription }])
+    
+    // 首页添加简单的结构化数据
+    if (pageData.relativePath === 'index.md') {
+      const jsonLd = {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: '极简编程',
+        url: siteUrl,
+        description: ogDescription
+      }
+      head.push([
+        'script',
+        { type: 'application/ld+json' },
+        JSON.stringify(jsonLd)
+      ])
+    }
+    
+    return head
   },
 
   vite: {

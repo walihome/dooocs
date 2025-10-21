@@ -307,11 +307,33 @@ async function genIndex() {
 				continue;
 			}
 
+			// 生成描述
+			const generateDescription = (dirName: string, displayName: string): string => {
+				const descMap: Record<string, string> = {
+					'language': `${displayName}编程教程，从基础语法到实战项目`,
+					'tutorial': `${displayName}完整教程，包含基础语法、数据类型、函数方法等内容`,
+					'cheatsheet': `${displayName}快速参考速记表，涵盖常用命令和语法`,
+					'project': `${displayName}项目集合，从入门到进阶实战`,
+					'roadmap': `${displayName}学习路线图`,
+					'rankings': `${displayName}技术趋势榜单`,
+					'venture': `${displayName}创业相关内容`,
+					'breathe': `${displayName}生活相关内容`
+				};
+				
+				for (const [key, desc] of Object.entries(descMap)) {
+					if (firstDir.includes(key) || dirName.includes(key)) {
+						return desc;
+					}
+				}
+				
+				return `${displayName}相关内容`;
+			};
+
 			// 准备页面数据
 			const pageData = {
 				hero: {
 					title: secondLevelDisplayName,
-					description: `${secondLevelDisplayName}的内容概览`
+					description: generateDescription(knowledgeBase, secondLevelDisplayName)
 				},
 				columns: columns.map(col => ({
 					id: col.id,
@@ -328,11 +350,13 @@ async function genIndex() {
 			}
 
 			// 根据 showList 生成不同格式的 index.md
+			const pageDescription = generateDescription(knowledgeBase, secondLevelDisplayName);
 			let indexContent;
 			if (showList) {
 				// showList: true - 使用 HomePage 格式，隐藏侧边栏，展示所有内容
 				indexContent = `---
 title: ${secondLevelDisplayName}
+description: ${pageDescription}
 order: 1
 editLink: false
 isHomePage: true
@@ -351,6 +375,7 @@ const pageData = ${JSON.stringify(pageData, null, 2)};
 				// 没有 showList - 只展示目录，保留侧边栏
 				indexContent = `---
 title: ${secondLevelDisplayName}
+description: ${pageDescription}
 order: 1
 editLink: false
 isHomePage: true
