@@ -30,7 +30,7 @@ export default defineConfig({
       "window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'G-659VJ2QMN0');",
     ],
     ['link', {rel: 'icon', href: '/logo.png'}],
-    ['link', { rel: 'stylesheet', href: '/custom.css' }],
+    // ['link', { rel: 'stylesheet', href: '/custom.css' }],
     [
       'script',
       {
