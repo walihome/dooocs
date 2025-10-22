@@ -1,13 +1,14 @@
 ---
-title: 产品交流推广
+title: 副业交流
 order: 1
+decription: 副业交流群、副业交流微信群、微信群、微信交流群、冷启产品推广
 ---
 
-# 产品交流推广
+# 副业交流
 
 可以一起聊聊做产品的踩坑和经验，也可以互相推广彼此的产品，作为冷启动阶段
 同城还可以约烧烤
 
-2025-10-21: 增加14人
+
 
 <img src="https://www.dooocs.com/images/wechat_group.jpg" alt="加微信" width="300px">
