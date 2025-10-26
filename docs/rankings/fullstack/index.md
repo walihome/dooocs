@@ -2,7 +2,6 @@
 title: 全栈开发
 order: 1
 editLink: false
-isHomePage: true
 ---
 
 <script setup>
@@ -13,23 +12,23 @@ const pageData = {
   },
   "columns": [
     {
-      "id": "个人开发者必备",
+      "id": "solo-develop",
       "icon": "📁",
       "title": "个人开发者必备",
       "items": [
         {
           "displayName": "Forum 技术趋势-20250828",
-          "link": "/rankings/全栈开发/个人开发者必备/Forum 技术趋势-20250828",
+          "link": "/rankings/fullstack/solo-develop/forum-ranking",
           "order": null
         },
         {
           "displayName": "个人开发者 技术趋势-20250830",
-          "link": "/rankings/全栈开发/个人开发者必备/个人开发者 技术趋势-20250830",
+          "link": "/rankings/fullstack/solo-develop/solo-develop-trending-2025",
           "order": null
         },
         {
           "displayName": "评论 技术趋势-20250828",
-          "link": "/rankings/全栈开发/个人开发者必备/评论 技术趋势-20250828",
+          "link": "/rankings/fullstack/solo-develop/comment-trending-2025",
           "order": null
         }
       ]

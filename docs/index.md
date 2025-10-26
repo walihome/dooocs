@@ -93,15 +93,15 @@ const pageData = {
       "items": [
         {
           "displayName": "人工智能",
-          "link": "/rankings/人工智能/"
+          "link": "/rankings/ai/"
         },
         {
           "displayName": "全栈开发",
-          "link": "/rankings/全栈开发/"
+          "link": "/rankings/fullstack/"
         },
         {
           "displayName": "编程语言",
-          "link": "/rankings/编程语言/"
+          "link": "/rankings/language/"
         }
       ]
     },

@@ -13,13 +13,13 @@ const pageData = {
   },
   "columns": [
     {
-      "id": "AI 开源趋势",
+      "id": "opensource",
       "icon": "📁",
       "title": "AI 开源趋势",
       "items": [
         {
           "displayName": "Ai 技术趋势-20250828",
-          "link": "/rankings/人工智能/AI 开源趋势/Ai 技术趋势-20250828",
+          "link": "/rankings/ai/opensource/ai-trending-2025",
           "order": null
         }
       ]

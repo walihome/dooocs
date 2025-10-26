@@ -21,7 +21,7 @@ const pageData = {
       "items": [
         {
           "displayName": "Javascript 技术趋势-20250828",
-          "link": "/rankings/编程语言/javascript/Javascript 技术趋势-20250828",
+          "link": "/rankings/language/javascript/Javascript-trending-2025",
           "order": null
         }
       ]
@@ -33,7 +33,7 @@ const pageData = {
       "items": [
         {
           "displayName": "Python 技术趋势-20250828",
-          "link": "/rankings/编程语言/python/Python 技术趋势-20250828",
+          "link": "/rankings/language/python/Python-trending-2025",
           "order": null
         }
       ]
