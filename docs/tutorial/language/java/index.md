@@ -20,6 +20,11 @@ const pageData = {
           "displayName": "Java入门教程",
           "link": "/tutorial/language/java/beginner/",
           "order": 1
+        },
+        {
+          "displayName": "Java进阶教程",
+          "link": "/tutorial/language/java/advanced/",
+          "order": 2
         }
       ]
     }
