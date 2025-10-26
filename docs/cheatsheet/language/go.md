@@ -17,7 +17,8 @@ import "fmt"
 func main() {
     fmt.Println("Hello, World!")
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -36,7 +37,8 @@ func main() {
     fmt.Scanln(&age)
     fmt.Printf("Hello, %s!\\n", name)
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '注释',
@@ -45,7 +47,8 @@ func main() {
    可以换行 */
 // Package 文档注释
 // 紧贴 package 声明上方`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -66,7 +69,8 @@ var (
     y int = 2
 )
 a, b := 1, 2`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '常量',
@@ -81,7 +85,8 @@ const (
     Monday           // 1
     Tuesday          // 2
 )`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -92,7 +97,8 @@ func example() {
         blockVar := "block"  // 块作用域
     }
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -113,7 +119,8 @@ bool
 byte  // uint8 别名
 rune  // int32 别名，表示 Unicode 码点
 string`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '复合类型',
@@ -130,7 +137,8 @@ type Person struct {
 }
 // 指针
 var p *int`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -141,7 +149,8 @@ var u uint = uint(f)
 str := strconv.Itoa(i)
 num, err := strconv.Atoi(str)
 f, err := strconv.ParseFloat("3.14", 64)`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '零值',
@@ -150,7 +159,8 @@ f, err := strconv.ParseFloat("3.14", 64)`,
 false  // bool
 ""     // string
 nil    // 指针、切片、映射、通道、函数`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -161,36 +171,42 @@ nil    // 指针、切片、映射、通道、函数`,
         title: '算术运算符',
         code: `+  -  *  /  %
 ++  --  // 只能后置`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '比较运算符',
         code: `==  !=
 >  <  >=  <=`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
         code: `&&  ||  !`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '位运算符',
         code: `&   |   ^   &^  // 与、或、异或、与非
 <<  >>              // 左移、右移`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '赋值运算符',
         code: `=  +=  -=  *=  /=  %=
 &=  |=  ^=  <<=  >>=  &^=`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '取址与解引用',
         code: `&x  // 取地址
 *p  // 解引用`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -208,7 +224,8 @@ string\`  // 原始字符串
 // s[0] = 'H'  // 错误
 
 len(s)  // 字节长度`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '字符串操作',
@@ -226,7 +243,8 @@ strings.TrimSpace(s)
 strings.Trim(s, "cutset")
 strings.TrimLeft(s, "cutset")
 strings.TrimRight(s, "cutset")`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '字符串分割与拼接',
@@ -235,7 +253,8 @@ joined := strings.Join(parts, "-")
 repeated := strings.Repeat("ab", 3)
 strings.Replace(s, "old", "new", n)
 strings.ReplaceAll(s, "old", "new")`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '字符串构建',
@@ -246,7 +265,8 @@ sb.WriteString(" World")
 result := sb.String()
 // 格式化
 s := fmt.Sprintf("Name: %s, Age: %d", name, age)`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -263,7 +283,8 @@ len(arr)  // 长度
 for i, v := range arr {
     fmt.Println(i, v)
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '切片',
@@ -281,7 +302,8 @@ cap(s)    // 容量
 sub := s[1:3]   // [1, 3)
 sub := s[:3]    // 前 3 个
 sub := s[2:]    // 从索引 2 到末尾`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '映射 (Map)',
@@ -305,7 +327,8 @@ len(m)
 for key, value := range m {
     fmt.Println(key, value)
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -325,7 +348,8 @@ for key, value := range m {
 if err := doSomething(); err != nil {
     return err
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -346,7 +370,8 @@ switch {
     default:
         fmt.Println("positive")
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -373,7 +398,8 @@ for i, v := range slice {
 for _, v := range slice {
     fmt.Println(v)
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '跳转语句',
@@ -389,7 +415,8 @@ for i := 0; i < 3; i++ {
         }
     }
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'defer',
@@ -401,7 +428,8 @@ for i := 0; i < 3; i++ {
 // 常用于资源清理
 file, err := os.Open("file.txt")
 defer file.Close()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -426,7 +454,8 @@ func divide(a, b int) (result int, err error) {
     result = a / b
     return
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '可变参数',
@@ -438,7 +467,8 @@ func divide(a, b int) (result int, err error) {
     return total
 }
 result := sum(1, 2, 3, 4, 5)`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '匿名函数与闭包',
@@ -458,7 +488,8 @@ func counter() func() int {
         return count
     }
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '高阶函数',
@@ -470,7 +501,8 @@ func multiplier(factor int) func(int) int {
         return x * factor
     }
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -487,7 +519,8 @@ func multiplier(factor int) func(int) int {
 p1 := Person{Name: "Alice", Age: 25}
 p2 := Person{"Bob", 30}
 p3 := &Person{Name: "Charlie"}`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '方法',
@@ -500,7 +533,8 @@ func (p *Person) HaveBirthday() {
 }
 p := Person{Name: "Alice", Age: 25}
 p.HaveBirthday()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '嵌入（组合）',
@@ -518,7 +552,8 @@ e := Employee{
     Salary: 5000,
 }
 fmt.Println(e.Name)  // 直接访问嵌入字段`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -538,7 +573,8 @@ type ReadWriter interface {
     Reader
     Writer
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '实现接口',
@@ -549,14 +585,16 @@ func (r MyReader) Read(p []byte) (n int, err error) {
 }
 // 隐式实现，无需声明
 var r Reader = MyReader{}`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '空接口',
         code: `// interface{} 或 any (Go 1.18+) 可以表示任何类型
 var i interface{} = "hello"
 var a any = 42`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '类型断言',
@@ -577,7 +615,8 @@ case string:
 default:
     fmt.Printf("unknown\\n")
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -594,7 +633,8 @@ if err != nil {
 import "errors"
 err := errors.New("something went wrong")
 err := fmt.Errorf("error: %s", msg)`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '自定义错误',
@@ -606,7 +646,8 @@ func (e *MyError) Error() string {
     return fmt.Sprintf("error %d: %s", e.Code, e.Message)
 }
 err := &MyError{Code: 404, Message: "Not Found"}`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '错误包装',
@@ -622,7 +663,8 @@ var pathErr *os.PathError
 if errors.As(err, &pathErr) {
     fmt.Println(pathErr.Path)
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'panic 与 recover',
@@ -639,7 +681,8 @@ func safeDivide(a, b int) (result int) {
     result = a / b
     return
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -657,7 +700,8 @@ go processData(data)
 go func(msg string) {
     fmt.Println(msg)
 }("Hello")`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'Channel',
@@ -675,7 +719,8 @@ value, ok := <-ch
 if !ok {
     fmt.Println("Channel closed")
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'Select',
@@ -689,7 +734,8 @@ case <-time.After(time.Second):
 default:
     fmt.Println("No communication")
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'WaitGroup',
@@ -703,7 +749,8 @@ for i := 0; i < 5; i++ {
     }(i)
 }
 wg.Wait()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'Mutex',
@@ -719,7 +766,8 @@ rwMu.RLock()   // 读锁
 rwMu.RUnlock()
 rwMu.Lock()    // 写锁
 rwMu.Unlock()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -742,7 +790,8 @@ scanner := bufio.NewScanner(file)
 for scanner.Scan() {
     fmt.Println(scanner.Text())
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -752,7 +801,8 @@ err := os.WriteFile("file.txt", []byte("content"), 0644)
 file, err := os.OpenFile("file.txt", os.O_APPEND|os.O_WRONLY, 0644)
 defer file.Close()
 file.WriteString("more content\\n")`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: 'JSON 操作',
@@ -763,7 +813,8 @@ jsonStr, err := json.MarshalIndent(obj, "", "  ")
 // 反序列化
 var obj MyStruct
 err := json.Unmarshal(data, &obj)`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -781,7 +832,8 @@ err := json.Unmarshal(data, &obj)`,
 }
 result := Min(1, 2)
 result := Min("a", "b")`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '泛型类型',
@@ -796,7 +848,8 @@ func (s *Stack[T]) Pop() T {
     s.items = s.items[:len(s.items)-1]
     return item
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -815,7 +868,8 @@ if err != nil {
 // 使用有意义的名称
 count := len(users)  // 好
 c := len(users)      // 不好`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '错误处理',
@@ -830,7 +884,8 @@ if err != nil {
     return err
 }
 defer file.Close()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '并发安全',
@@ -846,7 +901,8 @@ var mu sync.Mutex
 mu.Lock()
 // 访问共享资源
 mu.Unlock()`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       }
     ]
   },
@@ -883,7 +939,8 @@ func BenchmarkAdd(b *testing.B) {
         Add(2, 3)
     }
 }`,
-        language: 'go'
+        language: 'go',
+        width: 'half'
       },
       {
         title: '常用工具',

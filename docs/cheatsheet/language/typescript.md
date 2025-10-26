@@ -13,7 +13,8 @@ const cheatsheetData = [
       {
         title: 'Hello World',
         code: `console.log("Hello, World!");`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -33,7 +34,8 @@ rl.question('Enter your name: ', (answer: string) => {
   console.log(\`Hello, \${answer}\`);
   rl.close();
 });`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '注释',
@@ -44,7 +46,8 @@ rl.question('Enter your name: ', (answer: string) => {
  * @param name 用户名
  * @returns 问候语
  */`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -59,7 +62,8 @@ var oldStyle: any = 30  // 不推荐
 // 类型推导
 let x = 10  // 推导为 number
 let y = "hello"  // 推导为 string`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -74,7 +78,8 @@ function example() {
     const blockConst: string = 'const'
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -90,7 +95,8 @@ let nul: null = null
 let undef: undefined = undefined
 let sym: symbol = Symbol('id')
 let big: bigint = 123n`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '特殊类型',
@@ -98,7 +104,8 @@ let big: bigint = 123n`,
 let nothing: void = undefined
 let never: never  // 永不返回
 let unknown: unknown = 10  // 类型安全的 any`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '数组与元组',
@@ -106,7 +113,8 @@ let unknown: unknown = 10  // 类型安全的 any`,
 let arr2: Array&lt;number&gt; = [1, 2, 3]
 let tuple: [string, number] = ["age", 25]
 let tuple2: [string, number, boolean?] = ["name", 30]`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '联合与交叉类型',
@@ -116,14 +124,16 @@ let id: string | number = 123
 type A = { name: string }
 type B = { age: number }
 type C = A & B  // { name: string, age: number }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '字面量类型',
         code: `let status: "success" | "error" | "pending"
 let direction: "left" | "right" | "up" | "down"
 let port: 3000 | 8080`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '类型别名与接口',
@@ -138,7 +148,8 @@ interface IUser {
   age: number
   greet(): void
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -156,7 +167,8 @@ interface IUser {
 &&  ||  !
 // 赋值
 =  +=  -=  *=  /=  %=`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '类型相关运算符',
@@ -169,7 +181,8 @@ user.name!
 obj?.prop?.method?.()
 // 空值合并
 value ?? 'default'`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'typeof / keyof',
@@ -178,7 +191,8 @@ const user = { name: "Alice", age: 25 }
 type UserType = typeof user
 // keyof
 type UserKeys = keyof User  // "name" | "age"`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -193,7 +207,8 @@ let template: string = \`Hello, \${name}\`
 // 模板字面量类型
 type Greeting = \`Hello, \${string}\`
 type Route = \`/api/\${string}\``,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '字符串方法',
@@ -209,7 +224,8 @@ str.replace('old', 'new')
 str.toLowerCase()
 str.toUpperCase()
 str.trim()`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -223,7 +239,8 @@ let strings: Array&lt;string&gt; = ["a", "b"]
 // 只读数组
 let readonly: readonly number[] = [1, 2, 3]
 let readonly2: ReadonlyArray&lt;number&gt; = [1, 2, 3]`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '数组方法',
@@ -239,7 +256,8 @@ arr.reduce((acc, x) => acc + x, 0)
 arr.find(x => x &gt; 5)
 arr.some(x => x &gt; 5)
 arr.every(x => x &gt; 0)`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'Map 类型',
@@ -251,7 +269,8 @@ map.delete('key')
 // Record 类型
 type StringMap = Record<string, number>
 let obj: StringMap = { a: 1, b: 2 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'Set 类型',
@@ -261,7 +280,8 @@ set.has(1)
 set.delete(1)
 set.size
 for (const value of set) {}`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -278,7 +298,8 @@ for (const value of set) {}`,
   // 执行
 }
 const result = condition ? 'yes' : 'no'`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -293,7 +314,8 @@ const result = condition ? 'yes' : 'no'`,
   default:
     console.log('other')
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '循环',
@@ -302,7 +324,8 @@ for (const item of array) {}
 for (const key in object) {}
 while (condition) {}
 do {} while (condition)`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '类型守卫',
@@ -313,7 +336,8 @@ if (isString(value)) {
   // value 是 string 类型
   console.log(value.toUpperCase())
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -329,7 +353,8 @@ const multiply = (a: number, b: number): number => a * b
 const greet: (name: string) => string = (name) => {
   return \`Hello, \${name}\`
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '可选与默认参数',
@@ -340,7 +365,8 @@ const greet: (name: string) => string = (name) => {
 function log(msg: string, prefix = "INFO"): void {
   console.log(\`[\${prefix}] \${msg}\`)
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '剩余参数',
@@ -350,7 +376,8 @@ function log(msg: string, prefix = "INFO"): void {
 function format(template: string, ...args: any[]): string {
   return template
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '函数重载',
@@ -359,7 +386,8 @@ function format(value: number): string
 function format(value: string | number): string {
   return String(value)
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '泛型函数',
@@ -368,7 +396,8 @@ function format(value: string | number): string {
 }
 const result = identity&lt;string&gt;("hello")
 const result2 = identity(42)  // 类型推导`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -386,7 +415,8 @@ class Container&lt;T&gt; {
     return this.value
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '泛型约束',
@@ -400,7 +430,8 @@ function log<T extends HasLength>(arg: T): void {
 function merge<T extends object, U extends object>(a: T, b: U): T & U {
   return { ...a, ...b }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'Utility Types',
@@ -415,7 +446,8 @@ Extract&lt;T, U&gt;    // 从 T 中提取 U
 NonNullable&lt;T&gt;   // 排除 null 和 undefined
 ReturnType&lt;T&gt;    // 函数返回类型
 Parameters&lt;T&gt;    // 函数参数类型`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '条件类型',
@@ -423,7 +455,8 @@ Parameters&lt;T&gt;    // 函数参数类型`,
 type NonNullable&lt;T&gt; = T extends null | undefined ? never : T
 // 分发条件类型
 type ToArray&lt;T&gt; = T extends any ? T[] : never`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '映射类型',
@@ -436,7 +469,8 @@ type Optional&lt;T&gt; = {
 type Getters&lt;T&gt; = {
   [P in keyof T as \`get\${Capitalize<string & P>}\`]: () => T[P]
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '模板字面量类型',
@@ -447,7 +481,8 @@ type Endpoint = \`\${HttpMethod} \${Route}\`
 type Getters<T> = {
   [K in keyof T as \`get\${Capitalize<string & K>}\`]: () => T[K]
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -469,7 +504,8 @@ type Getters<T> = {
     return \`Hello, I'm \${this.name}\`
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '继承',
@@ -481,7 +517,8 @@ type Getters<T> = {
     console.log('Studying...')
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '抽象类',
@@ -496,7 +533,8 @@ class Dog extends Animal {
     console.log('Woof!')
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '接口',
@@ -510,7 +548,8 @@ class Button implements Drawable, Clickable {
   draw(): void {}
   click(): void {}
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '访问器',
@@ -523,7 +562,8 @@ class Button implements Drawable, Clickable {
     this._name = value.trim()
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '泛型类',
@@ -536,7 +576,8 @@ class Button implements Drawable, Clickable {
     return this.items.pop()
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -551,7 +592,8 @@ class Button implements Drawable, Clickable {
   })
 }
 const promise: Promise&lt;number&gt; = Promise.resolve(42)`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: 'async/await',
@@ -564,7 +606,8 @@ const promise: Promise&lt;number&gt; = Promise.resolve(42)`,
     throw new Error("Failed to fetch")
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '泛型 Promise',
@@ -573,7 +616,8 @@ const promise: Promise&lt;number&gt; = Promise.resolve(42)`,
   return response.json()
 }
 const user = await request&lt;User&gt;("/api/user")`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -591,7 +635,8 @@ const user = await request&lt;User&gt;("/api/user")`,
 } finally {
   console.log("Cleanup")
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '自定义错误',
@@ -602,7 +647,8 @@ const user = await request&lt;User&gt;("/api/user")`,
   }
 }
 throw new ValidationError("Invalid input")`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -618,7 +664,8 @@ export default class User {}
 // 导入
 import User, { PI, add } from './module'
 import * as Utils from './utils'`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '类型导入导出',
@@ -631,7 +678,8 @@ export interface IConfig {
 import type { UserType, IConfig } from './types'
 // 仅导入类型
 import { type User } from './user'`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '命名空间',
@@ -645,7 +693,8 @@ import { type User } from './user'`,
     }
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -665,7 +714,8 @@ class Greeter {
     this.greeting = message
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '方法装饰器',
@@ -683,7 +733,8 @@ class Calculator {
     return a + b
   }
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },
@@ -703,7 +754,8 @@ const colors = ['red', 'blue'] as const
 function process(value: unknown) {
   if (typeof value === 'string') {}
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '类型安全',
@@ -719,7 +771,8 @@ function process(value: unknown) {
 function isUser(obj: any): obj is User {
   return 'name' in obj && 'age' in obj
 }`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -729,7 +782,8 @@ const value = someValue as SomeType  // 谨慎使用
 // 注意可选链和空值合并
 obj?.prop  // 可能是 undefined
 obj ?? 'default'  // 只处理 null/undefined`,
-        language: 'typescript'
+        language: 'typescript',
+        width: 'half'
       }
     ]
   },

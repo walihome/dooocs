@@ -15,7 +15,8 @@ const cheatsheetData = [
         code: `<?php
 echo "Hello, World!";
 ?>`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -31,7 +32,8 @@ echo "Hello, " . $name . "!\\n";
 $name = $_POST['name'] ?? '';
 $age = $_GET['age'] ?? 0;
 ?>`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '注释',
@@ -45,7 +47,8 @@ $age = $_GET['age'] ?? 0;
  * @param string $name
  * @return string
  */`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -62,7 +65,8 @@ $isValid = true;
 // 变量变量
 $var = "name";
 $$var = "Bob";  // $name = "Bob"`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '常量',
@@ -75,7 +79,8 @@ __DIR__       // 目录
 __FUNCTION__  // 函数名
 __CLASS__     // 类名
 __METHOD__    // 方法名`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -86,7 +91,8 @@ function example() {
     static $staticVar = 0;  // 静态变量
     $staticVar++;
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -109,7 +115,8 @@ $str = 'world';
 // 布尔
 $bool = true;
 $bool = false`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '复合类型',
@@ -123,7 +130,8 @@ $obj->name = "Alice";
 $file = fopen("file.txt", "r");
 // NULL
 $null = null;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '类型声明',
@@ -139,7 +147,8 @@ class User {
     public string $name;
     public int $age;
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -152,7 +161,8 @@ class User {
 intval($value)
 floatval($value)
 strval($value)`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -163,7 +173,8 @@ strval($value)`,
         title: '算术运算符',
         code: `+  -  *  /  %  **
 ++  --`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '比较运算符',
@@ -171,7 +182,8 @@ strval($value)`,
 ===  !==          // 全等
 >  <  >=  <=
 <=>               // 太空船运算符 (PHP 7+)`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
@@ -179,19 +191,22 @@ strval($value)`,
 ||  or
 !   not
 xor`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '字符串运算符',
         code: `.          // 拼接
 .=         // 拼接赋值`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '赋值运算符',
         code: `=  +=  -=  *=  /=  %=  **=
 .=  &=  |=  ^=  <<=  >>=`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'Null 运算符',
@@ -200,7 +215,8 @@ xor`,
 $name = $_GET['name'] ?? 'default';
 // Null 安全 (PHP 8+)
 $name = $user?->profile?->name;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -221,7 +237,8 @@ $text = <<<'EOT'
 No variable
 interpolation
 EOT;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '字符串插值',
@@ -230,7 +247,8 @@ $age = 25;
 echo "Name: $name, Age: $age";
 echo "Name: {$name}, Age: {$age}";
 echo 'Name: ' . $name . ', Age: ' . $age;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '字符串函数',
@@ -248,14 +266,16 @@ str_replace('old', 'new', $str)
 str_contains($str, 'sub')  // PHP 8+
 str_starts_with($str, 'pre')  // PHP 8+
 str_ends_with($str, 'fix')  // PHP 8+`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '字符串分割与拼接',
         code: `$parts = explode(' ', $str);
 $joined = implode('-', $parts);
 $result = join(', ', $arr);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '正则表达式',
@@ -263,7 +283,8 @@ $result = join(', ', $arr);`,
 preg_match_all('/pattern/', $str, $matches);
 preg_replace('/old/', 'new', $str);
 preg_split('/\\s+/', $str);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -279,7 +300,8 @@ $person = [
     'name' => 'Alice',
     'age' => 25
 ];`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '数组操作',
@@ -291,7 +313,8 @@ array_unshift($arr, 0);
 count($arr);
 in_array(5, $arr);
 array_key_exists('key', $arr);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '数组函数',
@@ -305,7 +328,8 @@ sort($arr);
 rsort($arr);
 asort($arr);  // 保持键关联
 ksort($arr);  // 按键排序`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '遍历数组',
@@ -319,14 +343,16 @@ foreach ($arr as $key => $value) {
 foreach ($arr as &$value) {
     $value *= 2;
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '数组解构',
         description: 'PHP 7.1+',
         code: `[$a, $b] = [1, 2];
 ['name' => $name, 'age' => $age] = $person;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -344,7 +370,8 @@ foreach ($arr as &$value) {
 }
 // 三元运算符
 $result = $condition ? 'yes' : 'no';`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -359,7 +386,8 @@ $result = $condition ? 'yes' : 'no';`,
     default:
         echo "other";
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'match',
@@ -369,7 +397,8 @@ $result = $condition ? 'yes' : 'no';`,
     'error' => 'Operation failed',
     default => 'Unknown status'
 };`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -382,7 +411,8 @@ foreach ($arr as $value) {
 foreach ($arr as $key => $value) {
     echo "$key: $value";
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'while 循环',
@@ -392,7 +422,8 @@ foreach ($arr as $key => $value) {
 do {
     // 至少执行一次
 } while ($condition);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '跳转语句',
@@ -400,7 +431,8 @@ do {
 continue;    // 跳过本次
 return $value; // 返回值
 goto label;  // 跳转`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -420,7 +452,8 @@ function greet($name = "Guest") {
 function sum(int $a, int $b): int {
     return $a + $b;
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '箭头函数',
@@ -430,7 +463,8 @@ $add = fn($a, $b) => $a + $b;
 // 自动捕获外部变量
 $factor = 2;
 $multiply = fn($x) => $x * $factor;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '匿名函数',
@@ -442,7 +476,8 @@ $multiplier = 2;
 $multiply = function($x) use ($multiplier) {
     return $x * $multiplier;
 };`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '可变参数',
@@ -453,7 +488,8 @@ $result = sum(1, 2, 3, 4, 5);
 // 解包参数
 $arr = [1, 2, 3];
 sum(...$arr);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '命名参数',
@@ -466,7 +502,8 @@ createUser(
     age: 25,
     email: 'alice@example.com'
 );`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -491,7 +528,8 @@ createUser(
     }
 }
 $person = new Person("Alice", 25);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '构造器属性提升',
@@ -505,7 +543,8 @@ $person = new Person("Alice", 25);`,
 }
 $person = new Person("Alice", 25);
 echo $person->name;`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '继承',
@@ -519,7 +558,8 @@ echo $person->name;`,
         echo "Studying $this->major";
     }
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '接口与抽象类',
@@ -540,7 +580,8 @@ class Circle extends Shape implements Drawable {
         echo "Drawing circle";
     }
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'Trait',
@@ -554,7 +595,8 @@ class User {
 }
 $user = new User();
 $user->log("User created");`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '魔术方法',
@@ -567,7 +609,8 @@ $user->log("User created");`,
     public function __call($name, $args) {}
     public function __invoke() {}
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'Enum',
@@ -584,7 +627,8 @@ enum HttpStatus: int {
     case NotFound = 404;
     case ServerError = 500;
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -600,7 +644,8 @@ enum HttpStatus: int {
 } finally {
     echo "Always executed";
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '多重捕获',
@@ -610,7 +655,8 @@ enum HttpStatus: int {
 } catch (RuntimeException | InvalidArgumentException $e) {
     echo "Error: " . $e->getMessage();
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '自定义异常',
@@ -620,7 +666,8 @@ enum HttpStatus: int {
     }
 }
 throw new ValidationException("Invalid input");`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -639,7 +686,8 @@ while (($line = fgets($handle)) !== false) {
     echo $line;
 }
 fclose($handle);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -651,7 +699,8 @@ file_put_contents('file.txt', 'append', FILE_APPEND);
 $handle = fopen('file.txt', 'w');
 fwrite($handle, "Hello\\n");
 fclose($handle);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '文件系统',
@@ -664,7 +713,8 @@ unlink($file);  // 删除文件
 mkdir($dir);
 rmdir($dir);
 rename($old, $new);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'JSON 操作',
@@ -674,7 +724,8 @@ $json = json_encode($data, JSON_PRETTY_PRINT);
 // 反序列化
 $array = json_decode($json, true);
 $obj = json_decode($json);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -693,7 +744,8 @@ $_FILES['upload'];
 $_COOKIE['session'];
 $_SESSION['user'];
 $_ENV['APP_KEY'];`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '处理表单',
@@ -704,7 +756,8 @@ $_ENV['APP_KEY'];`,
         echo "Invalid email";
     }
 }`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -724,7 +777,8 @@ $user = $stmt->fetch();
 // 插入
 $stmt = $pdo->prepare('INSERT INTO users (name, email) VALUES (?, ?)');
 $stmt->execute([$name, $email]);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: 'MySQLi',
@@ -739,7 +793,8 @@ $stmt = $mysqli->prepare('SELECT * FROM users WHERE id = ?');
 $stmt->bind_param('i', $id);
 $stmt->execute();
 $result = $stmt->get_result();`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -755,7 +810,8 @@ strtotime('+1 day');
 $dt = new DateTime();
 $formatted = $dt->format('Y-m-d');
 $dt->modify('+1 day');`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '数学函数',
@@ -768,7 +824,8 @@ min($a, $b, $c);
 pow($base, $exp);
 sqrt($x);
 rand($min, $max);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '类型检查',
@@ -781,7 +838,8 @@ is_numeric($var);
 is_callable($var);
 gettype($var);
 get_class($obj);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '输出控制',
@@ -793,7 +851,8 @@ var_export($data);
 header('Content-Type: application/json');
 header('Location: /page.php');
 http_response_code(404);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },
@@ -810,7 +869,8 @@ function add(int $a, int $b): int {
 $name = $_GET['name'] ?? 'default';
 // 使用严格类型 (PHP 7+)
 declare(strict_types=1);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '安全性',
@@ -824,7 +884,8 @@ $hash = password_hash($password, PASSWORD_DEFAULT);
 password_verify($password, $hash);
 // CSRF 令牌
 $token = bin2hex(random_bytes(32));`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -839,7 +900,8 @@ $parts = [];
 $parts[] = $str1;
 $parts[] = $str2;
 $result = implode('', $parts);`,
-        language: 'php'
+        language: 'php',
+        width: 'half'
       }
     ]
   },

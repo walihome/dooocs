@@ -353,10 +353,11 @@ onUnmounted(() => {
 
 .item-header {
   position: relative;
-  padding: 0.625rem 0.75rem;
+  padding: 0.4rem 0.75rem;
   padding-right: 2.5rem;
   background: var(--vp-c-bg);
   border-bottom: 1px solid var(--vp-c-divider);
+  transition: background 0.2s ease;
 }
 
 .item-header:hover .copy-button {
@@ -367,15 +368,33 @@ onUnmounted(() => {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--vp-c-text-1);
-  margin: 0 0 0.25rem 0;
-  line-height: 1.3;
+  margin: 0;
+  line-height: 1.2;
+  transition: color 0.2s ease;
+}
+
+.item-title:not(:last-child) {
+  margin-bottom: 0.125rem;
 }
 
 .item-description {
-  font-size: 0.75rem;
+  font-size: 0.6875rem;
   color: var(--vp-c-text-2);
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+
+.cheat-item:hover .item-header {
+  background: var(--vp-c-bg-soft);
+}
+
+.cheat-item:hover .item-title {
+  color: var(--vp-c-brand-1);
+}
+
+.cheat-item:hover .item-description {
+  color: var(--vp-c-brand-1);
 }
 
 .code-wrapper {

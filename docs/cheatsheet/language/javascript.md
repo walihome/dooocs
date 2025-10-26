@@ -13,7 +13,8 @@ const cheatsheetData = [
       {
         title: 'Hello World',
         code: `console.log("Hello, World!");`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -33,7 +34,8 @@ rl.question('Enter your name: ', (answer) => {
   console.log(\`Hello, \${answer}\`);
   rl.close();
 });`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '注释',
@@ -45,7 +47,8 @@ rl.question('Enter your name: ', (answer) => {
  * @param {string} name
  * @returns {string}
  */`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -57,7 +60,8 @@ rl.question('Enter your name: ', (answer) => {
         code: `let mutable = 10       // 可变
 const immutable = 20   // 不可变
 var oldStyle = 30      // 不推荐（函数作用域）`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -72,7 +76,8 @@ function example() {
     const blockConst = 'block'
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '类型推断',
@@ -80,7 +85,8 @@ function example() {
         code: `let x = 10          // number
 x = "hello"         // 可以改变类型
 const arr = [1, 2]  // Array`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -97,7 +103,8 @@ let nul = null                  // null
 let undef = undefined           // undefined
 let sym = Symbol('id')          // symbol (ES6)
 let big = 123n                  // bigint (ES2020)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '复合类型',
@@ -111,7 +118,8 @@ const func = function() {}
 const date = new Date()
 // RegExp
 const regex = /pattern/g`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -127,7 +135,8 @@ String(42)
 // 转布尔
 Boolean(1)
 !!value`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '类型检查',
@@ -137,7 +146,8 @@ value instanceof Class
 Object.prototype.toString.call(value)
 Number.isNaN(value)
 Number.isFinite(value)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -149,14 +159,16 @@ Number.isFinite(value)`,
         code: `+ - * / %    // 加减乘除取模
 **               // 幂运算 (ES2016)
 ++  --           // 自增自减`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '比较运算符',
         code: `==  !=           // 相等（类型转换）
 === !==          // 严格相等
 >  <  >=  <=     // 大小比较`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
@@ -165,13 +177,15 @@ Number.isFinite(value)`,
 ?.               // 可选链 (ES2020)
 value ?? 'default'
 obj?.prop?.method?.()`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '位运算符',
         code: `&  |  ^  ~       // 按位与或异或非
 <<  >>  >>>      // 左移、右移、无符号右移`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '赋值运算符',
@@ -179,7 +193,8 @@ obj?.prop?.method?.()`,
 **=  &=  |=  ^=
 <<=  >>=  >>>=
 &&=  ||=  ??=    // 逻辑赋值 (ES2021)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '其他运算符',
@@ -188,7 +203,8 @@ obj?.prop?.method?.()`,
 ?:  // 三元运算符
 in  // 属性检查
 delete // 删除属性`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -201,7 +217,8 @@ delete // 删除属性`,
 const str2 = "double quotes"
 const str3 = \`template literal\`
 const str4 = String(123)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '模板字符串',
@@ -211,7 +228,8 @@ const msg = \`Hello, \${name}! Age: \${age}\`
 const multi = \`Line 1
 Line 2
 Line 3\``,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '字符串方法',
@@ -224,7 +242,8 @@ str.lastIndexOf('sub')
 str.includes('sub')
 str.startsWith('pre')
 str.endsWith('suf')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '字符串操作',
@@ -239,7 +258,8 @@ str.trimStart()
 str.trimEnd()
 str.padStart(10, '0')
 str.padEnd(10, ' ')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '大小写与替换',
@@ -247,7 +267,8 @@ str.padEnd(10, ' ')`,
 str.toUpperCase()
 str.replace('old', 'new')
 str.replaceAll('old', 'new')  // ES2021`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '正则表达式',
@@ -258,7 +279,8 @@ str.search(/pattern/)
 str.replace(/old/g, 'new')
 regex.test(str)
 regex.exec(str)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -271,7 +293,8 @@ regex.exec(str)`,
 const arr2 = new Array(5)
 const arr3 = Array.of(1, 2, 3)
 const arr4 = Array.from('hello')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '数组方法',
@@ -285,7 +308,8 @@ arr.concat(arr2)
 arr.join('-')
 arr.reverse()
 arr.sort()`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '数组迭代',
@@ -297,7 +321,8 @@ arr.find(x => x > 5)
 arr.findIndex(x => x > 5)
 arr.some(x => x > 5)
 arr.every(x => x > 0)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Map 映射',
@@ -309,7 +334,8 @@ map.delete('key')
 map.size
 map.clear()
 for (const [key, value] of map) {}`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Set 集合',
@@ -320,7 +346,8 @@ set.delete(1)
 set.size
 set.clear()
 for (const value of set) {}`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'WeakMap 与 WeakSet',
@@ -330,7 +357,8 @@ const ws = new WeakSet()
 const obj = {}
 wm.set(obj, 'value')
 ws.add(obj)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -348,7 +376,8 @@ ws.add(obj)`,
 }
 // 三元运算符
 const result = condition ? 'yes' : 'no'`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -363,7 +392,8 @@ const result = condition ? 'yes' : 'no'`,
   default:
     console.log('other')
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -376,7 +406,8 @@ for (const item of array) {
 for (const key in object) {
   console.log(key, object[key])
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'while 循环',
@@ -386,7 +417,8 @@ for (const key in object) {
 do {
   // 至少执行一次
 } while (condition)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '跳转语句',
@@ -399,7 +431,8 @@ outer: for (let i = 0; i < 3; i++) {
     if (i === 1 && j === 1) break outer
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -421,7 +454,8 @@ const greet = function(name) {
 // 箭头函数
 const greet = (name) => \`Hello, \${name}\`
 const square = x => x * x`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '参数',
@@ -433,7 +467,8 @@ function sum(...nums) {
 }
 // 解构参数
 function print({name, age}) {}`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '高阶函数',
@@ -445,7 +480,8 @@ function apply(fn, value) {
 function multiplier(factor) {
   return x => x * factor
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '闭包',
@@ -459,7 +495,8 @@ function multiplier(factor) {
 }
 const c = counter()
 c.increment()`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '递归',
@@ -471,7 +508,8 @@ function fibonacci(n) {
   if (n <= 1) return n
   return fibonacci(n - 1) + fibonacci(n - 2)
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -491,7 +529,8 @@ function fibonacci(n) {
   
   static species = 'Homo sapiens'
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '继承',
@@ -504,7 +543,8 @@ function fibonacci(n) {
     console.log(\`\${this.name} is studying\`)
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '私有字段',
@@ -518,7 +558,8 @@ function fibonacci(n) {
     return this.#balance
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Getter 和 Setter',
@@ -533,7 +574,8 @@ function fibonacci(n) {
     this._radius = value
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '原型',
@@ -545,7 +587,8 @@ Person.prototype.greet = function() {
 }
 
 const p = new Person('Alice')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -565,7 +608,8 @@ promise
   .then(data => console.log(data))
   .catch(error => console.error(error))
   .finally(() => console.log('Done'))`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'async/await',
@@ -578,7 +622,8 @@ promise
     console.error(error)
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Promise 方法',
@@ -586,7 +631,8 @@ promise
 Promise.allSettled([p1, p2])   // 全部结束
 Promise.race([p1, p2])         // 最快完成
 Promise.any([p1, p2])          // 任一成功`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '定时器',
@@ -594,7 +640,8 @@ Promise.any([p1, p2])          // 任一成功`,
 setInterval(() => {}, 1000)
 clearTimeout(timerId)
 clearInterval(intervalId)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -611,7 +658,8 @@ clearInterval(intervalId)`,
 } finally {
   console.log('Cleanup')
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '错误类型',
@@ -621,7 +669,8 @@ ReferenceError
 TypeError
 RangeError
 URIError`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '自定义错误',
@@ -632,7 +681,8 @@ URIError`,
   }
 }
 throw new ValidationError('Invalid input')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -650,7 +700,8 @@ import User from './user.js'
 import { PI, add } from './math.js'
 import * as Math from './math.js'
 import { add as sum } from './math.js'`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'CommonJS',
@@ -660,7 +711,8 @@ exports.PI = 3.14
 // 导入
 const { add } = require('./math')
 const math = require('./math')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '动态导入',
@@ -669,7 +721,8 @@ const module = await import('./module.js')
 import('./module.js').then(module => {
   module.doSomething()
 })`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -688,7 +741,8 @@ fs.readFile('file.txt', 'utf8', (err, data) => {
 })
 // Promise API
 const data = await fs.promises.readFile('file.txt', 'utf8')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '文件写入',
@@ -700,7 +754,8 @@ fs.writeFile('file.txt', 'content', err => {
 })
 // 追加
 fs.appendFileSync('file.txt', 'more content')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '路径处理',
@@ -710,7 +765,8 @@ path.resolve('file.txt')
 path.dirname('/path/to/file.txt')
 path.basename('/path/to/file.txt')
 path.extname('file.txt')`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -722,7 +778,8 @@ path.extname('file.txt')`,
         code: `JSON.stringify(obj)
 JSON.stringify(obj, null, 2)  // 格式化
 JSON.parse(jsonString)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Math',
@@ -735,7 +792,8 @@ Math.min(1, 2, 3)
 Math.abs(-5)
 Math.pow(2, 3)
 Math.sqrt(16)`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Date',
@@ -748,7 +806,8 @@ date.getDay()    // 0-6
 date.getTime()
 date.toISOString()
 date.toLocaleDateString()`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: 'Console',
@@ -759,7 +818,8 @@ console.table(array)
 console.time('label')
 console.timeEnd('label')
 console.trace()`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },
@@ -777,7 +837,8 @@ if (value === 42) {}
 const fn = (x) => x * 2
 // 使用模板字符串
 const msg = \`Hello, \${name}\``,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '性能优化',
@@ -791,7 +852,8 @@ function debounce(fn, delay) {
     timer = setTimeout(() => fn(...args), delay)
   }
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -806,7 +868,8 @@ fn()  // this 指向 window/undefined
 for (var i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 0)  // 输出 3,3,3
 }`,
-        language: 'javascript'
+        language: 'javascript',
+        width: 'half'
       }
     ]
   },

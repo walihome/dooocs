@@ -18,7 +18,8 @@ int main() {
     cout << "Hello, World!" << endl;
     return 0;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -39,7 +40,8 @@ int main() {
     cout << "Hello, " << name << "!" << endl;
     return 0;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '注释',
@@ -50,7 +52,8 @@ int main() {
  * @param x 参数说明
  * @return 返回值说明
  */`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -65,7 +68,8 @@ const int MAX = 100;
 constexpr int SIZE = 50;
 int& ref = x;          // 引用
 const int* ptr = &x;   // 指针`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '引用',
@@ -76,7 +80,8 @@ ref = 20;  // x 也变为 20
 const int& cref = x;
 // 右值引用 (C++11)
 int&& rref = 10;`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -88,7 +93,8 @@ int main() {
     }
     static int staticVar = 0;  // 静态
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -108,7 +114,8 @@ char wchar_t char16_t char32_t  // C++11
 bool
 // 空类型
 void`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'STL 容器',
@@ -120,7 +127,8 @@ vector<int> v;
 string s;
 map<string, int> m;
 set<int> st;`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -131,7 +139,8 @@ static_cast<int>(3.14)
 dynamic_cast<Derived*>(base)
 const_cast<int*>(const_ptr)
 reinterpret_cast<int*>(ptr)`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'auto 与 decltype',
@@ -140,7 +149,8 @@ reinterpret_cast<int*>(ptr)`,
 auto s = "hello"s;  // string
 auto vec = vector<int>{1, 2, 3};
 decltype(x) y = 20;  // y 的类型与 x 相同`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -159,14 +169,16 @@ decltype(x) y = 20;  // y 的类型与 x 相同`,
 &  |  ^  ~  <<  >>
 // 赋值
 =  +=  -=  *=  /=  %=  &=  |=  ^=  <<=  >>=`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '作用域运算符',
         code: `::         // 全局作用域
 class::    // 类作用域
 namespace::  // 命名空间`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '成员访问',
@@ -174,7 +186,8 @@ namespace::  // 命名空间`,
 ->         // 指针成员
 .*         // 成员指针
 ->*        // 成员指针`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '其他运算符',
@@ -182,7 +195,8 @@ namespace::  // 命名空间`,
 typeid()   // 类型信息
 new delete // 内存管理
 ?:         // 三元运算符`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -201,7 +215,8 @@ s.empty();
 s.clear();
 s[0] = 'h';
 s.at(0) = 'h';`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '字符串方法',
@@ -214,7 +229,8 @@ s.replace(0, 5, "Hi");
 s.insert(5, "text");
 s.erase(0, 5);
 s.c_str();  // 转 C 字符串`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '字符串转换',
@@ -226,7 +242,8 @@ stoi("42");
 stol("1000");
 stof("3.14");
 stod("3.14159");`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '字符串流',
@@ -238,7 +255,8 @@ string result = ss.str();
 ss.str("10 20 30");
 int a, b, c;
 ss >> a >> b >> c;`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -260,7 +278,8 @@ v.front();
 v.back();
 v.insert(v.begin(), 5);
 v.erase(v.begin());`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'map',
@@ -276,7 +295,8 @@ m.erase("key");
 for (auto& [key, value] : m) {  // C++17
     cout << key << ": " << value << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'set',
@@ -290,7 +310,8 @@ s.erase(10);
 for (int x : s) {
     cout << x << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'unordered_map/set',
@@ -300,7 +321,8 @@ for (int x : s) {
 unordered_map<string, int> umap;
 unordered_set<int> uset;
 // 用法同 map/set，但无序，性能更好`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'deque & list',
@@ -312,7 +334,8 @@ dq.push_back(2);
 list<int> lst;
 lst.push_front(1);
 lst.push_back(2);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -328,7 +351,8 @@ auto it = find(v.begin(), v.end(), 5);
 binary_search(v.begin(), v.end(), 5);
 lower_bound(v.begin(), v.end(), 5);
 upper_bound(v.begin(), v.end(), 5);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '变换与过滤',
@@ -340,7 +364,8 @@ transform(v.begin(), v.end(), result.begin(),
 vector<int> evens;
 copy_if(v.begin(), v.end(), back_inserter(evens),
     [](int x) { return x % 2 == 0; });`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '累积与计数',
@@ -349,7 +374,8 @@ int sum = accumulate(v.begin(), v.end(), 0);
 int product = accumulate(v.begin(), v.end(), 1, multiplies<int>());
 int cnt = count(v.begin(), v.end(), 5);
 int cnt = count_if(v.begin(), v.end(), [](int x) { return x &gt; 10; });`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '其他算法',
@@ -358,7 +384,8 @@ rotate(v.begin(), v.begin() + 2, v.end());
 unique(v.begin(), v.end());  // 需先排序
 int minVal = *min_element(v.begin(), v.end());
 int maxVal = *max_element(v.begin(), v.end());`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -378,7 +405,8 @@ int maxVal = *max_element(v.begin(), v.end());`,
 if (auto it = m.find("key"); it != m.end()) {
     cout << it->second << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -393,7 +421,8 @@ if (auto it = m.find("key"); it != m.end()) {
     default:
         cout << "other" << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '循环',
@@ -403,7 +432,8 @@ for (auto& item : vec) {}
 for (const auto& [key, value] : map) {}  // C++17
 while (condition) {}
 do {} while (condition);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -423,7 +453,8 @@ void greet(string name = "Guest") {
 inline int square(int x) {
     return x * x;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'Lambda 表达式',
@@ -434,7 +465,8 @@ auto captureByValue = [x]() { return x; };
 auto captureByRef = [&x]() { x++; };
 auto captureAll = [=]() { /* 值捕获所有 */ };
 auto captureAllRef = [&]() { /* 引用捕获所有 */ };`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '函数模板',
@@ -444,7 +476,8 @@ T max(T a, T b) {
 }
 auto result = max(10, 20);
 auto result = max(3.14, 2.71);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '可变参数模板',
@@ -454,7 +487,8 @@ void print(Args... args) {
     (cout << ... << args) << endl;  // C++17 折叠表达式
 }
 print(1, 2, 3, "hello");`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -475,7 +509,8 @@ public:
     int getAge() const { return age; }
     static int count;
 };`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '继承',
@@ -489,7 +524,8 @@ public:
         cout << "Studying " << major << endl;
     }
 };`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '虚函数与多态',
@@ -506,7 +542,8 @@ public:
         cout << "Woof!" << endl;
     }
 };`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '运算符重载',
@@ -521,7 +558,8 @@ public:
         return os;
     }
 };`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -536,7 +574,8 @@ unique_ptr<int> ptr = make_unique<int>(10);
 *ptr = 20;
 unique_ptr<vector<int>> v = make_unique<vector<int>>();
 v->push_back(1);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'shared_ptr',
@@ -545,7 +584,8 @@ v->push_back(1);`,
 shared_ptr<int> ptr2 = ptr1;  // 引用计数增加
 ptr1.use_count();  // 2
 ptr1.reset();      // 释放`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'weak_ptr',
@@ -555,7 +595,8 @@ weak_ptr<int> wptr = sptr;
 if (auto ptr = wptr.lock()) {
     // 使用 ptr
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -573,7 +614,8 @@ if (auto ptr = wptr.lock()) {
 } catch (...) {
     cerr << "Unknown exception" << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '自定义异常',
@@ -586,7 +628,8 @@ public:
     }
 };
 throw ValidationError("Invalid input");`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -605,7 +648,8 @@ while (getline(file, line)) {
     cout << line << endl;
 }
 file.close();`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -613,7 +657,8 @@ file.close();`,
 file << "Hello World" << endl;
 file << "Value: " << 42 << endl;
 file.close();`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -628,7 +673,8 @@ map<string, int> m;
 for (auto [key, value] : m) {
     cout << key << ": " << value << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'optional',
@@ -642,7 +688,8 @@ optional<int> find(vector<int>& v, int target) {
 if (auto result = find(v, 5)) {
     cout << *result << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'variant',
@@ -654,7 +701,8 @@ v = "hello";
 if (holds_alternative<int>(v)) {
     cout << get<int>(v) << endl;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: 'Concepts',
@@ -665,7 +713,8 @@ template<Numeric T>
 T add(T a, T b) {
     return a + b;
 }`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },
@@ -682,7 +731,8 @@ for (const auto& item : vec) {}
 auto ptr = make_unique<int>(10);
 // 使用 const
 void func(const string& s);`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '性能优化',
@@ -694,7 +744,8 @@ vector<int> v;
 v.reserve(1000);
 // 使用 emplace
 v.emplace_back(1, 2, 3);  // 原地构造`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -706,7 +757,8 @@ ptr = nullptr;
 // 实现深拷贝构造函数和赋值运算符
 // 避免内存泄漏
 // 使用智能指针`,
-        language: 'cpp'
+        language: 'cpp',
+        width: 'half'
       }
     ]
   },

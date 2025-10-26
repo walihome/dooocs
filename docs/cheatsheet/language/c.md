@@ -17,7 +17,8 @@ int main() {
     printf("Hello, World!\\n");
     return 0;
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -36,14 +37,16 @@ int main() {
     printf("Hello, %s!\\n", name);
     return 0;
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '注释',
         code: `// 单行注释 (C99+)
 /* 多行注释
    可以换行 */`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -59,7 +62,8 @@ const int MAX = 100;
 // 多变量声明
 int a, b, c;
 int x = 1, y = 2;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -71,7 +75,8 @@ void function() {
     }
 }
 static int file_var = 0;  // 文件作用域`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '存储类',
@@ -79,7 +84,8 @@ static int file_var = 0;  // 文件作用域`,
 static int y = 20;   // 静态变量
 extern int z;        // 外部变量
 register int i;      // 寄存器变量（建议）`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -104,7 +110,8 @@ long double     // 10/16 bytes
 // 其他
 _Bool           // C99+
 void`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '类型修饰符',
@@ -113,7 +120,8 @@ unsigned int
 short int
 long int
 long long int`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -124,7 +132,8 @@ double d = i;
 double d = 3.14;
 int i = (int)d;
 float f = (float)10 / 3;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'typedef',
@@ -135,7 +144,8 @@ typedef struct {
 } Point;
 uint count = 10;
 Point p = {1, 2};`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -146,30 +156,35 @@ Point p = {1, 2};`,
         title: '算术运算符',
         code: `+  -  *  /  %
 ++  --`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '比较运算符',
         code: `==  !=
 >  <  >=  <=`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
         code: `&&  ||  !`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '位运算符',
         code: `&   |   ^   ~
 <<  >>`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '赋值运算符',
         code: `=  +=  -=  *=  /=  %=
 &=  |=  ^=  <<=  >>=`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '其他运算符',
@@ -178,7 +193,8 @@ Point p = {1, 2};`,
 *pointer         // 解引用
 condition ? a : b  // 三元运算符
 (type)value      // 类型转换`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -192,7 +208,8 @@ int *p = &x;     // 指向 x 的指针
 *p = 20;         // 修改 x 的值
 printf("%p\\n", p);   // 打印地址
 printf("%d\\n", *p);  // 打印值`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '指针运算',
@@ -202,7 +219,8 @@ p++;           // 指向下一个元素
 p--;           // 指向上一个元素
 *(p + 2)       // 访问偏移元素
 p[2]           // 等价于 *(p + 2)`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '指针与数组',
@@ -211,7 +229,8 @@ int *p = arr;
 arr[0] == *p
 arr[1] == *(p + 1)
 arr[i] == *(p + i)`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '函数指针',
@@ -220,7 +239,8 @@ arr[i] == *(p + i)`,
 }
 int (*func_ptr)(int, int) = add;
 int result = func_ptr(2, 3);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -237,7 +257,8 @@ arr[0] = 10;
 int val = arr[2];
 // 数组长度
 int len = sizeof(arr) / sizeof(arr[0]);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '多维数组',
@@ -247,7 +268,8 @@ int len = sizeof(arr) / sizeof(arr[0]);`,
     {9, 10, 11, 12}
 };
 matrix[1][2] = 100;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '遍历数组',
@@ -259,7 +281,8 @@ int *p = arr;
 for (int i = 0; i < 5; i++) {
     printf("%d\\n", *(p + i));
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -273,7 +296,8 @@ char str2[20] = "World";
 char *str3 = "Constant";  // 字符串字面量
 // 字符串以 '\\0' 结尾
 char str[6] = {'H', 'e', 'l', 'l', 'o', '\\0'};`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '字符串函数',
@@ -287,7 +311,8 @@ strcmp(str1, str2)       // 比较
 strncmp(str1, str2, n)   // 比较 n 个字符
 strchr(str, ch)          // 查找字符
 strstr(str, sub)         // 查找子串`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '字符串输入输出',
@@ -298,7 +323,8 @@ fgets(str, 100, stdin);  // 读取一行
 // 输出
 printf("%s\\n", str);
 puts(str);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '字符串格式化',
@@ -306,7 +332,8 @@ puts(str);`,
 sprintf(buffer, "Name: %s, Age: %d", name, age);
 // 安全版本 (C11+)
 snprintf(buffer, sizeof(buffer), "Value: %d", value);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -322,7 +349,8 @@ snprintf(buffer, sizeof(buffer), "Value: %d", value);`,
 } else {
     // 执行
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -337,7 +365,8 @@ snprintf(buffer, sizeof(buffer), "Value: %d", value);`,
     default:
         printf("other\\n");
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -348,7 +377,8 @@ snprintf(buffer, sizeof(buffer), "Value: %d", value);`,
 for (int i = 0, j = 10; i < j; i++, j--) {
     printf("%d %d\\n", i, j);
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'while 循环',
@@ -358,7 +388,8 @@ for (int i = 0, j = 10; i < j; i++, j--) {
 do {
     // 至少执行一次
 } while (condition);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '跳转语句',
@@ -368,7 +399,8 @@ return value; // 返回值
 goto label;  // 跳转到标签
 label:
     // 代码`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -385,7 +417,8 @@ void greet(char *name) {
 }
 // 函数声明（原型）
 int add(int a, int b);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '函数参数',
@@ -400,7 +433,8 @@ void func(int *x) {
 // 数组参数
 void func(int arr[], int size) {}
 void func(int *arr, int size) {}  // 等价`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '递归',
@@ -412,7 +446,8 @@ int fibonacci(int n) {
     if (n <= 1) return n;
     return fibonacci(n - 1) + fibonacci(n - 2);
 }`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -430,7 +465,8 @@ int fibonacci(int n) {
 struct Person p1 = {"Alice", 25, 1.65};
 struct Person p2;
 p2.age = 30;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'typedef',
@@ -440,7 +476,8 @@ p2.age = 30;`,
 } Person;
 // 使用
 Person p = {"Bob", 30};`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '结构体指针',
@@ -449,7 +486,8 @@ Person p = {"Bob", 30};`,
 p->age = 25;
 (*p).age = 25;  // 等价
 free(p);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '嵌套结构体',
@@ -464,7 +502,8 @@ typedef struct {
 } Person;
 Person p;
 strcpy(p.address.city, "Beijing");`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -484,7 +523,8 @@ ptr[0] = 100;
 // 释放
 free(ptr);
 ptr = NULL;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'calloc 与 realloc',
@@ -493,7 +533,8 @@ int *arr = (int*)calloc(10, sizeof(int));
 // realloc - 重新分配
 arr = (int*)realloc(arr, sizeof(int) * 20);
 free(arr);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '内存操作',
@@ -502,7 +543,8 @@ free(arr);`,
 void *memmove(void *dest, const void *src, size_t n);
 void *memset(void *s, int c, size_t n);
 int memcmp(const void *s1, const void *s2, size_t n);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -524,7 +566,8 @@ fclose(fp);
 "r+" - 读写
 "w+" - 读写（覆盖）
 "rb" - 二进制读`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '读取文件',
@@ -542,7 +585,8 @@ while ((ch = fgetc(fp)) != EOF) {
 fscanf(fp, "%s %d", name, &age);
 // 读取二进制
 fread(data, sizeof(int), count, fp);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -553,7 +597,8 @@ fputc('A', fp);
 // 写入二进制
 fwrite(data, sizeof(int), count, fp);
 fclose(fp);`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -571,7 +616,8 @@ __FILE__    // 文件名
 __LINE__    // 行号
 __DATE__    // 编译日期
 __TIME__    // 编译时间`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '条件编译',
@@ -587,13 +633,15 @@ __TIME__    // 编译时间`,
 #elif defined(__linux__)
     // Linux 代码
 #endif`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '#include',
         code: `#include <stdio.h>     // 系统头文件
 #include "myheader.h"  // 用户头文件`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -606,7 +654,8 @@ __TIME__    // 编译时间`,
 fopen()  fclose()  fread()  fwrite()
 fgets()  fputs()  fgetc()  fputc()
 fprintf()  fscanf()`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'stdlib.h',
@@ -615,7 +664,8 @@ atoi()  atof()  atol()
 rand()  srand()
 system()  exit()  abort()
 qsort()  bsearch()`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'string.h',
@@ -623,7 +673,8 @@ qsort()  bsearch()`,
 strncpy()  strncat()  strncmp()
 strchr()  strstr()  strtok()
 memcpy()  memmove()  memset()  memcmp()`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'math.h',
@@ -633,14 +684,16 @@ sin()  cos()  tan()
 log()  log10()  exp()
 // 编译时需要链接 -lm
 gcc main.c -lm`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: 'ctype.h',
         code: `isdigit()  isalpha()  isalnum()
 isupper()  islower()  isspace()
 toupper()  tolower()`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },
@@ -659,7 +712,8 @@ if (ptr == NULL) {
 // 初始化变量
 int x = 0;
 int *p = NULL;`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '内存管理',
@@ -673,7 +727,8 @@ free(ptr);
 ptr = NULL;
 // 避免内存泄漏
 // 避免野指针`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -686,7 +741,8 @@ char str[5] = {'H', 'e', 'l', 'l', 'o'};  // 缺少 '\\0'
 int *p = malloc(sizeof(int));
 free(p);
 *p = 10;  // 错误`,
-        language: 'c'
+        language: 'c',
+        width: 'half'
       }
     ]
   },

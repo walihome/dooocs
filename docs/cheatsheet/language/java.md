@@ -17,7 +17,8 @@ const cheatsheetData = [
         System.out.println("Hello, World!");
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -38,7 +39,8 @@ public class Main {
         scanner.close();
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '注释',
@@ -50,7 +52,8 @@ public class Main {
  * @param name 参数说明
  * @return 返回值说明
  */`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -65,7 +68,8 @@ final double PI = 3.14;
 // Java 10+ var 类型推导
 var message = "Hello";
 var count = 100;`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -79,7 +83,8 @@ var count = 100;`,
         }
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -99,7 +104,8 @@ double d = 3.14159;     // 64-bit
 // 其他
 boolean bool = true;
 char c = 'A';           // 16-bit Unicode`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '引用类型',
@@ -107,7 +113,8 @@ char c = 'A';           // 16-bit Unicode`,
 Integer num = 100;
 int[] arr = {1, 2, 3};
 List<String> list = new ArrayList<>();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -120,7 +127,8 @@ int i = (int) d;
 // 包装类转换
 String str = String.valueOf(42);
 int num = Integer.parseInt("42");`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '泛型',
@@ -132,7 +140,8 @@ class Box<T> {
     public void set(T value) { this.value = value; }
     public T get() { return value; }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -143,38 +152,44 @@ class Box<T> {
         title: '算术运算符',
         code: `+  -  *  /  %    // 加减乘除取模
 ++  --           // 自增自减`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '比较运算符',
         code: `==  !=           // 相等、不等
 >  <  >=  <=     // 大小比较
 instanceof       // 类型检查`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
         code: `&&  ||  !        // 逻辑与、或、非
 &  |             // 位逻辑与、或`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '位运算符',
         code: `&  |  ^  ~       // 按位与、或、异或、非
 <<  >>  >>>      // 左移、右移、无符号右移`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '赋值运算符',
         code: `=  +=  -=  *=  /=  %=
 &=  |=  ^=  <<=  >>=  >>>=`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '三元运算符',
         code: `int max = (a > b) ? a : b;
 String result = (valid) ? "yes" : "no";`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -186,7 +201,8 @@ String result = (valid) ? "yes" : "no";`,
         code: `String str = "hello";
 String str2 = new String("world");
 String str3 = String.format("Age: %d", 25);`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '字符串方法',
@@ -205,7 +221,8 @@ str.trim()
 str.strip()  // Java 11+
 str.isEmpty()
 str.isBlank()  // Java 11+`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '字符串拼接',
@@ -219,7 +236,8 @@ String result = String.join("-", "a", "b", "c");
 StringBuilder sb = new StringBuilder();
 sb.append("Hello").append(" ").append("World");
 String result = sb.toString();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '文本块',
@@ -231,7 +249,8 @@ String result = sb.toString();`,
         </body>
     </html>
     """;`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -253,7 +272,8 @@ list.size();
 list.isEmpty();
 list.contains("item");
 list.clear();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Set',
@@ -265,7 +285,8 @@ set.remove("item");
 set.contains("item");
 set.size();
 set.isEmpty();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Map',
@@ -282,7 +303,8 @@ map.isEmpty();
 map.keySet();
 map.values();
 map.entrySet();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Queue & Deque',
@@ -295,7 +317,8 @@ deque.offerFirst(1);
 deque.offerLast(2);
 deque.pollFirst();
 deque.pollLast();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -311,7 +334,8 @@ deque.pollLast();`,
 } else {
     // 执行
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'switch',
@@ -334,7 +358,8 @@ String result = switch (day) {
     case SATURDAY, SUNDAY -> "Weekend";
     default -> "Midweek";
 };`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -346,7 +371,8 @@ for (int i = 0; i < 10; i++) {
 for (String item : list) {
     System.out.println(item);
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'while 循环',
@@ -356,14 +382,16 @@ for (String item : list) {
 do {
     // 至少执行一次
 } while (condition);`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '跳转语句',
         code: `break;       // 退出循环
 continue;    // 跳过本次
 return value; // 返回值`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -384,7 +412,8 @@ public int sum(int... nums) {
     for (int n : nums) total += n;
     return total;
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Lambda 表达式',
@@ -393,7 +422,8 @@ public int sum(int... nums) {
 x -> x * x
 () -> System.out.println("Hello")
 (String s) -> { return s.length(); }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '方法引用',
@@ -405,7 +435,8 @@ String::toUpperCase
 list::add
 // 构造器引用
 ArrayList::new`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -420,7 +451,8 @@ Arrays.stream(array)
 Stream.empty()
 Stream.generate(() -> Math.random())
 Stream.iterate(0, n -> n + 1)`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '中间操作',
@@ -432,7 +464,8 @@ stream.sorted()
 stream.limit(10)
 stream.skip(5)
 stream.peek(System.out::println)`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '终端操作',
@@ -446,7 +479,8 @@ stream.allMatch(x -> x > 0)
 stream.noneMatch(x -> x < 0)
 stream.findFirst()
 stream.findAny()`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -471,7 +505,8 @@ stream.findAny()`,
         this.name = name;
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Record',
@@ -485,7 +520,8 @@ stream.findAny()`,
 }
 Person p = new Person("Alice", 25);
 System.out.println(p.name());`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '继承',
@@ -500,7 +536,8 @@ System.out.println(p.name());`,
         return "Hi, I'm " + getName();
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '接口',
@@ -515,7 +552,8 @@ System.out.println(p.name());`,
         System.out.println("Drawable interface");
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '抽象类',
@@ -526,7 +564,8 @@ System.out.println(p.name());`,
         this.color = color;
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'Sealed Classes',
@@ -537,7 +576,8 @@ System.out.println(p.name());`,
 public final class Circle extends Shape {}
 public final class Rectangle extends Shape {}
 public final class Triangle extends Shape {}`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -557,7 +597,8 @@ public final class Triangle extends Shape {}`,
     // 总是执行
     System.out.println("Cleanup");
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'try-with-resources',
@@ -567,7 +608,8 @@ public final class Triangle extends Shape {}`,
 } catch (IOException e) {
     e.printStackTrace();
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '异常类型',
@@ -580,7 +622,8 @@ NullPointerException
 IllegalArgumentException
 IndexOutOfBoundsException
 ArithmeticException`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '抛出异常',
@@ -595,7 +638,8 @@ public class ValidationException extends Exception {
         super(message);
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -614,7 +658,8 @@ try (BufferedReader br = new BufferedReader(new FileReader("file.txt"))) {
         System.out.println(line);
     }
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -627,7 +672,8 @@ Files.write(Path.of("file.txt"), lines);
 try (BufferedWriter bw = new BufferedWriter(new FileWriter("file.txt"))) {
     bw.write("Hello\\n");
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '路径操作',
@@ -638,7 +684,8 @@ path.toAbsolutePath();
 Files.exists(path);
 Files.isDirectory(path);
 Files.createDirectories(path);`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -658,7 +705,8 @@ new MyThread().start();
 new Thread(() -> {
     System.out.println("Running");
 }).start();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'ExecutorService',
@@ -667,7 +715,8 @@ executor.submit(() -> {
     System.out.println("Task running");
 });
 executor.shutdown();`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: 'CompletableFuture',
@@ -679,7 +728,8 @@ executor.shutdown();`,
 }).thenAccept(result -> {
     System.out.println(result);
 });`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '同步',
@@ -697,7 +747,8 @@ try {
 } finally {
     lock.unlock();
 }`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -716,7 +767,8 @@ Optional<String> opt = Optional.ofNullable(value);
 list.stream()
     .filter(s -> s.length() > 3)
     .collect(Collectors.toList());`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '性能优化',
@@ -730,7 +782,8 @@ ArrayList - 随机访问快
 LinkedList - 插入删除快
 HashSet - 快速查找
 TreeSet - 有序集合`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -744,7 +797,8 @@ a == b  // true
 Integer x = 128;
 Integer y = 128;
 x == y  // false`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   },
@@ -787,7 +841,8 @@ void testAdd() {
 // Mockito
 @Mock
 private UserService userService;`,
-        language: 'java'
+        language: 'java',
+        width: 'half'
       }
     ]
   }

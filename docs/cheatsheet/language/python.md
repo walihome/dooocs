@@ -13,7 +13,8 @@ const cheatsheetData = [
       {
         title: 'Hello World',
         code: `print("Hello, World!")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '输入输出',
@@ -24,7 +25,8 @@ print(f"Hello, {name}")  # f-string
 # 输入
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '注释',
@@ -42,7 +44,8 @@ def function():
         返回值说明
     """
     pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -59,7 +62,8 @@ a, b, c = 1, 2, 3
 x = y = z = 0
 # 解包
 first, *rest = [1, 2, 3, 4]`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '作用域',
@@ -70,7 +74,8 @@ def outer():
         inner_var = "inner"  # 内层函数作用域
         global global_var     # 声明使用全局变量
         nonlocal outer_var    # 声明使用外层变量`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '类型注解',
@@ -81,7 +86,8 @@ scores: list[int] = [90, 85, 88]
 data: dict[str, int] = {"a": 1}
 def greet(name: str) -> str:
     return f"Hello, {name}"`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -104,7 +110,8 @@ b = True
 b = False
 # None
 n = None`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '复合类型',
@@ -118,7 +125,8 @@ dic = {"key": "value"}
 st = {1, 2, 3}
 # 范围
 rng = range(10)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '类型转换',
@@ -130,7 +138,8 @@ list("hello")
 tuple([1, 2, 3])
 dict([("a", 1), ("b", 2)])
 set([1, 2, 2, 3])`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '类型检查',
@@ -141,7 +150,8 @@ isinstance(value, (int, float))
 from typing import List, Dict, Optional
 def func(x: Optional[int]) -> List[str]:
     pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -154,7 +164,8 @@ def func(x: Optional[int]) -> List[str]:
 //               # 整除
 %                # 取模
 **               # 幂运算`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '比较运算符',
@@ -162,7 +173,8 @@ def func(x: Optional[int]) -> List[str]:
 >  <  >=  <=     # 大小比较
 is  is not       # 身份比较
 in  not in       # 成员测试`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '逻辑运算符',
@@ -170,19 +182,22 @@ in  not in       # 成员测试`,
 # 短路求值
 result = x and y
 result = x or y`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '位运算符',
         code: `&  |  ^  ~       # 按位与、或、异或、非
 <<  >>           # 左移、右移`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '赋值运算符',
         code: `=  +=  -=  *=  /=  //=  %=  **=
 &=  |=  ^=  <<=  >>=`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '特殊运算符',
@@ -191,7 +206,8 @@ if (n := len(data)) > 10:
     print(f"Large dataset: {n}")
 # 解包运算符
 *args, **kwargs`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -210,7 +226,8 @@ msg = "Name: {}, Age: {}".format(name, age)
 msg = "{0} {1}".format("Hello", "World")
 # % 格式化
 msg = "Name: %s, Age: %d" % (name, age)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '字符串方法',
@@ -229,7 +246,8 @@ s.index('sub')
 s.count('sub')
 s.startswith('pre')
 s.endswith('suf')`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '字符串检查',
@@ -239,7 +257,8 @@ s.isalnum()
 s.isupper()
 s.islower()
 s.isspace()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '正则表达式',
@@ -249,7 +268,8 @@ re.search(r'pattern', s)
 re.findall(r'\\d+', s)
 re.sub(r'old', 'new', s)
 re.split(r'\\s+', s)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -269,7 +289,8 @@ lst.pop(0)
 lst.clear()
 lst.sort()
 lst.reverse()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '列表推导式',
@@ -279,7 +300,8 @@ squares = [x**2 for x in range(10)]
 evens = [x for x in range(20) if x % 2 == 0]
 # 嵌套
 matrix = [[i+j for j in range(3)] for i in range(3)]`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '列表操作',
@@ -294,7 +316,8 @@ max(lst)
 min(lst)
 lst.count(item)
 lst.index(item)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '字典操作',
@@ -308,7 +331,8 @@ d.update({"k2": "v2"})
 d.keys()
 d.values()
 d.items()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '集合操作',
@@ -322,7 +346,8 @@ s1 | s2       # 并集
 s1 & s2       # 交集
 s1 - s2       # 差集
 s1 ^ s2       # 对称差`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '元组与队列',
@@ -336,7 +361,8 @@ q.append(4)
 q.appendleft(0)
 q.pop()
 q.popleft()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -353,7 +379,8 @@ else:
     pass
 # 三元表达式
 result = 'yes' if condition else 'no'`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'match-case',
@@ -365,7 +392,8 @@ result = 'yes' if condition else 'no'`,
         print("two or three")
     case _:
         print("other")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'for 循环',
@@ -377,7 +405,8 @@ for i, item in enumerate(collection):
     print(i, item)
 for key, value in dict.items():
     print(key, value)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'while 循环',
@@ -388,7 +417,8 @@ while condition:
     pass
 else:
     print("Loop completed normally")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '跳转语句',
@@ -396,7 +426,8 @@ else:
 continue    # 跳过本次迭代
 pass        # 空操作
 return value # 返回值`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -410,7 +441,8 @@ return value # 返回值`,
 # Lambda 函数
 square = lambda x: x ** 2
 add = lambda a, b: a + b`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '参数',
@@ -426,7 +458,8 @@ def func(*args, **kwargs):
 # 关键字参数
 def func(a, *, b, c):  # b, c 必须用关键字传递
     pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '高阶函数',
@@ -438,7 +471,8 @@ def multiplier(n):
 map(func, iterable)
 filter(func, iterable)
 sorted(iterable, key=func)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '装饰器',
@@ -452,7 +486,8 @@ sorted(iterable, key=func)`,
 @decorator
 def my_function():
     pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '生成器',
@@ -463,7 +498,8 @@ def my_function():
         a, b = b, a + b
 # 生成器表达式
 gen = (x**2 for x in range(10))`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -485,7 +521,8 @@ gen = (x**2 for x in range(10))`,
     @staticmethod
     def is_adult(age):
         return age >= 18`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '继承',
@@ -495,7 +532,8 @@ gen = (x**2 for x in range(10))`,
         self.grade = grade
     def study(self):
         print(f"{self.name} is studying")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '特殊方法',
@@ -512,7 +550,8 @@ gen = (x**2 for x in range(10))`,
         pass
     def __call__(self):      # ()
         pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '属性装饰器',
@@ -530,7 +569,8 @@ gen = (x**2 for x in range(10))`,
     @property
     def area(self):
         return 3.14 * self._radius ** 2`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'dataclass',
@@ -543,7 +583,8 @@ class Person:
     email: str = ""
     def greet(self):
         return f"Hello, I'm {self.name}"`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -564,7 +605,8 @@ else:
     print("No exception")
 finally:
     print("Always executed")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '异常类型',
@@ -577,7 +619,8 @@ AttributeError
 FileNotFoundError
 ZeroDivisionError
 ImportError`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '抛出异常',
@@ -587,7 +630,8 @@ raise Exception("Something went wrong")
 class CustomError(Exception):
     pass
 raise CustomError("Custom message")`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '上下文管理器',
@@ -600,7 +644,8 @@ class MyContext:
         return self
     def __exit__(self, exc_type, exc_val, exc_tb):
         pass`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -618,7 +663,8 @@ with open('file.txt', 'r') as f:
         print(line.strip())
 # 读取所有行
 lines = f.readlines()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '写入文件',
@@ -631,7 +677,8 @@ with open('file.txt', 'a') as f:
 # 写入多行
 lines = ['line1\\n', 'line2\\n']
 f.writelines(lines)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '路径操作',
@@ -646,7 +693,8 @@ p.parent
 p.name
 p.stem
 p.suffix`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'JSON 操作',
@@ -661,7 +709,8 @@ with open('data.json', 'w') as f:
     json.dump(data, f, indent=2)
 with open('data.json', 'r') as f:
     data = json.load(f)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -675,7 +724,8 @@ import module as alias
 from module import function
 from module import *
 from package.module import Class`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '创建模块',
@@ -686,7 +736,8 @@ PI = 3.14
 # 使用
 import mymodule
 mymodule.my_function()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '包结构',
@@ -697,7 +748,8 @@ mymodule.my_function()`,
     subpackage/
         __init__.py
         module3.py`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -716,7 +768,8 @@ thread.join()
 lock = threading.Lock()
 with lock:
     # 临界区`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '多进程',
@@ -731,7 +784,8 @@ if __name__ == '__main__':
         p.start()
     for p in processes:
         p.join()`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '异步编程',
@@ -743,7 +797,8 @@ async def main():
     result = await fetch_data()
     print(result)
 asyncio.run(main())`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -762,7 +817,8 @@ random      # 随机数
 collections # 容器类型
 itertools   # 迭代工具
 functools   # 函数工具`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'datetime',
@@ -773,7 +829,8 @@ formatted = now.strftime('%Y-%m-%d %H:%M:%S')
 parsed = datetime.strptime('2024-01-01', '%Y-%m-%d')
 # 时间计算
 tomorrow = now + timedelta(days=1)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: 'collections',
@@ -785,7 +842,8 @@ dd = defaultdict(list)
 dd['key'].append('value')
 # 双端队列
 dq = deque([1, 2, 3])`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },
@@ -803,7 +861,8 @@ import os
 import sys
 import numpy as np
 from mymodule import func`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '性能优化',
@@ -814,7 +873,8 @@ gen = (x**2 for x in range(1000000))
 # 使用集合进行查找
 s = set(large_list)
 if item in s:  # O(1)`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       },
       {
         title: '常见陷阱',
@@ -831,7 +891,8 @@ def good(lst=None):  # 正确
 for i in range(3):
     pass
 print(i)  # i 仍可访问`,
-        language: 'python'
+        language: 'python',
+        width: 'half'
       }
     ]
   },

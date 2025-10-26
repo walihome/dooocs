@@ -16,7 +16,8 @@ const cheatsheetData = [
 cd ~               # 切换到主目录
 cd -               # 切换到上一个目录
 pwd                # 显示当前路径`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '查看文件',
@@ -25,7 +26,8 @@ ls -la             # 详细列表（含隐藏文件）
 ls -lh             # 人类可读的文件大小
 ls -lt             # 按时间排序
 tree               # 树形结构`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '创建与删除',
@@ -34,7 +36,8 @@ mkdir -p a/b/c     # 递归创建
 touch file.txt     # 创建文件
 rm file.txt        # 删除文件
 rm -rf dir         # 递归强制删除目录`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '复制与移动',
@@ -42,7 +45,8 @@ rm -rf dir         # 递归强制删除目录`,
 cp -r dir1 dir2    # 复制目录
 mv src dest        # 移动/重命名
 rsync -av src/ dest/ # 同步目录`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '查找文件',
@@ -51,14 +55,16 @@ find . -type f -mtime -7       # 7天内修改的文件
 find . -size +100M             # 大于100MB的文件
 locate filename                # 快速定位文件
 which command                  # 查找命令路径`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '链接文件',
         code: `ln -s target link  # 创建软链接
 ln target link     # 创建硬链接
 readlink -f link   # 查看链接目标`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -72,7 +78,8 @@ less file.txt      # 分页查看
 head -n 10 file    # 查看前10行
 tail -n 10 file    # 查看后10行
 tail -f file       # 实时查看文件更新`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '编辑文件',
@@ -80,7 +87,8 @@ tail -f file       # 实时查看文件更新`,
 nano file.txt      # Nano 编辑器
 echo "text" > file # 覆盖写入
 echo "text" >> file # 追加写入`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '文本搜索',
@@ -90,7 +98,8 @@ grep -i "pattern" file         # 忽略大小写
 grep -v "pattern" file         # 反向匹配
 grep -n "pattern" file         # 显示行号
 grep -E "regex" file           # 正则表达式`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '文本处理',
@@ -100,7 +109,8 @@ uniq file          # 去重
 cut -d: -f1 file   # 提取字段
 awk '{print $1}' file # AWK处理
 sed 's/old/new/g' file # SED替换`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '文件比较',
@@ -108,7 +118,8 @@ sed 's/old/new/g' file # SED替换`,
 diff -u file1 file2 # 统一格式
 vimdiff file1 file2 # Vim可视化比较
 comm file1 file2   # 逐行比较`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -123,7 +134,8 @@ comm file1 file2   # 逐行比较`,
 # rwx 所有者权限（读写执行）
 # r-x 组权限（读执行）
 # r-x 其他用户权限（读执行）`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '修改权限',
@@ -132,7 +144,8 @@ chmod u+x file     # 给所有者添加执行权限
 chmod g-w file     # 移除组写权限
 chmod a+r file     # 所有人添加读权限
 chmod -R 755 dir   # 递归修改`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '权限数字',
@@ -141,7 +154,8 @@ chmod -R 755 dir   # 递归修改`,
 755 = rwxr-xr-x    # 所有者全部，其他可读执行
 644 = rw-r--r--    # 所有者读写，其他只读
 600 = rw-------    # 仅所有者读写`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '所有者管理',
@@ -149,7 +163,8 @@ chmod -R 755 dir   # 递归修改`,
 chown user:group file # 修改所有者和组
 chown -R user dir  # 递归修改
 chgrp group file   # 修改组`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'sudo 权限',
@@ -157,7 +172,8 @@ chgrp group file   # 修改组`,
 sudo -i            # 切换到root shell
 sudo -u user cmd   # 以指定用户执行
 visudo             # 编辑sudoers文件`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -171,7 +187,8 @@ ps aux | grep name # 搜索进程
 top                # 实时进程监控
 htop               # 更好的进程监控
 pgrep name         # 按名称查找进程ID`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '管理进程',
@@ -181,7 +198,8 @@ killall name       # 按名称终止
 pkill name         # 按名称终止
 bg                 # 后台运行
 fg                 # 前台运行`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '进程状态',
@@ -190,7 +208,8 @@ nohup command &    # 不挂断运行
 jobs               # 查看后台任务
 ctrl+z             # 暂停当前进程
 ctrl+c             # 终止当前进程`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '服务管理',
@@ -201,7 +220,8 @@ systemctl restart service  # 重启服务
 systemctl status service   # 查看状态
 systemctl enable service   # 开机自启
 systemctl disable service  # 禁用自启`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '系统监控',
@@ -210,7 +230,8 @@ df -h              # 磁盘使用
 du -sh dir         # 目录大小
 iostat             # IO统计
 vmstat             # 虚拟内存统计`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -224,7 +245,8 @@ ip link            # 查看网络接口
 ifconfig           # 网络接口配置（旧）
 hostname           # 查看主机名
 hostname -I        # 查看所有IP`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '网络测试',
@@ -234,7 +256,8 @@ traceroute host    # 追踪路由
 mtr host           # 持续追踪路由
 nslookup domain    # DNS查询
 dig domain         # DNS详细查询`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '网络连接',
@@ -243,7 +266,8 @@ ss -tulpn          # socket统计（更快）
 lsof -i :80        # 查看端口占用
 nc -zv host port   # 测试端口连通性
 telnet host port   # Telnet测试`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '下载工具',
@@ -252,7 +276,8 @@ wget -c url        # 断点续传
 curl url           # 获取内容
 curl -O url        # 下载保存
 curl -I url        # 仅获取头部`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '远程连接',
@@ -261,7 +286,8 @@ ssh -p 2222 user@host # 指定端口
 scp file user@host:/path # 复制文件到远程
 scp user@host:/path file # 从远程复制
 rsync -avz src user@host:dest # 同步`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '防火墙',
@@ -270,7 +296,8 @@ ufw enable         # 启用防火墙
 ufw allow 80       # 允许端口
 firewall-cmd --list-all # firewalld查看
 iptables -L        # iptables查看规则`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -283,7 +310,8 @@ iptables -L        # iptables查看规则`,
 tar -xzf archive.tar.gz       # 解压
 tar -tzf archive.tar.gz       # 查看内容
 tar -xzf file.tar.gz -C /path # 解压到指定目录`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'tar 选项',
@@ -295,7 +323,8 @@ tar -xzf file.tar.gz -C /path # 解压到指定目录`,
 -J  xz压缩
 -v  显示详细信息
 -f  指定文件名`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'zip/unzip',
@@ -304,7 +333,8 @@ zip -r archive.zip dir/       # 压缩目录
 unzip archive.zip             # 解压
 unzip -l archive.zip          # 查看内容
 unzip archive.zip -d /path    # 解压到指定目录`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'gzip/bzip2',
@@ -314,7 +344,8 @@ gunzip file.gz     # gzip解压
 bzip2 file         # bzip2压缩
 bzip2 -d file.bz2  # bzip2解压
 bunzip2 file.bz2   # bzip2解压`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -328,7 +359,8 @@ id                 # 用户ID和组ID
 users              # 已登录用户
 w                  # 谁在线及在做什么
 last               # 最近登录记录`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '用户操作',
@@ -338,7 +370,8 @@ userdel username   # 删除用户
 userdel -r username # 删除用户及主目录
 passwd username    # 设置密码
 usermod -aG group user # 添加用户到组`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '组管理',
@@ -346,7 +379,8 @@ usermod -aG group user # 添加用户到组`,
 groupdel group     # 删除组
 groups             # 显示当前用户的组
 groups username    # 显示指定用户的组`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '切换用户',
@@ -354,7 +388,8 @@ groups username    # 显示指定用户的组`,
 su - username      # 切换到指定用户
 sudo -i            # 切换到root shell
 sudo -u user cmd   # 以指定用户执行`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -369,7 +404,8 @@ apt install pkg    # 安装包
 apt remove pkg     # 卸载包
 apt autoremove     # 清理无用包
 apt search pkg     # 搜索包`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'YUM/DNF (RHEL/CentOS)',
@@ -378,7 +414,8 @@ yum install pkg    # 安装包
 yum remove pkg     # 卸载包
 yum search pkg     # 搜索包
 dnf install pkg    # DNF安装（新版）`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'Pacman (Arch)',
@@ -387,7 +424,8 @@ pacman -S pkg      # 安装包
 pacman -R pkg      # 卸载包
 pacman -Ss pkg     # 搜索包
 pacman -Qi pkg     # 查看包信息`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: 'Snap/Flatpak',
@@ -395,7 +433,8 @@ pacman -Qi pkg     # 查看包信息`,
 snap list          # 列出已安装
 flatpak install pkg # Flatpak安装
 flatpak list       # 列出已安装`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -408,7 +447,8 @@ flatpak list       # 列出已安装`,
 hostnamectl        # 主机信息
 lsb_release -a     # 发行版信息
 cat /etc/os-release # 系统版本`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '硬件信息',
@@ -418,7 +458,8 @@ lsblk              # 块设备信息
 lspci              # PCI设备
 lsusb              # USB设备
 dmidecode          # DMI/SMBIOS信息`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '性能信息',
@@ -428,7 +469,8 @@ df -h              # 磁盘使用
 du -sh *           # 目录大小
 iostat             # IO统计
 vmstat 1           # 每秒系统统计`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '日志查看',
@@ -437,7 +479,8 @@ journalctl -f      # 实时查看日志
 journalctl -u service # 查看服务日志
 dmesg              # 内核日志
 tail -f /var/log/syslog # 系统日志`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -451,7 +494,8 @@ cmd >> file        # 追加到文件
 cmd 2> file        # 错误输出到文件
 cmd &> file        # 标准输出和错误都输出
 cmd > /dev/null    # 丢弃输出`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '管道操作',
@@ -460,7 +504,8 @@ cmd1 | tee file    # 同时输出到文件和终端
 cmd1 && cmd2       # cmd1成功后执行cmd2
 cmd1 || cmd2       # cmd1失败后执行cmd2
 cmd1 ; cmd2        # 顺序执行`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '输入重定向',
@@ -469,7 +514,8 @@ cmd << EOF         # Here Document
   content
 EOF
 cmd <<< "string"   # Here String`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -484,7 +530,8 @@ Ctrl+B             # 向左移动
 Ctrl+F             # 向右移动
 Alt+B              # 向左移动一个单词
 Alt+F              # 向右移动一个单词`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '编辑',
@@ -494,7 +541,8 @@ Ctrl+W             # 删除前一个单词
 Ctrl+Y             # 粘贴
 Ctrl+L             # 清屏
 Ctrl+_             # 撤销`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '进程控制',
@@ -503,7 +551,8 @@ Ctrl+Z             # 暂停当前进程
 Ctrl+D             # 退出当前shell
 Ctrl+S             # 暂停输出
 Ctrl+Q             # 恢复输出`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '历史命令',
@@ -513,7 +562,8 @@ Ctrl+N / ↓         # 下一条命令
 !!                 # 执行上一条命令
 !n                 # 执行第n条命令
 !string            # 执行最近以string开头的命令`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -530,7 +580,8 @@ name="Alice"
 echo "Hello, $name"
 # 只读变量
 readonly PI=3.14`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '条件语句',
@@ -546,7 +597,8 @@ fi
 [ -d dir ]     # 目录存在
 [ "$a" = "$b" ] # 字符串相等
 [ $a -eq $b ]  # 数字相等`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '循环',
@@ -562,7 +614,8 @@ done
 until [ condition ]; do
   echo "loop"
 done`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '函数',
@@ -578,7 +631,8 @@ greet() {
 }
 # 调用函数
 greet "Alice"`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '特殊变量',
@@ -589,7 +643,8 @@ $@                 # 所有参数
 $?                 # 上个命令的退出状态
 $$                 # 当前进程ID
 $!                 # 后台运行的最后一个进程ID`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   },
@@ -604,7 +659,8 @@ history | grep cmd # 搜索历史
 !!                 # 执行上一条
 !$                 # 上一条命令的最后参数
 ctrl+r             # 反向搜索`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '别名',
@@ -613,7 +669,8 @@ alias ..='cd ..'
 unalias ll         # 删除别名
 alias              # 查看所有别名
 # 永久生效：添加到 ~/.bashrc 或 ~/.zshrc`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '环境变量',
@@ -622,7 +679,8 @@ export VAR=value   # 设置环境变量
 export PATH=$PATH:/new/path # 添加到PATH
 env                # 查看所有环境变量
 printenv           # 打印环境变量`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '命令替换',
@@ -630,7 +688,8 @@ printenv           # 打印环境变量`,
 result=\`command\`  # 命令替换（旧）
 echo "Date: $(date)"
 files=$(ls *.txt)`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '批量操作',
@@ -640,7 +699,8 @@ for f in *.txt; do mv "$f" "\${f%.txt}.md"; done
 find . -name "*.log" -exec rm {} \\;
 # xargs批量
 ls *.txt | xargs -I {} cp {} backup/`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       },
       {
         title: '常用组合',
@@ -652,7 +712,8 @@ netstat -tulpn | grep :80
 tail -f log | grep --color "ERROR"
 # 查找并删除
 find . -name "*.tmp" -delete`,
-        language: 'bash'
+        language: 'bash',
+        width: 'half'
       }
     ]
   }
