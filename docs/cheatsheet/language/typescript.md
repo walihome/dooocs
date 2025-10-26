@@ -11,8 +11,16 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `console.log("Hello, World!");`,
+        title: 'Hello World & 注释',
+        code: `// Hello World
+console.log("Hello, World!");
+// 单行注释
+/* 多行注释 */
+/**
+ * JSDoc 注释
+ * @param name 用户名
+ * @returns 问候语
+ */`,
         language: 'typescript',
         width: 'half'
       },
@@ -34,18 +42,6 @@ rl.question('Enter your name: ', (answer: string) => {
   console.log(\`Hello, \${answer}\`);
   rl.close();
 });`,
-        language: 'typescript',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释
-/* 多行注释 */
-/**
- * JSDoc 注释
- * @param name 用户名
- * @returns 问候语
- */`,
         language: 'typescript',
         width: 'half'
       }

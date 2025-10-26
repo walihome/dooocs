@@ -11,13 +11,21 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `#include <iostream>
+        title: 'Hello World & 注释',
+        code: `// Hello World
+#include <iostream>
 using namespace std;
 int main() {
     cout << "Hello, World!" << endl;
     return 0;
-}`,
+}
+// 单行注释
+/* 多行注释 */
+/**
+ * Doxygen 文档注释
+ * @param x 参数说明
+ * @return 返回值说明
+ */`,
         language: 'cpp',
         width: 'half'
       },
@@ -40,18 +48,6 @@ int main() {
     cout << "Hello, " << name << "!" << endl;
     return 0;
 }`,
-        language: 'cpp',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释
-/* 多行注释 */
-/**
- * Doxygen 文档注释
- * @param x 参数说明
- * @return 返回值说明
- */`,
         language: 'cpp',
         width: 'half'
       }

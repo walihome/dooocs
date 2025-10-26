@@ -11,12 +11,21 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `public class HelloWorld {
+        title: 'Hello World & 注释',
+        code: `// Hello World
+public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, World!");
     }
-}`,
+}
+// 单行注释
+/* 多行注释
+   可以换行 */
+/**
+ * JavaDoc 文档注释
+ * @param name 参数说明
+ * @return 返回值说明
+ */`,
         language: 'java',
         width: 'half'
       },
@@ -39,19 +48,6 @@ public class Main {
         scanner.close();
     }
 }`,
-        language: 'java',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释
-/* 多行注释
-   可以换行 */
-/**
- * JavaDoc 文档注释
- * @param name 参数说明
- * @return 返回值说明
- */`,
         language: 'java',
         width: 'half'
       }

@@ -11,26 +11,10 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `print("Hello, World!")`,
-        language: 'python',
-        width: 'half'
-      },
-      {
-        title: '输入输出',
-        code: `# 输出
+        title: 'Hello World & 注释',
+        code: `# Hello World
 print("Hello, World!")
-print("Name:", name, "Age:", age)
-print(f"Hello, {name}")  # f-string
-# 输入
-name = input("Enter your name: ")
-age = int(input("Enter your age: "))`,
-        language: 'python',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `# 单行注释
+# 单行注释
 """
 多行注释（文档字符串）
 可以换行
@@ -44,6 +28,18 @@ def function():
         返回值说明
     """
     pass`,
+        language: 'python',
+        width: 'half'
+      },
+      {
+        title: '输入输出',
+        code: `# 输出
+print("Hello, World!")
+print("Name:", name, "Age:", age)
+print(f"Hello, {name}")  # f-string
+# 输入
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))`,
         language: 'python',
         width: 'half'
       }

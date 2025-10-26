@@ -11,8 +11,17 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `console.log("Hello, World!");`,
+        title: 'Hello World & 注释',
+        code: `// Hello World
+console.log("Hello, World!");
+// 单行注释
+/* 多行注释
+   可以换行 */
+/**
+ * 文档注释 (JSDoc)
+ * @param {string} name
+ * @returns {string}
+ */`,
         language: 'javascript',
         width: 'half'
       },
@@ -34,19 +43,6 @@ rl.question('Enter your name: ', (answer) => {
   console.log(\`Hello, \${answer}\`);
   rl.close();
 });`,
-        language: 'javascript',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释
-/* 多行注释
-   可以换行 */
-/**
- * 文档注释 (JSDoc)
- * @param {string} name
- * @returns {string}
- */`,
         language: 'javascript',
         width: 'half'
       }

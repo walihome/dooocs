@@ -11,12 +11,16 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `#include <stdio.h>
+        title: 'Hello World & 注释',
+        code: `// Hello World
+#include <stdio.h>
 int main() {
     printf("Hello, World!\\n");
     return 0;
-}`,
+}
+// 单行注释 (C99+)
+/* 多行注释
+   可以换行 */`,
         language: 'c',
         width: 'half'
       },
@@ -37,14 +41,6 @@ int main() {
     printf("Hello, %s!\\n", name);
     return 0;
 }`,
-        language: 'c',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释 (C99+)
-/* 多行注释
-   可以换行 */`,
         language: 'c',
         width: 'half'
       }

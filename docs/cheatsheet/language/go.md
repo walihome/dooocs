@@ -11,12 +11,18 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
-        code: `package main
+        title: 'Hello World & 注释',
+        code: `// Hello World
+package main
 import "fmt"
 func main() {
     fmt.Println("Hello, World!")
-}`,
+}
+// 单行注释
+/* 多行注释
+   可以换行 */
+// Package 文档注释
+// 紧贴 package 声明上方`,
         language: 'go',
         width: 'half'
       },
@@ -37,16 +43,6 @@ func main() {
     fmt.Scanln(&age)
     fmt.Printf("Hello, %s!\\n", name)
 }`,
-        language: 'go',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `// 单行注释
-/* 多行注释
-   可以换行 */
-// Package 文档注释
-// 紧贴 package 声明上方`,
         language: 'go',
         width: 'half'
       }

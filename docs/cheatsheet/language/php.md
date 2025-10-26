@@ -11,9 +11,19 @@ const cheatsheetData = [
     title: '基础语法',
     items: [
       {
-        title: 'Hello World',
+        title: 'Hello World & 注释',
         code: `<?php
+// Hello World
 echo "Hello, World!";
+// 单行注释
+# 单行注释（shell 风格）
+/* 多行注释
+   可以换行 */
+/**
+ * PHPDoc 文档注释
+ * @param string $name
+ * @return string
+ */
 ?>`,
         language: 'php',
         width: 'half'
@@ -32,21 +42,6 @@ echo "Hello, " . $name . "!\\n";
 $name = $_POST['name'] ?? '';
 $age = $_GET['age'] ?? 0;
 ?>`,
-        language: 'php',
-        width: 'half'
-      },
-      {
-        title: '注释',
-        code: `<?php
-// 单行注释
-# 单行注释（shell 风格）
-/* 多行注释
-   可以换行 */
-/**
- * PHPDoc 文档注释
- * @param string $name
- * @return string
- */`,
         language: 'php',
         width: 'half'
       }
