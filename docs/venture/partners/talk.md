@@ -10,4 +10,4 @@ decription: 副业交流群、副业交流微信群、微信群、微信交流�
 
 
 
-<img src="https://www.dooocs.com/images/wechat_group.jpg" alt="加微信" width="300px">
+<img src="https://www.dooocs.com/images/group.JPG" alt="加微信" width="300px">
