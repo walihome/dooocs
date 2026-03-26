@@ -273,7 +273,7 @@ async function genHomePage() {
   // 准备HomePage组件的数据
   const homePageData = {
     hero: {
-      title: '极简编程',
+      title: '夏斑文档',
       description: '编程如此简单！'
     },
     columns: columns.map(col => ({
