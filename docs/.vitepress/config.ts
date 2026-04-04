@@ -5,7 +5,7 @@ import { createWriteStream, existsSync, readFileSync } from 'fs'
 import { resolve } from 'path'
 
 export default defineConfig({
-  title: "夏斑文档",
+  title: "极简编程",
   description: "极简编程 - 提供Python、Java、JavaScript等编程语言教程、速记表、项目实战和学习路线图，让编程学习变得简单高效。适合初学者入门和进阶开发者参考。",
   
   lang: 'zh-CN',
